@@ -47,9 +47,10 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # Set correct permissions for storage and bootstrap/cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache \
+    && chmod +x /var/www/html/docker-entrypoint.sh
 
 # Expose Render port
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+CMD ["/var/www/html/docker-entrypoint.sh"]
