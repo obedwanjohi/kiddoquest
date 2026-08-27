@@ -121,7 +121,10 @@
             <button type="submit" class="btn-login">Sign In to Admin Dashboard</button>
         </form>
 
-        <div style="text-align: center; margin-top: 20px; font-size: 13px;">
+        <div style="text-align: center; margin-top: 20px; font-size: 13px; display: flex; flex-direction: column; gap: 8px;">
+            @if(\App\Models\Admin::count() === 0)
+                <a href="{{ route('admin.setup') }}" style="color: #ed8936; text-decoration: none; font-weight: 700;">⚡ Initial Setup: Create Super Admin Account →</a>
+            @endif
             <a href="{{ url('/') }}" style="color: #667eea; text-decoration: none; font-weight: 600;">← Back to KiddoQuest Home</a>
         </div>
     </div>

@@ -252,6 +252,8 @@ Route::post('/parent/lock', [App\Http\Controllers\Parent\ParentDashboardControll
 // Admin Login & Management Routes
 Route::get('/admin/login', [App\Http\Controllers\Admin\AdminAuthController::class, 'showLogin'])->name('admin.login');
 Route::post('/admin/login', [App\Http\Controllers\Admin\AdminAuthController::class, 'login'])->name('admin.login.post');
+Route::get('/admin/setup', [App\Http\Controllers\Admin\AdminAuthController::class, 'showRegister'])->name('admin.setup');
+Route::post('/admin/setup', [App\Http\Controllers\Admin\AdminAuthController::class, 'register'])->name('admin.setup.post');
 Route::post('/admin/logout', [App\Http\Controllers\Admin\AdminAuthController::class, 'logout'])->name('admin.logout');
 
 Route::prefix('admin')->name('admin.')->group(function () {

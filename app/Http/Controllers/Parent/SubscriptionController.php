@@ -27,16 +27,17 @@ class SubscriptionController extends Controller
     public function showSubscriptionPage(): View
     {
         $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
+        $guardianId = $guardian ? $guardian->id : 0;
         
-        $activeSubscription = Subscription::where('guardian_id', $guardian->id)
+        $activeSubscription = $guardian ? Subscription::where('guardian_id', $guardianId)
             ->where('status', 'active')
             ->where('expires_at', '>', now())
-            ->first();
+            ->first() : null;
 
-        $recentPayments = Payment::where('guardian_id', $guardian->id)
+        $recentPayments = $guardian ? Payment::where('guardian_id', $guardianId)
             ->orderBy('created_at', 'desc')
             ->take(5)
-            ->get();
+            ->get() : collect();
 
         return view('parent.subscription', compact('guardian', 'activeSubscription', 'recentPayments'));
     }

@@ -35,7 +35,41 @@ class AdminAuthController extends Controller
             return redirect()->intended(route('admin.dashboard'));
         }
 
-        return back()->withErrors(['email' => 'Invalid credentials.'])->onlyInput('email');
+    public function showRegister(): View|\Illuminate\Http\RedirectResponse
+    {
+        // Auto-lock: If an admin already exists, lock the setup screen
+        if (\App\Models\Admin::count() > 0) {
+            return redirect()->route('admin.login')->with('error', '🔒 Admin registration is locked. Please sign in with your credentials.');
+        }
+
+        return view('admin.auth.register');
+    }
+
+    public function register(Request $request): RedirectResponse
+    {
+        // Security check: Lock if admin already exists
+        if (\App\Models\Admin::count() > 0) {
+            return redirect()->route('admin.login')->with('error', '🔒 Admin registration is locked.');
+        }
+
+        $validated = $request->validate([
+            'name'     => ['required', 'string', 'max:255'],
+            'email'    => ['required', 'email', 'unique:admins,email'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $admin = \App\Models\Admin::create([
+            'name'      => $validated['name'],
+            'email'     => $validated['email'],
+            'password'  => \Illuminate\Support\Facades\Hash::make($validated['password']),
+            'role'      => 'admin',
+            'is_active' => true,
+        ]);
+
+        Auth::guard('admin')->login($admin);
+        $request->session()->regenerate();
+
+        return redirect()->route('admin.dashboard')->with('success', '🎉 Welcome Super Admin! Your account is created and admin registration is now securely locked.');
     }
 
     public function logout(Request $request): RedirectResponse
