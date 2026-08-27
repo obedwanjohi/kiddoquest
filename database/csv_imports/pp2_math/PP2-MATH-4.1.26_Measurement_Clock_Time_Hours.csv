@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Measurement Clock Time Hours,What time is shown when the long hand points to 12 and short hand to 3?,clock_q1.webp,audio_q1.mp3,1,3,12,6,,,1,,,,,,,
+speak_repeat,Measurement Clock Time Hours,Say out loud clearly: IT IS THREE OCLOCK!,clock_speak.webp,audio_q2.mp3,1,It Is Three OClock,,,,,,It Is Three OClock,,,,,,
+matching,Measurement Clock Time Hours,Match clock hours!,,,1,,,,,,3 OClock 🕒,3:00,7,7:00,12,12:00,,

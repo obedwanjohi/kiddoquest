@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Phonics Listening Game,Listen closely: Which card matches the sound /a/?,listen_card_a.webp,audio_q1.mp3,1,Apple Card,Ball Card,Cat Card,,,1,,,,,,,
+multiple_choice,Phonics Listening Game,Listen closely: Which card matches the sound /b/?,listen_card_b.webp,audio_q2.mp3,1,Ball Card,Apple Card,Dog Card,,,1,,,,,,,
+multiple_choice,Phonics Listening Game,Listen closely: Which card matches the sound /c/?,listen_card_c.webp,audio_q3.mp3,1,Cat Card,Fish Card,Egg Card,,,1,,,,,,,
+speak_repeat,Phonics Listening Game,Say out loud clearly: PHONICS LISTENING GAME!,speak_listening_game.webp,audio_q4.mp3,1,Phonics Listening Game,,,,,,Phonics Listening Game,,,,,,
+speak_repeat,Phonics Listening Game,Say out loud: LISTEN AND TOUCH!,speak_listen_touch.webp,audio_q5.mp3,1,Listen and Touch,,,,,,Listen and Touch,,,,,,
+matching,Phonics Listening Game,Match sounds to picture cards!,,,1,,,,,,,,/a/,Apple,/b/,Ball,/c/,Cat
+matching,Phonics Listening Game,Match sounds to cards!,,,1,,,,,,,,/d/,Dog,/e/,Egg,/f/,Fish

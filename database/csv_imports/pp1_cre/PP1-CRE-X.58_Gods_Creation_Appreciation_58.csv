@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Gods Creation Appreciation 58,Why should we care for plants and animals?,nature_q1.webp,audio_q1.mp3,1,🙏,We don't care,They are bad,,,1,,,,,,,
+speak_repeat,Gods Creation Appreciation 58,Say out loud: CARE FOR GODS CREATION!,care_speak.webp,audio_q2.mp3,1,Care For Gods Creation,,,,,,Care For Gods Creation,,,,,,
+matching,Gods Creation Appreciation 58,Match creation care!,,,1,,,,,,Plants 🌿,Water Them,Animals 🐕,Be Kind,World 🌍,Care for It,,

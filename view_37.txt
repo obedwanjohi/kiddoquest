@@ -1,0 +1,39 @@
+Created At: 2026-07-18T09:08:37Z
+Completed At: 2026-07-18T09:08:37Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 2993
+Total Bytes: 136922
+Showing lines 960 to 990
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+960:             <span style="font-size:20px;">⭐</span>
+961:             <span x-text="totalStars"></span>
+962:         </div>
+963:     </div>
+964: 
+965:     {{-- MAIN QUIZ AREA (hidden when complete) --}}
+966:     <template x-if="!quizComplete">
+967:                                     </template>
+968:                                     <template x-if="answered && selectedIndex === i && option.is_correct">
+969:                                         <span class="badge">✅</span>
+970:                                     </template>
+971:                                 </div>
+972:                             </template>
+973:                         </div>
+974:                     </div>
+975:                 </template>
+976: 
+977:                 {{-- Complete the Pattern (QT-10) --}}
+978:                 <template x-if="currentQuestion.type === 'complete_pattern'">
+979:                     <div class="pattern-board">
+980:                         {{-- Pattern strip: shows sequence tiles + missing "?" slot --}}
+981:                         <div class="pattern-strip" x-show="(currentQuestion.metadata?.sequence || []).length > 0">
+982:                             <template x-for="(item, i) in (currentQuestion.metadata?.sequence || [])" :key="'seq-' + i">
+983:                                 <div class="pattern-tile"
+984:                                      :style="`animation-delay: ${0.1 + i * 0.1}s`">
+985:                                     <span x-text="item"></span>
+986:                                 </div>
+987:                             </template>
+988:                             {{-- The missing slot — shows "?" until answered, then reveals correct answer --}}
+989:                             <div class="pattern-tile missing"
+990:                                  :class="answered ? 'revealed' : ''"
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

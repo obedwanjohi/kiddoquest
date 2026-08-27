@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Underwater Mermaid ABC Reef 69,Which sea pearl has Letter M on it?,pearl_q1.webp,audio_q1.mp3,1,🦪,Pearl A,Pearl B,,,1,,,,,,,
+speak_repeat,Underwater Mermaid ABC Reef 69,Say out loud: /m/ IS FOR MERMAID!,mer_speak.webp,audio_q2.mp3,1,/m/ Is For Mermaid,,,,,,/m/ Is For Mermaid,,,,,,
+matching,Underwater Mermaid ABC Reef 69,Match sea pearls!,,,1,,,,,,M,Pearl M,S,Pearl S,F,Pearl F,,

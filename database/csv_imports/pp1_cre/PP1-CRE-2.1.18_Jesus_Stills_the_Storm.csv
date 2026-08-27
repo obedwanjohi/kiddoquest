@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Stills the Storm,What was Jesus doing when the big storm came?,sleep_q1.webp,audio_q1.mp3,1,Sleeping,Eating,Running,,,1,,,,,,,
+multiple_choice,Jesus Stills the Storm,Who were on the boat with Jesus during the storm?,disc_q2.webp,audio_q2.mp3,1,Disciples,Strangers,Animals,,,1,,,,,,,
+multiple_choice,Jesus Stills the Storm,What did the disciples feel during the storm?,fear_q3.webp,audio_q3.mp3,1,Afraid,Happy,Calm,,,1,,,,,,,
+multiple_choice,Jesus Stills the Storm,What words did Jesus say to calm the storm?,peace_q4.webp,audio_q4.mp3,1,Peace Be Still,Blow Harder,Go Away,,,1,,,,,,,
+multiple_choice,Jesus Stills the Storm,What happened to the sea after Jesus spoke?,calm_q5.webp,audio_q5.mp3,1,Became Calm,Got Worse,Nothing,,,1,,,,,,,
+multiple_choice,Jesus Stills the Storm,What does this miracle show us about Jesus?,power_q6.webp,audio_q6.mp3,1,He Has Power,He Is Scared,He Needs Help,,,1,,,,,,,
+multiple_choice,Jesus Stills the Storm,When we are afraid what should we do like the disciples?,call_q7.webp,audio_q7.mp3,1,Call on Jesus,Run Away,Hide,,,1,,,,,,,
+multiple_choice,Jesus Stills the Storm,Touch the calm sea after Jesus spoke!,sea_q8.webp,audio_q8.mp3,1,Calm Sea,Storm Waves,Dark Clouds,,,1,,,,,,,
+speak_repeat,Jesus Stills the Storm,Say out loud clearly: PEACE BE STILL!,peace_speak.webp,audio_q9.mp3,1,Peace Be Still,,,,,,Peace Be Still,,,,,,
+speak_repeat,Jesus Stills the Storm,Say out loud: JESUS CALMS THE STORM!,calm_speak.webp,audio_q10.mp3,1,Jesus Calms The Storm,,,,,,Jesus Calms The Storm,,,,,,
+speak_repeat,Jesus Stills the Storm,Say out loud: JESUS I TRUST YOU!,trust_speak.webp,audio_q11.mp3,1,Jesus I Trust You,,,,,,Jesus I Trust You,,,,,,
+matching,Jesus Stills the Storm,Match storm miracle facts!,,,1,,,,,,,,Storm 🌩️,Big Waves,Jesus ⛵,Peace Be Still,Sea 🌊,Became Calm
+matching,Jesus Stills the Storm,Match feelings during the story!,,,1,,,,,,,,Disciples,Were Afraid,Jesus,Was Calm,After Miracle,Full of Awe
+matching,Jesus Stills the Storm,Match what we learn!,,,1,,,,,,,,Jesus,Has All Power,Trust Him,In Storms,Pray,When Afraid

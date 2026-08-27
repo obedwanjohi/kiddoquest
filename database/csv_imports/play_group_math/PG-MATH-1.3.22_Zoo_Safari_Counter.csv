@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Zoo Safari Counter,How many cheeky monkeys are swinging from zoo branches?,zoo_monkeys.webp,audio_q1.mp3,1,7,6,5,,monkey.webp,7,,,,,,,
+count_objects,Zoo Safari Counter,Count the friendly giraffes eating tall leaves!,zoo_giraffes.webp,audio_q2.mp3,1,6,7,5,,giraffe.webp,6,,,,,,,
+count_objects,Zoo Safari Counter,How many zoo lions did Leo see resting?,zoo_lions.webp,audio_q3.mp3,1,5,7,6,,lion.webp,5,,,,,,,
+multiple_choice,Zoo Safari Counter,Which card shows 7 cheeky monkeys?,mc_seven_monkeys.webp,audio_q4.mp3,1,7,5,6,,,7,,,,,,,

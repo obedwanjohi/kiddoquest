@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Wise Men Star Follower,What guiding light did the Wise Men follow across the desert?,cre_star_guiding.webp,audio_q1.mp3,1,Bethlehem Star,Street Light,Flashlight,,,1,,,,,,,
+multiple_choice,Wise Men Star Follower,What animal did the Wise Men ride on their journey?,cre_wise_camels.webp,audio_q2.mp3,1,Desert Camels,Horses,Elephants,,,1,,,,,,,
+multiple_choice,Wise Men Star Follower,What special gifts did the Wise Men bring for Baby Jesus?,cre_gold_gifts.webp,audio_q3.mp3,1,Gifts of Gold,Toy Cars,Old Stones,,,1,,,,,,,
+speak_repeat,Wise Men Star Follower,Say out loud clearly: WISE MEN FOLLOWED THE STAR!,speak_wise_men_star.webp,audio_q4.mp3,1,Wise Men Followed The Star,,,,,,Wise Men Followed The Star,,,,,,
+speak_repeat,Wise Men Star Follower,Say out loud: GIFTS FOR BABY JESUS!,speak_gifts_baby_jesus.webp,audio_q5.mp3,1,Gifts For Baby Jesus,,,,,,Gifts For Baby Jesus,,,,,,
+matching,Wise Men Star Follower,Match Wise Men story items!,,,1,,,,,,,,Travelers,Three Wise Men,Guide,Bethlehem Star,Rides,Desert Camels
+matching,Wise Men Star Follower,Match Wise Men pictures!,,,1,,,,,,,,Star,Bethlehem Star,Camels,Desert Camels,Gifts,Gifts of Gold

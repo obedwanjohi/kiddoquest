@@ -1,0 +1,60 @@
+Created At: 2026-07-17T11:52:20Z
+Completed At: 2026-07-17T11:52:20Z
+File Path: `file:///C:/Users/livewave/.gemini/antigravity/brain/f4af740d-d30f-425a-94e4-182f02b06858/implementation_plan.md`
+Total Lines: 51
+Total Bytes: 3426
+Showing lines 1 to 51
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: # Kid UI Refactor: The Mission Flow
+2: 
+3: This plan outlines the major refactor needed to switch the Kid UI from the old "Lesson/Quiz" architecture to the new "Mission" architecture. 
+4: 
+5: ## Background
+6: Previously, the child played a `Lesson` and then took a `Quiz`. We recently introduced the `Mission` model as the bridge between the curriculum and the game. Now, the child plays a `Mission` (which has a video, narration, and an assigned `QuestionBank`).
+7: 
+8: ## Proposed Changes
+9: 
+10: ### 1. Database Migrations
+11: We need to migrate our tracking tables to track Missions instead of Lessons/Quizzes.
+12: - **[NEW MIGRATION]**: Rename `lesson_id` to `mission_id` in the `child_progress` table.
+13: - **[NEW MIGRATION]**: Rename the `quiz_attempts` table to `mission_attempts`, and rename its `quiz_id` column to `mission_id`.
+14: 
+15: ### 2. Models
+16: - **[MODIFY] `app/Models/ChildProgress.php`**: Change the relationship from `lesson()` to `mission()`.
+17: - **[MODIFY] `app/Models/QuizAttempt.php`**: Rename this file and class to `MissionAttempt.php`. Update the relationship from `quiz()` to `mission()`.
+18: 
+19: ### 3. Controllers
+20: - **[MODIFY] `app/Http/Controllers/Kid/KidController.php`**:
+21:   - `world()`: Load `$world->missions` instead of lessons.
+22:   - `missionIntro()`: Accept `Mission $mission` instead of `Lesson $lesson`.
+23:   - Rename `lesson()` to `video()`: Accept `Mission $mission`.
+24: - **[MODIFY] `app/Http/Controllers/Kid/KidQuizController.php`**: Rename this file and class to `KidMissionController.php`
+<truncated 99 bytes>
+random subset.
+26:   - `submit()`: Save the results to `MissionAttempt` and update `ChildProgress` for the `mission_id`.
+27: 
+28: ### 4. Routes
+29: **[MODIFY] `routes/web.php`** (Kid group):
+30: ```php
+31: Route::get('/world/{world}', [KidController::class, 'world'])->name('kids.world');
+32: Route::get('/world/{world}/mission/{mission}/intro', [KidController::class, 'missionIntro'])->name('kids.mission-intro');
+33: Route::get('/world/{world}/mission/{mission}/video', [KidController::class, 'video'])->name('kids.mission-video');
+34: Route::get('/world/{world}/mission/{mission}/play', [KidMissionController::class, 'show'])->name('kids.mission.play');
+35: Route::post('/world/{world}/mission/{mission}/submit', [KidMissionController::class, 'submit'])->name('kids.mission.submit');
+36: ```
+37: 
+38: ### 5. Views
+39: Rename and update the child-facing views to inject the `$mission` object instead of `$lesson` or `$quiz`:
+40: - **[MODIFY] `resources/views/kids/world.blade.php`**: Loop over `$world->missions`.
+41: - **[MODIFY] `resources/views/kids/mission-intro.blade.php`**: Display `$mission->intro_narration_text` and link to the video.
+42: - **[RENAME & MODIFY] `resources/views/kids/lesson.blade.php` → `mission-video.blade.php`**: Display the teaching video and link to the challenge.
+43: - **[RENAME & MODIFY] `resources/views/kids/quiz/engine.blade.php` → `mission/engine.blade.php`**: The actual game engine, now submitting to `kids.mission.submit`.
+44: - **[MODIFY] `resources/views/kids/celebration.blade.php`**: The success screen.
+45: 
+46: ## User Review Required
+47: > [!WARNING]  
+48: > This requires renaming the `quiz_attempts` table. If there is any existing production data in that table, it will be preserved but the foreign keys will now point to Missions instead of Quizzes. Since this is likely still in development/beta, this should be perfectly safe.
+49: 
+50: Please approve this plan so we can lock in the core Kid UI loop!
+51: 
+The above content shows the entire, complete file contents of the requested file.

@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,My Body is Gods Temple,How should we care for our bodies that God gave us?,clean_q1.webp,audio_q1.mp3,1,Keep Clean,Be Dirty,Harm Body,,,1,,,,,,,
+multiple_choice,My Body is Gods Temple,What should we do with our hands before eating food?,wash_q2.webp,audio_q2.mp3,1,Wash Them,Lick Them,Shake Them,,,1,,,,,,,
+multiple_choice,My Body is Gods Temple,God wants us to brush our teeth every day. When do we brush?,brush_q3.webp,audio_q3.mp3,1,Morning,Midnight,Noon,,,1,,,,,,,
+multiple_choice,My Body is Gods Temple,Touch the picture showing a child keeping their body clean!,care_q4.webp,audio_q4.mp3,1,Bathing,Fighting,Sleeping,,,1,,,,,,,
+multiple_choice,My Body is Gods Temple,What do we use to keep our bodies clean?,soap_q5.webp,audio_q5.mp3,1,Soap,Sand,Mud,,,1,,,,,,,
+multiple_choice,My Body is Gods Temple,God wants us to eat good food. Which food is healthy?,food_q6.webp,audio_q6.mp3,1,Fruits,Rubbish,Stones,,,1,,,,,,,
+multiple_choice,My Body is Gods Temple,What does God say our bodies are like?,temple_q7.webp,audio_q7.mp3,1,Temple,Toy Box,Market,,,1,,,,,,,
+multiple_choice,My Body is Gods Temple,Why should we take care of our bodies?,why_q8.webp,audio_q8.mp3,1,God Gave Us,They Are Old,Just Because,,,1,,,,,,,
+speak_repeat,My Body is Gods Temple,Say out loud clearly: MY BODY IS GODS TEMPLE!,temp_speak.webp,audio_q9.mp3,1,My Body Is Gods Temple,,,,,,My Body Is Gods Temple,,,,,,
+speak_repeat,My Body is Gods Temple,Say out loud: I KEEP MY BODY CLEAN!,clean_speak.webp,audio_q10.mp3,1,I Keep My Body Clean,,,,,,I Keep My Body Clean,,,,,,
+speak_repeat,My Body is Gods Temple,Say out loud: GOD GAVE ME MY BODY!,gave_speak.webp,audio_q11.mp3,1,God Gave Me My Body,,,,,,God Gave Me My Body,,,,,,
+matching,My Body is Gods Temple,Match body part to how we care for it!,,,1,,,,,,,,Hands 🤲,Wash,Teeth 🦷,Brush,Body 🧍,Bathe
+matching,My Body is Gods Temple,Match hygiene tools to what they clean!,,,1,,,,,,,,Soap 🧼,Body,Toothbrush 🪥,Teeth,Water 💧,Hands
+matching,My Body is Gods Temple,Match body care to the reason!,,,1,,,,,,,,Keep Clean,God's Temple,Eat Well,Stay Strong,Sleep Well,Grow Big

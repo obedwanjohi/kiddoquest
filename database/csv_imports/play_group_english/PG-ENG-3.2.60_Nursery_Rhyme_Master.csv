@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Nursery Rhyme Master,Which song says Twinkle Twinkle Little Star?,rhyme_star_master.webp,audio_q1.mp3,1,Little Star,Humpty Dumpty,Black Sheep,,,1,,,,,,,
+multiple_choice,Nursery Rhyme Master,Which animal has Three Bags Full of wool?,rhyme_sheep_master.webp,audio_q2.mp3,1,Black Sheep,Old MacDonald,Humpty Dumpty,,,1,,,,,,,
+multiple_choice,Nursery Rhyme Master,How do the wheels on the bus go?,rhyme_bus_master.webp,audio_q3.mp3,1,Round and Round,Swish Swish,Beep Beep,,,1,,,,,,,
+multiple_choice,Nursery Rhyme Master,Touch the shiny Nursery Rhyme Master Badge!,rhyme_badge.webp,audio_q4.mp3,1,🏆,Golden Star,Bus Wheel,,,1,,,,,,,
+speak_repeat,Nursery Rhyme Master,Say out loud clearly: NURSERY RHYME MASTER!,speak_rhyme_master.webp,audio_q5.mp3,1,Nursery Rhyme Master,,,,,,Nursery Rhyme Master,,,,,,
+speak_repeat,Nursery Rhyme Master,Say out loud: I LOVE SINGING SONGS!,speak_love_singing.webp,audio_q6.mp3,1,I Love Singing Songs,,,,,,I Love Singing Songs,,,,,,
+matching,Nursery Rhyme Master,Match song titles to characters!,,,1,,,,,,,,Little Star,Star,Black Sheep,Sheep,Humpty Dumpty,Wall
+matching,Nursery Rhyme Master,Match song titles to items!,,,1,,,,,,,,Old MacDonald,Farm,Yellow Bus,Wheels,Master,Badge

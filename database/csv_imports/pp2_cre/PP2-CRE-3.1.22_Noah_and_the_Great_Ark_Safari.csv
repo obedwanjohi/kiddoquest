@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Noah and the Great Ark Safari,How many pairs of each animal kind did Noah take into the Ark?,noah_q1.webp,audio_q1.mp3,1,🦒,Ten,One,,,1,,,,,,,
+speak_repeat,Noah and the Great Ark Safari,Say out loud: NOAH OBEYED GOD IN ALL THINGS!,noah_speak.webp,audio_q2.mp3,1,Noah Obeyed God In All Things,,,,,,Noah Obeyed God In All Things,,,,,,
+matching,Noah and the Great Ark Safari,Match Ark facts!,,,1,,,,,,Noah ⛵,Built Ark,Pairs 🦒🦒,Two by Two,Rainbow 🌈,Promise,,

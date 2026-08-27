@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pirate Sight Words 84,"Which sight word completes: ""The pirate can ___ the treasure""?",find_q1.webp,audio_q1.mp3,1,FIND 🔍,RUN,FLY,,,1,,,,,,,
+speak_repeat,Pirate Sight Words 84,Say out loud: PIRATE CAN FIND TREASURE!,find_speak.webp,audio_q2.mp3,1,Pirate Can Find Treasure,,,,,,Pirate Can Find Treasure,,,,,,
+matching,Pirate Sight Words 84,Match pirate words!,,,1,,,,,,FIND,🔍,SEE,👀,GOLD,🪙,,

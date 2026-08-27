@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Tortoise and Hare,Which slow animal kept walking step by step and won the race?,race_tortoise.webp,audio_q1.mp3,1,Slow Tortoise,Fast Hare,Sleeping Dog,,,1,,,,,,,
+multiple_choice,Tortoise and Hare,What did the speedy Hare do during the race?,race_hare_sleep.webp,audio_q2.mp3,1,Took A Nap,Kept Running,Ate Porridge,,,1,,,,,,,
+multiple_choice,Tortoise and Hare,Touch the finish line ribbon from the race!,race_finish.webp,audio_q3.mp3,1,Finish Line,Tree Shade,Brick Wall,,,1,,,,,,,
+speak_repeat,Tortoise and Hare,Say out loud clearly: SLOW AND STEADY!,speak_slow_steady.webp,audio_q4.mp3,1,Slow and Steady,,,,,,Slow and Steady,,,,,,
+speak_repeat,Tortoise and Hare,Say out loud: WINS THE RACE!,speak_wins_race.webp,audio_q5.mp3,1,Wins The Race,,,,,,Wins The Race,,,,,,
+matching,Tortoise and Hare,Match race traits to animals!,,,1,,,,,,,,Tortoise,Slow and Steady,Hare,Fast Runner,Race,Finish Line
+matching,Tortoise and Hare,Match story items!,,,1,,,,,,,,Tortoise,Tortoise,Hare,Hare,Ribbon,Ribbon

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Writing Letter Tracing Digraphs 59,Trace S-H-I-P. What digraph word did you write?,ship_q1.webp,audio_q1.mp3,1,SHIP 🚢,CHIP,THUMB,,,1,,,,,,,
+speak_repeat,Writing Letter Tracing Digraphs 59,Say out loud: I CAN WRITE SHIP!,ship_speak.webp,audio_q2.mp3,1,I Can Write Ship,,,,,,I Can Write Ship,,,,,,
+matching,Writing Letter Tracing Digraphs 59,Match traced digraphs!,,,1,,,,,,s-h-i-p,SHIP 🚢,c-h-i-p,CHIP 🥔,t-h-i-n,THIN 🧵,,

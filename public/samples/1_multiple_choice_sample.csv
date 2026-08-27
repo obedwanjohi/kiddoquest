@@ -1,0 +1,3 @@
+lesson_title,prompt,prompt_image,option_1,option_2,option_3,option_4,correct_option,hint,explanation
+Counting Apples,"Which item is a Fruit?",,Apple,Cat,Car,Dog,1,Think of food!,Apples are delicious fruits
+Fruit Recognition,"Pick the Banana!",,banana.png,cat.png,car.png,dog.png,1,Look for yellow fruit!,Bananas are yellow fruits

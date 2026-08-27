@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Data Sort Shapes by Size 110,Which box holds all the SMALL circles?,circle_q1.webp,audio_q1.mp3,1,📦,BOX,Huge Box,,,1,,,,,,,
+speak_repeat,Data Sort Shapes by Size 110,Say out loud: SMALL CIRCLES IN SMALL BOX!,circle_speak.webp,audio_q2.mp3,1,Small Circles In Small Box,,,,,,Small Circles In Small Box,,,,,,
+matching,Data Sort Shapes by Size 110,Match shape sorting!,,,1,,,,,,Small Circle 🔴,Small Box,🔴,BOX,🔴,Medium Box,,

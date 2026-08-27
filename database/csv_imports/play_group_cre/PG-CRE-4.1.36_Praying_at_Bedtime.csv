@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Praying at Bedtime,What peaceful habit do we do before going to sleep at night?,cre_bedtime_prayer.webp,audio_q1.mp3,1,Say Bedtime Prayer,Play Loud Games,Watch TV,,,1,,,,,,,
+multiple_choice,Praying at Bedtime,Touch the cozy bed under the moonlit window!,cre_cozy_bed.webp,audio_q2.mp3,1,Cozy Bed,Car,Bus,,,1,,,,,,,
+multiple_choice,Praying at Bedtime,Who watches over us safely while we sleep?,cre_god_watches.webp,audio_q3.mp3,1,God,No One,Scary Monsters,,,1,,,,,,,
+speak_repeat,Praying at Bedtime,Say out loud clearly: GOD WATCHES OVER ME AT NIGHT!,speak_god_watches_night.webp,audio_q4.mp3,1,God Watches Over Me At Night,,,,,,God Watches Over Me At Night,,,,,,
+speak_repeat,Praying at Bedtime,Say out loud: GOOD NIGHT GOD BLESS!,speak_goodnight_bless.webp,audio_q5.mp3,1,Good Night God Bless,,,,,,Good Night God Bless,,,,,,
+matching,Praying at Bedtime,Match bedtime prayer items!,,,1,,,,,,,,Night,Bedtime Prayer,Bed,Cozy Bed,God,PROTECTION
+matching,Praying at Bedtime,Match bedtime pictures!,,,1,,,,,,,,Bed,Cozy Bed,Moon,Moonlit Window,Prayer,Kneeling Child

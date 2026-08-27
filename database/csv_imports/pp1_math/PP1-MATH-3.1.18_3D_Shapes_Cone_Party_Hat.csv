@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,3D Shapes Cone Party Hat,Which 3D shape has a pointed tip like an ice cream cone?,cone_q1.webp,audio_q1.mp3,1,Cone 🍦,Sphere ⚽,Cube 🧊,,,1,,,,,,,
+speak_repeat,3D Shapes Cone Party Hat,Say out loud clearly: AN ICE CREAM CONE IS A CONE!,cone_speak.webp,audio_q2.mp3,1,An Ice Cream Cone Is A Cone,,,,,,An Ice Cream Cone Is A Cone,,,,,,
+matching,3D Shapes Cone Party Hat,Match 3D cone objects!,,,1,,,,,,ops,Ice Cream 🍦,Cone,🥳,Cone,🗼,Cone,

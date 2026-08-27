@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Tracing Straight Lines,Which line goes straight from top to bottom?,trace_straight_line.webp,audio_q1.mp3,1,Straight Line,Curved Line,Circle Shape,,,1,,,,,,,
+multiple_choice,Tracing Straight Lines,Help Leo trace down the straight slide!,trace_straight_slide.webp,audio_q2.mp3,1,Straight Slide,Rainbow Arc,Zigzag Trail,,,1,,,,,,,
+multiple_choice,Tracing Straight Lines,Which picture shows falling raindrops in straight lines?,trace_raindrops.webp,audio_q3.mp3,1,Raindrops,Sun,Cloud,,,1,,,,,,,
+speak_repeat,Tracing Straight Lines,Say out loud clearly: STRAIGHT LINES!,speak_straight_lines.webp,audio_q4.mp3,1,Straight Lines,,,,,,Straight Lines,,,,,,
+speak_repeat,Tracing Straight Lines,Say out loud: TOP TO BOTTOM!,speak_top_bottom.webp,audio_q5.mp3,1,Top To Bottom,,,,,,Top To Bottom,,,,,,
+matching,Tracing Straight Lines,Match line types!,,,1,,,,,,,,Straight,Straight Line,Curved,Curved Line,Zigzag,Zigzag Line
+matching,Tracing Straight Lines,Match line directions!,,,1,,,,,,,,Down,Top to Bottom,Across,Left to Right,Line,Straight

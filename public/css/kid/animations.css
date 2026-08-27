@@ -1,0 +1,104 @@
+/* ============================================================
+   KID UI — ANIMATIONS
+   All keyframes defined here. Components reference these by name.
+   ============================================================ */
+
+/* Bounce In — for card appearances, mascot entrances */
+@keyframes kid-bounce-in {
+    0%   { transform: scale(0.3); opacity: 0; }
+    50%  { transform: scale(1.05); opacity: 1; }
+    70%  { transform: scale(0.95); }
+    100% { transform: scale(1.0); }
+}
+
+/* Gentle Shake — for wrong answers (never harsh) */
+@keyframes kid-shake {
+    0%, 100% { transform: translateX(0); }
+    20%      { transform: translateX(-8px); }
+    40%      { transform: translateX(8px); }
+    60%      { transform: translateX(-4px); }
+    80%      { transform: translateX(4px); }
+}
+
+/* Celebration Pulse — for correct answers */
+@keyframes kid-celebrate {
+    0%   { transform: scale(1.0); }
+    50%  { transform: scale(1.15); }
+    100% { transform: scale(1.0); }
+}
+
+/* Float — for ambient world elements (butterflies, clouds, bubbles) */
+@keyframes kid-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+
+/* Pulse Hint — gentle attention getter for young children */
+@keyframes kid-hint-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(124,58,237,0.4); }
+    50%      { transform: scale(1.03); box-shadow: 0 0 0 12px rgba(124,58,237,0); }
+}
+
+/* Star Fly — when stars animate from celebration to counter */
+@keyframes kid-star-fly {
+    0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--fly-x, 0), var(--fly-y, -200px)) scale(0.3); opacity: 0; }
+}
+
+/* Confetti Fall — celebration particles */
+@keyframes kid-confetti-fall {
+    0%   { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Fade Slide Up — content entering from bottom */
+@keyframes kid-fade-slide-up {
+    0%   { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Pop In — for reward popups and badges */
+@keyframes kid-pop-in {
+    0%   { transform: scale(0); opacity: 0; }
+    70%  { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Wiggle — mascot idle animation */
+@keyframes kid-wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25%      { transform: rotate(-3deg); }
+    75%      { transform: rotate(3deg); }
+}
+
+/* Bouncing Dots — loading screen */
+@keyframes kid-dot-bounce {
+    0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+    40%           { transform: scale(1.0); opacity: 1; }
+}
+
+/* Typewriter Cursor — for mascot speech */
+@keyframes kid-cursor-blink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
+}
+
+/* ---- UTILITY CLASSES ---- */
+
+.kid-bounce-in    { animation: kid-bounce-in var(--kid-speed-normal) var(--kid-ease-spring); }
+.kid-fade-up      { animation: kid-fade-slide-up var(--kid-speed-normal) var(--kid-ease-out); }
+.kid-pop-in       { animation: kid-pop-in var(--kid-speed-normal) var(--kid-ease-spring); }
+.kid-float        { animation: kid-float 3s ease-in-out infinite; }
+.kid-wiggle       { animation: kid-wiggle 2s ease-in-out infinite; }
+.kid-hint-pulse   { animation: kid-hint-pulse 1.5s ease-in-out infinite; }
+
+/* Staggered children — add .kid-stagger to parent, set --kid-stagger-i on each child */
+.kid-stagger > * {
+    animation: kid-fade-slide-up var(--kid-speed-normal) var(--kid-ease-out) backwards;
+}
+.kid-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.kid-stagger > *:nth-child(2) { animation-delay: 80ms; }
+.kid-stagger > *:nth-child(3) { animation-delay: 160ms; }
+.kid-stagger > *:nth-child(4) { animation-delay: 240ms; }
+.kid-stagger > *:nth-child(5) { animation-delay: 320ms; }
+.kid-stagger > *:nth-child(6) { animation-delay: 400ms; }

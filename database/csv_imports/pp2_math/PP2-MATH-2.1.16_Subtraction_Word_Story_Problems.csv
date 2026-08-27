@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Subtraction Word Story Problems,Leo had 15 toy cars. He gave 5 to a friend. How many left?,car_q1.webp,audio_q1.mp3,1,10,9,11,,,1,,,,,,,
+speak_repeat,Subtraction Word Story Problems,Say out loud clearly: FIFTEEN MINUS FIVE IS TEN!,car_speak.webp,audio_q2.mp3,1,Fifteen Minus Five Is Ten,,,,,,Fifteen Minus Five Is Ten,,,,,,
+matching,Subtraction Word Story Problems,Match subtraction stories!,,,1,,,,,,15 - 5,10 Toy Cars 🚗,12,10,20,10,,

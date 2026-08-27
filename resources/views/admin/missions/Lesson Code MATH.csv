@@ -1,0 +1,248 @@
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_01_01,Lesson 1: Number 1 Detective,Develop number recognition skills by identifying and tapping the number 1 among different numerical distractors.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_01_01,Lesson 1 Quiz: Number 1 Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_MATH_01_01_01,Number 1 Recognition,Identify and tap the numeral 1 in different fun scenarios.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_MATH_01_01_01,Find Numeral 1 Q1,Identify number 1 with Kibo,2,1,120,Help Kibo find the number 1! Look at the picture and tap the box with the number 1!,Number_1_Q1,Num1_Q1_Instruction,1,Number_1,3|7|10
+QT11,KE_PPP_MATH_01_01_01,Find Numeral 1 Q2,Identify number 1 hiding near clouds,2,1,120,Great job! I see another number 1 hiding near the clouds! Tap the box that matches the number 1!,Number_1_Q2,Num1_Q2_Instruction,1,Number_1,2|8|4
+QT11,KE_PPP_MATH_01_01_01,Find Numeral 1 Q3,Identify number 1 for balloon,2,1,120,There it is! Tap the number 1 box to help Kibo hold his 1 balloon!,Number_1_Q3,Num1_Q3_Instruction,1,Number_1,5|9|6
+QT11,KE_PPP_MATH_01_01_01,Find Numeral 1 Q4,Identify number 1 to finish game,2,1,120,One more! Find the number 1 to finish our detective game! Tap the 1 box!,Number_1_Q4,Num1_Q4_Instruction,1,Number_1,4|2|7
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_01_02,Lesson 2: Number 1 Matching,Connect the concept of quantity 1 to real-world visual objects by selecting pictures with exactly one item.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_01_02,Lesson 2 Quiz: Number 1 Matching (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_MATH_01_02_01,Number 1 Object Matching,Identify image representing quantity 1.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_MATH_01_02_01,Match 1 Balloon Q1,Identify picture with 1 balloon,2,1,120,1,1,Which bush has 1 balloon for Kibo? Tap the picture!,1 Balloon,1_Balloon,Match1_Q1_Instruction
+QT10,KE_PPP_MATH_01_02_01,Match 1 Balloon Q2,Identify picture with 1 balloon from group,2,1,120,2,1,Can you count the balloons? Tap the picture that shows 1 balloon!,1 Balloon,1_Balloon,Match1_Q2_Instruction
+QT10,KE_PPP_MATH_01_02_01,Match 1 Star Q3,Identify picture with 1 star,2,1,120,3,1,Look at the stars! Which picture has exactly 1 star?,1 Star,1_Star,Match1_Q3_Instruction
+QT10,KE_PPP_MATH_01_02_01,Match 1 Car Q4,Identify picture with 1 car,2,1,120,4,1,One last match! Tap the picture that shows 1 car to match the number 1!,1 Car,1_Car,Match1_Q4_Instruction
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_02_01,Lesson 1: Number 2 Detective,Develop number recognition skills by identifying and tapping the numeral 2 among various numerical options.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_02_01,Lesson 1 Quiz: Number 2 Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_MATH_02_01_01,Number 2 Recognition,Identify and tap the numeral 2 in different scenarios with Tutu.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_MATH_02_01_01,Find Numeral 2 Q1,Identify number 2 with Tutu,2,1,120,Help Tutu find the number 2! Tap the box with the number 2!,Number_2_Q1,Num2_Q1_Instruction,2,Number_2,1|5|9
+QT11,KE_PPP_MATH_02_01_01,Find Numeral 2 Q2,Identify number 2 near the grass,2,1,120,Look near the grass! Can you find another number 2? Tap the 2 box!,Number_2_Q2,Num2_Q2_Instruction,2,Number_2,3|6|8
+QT11,KE_PPP_MATH_02_01_01,Find Numeral 2 Q3,Identify number 2 for Tutu's shoes,2,1,120,Find the number 2 to help Tutu get his 2 shoes! Tap 2!,Number_2_Q3,Num2_Q3_Instruction,2,Number_2,4|7|10
+QT11,KE_PPP_MATH_02_01_01,Find Numeral 2 Q4,Identify number 2 to complete game,2,1,120,You're a great detective! Tap the box with the number 2!,Number_2_Q4,Num2_Q4_Instruction,2,Number_2,1|8|5
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_02_02,Lesson 2: Number 2 Matching,Connect the concept of quantity 2 to real-world visual objects by identifying pictures showing exactly two items.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_02_02,Lesson 2 Quiz: Number 2 Matching (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_MATH_02_02_01,Number 2 Object Matching,Identify image representing quantity 2.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_MATH_02_02_01,Match 2 Shoes Q1,Identify picture with 2 blue shoes,2,1,120,1,1,Which bush has 2 blue shoes for Tutu? Tap the picture!,2 Shoes,2_Shoes,Match2_Q1_Instruction
+QT10,KE_PPP_MATH_02_02_01,Match 2 Shoes Q2,Identify picture showing 2 shoes,2,1,120,2,1,Point and count the shoes! Which picture shows 2 shoes?,2 Shoes,2_Shoes,Match2_Q2_Instruction
+QT10,KE_PPP_MATH_02_02_01,Match 2 Beach Balls Q3,Identify picture with 2 beach balls,2,1,120,3,1,Let's count beach balls! Tap the picture with 2 beach balls!,2 Balls,2_Balls,Match2_Q3_Instruction
+QT10,KE_PPP_MATH_02_02_01,Match 2 Fish Q4,Identify picture with 2 fish in bucket,2,1,120,4,1,Which bucket has 2 fish inside? Tap it!,2 Fish,2_Fish,Match2_Q4_Instruction
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_03_01,Lesson 1: Number 3 Detective,Develop number recognition skills by identifying and tapping the numeral 3 among various numerical distractors.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_03_01,Lesson 1 Quiz: Number 3 Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_MATH_03_01_01,Number 3 Recognition,Identify and tap the numeral 3 in different scenarios with Mamba.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_MATH_03_01_01,Find Numeral 3 Q1,Identify number 3 with Mamba,2,1,120,Help Mamba find the number 3! Tap the box with the number 3!,Number_3_Q1,Num3_Q1_Instruction,3,Number_3,1|6|8
+QT11,KE_PPP_MATH_03_01_01,Find Numeral 3 Q2,Identify number 3 up in the vines,2,1,120,Look up in the vines! Tap the box that matches the number 3!,Number_3_Q2,Num3_Q2_Instruction,3,Number_3,2|5|9
+QT11,KE_PPP_MATH_03_01_01,Find Numeral 3 Q3,Identify number 3 for Mamba's balls,2,1,120,Find the number 3 to help Mamba get his 3 balls! Tap 3!,Number_3_Q3,Num3_Q3_Instruction,3,Number_3,4|7|10
+QT11,KE_PPP_MATH_03_01_01,Find Numeral 3 Q4,Identify number 3 to complete game,2,1,120,One last check! Tap the box with the number 3!,Number_3_Q4,Num3_Q4_Instruction,3,Number_3,1|2|8
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_03_02,Lesson 2: Number 3 Matching,Connect the concept of quantity 3 to real-world visual objects by identifying pictures showing exactly three items.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_03_02,Lesson 2 Quiz: Number 3 Matching (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_MATH_03_02_01,Number 3 Object Matching,Identify image representing quantity 3.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_MATH_03_02_01,Match 3 Balls Q1,Identify picture with 3 colorful balls,2,1,120,1,1,Which bush has 3 colorful balls for Mamba? Tap it!,3 Balls,3_Balls,Match3_Q1_Instruction
+QT10,KE_PPP_MATH_03_02_01,Match 3 Balls Q2,Identify picture showing 3 balls,2,1,120,2,1,Point and count the balls! Tap the picture with 3 balls!,3 Balls,3_Balls,Match3_Q2_Instruction
+QT10,KE_PPP_MATH_03_02_01,Match 3 Apples Q3,Identify picture with 3 apples on tree,2,1,120,3,1,Which tree has 3 apples growing on it? Tap the tree!,3 Apples,3_Apples,Match3_Q3_Instruction
+QT10,KE_PPP_MATH_03_02_01,Match 3 Fish Q4,Identify picture with 3 fish in bucket,2,1,120,4,1,Tap the bucket that holds exactly 3 fish!,3 Fish,3_Fish,Match3_Q4_Instruction
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_04_01,Lesson 1: Number 4 Detective,Develop number recognition skills by identifying and tapping the numeral 4 among various numerical options.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_04_01,Lesson 1 Quiz: Number 4 Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_MATH_04_01_01,Number 4 Recognition,Identify and tap the numeral 4 in different scenarios with Roco.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_MATH_04_01_01,Find Numeral 4 Q1,Identify number 4 with Roco,2,1,120,Help Roco find the number 4! Tap the box with the number 4!,Number_4_Q1,Num4_Q1_Instruction,4,Number_4,1|2|7
+QT11,KE_PPP_MATH_04_01_01,Find Numeral 4 Q2,Identify number 4 near the riverbank,2,1,120,Look near the riverbank! Tap the box that matches the number 4!,Number_4_Q2,Num4_Q2_Instruction,4,Number_4,3|6|9
+QT11,KE_PPP_MATH_04_01_01,Find Numeral 4 Q3,Identify number 4 for Roco's blocks,2,1,120,Find the number 4 to help Roco count his 4 blocks! Tap 4!,Number_4_Q3,Num4_Q3_Instruction,4,Number_4,2|5|8
+QT11,KE_PPP_MATH_04_01_01,Find Numeral 4 Q4,Identify number 4 to complete game,2,1,120,Tap the box with the number 4!,Number_4_Q4,Num4_Q4_Instruction,4,Number_4,1|3|10
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_04_02,Lesson 2: Number 4 Matching,Connect the concept of quantity 4 to real-world visual objects by identifying pictures showing exactly four items.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_04_02,Lesson 2 Quiz: Number 4 Matching (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_MATH_04_02_01,Number 4 Object Matching,Identify image representing quantity 4.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_MATH_04_02_01,Match 4 Blocks Q1,Identify picture with 4 square blocks,2,1,120,1,1,Which bush has 4 square blocks for Roco? Tap it!,4 Blocks,4_Blocks,Match4_Q1_Instruction
+QT10,KE_PPP_MATH_04_02_01,Match 4 Blocks Q2,Identify picture showing 4 blocks,2,1,120,2,1,Point and count the blocks! Which picture shows 4 blocks?,4 Blocks,4_Blocks,Match4_Q2_Instruction
+QT10,KE_PPP_MATH_04_02_01,Match 4 Cars Q3,Identify picture with 4 toy cars,2,1,120,3,1,Tap the picture that has 4 toy cars!,4 Cars,4_Cars,Match4_Q3_Instruction
+QT10,KE_PPP_MATH_04_02_01,Match 4 Fish Q4,Identify picture with 4 fish in bucket,2,1,120,4,1,Which bucket has 4 fish inside? Tap it!,4 Fish,4_Fish,Match4_Q4_Instruction
+
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_05_01,Lesson 1: Number 5 Detective,Develop number recognition skills by identifying and tapping the numeral 5 among various numerical options.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_05_01,Lesson 1 Quiz: Number 5 Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_MATH_05_01_01,Number 5 Recognition,Identify and tap the numeral 5 in different scenarios with Finn.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_MATH_05_01_01,Find Numeral 5 Q1,Identify number 5 with Finn,2,1,120,Help Finn find the number 5! Tap the box with the number 5!,Number_5_Q1,Num5_Q1_Instruction,5,Number_5,2|3|8
+QT11,KE_PPP_MATH_05_01_01,Find Numeral 5 Q2,Identify number 5 near the water,2,1,120,Look near the water! Tap the box that matches number 5!,Number_5_Q2,Num5_Q2_Instruction,5,Number_5,1|4|7
+QT11,KE_PPP_MATH_05_01_01,Find Numeral 5 Q3,Identify number 5 for Finn's lily pads,2,1,120,Find the number 5 to help Finn jump to his 5 lily pads! Tap 5!,Number_5_Q3,Num5_Q3_Instruction,5,Number_5,6|9|10
+QT11,KE_PPP_MATH_05_01_01,Find Numeral 5 Q4,Identify number 5 to complete game,2,1,120,Tap the box with the number 5!,Number_5_Q4,Num5_Q4_Instruction,5,Number_5,2|3|4
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_05_02,Lesson 2: Number 5 Matching,Connect the concept of quantity 5 to real-world visual objects by identifying pictures showing exactly five items.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_05_02,Lesson 2 Quiz: Number 5 Matching (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_MATH_05_02_01,Number 5 Object Matching,Identify image representing quantity 5.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_MATH_05_02_01,Match 5 Lily Pads Q1,Identify picture with 5 green lily pads,2,1,120,1,1,Which bush has 5 green lily pads for Finn? Tap it!,5 Lily Pads,5_Lily_Pads,Match5_Q1_Instruction
+QT10,KE_PPP_MATH_05_02_01,Match 5 Lily Pads Q2,Identify picture showing 5 lily pads,2,1,120,2,1,Point and count the lily pads! Which picture shows 5 pads?,5 Lily Pads,5_Lily_Pads,Match5_Q2_Instruction
+QT10,KE_PPP_MATH_05_02_01,Match 5 Apples Q3,Identify picture with 5 apples,2,1,120,3,1,Tap the group that has 5 apples!,5 Apples,5_Apples,Match5_Q3_Instruction
+QT10,KE_PPP_MATH_05_02_01,Match 5 Fish Q4,Identify picture with 5 fish in bucket,2,1,120,4,1,Which bucket has 5 fish inside? Tap the bucket!,5 Fish,5_Fish,Match5_Q4_Instruction
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_06_01,Lesson 1: Number 6 Detective,Develop number recognition skills by identifying and tapping the numeral 6 among various numerical options.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_06_01,Lesson 1 Quiz: Number 6 Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_MATH_06_01_01,Number 6 Recognition,Identify and tap the numeral 6 in different scenarios with Lulu.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_MATH_06_01_01,Find Numeral 6 Q1,Identify number 6 with Lulu,2,1,120,Help Lulu find the number 6! Tap the box with the number 6!,Number_6_Q1,Num6_Q1_Instruction,6,Number_6,1|5|9
+QT11,KE_PPP_MATH_06_01_01,Find Numeral 6 Q2,Identify number 6 up in the tree,2,1,120,Look up in the tree! Tap the box that matches the number 6!,Number_6_Q2,Num6_Q2_Instruction,6,Number_6,2|4|8
+QT11,KE_PPP_MATH_06_01_01,Find Numeral 6 Q3,Identify number 6 for Lulu's leaves,2,1,120,Find the number 6 to help Lulu count her 6 leaves! Tap 6!,Number_6_Q3,Num6_Q3_Instruction,6,Number_6,3|7|10
+QT11,KE_PPP_MATH_06_01_01,Find Numeral 6 Q4,Identify number 6 to complete game,2,1,120,Tap the box with the number 6!,Number_6_Q4,Num6_Q4_Instruction,6,Number_6,1|4|5
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_06_02,Lesson 2: Number 6 Matching,Connect the concept of quantity 6 to real-world visual objects by identifying pictures showing exactly six items.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_06_02,Lesson 2 Quiz: Number 6 Matching (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_MATH_06_02_01,Number 6 Object Matching,Identify image representing quantity 6.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_MATH_06_02_01,Match 6 Leaves Q1,Identify picture with 6 leaves,2,1,120,1,1,Which bush has 6 leaves for Lulu? Tap it!,6 Leaves,6_Leaves,Match6_Q1_Instruction
+QT10,KE_PPP_MATH_06_02_01,Match 6 Leaves Q2,Identify picture showing 6 leaves,2,1,120,2,1,Point and count the leaves! Which picture shows 6 leaves?,6 Leaves,6_Leaves,Match6_Q2_Instruction
+QT10,KE_PPP_MATH_06_02_01,Match 6 Stars Q3,Identify picture with 6 stars,2,1,120,3,1,Tap the picture that has 6 stars!,6 Stars,6_Stars,Match6_Q3_Instruction
+QT10,KE_PPP_MATH_06_02_01,Match 6 Fish Q4,Identify picture with 6 fish in bucket,2,1,120,4,1,Which bucket has 6 fish inside? Tap it!,6 Fish,6_Fish,Match6_Q4_Instruction
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_07_01,Lesson 1: Number 7 Detective,Develop number recognition skills by identifying and tapping the numeral 7 among various numerical options.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_07_01,Lesson 1 Quiz: Number 7 Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_MATH_07_01_01,Number 7 Recognition,Identify and tap the numeral 7 in different scenarios with Sami.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_MATH_07_01_01,Find Numeral 7 Q1,Identify number 7 with Sami,2,1,120,Help Sami find the number 7! Tap the box with the number 7!,Number_7_Q1,Num7_Q1_Instruction,7,Number_7,1|4|9
+QT11,KE_PPP_MATH_07_01_01,Find Numeral 7 Q2,Identify number 7 near tree trunk,2,1,120,Look near the tree trunk! Tap the box that matches number 7!,Number_7_Q2,Num7_Q2_Instruction,7,Number_7,2|5|8
+QT11,KE_PPP_MATH_07_01_01,Find Numeral 7 Q3,Identify number 7 for Sami's acorns,2,1,120,Find the number 7 to help Sami count his 7 acorns! Tap 7!,Number_7_Q3,Num7_Q3_Instruction,7,Number_7,3|6|10
+QT11,KE_PPP_MATH_07_01_01,Find Numeral 7 Q4,Identify number 7 to complete game,2,1,120,Tap the box with the number 7!,Number_7_Q4,Num7_Q4_Instruction,7,Number_7,1|4|6
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_07_02,Lesson 2: Number 7 Matching,Connect the concept of quantity 7 to real-world visual objects by identifying pictures showing exactly seven items.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_07_02,Lesson 2 Quiz: Number 7 Matching (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_MATH_07_02_01,Number 7 Object Matching,Identify image representing quantity 7.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_MATH_07_02_01,Match 7 Acorns Q1,Identify picture with 7 acorns,2,1,120,1,1,Which bush has 7 acorns for Sami? Tap it!,7 Acorns,7_Acorns,Match7_Q1_Instruction
+QT10,KE_PPP_MATH_07_02_01,Match 7 Acorns Q2,Identify picture showing 7 acorns,2,1,120,2,1,Point and count the acorns! Which picture shows 7 acorns?,7 Acorns,7_Acorns,Match7_Q2_Instruction
+QT10,KE_PPP_MATH_07_02_01,Match 7 Bananas Q3,Identify picture with 7 bananas,2,1,120,3,1,Tap the picture with 7 bananas!,7 Bananas,7_Bananas,Match7_Q3_Instruction
+QT10,KE_PPP_MATH_07_02_01,Match 7 Fish Q4,Identify group with 7 fish,2,1,120,4,1,Which group has 7 fish? Tap it!,7 Fish,7_Fish,Match7_Q4_Instruction
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_08_01,Lesson 1: Number 8 Detective,Develop number recognition skills by identifying and tapping the numeral 8 among various numerical options.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_08_01,Lesson 1 Quiz: Number 8 Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_MATH_08_01_01,Number 8 Recognition,Identify and tap the numeral 8 in different scenarios with Bunny.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_MATH_08_01_01,Find Numeral 8 Q1,Identify number 8 with Bunny,2,1,120,Help Bunny find the number 8! Tap the box with the number 8!,Number_8_Q1,Num8_Q1_Instruction,8,Number_8,3|5|10
+QT11,KE_PPP_MATH_08_01_01,Find Numeral 8 Q2,Identify number 8 near the tree,2,1,120,Look near the tree! Tap the box that matches number 8!,Number_8_Q2,Num8_Q2_Instruction,8,Number_8,1|4|7
+QT11,KE_PPP_MATH_08_01_01,Find Numeral 8 Q3,Identify number 8 for Bunny's honeycombs,2,1,120,Find the number 8 to help Bunny count his 8 honeycombs! Tap 8!,Number_8_Q3,Num8_Q3_Instruction,8,Number_8,2|6|9
+QT11,KE_PPP_MATH_08_01_01,Find Numeral 8 Q4,Identify number 8 to complete game,2,1,120,Tap the box with the number 8!,Number_8_Q4,Num8_Q4_Instruction,8,Number_8,3|6|7
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_08_02,Lesson 2: Number 8 Matching,Connect the concept of quantity 8 to real-world visual objects by identifying pictures showing exactly eight items.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_08_02,Lesson 2 Quiz: Number 8 Matching (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_MATH_08_02_01,Number 8 Object Matching,Identify image representing quantity 8.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_MATH_08_02_01,Match 8 Honeycombs Q1,Identify picture with 8 honeycombs,2,1,120,1,1,Which bush has 8 honeycombs for Bunny? Tap it!,8 Honeycombs,8_Honeycombs,Match8_Q1_Instruction
+QT10,KE_PPP_MATH_08_02_01,Match 8 Honeycombs Q2,Identify picture showing 8 honeycombs,2,1,120,2,1,Point and count the honeycombs! Which picture shows 8?,8 Honeycombs,8_Honeycombs,Match8_Q2_Instruction
+QT10,KE_PPP_MATH_08_02_01,Match 8 Stars Q3,Identify picture with 8 stars,2,1,120,3,1,Tap the group that has 8 stars!,8 Stars,8_Stars,Match8_Q3_Instruction
+QT10,KE_PPP_MATH_08_02_01,Match 8 Fish Q4,Identify picture with 8 fish in bucket,2,1,120,4,1,Which bucket has 8 fish inside? Tap the bucket!,8 Fish,8_Fish,Match8_Q4_Instruction
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_09_01,Lesson 1: Number 9 Detective,Develop number recognition skills by identifying and tapping the numeral 9 among various numerical options.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_09_01,Lesson 1 Quiz: Number 9 Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_MATH_09_01_01,Number 9 Recognition,Identify and tap the numeral 9 in different scenarios with Benji.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_MATH_09_01_01,Find Numeral 9 Q1,Identify number 9 with Benji,2,1,120,Help Benji find the number 9! Tap the box with the number 9!,Number_9_Q1,Num9_Q1_Instruction,9,Number_9,2|4|7
+QT11,KE_PPP_MATH_09_01_01,Find Numeral 9 Q2,Identify number 9 near the riverbank,2,1,120,Look near the riverbank! Tap the box that matches number 9!,Number_9_Q2,Num9_Q2_Instruction,9,Number_9,1|5|8
+QT11,KE_PPP_MATH_09_01_01,Find Numeral 9 Q3,Identify number 9 for Benji's flowers,2,1,120,Find the number 9 to help Benji count his 9 flowers! Tap 9!,Number_9_Q3,Num9_Q3_Instruction,9,Number_9,3|6|10
+QT11,KE_PPP_MATH_09_01_01,Find Numeral 9 Q4,Identify number 9 to complete game,2,1,120,Tap the box with the number 9!,Number_9_Q4,Num9_Q4_Instruction,9,Number_9,2|5|7
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_09_02,Lesson 2: Number 9 Matching,Connect the concept of quantity 9 to real-world visual objects by identifying pictures showing exactly nine items.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_09_02,Lesson 2 Quiz: Number 9 Matching (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_MATH_09_02_01,Number 9 Object Matching,Identify image representing quantity 9.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_MATH_09_02_01,Match 9 Flowers Q1,Identify picture with 9 red flowers,2,1,120,1,1,Which bush has 9 red flowers for Benji? Tap it!,9 Flowers,9_Flowers,Match9_Q1_Instruction
+QT10,KE_PPP_MATH_09_02_01,Match 9 Flowers Q2,Identify garden with 9 flowers,2,1,120,2,1,Point and count the flowers! Which garden has 9 flowers?,9 Flowers,9_Flowers,Match9_Q2_Instruction
+QT10,KE_PPP_MATH_09_02_01,Match 9 Bananas Q3,Identify picture with 9 bananas,2,1,120,3,1,Tap the group that has 9 bananas!,9 Bananas,9_Bananas,Match9_Q3_Instruction
+QT10,KE_PPP_MATH_09_02_01,Match 9 Fish Q4,Identify picture with 9 fish in bucket,2,1,120,4,1,Which bucket has 9 fish inside? Tap it!,9 Fish,9_Fish,Match9_Q4_Instruction
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_10_01,Lesson 1: Number 10 Detective,Develop number recognition skills by identifying and tapping the numeral 10 among various numerical options.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_10_01,Lesson 1 Quiz: Number 10 Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_MATH_10_01_01,Number 10 Recognition,Identify and tap the numeral 10 in different scenarios with Tobby.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_MATH_10_01_01,Find Numeral 10 Q1,Identify number 10 with Tobby,2,1,120,Help Tobby find the number 10! Tap the box with the number 10!,Number_10_Q1,Num10_Q1_Instruction,10,Number_10,1|4|7
+QT11,KE_PPP_MATH_10_01_01,Find Numeral 10 Q2,Identify number 10 near tree trunk,2,1,120,Look near the tree trunk! Tap the box that matches number 10!,Number_10_Q2,Num10_Q2_Instruction,10,Number_10,2|5|8
+QT11,KE_PPP_MATH_10_01_01,Find Numeral 10 Q3,Identify number 10 for Tobby's stars,2,1,120,Find the number 10 to help Tobby count his 10 stars! Tap 10!,Number_10_Q3,Num10_Q3_Instruction,10,Number_10,3|6|9
+QT11,KE_PPP_MATH_10_01_01,Find Numeral 10 Q4,Identify number 10 to complete game,2,1,120,Tap the box with the number 10!,Number_10_Q4,Num10_Q4_Instruction,10,Number_10,1|4|8
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_MATH_10_02,Lesson 2: Number 10 Matching,Connect the concept of quantity 10 to real-world visual objects by identifying pictures showing exactly ten items.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_MATH_10_02,Lesson 2 Quiz: Number 10 Matching (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_MATH_10_02_01,Number 10 Object Matching,Identify image representing quantity 10.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_MATH_10_02_01,Match 10 Stars Q1,Identify picture with 10 shiny stars,2,1,120,1,1,Which bush has 10 shiny stars for Tobby? Tap it!,10 Stars,10_Stars,Match10_Q1_Instruction
+QT10,KE_PPP_MATH_10_02_01,Match 10 Stars Q2,Identify picture showing 10 stars,2,1,120,2,1,Point and count the stars! Which picture shows 10 stars?,10 Stars,10_Stars,Match10_Q2_Instruction
+QT10,KE_PPP_MATH_10_02_01,Match 10 Balloons Q3,Identify picture with 10 balloons,2,1,120,3,1,Tap the picture that has 10 colorful balloons!,10 Balloons,10_Balloons,Match10_Q3_Instruction
+QT10,KE_PPP_MATH_10_02_01,Match 10 Fish Q4,Identify picture with 10 fish in bucket,2,1,120,4,1,Which bucket has 10 fish inside? Tap it!,10 Fish,10_Fish,Match10_Q4_Instruction
+
+
+
+

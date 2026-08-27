@@ -1,0 +1,13 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Alien Praise Song 38,Blend /c/ + /a/ + /t/? (think -en words),cvc_en1.webp,audio_q1.mp3,1,Hen,Dog,Sun,,,,,,,,,,
+multiple_choice,Space Alien Praise Song 38,Which word rhymes with Hen?,cvc_en2.webp,audio_q2.mp3,1,Pen,Bed,Cup,,,,,,,,,,
+multiple_choice,Space Alien Praise Song 38,Touch the picture that rhymes with Pen!,cvc_en3.webp,audio_q3.mp3,1,Ten,Frog,Bird,,,,,,,,,,
+multiple_choice,Space Alien Praise Song 38,Which word ends in /en/?,cvc_en4.webp,audio_q4.mp3,1,Den,Tree,Fish,,,,,,,,,,
+multiple_choice,Space Alien Praise Song 38,Touch the -en word!,cvc_en5.webp,audio_q5.mp3,1,Men,Jump,Rain,,,,,,,,,,
+multiple_choice,Space Alien Praise Song 38,Spell out Hen — how many letters?,cvc_spell.webp,audio_q6.mp3,1,3,4,5,,,,,,,,,,
+speak_repeat,Space Alien Praise Song 38,Say out loud: HEN — PEN — TEN!,cvc_say.webp,audio_q7.mp3,1,Hen Pen Ten,,,,,,Hen Pen Ten,,,,,,
+speak_repeat,Space Alien Praise Song 38,Say: THEY ALL RHYME WITH -EN!,cvc_rhyme.webp,audio_q8.mp3,1,They All Rhyme With -en,,,,,,They All Rhyme With -en,,,,,,
+speak_repeat,Space Alien Praise Song 38,Spell it out: H-E-N spells HEN!,cvc_spell2.webp,audio_q9.mp3,1,H-E-N Spells Hen,,,,,,H-E-N Spells Hen,,,,,,
+matching,Space Alien Praise Song 38,Match -en words to pictures!,,,1,,,,,,,,Hen,🐔,Pen,✏,Ten,🔟
+matching,Space Alien Praise Song 38,Match rhyming word pairs!,,,1,,,,,,,,Hen,Pen,Ten,Den,Men,Hen
+matching,Space Alien Praise Song 38,Match word to its meaning!,,,1,,,,,,,,Hen,A Hen,Pen,A Pen,Ten,A Ten

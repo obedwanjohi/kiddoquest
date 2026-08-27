@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter C Cat Car,Which letter makes the /k/ sound for Cat?,letter_c_card.webp,audio_q1.mp3,1,C,A,B,,,1,,,,,,,
+multiple_choice,Letter C Cat Car,Touch the pet animal that starts with letter C!,cat_c.webp,audio_q2.mp3,1,Cat,Ball,Apple,,,1,,,,,,,
+multiple_choice,Letter C Cat Car,Touch the red vehicle that starts with letter C!,car_c.webp,audio_q3.mp3,1,Car,Dog,Bird,,,1,,,,,,,
+speak_repeat,Letter C Cat Car,Say the letter sound out loud: /k/ /k/ CAT!,speak_cat_c.webp,audio_q4.mp3,1,Cat,,,,,,Cat,,,,,,
+speak_repeat,Letter C Cat Car,Say out loud clearly: LETTER C!,speak_letter_c.webp,audio_q5.mp3,1,Letter C,,,,,,Letter C,,,,,,
+matching,Letter C Cat Car,Match letter C to words starting with C!,,,1,,,,,,,,C,C,Cat,Cat,Car,Car
+matching,Letter C Cat Car,Match letter C sound /k/!,,,1,,,,,,,,C,C,sound /k/,Cat,words,Car

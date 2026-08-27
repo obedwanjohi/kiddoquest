@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Spatial Compass Directions 125,Which direction is the sun at midday: HIGH ABOVE or DOWN BELOW?,sun_q1.webp,audio_q1.mp3,1,☀️,DOWN BELOW ⬇️,INSIDE,,,1,,,,,,,
+speak_repeat,Spatial Compass Directions 125,Say out loud: SUN IS HIGH ABOVE!,sun_speak.webp,audio_q2.mp3,1,Sun Is High Above,,,,,,Sun Is High Above,,,,,,
+matching,Spatial Compass Directions 125,Match positions!,,,1,,,,,,Sun ☀️,High Above,Grass 🌿,Down Below,Tree 🌳,Beside,,

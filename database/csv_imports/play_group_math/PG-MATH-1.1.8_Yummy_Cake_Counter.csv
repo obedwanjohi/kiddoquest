@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Yummy Cake Counter,How many sweet cupcakes are on the party plate?,cake_plate.webp,audio_q1.mp3,1,1,2,3,,cupcake.webp,1,,,,,,,
+count_objects,Yummy Cake Counter,Count the cupcakes with glowing birthday candles!,cake_candles.webp,audio_q2.mp3,1,2,1,3,,cupcake.webp,2,,,,,,,
+count_objects,Yummy Cake Counter,How many yummy cakes did Leo bring for dessert?,cake_table.webp,audio_q3.mp3,1,3,2,1,,cupcake.webp,3,,,,,,,
+multiple_choice,Yummy Cake Counter,Which card shows 2 yummy cupcakes?,mc_two_cakes.webp,audio_q4.mp3,1,2,1,3,,,2,,,,,,,

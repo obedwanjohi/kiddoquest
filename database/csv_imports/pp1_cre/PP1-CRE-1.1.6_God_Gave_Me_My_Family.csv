@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Gave Me My Family,Who gave us a loving family — Mommy Daddy Brothers and Sisters?,fam_q1.webp,audio_q1.mp3,1,God,A Store,Nobody,,,1,,,,,,,
+multiple_choice,God Gave Me My Family,Touch the picture that shows a loving family together!,fam_q2.webp,audio_q2.mp3,1,Family,Toy,Car,,,1,,,,,,,
+multiple_choice,God Gave Me My Family,What does Mommy do for us every day?,mom_q3.webp,audio_q3.mp3,1,Care,Fight,Sleep,,,1,,,,,,,
+multiple_choice,God Gave Me My Family,What does Daddy do to keep the family safe?,dad_q4.webp,audio_q4.mp3,1,Protect,Ignore,Hide,,,1,,,,,,,
+multiple_choice,God Gave Me My Family,How should children show love to their family?,love_q5.webp,audio_q5.mp3,1,Obey,Fight,Shout,,,1,,,,,,,
+multiple_choice,God Gave Me My Family,What do we say to God for giving us our family?,thank_q6.webp,audio_q6.mp3,1,Thank You,Be Angry,Nothing,,,1,,,,,,,
+multiple_choice,God Gave Me My Family,Who is the head of the family in God's plan?,head_q7.webp,audio_q7.mp3,1,Daddy,Dog,Teacher,,,1,,,,,,,
+multiple_choice,God Gave Me My Family,How does God want families to treat each other?,treat_q8.webp,audio_q8.mp3,1,With Love,With Anger,With Lies,,,1,,,,,,,
+speak_repeat,God Gave Me My Family,Say out loud clearly: THANK YOU GOD FOR MY FAMILY!,fam_speak.webp,audio_q9.mp3,1,Thank You God For My Family,,,,,,Thank You God For My Family,,,,,,
+speak_repeat,God Gave Me My Family,Say out loud: I LOVE MY FAMILY!,love_speak.webp,audio_q10.mp3,1,I Love My Family,,,,,,I Love My Family,,,,,,
+speak_repeat,God Gave Me My Family,Say out loud: GOD GAVE ME MY FAMILY!,gave_speak.webp,audio_q11.mp3,1,God Gave Me My Family,,,,,,God Gave Me My Family,,,,,,
+matching,God Gave Me My Family,Match family members to what they do!,,,1,,,,,,,,Mommy 👩,Care,Daddy 👨,Protect,Children 🧒,Obey
+matching,God Gave Me My Family,Match family love words!,,,1,,,,,,,,Family,Love,God,Gave Us,Home,Safe
+matching,God Gave Me My Family,Match family members to their role!,,,1,,,,,,,,Mommy 👩,Cook & Care,Daddy 👨,Work & Protect,Baby 👶,Grow & Learn

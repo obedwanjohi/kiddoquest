@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StampCraft Pro — Image Template & Multi-Item Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-panel: #1e293b;
+            --bg-card: #334155;
+            --bg-hover: #475569;
+            --border-color: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-primary: #6366f1;
+            --accent-hover: #4f46e5;
+            --accent-glow: rgba(99, 102, 241, 0.35);
+            --accent-secondary: #ec4899;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --radius-sm: 6px;
+            --shadow-panel: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-display: 'Outfit', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        /* --- HEADER NAVBAR --- */
+        .app-header {
+            height: 60px;
+            background-color: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 100;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 14px var(--accent-glow);
+        }
+
+        .brand-title {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.2rem;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--bg-hover);
+            border-color: #475569;
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary), #4f46e5);
+            border: none;
+            color: #ffffff;
+            box-shadow: 0 4px 12px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #4f46e5, #4338ca);
+            box-shadow: 0 6px 16px var(--accent-glow);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--accent-green), #059669);
+            border: none;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-success:hover {
+            background: linear-gradient(135deg, #059669, #047857);
+        }
+
+        .btn-danger {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-danger:hover {
+            background-color: rgba(239, 68, 68, 0.25);
+        }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+        }
+
+        /* --- MAIN WORKSPACE LAYOUT --- */
+        .app-body {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 340px 1fr 280px;
+            height: calc(100vh - 60px);
+            overflow: hidden;
+        }
+
+        /* --- LEFT SIDEBAR (TOOLS & STAMPS) --- */
+        .sidebar-left {
+            background-color: var(--bg-panel);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .tabs-header {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(15, 23, 42, 0.4);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 14px 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .tab-btn.active {
+            color: var(--accent-primary);
+            border-bottom-color: var(--accent-primary);
+            background-color: rgba(99, 102, 241, 0.08);
+        }
+
+        .tab-content {
+            padding: 18px;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .label {
+            display: block;
+            font-size: 0.825rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .input-text, .select-input {
+            width: 100%;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 10px 12px;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-text:focus, .select-input:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        /* --- STAMP LIBRARY GRID --- */
+        .stamp-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-height: 240px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        .stamp-item {
+            aspect-ratio: 1;
+            background-color: var(--bg-dark);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            padding: 8px;
+        }
+
+        .stamp-item:hover {
+            border-color: var(--accent-primary);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+
+        .stamp-item.selected {
+            border-color: var(--accent-primary);
+            background-color: rgba(99, 102, 241, 0.2);
+            box-shadow: 0 0 0 2px var(--accent-primary);
+        }
+
+        .stamp-item svg, .stamp-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .drop-box-zone {
+            border: 2px dashed var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            text-align: center;
+            background-color: rgba(15, 23, 42, 0.4);
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 16px;
+        }
+
+        .drop-box-zone:hover {
+            border-color: var(--accent-primary);
+            background-color: rgba(99, 102, 241, 0.05);
+        }
+
+        .drop-box-zone p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 6px;
+        }
+
+        /* --- BATCH DROP CARD --- */
+        .batch-drop-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(236, 72, 153, 0.12));
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            margin-top: 10px;
+        }
+
+        .quantity-stepper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .btn-step {
+            width: 36px;
+            height: 36px;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-step:hover {
+            background-color: var(--bg-hover);
+        }
+
+        .quantity-input {
+            flex: 1;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            font-family: var(--font-display);
+            color: var(--accent-primary);
+        }
+
+        .quick-qty-btns {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .chip-btn {
+            flex: 1;
+            padding: 6px 0;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .chip-btn:hover, .chip-btn.active {
+            background-color: var(--accent-primary);
+            color: #ffffff;
+            border-color: var(--accent-primary);
+        }
+
+        /* --- CANVAS CENTER STAGE --- */
+        .workspace-center {
+            background-color: #0b0f19;
+            background-image: 
+                radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .canvas-toolbar-floating {
+            position: absolute;
+            top: 20px;
+            background-color: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-panel);
+            z-index: 10;
+        }
+
+        .tool-icon-btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: none;
+            background: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+        }
+
+        .tool-icon-btn:hover, .tool-icon-btn.active {
+            background-color: var(--accent-primary);
+            color: #ffffff;
+        }
+
+        .divider-v {
+            width: 1px;
+            height: 20px;
+            background-color: var(--border-color);
+        }
+
+        .canvas-container-outer {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        /* --- RIGHT SIDEBAR (INSPECTOR & LAYERS) --- */
+        .sidebar-right {
+            background-color: var(--bg-panel);
+            border-left: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            padding: 18px;
+        }
+
+        .layer-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 260px;
+            overflow-y: auto;
+        }
+
+        .layer-item {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .layer-item:hover {
+            border-color: var(--accent-primary);
+            background-color: rgba(99, 102, 241, 0.05);
+        }
+
+        .layer-item.active {
+            border-color: var(--accent-primary);
+            background-color: rgba(99, 102, 241, 0.15);
+        }
+
+        .layer-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .layer-thumb {
+            width: 28px;
+            height: 28px;
+            background-color: var(--bg-card);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .layer-name {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .layer-actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .mini-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 2px 4px;
+        }
+
+        .mini-btn:hover {
+            color: var(--text-primary);
+        }
+
+        /* --- CUSTOM TEMPLATE PRESET THUMBNAILS --- */
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .template-card {
+            background-color: var(--bg-dark);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .template-card:hover, .template-card.active {
+            border-color: var(--accent-primary);
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+
+        .template-preview-box {
+            height: 50px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* --- TOAST NOTIFICATIONS --- */
+        .toast-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .toast {
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--accent-primary);
+            padding: 12px 20px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-panel);
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Modal Overlay */
+        .modal-backdrop {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
+
+        .modal-backdrop.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            width: 480px;
+            max-width: 90vw;
+            padding: 24px;
+            box-shadow: var(--shadow-panel);
+            transform: translateY(20px);
+            transition: transform 0.25s ease;
+        }
+
+        .modal-backdrop.show .modal-card {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP HEADER -->
+    <header class="app-header">
+        <div class="brand-logo">
+            <div class="brand-icon">🎨</div>
+            <div>
+                <h1 class="brand-title">StampCraft Pro</h1>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <button class="btn btn-sm" id="btn-undo" title="Undo (Ctrl+Z)">↩ Undo</button>
+            <button class="btn btn-sm" id="btn-redo" title="Redo (Ctrl+Y)">↪ Redo</button>
+            <button class="btn btn-sm btn-danger" id="btn-clear" title="Clear Canvas">🗑 Clear</button>
+            <div class="divider-v"></div>
+            <button class="btn btn-primary" id="btn-export-modal">📥 Export Canvas</button>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="app-body">
+
+        <!-- LEFT SIDEBAR: STAMPS & TEMPLATES -->
+        <aside class="sidebar-left">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="tab-stamps">🧩 Items & Stamps</button>
+                <button class="tab-btn" data-tab="tab-template">🖼 Templates</button>
+            </div>
+
+            <!-- TAB 1: STAMPS & MULTI-DROP -->
+            <div class="tab-content active" id="tab-stamps">
+                
+                <!-- 1. STAMP ITEM SELECTION -->
+                <div class="control-group">
+                    <div class="section-title">
+                        <span>1. Choose Active Item</span>
+                    </div>
+
+                    <!-- Custom Image Upload Zone -->
+                    <div class="drop-box-zone" id="stamp-upload-zone">
+                        <span style="font-size: 1.5rem;">📁</span>
+                        <p><strong>Upload Custom Image</strong><br>PNG, JPG, SVG (Transparent PNG works best)</p>
+                        <input type="file" id="stamp-file-input" accept="image/*" style="display: none;">
+                    </div>
+
+                    <!-- Preset Stamp Items -->
+                    <span class="label">Preset Item Library</span>
+                    <div class="stamp-grid" id="preset-stamp-grid">
+                        <!-- Rendered via JS -->
+                    </div>
+                </div>
+
+                <!-- 2. BATCH DROP ENGINE ("DROP 5 TIMES") -->
+                <div class="control-group">
+                    <div class="section-title">
+                        <span>2. Batch Drop Engine</span>
+                    </div>
+
+                    <div class="batch-drop-card">
+                        <span class="label">How many to drop on template?</span>
+                        
+                        <div class="quantity-stepper">
+                            <button class="btn-step" id="qty-minus">-</button>
+                            <input type="number" id="qty-input" class="input-text quantity-input" value="5" min="1" max="50">
+                            <button class="btn-step" id="qty-plus">+</button>
+                        </div>
+
+                        <div class="quick-qty-btns">
+                            <button class="chip-btn" data-qty="1">1</button>
+                            <button class="chip-btn" data-qty="3">3</button>
+                            <button class="chip-btn active" data-qty="5">5</button>
+                            <button class="chip-btn" data-qty="10">10</button>
+                        </div>
+
+                        <div style="margin-bottom: 12px;">
+                            <span class="label">Distribution Pattern</span>
+                            <select id="pattern-select" class="select-input">
+                                <option value="grid">Grid Pattern (Neat Rows & Columns)</option>
+                                <option value="circle">Circular Ring</option>
+                                <option value="horizontal">Horizontal Line</option>
+                                <option value="vertical">Vertical Column</option>
+                                <option value="scatter">Random Organic Scatter</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-bottom: 14px;">
+                            <span class="label">Item Size</span>
+                            <input type="range" id="stamp-size-slider" min="30" max="250" value="80" style="width: 100%;">
+                        </div>
+
+                        <button class="btn btn-primary" id="btn-drop-batch" style="width: 100%; justify-content: center; padding: 12px; font-weight: 700; font-size: 0.95rem;">
+                            ✨ Drop <span id="btn-drop-count-label">5</span> Items on Template
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. CLICK TO STAMP MODE -->
+                <div class="control-group">
+                    <div class="section-title">
+                        <span>3. Manual Stamp Mode</span>
+                    </div>
+                    <button class="btn" id="btn-toggle-stamp-mode" style="width: 100%; justify-content: center;">
+                        📌 Stamp Mode: OFF (Click canvas to drop)
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- TAB 2: TEMPLATE SETTINGS -->
+            <div class="tab-content" id="tab-template">
+                <div class="control-group">
+                    <div class="section-title">Canvas Preset Aspect Ratio</div>
+                    <select id="canvas-size-select" class="select-input">
+                        <option value="1080x1080">Square Card (1080 x 1080)</option>
+                        <option value="1920x1080">Landscape Presentation (1920 x 1080)</option>
+                        <option value="1240x1754">A4 Worksheet / Document (1240 x 1754)</option>
+                        <option value="800x600">Standard Grid (800 x 600)</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <div class="section-title">Background Template</div>
+                    <div class="template-grid">
+                        <div class="template-card active" data-bg="solid" data-color="#ffffff">
+                            <div class="template-preview-box" style="background-color: #ffffff; color: #333;">White</div>
+                            <span style="font-size: 0.8rem; font-weight: 600;">Clean White</span>
+                        </div>
+                        <div class="template-card" data-bg="grid">
+                            <div class="template-preview-box" style="background-color: #f8fafc; color: #64748b; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 10px 10px;">Grid</div>
+                            <span style="font-size: 0.8rem; font-weight: 600;">Worksheet Grid</span>
+                        </div>
+                        <div class="template-card" data-bg="gradient-1">
+                            <div class="template-preview-box" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); color: #1e293b;">Sky Blue</div>
+                            <span style="font-size: 0.8rem; font-weight: 600;">Soft Sky</span>
+                        </div>
+                        <div class="template-card" data-bg="gradient-2">
+                            <div class="template-preview-box" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%); color: #1e293b;">Peach</div>
+                            <span style="font-size: 0.8rem; font-weight: 600;">Peach Sunset</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="section-title">Custom Background Image</div>
+                    <div class="drop-box-zone" id="bg-upload-zone">
+                        <span style="font-size: 1.5rem;">🖼</span>
+                        <p><strong>Upload Background Image</strong><br>Worksheet background or card frame</p>
+                        <input type="file" id="bg-file-input" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="section-title">Background Color</div>
+                    <input type="color" id="bg-color-picker" value="#ffffff" style="width: 100%; height: 40px; border: none; border-radius: var(--radius-md); cursor: pointer;">
+                </div>
+            </div>
+        </aside>
+
+        <!-- CENTER WORKSPACE -->
+        <section class="workspace-center">
+            
+            <!-- Floating Toolbar -->
+            <div class="canvas-toolbar-floating">
+                <button class="tool-icon-btn active" id="tool-select" title="Select / Move Tool">🖱</button>
+                <button class="tool-icon-btn" id="tool-text" title="Add Text Header">🔤</button>
+                <div class="divider-v"></div>
+                <button class="tool-icon-btn" id="tool-align-center" title="Align Horizontally Center">↔</button>
+                <button class="tool-icon-btn" id="tool-distribute" title="Distribute Spacing Evenly">⫯</button>
+                <div class="divider-v"></div>
+                <button class="tool-icon-btn" id="tool-duplicate" title="Duplicate Selected">📋</button>
+                <button class="tool-icon-btn" id="tool-delete" title="Delete Selected">🗑</button>
+            </div>
+
+            <!-- Canvas Container -->
+            <div class="canvas-container-outer" id="canvas-wrapper">
+                <canvas id="main-canvas"></canvas>
+            </div>
+        </section>
+
+        <!-- RIGHT SIDEBAR: INSPECTOR & LAYERS -->
+        <aside class="sidebar-right">
+            
+            <!-- Item Inspector -->
+            <div class="control-group">
+                <div class="section-title">Item Properties</div>
+                <div id="inspector-empty" style="text-align: center; color: var(--text-muted); padding: 20px 0; font-size: 0.85rem;">
+                    Select an item on the template to adjust properties.
+                </div>
+
+                <div id="inspector-controls" style="display: none;">
+                    <div style="margin-bottom: 10px;">
+                        <span class="label">Item Label / Name</span>
+                        <input type="text" id="prop-item-name" class="input-text" placeholder="e.g. Red Ball">
+                    </div>
+
+                    <div class="grid-2" style="margin-bottom: 10px;">
+                        <div>
+                            <span class="label">Scale</span>
+                            <input type="range" id="prop-scale" min="0.2" max="3" step="0.1" value="1" style="width: 100%;">
+                        </div>
+                        <div>
+                            <span class="label">Rotation</span>
+                            <input type="range" id="prop-rotation" min="0" max="360" value="0" style="width: 100%;">
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="margin-bottom: 10px;">
+                        <div>
+                            <span class="label">Opacity</span>
+                            <input type="range" id="prop-opacity" min="0.1" max="1" step="0.05" value="1" style="width: 100%;">
+                        </div>
+                        <div>
+                            <span class="label">Flip</span>
+                            <button class="btn btn-sm" id="btn-flip-h" style="width: 100%; justify-center;">⇄ Flip H</button>
+                        </div>
+                    </div>
+
+                    <!-- Text Specific Controls -->
+                    <div id="text-specific-controls" style="display: none; margin-top: 10px;">
+                        <span class="label">Text Content</span>
+                        <input type="text" id="prop-text-val" class="input-text" style="margin-bottom: 8px;">
+                        
+                        <span class="label">Text Color</span>
+                        <input type="color" id="prop-text-color" value="#1e293b" style="width: 100%; height: 36px; border: none; border-radius: 6px; margin-bottom: 8px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layer Manager -->
+            <div class="control-group" style="flex: 1; display: flex; flex-direction: column;">
+                <div class="section-title">
+                    <span>Layers (<span id="layer-count">0</span>)</span>
+                    <div>
+                        <button class="mini-btn" id="btn-layer-up" title="Bring Forward">▲</button>
+                        <button class="mini-btn" id="btn-layer-down" title="Send Backward">▼</button>
+                    </div>
+                </div>
+
+                <div class="layer-list" id="layer-list-container">
+                    <!-- Dynamic Layer items -->
+                </div>
+            </div>
+
+        </aside>
+    </main>
+
+    <!-- EXPORT MODAL -->
+    <div class="modal-backdrop" id="export-modal">
+        <div class="modal-card" style="width: 540px;">
+            <div class="modal-header">
+                <h3 class="modal-title">Export Final Image</h3>
+                <button class="mini-btn" id="btn-close-modal" style="font-size: 1.5rem;">✕</button>
+            </div>
+
+            <!-- Live Image Export Preview Box -->
+            <div style="background-color: var(--bg-dark); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px; margin-bottom: 16px; text-align: center;">
+                <span class="label" style="margin-bottom: 8px;">Export Preview</span>
+                <div style="max-height: 200px; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: #0b0f19; border-radius: 8px; padding: 8px;">
+                    <img id="export-preview-img" style="max-height: 180px; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);" alt="Export Preview">
+                </div>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+                <span class="label">Custom File Name</span>
+                <input type="text" id="export-filename" class="input-text" value="my_stamp_image" placeholder="Enter image file name">
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 16px;">
+                <div>
+                    <span class="label">Export Format</span>
+                    <select id="export-format" class="select-input">
+                        <option value="png">PNG Image (.png)</option>
+                        <option value="jpeg">JPEG Image (.jpg)</option>
+                    </select>
+                </div>
+                <div>
+                    <span class="label">Resolution Quality</span>
+                    <select id="export-scale" class="select-input">
+                        <option value="1">Standard (1x)</option>
+                        <option value="2" selected>High Definition (2x HD)</option>
+                        <option value="3">Ultra HD / Print (3x)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px;">
+                <button class="btn" id="btn-open-tab" style="justify-content: center;">🔗 Open in New Tab</button>
+                <button class="btn" id="btn-copy-clipboard" style="justify-content: center;">📋 Copy Image</button>
+            </div>
+            
+            <button class="btn btn-success" id="btn-download-final" style="width: 100%; justify-content: center; margin-top: 10px; padding: 12px; font-weight: 700; font-size: 0.95rem;">
+                ⬇ Download Image File Now
+            </button>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- APPLICATION LOGIC SCRIPT -->
+    <script>
+        // --- 1. VECTOR PRESET ITEMS DATA (SVG INLINE STRINGS) ---
+        const PRESET_STAMPS = [
+            {
+                id: 'ball_soccer',
+                name: 'Soccer Ball',
+                svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#1e293b" stroke-width="4"/>
+                    <polygon points="50,26 62,35 57,49 43,49 38,35" fill="#1e293b"/>
+                    <polygon points="50,26 50,4 32,12 38,35" fill="none" stroke="#1e293b" stroke-width="3"/>
+                    <polygon points="62,35 84,28 88,48 57,49" fill="none" stroke="#1e293b" stroke-width="3"/>
+                    <polygon points="57,49 70,72 50,86 43,49" fill="none" stroke="#1e293b" stroke-width="3"/>
+                    <polygon points="43,49 30,72 16,50 38,35" fill="none" stroke="#1e293b" stroke-width="3"/>
+                </svg>`
+            },
+            {
+                id: 'ball_basketball',
+                name: 'Basketball',
+                svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="#f97316" stroke="#431407" stroke-width="4"/>
+                    <path d="M 4 50 L 96 50" stroke="#431407" stroke-width="4" fill="none"/>
+                    <path d="M 50 4 L 50 96" stroke="#431407" stroke-width="4" fill="none"/>
+                    <path d="M 20 8 A 45 45 0 0 1 20 92" stroke="#431407" stroke-width="4" fill="none"/>
+                    <path d="M 80 8 A 45 45 0 0 0 80 92" stroke="#431407" stroke-width="4" fill="none"/>
+                </svg>`
+            },
+            {
+                id: 'ball_tennis',
+                name: 'Tennis Ball',
+                svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="#84cc16" stroke="#3f6212" stroke-width="3"/>
+                    <path d="M 15 20 A 40 40 0 0 1 80 85" stroke="#ffffff" stroke-width="6" fill="none"/>
+                    <path d="M 85 20 A 40 40 0 0 0 20 85" stroke="#ffffff" stroke-width="6" fill="none"/>
+                </svg>`
+            },
+            {
+                id: 'ball_beach',
+                name: 'Beach Ball',
+                svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#1e293b" stroke-width="3"/>
+                    <path d="M 50 4 A 46 46 0 0 0 10 70 L 50 50 Z" fill="#ef4444"/>
+                    <path d="M 10 70 A 46 46 0 0 0 50 96 L 50 50 Z" fill="#3b82f6"/>
+                    <path d="M 50 96 A 46 46 0 0 0 90 70 L 50 50 Z" fill="#eab308"/>
+                    <path d="M 90 70 A 46 46 0 0 0 90 30 L 50 50 Z" fill="#10b981"/>
+                    <ellipse cx="50" cy="50" rx="8" ry="8" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+                </svg>`
+            },
+            {
+                id: 'star_gold',
+                name: 'Gold Star',
+                svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="50,5 64,36 98,38 72,61 80,95 50,76 20,95 28,61 2,38 36,36" fill="#f59e0b" stroke="#b45309" stroke-width="3"/>
+                </svg>`
+            },
+            {
+                id: 'apple_red',
+                name: 'Red Apple',
+                svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 50 25 C 30 10 10 30 15 60 C 20 85 45 95 50 85 C 55 95 80 85 85 60 C 90 30 70 10 50 25 Z" fill="#ef4444" stroke="#991b1b" stroke-width="3"/>
+                    <path d="M 50 25 C 52 15 58 8 62 4" stroke="#78350f" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <path d="M 54 18 C 65 15 75 22 72 28 C 62 30 55 24 54 18 Z" fill="#22c55e"/>
+                </svg>`
+            },
+            {
+                id: 'car_toy',
+                name: 'Toy Car',
+                svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 15 55 L 25 35 Q 35 25 50 25 L 70 25 Q 85 30 88 55 Z" fill="#3b82f6" stroke="#1d4ed8" stroke-width="3"/>
+                    <rect x="10" y="52" width="82" height="22" rx="6" fill="#2563eb" stroke="#1d4ed8" stroke-width="3"/>
+                    <circle cx="30" cy="74" r="12" fill="#1e293b" stroke="#94a3b8" stroke-width="4"/>
+                    <circle cx="72" cy="74" r="12" fill="#1e293b" stroke="#94a3b8" stroke-width="4"/>
+                </svg>`
+            },
+            {
+                id: 'coin_gold',
+                name: 'Gold Coin',
+                svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="44" fill="#eab308" stroke="#ca8a04" stroke-width="4"/>
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="#fef08a" stroke-width="3"/>
+                    <text x="50" y="62" font-size="36" font-weight="bold" fill="#854d0e" text-anchor="middle" font-family="sans-serif">$</text>
+                </svg>`
+            }
+        ];
+
+        // --- 2. GLOBAL APP STATE ---
+        let canvas;
+        let selectedStampSvg = PRESET_STAMPS[0].svg;
+        let selectedStampName = PRESET_STAMPS[0].name;
+        let selectedStampImgSrc = null;
+        let isStampMode = false;
+        let undoStack = [];
+        let redoStack = [];
+
+        // --- 3. INIT APPLICATION ---
+        window.addEventListener('DOMContentLoaded', () => {
+            initFabricCanvas();
+            renderPresetGrid();
+            setupEventListeners();
+            saveCanvasState();
+            showToast('StampCraft Pro Ready! Pick an item and drop 5 times.');
+        });
+
+        // Initialize Fabric Canvas
+        function initFabricCanvas() {
+            if (typeof fabric === 'undefined') {
+                showToast('Fabric.js library loading... Please check internet connection if items fail to render.', 5000);
+                return;
+            }
+
+            canvas = new fabric.Canvas('main-canvas', {
+                width: 1080,
+                height: 1080,
+                backgroundColor: '#ffffff',
+                preserveObjectStacking: true
+            });
+
+            resizeCanvasToWrapper();
+
+            // Event Listeners for Fabric Canvas
+            canvas.on('object:added', () => { updateLayerList(); updateInspector(); saveCanvasState(); });
+            canvas.on('object:removed', () => { updateLayerList(); updateInspector(); saveCanvasState(); });
+            canvas.on('object:modified', () => { updateLayerList(); updateInspector(); saveCanvasState(); });
+            canvas.on('selection:created', () => updateInspector());
+            canvas.on('selection:updated', () => updateInspector());
+            canvas.on('selection:cleared', () => updateInspector());
+
+            // Click-to-stamp handler
+            canvas.on('mouse:down', (opt) => {
+                if (isStampMode && (selectedStampSvg || selectedStampImgSrc)) {
+                    const pointer = canvas.getPointer(opt.e);
+                    dropSingleItem(pointer.x, pointer.y);
+                }
+            });
+        }
+
+        // Render Preset Items Grid
+        function renderPresetGrid() {
+            const container = document.getElementById('preset-stamp-grid');
+            container.innerHTML = '';
+
+            PRESET_STAMPS.forEach((item, index) => {
+                const el = document.createElement('div');
+                el.className = `stamp-item ${index === 0 ? 'selected' : ''}`;
+                el.title = item.name;
+                el.innerHTML = item.svg;
+
+                el.addEventListener('click', () => {
+                    document.querySelectorAll('.stamp-item').forEach(i => i.classList.remove('selected'));
+                    el.classList.add('selected');
+                    selectedStampSvg = item.svg;
+                    selectedStampName = item.name;
+                    selectedStampImgSrc = null;
+                    showToast(`Selected item: ${item.name}`);
+                });
+
+                container.appendChild(el);
+            });
+        }
+
+        // Setup All UI Event Handlers
+        function setupEventListeners() {
+            // Tabs switching
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.getElementById(btn.dataset.tab).classList.add('active');
+                });
+            });
+
+            // Quantity buttons
+            const qtyInput = document.getElementById('qty-input');
+            const dropCountLabel = document.getElementById('btn-drop-count-label');
+
+            const updateQty = (val) => {
+                val = Math.max(1, Math.min(50, val));
+                qtyInput.value = val;
+                dropCountLabel.textContent = val;
+            };
+
+            document.getElementById('qty-minus').addEventListener('click', () => updateQty(parseInt(qtyInput.value) - 1));
+            document.getElementById('qty-plus').addEventListener('click', () => updateQty(parseInt(qtyInput.value) + 1));
+            qtyInput.addEventListener('input', (e) => updateQty(parseInt(e.target.value) || 1));
+
+            document.querySelectorAll('.chip-btn').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    document.querySelectorAll('.chip-btn').forEach(c => c.classList.remove('active'));
+                    chip.classList.add('active');
+                    updateQty(parseInt(chip.dataset.qty));
+                });
+            });
+
+            // BATCH DROP BUTTON ("DROP 5 ITEMS")
+            document.getElementById('btn-drop-batch').addEventListener('click', () => {
+                const count = parseInt(qtyInput.value) || 5;
+                const pattern = document.getElementById('pattern-select').value;
+                const itemSize = parseInt(document.getElementById('stamp-size-slider').value) || 80;
+
+                executeBatchDrop(count, pattern, itemSize);
+            });
+
+            // Custom Item Upload
+            const stampUploadZone = document.getElementById('stamp-upload-zone');
+            const stampFileInput = document.getElementById('stamp-file-input');
+
+            stampUploadZone.addEventListener('click', () => stampFileInput.click());
+            stampFileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        selectedStampImgSrc = event.target.result;
+                        selectedStampSvg = null;
+                        selectedStampName = file.name;
+
+                        // 1. Update Upload Zone UI with visual image preview
+                        stampUploadZone.innerHTML = `
+                            <img src="${selectedStampImgSrc}" style="max-height: 70px; object-fit: contain; margin-bottom: 6px; border-radius: 6px;">
+                            <p><strong style="color: var(--accent-green);">✓ Loaded:</strong> ${file.name}</p>
+                            <span style="font-size: 0.75rem; color: var(--accent-primary);">Click to change image</span>
+                        `;
+
+                        // 2. Add to Stamp Grid as selected thumbnail
+                        const container = document.getElementById('preset-stamp-grid');
+                        document.querySelectorAll('.stamp-item').forEach(i => i.classList.remove('selected'));
+                        
+                        const customItem = document.createElement('div');
+                        customItem.className = 'stamp-item selected';
+                        customItem.title = file.name;
+                        customItem.innerHTML = `<img src="${selectedStampImgSrc}" style="width: 100%; height: 100%; object-fit: contain;">`;
+
+                        customItem.addEventListener('click', () => {
+                            document.querySelectorAll('.stamp-item').forEach(i => i.classList.remove('selected'));
+                            customItem.classList.add('selected');
+                            selectedStampImgSrc = event.target.result;
+                            selectedStampSvg = null;
+                            selectedStampName = file.name;
+                            showToast(`Selected custom image: ${file.name}`);
+                        });
+
+                        container.prepend(customItem);
+
+                        showToast(`Custom image loaded: ${file.name}! Click "Drop 5 Items" to place it on template.`);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Template Preset Selection
+            document.querySelectorAll('.template-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    document.querySelectorAll('.template-card').forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    const bgType = card.dataset.bg;
+                    
+                    if (bgType === 'solid') {
+                        canvas.setBackgroundImage(null, canvas.renderAll.bind(canvas));
+                        canvas.setBackgroundColor(card.dataset.color || '#ffffff', canvas.renderAll.bind(canvas));
+                    } else if (bgType === 'grid') {
+                        createGridBackground();
+                    } else if (bgType === 'gradient-1') {
+                        createGradientBackground('#a1c4fd', '#c2e9fb');
+                    } else if (bgType === 'gradient-2') {
+                        createGradientBackground('#ff9a9e', '#fecfef');
+                    }
+                });
+            });
+
+            // Canvas Dimensions Dropdown
+            document.getElementById('canvas-size-select').addEventListener('change', (e) => {
+                const [w, h] = e.target.value.split('x').map(Number);
+                canvas.setWidth(w);
+                canvas.setHeight(h);
+                resizeCanvasToWrapper();
+                showToast(`Canvas resized to ${w} x ${h}`);
+            });
+
+            // Background Color Picker
+            document.getElementById('bg-color-picker').addEventListener('input', (e) => {
+                canvas.setBackgroundImage(null, canvas.renderAll.bind(canvas));
+                canvas.setBackgroundColor(e.target.value, canvas.renderAll.bind(canvas));
+            });
+
+            // Background Image Upload
+            const bgUploadZone = document.getElementById('bg-upload-zone');
+            const bgFileInput = document.getElementById('bg-file-input');
+
+            bgUploadZone.addEventListener('click', () => bgFileInput.click());
+            bgFileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        fabric.Image.fromURL(event.target.result, (img) => {
+                            img.set({
+                                scaleX: canvas.width / img.width,
+                                scaleY: canvas.height / img.height
+                            });
+                            canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
+                            showToast('Background template loaded!');
+                        });
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Toggle Stamp Mode
+            const btnStampMode = document.getElementById('btn-toggle-stamp-mode');
+            btnStampMode.addEventListener('click', () => {
+                isStampMode = !isStampMode;
+                if (isStampMode) {
+                    btnStampMode.style.backgroundColor = 'var(--accent-primary)';
+                    btnStampMode.style.color = '#ffffff';
+                    btnStampMode.textContent = '📌 Stamp Mode: ON (Click canvas)';
+                    canvas.defaultCursor = 'crosshair';
+                } else {
+                    btnStampMode.style.backgroundColor = 'var(--bg-card)';
+                    btnStampMode.style.color = 'var(--text-primary)';
+                    btnStampMode.textContent = '📌 Stamp Mode: OFF (Click canvas to drop)';
+                    canvas.defaultCursor = 'default';
+                }
+            });
+
+            // Floating Tools
+            document.getElementById('tool-text').addEventListener('click', () => {
+                const text = new fabric.IText('Count the items!', {
+                    left: canvas.width / 2 - 100,
+                    top: 40,
+                    fontSize: 32,
+                    fontFamily: 'Outfit',
+                    fontWeight: 'bold',
+                    fill: '#1e293b'
+                });
+                canvas.add(text);
+                canvas.setActiveObject(text);
+                showToast('Text header added');
+            });
+
+            document.getElementById('tool-align-center').addEventListener('click', () => {
+                const obj = canvas.getActiveObject();
+                if (obj) {
+                    obj.viewportCenterH();
+                    canvas.renderAll();
+                }
+            });
+
+            document.getElementById('tool-distribute').addEventListener('click', distributeActiveObjects);
+
+            document.getElementById('tool-duplicate').addEventListener('click', duplicateActiveObject);
+            document.getElementById('tool-delete').addEventListener('click', deleteActiveObject);
+            document.getElementById('btn-clear').addEventListener('click', () => {
+                if (confirm('Clear all objects from canvas?')) {
+                    canvas.clear();
+                    canvas.setBackgroundColor('#ffffff', canvas.renderAll.bind(canvas));
+                    showToast('Canvas cleared');
+                }
+            });
+
+            // Undo / Redo
+            document.getElementById('btn-undo').addEventListener('click', undo);
+            document.getElementById('btn-redo').addEventListener('click', redo);
+
+            // Export Modal logic
+            const modal = document.getElementById('export-modal');
+            document.getElementById('btn-export-modal').addEventListener('click', () => {
+                updateExportPreview();
+                modal.classList.add('show');
+            });
+            document.getElementById('btn-close-modal').addEventListener('click', () => modal.classList.remove('show'));
+
+            document.getElementById('export-format').addEventListener('change', updateExportPreview);
+            document.getElementById('export-scale').addEventListener('change', updateExportPreview);
+
+            document.getElementById('btn-download-final').addEventListener('click', downloadCanvasImage);
+            document.getElementById('btn-open-tab').addEventListener('click', openExportInNewTab);
+            document.getElementById('btn-copy-clipboard').addEventListener('click', copyCanvasToClipboard);
+
+            // Inspector Property Listeners
+            setupInspectorListeners();
+        }
+
+        // --- 4. BATCH DROP LOGIC (DROP 5 ITEMS EVENLY/PATTERN) ---
+        function executeBatchDrop(count, pattern, size) {
+            const padding = 60;
+            const w = canvas.width - (padding * 2);
+            const h = canvas.height - (padding * 2);
+
+            let points = [];
+
+            if (pattern === 'grid') {
+                const cols = Math.ceil(Math.sqrt(count));
+                const rows = Math.ceil(count / cols);
+                const stepX = w / (cols > 1 ? cols - 1 : 1);
+                const stepY = h / (rows > 1 ? rows - 1 : 1);
+
+                for (let i = 0; i < count; i++) {
+                    const r = Math.floor(i / cols);
+                    const c = i % cols;
+                    const x = padding + (cols === 1 ? w / 2 : c * stepX);
+                    const y = padding + (rows === 1 ? h / 2 : r * stepY);
+                    points.push({ x, y });
+                }
+            } else if (pattern === 'circle') {
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                const radius = Math.min(w, h) / 3;
+
+                for (let i = 0; i < count; i++) {
+                    const angle = (i / count) * (Math.PI * 2);
+                    const x = centerX + Math.cos(angle) * radius;
+                    const y = centerY + Math.sin(angle) * radius;
+                    points.push({ x, y });
+                }
+            } else if (pattern === 'horizontal') {
+                const stepX = w / (count > 1 ? count - 1 : 1);
+                const y = canvas.height / 2;
+                for (let i = 0; i < count; i++) {
+                    const x = padding + (count === 1 ? w / 2 : i * stepX);
+                    points.push({ x, y });
+                }
+            } else if (pattern === 'vertical') {
+                const stepY = h / (count > 1 ? count - 1 : 1);
+                const x = canvas.width / 2;
+                for (let i = 0; i < count; i++) {
+                    const y = padding + (count === 1 ? h / 2 : i * stepY);
+                    points.push({ x, y });
+                }
+            } else if (pattern === 'scatter') {
+                for (let i = 0; i < count; i++) {
+                    const x = padding + Math.random() * w;
+                    const y = padding + Math.random() * h;
+                    points.push({ x, y });
+                }
+            }
+
+            // Load and add all items at generated coordinates
+            points.forEach((pt, idx) => {
+                setTimeout(() => {
+                    addItemToCanvas(pt.x, pt.y, size);
+                }, idx * 40); // slight stagger animation effect
+            });
+
+            showToast(`Dropped ${count} ${selectedStampName}s on template!`);
+        }
+
+        // Drop Single Item at (X, Y)
+        function dropSingleItem(x, y) {
+            const size = parseInt(document.getElementById('stamp-size-slider').value) || 80;
+            addItemToCanvas(x, y, size);
+        }
+
+        // Add Item to Fabric Canvas (SVG string or Image URL)
+        function addItemToCanvas(x, y, targetSize) {
+            if (selectedStampImgSrc) {
+                // Custom uploaded image
+                fabric.Image.fromURL(selectedStampImgSrc, (img) => {
+                    if (!img || !img.width || !img.height) {
+                        showToast('Error reading uploaded image format');
+                        return;
+                    }
+                    const maxDim = Math.max(img.width, img.height);
+                    const scale = targetSize / (maxDim || 100);
+                    img.set({
+                        left: x - (targetSize / 2),
+                        top: y - (targetSize / 2),
+                        scaleX: scale,
+                        scaleY: scale,
+                        name: selectedStampName || 'Custom Item'
+                    });
+                    canvas.add(img);
+                    img.setCoords();
+                    canvas.renderAll();
+                });
+            } else if (selectedStampSvg) {
+                // Inline Vector SVG
+                fabric.loadSVGFromString(selectedStampSvg, (objects, options) => {
+                    const group = fabric.util.groupSVGElements(objects, options);
+                    const maxDim = Math.max(group.width, group.height);
+                    const scale = targetSize / (maxDim || 100);
+                    group.set({
+                        left: x - (targetSize / 2),
+                        top: y - (targetSize / 2),
+                        scaleX: scale,
+                        scaleY: scale,
+                        name: selectedStampName || 'Item'
+                    });
+                    canvas.add(group);
+                    group.setCoords();
+                    canvas.renderAll();
+                });
+            }
+        }
+
+        // Background Generators
+        function createGridBackground() {
+            const patternCanvas = document.createElement('canvas');
+            patternCanvas.width = 40;
+            patternCanvas.height = 40;
+            const ctx = patternCanvas.getContext('2d');
+            ctx.fillStyle = '#f8fafc';
+            ctx.fillRect(0, 0, 40, 40);
+            ctx.strokeStyle = '#e2e8f0';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(0, 0, 40, 40);
+
+            const pattern = new fabric.Pattern({
+                source: patternCanvas,
+                repeat: 'repeat'
+            });
+            canvas.setBackgroundColor(pattern, canvas.renderAll.bind(canvas));
+        }
+
+        function createGradientBackground(color1, color2) {
+            const grad = new fabric.Gradient({
+                type: 'linear',
+                coords: { x1: 0, y1: 0, x2: canvas.width, y2: canvas.height },
+                colorStops: [
+                    { offset: 0, color: color1 },
+                    { offset: 1, color: color2 }
+                ]
+            });
+            canvas.setBackgroundColor(grad, canvas.renderAll.bind(canvas));
+        }
+
+        // --- 5. INSPECTOR & LAYER MANAGEMENT ---
+        function updateInspector() {
+            const activeObj = canvas.getActiveObject();
+            const emptyState = document.getElementById('inspector-empty');
+            const controlsState = document.getElementById('inspector-controls');
+            const textControls = document.getElementById('text-specific-controls');
+
+            if (!activeObj) {
+                emptyState.style.display = 'block';
+                controlsState.style.display = 'none';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+            controlsState.style.display = 'block';
+
+            document.getElementById('prop-item-name').value = activeObj.name || (activeObj.type === 'i-text' ? activeObj.text : 'Item');
+            document.getElementById('prop-scale').value = activeObj.scaleX || 1;
+            document.getElementById('prop-rotation').value = activeObj.angle || 0;
+            document.getElementById('prop-opacity').value = activeObj.opacity || 1;
+
+            if (activeObj.type === 'i-text' || activeObj.type === 'text') {
+                textControls.style.display = 'block';
+                document.getElementById('prop-text-val').value = activeObj.text;
+                document.getElementById('prop-text-color').value = activeObj.fill;
+            } else {
+                textControls.style.display = 'none';
+            }
+        }
+
+        function setupInspectorListeners() {
+            document.getElementById('prop-item-name').addEventListener('input', (e) => {
+                const obj = canvas.getActiveObject();
+                if (obj) {
+                    obj.name = e.target.value;
+                    updateLayerList();
+                }
+            });
+
+            document.getElementById('prop-scale').addEventListener('input', (e) => {
+                const obj = canvas.getActiveObject();
+                if (obj) {
+                    obj.scale(parseFloat(e.target.value));
+                    canvas.renderAll();
+                }
+            });
+
+            document.getElementById('prop-rotation').addEventListener('input', (e) => {
+                const obj = canvas.getActiveObject();
+                if (obj) {
+                    obj.rotate(parseFloat(e.target.value));
+                    canvas.renderAll();
+                }
+            });
+
+            document.getElementById('prop-opacity').addEventListener('input', (e) => {
+                const obj = canvas.getActiveObject();
+                if (obj) {
+                    obj.set('opacity', parseFloat(e.target.value));
+                    canvas.renderAll();
+                }
+            });
+
+            document.getElementById('btn-flip-h').addEventListener('click', () => {
+                const obj = canvas.getActiveObject();
+                if (obj) {
+                    obj.set('flipX', !obj.flipX);
+                    canvas.renderAll();
+                }
+            });
+
+            document.getElementById('prop-text-val').addEventListener('input', (e) => {
+                const obj = canvas.getActiveObject();
+                if (obj && (obj.type === 'i-text' || obj.type === 'text')) {
+                    const textVal = e.target.value || ' ';
+                    obj.set('text', textVal);
+                    canvas.renderAll();
+                }
+            });
+
+            document.getElementById('prop-text-color').addEventListener('input', (e) => {
+                const obj = canvas.getActiveObject();
+                if (obj && (obj.type === 'i-text' || obj.type === 'text')) {
+                    obj.set('fill', e.target.value);
+                    canvas.renderAll();
+                }
+            });
+        }
+
+        function updateLayerList() {
+            const container = document.getElementById('layer-list-container');
+            const objects = canvas.getObjects();
+            document.getElementById('layer-count').textContent = objects.length;
+
+            container.innerHTML = '';
+
+            // Render in reverse so top layer is top of list
+            [...objects].reverse().forEach((obj, revIdx) => {
+                const actualIdx = objects.length - 1 - revIdx;
+                const activeObj = canvas.getActiveObject();
+                const isSelected = activeObj === obj;
+
+                const item = document.createElement('div');
+                item.className = `layer-item ${isSelected ? 'active' : ''}`;
+                
+                const name = obj.name || (obj.type === 'i-text' ? `Text: "${obj.text.substring(0, 10)}..."` : `Item #${actualIdx + 1}`);
+
+                item.innerHTML = `
+                    <div class="layer-info">
+                        <div class="layer-thumb">📍</div>
+                        <span class="layer-name">${name}</span>
+                    </div>
+                    <div class="layer-actions">
+                        <button class="mini-btn btn-del-layer" title="Delete">🗑</button>
+                    </div>
+                `;
+
+                item.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('btn-del-layer')) {
+                        canvas.setActiveObject(obj);
+                        canvas.renderAll();
+                    }
+                });
+
+                item.querySelector('.btn-del-layer').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    canvas.remove(obj);
+                    canvas.renderAll();
+                });
+
+                container.appendChild(item);
+            });
+        }
+
+        // Layer Action Helper Functions
+        function duplicateActiveObject() {
+            const obj = canvas.getActiveObject();
+            if (obj) {
+                obj.clone((cloned) => {
+                    cloned.set({
+                        left: obj.left + 20,
+                        top: obj.top + 20
+                    });
+                    canvas.add(cloned);
+                    canvas.setActiveObject(cloned);
+                    showToast('Item duplicated');
+                });
+            }
+        }
+
+        function deleteActiveObject() {
+            const active = canvas.getActiveObjects();
+            if (active.length > 0) {
+                active.forEach(obj => canvas.remove(obj));
+                canvas.discardActiveObject();
+                canvas.renderAll();
+                showToast('Deleted selected item(s)');
+            }
+        }
+
+        function distributeActiveObjects() {
+            const objects = canvas.getObjects();
+            if (objects.length < 3) {
+                showToast('Need at least 3 items to distribute spacing');
+                return;
+            }
+            // Sort by left coordinate
+            const sorted = [...objects].sort((a, b) => a.left - b.left);
+            const first = sorted[0];
+            const last = sorted[sorted.length - 1];
+            const totalDistance = last.left - first.left;
+            const step = totalDistance / (sorted.length - 1);
+
+            sorted.forEach((obj, idx) => {
+                obj.set('left', first.left + (idx * step));
+            });
+            canvas.renderAll();
+            showToast('Distributed horizontally!');
+        }
+
+        // --- 6. UNDO / REDO ENGINE ---
+        function saveCanvasState() {
+            if (undoStack.length > 30) undoStack.shift();
+            undoStack.push(JSON.stringify(canvas));
+            redoStack = [];
+        }
+
+        function undo() {
+            if (undoStack.length > 1) {
+                redoStack.push(undoStack.pop());
+                const state = undoStack[undoStack.length - 1];
+                canvas.loadFromJSON(state, () => {
+                    canvas.renderAll();
+                    updateLayerList();
+                    showToast('Undo performed');
+                });
+            }
+        }
+
+        function redo() {
+            if (redoStack.length > 0) {
+                const state = redoStack.pop();
+                undoStack.push(state);
+                canvas.loadFromJSON(state, () => {
+                    canvas.renderAll();
+                    updateLayerList();
+                    showToast('Redo performed');
+                });
+            }
+        }
+
+        // --- 7. EXPORT LOGIC ---
+        function generateExportDataURL() {
+            try {
+                const format = document.getElementById('export-format').value || 'png';
+                const targetMultiplier = parseFloat(document.getElementById('export-scale').value) || 2;
+                
+                // Temporarily reset zoom to 1 to guarantee 100% accurate, un-cropped high-res rendering
+                const savedZoom = canvas.getZoom();
+                canvas.setZoom(1);
+                canvas.setDimensions({ width: canvas.width, height: canvas.height });
+
+                const dataURL = canvas.toDataURL({
+                    format: format === 'jpeg' ? 'jpeg' : 'png',
+                    multiplier: targetMultiplier,
+                    quality: 0.95
+                });
+
+                // Restore responsive screen viewport zoom
+                resizeCanvasToWrapper();
+
+                return dataURL;
+            } catch (err) {
+                console.error('Fabric export error:', err);
+                // Fallback directly to native HTML5 canvas element
+                const rawCanvas = canvas.lowerCanvasEl || canvas.getElement();
+                return rawCanvas.toDataURL('image/png');
+            }
+        }
+
+        function updateExportPreview() {
+            try {
+                const dataURL = generateExportDataURL();
+                const previewImg = document.getElementById('export-preview-img');
+                if (previewImg) {
+                    previewImg.src = dataURL;
+                }
+            } catch (err) {
+                console.error('Preview update error:', err);
+            }
+        }
+
+        function downloadCanvasImage() {
+            try {
+                const format = document.getElementById('export-format').value || 'png';
+                const ext = format === 'jpeg' ? 'jpg' : 'png';
+                const rawFilename = document.getElementById('export-filename').value.trim() || 'stampcraft_export';
+                const cleanFilename = rawFilename.replace(/[/\\?%*:|"<>]/g, '_');
+                
+                const dataURL = generateExportDataURL();
+                if (!dataURL) throw new Error('DataURL generation failed');
+
+                const link = document.createElement('a');
+                link.download = `${cleanFilename}.${ext}`;
+                link.href = dataURL;
+                document.body.appendChild(link);
+                link.click();
+
+                setTimeout(() => {
+                    if (document.body.contains(link)) document.body.removeChild(link);
+                }, 1000);
+
+                document.getElementById('export-modal').classList.remove('show');
+                showToast(`Image downloaded as "${cleanFilename}.${ext}"! Check Downloads folder.`);
+            } catch (err) {
+                console.error('Download error:', err);
+                showToast('Automatic download failed. Opening image in new tab...');
+                openExportInNewTab();
+            }
+        }
+
+        function openExportInNewTab() {
+            try {
+                const dataURL = generateExportDataURL();
+                const win = window.open('');
+                if (win) {
+                    win.document.write(`<html><head><title>StampCraft Export Preview</title></head><body style="margin:0; background:#0b0f19; display:flex; align-items:center; justify-content:center; height:100vh;"><img src="${dataURL}" style="max-width:95%; max-height:95%; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,0.8);"></body></html>`);
+                    showToast('Opened image in new window! Right-click image -> Save Image As');
+                } else {
+                    showToast('Popup window blocked. Please allow popups or use Copy Image.');
+                }
+            } catch (err) {
+                showToast('Could not open preview window.');
+            }
+        }
+
+        function copyCanvasToClipboard() {
+            try {
+                const dataURL = generateExportDataURL();
+                fetch(dataURL)
+                    .then(res => res.blob())
+                    .then(blob => {
+                        navigator.clipboard.write([
+                            new ClipboardItem({ [blob.type]: blob })
+                        ]).then(() => {
+                            document.getElementById('export-modal').classList.remove('show');
+                            showToast('Image copied to clipboard!');
+                        }).catch(err => {
+                            showToast('Clipboard copy failed. Downloading file instead...');
+                            downloadCanvasImage();
+                        });
+                    });
+            } catch (err) {
+                downloadCanvasImage();
+            }
+        }
+
+        // Resize Canvas Viewport proportionally
+        function resizeCanvasToWrapper() {
+            const wrapper = document.getElementById('canvas-wrapper');
+            const maxW = wrapper.parentElement.clientWidth - 80;
+            const maxH = wrapper.parentElement.clientHeight - 120;
+
+            const scale = Math.min(maxW / canvas.width, maxH / canvas.height, 1);
+            
+            canvas.setZoom(scale);
+            canvas.setDimensions({
+                width: canvas.width * scale,
+                height: canvas.height * scale
+            });
+        }
+
+        window.addEventListener('resize', resizeCanvasToWrapper);
+
+        // Toast Notification Helper
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `<span>✨</span><span>${message}</span>`;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(100%)';
+                toast.style.transition = 'all 0.3s';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

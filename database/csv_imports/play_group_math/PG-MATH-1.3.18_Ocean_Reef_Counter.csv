@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Ocean Reef Counter,How many orange clownfish are swimming in the reef?,reef_clownfish.webp,audio_q1.mp3,1,5,4,3,,fish.webp,5,,,,,,,
+count_objects,Ocean Reef Counter,Count the friendly sea turtles swimming past the coral!,reef_turtles.webp,audio_q2.mp3,1,4,5,3,,turtle.webp,4,,,,,,,
+count_objects,Ocean Reef Counter,How many starfish did Leo spot on the ocean floor?,reef_starfish.webp,audio_q3.mp3,1,3,4,5,,starfish.webp,3,,,,,,,
+multiple_choice,Ocean Reef Counter,Which card shows 5 swimming clownfish?,mc_five_fish.webp,audio_q4.mp3,1,5,4,3,,,5,,,,,,,

@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Made Plants Trees and Flowers,Who created green trees and beautiful flowers?,plant_q1.webp,audio_q1.mp3,1,God,A Toy Maker,Nobody,,,1,,,,,,,
+multiple_choice,God Made Plants Trees and Flowers,Touch the tall tree that God made to give us shade!,tree_q2.webp,audio_q2.mp3,1,Tree,Car,Shoe,,,1,,,,,,,
+multiple_choice,God Made Plants Trees and Flowers,Which beautiful thing does God make grow from seeds?,seed_q3.webp,audio_q3.mp3,1,Flower,Stone,Chair,,,1,,,,,,,
+multiple_choice,God Made Plants Trees and Flowers,What do plants need from God to grow tall and strong?,grow_q4.webp,audio_q4.mp3,1,Water,Sand,Toys,,,1,,,,,,,
+multiple_choice,God Made Plants Trees and Flowers,Touch the green leaf from a tree God made!,leaf_q5.webp,audio_q5.mp3,1,Leaf,Ball,Book,,,1,,,,,,,
+multiple_choice,God Made Plants Trees and Flowers,What colour are most leaves that God made on trees?,col_q6.webp,audio_q6.mp3,1,Green,Blue,Red,,,1,,,,,,,
+multiple_choice,God Made Plants Trees and Flowers,Which fruit grows on a tree that God planted?,fruit_q7.webp,audio_q7.mp3,1,Apple,Rock,Pencil,,,1,,,,,,,
+multiple_choice,God Made Plants Trees and Flowers,God made grass grow under our feet. What colour is grass?,grass_q8.webp,audio_q8.mp3,1,Green,Yellow,Black,,,1,,,,,,,
+speak_repeat,God Made Plants Trees and Flowers,Say out loud clearly: THANK YOU GOD FOR FLOWERS!,flow_speak.webp,audio_q9.mp3,1,Thank You God For Flowers,,,,,,Thank You God For Flowers,,,,,,
+speak_repeat,God Made Plants Trees and Flowers,Say out loud: GOD MADE TREES AND PLANTS!,tree_speak.webp,audio_q10.mp3,1,God Made Trees And Plants,,,,,,God Made Trees And Plants,,,,,,
+speak_repeat,God Made Plants Trees and Flowers,Say out loud: FLOWERS ARE BEAUTIFUL!,beau_speak.webp,audio_q11.mp3,1,Flowers Are Beautiful,,,,,,Flowers Are Beautiful,,,,,,
+matching,God Made Plants Trees and Flowers,Match nature creations to what they give us!,,,1,,,,,,,,Trees 🌳,Shade,Flowers 🌺,Beauty,Grass 🌿,Green
+matching,God Made Plants Trees and Flowers,Match plants to their colours!,,,1,,,,,,,,Leaf 🍃,Green,Rose 🌹,Red,Sun 🌻,Yellow
+matching,God Made Plants Trees and Flowers,Match what grows where!,,,1,,,,,,,,Tree 🌳,Ground,Flower 🌺,Garden,Fruit 🍎,Tree

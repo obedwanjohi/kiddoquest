@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Safari Animal Creation Praise 45,Which safari animal praises God with a mighty roar?,lion_q1.webp,audio_q1.mp3,1,🦁,Mouse,Ant,,,1,,,,,,,
+speak_repeat,Safari Animal Creation Praise 45,Say out loud: ALL CREATION PRAISES GOD!,praise_speak.webp,audio_q2.mp3,1,All Creation Praises God,,,,,,All Creation Praises God,,,,,,
+matching,Safari Animal Creation Praise 45,Match safari praise!,,,1,,,,,,Lion 🦁,Mighty Roar,Elephant 🐘,Trumpet Sound,Birds 🐦,Sweet Songs,,

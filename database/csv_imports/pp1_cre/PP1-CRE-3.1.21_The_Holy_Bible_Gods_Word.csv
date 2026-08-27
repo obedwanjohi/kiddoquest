@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,The Holy Bible Gods Word,Which holy book contains God's words and promises?,bible_q1.webp,audio_q1.mp3,1,The Bible,Storybook,Magazine,,,1,,,,,,,
+multiple_choice,The Holy Bible Gods Word,Who wrote the words in the Holy Bible?,wrote_q2.webp,audio_q2.mp3,1,God Inspired,People Made Up,Nobody,,,1,,,,,,,
+multiple_choice,The Holy Bible Gods Word,The Bible says God's word is a lamp to our what?,lamp_q3.webp,audio_q3.mp3,1,Feet,Head,House,,,1,,,,,,,
+multiple_choice,The Holy Bible Gods Word,The Bible has two main parts. Name one!,parts_q4.webp,audio_q4.mp3,1,Old Testament,Chapter One,First Book,,,1,,,,,,,
+multiple_choice,The Holy Bible Gods Word,Touch the Holy Bible — the most important book ever!,touch_q5.webp,audio_q5.mp3,1,Bible,Comic Book,Recipe Book,,,1,,,,,,,
+multiple_choice,The Holy Bible Gods Word,What should we do with the words in the Bible?,do_q6.webp,audio_q6.mp3,1,Read & Obey,Ignore,Throw Away,,,1,,,,,,,
+multiple_choice,The Holy Bible Gods Word,The Bible tells us about God's love and His what else?,love_q7.webp,audio_q7.mp3,1,Promises,Jokes,Recipes,,,1,,,,,,,
+multiple_choice,The Holy Bible Gods Word,Where can we hear Bible stories read to us?,hear_q8.webp,audio_q8.mp3,1,Church & Home,Market,Playground,,,1,,,,,,,
+speak_repeat,The Holy Bible Gods Word,Say out loud clearly: THE BIBLE IS GODS WORD!,bible_speak.webp,audio_q9.mp3,1,The Bible Is Gods Word,,,,,,The Bible Is Gods Word,,,,,,
+speak_repeat,The Holy Bible Gods Word,Say out loud: I LOVE READING THE BIBLE!,read_speak.webp,audio_q10.mp3,1,I Love Reading The Bible,,,,,,I Love Reading The Bible,,,,,,
+speak_repeat,The Holy Bible Gods Word,Say out loud: THE BIBLE GUIDES MY LIFE!,guide_speak.webp,audio_q11.mp3,1,The Bible Guides My Life,,,,,,The Bible Guides My Life,,,,,,
+matching,The Holy Bible Gods Word,Match Bible facts!,,,1,,,,,,,,Holy Bible 📖,Gods Word,Light 💡,To Our Feet,Promises 💖,Are True
+matching,The Holy Bible Gods Word,Match the two parts of the Bible!,,,1,,,,,,,,Old Testament,Before Jesus,New Testament,Life of Jesus,Both,Gods Word
+matching,The Holy Bible Gods Word,Match what we do with the Bible!,,,1,,,,,,,,Read It,Every Day,Obey It,In Our Hearts,Share It,With Others

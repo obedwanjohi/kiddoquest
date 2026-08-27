@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pirate Treasure Fraction Map 83,Which pirate treasure chest is 1/2 full of gold?,chest_q1.webp,audio_q1.mp3,1,🪙,Quarter Full (1/4),Empty,,,1,,,,,,,
+speak_repeat,Pirate Treasure Fraction Map 83,Say out loud: ONE HALF TREASURE CHEST!,chest_speak.webp,audio_q2.mp3,1,One Half Treasure Chest,,,,,,One Half Treasure Chest,,,,,,
+matching,Pirate Treasure Fraction Map 83,Match pirate fractions!,,,1,,,,,,Half 🪙,1/2 Full,Quarter 🪙,1/4 Full,Whole 🪙,Full Chest,,

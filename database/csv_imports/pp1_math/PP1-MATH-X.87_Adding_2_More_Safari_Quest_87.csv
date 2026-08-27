@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Adding 2 More Safari Quest 87,5 Lions + 2 Lions = ?,lion_q1.webp,audio_q1.mp3,1,7,6,8,,,1,,,,,,,
+speak_repeat,Adding 2 More Safari Quest 87,Say out loud: FIVE PLUS TWO IS SEVEN!,lion_speak.webp,audio_q2.mp3,1,Five Plus Two Is Seven,,,,,,Five Plus Two Is Seven,,,,,,
+matching,Adding 2 More Safari Quest 87,Match 2 addition!,,,1,,,,,,5 + 2,7,6,8,7,9,,

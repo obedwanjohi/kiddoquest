@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Zero Hero Empty Nest Concept,Which dino nest has ZERO eggs?,empty_nest.webp,audio_q1.mp3,1,🪹,3,5,,,0,,,,,,,
+speak_repeat,Zero Hero Empty Nest Concept,Say out loud clearly: ZERO MEANS NOTHING!,zero_speak.webp,audio_q2.mp3,1,Zero Means Nothing,,,,,,Zero Means Nothing,,,,,,
+matching,Zero Hero Empty Nest Concept,Match zero to empty containers!,,,1,,,,,,ops,0,🪹,0,📦,0,🫗,

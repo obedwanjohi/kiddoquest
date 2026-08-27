@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Clock Hours Show 124,What time is shown when the long hand is on 12 and short hand on 4?,clk4_q1.webp,audio_q1.mp3,1,4,12,8,,,1,,,,,,,
+speak_repeat,Circus Clock Hours Show 124,Say out loud: CIRCUS ACCORDION SHOW AT FOUR OCLOCK!,clk_speak.webp,audio_q2.mp3,1,Circus Accordion Show At Four OClock,,,,,,Circus Accordion Show At Four OClock,,,,,,
+matching,Circus Clock Hours Show 124,Match circus time!,,,1,,,,,,4 OClock 🕓,4:00,5,5:00,6,6:00,,

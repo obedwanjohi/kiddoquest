@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Humpty Dumpty,Where did Humpty Dumpty sit in the song?,humpty_wall.webp,audio_q1.mp3,1,On A Wall,In A Car,On A Tree,,,1,,,,,,,
+multiple_choice,Humpty Dumpty,What happened to Humpty Dumpty when he fell?,humpty_fall.webp,audio_q2.mp3,1,Great Fall,Flew Away,Slept,,,1,,,,,,,
+multiple_choice,Humpty Dumpty,Who came to help Humpty Dumpty?,humpty_horses.webp,audio_q3.mp3,1,King's Horses,Friendly Dog,Little Cat,,,1,,,,,,,
+speak_repeat,Humpty Dumpty,Say out loud clearly: HUMPTY DUMPTY SAT ON A WALL!,speak_humpty_wall.webp,audio_q4.mp3,1,Humpty Dumpty Sat On A Wall,,,,,,Humpty Dumpty Sat On A Wall,,,,,,
+speak_repeat,Humpty Dumpty,Say out loud: HUMPTY DUMPTY HAD A GREAT FALL!,speak_humpty_fall.webp,audio_q5.mp3,1,Humpty Dumpty Had A Great Fall,,,,,,Humpty Dumpty Had A Great Fall,,,,,,
+matching,Humpty Dumpty,Match Humpty Dumpty story lines!,,,1,,,,,,,,Humpty Dumpty,Sat On A Wall,Humpty Dumpty,Had A Great Fall,King's Horses,King's Men
+matching,Humpty Dumpty,Match Humpty story items!,,,1,,,,,,,,Humpty,Humpty,Wall,Wall,Horse,Horse

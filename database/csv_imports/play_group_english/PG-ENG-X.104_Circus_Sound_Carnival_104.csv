@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Sound Carnival,Which word rhymes with CAT at the carnival?,carnival_cat_rhyme.webp,audio_q1.mp3,1,Hat,Dog,Sun,,,1,,,,,,,
+multiple_choice,Circus Sound Carnival,Which word rhymes with DOG at the carnival?,carnival_dog_rhyme.webp,audio_q2.mp3,1,Frog,Cat,Star,,,1,,,,,,,
+multiple_choice,Circus Sound Carnival,Touch the golden circus ticket!,carnival_golden_ticket.webp,audio_q3.mp3,1,Golden Ticket,Popcorn,Bell,,,1,,,,,,,
+multiple_choice,Circus Sound Carnival,Which circus tent hosts the sound carnival?,carnival_big_tent.webp,audio_q4.mp3,1,Big Circus Tent,Tree House,Cave,,,1,,,,,,,
+speak_repeat,Circus Sound Carnival,Say out loud clearly: CIRCUS SOUND CARNIVAL!,speak_sound_carnival.webp,audio_q5.mp3,1,Circus Sound Carnival,,,,,,Circus Sound Carnival,,,,,,
+speak_repeat,Circus Sound Carnival,Say out loud: GRAND CIRCUS PARADE!,speak_circus_parade.webp,audio_q6.mp3,1,Grand Circus Parade,,,,,,Grand Circus Parade,,,,,,
+matching,Circus Sound Carnival,Match circus rhymes!,,,1,,,,,,,,Cat,Hat,Dog,Frog,Sun,Fun
+matching,Circus Sound Carnival,Match carnival items!,,,1,,,,,,,,Ticket,Golden Ticket,Tent,Circus Tent,Bell,Ring Bell

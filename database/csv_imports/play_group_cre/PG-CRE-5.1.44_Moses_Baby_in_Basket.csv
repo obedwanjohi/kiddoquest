@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Baby Moses Basket,Where was baby Moses hidden to keep him safe?,cre_reed_basket.webp,audio_q1.mp3,1,In A Reed Basket,In A Tree,In A Cave,,,1,,,,,,,
+multiple_choice,Baby Moses Basket,Where did the reed basket float gently on the water?,cre_river_floating.webp,audio_q2.mp3,1,Down The River,In A Well,On A Slide,,,1,,,,,,,
+multiple_choice,Baby Moses Basket,Who found baby Moses floating in the basket?,cre_kind_princess.webp,audio_q3.mp3,1,Kind Princess,WOLF,LION,,,1,,,,,,,
+speak_repeat,Baby Moses Basket,Say out loud clearly: BABY MOSES IN THE BASKET!,speak_baby_moses.webp,audio_q4.mp3,1,Baby Moses In The Basket,,,,,,Baby Moses In The Basket,,,,,,
+speak_repeat,Baby Moses Basket,Say out loud: GOD PROTECTS ME!,speak_god_protects.webp,audio_q5.mp3,1,God Protects Me,,,,,,God Protects Me,,,,,,
+matching,Baby Moses Basket,Match Moses story items!,,,1,,,,,,,,Baby,Baby Moses,Basket,Reed Basket,Water,River
+matching,Baby Moses Basket,Match Moses pictures!,,,1,,,,,,,,Moses,Baby Moses,Basket,Reed Basket,Princess,Kind Princess

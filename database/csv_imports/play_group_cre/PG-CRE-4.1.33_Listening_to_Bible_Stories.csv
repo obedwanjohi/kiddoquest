@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Listening Bible Stories,How do children listen during Bible storytime?,cre_quiet_circle.webp,audio_q1.mp3,1,Quietly and Attentively,Shouting,Running Around,,,1,,,,,,,
+multiple_choice,Listening Bible Stories,Touch the Sunday School teacher reading the Bible!,cre_teacher_reading.webp,audio_q2.mp3,1,Teacher Reading,PIG,Goldilocks,,,1,,,,,,,
+multiple_choice,Listening Bible Stories,Touch the open Bible filled with God's stories!,cre_open_bible_story.webp,audio_q3.mp3,1,Open Bible,Toy Box,School Bag,,,1,,,,,,,
+speak_repeat,Listening Bible Stories,Say out loud clearly: LISTEN TO BIBLE STORIES!,speak_listen_bible_stories.webp,audio_q4.mp3,1,Listen To Bible Stories,,,,,,Listen To Bible Stories,,,,,,
+speak_repeat,Listening Bible Stories,Say out loud: GOD'S WORD IS GOOD!,speak_gods_word_good.webp,audio_q5.mp3,1,God's Word Is Good,,,,,,God's Word Is Good,,,,,,
+matching,Listening Bible Stories,Match storytime actions!,,,1,,,,,,,,Ears,Listen Quietly,Book,BIBLE,Teacher,Storyteller
+matching,Listening Bible Stories,Match storytime pictures!,,,1,,,,,,,,Circle,Quiet Circle,Teacher,Teacher Reading,Bible,Open Bible

@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Praying to God Everyday,When can we pray and talk to God?,pray_q1.webp,audio_q1.mp3,1,Anytime,Only Sundays,Never,,,1,,,,,,,
+multiple_choice,Praying to God Everyday,What do we do with our hands when we pray?,hands_q2.webp,audio_q2.mp3,1,Fold Them,Wave Them,Clap Them,,,1,,,,,,,
+multiple_choice,Praying to God Everyday,Does God hear every prayer we pray?,hear_q3.webp,audio_q3.mp3,1,Yes Always,No,Sometimes,,,1,,,,,,,
+multiple_choice,Praying to God Everyday,What is prayer?,what_q4.webp,audio_q4.mp3,1,Talking to God,Singing,Reading,,,1,,,,,,,
+multiple_choice,Praying to God Everyday,How did Daniel show he loved prayer?,daniel_q5.webp,audio_q5.mp3,1,Prayed 3 Times,Stopped Praying,Forgot God,,,1,,,,,,,
+multiple_choice,Praying to God Everyday,We pray before eating. What is this called?,meal_q6.webp,audio_q6.mp3,1,Table Grace,Bedtime Prayer,Morning Prayer,,,1,,,,,,,
+multiple_choice,Praying to God Everyday,What should we say at the end of every prayer?,amen_q7.webp,audio_q7.mp3,1,Amen,Goodbye,Thanks,,,1,,,,,,,
+multiple_choice,Praying to God Everyday,Touch the child folding hands and praying to God!,touch_q8.webp,audio_q8.mp3,1,Praying Child,Running Child,Sleeping Child,,,1,,,,,,,
+speak_repeat,Praying to God Everyday,Say out loud clearly: GOD HEARS MY PRAYERS!,pray_speak.webp,audio_q9.mp3,1,God Hears My Prayers,,,,,,God Hears My Prayers,,,,,,
+speak_repeat,Praying to God Everyday,Say out loud: I TALK TO GOD EVERY DAY!,talk_speak.webp,audio_q10.mp3,1,I Talk To God Every Day,,,,,,I Talk To God Every Day,,,,,,
+speak_repeat,Praying to God Everyday,Say out loud: THANK YOU GOD FOR HEARING ME!,ty_speak.webp,audio_q11.mp3,1,Thank You God For Hearing Me,,,,,,Thank You God For Hearing Me,,,,,,
+matching,Praying to God Everyday,Match prayer times!,,,1,,,,,,,,Morning,Morning Prayer,Meals,Table Grace,Bedtime,Night Prayer
+matching,Praying to God Everyday,Match what we do in prayer!,,,1,,,,,,,,Fold Hands,Bow Head,Close Eyes,Focus,Say Amen,At the End
+matching,Praying to God Everyday,Match prayer actions to their meaning!,,,1,,,,,,,,Thank God,Gratitude,Ask God,Petition,Praise God,Worship

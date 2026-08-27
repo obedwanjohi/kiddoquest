@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Plural Nouns 106,What is the plural of ROCKET when there are 3 of them?,rock_q1.webp,audio_q1.mp3,1,ROCKETS 🚀🚀,ROCKET,ROCKETES,,,1,,,,,,,
+speak_repeat,Space Plural Nouns 106,Say out loud: ONE ROCKET THREE ROCKETS!,rock_speak.webp,audio_q2.mp3,1,One Rocket Three Rockets,,,,,,One Rocket Three Rockets,,,,,,
+matching,Space Plural Nouns 106,Match space plurals!,,,1,,,,,,ROCKET,ROCKETS 🚀,STAR,STARS ⭐,PLANET,PLANETS 🪐,,

@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus is Our Good Shepherd,Jesus calls Himself the Good what?,shep_q1.webp,audio_q1.mp3,1,Shepherd,Farmer,Teacher,,,1,,,,,,,
+multiple_choice,Jesus is Our Good Shepherd,What animal does a shepherd take care of?,sheep_q2.webp,audio_q2.mp3,1,Sheep,Lions,Fish,,,1,,,,,,,
+multiple_choice,Jesus is Our Good Shepherd,Jesus said He knows each sheep by what?,name_q3.webp,audio_q3.mp3,1,Name,Number,Colour,,,1,,,,,,,
+multiple_choice,Jesus is Our Good Shepherd,If one sheep gets lost what does the Good Shepherd do?,lost_q4.webp,audio_q4.mp3,1,Searches for It,Leaves It,Ignores It,,,1,,,,,,,
+multiple_choice,Jesus is Our Good Shepherd,What does the Good Shepherd give for His sheep?,life_q5.webp,audio_q5.mp3,1,His Life,His Toys,His Food,,,1,,,,,,,
+multiple_choice,Jesus is Our Good Shepherd,We are like sheep and Jesus is our what?,our_q6.webp,audio_q6.mp3,1,Shepherd,Enemy,Stranger,,,1,,,,,,,
+multiple_choice,Jesus is Our Good Shepherd,Touch the shepherd carrying a lost lamb home safely!,carry_q7.webp,audio_q7.mp3,1,Carrying Lamb,Chasing Lamb,Ignoring Lamb,,,1,,,,,,,
+multiple_choice,Jesus is Our Good Shepherd,The famous Psalm 23 says the Lord is my what?,psalm_q8.webp,audio_q8.mp3,1,Shepherd,King,Teacher,,,1,,,,,,,
+speak_repeat,Jesus is Our Good Shepherd,Say out loud clearly: THE LORD IS MY SHEPHERD!,shep_speak.webp,audio_q9.mp3,1,The Lord Is My Shepherd,,,,,,The Lord Is My Shepherd,,,,,,
+speak_repeat,Jesus is Our Good Shepherd,Say out loud: JESUS KNOWS ME BY NAME!,name_speak.webp,audio_q10.mp3,1,Jesus Knows Me By Name,,,,,,Jesus Knows Me By Name,,,,,,
+speak_repeat,Jesus is Our Good Shepherd,Say out loud: JESUS KEEPS ME SAFE!,safe_speak.webp,audio_q11.mp3,1,Jesus Keeps Me Safe,,,,,,Jesus Keeps Me Safe,,,,,,
+matching,Jesus is Our Good Shepherd,Match shepherd care!,,,1,,,,,,,,Good Shepherd,Jesus,Sheep 🐑,We Are His,Protection 🛡️,Always Safe
+matching,Jesus is Our Good Shepherd,Match Psalm 23 words!,,,1,,,,,,,,The Lord,My Shepherd,He Leads,By Still Waters,I Shall,Not Want
+matching,Jesus is Our Good Shepherd,Match what Jesus the Shepherd does!,,,1,,,,,,,,Knows Each Sheep,By Name,Searches,Lost Ones,Lays Down,His Life

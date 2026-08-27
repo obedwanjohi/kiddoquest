@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Good Samaritan 53,Who cared for the hurt traveler on the road?,sam_q1.webp,audio_q1.mp3,1,💖,Robber,Nobody,,,1,,,,,,,
+speak_repeat,Circus Good Samaritan 53,Say out loud: HELP THOSE IN NEED!,help_speak.webp,audio_q2.mp3,1,Help Those In Need,,,,,,Help Those In Need,,,,,,
+matching,Circus Good Samaritan 53,Match Samaritan facts!,,,1,,,,,,Samaritan 💖,Helped,🤕,Bandaged,Neighbor 🏘️,Everyone,,

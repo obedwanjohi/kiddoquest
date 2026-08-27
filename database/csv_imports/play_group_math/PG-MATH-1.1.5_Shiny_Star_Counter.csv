@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Shiny Star Counter,How many shiny yellow stars are near the moon?,star_moon.webp,audio_q1.mp3,1,1,2,3,,star.webp,1,,,,,,,
+count_objects,Shiny Star Counter,Count the twinkling stars in the sky!,star_sky.webp,audio_q2.mp3,1,2,1,3,,star.webp,2,,,,,,,
+count_objects,Shiny Star Counter,How many stars did Leo point to at night?,star_night.webp,audio_q3.mp3,1,3,2,1,,star.webp,3,,,,,,,
+multiple_choice,Shiny Star Counter,Which card shows 2 shiny stars?,mc_two_stars.webp,audio_q4.mp3,1,2,1,3,,,2,,,,,,,

@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Made Animals Birds and Fish,Who created birds to fly in the sky and fish to swim?,bird_q1.webp,audio_q1.mp3,1,God,A Farmer,Nobody,,,1,,,,,,,
+multiple_choice,God Made Animals Birds and Fish,Touch the bird that God made to fly high in the sky!,bird_q2.webp,audio_q2.mp3,1,Bird,Fish,Dog,,,1,,,,,,,
+multiple_choice,God Made Animals Birds and Fish,Where do fish that God created live?,fish_q3.webp,audio_q3.mp3,1,Water,Sky,Land,,,1,,,,,,,
+multiple_choice,God Made Animals Birds and Fish,Which big animal did God put in the wild jungle?,lion_q4.webp,audio_q4.mp3,1,Lion,Car,Chair,,,1,,,,,,,
+multiple_choice,God Made Animals Birds and Fish,Touch the animal that God made to swim in the ocean!,swim_q5.webp,audio_q5.mp3,1,Fish,Cat,Bird,,,1,,,,,,,
+multiple_choice,God Made Animals Birds and Fish,God made birds with wings so they can do what?,wing_q6.webp,audio_q6.mp3,1,Fly,Run,Swim,,,1,,,,,,,
+multiple_choice,God Made Animals Birds and Fish,Which pet animal did God create to be a friendly companion?,pet_q7.webp,audio_q7.mp3,1,Dog,Rock,Toy,,,1,,,,,,,
+multiple_choice,God Made Animals Birds and Fish,What sound does a lion that God created make?,roar_q8.webp,audio_q8.mp3,1,Roar,Moo,Bark,,,1,,,,,,,
+speak_repeat,God Made Animals Birds and Fish,Say out loud clearly: GOD CREATED ALL ANIMALS!,anim_speak.webp,audio_q9.mp3,1,God Created All Animals,,,,,,God Created All Animals,,,,,,
+speak_repeat,God Made Animals Birds and Fish,Say out loud: BIRDS FLY AND FISH SWIM!,fly_speak.webp,audio_q10.mp3,1,Birds Fly And Fish Swim,,,,,,Birds Fly And Fish Swim,,,,,,
+speak_repeat,God Made Animals Birds and Fish,Say out loud: GOD LOVES ALL ANIMALS!,love_speak.webp,audio_q11.mp3,1,God Loves All Animals,,,,,,God Loves All Animals,,,,,,
+matching,God Made Animals Birds and Fish,Match animals to where they live!,,,1,,,,,,,,Birds 🦅,Sky,Fish 🐟,Water,Lions 🦁,Land
+matching,God Made Animals Birds and Fish,Match animals to what they do!,,,1,,,,,,,,Bird 🐦,Fly,Fish 🐠,Swim,Dog 🐕,Run
+matching,God Made Animals Birds and Fish,Match animal to its sound!,,,1,,,,,,,,Dog 🐕,Bark,Cat 🐱,Meow,Lion 🦁,Roar

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Easter Resurrection Joy,What joyful message do we celebrate on Easter morning?,cre_he_is_risen.webp,audio_q1.mp3,1,Jesus Is Alive,TIME,Rainy Day,,,1,,,,,,,
+multiple_choice,Easter Resurrection Joy,Touch the bright Easter sunrise in the blooming garden!,cre_easter_sunrise.webp,audio_q2.mp3,1,Easter Sunrise,NIGHT,Storm Cloud,,,1,,,,,,,
+multiple_choice,Easter Resurrection Joy,How do Christians feel on Easter morning?,cre_easter_joy.webp,audio_q3.mp3,1,Full of Joy and Hope,Sad,Scared,,,1,,,,,,,
+speak_repeat,Easter Resurrection Joy,Say out loud clearly: JESUS IS ALIVE!,speak_jesus_is_alive.webp,audio_q4.mp3,1,Jesus Is Alive,,,,,,Jesus Is Alive,,,,,,
+speak_repeat,Easter Resurrection Joy,Say out loud: HAPPY EASTER JOY!,speak_happy_easter.webp,audio_q5.mp3,1,Happy Easter Joy,,,,,,Happy Easter Joy,,,,,,
+matching,Easter Resurrection Joy,Match Easter themes!,,,1,,,,,,,,Sunrise,Easter Morning,Message,Jesus Is Alive,Heart,Joy and Hope
+matching,Easter Resurrection Joy,Match Easter items!,,,1,,,,,,,,Morning,Sunrise,Garden,Flowers,Jesus,Risen Savior

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pirate Cove 3D Pyramid Hunt 63,Which pirate treasure item is shaped like a PYRAMID?,pyr_q1.webp,audio_q1.mp3,1,🔺,📦,⚽,,,1,,,,,,,
+speak_repeat,Pirate Cove 3D Pyramid Hunt 63,Say out loud: PYRAMID JEWEL HAS A POINTY TOP!,pyr_speak.webp,audio_q2.mp3,1,Pyramid Jewel Has A Pointy Top,,,,,,Pyramid Jewel Has A Pointy Top,,,,,,
+matching,Pirate Cove 3D Pyramid Hunt 63,Match pirate 3D shapes!,,,1,,,,,,Pyramid 🔺,Pointy Top,Cube 📦,Square Chest,Sphere ⚽,Round Pearl,,

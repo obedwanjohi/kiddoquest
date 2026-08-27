@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Old MacDonald Farm,What place does Old MacDonald have in the song?,macdonald_farm.webp,audio_q1.mp3,1,A Farm,A Zoo,A School,,,1,,,,,,,
+multiple_choice,Old MacDonald Farm,What song chorus do we sing for Old MacDonald?,macdonald_sing.webp,audio_q2.mp3,1,E-I-E-I-O,La La La,Choo Choo,,,1,,,,,,,
+multiple_choice,Old MacDonald Farm,Touch the cow on Old MacDonald's farm!,macdonald_cow.webp,audio_q3.mp3,1,Cow,Lion,Monkey,,,1,,,,,,,
+multiple_choice,Old MacDonald Farm,Touch the yellow duck on Old MacDonald's pond!,macdonald_duck.webp,audio_q4.mp3,1,Duck,Elephant,Giraffe,,,1,,,,,,,
+speak_repeat,Old MacDonald Farm,Say out loud clearly: OLD MACDONALD HAD A FARM!,speak_old_macdonald.webp,audio_q5.mp3,1,Old MacDonald Had A Farm,,,,,,Old MacDonald Had A Farm,,,,,,
+speak_repeat,Old MacDonald Farm,Say out loud: E-I-E-I-O!,speak_eieio.webp,audio_q6.mp3,1,E-I-E-I-O,,,,,,E-I-E-I-O,,,,,,
+matching,Old MacDonald Farm,Match animals to farm song sounds!,,,1,,,,,,,,Cow,Moo Moo,Duck,Quack Quack,Pig,Oink Oink
+matching,Old MacDonald Farm,Match farm song items!,,,1,,,,,,,,Old MacDonald,Farm,Chorus,E-I-E-I-O,Vehicle,Tractor

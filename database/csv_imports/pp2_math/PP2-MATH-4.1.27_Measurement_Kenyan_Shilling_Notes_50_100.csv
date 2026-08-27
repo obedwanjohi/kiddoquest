@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Measurement Kenyan Shilling Notes 50 100,Which Kenyan note has the number 50 on it?,ksh50.webp,audio_q1.mp3,1,50,100,20,,,1,,,,,,,
+speak_repeat,Measurement Kenyan Shilling Notes 50 100,Say out loud clearly: FIFTY SHILLINGS NOTE!,note_speak.webp,audio_q2.mp3,1,Fifty Shillings Note,,,,,,Fifty Shillings Note,,,,,,
+matching,Measurement Kenyan Shilling Notes 50 100,Match Kenyan money!,,,1,,,,,,50 KSh 💵,Fifty Note,100,One Hundred Note,20,Twenty Coin,,

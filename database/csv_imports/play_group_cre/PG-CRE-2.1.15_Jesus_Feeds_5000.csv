@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Feeds 5000,What did the little boy share in his lunch basket?,cre_boy_lunch.webp,audio_q1.mp3,1,5 Loaves and 2 Fish,10 Apples,Toy Cars,,,1,,,,,,,
+multiple_choice,Jesus Feeds 5000,Touch the basket of fresh bread loaves!,cre_bread_loaves.webp,audio_q2.mp3,1,Bread Loaves,Stone,Wood,,,1,,,,,,,
+multiple_choice,Jesus Feeds 5000,How many baskets of food were leftover after everyone ate?,cre_baskets_leftover.webp,audio_q3.mp3,1,12 Baskets,0 Baskets,1 Basket,,,1,,,,,,,
+speak_repeat,Jesus Feeds 5000,Say out loud clearly: JESUS FEEDS THE MULTITUDE!,speak_feeds_multitude.webp,audio_q4.mp3,1,Jesus Feeds The Multitude,,,,,,Jesus Feeds The Multitude,,,,,,
+speak_repeat,Jesus Feeds 5000,Say out loud: SHARE WITH OTHERS!,speak_share_others.webp,audio_q5.mp3,1,Share With Others,,,,,,Share With Others,,,,,,
+matching,Jesus Feeds 5000,Match food quantities!,,,1,,,,,,,,Bread,5 Loaves,Fish,2 Small Fish,Leftovers,12 Baskets
+matching,Jesus Feeds 5000,Match lunch items!,,,1,,,,,,,,Boy,Generous Lunch,Jesus,Blessed Food,People,Fed All

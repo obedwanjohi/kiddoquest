@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Underwater Counting 81 to 100 71,Count all 90 pearls in the giant oyster reef!,pearl90.webp,audio_q1.mp3,1,90,85,95,,🦪,90,,,,,,,
+speak_repeat,Underwater Counting 81 to 100 71,Say out loud: NINETY PEARLS IN THE REEF!,pearl_speak.webp,audio_q2.mp3,1,Ninety Pearls In The Reef,,,,,,Ninety Pearls In The Reef,,,,,,
+matching,Underwater Counting 81 to 100 71,Match sea pearl counts!,,,1,,,,,,85 Pearls 🦪,85,90,90,95,95,,

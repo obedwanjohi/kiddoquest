@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Sight Words Level 3 Boost,"Which sight word completes the sentence: ""I ___ to play in the park""?",like.webp,audio_q1.mp3,1,LIKE ❤️,SEE 👀,GO 🏃,,,1,,,,,,,
+speak_repeat,Sight Words Level 3 Boost,Say out loud clearly: I LIKE TO PLAY!,like_speak.webp,audio_q2.mp3,1,I Like To Play,,,,,,I Like To Play,,,,,,
+matching,Sight Words Level 3 Boost,Match sight words!,,,1,,,,,,LIKE,❤️,SEE,👀,PLAY,🎈,,

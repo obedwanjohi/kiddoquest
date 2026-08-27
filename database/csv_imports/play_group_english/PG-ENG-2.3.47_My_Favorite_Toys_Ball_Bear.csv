@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,My Favorite Toys,Touch the red bouncy ball!,toy_ball.webp,audio_q1.mp3,1,Ball,Teddy Bear,Toy Car,,,1,,,,,,,
+multiple_choice,My Favorite Toys,Touch the fluffy teddy bear!,toy_bear.webp,audio_q2.mp3,1,Teddy Bear,Ball,Pencil,,,1,,,,,,,
+multiple_choice,My Favorite Toys,Touch the fast toy car!,toy_car.webp,audio_q3.mp3,1,Toy Car,Teddy Bear,Book,,,1,,,,,,,
+multiple_choice,My Favorite Toys,Which picture shows Leo's toy chest?,toy_chest.webp,audio_q4.mp3,1,Toy Chest,Fruit Basket,School Bag,,,1,,,,,,,
+speak_repeat,My Favorite Toys,Say out loud clearly: MY FAVORITE TOYS!,speak_favorite_toys.webp,audio_q5.mp3,1,My Favorite Toys,,,,,,My Favorite Toys,,,,,,
+speak_repeat,My Favorite Toys,Say out loud: I LOVE TOYS!,speak_i_love_toys.webp,audio_q6.mp3,1,I Love Toys,,,,,,I Love Toys,,,,,,
+matching,My Favorite Toys,Match toys to names!,,,1,,,,,,,,Ball,Ball,Teddy Bear,Teddy Bear,Toy Car,Toy Car
+matching,My Favorite Toys,Match toys to play actions!,,,1,,,,,,,,Bounce,Ball,Hug,Teddy Bear,Zoom,Toy Car

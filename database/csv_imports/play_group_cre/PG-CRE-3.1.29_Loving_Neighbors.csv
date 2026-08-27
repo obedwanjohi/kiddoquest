@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Loving Our Neighbors,Who is our neighbor in God's eyes?,cre_loving_neighbors.webp,audio_q1.mp3,1,Everyone Around Us,Only Myself,No One,,,1,,,,,,,
+multiple_choice,Loving Our Neighbors,Touch Leo sharing a plate of fresh cookies with his neighbor!,cre_sharing_cookies.webp,audio_q2.mp3,1,Sharing Cookies,Hiding Food,Shouting,,,1,,,,,,,
+multiple_choice,Loving Our Neighbors,What commandment did Jesus give about our neighbors?,cre_love_neighbor_command.webp,audio_q3.mp3,1,Love Your Neighbor,Ignore Neighbor,Be Mean,,,1,,,,,,,
+speak_repeat,Loving Our Neighbors,Say out loud clearly: LOVE YOUR NEIGHBOR!,speak_love_neighbor.webp,audio_q4.mp3,1,Love Your Neighbor,,,,,,Love Your Neighbor,,,,,,
+speak_repeat,Loving Our Neighbors,Say out loud: WE ARE GOOD NEIGHBORS!,speak_good_neighbors.webp,audio_q5.mp3,1,We Are Good Neighbors,,,,,,We Are Good Neighbors,,,,,,
+matching,Loving Our Neighbors,Match neighborly love concepts!,,,1,,,,,,,,Neighbor,Everyone,Action,Show Love,Jesus,Commandment
+matching,Loving Our Neighbors,Match neighborly love pictures!,,,1,,,,,,,,Neighbor,Next Door,Share,Sharing Cookies,Wave,Friendly Greeting

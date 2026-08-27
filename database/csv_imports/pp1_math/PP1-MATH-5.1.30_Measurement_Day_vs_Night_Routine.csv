@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Measurement Day vs Night Routine,When do we see the glowing moon and stars in the sky?,night_q1.webp,audio_q1.mp3,1,🌙,☀️,Afternoon,,,1,,,,,,,
+speak_repeat,Measurement Day vs Night Routine,Say out loud clearly: SUN FOR DAY MOON FOR NIGHT!,day_speak.webp,audio_q2.mp3,1,Sun For Day Moon For Night,,,,,,Sun For Day Moon For Night,,,,,,
+matching,Measurement Day vs Night Routine,Match day and night!,,,1,,,,,,ops,Sun ☀️,Day,Moon 🌙,Night,Stars ⭐,Night,

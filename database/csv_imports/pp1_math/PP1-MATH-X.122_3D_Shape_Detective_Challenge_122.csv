@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,3D Shape Detective Challenge 122,Which shape is round all over like a ball?,ball_q1.webp,audio_q1.mp3,1,Sphere ⚽,Cube 📦,Cone 🍦,,,1,,,,,,,
+speak_repeat,3D Shape Detective Challenge 122,Say out loud: SPHERE IS ROUND ALL OVER!,sphere_speak.webp,audio_q2.mp3,1,Sphere Is Round All Over,,,,,,Sphere Is Round All Over,,,,,,
+matching,3D Shape Detective Challenge 122,Match 3D clues!,,,1,,,,,,Sphere ⚽,Round All Over,Cube 📦,6,Cone 🍦,Pointy Tip,,

@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Loves All Little Children,What did Jesus say when children came to Him?,child_q1.webp,audio_q1.mp3,1,Welcome,Go Away,No Children,,,1,,,,,,,
+multiple_choice,Jesus Loves All Little Children,Does Jesus love children from all countries?,all_q2.webp,audio_q2.mp3,1,Yes All,Only Rich,Only Big,,,1,,,,,,,
+multiple_choice,Jesus Loves All Little Children,How does Jesus feel about YOU right now?,feel_q3.webp,audio_q3.mp3,1,Loves You,Ignores You,Forgets You,,,1,,,,,,,
+multiple_choice,Jesus Loves All Little Children,Touch the picture of Jesus blessing and hugging children!,hug_q4.webp,audio_q4.mp3,1,Hugging,Pushing,Ignoring,,,1,,,,,,,
+multiple_choice,Jesus Loves All Little Children,Jesus said the Kingdom of God belongs to children who are what?,king_q5.webp,audio_q5.mp3,1,Like These,Very Tall,Very Rich,,,1,,,,,,,
+multiple_choice,Jesus Loves All Little Children,What can YOU say to Jesus because He loves you?,say_q6.webp,audio_q6.mp3,1,I Love You Jesus,Go Away,Nothing,,,1,,,,,,,
+multiple_choice,Jesus Loves All Little Children,How does Jesus show love to children?,show_q7.webp,audio_q7.mp3,1,Blesses Them,Scolds Them,Forgets Them,,,1,,,,,,,
+multiple_choice,Jesus Loves All Little Children,Jesus loves children. Does he love you even when you make mistakes?,mis_q8.webp,audio_q8.mp3,1,Yes Always,No,Sometimes,,,1,,,,,,,
+speak_repeat,Jesus Loves All Little Children,Say out loud clearly: JESUS LOVES ME!,love_speak.webp,audio_q9.mp3,1,Jesus Loves Me,,,,,,Jesus Loves Me,,,,,,
+speak_repeat,Jesus Loves All Little Children,Say out loud: JESUS LOVES ALL CHILDREN!,all_speak.webp,audio_q10.mp3,1,Jesus Loves All Children,,,,,,Jesus Loves All Children,,,,,,
+speak_repeat,Jesus Loves All Little Children,Say out loud: I LOVE YOU JESUS!,ilove_speak.webp,audio_q11.mp3,1,I Love You Jesus,,,,,,I Love You Jesus,,,,,,
+matching,Jesus Loves All Little Children,Match Jesus love for children!,,,1,,,,,,,,Jesus ❤️,Loves Children,Children 🧒,Blessed,Kingdom 👑,Belongs to Such
+matching,Jesus Loves All Little Children,Match how Jesus loves!,,,1,,,,,,,,All Children,Jesus Loves,Every Day,Jesus Loves,Even With Faults,Jesus Loves
+matching,Jesus Loves All Little Children,Match our response to Jesus love!,,,1,,,,,,,,Love Him,Back,Trust Him,Always,Praise Him,With Joy

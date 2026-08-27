@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Church is Gods House,What special building do we visit to pray and worship God?,cre_church_building.webp,audio_q1.mp3,1,Church Building,Toy Shop,Market,,,1,,,,,,,
+multiple_choice,Church is Gods House,What symbol sits high on top of the church building?,cre_church_cross.webp,audio_q2.mp3,1,CROSS,Star,Flag,,,1,,,,,,,
+multiple_choice,Church is Gods House,Touch the welcoming doors of God's house!,cre_church_doors.webp,audio_q3.mp3,1,Church Doors,Window,Fence,,,1,,,,,,,
+speak_repeat,Church is Gods House,Say out loud clearly: THE CHURCH IS GOD'S HOUSE!,speak_church_gods_house.webp,audio_q4.mp3,1,The Church Is God's House,,,,,,The Church Is God's House,,,,,,
+speak_repeat,Church is Gods House,Say out loud: WE WORSHIP GOD TOGETHER!,speak_worship_together.webp,audio_q5.mp3,1,We Worship God Together,,,,,,We Worship God Together,,,,,,
+matching,Church is Gods House,Match church items!,,,1,,,,,,,,Building,Church,Symbol,Cross,Doors,Welcome
+matching,Church is Gods House,Match church pictures!,,,1,,,,,,,,Church,Church Building,Cross,CROSS,Doors,Welcoming Doors

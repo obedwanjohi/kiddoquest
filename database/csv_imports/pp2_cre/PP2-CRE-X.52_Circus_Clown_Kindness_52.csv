@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Clown Kindness 52,What does the clown do to show Christian kindness?,kind_q1.webp,audio_q1.mp3,1,💖,Takes toys,Pushes,,,1,,,,,,,
+speak_repeat,Circus Clown Kindness 52,Say out loud: BE KIND TO EVERYONE!,kind_speak.webp,audio_q2.mp3,1,Be Kind To Everyone,,,,,,Be Kind To Everyone,,,,,,
+matching,Circus Clown Kindness 52,Match circus kindness!,,,1,,,,,,Kindness 💖,Gods Love,Sharing 🤝,Generous,Smiles 😊,Happiness,,

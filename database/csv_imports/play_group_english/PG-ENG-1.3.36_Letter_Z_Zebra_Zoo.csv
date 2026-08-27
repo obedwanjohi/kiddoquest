@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter Z Zoo,Which letter makes the /z/ sound in Z Z Z - /z/ /z/ /z/ - Zoo Zoo?,letter_z_card.webp,audio_q1.mp3,1,Z,Y,X,,,1,,,,,,,
+multiple_choice,Letter Z Zoo,Touch the safari zoo gate starting with letter Z!,zoo_z.webp,audio_q2.mp3,1,Zoo,Yo-yo,Box,,,1,,,,,,,
+multiple_choice,Letter Z Zoo,Listen to the song: Z Z Z - /z/ /z/ /z/ - Zoo!,zoo_song.webp,audio_q3.mp3,1,Zoo,House,Train,,,1,,,,,,,
+speak_repeat,Letter Z Zoo,Say the phonics song chant: Z Z Z - ZOO!,speak_zoo_z.webp,audio_q4.mp3,1,Zoo,,,,,,Zoo,,,,,,
+speak_repeat,Letter Z Zoo,Say out loud clearly: LETTER Z!,speak_letter_z.webp,audio_q5.mp3,1,Letter Z,,,,,,Letter Z,,,,,,
+matching,Letter Z Zoo,Match letter Z to Zoo!,,,1,,,,,,,,Z,Z,Zoo,Zoo,sound /z/,Zoo
+matching,Letter Z Zoo,Match letter Z sound /z/!,,,1,,,,,,,,Z,Z,/z/ /z/ /z/,Zoo,Zoo,Zoo

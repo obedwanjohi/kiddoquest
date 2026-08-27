@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pre Writing Loop Tracing Master 78,Which line is a wavy loop path?,wavy_q1.webp,audio_q1.mp3,1,Wavy Line 〰️,📏,Circle 🟡,,,1,,,,,,,
+speak_repeat,Pre Writing Loop Tracing Master 78,Say out loud: TRACE THE WAVY PATH!,wavy_speak.webp,audio_q2.mp3,1,Trace The Wavy Path,,,,,,Trace The Wavy Path,,,,,,
+matching,Pre Writing Loop Tracing Master 78,Match tracing styles!,,,1,,,,,,Wavy 〰️,Loop,Straight 📏,Line,Zigzag ⚡,Points,,

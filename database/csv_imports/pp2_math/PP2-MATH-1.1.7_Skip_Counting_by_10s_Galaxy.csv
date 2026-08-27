@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Skip Counting by 10s Galaxy,Complete 10s skip counting: 10 20 30 _ 50 60?,skip10_q1.webp,audio_q1.mp3,1,40,35,45,,,,,,,,,,
+speak_repeat,Skip Counting by 10s Galaxy,Say out loud: TEN TWENTY THIRTY FORTY FIFTY SIXTY!,skip10_speak.webp,audio_q2.mp3,1,Ten Twenty Thirty Forty Fifty Sixty,,,,,,Ten Twenty Thirty Forty Fifty Sixty,,,,,,
+matching,Skip Counting by 10s Galaxy,Match 10s skip numbers!,,,1,,,,,,10 20,30,30,50,50,70,,

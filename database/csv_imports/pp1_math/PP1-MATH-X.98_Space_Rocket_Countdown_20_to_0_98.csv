@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Space Rocket Countdown 20 to 0 98,Complete countdown: 10 9 8 _ 6 5?,space_q1.webp,audio_q1.mp3,1,7,8,6,,,,,,,,,,
+speak_repeat,Space Rocket Countdown 20 to 0 98,Say out loud: TEN NINE EIGHT SEVEN SIX FIVE!,space_speak.webp,audio_q2.mp3,1,Ten Nine Eight Seven Six Five,,,,,,Ten Nine Eight Seven Six Five,,,,,,
+matching,Space Rocket Countdown 20 to 0 98,Match countdown numbers!,,,1,,,,,,10 9,8,8,6,6,4,,

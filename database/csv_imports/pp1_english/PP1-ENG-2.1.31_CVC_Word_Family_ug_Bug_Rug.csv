@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,CVC Word Family ug Bug Rug,Combine sounds /b/ + /u/ + /g/! What word does it make?,bug_cvc.webp,audio_q1.mp3,1,BUG 🐛,CAT,DOG,,,1,,,,,,,
+speak_repeat,CVC Word Family ug Bug Rug,Say out loud clearly: B-U-G SPELLS BUG!,bug_speak.webp,audio_q2.mp3,1,B-U-G Spells Bug,,,,,,B-U-G Spells Bug,,,,,,
+matching,CVC Word Family ug Bug Rug,Match -ug family words!,,,1,,,,,,B-U-G,Bug 🐛,R-U-G,Rug 🧹,M-U-G,Mug ☕,,

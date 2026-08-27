@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Measurement Capacity Liters 78,Which bucket holds MORE water: 5 Liters or 2 Liters?,liter_q1.webp,audio_q1.mp3,1,5,2,Equal,,,1,,,,,,,
+speak_repeat,Measurement Capacity Liters 78,Say out loud: FIVE LITERS IS MORE THAN TWO LITERS!,liter_speak.webp,audio_q2.mp3,1,Five Liters Is More Than Two Liters,,,,,,Five Liters Is More Than Two Liters,,,,,,
+matching,Measurement Capacity Liters 78,Match capacity!,,,1,,,,,,5 Liters 🪣,More Water,2,Less Water,10,Most Water,,

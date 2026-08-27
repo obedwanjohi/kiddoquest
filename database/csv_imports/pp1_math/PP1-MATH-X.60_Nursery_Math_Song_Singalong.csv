@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Nursery Math Song Singalong,In the Five Little Ducks song, how many ducks came back?,duck_q1.webp,audio_q1.mp3,1,🦆,Five Ducks,Zero Ducks,,,1,,,,,,
+speak_repeat,Nursery Math Song Singalong,Say out loud: FIVE LITTLE DUCKS WENT OUT ONE DAY!,duck_speak.webp,audio_q2.mp3,1,Five Little Ducks Went Out One Day,,,,,,Five Little Ducks Went Out One Day,,,,,,
+matching,Nursery Math Song Singalong,Match math songs!,,,1,,,,,,5 Little Ducks 🦆,Countdown,10,Countdown,5,Jumping Bed,,

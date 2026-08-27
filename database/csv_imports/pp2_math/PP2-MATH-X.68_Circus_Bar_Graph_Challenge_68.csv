@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Bar Graph Challenge 68,Look at the circus graph! Which game got 20 votes?,graph_q1.webp,audio_q1.mp3,1,🎯,Popcorn (10 Votes),Balloons (5 Votes),,,1,,,,,,,
+speak_repeat,Circus Bar Graph Challenge 68,Say out loud: RING TOSS HAS TWENTY VOTES!,ring_speak.webp,audio_q2.mp3,1,Ring Toss Has Twenty Votes,,,,,,Ring Toss Has Twenty Votes,,,,,,
+matching,Circus Bar Graph Challenge 68,Match circus graph!,,,1,,,,,,Ring Toss 🎯,20 Votes (Most),Popcorn 🍿,10,Balloons 🎈,5,,

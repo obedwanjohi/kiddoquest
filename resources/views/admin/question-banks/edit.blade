@@ -1,0 +1,91 @@
+@extends('admin.layouts.app')
+@section('title', 'Edit — ' . $questionBank->name)
+
+@section('content')
+<div class="page-header">
+    <a href="{{ route('admin.question-banks.show', $questionBank) }}" class="btn-back">← Back</a>
+    <h1>Edit Question Bank</h1>
+</div>
+
+<form method="POST" action="{{ route('admin.question-banks.update', $questionBank) }}" class="form-card">
+    @csrf @method('PUT')
+
+    <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required class="form-input" value="{{ old('name', $questionBank->name) }}">
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="3" class="form-input">{{ old('description', $questionBank->description) }}</textarea>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="subject_id">Subject *</label>
+            <select id="subject_id" name="subject_id" required class="form-input">
+                <option value="">Select subject…</option>
+                @foreach ($subjects as $s)
+                <option value="{{ $s->id }}" {{ old('subject_id', $questionBank->subject_id) == $s->id ? 'selected' : '' }}>{{ $s->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="quiz_type_id">Quiz Type</label>
+            <select id="quiz_type_id" name="quiz_type_id" class="form-input">
+                <option value="">Any type</option>
+                @foreach ($quizTypes as $t)
+                <option value="{{ $t->id }}" {{ old('quiz_type_id', $questionBank->quiz_type_id) == $t->id ? 'selected' : '' }}>{{ $t->name }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty" name="difficulty" class="form-input">
+                @foreach (['easy', 'medium', 'hard'] as $d)
+                <option value="{{ $d }}" {{ old('difficulty', $questionBank->difficulty) === $d ? 'selected' : '' }}>{{ ucfirst($d) }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" name="status" class="form-input">
+                @foreach (['draft', 'published', 'archived'] as $s)
+                <option value="{{ $s }}" {{ old('status', $questionBank->status) === $s ? 'selected' : '' }}>{{ ucfirst($s) }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="pool_size">Pool Size (questions per attempt)</label>
+            <input type="number" id="pool_size" name="pool_size" class="form-input" value="{{ old('pool_size', $questionBank->pool_size) }}" min="1">
+        </div>
+
+        <div class="form-group">
+            <label for="pass_threshold">Pass Threshold (%)</label>
+            <input type="number" id="pass_threshold" name="pass_threshold" class="form-input" value="{{ old('pass_threshold', $questionBank->pass_threshold) }}" min="0" max="100">
+        </div>
+
+        <div class="form-group">
+            <label for="max_attempts">Max Attempts</label>
+            <input type="number" id="max_attempts" name="max_attempts" class="form-input" value="{{ old('max_attempts', $questionBank->max_attempts) }}" min="1">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>
+            <input type="checkbox" name="shuffle" value="1" {{ old('shuffle', $questionBank->shuffle) ? 'checked' : '' }}>
+            Shuffle questions each attempt
+        </label>
+    </div>
+
+    <button type="submit" class="btn-primary">Save Changes</button>
+</form>
+@endsection

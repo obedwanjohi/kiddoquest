@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Bible Heroes Master,Who built the giant ark and brought animals two by two?,master_noah_ark.webp,audio_q1.mp3,1,Noah,David,Jonah,,,1,,,,,,,
+multiple_choice,Bible Heroes Master,Which young hero defeated giant Goliath with a sling?,master_david_sling.webp,audio_q2.mp3,1,David,Daniel,Samuel,,,1,,,,,,,
+multiple_choice,Bible Heroes Master,Who prayed to God and stayed safe in the lions' den?,master_daniel_lions.webp,audio_q3.mp3,1,Daniel,Moses,Joseph,,,1,,,,,,,
+multiple_choice,Bible Heroes Master,Touch the shiny Bible Heroes Master Trophy!,master_heroes_trophy.webp,audio_q4.mp3,1,🏆,Toy Box,Hat,,,1,,,,,,,
+speak_repeat,Bible Heroes Master,Say out loud clearly: BIBLE HEROES MASTER!,speak_heroes_master.webp,audio_q5.mp3,1,Bible Heroes Master,,,,,,Bible Heroes Master,,,,,,
+speak_repeat,Bible Heroes Master,Say out loud: HEROES OF FAITH AND COURAGE!,speak_heroes_faith.webp,audio_q6.mp3,1,Heroes Of Faith and Courage,,,,,,Heroes Of Faith and Courage,,,,,,
+matching,Bible Heroes Master,Match Bible heroes to stories!,,,1,,,,,,,,Noah,ARK,David,Five Smooth Stones,Daniel,Lions' Den
+matching,Bible Heroes Master,Match heroes master items!,,,1,,,,,,,,Samuel,Temple Servant,Jonah,FISH,Trophy,🏆

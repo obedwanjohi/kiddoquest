@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Letter Shield,Which superhero item starts with letter S?,hero_shield_s.webp,audio_q1.mp3,1,Star Shield,Magic Wand,Treasure Map,,,1,,,,,,,
+multiple_choice,Superhero Letter Shield,Touch Superhero Leo wearing a red cape!,hero_leo_cape.webp,audio_q2.mp3,1,Superhero Leo,Pirate,Clown,,,1,,,,,,,
+multiple_choice,Superhero Letter Shield,Touch the superhero emblem stamped with letter P!,hero_power_badge.webp,audio_q3.mp3,1,🏆,School Bag,Toy Box,,,1,,,,,,,
+speak_repeat,Superhero Letter Shield,Say out loud clearly: SUPERHERO LETTER SHIELD!,speak_hero_shield.webp,audio_q4.mp3,1,Superhero Letter Shield,,,,,,Superhero Letter Shield,,,,,,
+speak_repeat,Superhero Letter Shield,Say out loud: I HAVE SUPERHERO POWER!,speak_hero_power.webp,audio_q5.mp3,1,I Have Superhero Power,,,,,,I Have Superhero Power,,,,,,
+matching,Superhero Letter Shield,Match superhero letters to gear!,,,1,,,,,,,,S,Star Shield,C,Red Cape,P,Power Badge
+matching,Superhero Letter Shield,Match superhero items!,,,1,,,,,,,,Shield,Star Shield,Cape,Red Cape,Badge,Power Badge

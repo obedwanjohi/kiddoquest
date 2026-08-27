@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,My Body Parts,Listen to Leo: Touch your head!,body_head.webp,audio_q1.mp3,1,Head,Hands,Feet,,,1,,,,,,,
+multiple_choice,My Body Parts,Listen: Tap your shoulders!,body_shoulders.webp,audio_q2.mp3,1,Shoulders,Head,Knees,,,1,,,,,,,
+multiple_choice,My Body Parts,Listen: Touch your knees!,body_knees.webp,audio_q3.mp3,1,Knees,Feet,Shoulders,,,1,,,,,,,
+multiple_choice,My Body Parts,Listen: Point to your toes!,body_toes.webp,audio_q4.mp3,1,Toes,Head,Hands,,,1,,,,,,,
+speak_repeat,My Body Parts,Say out loud clearly: HEAD AND SHOULDERS!,speak_head_shoulders.webp,audio_q5.mp3,1,Head and Shoulders,,,,,,Head and Shoulders,,,,,,
+speak_repeat,My Body Parts,Say out loud: MY BODY PARTS!,speak_body_parts.webp,audio_q6.mp3,1,My Body Parts,,,,,,My Body Parts,,,,,,
+matching,My Body Parts,Match body parts to names!,,,1,,,,,,,,Head,Head,Shoulders,Shoulders,Knees,Knees
+matching,My Body Parts,Match lower body parts!,,,1,,,,,,,,Feet,Feet,Toes,Toes,Legs,Legs

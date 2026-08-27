@@ -1,0 +1,6 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Near Safari Jeep Far Tree,Which zebra is NEAR the safari jeep?,zebra_near.webp,audio_q1.mp3,1,🦓,🦓,🐦,,,1,,,,,,,
+multiple_choice,Near Safari Jeep Far Tree,Which elephant is FAR away near the mountain?,elephant_far.webp,audio_q2.mp3,1,🐘,🐘,🐭,,,1,,,,,,,
+multiple_choice,Near Safari Jeep Far Tree,Tap the campfire that is NEAR Ranger Leo's tent!,fire_near.webp,audio_q3.mp3,1,⛺,🏔️,⭐,,,1,,,,,,,
+multiple_choice,Near Safari Jeep Far Tree,Tap the spaceship that is FAR away in deep space!,space_far.webp,audio_q4.mp3,1,🚀,🚗,🌳,,,1,,,,,,,
+multiple_choice,Near Safari Jeep Far Tree,Which boat is NEAR the sandy shore?,boat_near.webp,audio_q5.mp3,1,⛵,🚢,🐟,,,1,,,,,,,

@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Baby Jesus Born in Bethlehem,Where was Baby Jesus born on Christmas Day?,manger_q1.webp,audio_q1.mp3,1,Manger,Palace,Hospital,,,1,,,,,,,
+multiple_choice,Baby Jesus Born in Bethlehem,Who was the mother of Baby Jesus?,mary_q2.webp,audio_q2.mp3,1,Mary,Elizabeth,Ruth,,,1,,,,,,,
+multiple_choice,Baby Jesus Born in Bethlehem,Who was the earthly father who cared for Baby Jesus?,joseph_q3.webp,audio_q3.mp3,1,Joseph,David,Moses,,,1,,,,,,,
+multiple_choice,Baby Jesus Born in Bethlehem,What did the shepherds see in the night sky near Bethlehem?,star_q4.webp,audio_q4.mp3,1,Star,Clouds,Rain,,,1,,,,,,,
+multiple_choice,Baby Jesus Born in Bethlehem,The baby Jesus was laid in a manger. What is a manger?,mang_q5.webp,audio_q5.mp3,1,Animal Bed,Big House,River,,,1,,,,,,,
+multiple_choice,Baby Jesus Born in Bethlehem,What do we celebrate on Christmas Day?,xmas_q6.webp,audio_q6.mp3,1,Jesus Birthday,School Day,Market Day,,,1,,,,,,,
+multiple_choice,Baby Jesus Born in Bethlehem,Who sent His Son Jesus to be born for us?,god_q7.webp,audio_q7.mp3,1,God,A King,Nobody,,,1,,,,,,,
+multiple_choice,Baby Jesus Born in Bethlehem,Touch the bright star that showed where Jesus was born!,star_q8.webp,audio_q8.mp3,1,Star,Moon,Cloud,,,1,,,,,,,
+speak_repeat,Baby Jesus Born in Bethlehem,Say out loud clearly: JESUS IS BORN!,jesus_speak.webp,audio_q9.mp3,1,Jesus Is Born,,,,,,Jesus Is Born,,,,,,
+speak_repeat,Baby Jesus Born in Bethlehem,Say out loud: GLORY TO GOD FOR BABY JESUS!,glory_speak.webp,audio_q10.mp3,1,Glory To God For Baby Jesus,,,,,,Glory To God For Baby Jesus,,,,,,
+speak_repeat,Baby Jesus Born in Bethlehem,Say out loud: HAPPY BIRTHDAY JESUS!,bday_speak.webp,audio_q11.mp3,1,Happy Birthday Jesus,,,,,,Happy Birthday Jesus,,,,,,
+matching,Baby Jesus Born in Bethlehem,Match the Nativity story!,,,1,,,,,,,,Baby Jesus 👶,Manger,Mary 👩,Mother,Joseph 👨,Father
+matching,Baby Jesus Born in Bethlehem,Match Christmas story facts!,,,1,,,,,,,,Bethlehem,Where Jesus Born,Star ⭐,Guided Wise Men,Shepherds 🐑,First Visitors
+matching,Baby Jesus Born in Bethlehem,Match who was there at Jesus birth!,,,1,,,,,,,,Mary 👩,Prayed & Thanked,Joseph 👨,Protected Family,Angels 👼,Sang Glory

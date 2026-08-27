@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter Recognition Master,Which letter starts the word Apple?,master_apple_a.webp,audio_q1.mp3,1,A,B,C,,,1,,,,,,,
+multiple_choice,Letter Recognition Master,Which letter starts the word Ball?,master_ball_b.webp,audio_q2.mp3,1,B,A,D,,,1,,,,,,,
+multiple_choice,Letter Recognition Master,Which letter starts the word Cat?,master_cat_c.webp,audio_q3.mp3,1,C,B,A,,,1,,,,,,,
+multiple_choice,Letter Recognition Master,Touch the golden Letter Master 100 Trophy!,master_trophy_100.webp,audio_q4.mp3,1,🏆,Star,Hat,,,1,,,,,,,
+speak_repeat,Letter Recognition Master,Say out loud clearly: LETTER RECOGNITION MASTER 100!,speak_master_100.webp,audio_q5.mp3,1,Letter Recognition Master 100,,,,,,Letter Recognition Master 100,,,,,,
+speak_repeat,Letter Recognition Master,Say out loud: I KNOW ALL MY LETTERS A TO Z!,speak_know_a_z.webp,audio_q6.mp3,1,I Know All My Letters A to Z,,,,,,I Know All My Letters A to Z,,,,,,
+matching,Letter Recognition Master,Match uppercase to lowercase letters!,,,1,,,,,,,,A,a,B,b,C,c
+matching,Letter Recognition Master,Match letters to pictures!,,,1,,,,,,,,A,Apple,B,Ball,C,Cat

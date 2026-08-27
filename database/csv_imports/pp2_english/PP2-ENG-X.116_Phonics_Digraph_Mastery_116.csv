@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Phonics Digraph Mastery 116,Which word has the TH sound: THUMB or SHIP?,thumb_q1.webp,audio_q1.mp3,1,THUMB 👍,SHIP 🚢,CHIP 🥔,,,1,,,,,,,
+speak_repeat,Phonics Digraph Mastery 116,Say out loud: THUMB HAS THE TH SOUND!,thumb_speak.webp,audio_q2.mp3,1,Thumb Has The Th Sound,,,,,,Thumb Has The Th Sound,,,,,,
+matching,Phonics Digraph Mastery 116,Match digraphs!,,,1,,,,,,TH,THUMB 👍,SH,SHIP 🚢,CH,CHIP 🥔,,

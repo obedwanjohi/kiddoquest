@@ -1,0 +1,6 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Heavy Elephant Light Feather,Which jungle animal is HEAVY?,heavy_elephant.webp,audio_q1.mp3,1,🐘,🪶,🦋,,,1,,,,,,,
+multiple_choice,Heavy Elephant Light Feather,Which object is LIGHT?,light_feather.webp,audio_q2.mp3,1,🪶,🪨,🚜,,,1,,,,,,,
+multiple_choice,Heavy Elephant Light Feather,Tap the HEAVY stone boulder!,heavy_stone.webp,audio_q3.mp3,1,🪨,🍃,🎈,,,1,,,,,,,
+multiple_choice,Heavy Elephant Light Feather,Tap the LIGHT party balloon floating in air!,light_balloon.webp,audio_q4.mp3,1,🎈,⚒️,🚛,,,1,,,,,,,
+multiple_choice,Heavy Elephant Light Feather,Which vehicle is HEAVY?,heavy_truck.webp,audio_q5.mp3,1,🚛,🚗,✈️,,,1,,,,,,,

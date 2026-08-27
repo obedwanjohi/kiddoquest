@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Data Simple Pictograph Count,Look at the graph! How many apples were collected?,pic_q1.webp,audio_q1.mp3,1,5,3,4,,,1,,,,,,,
+speak_repeat,Data Simple Pictograph Count,Say out loud clearly: READING THE CHART!,pic_speak.webp,audio_q2.mp3,1,Reading The Chart,,,,,,Reading The Chart,,,,,,
+matching,Data Simple Pictograph Count,Match graph items!,,,1,,,,,,ops,Apples 🍎,5,Bananas 🍌,3,Oranges 🍊,4,

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pirate Treasure Coins 41 to 60,Which treasure chest has 50 gold coins?,coin50.webp,audio_q1.mp3,1,50,45,55,,,50,,,,,,,
+count_objects,Pirate Treasure Coins 41 to 60,Count all 50 gold coins in the treasure chest!,chest50.webp,audio_q2.mp3,1,50,48,52,,🪙,50,,,,,,,
+matching,Pirate Treasure Coins 41 to 60,Match pirate coins!,,,1,,,,,,45 Coins,45,50,50,55,55,,

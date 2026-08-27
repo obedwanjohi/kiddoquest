@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter P Pig,Which letter makes the /p/ sound in P P P - /p/ /p/ /p/ - Pig Pig?,letter_p_card.webp,audio_q1.mp3,1,P,O,Q,,,1,,,,,,,
+multiple_choice,Letter P Pig,Touch the cute pink animal starting with letter P!,pig_p.webp,audio_q2.mp3,1,Pig,Dog,Cat,,,1,,,,,,,
+multiple_choice,Letter P Pig,Listen to the song: P P P - /p/ /p/ /p/ - Pig!,pig_song.webp,audio_q3.mp3,1,Pig,Lion,Monkey,,,1,,,,,,,
+speak_repeat,Letter P Pig,Say the phonics song chant: P P P - PIG!,speak_pig_p.webp,audio_q4.mp3,1,Pig,,,,,,Pig,,,,,,
+speak_repeat,Letter P Pig,Say out loud clearly: LETTER P!,speak_letter_p.webp,audio_q5.mp3,1,Letter P,,,,,,Letter P,,,,,,
+matching,Letter P Pig,Match letter P to Pig!,,,1,,,,,,,,P,P,Pig,Pig,sound /p/,Pig
+matching,Letter P Pig,Match letter P sound /p/!,,,1,,,,,,,,P,P,/p/ /p/ /p/,Pig,Pig,Pig

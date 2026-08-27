@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Vocabulary Master,Which fruit is sweet and yellow?,master_banana.webp,audio_q1.mp3,1,Banana,Carrot,Shirt,,,1,,,,,,,
+multiple_choice,Vocabulary Master,Which animal goes MOO MOO?,master_cow.webp,audio_q2.mp3,1,Cow,Lion,Cat,,,1,,,,,,,
+multiple_choice,Vocabulary Master,Which toy do we bounce?,master_ball.webp,audio_q3.mp3,1,Ball,Book,Shoes,,,1,,,,,,,
+multiple_choice,Vocabulary Master,Touch the golden Vocabulary Master Badge!,master_badge.webp,audio_q4.mp3,1,🏆,Star,Hat,,,1,,,,,,,
+speak_repeat,Vocabulary Master,Say out loud clearly: VOCABULARY MASTER!,speak_vocab_master.webp,audio_q5.mp3,1,Vocabulary Master,,,,,,Vocabulary Master,,,,,,
+speak_repeat,Vocabulary Master,Say out loud: I KNOW ALL MY WORDS!,speak_know_words.webp,audio_q6.mp3,1,I Know All My Words,,,,,,I Know All My Words,,,,,,
+matching,Vocabulary Master,Match categories to examples!,,,1,,,,,,,,Animal,Cow,Fruit,Banana,Toy,Ball
+matching,Vocabulary Master,Match clothes and supplies!,,,1,,,,,,,,Clothes,Shirt,Supply,Pencil,Badge,Master Badge

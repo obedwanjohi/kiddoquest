@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Prodigal Son Welcome,What did the loving father do when his son returned home?,cre_father_open_arms.webp,audio_q1.mp3,1,Ran With Open Arms,Closed The Door,Sent Him Away,,,1,,,,,,,
+multiple_choice,Prodigal Son Welcome,Touch the loving father giving a warm welcome hug!,cre_father_hug.webp,audio_q2.mp3,1,Loving Father Hug,FACE,CLOUD,,,1,,,,,,,
+multiple_choice,Prodigal Son Welcome,What story lesson does the loving father teach us?,cre_god_forgives_us.webp,audio_q3.mp3,1,God Forgives Us,God Is Mean,Run Away,,,1,,,,,,,
+speak_repeat,Prodigal Son Welcome,Say out loud clearly: WELCOME HOME MY SON!,speak_welcome_home_son.webp,audio_q4.mp3,1,Welcome Home My Son,,,,,,Welcome Home My Son,,,,,,
+speak_repeat,Prodigal Son Welcome,Say out loud: GOD FORGIVES US WITH LOVE!,speak_god_forgives_love.webp,audio_q5.mp3,1,God Forgives Us With Love,,,,,,God Forgives Us With Love,,,,,,
+matching,Prodigal Son Welcome,Match story themes!,,,1,,,,,,,,Father,Loving Welcome,Son,Returned Home,God,Full of Forgiveness
+matching,Prodigal Son Welcome,Match story pictures!,,,1,,,,,,,,Father,Loving Father,Arms,Open Arms,Hug,Welcome Hug

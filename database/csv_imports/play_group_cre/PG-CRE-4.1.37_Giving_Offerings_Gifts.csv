@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Giving Offerings Gifts,How does God feel about a child who gives with joy?,cre_cheerful_giver.webp,audio_q1.mp3,1,God Loves Cheerful Givers,God Is Angry,God Is Away,,,1,,,,,,,
+multiple_choice,Giving Offerings Gifts,Touch the offering basket used in church!,cre_offering_basket.webp,audio_q2.mp3,1,Offering Basket,Toy Box,Trash Can,,,1,,,,,,,
+multiple_choice,Giving Offerings Gifts,Touch the golden coin given as an offering to God!,cre_gold_offering.webp,audio_q3.mp3,1,COIN,Paper,Button,,,1,,,,,,,
+speak_repeat,Giving Offerings Gifts,Say out loud clearly: GOD LOVES A CHEERFUL GIVER!,speak_cheerful_giver.webp,audio_q4.mp3,1,God Loves A Cheerful Giver,,,,,,God Loves A Cheerful Giver,,,,,,
+speak_repeat,Giving Offerings Gifts,Say out loud: GIVING GIFTS TO GOD!,speak_giving_gifts.webp,audio_q5.mp3,1,Giving Gifts To God,,,,,,Giving Gifts To God,,,,,,
+matching,Giving Offerings Gifts,Match giving concepts!,,,1,,,,,,,,Heart,Cheerful Giver,Basket,Offering Basket,Gift,God's Work
+matching,Giving Offerings Gifts,Match giving pictures!,,,1,,,,,,,,Basket,Offering Basket,Coin,COIN,Heart,Cheerful Giver

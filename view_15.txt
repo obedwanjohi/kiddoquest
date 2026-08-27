@@ -1,0 +1,49 @@
+Created At: 2026-07-17T18:33:05Z
+Completed At: 2026-07-17T18:33:05Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3122
+Total Bytes: 144165
+Showing lines 3050 to 3090
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+3050:                 strokes: this.tracingStrokes,
+3051:             });
+3052: 
+3053:             setTimeout(() => { this.nextQuestion(); }, 2000);
+3054:         },
+3055: 
+3056:         // ---- SUBMIT QUIZ (via dynamically created form on document.body) ----
+3057:         submitQuiz() {
+3058:             // Build a form OUTSIDE of any Alpine template and append to <body>
+3059:             const form = document.createElement('form');
+3060:             form.method = 'POST';
+3061:             // Use relative URL to avoid APP_URL port mismatch
+3062:             form.action = '/kids/quiz/' + config.quizId + '/submit';
+3063: 
+3064:             const addHidden = (name, value) => {
+3065:                 const input = document.createElement('input');
+3066:                 input.type = 'hidden';
+3067:                 input.name = name;
+3068:                 input.value = value;
+3069:                 form.appendChild(input);
+3070:             };
+3071: 
+3072:             // CSRF token (from global config — bulletproof, no x-ref dependency)
+3073:             addHidden('_token', config.csrfToken);
+3074: 
+3075:             // Quiz data
+3076:             addHidden('score', this.score);
+3077:             addHidden('total', this.questions.length);
+3078:             addHidden('stars', this.starsEarned);
+3079:             addHidden('time_spent', this.timeSpent);
+3080:             addHidden('answers', JSON.stringify(this.answerLog));
+3081: 
+3082:             document.body.appendChild(form);
+3083:             form.submit();
+3084:         },
+3085: 
+3086:         // ---- EXIT / RESTART ----
+3087:         exitQuiz() {
+3088:             if (confirm('Leave the quiz? Your progress will be saved.')) {
+3089:                 window.location.href = config.exitUrl;
+3090:             }
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

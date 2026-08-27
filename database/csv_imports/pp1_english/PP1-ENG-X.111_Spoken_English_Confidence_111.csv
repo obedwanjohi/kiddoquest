@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Spoken English Confidence 111,Say 'THANK YOU TEACHER!' clearly!,thank_q1.webp,audio_q1.mp3,1,🙏,No,Bye,,,1,,,,,,,
+speak_repeat,Spoken English Confidence 111,Say out loud: THANK YOU VERY MUCH!,thank_speak.webp,audio_q2.mp3,1,Thank You Very Much,,,,,,Thank You Very Much,,,,,,
+matching,Spoken English Confidence 111,Match polite words!,,,1,,,,,,Thank You 🙏,Gratitude,Please 🤲,Polite,Hello 👋,Greeting,,

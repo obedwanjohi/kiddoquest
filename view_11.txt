@@ -1,0 +1,59 @@
+Created At: 2026-07-17T15:35:24Z
+Completed At: 2026-07-17T15:35:24Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3090
+Total Bytes: 142344
+Showing lines 2800 to 2850
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2800:                 canvasEl.addEventListener('touchmove', move, { passive: false });
+2801:                 canvasEl.addEventListener('touchend', end, { passive: false });
+2802:                 canvasEl.addEventListener('mousedown', start);
+2803:                 canvasEl.addEventListener('mousemove', move);
+2804:                 canvasEl.addEventListener('mouseup', end);
+2805:                 canvasEl.addEventListener('mouseleave', end);
+2806:             });
+2807:         },
+2808: 
+2809:         // Draw the guide letter (faint fill + dashed outline)
+2810:         drawTracingGuide(ctx, size) {
+2811:             const character = this.currentQuestion.metadata?.character || 'A';
+2812:             const fontSize = 200;
+2813:             const cx = size / 2;
+2814:             const cy = size / 2 + 10;
+2815: 
+2816:             ctx.clearRect(0, 0, size, size);
+2817:             ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+2818:             ctx.textAlign = 'center';
+2819:             ctx.textBaseline = 'middle';
+2820: 
+2821:             ctx.fillStyle = 'rgba(196, 181, 253, 0.15)';
+2822:             ctx.fillText(character, cx, cy);
+2823: 
+2824:             ctx.strokeStyle = '#C4B5FD';
+2825:             ctx.lineWidth = 2;
+2826:             ctx.setLineDash([12, 8]);
+2827:             ctx.strokeText(character, cx, cy);
+2828:             ctx.setLineDash([]);
+2829: 
+2830:             // Set child stroke style (purple)
+2831:             ctx.strokeStyle = '#7C3AED';
+2832:             ctx.lineWidth = 16;
+2833:             ctx.lineCap = 'round';
+2834:             ctx.lineJoin = 'round';
+2835:         },
+2836: 
+2837:         // ---- STROKE PATHS (real writing order) ----
+2838:         // Each character = array of strokes; each stroke = array of [x, y] points.
+2839:         // The animated pencil follows these exact paths in order.
+2840:         tracingStrokePaths() {
+2841:             return {
+2842:                 // Letter A — 3 strokes: left leg, right leg, crossbar
+2843:                 'A': [
+2844:                     [[85, 225], [150, 95]],          // left diagonal (bottom → top)
+2845:                     [[150, 95], [215, 225]],          // right diagonal (top → bottom)
+2846:                     [[108, 170], [192, 170]],         // crossbar (left → right)
+2847:                 ],
+2848:                 // Letter B — 3 strokes: spine, top bump, bottom bump
+2849:                 'B': [
+2850:                     [[110, 95], [110, 225]],          // vertical spine (top → bottom)
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

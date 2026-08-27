@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Storybook Master,Which house could the wolf NOT blow down?,master_pig_brick.webp,audio_q1.mp3,1,Brick House,Straw House,Stick House,,,1,,,,,,,
+multiple_choice,Storybook Master,Which animal won the race by walking slow and steady?,master_tortoise.webp,audio_q2.mp3,1,Slow Tortoise,Fast Hare,Sleeping Dog,,,1,,,,,,,
+multiple_choice,Storybook Master,What grew into the clouds from Jack's magic beans?,master_beanstalk.webp,audio_q3.mp3,1,Giant Beanstalk,Brick Wall,Turnip Plant,,,1,,,,,,,
+multiple_choice,Storybook Master,Touch the golden Storybook Master Trophy!,master_storybook_badge.webp,audio_q4.mp3,1,🏆,Gold Ring,Red Cape,,,1,,,,,,,
+speak_repeat,Storybook Master,Say out loud clearly: STORYBOOK MASTER!,speak_storybook_master.webp,audio_q5.mp3,1,Storybook Master,,,,,,Storybook Master,,,,,,
+speak_repeat,Storybook Master,Say out loud: I LOVE STORIES!,speak_love_stories.webp,audio_q6.mp3,1,I Love Stories,,,,,,I Love Stories,,,,,,
+matching,Storybook Master,Match stories to lessons!,,,1,,,,,,,,Tortoise,Slow and Steady,Mouse,Little Helper,Turnip,Pull Together
+matching,Storybook Master,Match characters to story objects!,,,1,,,,,,,,Pigs,Brick House,Jack,Magic Beans,Red Riding Hood,Goodie Basket

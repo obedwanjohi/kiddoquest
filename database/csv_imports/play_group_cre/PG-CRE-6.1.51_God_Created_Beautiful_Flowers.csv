@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Created Flowers,Touch the red rose created by God!,cre_red_rose.webp,audio_q1.mp3,1,ROSE,SUN,BOX,,,1,,,,,,,
+multiple_choice,God Created Flowers,Touch the tall yellow sunflower in God's garden!,cre_yellow_sunflower.webp,audio_q2.mp3,1,SUNFLOWER,LEAF,Pencil,,,1,,,,,,,
+multiple_choice,God Created Flowers,What do we give to flowers to help them grow?,cre_water_flowers.webp,audio_q3.mp3,1,Water,Stones,Trash,,,1,,,,,,,
+speak_repeat,God Created Flowers,Say out loud clearly: GOD CREATED BEAUTIFUL FLOWERS!,speak_god_made_flowers.webp,audio_q4.mp3,1,God Created Beautiful Flowers,,,,,,God Created Beautiful Flowers,,,,,,
+speak_repeat,God Created Flowers,Say out loud: ROSES AND SUNFLOWERS!,speak_roses_sunflowers.webp,audio_q5.mp3,1,Roses and Sunflowers,,,,,,Roses and Sunflowers,,,,,,
+matching,God Created Flowers,Match flowers to colors!,,,1,,,,,,,,Rose,Red,Sunflower,Yellow,Leaf,Green
+matching,God Created Flowers,Match garden pictures!,,,1,,,,,,,,Rose,ROSE,Sunflower,SUNFLOWER,Water,Watering Can

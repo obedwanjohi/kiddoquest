@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Creation Gods Wonderful World,Who created the sun, moon, trees, and animals in 6 days?,world_q1.webp,audio_q1.mp3,1,🙏,Nobody,Aliens,,,1,,,,
+speak_repeat,Creation Gods Wonderful World,Say out loud clearly: GOD CREATED OUR BEAUTIFUL WORLD!,world_speak.webp,audio_q2.mp3,1,God Created Our Beautiful World,,,,,,God Created Our Beautiful World,,,,,,
+matching,Creation Gods Wonderful World,Match creation days!,,,1,,,,,,Day 1 ☀️,Light,🌴,Trees & Plants,🦁,Animals & Humans,,

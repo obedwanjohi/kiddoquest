@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Miracle Feeding 5000,What lunch did the little boy share with Jesus to feed 5,000 people?,fish_q1.webp,audio_q1.mp3,1,5,1,Popcorn,,,1,,,,,,
+speak_repeat,Jesus Miracle Feeding 5000,Say out loud clearly: JESUS CAN DO ALL MIRACLES!,fed_speak.webp,audio_q2.mp3,1,Jesus Can Do All Miracles,,,,,,Jesus Can Do All Miracles,,,,,,
+matching,Jesus Miracle Feeding 5000,Match feeding miracle!,,,1,,,,,,5 Loaves 🍞,Bread,2,Fish,12,Leftovers,,

@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Bible Stories Master,Who built the Ark to save his family and animals from the flood?,ark_q1.webp,audio_q1.mp3,1,Noah,David,Daniel,,,1,,,,,,,
+multiple_choice,Bible Stories Master,Who was placed in a basket on the river as a baby?,baby_q2.webp,audio_q2.mp3,1,Moses,Jesus,Samuel,,,1,,,,,,,
+multiple_choice,Bible Stories Master,Who defeated the giant Goliath with a slingshot?,giant_q3.webp,audio_q3.mp3,1,David,Noah,Elijah,,,1,,,,,,,
+multiple_choice,Bible Stories Master,Who prayed three times a day even when thrown to lions?,lions_q4.webp,audio_q4.mp3,1,Daniel,David,Joseph,,,1,,,,,,,
+multiple_choice,Bible Stories Master,What promise did God make to Noah after the flood?,prom_q5.webp,audio_q5.mp3,1,Rainbow,Sunshine,More Rain,,,1,,,,,,,
+multiple_choice,Bible Stories Master,What did David use to defeat Goliath?,weapon_q6.webp,audio_q6.mp3,1,Slingshot,Sword,Arrow,,,1,,,,,,,
+multiple_choice,Bible Stories Master,Who shut the lions mouths to protect Daniel?,protect_q7.webp,audio_q7.mp3,1,God's Angel,The King,A Guard,,,1,,,,,,,
+multiple_choice,Bible Stories Master,Tap the GOLDEN BIBLE HERO TROPHY for knowing all Bible Heroes!,trophy_q8.webp,audio_q8.mp3,1,🏆,❌,⭕,,,1,,,,,,,
+speak_repeat,Bible Stories Master,Say out loud: I LOVE BIBLE HEROES!,hero_speak.webp,audio_q9.mp3,1,I Love Bible Heroes,,,,,,I Love Bible Heroes,,,,,,
+speak_repeat,Bible Stories Master,Say out loud: GOD IS THE HERO OF EVERY STORY!,god_speak.webp,audio_q10.mp3,1,God Is The Hero Of Every Story,,,,,,God Is The Hero Of Every Story,,,,,,
+speak_repeat,Bible Stories Master,Say out loud: I CAN BE A BIBLE HERO TOO!,me_speak.webp,audio_q11.mp3,1,I Can Be A Bible Hero Too,,,,,,I Can Be A Bible Hero Too,,,,,,
+matching,Bible Stories Master,Match Bible heroes to their story!,,,1,,,,,,,,Noah,Built the Ark,David,Defeated Goliath,Daniel,Lions Den
+matching,Bible Stories Master,Match hero to the challenge they faced!,,,1,,,,,,,,Noah,The Great Flood,Moses,River in Basket,Daniel,Hungry Lions
+matching,Bible Stories Master,Match what each hero teaches us!,,,1,,,,,,,,Noah,Obey God,David,Be Brave,Daniel,Pray Always

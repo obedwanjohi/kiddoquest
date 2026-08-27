@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Safari Grammar Intro,Which word is a NOUN naming a thing or animal?,grammar_noun_lion.webp,audio_q1.mp3,1,Lion,Run,Jump,,,1,,,,,,,
+multiple_choice,Safari Grammar Intro,Which word is a VERB showing action?,grammar_verb_jump.webp,audio_q2.mp3,1,Jump,Apple,Book,,,1,,,,,,,
+multiple_choice,Safari Grammar Intro,Touch the fruit NOUN we eat for snack!,grammar_noun_apple.webp,audio_q3.mp3,1,Apple,Run,Clap,,,1,,,,,,,
+multiple_choice,Safari Grammar Intro,Touch the VERB showing fast movement!,grammar_verb_run.webp,audio_q4.mp3,1,Run,Ball,Hat,,,1,,,,,,,
+speak_repeat,Safari Grammar Intro,Say out loud clearly: NOUNS AND VERBS!,speak_nouns_verbs.webp,audio_q5.mp3,1,Nouns and Verbs,,,,,,Nouns and Verbs,,,,,,
+speak_repeat,Safari Grammar Intro,Say out loud: SAFARI GRAMMAR INTRO!,speak_grammar_intro.webp,audio_q6.mp3,1,Safari Grammar Intro,,,,,,Safari Grammar Intro,,,,,,
+matching,Safari Grammar Intro,Match word types to examples!,,,1,,,,,,,,Noun,Lion,Verb,Run,Noun,Apple
+matching,Safari Grammar Intro,Match grammar categories!,,,1,,,,,,,,Naming Word,Noun,Action Word,Verb,Thing,Noun

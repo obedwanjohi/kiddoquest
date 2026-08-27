@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Safari Animal Count Showdown 61 to 80 48,Count all 70 zebras running on the savannah!,zebra70.webp,audio_q1.mp3,1,70,65,75,,🦓,70,,,,,,,
+speak_repeat,Safari Animal Count Showdown 61 to 80 48,Say out loud: SEVENTY ZEBRAS ON SAFARI!,zeb_speak.webp,audio_q2.mp3,1,Seventy Zebras On Safari,,,,,,Seventy Zebras On Safari,,,,,,
+matching,Safari Animal Count Showdown 61 to 80 48,Match zebra counts!,,,1,,,,,,65 Zebras 🦓,65,70,70,75,75,,

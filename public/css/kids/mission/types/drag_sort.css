@@ -1,0 +1,195 @@
+/* DRAG SORT STYLES */
+
+.drag-sort-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Tray Area */
+.sort-tray {
+    background: white; 
+    border-radius: 25px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.sort-chip {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 3px solid transparent;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.1);
+    transition: transform 0.1s;
+    font-size: 35px;
+    user-select: none;
+}
+.sort-chip:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+}
+.sort-chip.selected {
+    border-color: #1cb0f6;
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 0 rgba(0,0,0,0.15);
+    z-index: 10;
+}
+.sort-chip.correct {
+    border-color: #58cc02;
+    background: #D1FAE5;
+}
+.sort-chip.incorrect {
+    border-color: #ff4b4b;
+    background: #FEE2E2;
+}
+
+/* Buckets Area */
+.sort-buckets-row {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.sort-bucket {
+    flex: 1;
+    min-height: 120px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 4px dashed #CBD5E1;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+}
+
+.sort-bucket.highlight {
+    border-color: #1cb0f6;
+    background: rgba(255, 255, 255, 0.9);
+    border-style: solid;
+    transform: scale(1.02);
+}
+
+.sort-bucket.correct {
+    border-color: #58cc02;
+    background: #D1FAE5;
+    border-style: solid;
+}
+.sort-bucket.incorrect {
+    border-color: #ff4b4b;
+    background: #FEE2E2;
+    border-style: solid;
+}
+
+.bucket-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #64748B;
+    background: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-top: -24px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.05);
+    z-index: 2;
+    text-align: center;
+}
+
+.bucket-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    min-height: 60px;
+}
+
+.bucket-item {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.1s;
+}
+.bucket-item:active {
+    transform: translateY(4px);
+    box-shadow: 0 0px 0 rgba(0,0,0,0.1);
+}
+.bucket-item.correct {
+    border: 2px solid #58cc02;
+    background: #D1FAE5;
+}
+.bucket-item.incorrect {
+    border: 2px solid #ff4b4b;
+    background: #FEE2E2;
+}
+
+
+/* Landscape Tweaks */
+@media (min-width: 500px) and (orientation: landscape) {
+    .drag-sort-container {
+        gap: 15px;
+    }
+    .sort-tray {
+        padding: 5px;
+        gap: 8px;
+        background: transparent;
+        box-shadow: none;
+    }
+    .sort-chip {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        border-radius: 12px;
+    }
+    .sort-buckets-row {
+        gap: 10px;
+    }
+    .sort-bucket {
+        min-height: 90px;
+        padding: 5px;
+        border-radius: 15px;
+    }
+    .bucket-title {
+        font-size: 14px;
+        padding: 2px 8px;
+        margin-top: -16px;
+    }
+    .bucket-items {
+        gap: 4px;
+        margin-top: 5px;
+    }
+    .bucket-item {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        border-radius: 8px;
+    }
+}

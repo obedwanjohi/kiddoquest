@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,3D Shapes Cylinder Can Safari,Which 3D shape has two circular ends like a soup can?,cyl_q1.webp,audio_q1.mp3,1,Cylinder 🥫,Cube 📦,Sphere ⚽,,,1,,,,,,,
+speak_repeat,3D Shapes Cylinder Can Safari,Say out loud clearly: A CAN IS A CYLINDER!,cyl_speak.webp,audio_q2.mp3,1,A Can Is A Cylinder,,,,,,A Can Is A Cylinder,,,,,,
+matching,3D Shapes Cylinder Can Safari,Match 3D cylinder objects!,,,1,,,,,,ops,Soup Can 🥫,Cylinder,Log 🪵,Cylinder,Battery 🔋,Cylinder,

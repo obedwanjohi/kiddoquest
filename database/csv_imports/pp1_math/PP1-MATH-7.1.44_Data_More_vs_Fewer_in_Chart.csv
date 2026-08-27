@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Data More vs Fewer in Chart,Which fruit has the MOST votes on the chart?,chart_q1.webp,audio_q1.mp3,1,🍎,Bananas (2 Votes),Oranges (4 Votes),,,1,,,,,,,
+speak_repeat,Data More vs Fewer in Chart,Say out loud clearly: MOST AND FEWEST!,chart_speak.webp,audio_q2.mp3,1,Most and Fewest,,,,,,Most and Fewest,,,,,,
+matching,Data More vs Fewer in Chart,Match chart results!,,,1,,,,,,ops,Apples 🍎,Most Votes,Bananas 🍌,Fewest Votes,Oranges 🍊,Medium,

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Sharing Toys,What should we do when playing with our friends?,cre_sharing_toys.webp,audio_q1.mp3,1,Share Our Toys,Hide Toys,Take Toys Away,,,1,,,,,,,
+multiple_choice,Sharing Toys,Touch the happy friends sharing a teddy bear!,cre_sharing_bear.webp,audio_q2.mp3,1,Sharing Bear,Fighting,Crying,,,1,,,,,,,
+multiple_choice,Sharing Toys,How does God feel when we share with others?,cre_god_happy_share.webp,audio_q3.mp3,1,God Is Happy,God Is Angry,God Is Sad,,,1,,,,,,,
+speak_repeat,Sharing Toys,Say out loud clearly: SHARING TOYS BRINGS JOY!,speak_sharing_joy.webp,audio_q4.mp3,1,Sharing Toys Brings Joy,,,,,,Sharing Toys Brings Joy,,,,,,
+speak_repeat,Sharing Toys,Say out loud: I LIKE TO SHARE!,speak_like_to_share.webp,audio_q5.mp3,1,I Like To Share,,,,,,I Like To Share,,,,,,
+matching,Sharing Toys,Match sharing behaviors!,,,1,,,,,,,,Toys,Share,Friends,Play Together,Heart,Joy
+matching,Sharing Toys,Match sharing pictures!,,,1,,,,,,,,Share,Sharing Toys,Bear,Teddy Bear,Smile,FRIENDS

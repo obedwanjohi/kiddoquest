@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter R Ring,Which letter makes the /r/ sound in R R R - /r/ /r/ /r/ - Ring Ring?,letter_r_card.webp,audio_q1.mp3,1,R,Q,S,,,1,,,,,,,
+multiple_choice,Letter R Ring,Touch the shiny gold ring starting with letter R!,ring_r.webp,audio_q2.mp3,1,Ring,Hat,Juice,,,1,,,,,,,
+multiple_choice,Letter R Ring,Listen to the song: R R R - /r/ /r/ /r/ - Ring!,ring_song.webp,audio_q3.mp3,1,Ring,Queen,Lion,,,1,,,,,,,
+speak_repeat,Letter R Ring,Say the phonics song chant: R R R - RING!,speak_ring_r.webp,audio_q4.mp3,1,Ring,,,,,,Ring,,,,,,
+speak_repeat,Letter R Ring,Say out loud clearly: LETTER R!,speak_letter_r.webp,audio_q5.mp3,1,Letter R,,,,,,Letter R,,,,,,
+matching,Letter R Ring,Match letter R to Ring!,,,1,,,,,,,,R,R,Ring,Ring,sound /r/,Ring
+matching,Letter R Ring,Match letter R sound /r/!,,,1,,,,,,,,R,R,/r/ /r/ /r/,Ring,Ring,Ring

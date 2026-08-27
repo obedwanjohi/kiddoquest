@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pre Writing Loop Tracing 109,Trace the loop path!,loop_q1.webp,audio_q1.mp3,1,Loop Path 〰️,Straight Line,Square,,,1,,,,,,,
+speak_repeat,Pre Writing Loop Tracing 109,Say out loud: I CAN TRACE WAVY LOOPS!,loop_speak.webp,audio_q2.mp3,1,I Can Trace Wavy Loops,,,,,,I Can Trace Wavy Loops,,,,,,
+matching,Pre Writing Loop Tracing 109,Match pre-writing paths!,,,1,,,,,,Loop 〰️,Curvy,Line 📏,Straight,Zigzag ⚡,Pointy,,

@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Space Rocket Counter,How many shiny space rockets are blasting into space?,space_rockets.webp,audio_q1.mp3,1,6,5,4,,rocket.webp,6,,,,,,,
+count_objects,Space Rocket Counter,Count the bright planets orbiting the sun!,space_planets.webp,audio_q2.mp3,1,5,6,4,,planet.webp,5,,,,,,,
+count_objects,Space Rocket Counter,How many stars did Leo count through the telescope?,space_stars.webp,audio_q3.mp3,1,6,4,5,,star.webp,6,,,,,,,
+multiple_choice,Space Rocket Counter,Which card shows 6 space rockets?,mc_six_rockets.webp,audio_q4.mp3,1,6,4,5,,,6,,,,,,,

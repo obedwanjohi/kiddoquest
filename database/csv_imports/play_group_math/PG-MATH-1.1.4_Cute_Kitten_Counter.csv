@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Cute Kitten Counter,How many fluffy kittens are sleeping on the rug?,kitten_rug.webp,audio_q1.mp3,1,1,2,3,,kitten.webp,1,,,,,,,
+count_objects,Cute Kitten Counter,Count the cute kittens playing with yarn!,kitten_yarn.webp,audio_q2.mp3,1,2,1,3,,kitten.webp,2,,,,,,,
+count_objects,Cute Kitten Counter,How many kittens are drinking milk together?,kitten_milk.webp,audio_q3.mp3,1,3,2,1,,kitten.webp,3,,,,,,,
+multiple_choice,Cute Kitten Counter,Which card shows 1 cute kitten?,mc_one_kitten.webp,audio_q4.mp3,1,1,2,3,,,1,,,,,,,

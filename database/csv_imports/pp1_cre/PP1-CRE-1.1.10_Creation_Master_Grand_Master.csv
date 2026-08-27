@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Creation Master Grand Master,Who created the sun moon stars trees animals and you?,creat_q1.webp,audio_q1.mp3,1,God,A Machine,Nobody,,,1,,,,,,,
+multiple_choice,Creation Master Grand Master,God made the sun to give us what during the day?,sun_q2.webp,audio_q2.mp3,1,Light,Rain,Wind,,,1,,,,,,,
+multiple_choice,Creation Master Grand Master,God made animals. Which animal lives in the water?,water_q3.webp,audio_q3.mp3,1,Fish,Lion,Bird,,,1,,,,,,,
+multiple_choice,Creation Master Grand Master,God made plants and trees. What colour are most leaves?,leaf_q4.webp,audio_q4.mp3,1,Green,Blue,Red,,,1,,,,,,,
+multiple_choice,Creation Master Grand Master,God made you special. How many eyes did God give you?,eyes_q5.webp,audio_q5.mp3,1,2,5,0,,,1,,,,,,,
+multiple_choice,Creation Master Grand Master,God gave you a family. Who cares for you at home?,fam_q6.webp,audio_q6.mp3,1,Mommy & Daddy,Strangers,Nobody,,,1,,,,,,,
+multiple_choice,Creation Master Grand Master,God protects us. What does God never stop doing for us?,prot_q7.webp,audio_q7.mp3,1,Loving Us,Ignoring Us,Leaving Us,,,1,,,,,,,
+multiple_choice,Creation Master Grand Master,Tap the GOLDEN CREATION TROPHY for mastering God's Creation!,trophy_q8.webp,audio_q8.mp3,1,🏆,❌,⭕,,,1,,,,,,,
+speak_repeat,Creation Master Grand Master,Say out loud: GOD CREATED EVERYTHING!,creat_speak.webp,audio_q9.mp3,1,God Created Everything,,,,,,God Created Everything,,,,,,
+speak_repeat,Creation Master Grand Master,Say out loud: THANK YOU GOD FOR ALL YOU MADE!,thanks_speak.webp,audio_q10.mp3,1,Thank You God For All You Made,,,,,,Thank You God For All You Made,,,,,,
+speak_repeat,Creation Master Grand Master,Say out loud: I AM GOD'S WONDERFUL CREATION!,wonder_speak.webp,audio_q11.mp3,1,I Am Gods Wonderful Creation,,,,,,I Am Gods Wonderful Creation,,,,,,
+matching,Creation Master Grand Master,Match God's creation to where it lives!,,,1,,,,,,,,Sun ☀️,Sky,Fish 🐟,Water,Trees 🌳,Land
+matching,Creation Master Grand Master,Match creation to what it gives us!,,,1,,,,,,,,Sun ☀️,Light & Warmth,Food 🍎,Strength,Family 👨‍👩‍👧,Love
+matching,Creation Master Grand Master,Match creation praise words!,,,1,,,,,,,,God,Creator,Everything,His Work,Me,Special Gift

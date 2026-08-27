@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Underwater Fish Counting 16 to 20,Count all 18 blue sea fish in the reef!,sea18.webp,audio_q1.mp3,1,18,17,19,,🐟,18,,,,,,,
+speak_repeat,Underwater Fish Counting 16 to 20,Say out loud: EIGHTEEN SEA FISH!,sea_speak.webp,audio_q2.mp3,1,Eighteen Sea Fish,,,,,,Eighteen Sea Fish,,,,,,
+matching,Underwater Fish Counting 16 to 20,Match sea counts!,,,1,,,,,,18 Fish 🐟,18,19,19,20,20,,

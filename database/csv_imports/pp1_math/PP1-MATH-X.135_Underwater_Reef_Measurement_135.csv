@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Underwater Reef Measurement 135,Which sea creature is LONGEST: Blue Whale (20m) or Fish (10cm)?,sea_q1.webp,audio_q1.mp3,1,🐋,🐟,Equal,,,1,,,,,,,
+speak_repeat,Underwater Reef Measurement 135,Say out loud: BLUE WHALE IS LONGEST!,whale_speak.webp,audio_q2.mp3,1,Blue Whale Is Longest,,,,,,Blue Whale Is Longest,,,,,,
+matching,Underwater Reef Measurement 135,Match sea lengths!,,,1,,,,,,Whale 🐋,Longest,Fish 🐟,Short,Seahorse 🐚,Tiny,,

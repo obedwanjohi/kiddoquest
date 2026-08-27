@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Saying Sorry Forgiving,What do we say when we hurt someone by mistake?,cre_saying_sorry.webp,audio_q1.mp3,1,I Am Sorry,Go Away,Laugh,,,1,,,,,,,
+multiple_choice,Saying Sorry Forgiving,What do we say when a friend says sorry to us?,cre_i_forgive_you.webp,audio_q2.mp3,1,I Forgive You,I Am Angry,No Way,,,1,,,,,,,
+multiple_choice,Saying Sorry Forgiving,Touch the warm hug between forgiving friends!,cre_forgiving_hug.webp,audio_q3.mp3,1,Forgiving Hug,Fighting,FACE,,,1,,,,,,,
+speak_repeat,Saying Sorry Forgiving,Say out loud clearly: I AM SORRY I FORGIVE YOU!,speak_sorry_forgive.webp,audio_q4.mp3,1,I Am Sorry I Forgive You,,,,,,I Am Sorry I Forgive You,,,,,,
+speak_repeat,Saying Sorry Forgiving,Say out loud: FORGIVENESS BRINGS PEACE!,speak_forgiveness_peace.webp,audio_q5.mp3,1,Forgiveness Brings Peace,,,,,,Forgiveness Brings Peace,,,,,,
+matching,Saying Sorry Forgiving,Match forgiveness words!,,,1,,,,,,,,Mistake,I Am Sorry,Friend,I Forgive You,Heart,Peace
+matching,Saying Sorry Forgiving,Match forgiveness pictures!,,,1,,,,,,,,Sorry,Saying Sorry,Forgive,I Forgive You,Hug,Warm Hug

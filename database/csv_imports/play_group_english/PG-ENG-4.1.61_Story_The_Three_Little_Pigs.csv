@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Three Little Pigs,Which sturdy house could the wolf NOT blow down?,story_brick_house.webp,audio_q1.mp3,1,Brick House,Straw House,Stick House,,,1,,,,,,,
+multiple_choice,Three Little Pigs,Touch the first little pig's house made of straw!,story_straw_house.webp,audio_q2.mp3,1,Straw House,Brick House,Stick House,,,1,,,,,,,
+multiple_choice,Three Little Pigs,Touch the big bad wolf from the story!,story_wolf.webp,audio_q3.mp3,1,Big Bad Wolf,Little Pig,Friendly Lion,,,1,,,,,,,
+multiple_choice,Three Little Pigs,Which house was made of wooden sticks?,story_stick_house.webp,audio_q4.mp3,1,Stick House,Brick House,Straw House,,,1,,,,,,,
+speak_repeat,Three Little Pigs,Say out loud clearly: THREE LITTLE PIGS!,speak_three_pigs.webp,audio_q5.mp3,1,Three Little Pigs,,,,,,Three Little Pigs,,,,,,
+speak_repeat,Three Little Pigs,Say out loud: STURDY BRICK HOUSE!,speak_brick_house.webp,audio_q6.mp3,1,Sturdy Brick House,,,,,,Sturdy Brick House,,,,,,
+matching,Three Little Pigs,Match pigs to their house materials!,,,1,,,,,,,,First Pig,Straw,Second Pig,Sticks,Third Pig,Bricks
+matching,Three Little Pigs,Match story items!,,,1,,,,,,,,Pigs,Pigs,Wolf,Wolf,House,House

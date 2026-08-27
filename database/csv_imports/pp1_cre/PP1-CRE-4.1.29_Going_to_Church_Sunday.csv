@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Going to Church Sunday,What special place do we go to worship God with others?,church_q1.webp,audio_q1.mp3,1,Church,Market,Bus Stop,,,1,,,,,,,
+multiple_choice,Going to Church Sunday,On which day do most Christians go to church?,day_q2.webp,audio_q2.mp3,1,Sunday,Monday,Friday,,,1,,,,,,,
+multiple_choice,Going to Church Sunday,What do we do at church?,do_q3.webp,audio_q3.mp3,1,Worship God,Buy Things,Play Football,,,1,,,,,,,
+multiple_choice,Going to Church Sunday,How should we behave inside the church?,behave_q4.webp,audio_q4.mp3,1,Quietly & Respectfully,Loudly & Rudely,By Running,,,1,,,,,,,
+multiple_choice,Going to Church Sunday,What do we hear at church?,hear_q5.webp,audio_q5.mp3,1,Bible Teaching,Sports News,Recipes,,,1,,,,,,,
+multiple_choice,Going to Church Sunday,Church is called the House of what?,house_q6.webp,audio_q6.mp3,1,God,The King,The Teacher,,,1,,,,,,,
+multiple_choice,Going to Church Sunday,What do we put in the offering basket at church?,offer_q7.webp,audio_q7.mp3,1,Our Gifts,Our Shoes,Our Toys,,,1,,,,,,,
+multiple_choice,Going to Church Sunday,Touch the beautiful church building where we worship God!,touch_q8.webp,audio_q8.mp3,1,Church,School,Market,,,1,,,,,,,
+speak_repeat,Going to Church Sunday,Say out loud clearly: I LOVE GOING TO CHURCH!,church_speak.webp,audio_q9.mp3,1,I Love Going To Church,,,,,,I Love Going To Church,,,,,,
+speak_repeat,Going to Church Sunday,Say out loud: GOD'S HOUSE IS A HAPPY PLACE!,happy_speak.webp,audio_q10.mp3,1,Gods House Is A Happy Place,,,,,,Gods House Is A Happy Place,,,,,,
+speak_repeat,Going to Church Sunday,Say out loud: I WILL WORSHIP GOD AT CHURCH!,wor_speak.webp,audio_q11.mp3,1,I Will Worship God At Church,,,,,,I Will Worship God At Church,,,,,,
+matching,Going to Church Sunday,Match church activities!,,,1,,,,,,,,Church,House of God,Sunday,Worship Day,Believers,Gods Family
+matching,Going to Church Sunday,Match what happens at church!,,,1,,,,,,,,Sing,Praise Songs,Listen,Bible Teaching,Give,Offering
+matching,Going to Church Sunday,Match how we should be at church!,,,1,,,,,,,,Be Quiet,Show Respect,Sit Well,Listen Carefully,Dress Nicely,Honor God

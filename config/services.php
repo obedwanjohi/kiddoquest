@@ -35,4 +35,18 @@ return [
         ],
     ],
 
+    'intasend' => [
+        'publishable_key' => env('INTASEND_PUBLISHABLE_KEY'),
+        'secret_key'      => env('INTASEND_SECRET_KEY'),
+        'test_mode'       => env('INTASEND_TEST_MODE', true),
+    ],
+
+    'mpesa' => [
+        'consumer_key'    => env('MPESA_CONSUMER_KEY'),
+        'consumer_secret' => env('MPESA_CONSUMER_SECRET'),
+        'shortcode'       => env('MPESA_SHORTCODE', '174379'),
+        'passkey'         => env('MPESA_PASSKEY'),
+        'env'             => env('MPESA_ENV', 'sandbox'),
+    ],
+
 ];

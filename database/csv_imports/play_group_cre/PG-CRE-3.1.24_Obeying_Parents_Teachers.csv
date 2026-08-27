@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Obeying Parents Teachers,What should we do when Teacher or Mommy speaks?,cre_listening_attentive.webp,audio_q1.mp3,1,Listen and Obey,Run Away,Shout Loud,,,1,,,,,,,
+multiple_choice,Obeying Parents Teachers,Touch the listening ears showing respectful attention!,cre_listening_ears.webp,audio_q2.mp3,1,Listening Ears,Sleeping Face,Running Feet,,,1,,,,,,,
+multiple_choice,Obeying Parents Teachers,Who gives us good guidance to keep us safe?,cre_parents_teacher.webp,audio_q3.mp3,1,Parents and Teachers,No One,Bad Wolf,,,1,,,,,,,
+speak_repeat,Obeying Parents Teachers,Say out loud clearly: LISTEN AND OBEY!,speak_listen_obey.webp,audio_q4.mp3,1,Listen and Obey,,,,,,Listen and Obey,,,,,,
+speak_repeat,Obeying Parents Teachers,Say out loud: OBEY YOUR PARENTS!,speak_obey_parents.webp,audio_q5.mp3,1,Obey Your Parents,,,,,,Obey Your Parents,,,,,,
+matching,Obeying Parents Teachers,Match obedience concepts!,,,1,,,,,,,,Parents,Obey Them,Teachers,Listen to Them,God,Pleased
+matching,Obeying Parents Teachers,Match obedience pictures!,,,1,,,,,,,,Ears,Listening Ears,Teacher,Classroom,Parents,Family

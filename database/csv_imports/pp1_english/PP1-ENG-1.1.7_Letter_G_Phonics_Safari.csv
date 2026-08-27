@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter G Phonics Safari,Which picture starts with the /g/ sound?,gir_q1.webp,audio_q1.mp3,1,🦒,Hat 🎩,Insect 🐜,,,1,,,,,,,
+multiple_choice,Letter G Phonics Safari,Tap the uppercase letter G!,letterG.webp,audio_q2.mp3,1,G,F,H,,,1,,,,,,,
+speak_repeat,Letter G Phonics Safari,Say out loud clearly: /g/ /g/ GIRAFFE!,gir_speak.webp,audio_q3.mp3,1,/g/ /g/ Giraffe,,,,,,/g/ /g/ Giraffe,,,,,,
+matching,Letter G Phonics Safari,Match Uppercase G to Lowercase g!,,,1,,,,,,G,g,F,f,H,h,,

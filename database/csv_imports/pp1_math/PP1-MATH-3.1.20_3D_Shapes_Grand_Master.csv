@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,3D Shapes Grand Master,Tap the GOLDEN 3D SHAPE TROPHY for mastering 3D Shapes!,trophy_q1.webp,audio_q1.mp3,1,🏆,🏆,🏆,,,1,,,,,,,
+speak_repeat,3D Shapes Grand Master,Say out loud: I KNOW MY 3D SHAPES!,shapes_speak.webp,audio_q2.mp3,1,I Know My 3D Shapes,,,,,,I Know My 3D Shapes,,,,,,
+matching,3D Shapes Grand Master,Match 3D shapes summary!,,,1,,,,,,ops,Sphere ⚽,Round,Cube 📦,Square Faces,Cone 🍦,Pointy Tip,

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Data Tally Marks Counting,How many items are represented by 1 bundle of 5 tally marks (卌)?,tally_q1.webp,audio_q1.mp3,1,5,4,6,,,1,,,,,,,
+speak_repeat,Data Tally Marks Counting,Say out loud clearly: FIVE TALLY MARKS MAKE ONE BUNDLE!,tally_speak.webp,audio_q2.mp3,1,Five Tally Marks Make One Bundle,,,,,,Five Tally Marks Make One Bundle,,,,,,
+matching,Data Tally Marks Counting,Match tally marks!,,,1,,,,,,卌,5 Marks,卌 卌,10,卌 卌 卌,15,,

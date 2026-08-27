@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Measurement Capacity Liters,Which unit measures liquids like milk and water: LITER (L) or Meter?,liter_q1.webp,audio_q1.mp3,1,🥛,Kilogram,Meter,,,1,,,,,,,
+speak_repeat,Measurement Capacity Liters,Say out loud clearly: LITER MEASURES MILK AND WATER!,liter_speak.webp,audio_q2.mp3,1,Liter Measures Milk and Water,,,,,,Liter Measures Milk and Water,,,,,,
+matching,Measurement Capacity Liters,Match capacity units!,,,1,,,,,,Milk Jug 🥛,Liters (L),🪣,Liters (L),🧃,Milliliters (mL),,

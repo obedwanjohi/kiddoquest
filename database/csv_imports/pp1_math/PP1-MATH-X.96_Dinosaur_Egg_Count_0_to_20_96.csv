@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Dinosaur Egg Count 0 to 20 96,Count all 15 dinosaur eggs in the nest!,egg15.webp,audio_q1.mp3,1,15,14,16,,🪺,15,,,,,,,
+speak_repeat,Dinosaur Egg Count 0 to 20 96,Say out loud: FIFTEEN DINO EGGS!,egg_speak.webp,audio_q2.mp3,1,Fifteen Dino Eggs,,,,,,Fifteen Dino Eggs,,,,,,
+matching,Dinosaur Egg Count 0 to 20 96,Match dino egg counts!,,,1,,,,,,15 Eggs 🪺,15,16,16,17,17,,

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Baby Animals,Touch the tiny baby cat (Kitten)!,baby_kitten.webp,audio_q1.mp3,1,Kitten,Puppy,Calf,,,1,,,,,,,
+multiple_choice,Baby Animals,Touch the playful baby dog (Puppy)!,baby_puppy.webp,audio_q2.mp3,1,Puppy,Kitten,Duckling,,,1,,,,,,,
+multiple_choice,Baby Animals,Touch the cute baby cow (Calf)!,baby_calf.webp,audio_q3.mp3,1,Calf,Puppy,Kitten,,,1,,,,,,,
+speak_repeat,Baby Animals,Say out loud clearly: BABY KITTEN!,speak_baby_kitten.webp,audio_q4.mp3,1,Baby Kitten,,,,,,Baby Kitten,,,,,,
+speak_repeat,Baby Animals,Say out loud: BABY PUPPY!,speak_baby_puppy.webp,audio_q5.mp3,1,Baby Puppy,,,,,,Baby Puppy,,,,,,
+matching,Baby Animals,Match mommy animals to baby animals!,,,1,,,,,,,,Cat,Kitten,Dog,Puppy,Cow,Calf
+matching,Baby Animals,Match baby animals to names!,,,1,,,,,,,,Kitten,Kitten,Puppy,Puppy,Calf,Calf

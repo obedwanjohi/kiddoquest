@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,PP2 CRE Grand Champion 68,Tap the BRONZE GRAND CHAMPION TROPHY for completing CRE Mission 68!,trophy_q1.webp,audio_q1.mp3,1,🏆,🏆,🏆,,,1,,,,,,,
+speak_repeat,PP2 CRE Grand Champion 68,Say out loud: I AM A CHAMPION FOR GOD!,champ_speak.webp,audio_q2.mp3,1,I Am A Champion For God,,,,,,I Am A Champion For God,,,,,,
+matching,PP2 CRE Grand Champion 68,Match CRE champion!,,,1,,,,,,Mission 68,Completed,Faith 🙏,Strong,Love ❤️,Forever,,

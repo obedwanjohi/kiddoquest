@@ -1,0 +1,11 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Farm Tractor Number Finder,Which green tractor shows Number 1?,tractor_num1.webp,audio_q1.mp3,1,1,2,3,,,1,,,,,,,
+multiple_choice,Farm Tractor Number Finder,Find Number 2 on the red farm barn!,barn_num2.webp,audio_q2.mp3,1,2,1,3,,,2,,,,,,,
+multiple_choice,Farm Tractor Number Finder,Which hay bale shows Number 3?,hay_num3.webp,audio_q3.mp3,1,3,2,1,,,3,,,,,,,
+multiple_choice,Farm Tractor Number Finder,Tap Number 4 on Farmer Leo's hat!,hat_num4.webp,audio_q4.mp3,1,4,3,5,,,4,,,,,,,
+multiple_choice,Farm Tractor Number Finder,Which farm fence sign shows Number 5?,fence_num5.webp,audio_q5.mp3,1,5,4,3,,,5,,,,,,,
+multiple_choice,Farm Tractor Number Finder,Find Number 6 on the milk bucket!,bucket_num6.webp,audio_q6.mp3,1,6,5,7,,,6,,,,,,,
+multiple_choice,Farm Tractor Number Finder,Which windmill blade shows Number 7?,mill_num7.webp,audio_q7.mp3,1,7,6,8,,,7,,,,,,,
+multiple_choice,Farm Tractor Number Finder,Tap Number 8 on the chicken coop door!,coop_num8.webp,audio_q8.mp3,1,8,7,9,,,8,,,,,,,
+multiple_choice,Farm Tractor Number Finder,Which apple crate shows Number 9?,crate_num9.webp,audio_q9.mp3,1,9,8,10,,,9,,,,,,,
+multiple_choice,Farm Tractor Number Finder,Tap Number 10 at the farm gate!,gate_num10.webp,audio_q10.mp3,1,10,9,8,,,10,,,,,,,

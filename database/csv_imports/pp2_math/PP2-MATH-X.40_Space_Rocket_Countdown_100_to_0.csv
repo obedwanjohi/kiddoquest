@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Space Rocket Countdown 100 to 0 40,Complete countdown by 10s: 50 40 30 _ 10 0?,space_q1.webp,audio_q1.mp3,1,20,15,25,,,,,,,,,,
+speak_repeat,Space Rocket Countdown 100 to 0 40,Say out loud: FIFTY FORTY THIRTY TWENTY TEN ZERO!,space_speak.webp,audio_q2.mp3,1,Fifty Forty Thirty Twenty Ten Zero,,,,,,Fifty Forty Thirty Twenty Ten Zero,,,,,,
+matching,Space Rocket Countdown 100 to 0 40,Match countdown 10s!,,,1,,,,,,50 40,30,30,10,10,Blastoff 🚀,,

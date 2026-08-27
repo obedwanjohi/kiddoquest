@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Good Shepherd,Who is our Good Shepherd who protects and cares for us?,cre_good_shepherd.webp,audio_q1.mp3,1,Jesus,The Big Wolf,LION,,,1,,,,,,,
+multiple_choice,Jesus Good Shepherd,Touch the little lost lamb carried safely by Jesus!,cre_carried_lamb.webp,audio_q2.mp3,1,Carried Lamb,Wild Dog,Cat,,,1,,,,,,,
+multiple_choice,Jesus Good Shepherd,Touch the wooden shepherd's staff used for guiding sheep!,cre_shepherd_staff.webp,audio_q3.mp3,1,Shepherd Staff,Pencil,Toy Car,,,1,,,,,,,
+speak_repeat,Jesus Good Shepherd,Say out loud clearly: JESUS IS THE GOOD SHEPHERD!,speak_good_shepherd.webp,audio_q4.mp3,1,Jesus Is The Good Shepherd,,,,,,Jesus Is The Good Shepherd,,,,,,
+speak_repeat,Jesus Good Shepherd,Say out loud: I AM HIS LITTLE LAMB!,speak_his_lamb.webp,audio_q5.mp3,1,I Am His Little Lamb,,,,,,I Am His Little Lamb,,,,,,
+matching,Jesus Good Shepherd,Match shepherd items!,,,1,,,,,,,,Shepherd,Jesus,Animal,LAMB,Tool,Shepherd Staff
+matching,Jesus Good Shepherd,Match story themes!,,,1,,,,,,,,Pasture,GRASS,Fold,Safe Home,Shepherd,Protector

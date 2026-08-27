@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Sharing With Others,What makes God happy when we have toys or snacks?,share_q1.webp,audio_q1.mp3,1,Sharing,Keeping All,Hiding Them,,,1,,,,,,,
+multiple_choice,Sharing With Others,The little boy shared his lunch with Jesus. How many people were fed?,fed_q2.webp,audio_q2.mp3,1,5000,10,100,,,1,,,,,,,
+multiple_choice,Sharing With Others,Touch the picture showing two children sharing a toy together!,toy_q3.webp,audio_q3.mp3,1,Sharing Toy,Fighting,Crying,,,1,,,,,,,
+multiple_choice,Sharing With Others,What should we share with a friend who is hungry?,food_q4.webp,audio_q4.mp3,1,Our Food,Nothing,Only A Little,,,1,,,,,,,
+multiple_choice,Sharing With Others,The Bible says it is more blessed to do what than to receive?,bless_q5.webp,audio_q5.mp3,1,Give,Take,Hide,,,1,,,,,,,
+multiple_choice,Sharing With Others,How do we feel when we share with others?,feel_q6.webp,audio_q6.mp3,1,Happy,Sad,Angry,,,1,,,,,,,
+multiple_choice,Sharing With Others,What can we share besides food and toys?,else_q7.webp,audio_q7.mp3,1,Kindness,Punches,Problems,,,1,,,,,,,
+multiple_choice,Sharing With Others,God shared His Son Jesus with us. What does that show us?,god_q8.webp,audio_q8.mp3,1,God Is Generous,God Is Selfish,God Is Angry,,,1,,,,,,,
+speak_repeat,Sharing With Others,Say out loud clearly: SHARING IS CARING!,share_speak.webp,audio_q9.mp3,1,Sharing Is Caring,,,,,,Sharing Is Caring,,,,,,
+speak_repeat,Sharing With Others,Say out loud: I WILL SHARE WITH MY FRIENDS!,will_speak.webp,audio_q10.mp3,1,I Will Share With My Friends,,,,,,I Will Share With My Friends,,,,,,
+speak_repeat,Sharing With Others,Say out loud: GOD LOVES A CHEERFUL GIVER!,giver_speak.webp,audio_q11.mp3,1,God Loves A Cheerful Giver,,,,,,God Loves A Cheerful Giver,,,,,,
+matching,Sharing With Others,Match what we can share!,,,1,,,,,,,,Food,With Hungry,Toys,With Friends,Kindness,With Everyone
+matching,Sharing With Others,Match sharing Bible examples!,,,1,,,,,,,,Little Boy,Shared Lunch,God,Gave Jesus,Dorcas,Made Clothes
+matching,Sharing With Others,Match feelings about sharing!,,,1,,,,,,,,When I Share,Feel Happy,When I Keep All,Feel Greedy,Giver,Is Blessed

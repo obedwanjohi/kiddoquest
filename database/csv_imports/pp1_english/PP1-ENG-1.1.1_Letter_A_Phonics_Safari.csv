@@ -1,0 +1,11 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter A Phonics Safari,Which picture starts with the /a/ sound?,apple_q1.webp,audio_q1.mp3,1,🍎,⚽,🐱,,,1,,,,,,,
+multiple_choice,Letter A Phonics Safari,Listen: /a/ /a/! Which animal starts with /a/?,alli_q2.webp,audio_q2.mp3,1,Alligator 🐊,Bear 🐻,Dog 🐶,,,1,,,,,,,
+multiple_choice,Letter A Phonics Safari,Tap the uppercase letter A!,letterA.webp,audio_q3.mp3,1,A,B,C,,,1,,,,,,,
+multiple_choice,Letter A Phonics Safari,Tap the lowercase letter a!,lettera.webp,audio_q4.mp3,1,a,b,d,,,1,,,,,,,
+multiple_choice,Letter A Phonics Safari,Which tiny insect starts with /a/?,ant_q5.webp,audio_q5.mp3,1,Ant 🐜,Bee 🐝,Spider 🕷️,,,1,,,,,,,
+speak_repeat,Letter A Phonics Safari,Say out loud: /a/ /a/ APPLE!,apple_speak.webp,audio_q9.mp3,1,/a/ /a/ Apple,,,,,,/a/ /a/ Apple,,,,,,
+speak_repeat,Letter A Phonics Safari,Say out loud clearly: A IS FOR APPLE!,a_speak.webp,audio_q13.mp3,1,A Is For Apple,,,,,,A Is For Apple,,,,,,
+matching,Letter A Phonics Safari,Match Uppercase A to Lowercase a!,,,1,,,,,,ops,A,a,B,b,C,c,
+matching,Letter A Phonics Safari,Match pictures starting with /a/ to Letter A!,,,1,,,,,,ops,Apple 🍎,A,Ant 🐜,A,Alligator 🐊,A,
+matching,Letter A Phonics Safari,Match beginning sounds!,,,1,,,,,,/a/,Apple,/b/,Ball,/c/,Cat,,

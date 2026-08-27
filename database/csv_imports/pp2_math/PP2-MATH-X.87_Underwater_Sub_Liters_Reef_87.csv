@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Underwater Sub Liters Reef 87,Which water tank holds MORE capacity: 10 Liters or 5 Liters?,tank_q1.webp,audio_q1.mp3,1,10,5,Equal,,,1,,,,,,,
+speak_repeat,Underwater Sub Liters Reef 87,Say out loud: TEN LITERS IS MORE CAPACITY!,liter_speak.webp,audio_q2.mp3,1,Ten Liters Is More Capacity,,,,,,Ten Liters Is More Capacity,,,,,,
+matching,Underwater Sub Liters Reef 87,Match reef capacity!,,,1,,,,,,10 Liters 🪣,More Capacity,5,Less Capacity,20,Most Capacity,,

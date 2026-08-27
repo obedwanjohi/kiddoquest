@@ -1,0 +1,59 @@
+Created At: 2026-07-17T15:35:39Z
+Completed At: 2026-07-17T15:35:39Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3090
+Total Bytes: 142344
+Showing lines 2850 to 2900
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2850:                     [[110, 95], [110, 225]],          // vertical spine (top → bottom)
+2851:                     [[110, 95], [165, 110], [180, 135], [165, 158], [110, 160]], // top bump
+2852:                     [[110, 160], [170, 175], [188, 205], [170, 225], [110, 225]], // bottom bump
+2853:                 ],
+2854:                 // Letter C — 1 stroke: curve top→left→bottom
+2855:                 'C': [
+2856:                     [[195, 120], [160, 100], [120, 105], [95, 150], [100, 195], [130, 222], [175, 220], [200, 200]],
+2857:                 ],
+2858:                 // Number 1 — 2 strokes: small flag, main line
+2859:                 '1': [
+2860:                     [[125, 125], [150, 100]],         // small diagonal at top
+2861:                     [[150, 100], [150, 225]],         // main vertical
+2862:                 ],
+2863:                 // Number 2 — 1 stroke: curve then diagonal base
+2864:                 '2': [
+2865:                     [[115, 135], [140, 108], [175, 108], [195, 138], [170, 168], [115, 218], [200, 218]],
+2866:                 ],
+2867:                 // Number 3 — 1 continuous stroke
+2868:                 '3': [
+2869:                     [[110, 120], [150, 100], [185, 118], [185, 150], [155, 162], [120, 158], [155, 162], [190, 182], [190, 212], [155, 228], [115, 220]],
+2870:                 ],
+2871:             };
+2872:         },
+2873: 
+2874:         // Animated demo: pencil follows real stroke paths (accurate writing order)
+2875:         playTracingDemo() {
+2876:             if (!this.tracingCanvasEl || this.answered) return;
+2877:             this.resetIdleTimer();
+2878:             this.tracingDemoPlaying = true;
+2879:             this.tracingStatus = '👀 Watch how to write it!';
+2880: 
+2881:             const ctx = this.tracingCanvasEl.getContext('2d');
+2882:             const size = 300;
+2883:             const character = this.currentQuestion.metadata?.character || 'A';
+2884: 
+2885:             // Get stroke paths; fall back to a simple down-stroke if undefined
+2886:             const allPaths = this.tracingStrokePaths();
+2887:             const strokes = allPaths[character] || [[[150, 100], [150, 220]]];
+2888: 
+2889:             // Precompute: total distance across all strokes, and per-segment lengths
+2890:             const segs = []; // {x1,y1,x2,y2,len,strokeIdx}
+2891:             let totalLen = 0;
+2892:             strokes.forEach((stroke, si) => {
+2893:                 for (let i = 0; i < stroke.length - 1; i++) {
+2894:                     const [x1, y1] = stroke[i];
+2895:                     const [x2, y2] = stroke[i + 1];
+2896:                     const len = Math.hypot(x2 - x1, y2 - y1);
+2897:                     segs.push({ x1, y1, x2, y2, len, strokeIdx: si });
+2898:                     totalLen += len;
+2899:                 }
+2900:             });
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

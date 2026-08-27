@@ -1,0 +1,34 @@
+Created At: 2026-07-17T18:33:26Z
+Completed At: 2026-07-17T18:33:26Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3122
+Total Bytes: 144165
+Showing lines 925 to 950
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+925:     })->values()->toArray();
+926: @endphp
+927: 
+928: <script>
+929:     window.__quizConfig = {
+930:         questions: @json($questionsJson),
+931:         childStars: {{ (int)($child->total_stars ?? 0) }},
+932:         quizId: {{ (int)$mission->id }},
+933:         voiceProfile: @json($mission->intro_voice_profile),
+934:         submitUrl: @json(route('kids.mission.submit', [$world, $mission])),
+935:         exitUrl: @json($world ? route('kids.mission-video', [$world, $mission]) : route('kids.map')),
+936:         csrfToken: @json(csrf_token()),
+937:     };
+938: </script>
+939: <div class="quiz-stage" x-data="quizEngine(window.__quizConfig)" x-init="init()" @click="if(window.KidSoundLayer) window.KidSoundLayer.init()">
+940: 
+941:     {{-- Loading state (shown until Alpine initializes) --}}
+942:     <div x-show="!initialized" style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:16px;">
+943:         <div style="font-size:64px;animation:kid-wiggle 2s ease-in-out infinite;">🦁</div>
+944:         <p style="font-family:var(--kid-font-heading);font-size:24px;font-weight:900;color:var(--kid-text);">Loading Quiz...</p>
+945:         <p style="font-size:16px;color:var(--kid-text-muted);">Getting ready for fun!</p>
+946:     </div>
+947: 
+948:     {{-- HEADER --}}
+949:     <div class="quiz-header" x-show="initialized" x-cloak>
+950:         <a href="#" class="exit-btn" @click.prevent="exitQuiz()" aria-label="Exit quiz">🗺️</a>
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

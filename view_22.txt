@@ -1,0 +1,64 @@
+Created At: 2026-07-17T19:14:17Z
+Completed At: 2026-07-17T19:14:17Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3148
+Total Bytes: 145735
+Showing lines 1210 to 1280
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1210:                                 </div>
+1211:                             </template>
+1212:                         </div>
+1213:                     </div>
+1214:                 </template>
+1215: 
+1216:                 {{-- Drag & Sort (QT-04) --}}
+1217:                 <template x-if="currentQuestion.type === 'drag_sort'">
+1218:                     <div class="sort-board">
+1219:                         {{-- Item tray (unsorted chips) --}}
+1220:                         <div class="sequence-tray-label">👆 Tap an item, then tap a box!</div>
+1221:                         <div class="sort-tray">
+1222:                             <template x-for="(chip, i) in sortChips" :key="'chip-' + i">
+1223:                                 <div class="sort-chip"
+1224:                                      :class="getSortChipClass(i)"
+1225:                                      @click="selectSortChip(i)"
+1226:                                      x-show="chip.bucket === null"
+1227:                                      x-text="chip.text"></div>
+1228:                             </template>
+1229:                         </div>
+1230: 
+1231:                         {{-- Category buckets --}}
+1232:                         <div class="sort-buckets">
+1233:                             <template x-for="(cat, bi) in (currentQuestion.metadata?.categories || [])" :key="'bucket-' + bi">
+1234:                                 <div class="sort-bucket"
+1235:                                      :class="getSortBucketClass(bi)"
+1236:                                  
+<truncated 1138 bytes>
+                         @click="checkSorting()">
+1254:                             ✅ Check My Sorting!
+1255:                         </button>
+1256:                     </div>
+1257:                 </template>
+1258: 
+1259:                 {{-- Listen & Choose (QT-06) --}}
+1260:                 <template x-if="currentQuestion.type === 'listen_choose'">
+1261:                     <div class="listen-board">
+1262:                         {{-- Big audio button --}}
+1263:                         <button class="listen-audio-btn"
+1264:                                 :class="{ playing: isSpeaking }"
+1265:                                 @click="playAudio()"
+1266:                                 :aria-label="'Play sound'"
+1267:                                 :disabled="answered">
+1268:                             <span class="sound-waves"></span>
+1269:                             <span class="sound-waves" style="animation-delay: 0.3s;"></span>
+1270:                             <span class="speaker-icon" x-text="isSpeaking ? '🔊' : '👂'"></span>
+1271:                             <span class="speaker-label" x-text="isSpeaking ? 'Playing...' : 'TAP TO LISTEN'"></span>
+1272:                         </button>
+1273:                         <div class="listen-prompt-label">Which animal makes that sound?</div>
+1274: 
+1275:                         {{-- Answer choices --}}
+1276:                         <div class="answer-grid" :data-count="currentQuestion.options.length">
+1277:                             <template x-for="(option, i) in currentQuestion.options" :key="option.id">
+1278:                                 <div class="answer-card"
+1279:                                      :class="getCardClass(i, option.is_correct)"
+1280:                                      :style="`animation-delay: ${0.1 + i * 0.08}s`"
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

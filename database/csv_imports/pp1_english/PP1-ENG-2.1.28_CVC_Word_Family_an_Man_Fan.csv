@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,CVC Word Family an Man Fan,Combine sounds /m/ + /a/ + /n/! What word does it make?,man_cvc.webp,audio_q1.mp3,1,MAN 👨,CAT,DOG,,,1,,,,,,,
+speak_repeat,CVC Word Family an Man Fan,Say out loud clearly: M-A-N SPELLS MAN!,man_speak.webp,audio_q2.mp3,1,M-A-N Spells Man,,,,,,M-A-N Spells Man,,,,,,
+matching,CVC Word Family an Man Fan,Match -an family words!,,,1,,,,,,M-A-N,Man 👨,F-A-N,Fan 🪭,V-A-N,Van 🚐,,

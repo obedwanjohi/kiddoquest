@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Enormous Turnip,What giant vegetable was stuck deep in the ground?,turnip_enormous.webp,audio_q1.mp3,1,Enormous Turnip,Small Carrot,Red Tomato,,,1,,,,,,,
+multiple_choice,Enormous Turnip,How did the family get the giant turnip out of the ground?,turnip_pulled.webp,audio_q2.mp3,1,Pulled Together,Cut Trees,Drove Tractor,,,1,,,,,,,
+multiple_choice,Enormous Turnip,Touch the grandfather who planted the turnip seed!,turnip_grandfather.webp,audio_q3.mp3,1,Grandfather,Big Wolf,Little Duck,,,1,,,,,,,
+speak_repeat,Enormous Turnip,Say out loud clearly: PULL TOGETHER!,speak_pull_together.webp,audio_q4.mp3,1,Pull Together,,,,,,Pull Together,,,,,,
+speak_repeat,Enormous Turnip,Say out loud: ENORMOUS TURNIP!,speak_enormous_turnip.webp,audio_q5.mp3,1,Enormous Turnip,,,,,,Enormous Turnip,,,,,,
+matching,Enormous Turnip,Match story helpers!,,,1,,,,,,,,Grandfather,First Pull,Grandmother,Second Pull,Family,Pulled Together
+matching,Enormous Turnip,Match story items!,,,1,,,,,,,,Turnip,Enormous,Family,Together,Garden,Ground

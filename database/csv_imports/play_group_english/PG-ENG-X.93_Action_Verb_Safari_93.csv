@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Action Verb Safari,Touch the action picture showing jumping high!,action_jump.webp,audio_q1.mp3,1,Jump High,Sit Down,Sleep,,,1,,,,,,,
+multiple_choice,Action Verb Safari,Touch the action picture showing running fast!,action_run.webp,audio_q2.mp3,1,Run Fast,Sleep,Sit Down,,,1,,,,,,,
+multiple_choice,Action Verb Safari,Touch the action picture showing clapping hands!,action_clap.webp,audio_q3.mp3,1,Clap Hands,Stomp Feet,Wave,,,1,,,,,,,
+speak_repeat,Action Verb Safari,Say out loud clearly: JUMP RUN CLAP!,speak_jump_run_clap.webp,audio_q4.mp3,1,Jump Run Clap,,,,,,Jump Run Clap,,,,,,
+speak_repeat,Action Verb Safari,Say out loud: ACTION VERB SAFARI!,speak_action_safari.webp,audio_q5.mp3,1,Action Verb Safari,,,,,,Action Verb Safari,,,,,,
+matching,Action Verb Safari,Match action verbs!,,,1,,,,,,,,Jump,Jump High,Run,Run Fast,Clap,Clap Hands
+matching,Action Verb Safari,Match actions to body parts!,,,1,,,,,,,,Clap,Hands,Stomp,Feet,Wave,Hands

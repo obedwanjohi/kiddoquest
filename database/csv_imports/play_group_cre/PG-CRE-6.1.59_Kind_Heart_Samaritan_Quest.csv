@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Kind Heart Samaritan,What should we do when a friend falls and gets hurt?,cre_helping_friend_fall.webp,audio_q1.mp3,1,Help Them Up With Kindness,Laugh At Them,Run Away,,,1,,,,,,,
+multiple_choice,Kind Heart Samaritan,Touch the clean bandage placed with loving care!,cre_clean_bandage.webp,audio_q2.mp3,1,Clean Bandage,Dirt,Mud,,,1,,,,,,,
+multiple_choice,Kind Heart Samaritan,What kind of heart pleases Jesus?,cre_kind_heart.webp,audio_q3.mp3,1,Kind and Caring Heart,Mean Heart,FACE,,,1,,,,,,,
+speak_repeat,Kind Heart Samaritan,Say out loud clearly: KIND HEART SAMARITAN QUEST!,speak_samaritan_quest.webp,audio_q4.mp3,1,Kind Heart Samaritan Quest,,,,,,Kind Heart Samaritan Quest,,,,,,
+speak_repeat,Kind Heart Samaritan,Say out loud: HELP OTHERS WITH LOVE!,speak_help_others_love.webp,audio_q5.mp3,1,Help Others With Love,,,,,,Help Others With Love,,,,,,
+matching,Kind Heart Samaritan,Match caring choices!,,,1,,,,,,,,Friend,Help Up,Wound,Clean Bandage,Heart,Kind and Caring
+matching,Kind Heart Samaritan,Match caring pictures!,,,1,,,,,,,,Friend,Helping Friend,Bandage,Clean Bandage,Heart,Kind Heart

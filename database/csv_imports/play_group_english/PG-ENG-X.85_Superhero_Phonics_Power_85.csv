@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Phonics Power,Which superhero sound power starts with letter Z?,hero_zap_z.webp,audio_q1.mp3,1,Zap Power,Fly Power,Run Power,,,1,,,,,,,
+multiple_choice,Superhero Phonics Power,Follow sound /f/: Touch the power to FLY high!,hero_fly_f.webp,audio_q2.mp3,1,Fly Power,Swim Power,Sleep Power,,,1,,,,,,,
+multiple_choice,Superhero Phonics Power,Touch the superhero lightning bolt symbol!,hero_lightning.webp,audio_q3.mp3,1,Lightning Power,Cloud,Moon,,,1,,,,,,,
+speak_repeat,Superhero Phonics Power,Say out loud clearly: SUPERHERO PHONICS POWER!,speak_phonics_power.webp,audio_q4.mp3,1,Superhero Phonics Power,,,,,,Superhero Phonics Power,,,,,,
+speak_repeat,Superhero Phonics Power,Say out loud: ZAP AND ZOOM!,speak_zap_zoom.webp,audio_q5.mp3,1,Zap and Zoom,,,,,,Zap and Zoom,,,,,,
+matching,Superhero Phonics Power,Match sound powers to letters!,,,1,,,,,,,,Z,Zap Power,F,Fly Power,L,Lightning Power
+matching,Superhero Phonics Power,Match action powers!,,,1,,,,,,,,Zap,Zap,Fly,Fly,Zoom,Zoom

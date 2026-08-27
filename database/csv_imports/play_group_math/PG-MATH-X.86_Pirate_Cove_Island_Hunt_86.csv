@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Pirate Cove Island Hunt 86,How many gold treasure chests are buried on the beach?,chest_beach.webp,audio_q1.mp3,1,4,3,5,,🏴‍☠️,4,,,,,,,
+count_objects,Pirate Cove Island Hunt 86,Count all 6 ruby jewels in Captain Leo's bag!,ruby_count.webp,audio_q2.mp3,1,6,5,7,,💎,6,,,,,,,
+multiple_choice,Pirate Cove Island Hunt 86,Which gold coin has Number 4 stamped on it?,coin4.webp,audio_q3.mp3,1,4,3,5,,,4,,,,,,,
+multiple_choice,Pirate Cove Island Hunt 86,Which pirate flag shows Number 6?,flag6.webp,audio_q4.mp3,1,6,5,7,,,6,,,,,,,

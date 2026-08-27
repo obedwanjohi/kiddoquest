@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Safari Digraphs 93,Which safari word starts with CH: CHETAH or FISH?,chet_q1.webp,audio_q1.mp3,1,CHEETAH 🐆,FISH,SHIP,,,1,,,,,,,
+speak_repeat,Safari Digraphs 93,Say out loud: CHEETAH RUNS FAST!,chet_speak.webp,audio_q2.mp3,1,Cheetah Runs Fast,,,,,,Cheetah Runs Fast,,,,,,
+matching,Safari Digraphs 93,Match safari digraphs!,,,1,,,,,,CHEETAH,🐆,SHIP,🚢,THUMB,👍,,

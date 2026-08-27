@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Spatial Left vs Right Hands 91,Wave your LEFT hand! Which hand is on the left?,left_q1.webp,audio_q1.mp3,1,🖐️,✋,Foot 🦶,,,1,,,,,,,
+speak_repeat,Spatial Left vs Right Hands 91,Say out loud: MY LEFT HAND!,left_speak.webp,audio_q2.mp3,1,My Left Hand,,,,,,My Left Hand,,,,,,
+matching,Spatial Left vs Right Hands 91,Match hands!,,,1,,,,,,Left Hand 🖐️,Left Side,✋,Right Side,Clap 👏,Both Hands,,

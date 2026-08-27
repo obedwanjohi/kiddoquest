@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Underwater Prepositions In On 32,"Where is the octopus in the picture: ""The octopus is ___ the coral""?",coral_q1.webp,audio_q1.mp3,1,ON 🪸,UNDER,IN,,,1,,,,,,,
+speak_repeat,Underwater Prepositions In On 32,Say out loud: OCTOPUS IS ON THE CORAL!,oct_speak.webp,audio_q2.mp3,1,Octopus Is On The Coral,,,,,,Octopus Is On The Coral,,,,,,
+matching,Underwater Prepositions In On 32,Match sea prepositions!,,,1,,,,,,ON 🪸,Top of Coral,IN 🐚,Inside Shell,UNDER 🪨,Below Rock,,

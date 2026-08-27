@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Underwater Fish Counting 41 to 60 46,Count all 50 colorful fish swimming in the coral reef!,fish50.webp,audio_q1.mp3,1,50,45,55,,🐟,50,,,,,,,
+speak_repeat,Underwater Fish Counting 41 to 60 46,Say out loud: FIFTY FISH IN THE REEF!,fish_speak.webp,audio_q2.mp3,1,Fifty Fish In The Reef,,,,,,Fifty Fish In The Reef,,,,,,
+matching,Underwater Fish Counting 41 to 60 46,Match fish counts!,,,1,,,,,,45 Fish 🐟,45,50,50,55,55,,

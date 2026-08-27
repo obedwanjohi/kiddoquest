@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Rhyme Time Star Car,Which word rhymes with STAR?,rhyme_star.webp,audio_q1.mp3,1,Car,Dog,Cat,,,1,,,,,,,
+multiple_choice,Rhyme Time Star Car,Touch the vehicle that rhymes with STAR!,rhyme_car.webp,audio_q2.mp3,1,Car,Frog,Sun,,,1,,,,,,,
+multiple_choice,Rhyme Time Star Car,Which picture rhymes with CAR?,rhyme_jar.webp,audio_q3.mp3,1,Jar,Hat,Ball,,,1,,,,,,,
+speak_repeat,Rhyme Time Star Car,Say out loud clearly: STAR AND CAR!,speak_star_car.webp,audio_q4.mp3,1,Star and Car,,,,,,Star and Car,,,,,,
+speak_repeat,Rhyme Time Star Car,Say out loud: TWINKLE STAR!,speak_twinkle_star.webp,audio_q5.mp3,1,Twinkle Star,,,,,,Twinkle Star,,,,,,
+matching,Rhyme Time Star Car,Match rhyming words!,,,1,,,,,,,,Star,Car,Car,Jar,Star,Jar
+matching,Rhyme Time Star Car,Match rhymes to pictures!,,,1,,,,,,,,Star,Star,Car,Car,Jar,Jar

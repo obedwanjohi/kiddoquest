@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Open and Close,Listen to Leo: Open the treasure box!,box_open.webp,audio_q1.mp3,1,Open Box,Closed Box,Red Ball,,,1,,,,,,,
+multiple_choice,Open and Close,Listen: Close the door tight!,door_closed.webp,audio_q2.mp3,1,Closed Door,Open Door,Open Box,,,1,,,,,,,
+multiple_choice,Open and Close,Which gift box is OPEN?,gift_open.webp,audio_q3.mp3,1,Open Gift,Closed Gift,Red Hat,,,1,,,,,,,
+multiple_choice,Open and Close,Which book is CLOSED?,book_closed.webp,audio_q4.mp3,1,Closed Book,Open Book,Yellow Star,,,1,,,,,,,
+speak_repeat,Open and Close,Say out loud clearly: OPEN!,speak_open.webp,audio_q5.mp3,1,Open,,,,,,Open,,,,,,
+speak_repeat,Open and Close,Say out loud: CLOSE THE BOX!,speak_close_box.webp,audio_q6.mp3,1,Close The Box,,,,,,Close The Box,,,,,,
+matching,Open and Close,Match open and closed pairs!,,,1,,,,,,,,Open Box,Open Box,Closed Box,Closed Box,Open Door,Open Door
+matching,Open and Close,Match opposite action words!,,,1,,,,,,,,Open,Open,Close,Close,In,In

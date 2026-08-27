@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Clap Your Hands,Listen to Leo: Clap your hands!,clap_hands.webp,audio_q1.mp3,1,Clap Hands,Stomp Feet,Sleep,,,1,,,,,,,
+multiple_choice,Clap Your Hands,Listen: Stomp your feet!,stomp_feet.webp,audio_q2.mp3,1,Stomp Feet,Clap Hands,Wave,,,1,,,,,,,
+multiple_choice,Clap Your Hands,Listen: Touch your head!,touch_head.webp,audio_q3.mp3,1,Touch Head,Clap Hands,Sleep,,,1,,,,,,,
+speak_repeat,Clap Your Hands,Say out loud clearly: CLAP!,speak_clap.webp,audio_q4.mp3,1,Clap,,,,,,Clap,,,,,,
+speak_repeat,Clap Your Hands,Say out loud: CLAP YOUR HANDS!,speak_clap_hands.webp,audio_q5.mp3,1,Clap Your Hands,,,,,,Clap Your Hands,,,,,,
+matching,Clap Your Hands,Match action words to action icons!,,,1,,,,,,,,Clap,Clap Hands,Stomp,Stomp Feet,Wave,Wave Hands
+matching,Clap Your Hands,Match body parts!,,,1,,,,,,,,Hands,Hands,Feet,Feet,Head,Head

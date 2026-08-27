@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Shield Number Match,Which superhero shield shows Number 16?,shield16.webp,audio_q1.mp3,1,16,15,17,,,16,,,,,,,
+speak_repeat,Superhero Shield Number Match,Say out loud: SUPERHERO SIXTEEN!,shield_speak.webp,audio_q2.mp3,1,Superhero Sixteen,,,,,,Superhero Sixteen,,,,,,
+matching,Superhero Shield Number Match,Match hero shields!,,,1,,,,,,14 Shield 🛡️,14,16,16,18,18,,

@@ -1,0 +1,6 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+matching,Market Grocery Classification,Sort FRUITS into the FRUIT crate!,,,1,,,,,,,,🍎,FRUIT,🍌,FRUIT,🍊,FRUIT
+matching,Market Grocery Classification,Sort VEGETABLES into the VEGETABLE crate!,,,1,,,,,,,,🥕,VEGETABLE,🥦,VEGETABLE,🍅,VEGETABLE
+multiple_choice,Market Grocery Classification,Which crate is for FRUITS?,fruit_crate.webp,audio_q3.mp3,1,🍎,🥦,🧸,,,1,,,,,,,
+multiple_choice,Market Grocery Classification,Which crate is for VEGETABLES?,veg_crate.webp,audio_q4.mp3,1,🥦,🍎,📚,,,1,,,,,,,
+multiple_choice,Market Grocery Classification,Which item is a sweet FRUIT?,sweet_fruit.webp,audio_q5.mp3,1,🍎,🥦,🥕,,,1,,,,,,,

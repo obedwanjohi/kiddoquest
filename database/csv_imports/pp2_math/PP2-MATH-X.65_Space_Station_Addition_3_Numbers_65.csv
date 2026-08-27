@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Station Addition 3 Numbers 65,Add 3 space rockets: 5 + 5 + 5 = ?,rock5_q1.webp,audio_q1.mp3,1,15,14,16,,,1,,,,,,,
+speak_repeat,Space Station Addition 3 Numbers 65,Say out loud: FIVE PLUS FIVE PLUS FIVE IS FIFTEEN!,rock_speak.webp,audio_q2.mp3,1,Five Plus Five Plus Five Is Fifteen,,,,,,Five Plus Five Plus Five Is Fifteen,,,,,,
+matching,Space Station Addition 3 Numbers 65,Match 3-number addition!,,,1,,,,,,5 + 5 + 5,15,4,12,6,18,,

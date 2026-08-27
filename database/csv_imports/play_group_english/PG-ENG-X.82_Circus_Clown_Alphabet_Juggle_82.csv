@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Alphabet Juggle,Which circus item starts with letter C?,circus_tent_c.webp,audio_q1.mp3,1,Circus Tent,Pirate Ship,Rocket,,,1,,,,,,,
+multiple_choice,Circus Alphabet Juggle,Touch the funny clown juggling letter balls!,circus_clown_juggler.webp,audio_q2.mp3,1,Juggling Clown,Alien,Superhero,,,1,,,,,,,
+multiple_choice,Circus Alphabet Juggle,Touch the red juggling ball stamped with letter B!,circus_ball_b.webp,audio_q3.mp3,1,Juggling Ball,Apple,Book,,,1,,,,,,,
+speak_repeat,Circus Alphabet Juggle,Say out loud clearly: CIRCUS ALPHABET JUGGLE!,speak_circus_juggle.webp,audio_q4.mp3,1,Circus Alphabet Juggle,,,,,,Circus Alphabet Juggle,,,,,,
+speak_repeat,Circus Alphabet Juggle,Say out loud: JUGGLE THE LETTERS!,speak_juggle_letters.webp,audio_q5.mp3,1,Juggle The Letters,,,,,,Juggle The Letters,,,,,,
+matching,Circus Alphabet Juggle,Match circus items to letters!,,,1,,,,,,,,C,Circus Tent,B,Juggling Ball,J,Juggle
+matching,Circus Alphabet Juggle,Match circus performers!,,,1,,,,,,,,Clown,Juggler,Tent,Circus Tent,Ball,Red Ball

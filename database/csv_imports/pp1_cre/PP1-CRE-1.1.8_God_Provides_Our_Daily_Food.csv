@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Provides Our Daily Food,What do we say before eating our food?,food_q1.webp,audio_q1.mp3,1,Thank God,Complain,Waste Food,,,1,,,,,,,
+multiple_choice,God Provides Our Daily Food,Who provides our food every single day?,prov_q2.webp,audio_q2.mp3,1,God,A Robot,Nobody,,,1,,,,,,,
+multiple_choice,God Provides Our Daily Food,Touch the healthy fruit that God gives us to eat!,fruit_q3.webp,audio_q3.mp3,1,Apple,Stone,Paper,,,1,,,,,,,
+multiple_choice,God Provides Our Daily Food,What do we do with our hands before we eat?,hands_q4.webp,audio_q4.mp3,1,Fold in Prayer,Shake Fast,Clap Loud,,,1,,,,,,,
+multiple_choice,God Provides Our Daily Food,What should we never do with the food God provides?,waste_q5.webp,audio_q5.mp3,1,Waste It,Eat It,Share It,,,1,,,,,,,
+multiple_choice,God Provides Our Daily Food,God provides vegetables for us to eat. Touch a vegetable!,veg_q6.webp,audio_q6.mp3,1,Carrot,Toy,Shoe,,,1,,,,,,,
+multiple_choice,God Provides Our Daily Food,What drink did God give us that keeps our body healthy?,drink_q7.webp,audio_q7.mp3,1,Water,Mud,Paint,,,1,,,,,,,
+multiple_choice,God Provides Our Daily Food,When we pray before eating we are talking to whom?,pray_q8.webp,audio_q8.mp3,1,God,Ourselves,Nobody,,,1,,,,,,,
+speak_repeat,God Provides Our Daily Food,Say out loud clearly: THANK YOU GOD FOR FOOD!,food_speak.webp,audio_q9.mp3,1,Thank You God For Food,,,,,,Thank You God For Food,,,,,,
+speak_repeat,God Provides Our Daily Food,Say out loud: GOD FEEDS US EVERY DAY!,feed_speak.webp,audio_q10.mp3,1,God Feeds Us Every Day,,,,,,God Feeds Us Every Day,,,,,,
+speak_repeat,God Provides Our Daily Food,Say out loud: I WILL NOT WASTE MY FOOD!,waste_speak.webp,audio_q11.mp3,1,I Will Not Waste My Food,,,,,,I Will Not Waste My Food,,,,,,
+matching,God Provides Our Daily Food,Match mealtime habits!,,,1,,,,,,,,Food 🍎,God Provides,Hands 🤲,Fold in Prayer,Heart 💖,Give Thanks
+matching,God Provides Our Daily Food,Match food to where it comes from!,,,1,,,,,,,,Apple 🍎,Tree,Milk 🥛,Cow,Water 💧,River
+matching,God Provides Our Daily Food,Match good eating habits!,,,1,,,,,,,,Before Eating,Pray,After Eating,Say Thanks,Never,Waste Food

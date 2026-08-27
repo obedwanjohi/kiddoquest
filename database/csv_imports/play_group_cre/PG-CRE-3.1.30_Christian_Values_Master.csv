@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Christian Values Master,What magic word do we say when asking politely?,master_saying_please.webp,audio_q1.mp3,1,Please,No,Go Away,,,1,,,,,,,
+multiple_choice,Christian Values Master,What do we say when we hurt someone by mistake?,master_saying_sorry.webp,audio_q2.mp3,1,I Am Sorry,Go Away,Laugh,,,1,,,,,,,
+multiple_choice,Christian Values Master,Who is our neighbor whom God commands us to love?,master_neighbors.webp,audio_q3.mp3,1,Everyone Around Us,Only Myself,No One,,,1,,,,,,,
+multiple_choice,Christian Values Master,Touch the shiny Christian Values Master Trophy!,master_values_trophy.webp,audio_q4.mp3,1,🏆,Toy Box,Hat,,,1,,,,,,,
+speak_repeat,Christian Values Master,Say out loud clearly: CHRISTIAN VALUES MASTER!,speak_values_master.webp,audio_q5.mp3,1,Christian Values Master,,,,,,Christian Values Master,,,,,,
+speak_repeat,Christian Values Master,Say out loud: SHINE WITH LOVE AND HONESTY!,speak_shine_love_honesty.webp,audio_q6.mp3,1,Shine With Love and Honesty,,,,,,Shine With Love and Honesty,,,,,,
+matching,Christian Values Master,Match Christian values to good choices!,,,1,,,,,,,,Toys,Share,Words,Tell Truth,Playground,Peacemaker
+matching,Christian Values Master,Match values master items!,,,1,,,,,,,,Please,Polite Words,Sorry,Forgiveness,Trophy,🏆

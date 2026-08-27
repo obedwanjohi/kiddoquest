@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Noah and the Ark,What giant wooden boat did Noah build to stay safe?,cre_noah_ark.webp,audio_q1.mp3,1,ARK,BOAT,Car,,,1,,,,,,,
+multiple_choice,Noah and the Ark,How did the animals enter Noah's ark?,cre_animals_two_by_two.webp,audio_q2.mp3,1,Two By Two,One By One,All Alone,,,1,,,,,,,
+multiple_choice,Noah and the Ark,What promise sign did God place in the sky after the rain?,cre_god_rainbow.webp,audio_q3.mp3,1,RAINBOW,CLOUD,Thunder,,,1,,,,,,,
+speak_repeat,Noah and the Ark,Say out loud clearly: NOAH AND THE ARK!,speak_noah_ark.webp,audio_q4.mp3,1,Noah and the Ark,,,,,,Noah and the Ark,,,,,,
+speak_repeat,Noah and the Ark,Say out loud: GOD'S RAINBOW PROMISE!,speak_rainbow_promise.webp,audio_q5.mp3,1,God's Rainbow Promise,,,,,,God's Rainbow Promise,,,,,,
+matching,Noah and the Ark,Match Noah story elements!,,,1,,,,,,,,Boat,ARK,Animals,Two by Two,Promise,Rainbow Arc
+matching,Noah and the Ark,Match Noah pictures!,,,1,,,,,,,,Ark,ARK,Animals,Animals Two by Two,Rainbow,RAINBOW

@@ -1,0 +1,59 @@
+Created At: 2026-07-17T19:21:06Z
+Completed At: 2026-07-17T19:21:06Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3169
+Total Bytes: 147159
+Showing lines 2410 to 2460
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2410:             return chip.correctBucket === chip.bucket ? 'correct' : 'incorrect';
+2411:         },
+2412: 
+2413:         checkSorting() {
+2414:             this.resetIdleTimer();
+2415:             if (this.sortAnswered) return;
+2416:             if (this.sortChips.some(c => c.bucket === null)) return;
+2417: 
+2418:             this.sortAnswered = true;
+2419:             this.answered = true;
+2420: 
+2421:             let allCorrect = true;
+2422:             for (const chip of this.sortChips) {
+2423:                 if (chip.correctBucket !== chip.bucket) {
+2424:                     allCorrect = false;
+2425:                     break;
+2426:                 }
+2427:             }
+2428: 
+2429:             if (allCorrect) {
+2430:                 this.score++;
+2431:                 this.leoCelebrating = true;
+2432:                 this.leoMessage = "Perfect sorting! You're a star! ⭐";
+2433: 
+2434:                 if (window.KidQuizEvents) {
+2435:                     window.KidQuizEvents.emit(window.KidQuizEvents.EVENTS.ANSWER_CORRECT, {
+2436:                         index: -1, firstTry: true,
+2437:                     });
+2438:                 }
+2439: 
+2440:                 this.spawnConfetti(20);
+2441:             } else {
+2442:                 this.leoMessage = "Almost! Check the boxes and try again next time! 💪";
+2443: 
+2444:                 if (window.KidQuizEvents) {
+2445:                     window.KidQuizEvents.emit(window.KidQuizEvents.EVENTS.ANSWER_INCORRECT, {
+2446:                         index: -1, attempts: 1,
+2447:                     });
+2448:                 }
+2449:             }
+2450: 
+2451:             this.answerLog.push({
+2452:                 question_id: this.currentQuestion.id,
+2453:                 chips: [...this.sortChips],
+2454:                 correct: allCorrect,
+2455:                 type: 'drag_sort',
+2456:             });
+2457: 
+2458:             setTimeout(() => { this.leoCelebrating = false; }, 600);
+2459: 
+2460:             // ✨ AUTO-ADVANCE after 2.5s (so kid sees the green/red feedback)
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

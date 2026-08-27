@@ -1,0 +1,89 @@
+Created At: 2026-07-17T11:21:54Z
+Completed At: 2026-07-17T11:21:54Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3069
+Total Bytes: 141022
+Showing lines 1500 to 2299
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1500:         quizComplete: false,
+1501:         resultMessage: '',
+1502: 
+1503:         // Leo
+1504:         leoMessage: '',
+1505:         leoCelebrating: false,
+1506: 
+1507:         // Hint
+1508:         showHint: false,
+1509: 
+1510:         // Matching (QT-03)
+1511:         matchSelectedSide: null,
+1512:         matchSelectedIndex: null,
+1513:         matchedPairs: [],
+1514:         matchRightItems: [],
+1515:         matchWrongPair: null,
+1516: 
+1517:         // Sequence (QT-05)
+1518:         seqCards: [],      // shuffled cards [{text, correctIndex}]
+1519:         seqSlots: [],      // array of indices into seqCards, or null
+1520:         seqSelectedCard: null,
+1521:         seqAnswered: false,
+1522: 
+1523:         // Drag & Sort (QT-04)
+1524:         sortChips: [],         // [{text, correctBucket, bucket}]
+1525:         sortSelectedChip: null,
+1526:         sortAnswered: false,
+1527: 
+1528:         // Listen & Choose (QT-06)
+1529:         isSpeaking: false,
+1530:         speechUtterance: null,
+1531: 
+1532:         // Memory Match (QT-11)
+1533:         memoryCards: [],          // [{text, pairKey, matched, flipped}]
+1534:         memoryFlippedIndices: [], // indices of currently face-up (non-matched) cards
+1535:         memoryMatchedPairs: 0,
+1536:         memoryTotalPairs: 0,
+1537:         memoryChecking: false,    // prevent clicks during match-check delay
+1538:         memoryAnswered: false,
+1539: 
+1540:         // Speak & Repeat (QT-07)
+1541:         speakListening: false,    // mic is "recording"
+1542:       
+<truncated 33098 bytes>
+  // ---- DRAG & SORT LOGIC (QT-04) ----
+2264:         // Tap-to-sort pattern: child taps an item, then taps a category bucket.
+2265:         // No drag-and-drop needed — works perfectly on touchscreens!
+2266:         initSorting() {
+2267:             this.sortAnswered = false;
+2268:             this.sortSelectedChip = null;
+2269: 
+2270:             // Build chips from options. Each option has:
+2271:             //   - text (e.g., "🐷 Pig")
+2272:             //   - match_key = the correct category (e.g., "🚜 Farm")
+2273:             //   - metadata.categories = array of category labels
+2274:             this.sortChips = this.currentQuestion.options.map((o) => ({
+2275:                 text: o.text,
+2276:                 correctBucket: o.match_key,   // e.g., "🚜 Farm"
+2277:                 bucket: null,                  // null = in tray (unsorted)
+2278:             }));
+2279: 
+2280:             // Shuffle the chips so they appear in random order in the tray
+2281:             this.sortChips = this.shuffleArray(this.sortChips);
+2282:         },
+2283: 
+2284:         selectSortChip(chipIndex) {
+2285:             this.resetIdleTimer();
+2286:             if (this.sortAnswered) return;
+2287:             // If chip is in a bucket, tapping it returns it to the tray
+2288:             if (this.sortChips[chipIndex].bucket !== null) {
+2289:                 this.sortChips[chipIndex].bucket = null;
+2290:                 return;
+2291:             }
+2292:             // Toggle selection
+2293:             this.sortSelectedChip = (this.sortSelectedChip === chipIndex) ? null : chipIndex;
+2294:         },
+2295: 
+2296:         selectSortBucket(bucketIndex) {
+2297:             this.resetIdleTimer();
+2298:             if (this.sortAnswered) return;
+2299:             if (this.sortSelectedChip === null) return;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

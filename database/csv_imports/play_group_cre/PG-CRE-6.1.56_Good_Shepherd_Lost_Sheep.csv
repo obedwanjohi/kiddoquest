@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Good Shepherd Lost Sheep,What does the Good Shepherd do when one little lamb is lost?,cre_shepherd_searches.webp,audio_q1.mp3,1,Searches Until Found,Gives Up,Stays Home,,,1,,,,,,,
+multiple_choice,Good Shepherd Lost Sheep,Touch the happy little lamb carried safely home!,cre_rescued_lamb.webp,audio_q2.mp3,1,Rescued Lamb,Wild Wolf,Fox,,,1,,,,,,,
+multiple_choice,Good Shepherd Lost Sheep,Touch Jesus carrying the lamb on His shoulders!,cre_jesus_shoulders.webp,audio_q3.mp3,1,Jesus Carrying Lamb,Sleeping Cat,Running Dog,,,1,,,,,,,
+speak_repeat,Good Shepherd Lost Sheep,Say out loud clearly: THE GOOD SHEPHERD FINDS THE LOST SHEEP!,speak_finds_lost_sheep.webp,audio_q4.mp3,1,The Good Shepherd Finds The Lost Sheep,,,,,,The Good Shepherd Finds The Lost Sheep,,,,,,
+speak_repeat,Good Shepherd Lost Sheep,Say out loud: JESUS KEEPS ME SAFE!,speak_jesus_keeps_me_safe.webp,audio_q5.mp3,1,Jesus Keeps Me Safe,,,,,,Jesus Keeps Me Safe,,,,,,
+matching,Good Shepherd Lost Sheep,Match Good Shepherd actions!,,,1,,,,,,,,Lost Lamb,Search and Rescue,Shoulders,Carry Home,Pasture,GRASS
+matching,Good Shepherd Lost Sheep,Match sheep pictures!,,,1,,,,,,,,Lamb,Rescued Lamb,Shepherd,Good Shepherd,Shoulders,Jesus Carrying Lamb

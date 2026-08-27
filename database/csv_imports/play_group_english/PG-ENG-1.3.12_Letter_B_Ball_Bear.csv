@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter B Ball Bear,Which letter makes the /b/ sound for Ball?,letter_b_card.webp,audio_q1.mp3,1,B,A,C,,,1,,,,,,,
+multiple_choice,Letter B Ball Bear,Touch the toy that starts with letter B!,ball_b.webp,audio_q2.mp3,1,Ball,Apple,Cat,,,1,,,,,,,
+multiple_choice,Letter B Ball Bear,Touch the cuddly animal that starts with letter B!,bear_b.webp,audio_q3.mp3,1,Bear,Duck,Fish,,,1,,,,,,,
+speak_repeat,Letter B Ball Bear,Say the letter sound out loud: /b/ /b/ BALL!,speak_ball_b.webp,audio_q4.mp3,1,Ball,,,,,,Ball,,,,,,
+speak_repeat,Letter B Ball Bear,Say out loud clearly: LETTER B!,speak_letter_b.webp,audio_q5.mp3,1,Letter B,,,,,,Letter B,,,,,,
+matching,Letter B Ball Bear,Match letter B to words starting with B!,,,1,,,,,,,,B,B,Ball,Ball,Bear,Bear
+matching,Letter B Ball Bear,Match letter B sound /b/!,,,1,,,,,,,,B,B,sound /b/,Ball,words,Bear

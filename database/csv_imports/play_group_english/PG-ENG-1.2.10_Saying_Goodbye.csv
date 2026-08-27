@@ -1,0 +1,7 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Saying Goodbye,What friendly word do we say when leaving for home?,wave_goodbye.webp,audio_q1.mp3,1,Goodbye,Jambo,Good Morning,,,1,,,,,,,
+multiple_choice,Saying Goodbye,Touch Leo waving goodbye at sunset!,sunset_jeep.webp,audio_q2.mp3,1,Waving Goodbye,Waking Up,Eating Breakfast,,,1,,,,,,,
+multiple_choice,Saying Goodbye,Which icon shows waving goodbye?,goodbye_hand.webp,audio_q3.mp3,1,Waving Hand,Clapping Hand,Point Finger,,,1,,,,,,,
+speak_repeat,Saying Goodbye,Say out loud clearly: GOODBYE!,speak_goodbye.webp,audio_q4.mp3,1,Goodbye,,,,,,Goodbye,,,,,,
+speak_repeat,Saying Goodbye,Say out loud: GOODBYE LEO!,speak_goodbye_leo.webp,audio_q5.mp3,1,Goodbye Leo,,,,,,Goodbye Leo,,,,,,
+matching,Saying Goodbye,Match greetings and farewells!,,,1,,,,,,,,Hello,Jambo,Morning,Good Morning,Leaving,Goodbye

@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Daniel in the Lions Den,Who was thrown into a den full of hungry lions?,dan_q1.webp,audio_q1.mp3,1,Daniel,David,Moses,,,1,,,,,,,
+multiple_choice,Daniel in the Lions Den,Why was Daniel thrown to the lions?,why_q2.webp,audio_q2.mp3,1,He Prayed to God,He Was Naughty,He Ran Away,,,1,,,,,,,
+multiple_choice,Daniel in the Lions Den,How many times a day did Daniel pray to God?,pray_q3.webp,audio_q3.mp3,1,3,1,10,,,1,,,,,,,
+multiple_choice,Daniel in the Lions Den,Who shut the lions mouths so Daniel was safe?,angel_q4.webp,audio_q4.mp3,1,God's Angel,The King,A Guard,,,1,,,,,,,
+multiple_choice,Daniel in the Lions Den,What did the king call out when he opened the den morning?,call_q5.webp,audio_q5.mp3,1,Daniel Are You Safe,Go Away,Feed the Lions,,,1,,,,,,,
+multiple_choice,Daniel in the Lions Den,Was Daniel hurt by the lions?,hurt_q6.webp,audio_q6.mp3,1,Not at All,A Little,Very Much,,,1,,,,,,,
+multiple_choice,Daniel in the Lions Den,What does Daniel's story teach us about praying?,teach_q7.webp,audio_q7.mp3,1,Pray Always,Stop Praying,Hide When You Pray,,,1,,,,,,,
+multiple_choice,Daniel in the Lions Den,Touch brave Daniel standing safely among the lions!,brave_q8.webp,audio_q8.mp3,1,Safe Daniel,Scared Daniel,Running Daniel,,,1,,,,,,,
+speak_repeat,Daniel in the Lions Den,Say out loud clearly: GOD PROTECTS DANIEL!,dan_speak.webp,audio_q9.mp3,1,God Protects Daniel,,,,,,God Protects Daniel,,,,,,
+speak_repeat,Daniel in the Lions Den,Say out loud: I WILL PRAY EVERY DAY!,pray_speak.webp,audio_q10.mp3,1,I Will Pray Every Day,,,,,,I Will Pray Every Day,,,,,,
+speak_repeat,Daniel in the Lions Den,Say out loud: GOD IS WITH ME IN TROUBLE!,trou_speak.webp,audio_q11.mp3,1,God Is With Me In Trouble,,,,,,God Is With Me In Trouble,,,,,,
+matching,Daniel in the Lions Den,Match Daniel story!,,,1,,,,,,,,Daniel,Prayed 3 Times,Lions,Mouths Shut,Angel,Sent by God
+matching,Daniel in the Lions Den,Match what happened in order!,,,1,,,,,,,,Daniel Prayed,Every Day,Was Thrown In,Lions Den,God Saved,Him Safely
+matching,Daniel in the Lions Den,Match what we learn from Daniel!,,,1,,,,,,,,Pray Always,Like Daniel,Trust God,In Danger,Be Faithful,Always

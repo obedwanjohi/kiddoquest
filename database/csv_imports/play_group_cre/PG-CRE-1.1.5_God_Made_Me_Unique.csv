@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Made Me Unique,Touch the happy smiling face created special by God!,cre_happy_smile.webp,audio_q1.mp3,1,SMILE,FACE,FACE,,,1,,,,,,,
+multiple_choice,God Made Me Unique,Which picture shows looking in a mirror and seeing yourself?,cre_mirror_me.webp,audio_q2.mp3,1,Mirror Me,Toy Chest,BALL,,,1,,,,,,,
+multiple_choice,God Made Me Unique,How does God feel about you?,cre_god_loves_me.webp,audio_q3.mp3,1,God Loves Me,God Forgot Me,God Is Away,,,1,,,,,,,
+speak_repeat,God Made Me Unique,Say out loud clearly: GOD MADE ME SPECIAL!,speak_god_made_special.webp,audio_q4.mp3,1,God Made Me Special,,,,,,God Made Me Special,,,,,,
+speak_repeat,God Made Me Unique,Say out loud: I AM UNIQUE AND LOVED!,speak_unique_loved.webp,audio_q5.mp3,1,I Am Unique and Loved,,,,,,I Am Unique and Loved,,,,,,
+matching,God Made Me Unique,Match self-identity ideas!,,,1,,,,,,,,Special,God Made Me,Smile,FACE,Love,God Loves Me
+matching,God Made Me Unique,Match unique traits!,,,1,,,,,,,,Face,Smile,Name,Unique,Heart,Loved

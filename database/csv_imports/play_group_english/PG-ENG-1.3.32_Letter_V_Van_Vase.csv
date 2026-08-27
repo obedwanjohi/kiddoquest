@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter V Van,Which letter makes the /v/ sound in V V V - /v/ /v/ /v/ - Van Van?,letter_v_card.webp,audio_q1.mp3,1,V,U,W,,,1,,,,,,,
+multiple_choice,Letter V Van,Touch the safari van starting with letter V!,van_v.webp,audio_q2.mp3,1,Van,Umbrella,Watch,,,1,,,,,,,
+multiple_choice,Letter V Van,Listen to the song: V V V - /v/ /v/ /v/ - Van!,van_song.webp,audio_q3.mp3,1,Van,Car,Train,,,1,,,,,,,
+speak_repeat,Letter V Van,Say the phonics song chant: V V V - VAN!,speak_van_v.webp,audio_q4.mp3,1,Van,,,,,,Van,,,,,,
+speak_repeat,Letter V Van,Say out loud clearly: LETTER V!,speak_letter_v.webp,audio_q5.mp3,1,Letter V,,,,,,Letter V,,,,,,
+matching,Letter V Van,Match letter V to Van!,,,1,,,,,,,,V,V,Van,Van,sound /v/,Van
+matching,Letter V Van,Match letter V sound /v/!,,,1,,,,,,,,V,V,/v/ /v/ /v/,Van,Van,Van

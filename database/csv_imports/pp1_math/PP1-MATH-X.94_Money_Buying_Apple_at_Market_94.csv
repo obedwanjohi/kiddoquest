@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Money Buying Apple at Market 94,An apple costs 10 Shillings. Which coin pays for it?,coin_q1.webp,audio_q1.mp3,1,10,5,1,,,1,,,,,,,
+speak_repeat,Money Buying Apple at Market 94,Say out loud: TEN SHILLINGS FOR APPLE!,coin_speak.webp,audio_q2.mp3,1,Ten Shillings For Apple,,,,,,Ten Shillings For Apple,,,,,,
+matching,Money Buying Apple at Market 94,Match market coins!,,,1,,,,,,Apple 🍎,10 KSh,Banana 🍌,5,Water 🥛,10,,

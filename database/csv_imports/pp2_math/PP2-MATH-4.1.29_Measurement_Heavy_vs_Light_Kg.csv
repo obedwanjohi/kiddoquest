@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Measurement Heavy vs Light Kg,Which unit measures heavy weight: KILOGRAM (Kg) or Gram?,kg_q1.webp,audio_q1.mp3,1,⚖️,Gram,Centimeter,,,1,,,,,,,
+speak_repeat,Measurement Heavy vs Light Kg,Say out loud clearly: KILOGRAM MEASURES WEIGHT!,kg_speak.webp,audio_q2.mp3,1,Kilogram Measures Weight,,,,,,Kilogram Measures Weight,,,,,,
+matching,Measurement Heavy vs Light Kg,Match weight units!,,,1,,,,,,Sugar Bag 🛍️,Kilograms (Kg),Feather 🪶,Light Grams,Scale ⚖️,Balance Weight,,

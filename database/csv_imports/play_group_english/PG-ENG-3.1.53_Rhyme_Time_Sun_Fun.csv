@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Rhyme Time Sun Fun,Which word rhymes with SUN?,rhyme_sun.webp,audio_q1.mp3,1,Fun,Cat,Dog,,,1,,,,,,,
+multiple_choice,Rhyme Time Sun Fun,Touch the picture that rhymes with SUN!,rhyme_run.webp,audio_q2.mp3,1,Run,Hat,Frog,,,1,,,,,,,
+multiple_choice,Rhyme Time Sun Fun,Which picture rhymes with FUN?,rhyme_bun.webp,audio_q3.mp3,1,Sun,Car,Star,,,1,,,,,,,
+speak_repeat,Rhyme Time Sun Fun,Say out loud clearly: SUN AND FUN!,speak_sun_fun.webp,audio_q4.mp3,1,Sun and Fun,,,,,,Sun and Fun,,,,,,
+speak_repeat,Rhyme Time Sun Fun,Say out loud: RUN IN THE SUN!,speak_run_sun.webp,audio_q5.mp3,1,Run In The Sun,,,,,,Run In The Sun,,,,,,
+matching,Rhyme Time Sun Fun,Match rhyming words!,,,1,,,,,,,,Sun,Fun,Fun,Run,Sun,Run
+matching,Rhyme Time Sun Fun,Match rhymes to pictures!,,,1,,,,,,,,Sun,Sun,Run,Run,Fun,Fun

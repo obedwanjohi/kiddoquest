@@ -1,0 +1,10 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Starry Sky Gods World 37,Who made everything we see?,god1.webp,audio_q1.mp3,1,God,A Person,Nobody,,,,,,,,,,
+multiple_choice,Space Starry Sky Gods World 37,Does God love you?,love.webp,audio_q2.mp3,1,Yes Always,No,Sometimes,,,,,,,,,,
+multiple_choice,Space Starry Sky Gods World 37,What do we do when we talk to God?,pray.webp,audio_q3.mp3,1,Pray,Sing,Run,,,,,,,,,,
+multiple_choice,Space Starry Sky Gods World 37,Where do Christians worship on Sunday?,church.webp,audio_q4.mp3,1,Church,Market,Home Only,,,,,,,,,,
+multiple_choice,Space Starry Sky Gods World 37,How should we treat our friends?,kind.webp,audio_q5.mp3,1,With Kindness,With Anger,Ignore,,,,,,,,,,
+speak_repeat,Space Starry Sky Gods World 37,Say: GOD LOVES ME AND I LOVE GOD!,love_say.webp,audio_q6.mp3,1,God Loves Me And I Love God,,,,,,God Loves Me And I Love God,,,,,,
+speak_repeat,Space Starry Sky Gods World 37,Say: I AM A CHILD OF GOD!,child.webp,audio_q7.mp3,1,I Am A Child Of God,,,,,,I Am A Child Of God,,,,,,
+matching,Space Starry Sky Gods World 37,Match Christian life!,,,1,,,,,,,,God,Creator,Jesus,Savior,Bible,Gods Word
+matching,Space Starry Sky Gods World 37,Match what we do!,,,1,,,,,,,,Pray,Talk to God,Sing,Praise God,Share,Show Love

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Spatial Position 79,Where is Superhero standing: IN FRONT of the building or BEHIND it?,hero_q1.webp,audio_q1.mp3,1,🏢,BEHIND,INSIDE,,,1,,,,,,,
+speak_repeat,Superhero Spatial Position 79,Say out loud: SUPERHERO IN FRONT!,hero_speak.webp,audio_q2.mp3,1,Superhero In Front,,,,,,Superhero In Front,,,,,,
+matching,Superhero Spatial Position 79,Match hero positions!,,,1,,,,,,In Front 🏢,Ahead,Behind 🏢,Back,Above ⚡,Sky,,

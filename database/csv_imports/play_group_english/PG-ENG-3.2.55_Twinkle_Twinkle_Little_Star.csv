@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Twinkle Twinkle Little Star,What shines bright in the night sky like a diamond?,song_star.webp,audio_q1.mp3,1,Little Star,Day Sun,White Cloud,,,1,,,,,,,
+multiple_choice,Twinkle Twinkle Little Star,How does the little star shine in the sky?,song_twinkle.webp,audio_q2.mp3,1,Twinkle Twinkle,Sleep Sleep,Run Run,,,1,,,,,,,
+multiple_choice,Twinkle Twinkle Little Star,The star shines up above the world so...?,song_high.webp,audio_q3.mp3,1,High,Low,Down,,,1,,,,,,,
+speak_repeat,Twinkle Twinkle Little Star,Say out loud clearly: TWINKLE TWINKLE LITTLE STAR!,speak_twinkle_song.webp,audio_q4.mp3,1,Twinkle Twinkle Little Star,,,,,,Twinkle Twinkle Little Star,,,,,,
+speak_repeat,Twinkle Twinkle Little Star,Say out loud: LIKE A DIAMOND IN THE SKY!,speak_diamond_sky.webp,audio_q5.mp3,1,Like A Diamond In The Sky,,,,,,Like A Diamond In The Sky,,,,,,
+matching,Twinkle Twinkle Little Star,Match nursery rhyme lines!,,,1,,,,,,,,Twinkle,Star,Up Above,World,Diamond,Sky
+matching,Twinkle Twinkle Little Star,Match sky pictures to words!,,,1,,,,,,,,Star,Star,Sky,Sky,Moon,Moon

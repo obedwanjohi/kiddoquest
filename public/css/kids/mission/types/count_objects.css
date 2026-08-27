@@ -1,0 +1,135 @@
+/* COUNT OBJECTS STYLES */
+
+.count-objects-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.count-display-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.05);
+    border: 2px solid #E2E8F0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 200px;
+}
+
+.count-item {
+    font-size: 60px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+.count-item:active {
+    transform: scale(0.85);
+}
+
+.count-item.tapped {
+    transform: scale(0.9);
+    filter: grayscale(1) opacity(0.4);
+}
+
+/* Add a cool checkmark overlay when tapped */
+.count-item.tapped::after {
+    content: "✅";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 24px;
+    filter: none;
+    opacity: 1;
+}
+
+.count-options-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.count-option-btn {
+    width: 65px;
+    height: 65px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 4px solid #E2E8F0;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.05);
+    transition: transform 0.1s;
+    font-size: 28px;
+    font-weight: bold;
+    color: #334155;
+    position: relative;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.count-option-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+}
+
+.count-option-btn.selected {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 0 rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.count-option-btn.correct {
+    border-color: #58cc02 !important;
+    background: #D1FAE5;
+    color: #58cc02;
+}
+
+.count-option-btn.incorrect {
+    border-color: #ff4b4b !important;
+    background: #FEE2E2;
+    color: #ff4b4b;
+}
+
+.count-option-btn.color-0 { border-color: #58cc02; }
+.count-option-btn.color-1 { border-color: #1cb0f6; }
+.count-option-btn.color-2 { border-color: #ff4b4b; }
+.count-option-btn.color-3 { border-color: #ffc800; }
+
+@media (min-width: 500px) and (orientation: landscape) {
+    .count-objects-layout {
+        gap: 10px;
+    }
+    .count-display-card {
+        padding: 15px;
+        min-height: 120px;
+        gap: 15px;
+    }
+    .count-item {
+        font-size: 45px;
+    }
+    .count-options-row {
+        gap: 10px;
+    }
+    .count-option-btn {
+        width: 65px;
+        height: 65px;
+        border-radius: 15px;
+        font-size: 28px;
+    }
+}

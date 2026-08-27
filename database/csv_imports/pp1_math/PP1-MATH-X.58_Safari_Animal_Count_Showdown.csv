@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Safari Animal Count Showdown,Which group has MORE animals: 8 Lions or 5 Zebras?,show_q1.webp,audio_q1.mp3,1,8,5,Equal,,,1,,,,,,,
+speak_repeat,Safari Animal Count Showdown,Say out loud: EIGHT IS MORE THAN FIVE!,show_speak.webp,audio_q2.mp3,1,Eight Is More Than Five,,,,,,Eight Is More Than Five,,,,,,
+matching,Safari Animal Count Showdown,Match safari counts!,,,1,,,,,,8 Lions 🦁,More,5,Less,6,Medium,,

@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Dinosaur Phonics Rumble,Which letter sound /d/ starts Dino?,rumble_dino.webp,audio_q1.mp3,1,D,T,R,,,1,,,,,,,
+multiple_choice,Dinosaur Phonics Rumble,Which letter sound /t/ starts T-Rex?,rumble_trex.webp,audio_q2.mp3,1,T,D,S,,,1,,,,,,,
+multiple_choice,Dinosaur Phonics Rumble,Touch the shiny Dino Master Badge!,rumble_badge.webp,audio_q3.mp3,1,🏆,Egg,Fossil,,,1,,,,,,,
+multiple_choice,Dinosaur Phonics Rumble,Which egg hatches into a baby dinosaur?,rumble_egg.webp,audio_q4.mp3,1,Dino Egg,Apple,Ball,,,1,,,,,,,
+speak_repeat,Dinosaur Phonics Rumble,Say out loud clearly: DINOSAUR PHONICS RUMBLE!,speak_dino_rumble.webp,audio_q5.mp3,1,Dinosaur Phonics Rumble,,,,,,Dinosaur Phonics Rumble,,,,,,
+speak_repeat,Dinosaur Phonics Rumble,Say out loud: STOMP AND ROAR!,speak_stomp_roar.webp,audio_q6.mp3,1,Stomp and Roar,,,,,,Stomp and Roar,,,,,,
+matching,Dinosaur Phonics Rumble,Match dino sounds to letters!,,,1,,,,,,,,D,/d/,T,/t/,R,/r/
+matching,Dinosaur Phonics Rumble,Match dino rumble items!,,,1,,,,,,,,Dino,Dino,T-Rex,T-Rex,Egg,Dino Egg

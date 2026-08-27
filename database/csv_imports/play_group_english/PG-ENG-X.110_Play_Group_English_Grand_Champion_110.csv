@@ -1,0 +1,11 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Grand Champion Finale,Which letter starts the word Apple?,champion_apple_a.webp,audio_q1.mp3,1,A,B,C,,,1,,,,,,,
+multiple_choice,Grand Champion Finale,Which animal goes MOO MOO on the farm?,champion_cow.webp,audio_q2.mp3,1,Cow,Lion,Duck,,,1,,,,,,,
+multiple_choice,Grand Champion Finale,Which word rhymes with CAT?,champion_rhyme_cat.webp,audio_q3.mp3,1,Hat,Dog,Sun,,,1,,,,,,,
+multiple_choice,Grand Champion Finale,Which house could the big wolf NOT blow down?,champion_brick_house.webp,audio_q4.mp3,1,Brick House,Straw House,Stick House,,,1,,,,,,,
+multiple_choice,Grand Champion Finale,Which line goes straight from top to bottom?,champion_straight_line.webp,audio_q5.mp3,1,Straight Line,Zigzag Path,Circle Loop,,,1,,,,,,,
+multiple_choice,Grand Champion Finale,Touch the official Play Group English Diploma!,champion_diploma.webp,audio_q6.mp3,1,🏆,Gold Star,Graduation Cap,,,1,,,,,,,
+multiple_choice,Grand Champion Finale,Touch the shiny Grand Champion Trophy!,champion_trophy.webp,audio_q7.mp3,1,🏆,Toy Chest,School Bag,,,1,,,,,,,
+speak_repeat,Grand Champion Finale,Say out loud with pride: I AM A PLAY GROUP ENGLISH GRAND CHAMPION!,speak_grand_champion.webp,audio_q8.mp3,1,I Am A Play Group English Grand Champion,,,,,,I Am A Play Group English Grand Champion,,,,,,
+speak_repeat,Grand Champion Finale,Say out loud: HOORAY FOR GRADUATION!,speak_hooray_graduation.webp,audio_q9.mp3,1,Hooray For Graduation,,,,,,Hooray For Graduation,,,,,,
+matching,Grand Champion Finale,Match core subjects to champions!,,,1,,,,,,,,Phonics,A,Animals,Cow,Stories,Brick House

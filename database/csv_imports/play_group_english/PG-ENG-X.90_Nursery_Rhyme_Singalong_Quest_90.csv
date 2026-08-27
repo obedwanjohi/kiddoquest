@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Nursery Rhyme Quest,Complete the song: Twinkle Twinkle Little...?,quest_star.webp,audio_q1.mp3,1,Star,Sun,Moon,,,1,,,,,,,
+multiple_choice,Nursery Rhyme Quest,Complete the song: Baa Baa Black...?,quest_sheep.webp,audio_q2.mp3,1,Sheep,Cow,Duck,,,1,,,,,,,
+multiple_choice,Nursery Rhyme Quest,Complete the song: The Wheels on the...?,quest_bus.webp,audio_q3.mp3,1,Bus,Car,Train,,,1,,,,,,,
+speak_repeat,Nursery Rhyme Quest,Say out loud clearly: NURSERY RHYME QUEST!,speak_rhyme_quest.webp,audio_q4.mp3,1,Nursery Rhyme Quest,,,,,,Nursery Rhyme Quest,,,,,,
+speak_repeat,Nursery Rhyme Quest,Say out loud: SINGALONG CONCERT!,speak_singalong_concert.webp,audio_q5.mp3,1,Singalong Concert,,,,,,Singalong Concert,,,,,,
+matching,Nursery Rhyme Quest,Match song beginnings to missing words!,,,1,,,,,,,,Twinkle Twinkle,Star,Baa Baa,Black Sheep,Wheels on the,Bus
+matching,Nursery Rhyme Quest,Match song items!,,,1,,,,,,,,Star,Star,Sheep,Sheep,Bus,Bus

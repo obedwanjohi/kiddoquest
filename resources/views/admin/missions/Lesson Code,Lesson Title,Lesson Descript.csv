@@ -1,0 +1,319 @@
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_01_01,Lesson 1: A & B Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters A and B.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_01_01,Lesson 1 Quiz: A & B Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_01_01_01,A & B Letter Recognition,Identify uppercase and lowercase letters A and B.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_01_01_01,Focus Uppercase A,Identify uppercase A,2,1,120,Help Andy find uppercase A! Tap the box with uppercase A!,Letter_A_Upper,Letter_A_Upper_Instruction,A,Letter_A_Upper,B|X|O
+QT11,KE_PPP_ELA_01_01_01,Focus Lowercase a,Identify lowercase a,2,1,120,Now find lowercase a! Tap the box with lowercase a!,Letter_A_Lower,Letter_A_Lower_Instruction,a,Letter_A_Lower,b|e|o
+QT11,KE_PPP_ELA_01_01_01,Focus Uppercase B,Identify uppercase B,2,1,120,Help Benny find uppercase B! Tap the box with uppercase B!,Letter_B_Upper,Letter_B_Upper_Instruction,B,Letter_B_Upper,A|R|D
+QT11,KE_PPP_ELA_01_01_01,Focus Lowercase b,Identify lowercase b,2,1,120,Find lowercase b to help Benny! Tap lowercase b!,Letter_B_Lower,Letter_B_Lower_Instruction,b,Letter_B_Lower,d|p|q
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_01_02,Lesson 2: A & B Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters A and B.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_01_02,Lesson 2 Quiz: A & B Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_01_02_01,A & B Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters A and B.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_01_02_01,Sound A Q,Identify picture starting with /a/ sound,2,1,120,1,1,Which picture starts with the /a/ sound? Tap it!,Apple,Apple,Sound_A_Instruction
+QT10,KE_PPP_ELA_01_02_01,Sound B Q,Identify picture starting with /b/ sound,2,1,120,2,1,Which picture starts with the /b/ sound? Tap it!,Ball,Ball,Sound_B_Instruction
+QT10,KE_PPP_ELA_01_02_01,Object A Q,Identify red fruit starting with /a/,2,1,120,3,1,Andy the Ant loves red fruit! Tap the /a/ /a/ Apple!,Apple,Apple,Object_A_Instruction
+QT10,KE_PPP_ELA_01_02_01,Object B Q,Identify round toy starting with /b/,2,1,120,4,1,Benny the Bird plays with this round toy! Tap the /b/ /b/ Ball!,Ball,Ball,Object_B_Instruction
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_02_01,Lesson 1: C & D Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters C and D.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_02_01,Lesson 1 Quiz: C & D Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_02_01_01,C & D Letter Recognition,Identify uppercase and lowercase letters C and D.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_02_01_01,Focus Uppercase C,Identify uppercase C,2,1,120,Find uppercase C! Tap the C box!,Letter_C_Upper,Letter_C_Upper_Instruction,C,Letter_C_Upper,D|O|G
+QT11,KE_PPP_ELA_02_01_01,Focus Lowercase c,Identify lowercase c,2,1,120,Find lowercase c! Tap lowercase c!,Letter_C_Lower,Letter_C_Lower_Instruction,c,Letter_C_Lower,d|o|e
+QT11,KE_PPP_ELA_02_01_01,Focus Uppercase D,Identify uppercase D,2,1,120,Find uppercase D! Tap the D box!,Letter_D_Upper,Letter_D_Upper_Instruction,D,Letter_D_Upper,B|P|O
+QT11,KE_PPP_ELA_02_01_01,Focus Lowercase d,Identify lowercase d,2,1,120,Find lowercase d! Tap lowercase d!,Letter_D_Lower,Letter_D_Lower_Instruction,d,Letter_D_Lower,b|p|q
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_02_02,Lesson 2: C & D Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters C and D.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_02_02,Lesson 2 Quiz: C & D Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_02_02_01,C & D Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters C and D.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_02_02_01,Sound C Q,Identify picture starting with /k/ sound,2,1,120,1,1,Which picture starts with the /k/ sound?,Car,Car,Sound_C_Instruction
+QT10,KE_PPP_ELA_02_02_01,Sound D Q,Identify picture starting with /d/ sound,2,1,120,2,1,Which picture starts with the /d/ sound?,Duck,Duck,Sound_D_Instruction
+QT10,KE_PPP_ELA_02_02_01,Object C Q,Identify object starting with /k/,2,1,120,3,1,Tap the /k/ /k/ Carrot!,Carrot,Carrot,Object_C_Instruction
+QT10,KE_PPP_ELA_02_02_01,Object D Q,Identify object starting with /d/,2,1,120,4,1,Tap the /d/ /d/ Drum!,Drum,Drum,Object_D_Instruction
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_03_01,Lesson 1: E & F Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters E and F.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_03_01,Lesson 1 Quiz: E & F Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_03_01_01,E & F Letter Recognition,Identify uppercase and lowercase letters E and F.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_03_01_01,Focus Uppercase E,Identify uppercase E,2,1,120,Find Uppercase E,Letter_E_Upper,Letter_E_Upper_Instruction,E,Letter_E_Upper,F|L|T
+QT11,KE_PPP_ELA_03_01_01,Focus Lowercase e,Identify lowercase e,2,1,120,Find Lowercase e,Letter_E_Lower,Letter_E_Lower_Instruction,e,Letter_E_Lower,f|c|o
+QT11,KE_PPP_ELA_03_01_01,Focus Uppercase F,Identify uppercase F,2,1,120,Find Uppercase F,Letter_F_Upper,Letter_F_Upper_Instruction,F,Letter_F_Upper,E|T|L
+QT11,KE_PPP_ELA_03_01_01,Focus Lowercase f,Identify lowercase f,2,1,120,Find Lowercase f,Letter_F_Lower,Letter_F_Lower_Instruction,f,Letter_F_Lower,e|t|l
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_03_02,Lesson 2: E & F Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters E and F.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_03_02,Lesson 2 Quiz: E & F Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_03_02_01,E & F Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters E and F.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_03_02_01,Sound E Q,Identify picture starting with /e/ sound,2,1,120,1,1,Match the /e/ sound! Tap the correct picture.,Egg,Egg,Sound_E_Instruction
+QT10,KE_PPP_ELA_03_02_01,Sound F Q,Identify picture starting with /f/ sound,2,1,120,2,1,Match the /f/ sound! Tap the correct picture.,Fish,Fish,Sound_F_Instruction
+QT10,KE_PPP_ELA_03_02_01,Object E Q,Identify object starting with /e/,2,1,120,3,1,Identify the object starting with the /e/ sound.,Egg,Egg,Object_E_Instruction
+QT10,KE_PPP_ELA_03_02_01,Object F Q,Identify object starting with /f/,2,1,120,4,1,Identify the object starting with the /f/ sound.,Frog,Frog,Object_F_Instruction
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_04_01,Lesson 1: G & H Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters G and H.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_04_01,Lesson 1 Quiz: G & H Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_04_01_01,G & H Letter Recognition,Identify uppercase and lowercase letters G and H.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_04_01_01,Focus Uppercase G,Identify uppercase G,2,1,120,Help Gordon find uppercase G! Look at the picture and tap the box with uppercase G!,Letter_G_Upper,Letter_G_Upper_Instruction,G,Letter_G_Upper,C|O|Q
+QT11,KE_PPP_ELA_04_01_01,Focus Lowercase g,Identify lowercase g,2,1,120,Great job! Now can you find lowercase g? Tap the box with lowercase g!,Letter_G_Lower,Letter_G_Lower_Instruction,g,Letter_G_Lower,q|p|y
+QT11,KE_PPP_ELA_04_01_01,Focus Uppercase H,Identify uppercase H,2,1,120,Help Hannah find uppercase H! Tap the box with uppercase H!,Letter_H_Upper,Letter_H_Upper_Instruction,H,Letter_H_Upper,N|M|K
+QT11,KE_PPP_ELA_04_01_01,Focus Lowercase h,Identify lowercase h,2,1,120,Find lowercase h to help Hannah get her hat! Tap lowercase h!,Letter_H_Lower,Letter_H_Lower_Instruction,h,Letter_H_Lower,n|b|k
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_04_02,Lesson 2: G & H Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters G and H.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_04_02,Lesson 2 Quiz: G & H Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_04_02_01,G & H Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters G and H.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_04_02_01,Sound G Q,Identify picture starting with /g/ sound,2,1,120,1,1,Which picture starts with the /g/ sound? Tap the picture!,Grapes,Grapes,Sound_G_Instruction
+QT10,KE_PPP_ELA_04_02_01,Sound H Q,Identify picture starting with /h/ sound,2,1,120,2,1,Which picture starts with the /h/ sound? Tap the picture!,Hat,Hat,Sound_H_Instruction
+QT10,KE_PPP_ELA_04_02_01,Object G Q,Identify object starting with /g/,2,1,120,3,1,Gordon loves playing music! Tap the /g/ /g/ Guitar!,Guitar,Guitar,Object_G_Instruction
+QT10,KE_PPP_ELA_04_02_01,Object H Q,Identify object starting with /h/,2,1,120,4,1,Hannah wears this on her head! Tap the /h/ /h/ Hat!,Hat,Hat,Object_H_Instruction
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_05_01,Lesson 1: I & J Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters I and J.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_05_01,Lesson 1 Quiz: I & J Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_05_01_01,I & J Letter Recognition,Identify uppercase and lowercase letters I and J.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_05_01_01,Focus Uppercase I,Identify uppercase I,2,1,120,Help Iggy find uppercase I! Tap the box with uppercase I!,Letter_I_Upper,Letter_I_Upper_Instruction,I,Letter_I_Upper,L|T|E
+QT11,KE_PPP_ELA_05_01_01,Focus Lowercase i,Identify lowercase i,2,1,120,Find lowercase i! Tap the box with lowercase i!,Letter_I_Lower,Letter_I_Lower_Instruction,i,Letter_I_Lower,l|j|t
+QT11,KE_PPP_ELA_05_01_01,Focus Uppercase J,Identify uppercase J,2,1,120,Help Jax find uppercase J! Tap the box with uppercase J!,Letter_J_Upper,Letter_J_Upper_Instruction,J,Letter_J_Upper,U|I|L
+QT11,KE_PPP_ELA_05_01_01,Focus Lowercase j,Identify lowercase j,2,1,120,Find lowercase j to help Jax! Tap lowercase j!,Letter_J_Lower,Letter_J_Lower_Instruction,j,Letter_J_Lower,i|l|f
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_05_02,Lesson 2: I & J Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters I and J.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_05_02,Lesson 2 Quiz: I & J Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_05_02_01,I & J Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters I and J.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_05_02_01,Sound I Q,Identify picture starting with /i/ sound,2,1,120,1,1,Which picture starts with the /i/ sound? Tap it!,Insect,Insect,Sound_I_Instruction
+QT10,KE_PPP_ELA_05_02_01,Sound J Q,Identify picture starting with /j/ sound,2,1,120,2,1,Which picture starts with the /j/ sound? Tap it!,Jam,Jam,Sound_J_Instruction
+QT10,KE_PPP_ELA_05_02_01,Object I Q,Identify object starting with /i/,2,1,120,3,1,Iggy looks at a snowy dome house! Tap the /i/ /i/ Igloo!,Igloo,Igloo,Object_I_Instruction
+QT10,KE_PPP_ELA_05_02_01,Object J Q,Identify object starting with /j/,2,1,120,4,1,Jax wears this when it's chilly! Tap the /j/ /j/ Jacket!,Jacket,Jacket,Object_J_Instruction
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_06_01,Lesson 1: K & L Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters K and L.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_06_01,Lesson 1 Quiz: K & L Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_06_01_01,K & L Letter Recognition,Identify uppercase and lowercase letters K and L.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_06_01_01,Focus Uppercase K,Identify uppercase K,2,1,120,Help Kiki find uppercase K! Tap the box with uppercase K!,Letter_K_Upper,Letter_K_Upper_Instruction,K,Letter_K_Upper,X|H|R
+QT11,KE_PPP_ELA_06_01_01,Focus Lowercase k,Identify lowercase k,2,1,120,Find lowercase k! Tap the box with lowercase k!,Letter_K_Lower,Letter_K_Lower_Instruction,k,Letter_K_Lower,h|l|t
+QT11,KE_PPP_ELA_06_01_01,Focus Uppercase L,Identify uppercase L,2,1,120,Help Leo find uppercase L! Tap the box with uppercase L!,Letter_L_Upper,Letter_L_Upper_Instruction,L,Letter_L_Upper,I|E|T
+QT11,KE_PPP_ELA_06_01_01,Focus Lowercase l,Identify lowercase l,2,1,120,Find lowercase l to help Leo! Tap lowercase l!,Letter_L_Lower,Letter_L_Lower_Instruction,l,Letter_L_Lower,i|t|f
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_06_02,Lesson 2: K & L Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters K and L.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_06_02,Lesson 2 Quiz: K & L Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_06_02_01,K & L Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters K and L.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_06_02_01,Sound K Q,Identify picture starting with /k/ sound,2,1,120,1,1,Which picture starts with the /k/ sound? Tap it!,Kite,Kite,Sound_K_Instruction
+QT10,KE_PPP_ELA_06_02_01,Sound L Q,Identify picture starting with /l/ sound,2,1,120,2,1,Which picture starts with the /l/ sound? Tap it!,Leaf,Leaf,Sound_L_Instruction
+QT10,KE_PPP_ELA_06_02_01,Object K Q,Identify object starting with /k/,2,1,120,3,1,Kiki uses this to open a lock! Tap the /k/ /k/ Key!,Key,Key,Object_K_Instruction
+QT10,KE_PPP_ELA_06_02_01,Object L Q,Identify object starting with /l/,2,1,120,4,1,Leo found a sour yellow fruit! Tap the /l/ /l/ Lemon!,Lemon,Lemon,Object_L_Instruction
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_07_01,Lesson 1: M & N Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters M and N.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_07_01,Lesson 1 Quiz: M & N Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_07_01_01,M & N Letter Recognition,Identify uppercase and lowercase letters M and N.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_07_01_01,Focus Uppercase M,Identify uppercase M,2,1,120,Help Maya find uppercase M! Tap the box with uppercase M!,Letter_M_Upper,Letter_M_Upper_Instruction,M,Letter_M_Upper,N|W|V
+QT11,KE_PPP_ELA_07_01_01,Focus Lowercase m,Identify lowercase m,2,1,120,Find lowercase m! Tap the box with lowercase m!,Letter_M_Lower,Letter_M_Lower_Instruction,m,Letter_M_Lower,n|w|u
+QT11,KE_PPP_ELA_07_01_01,Focus Uppercase N,Identify uppercase N,2,1,120,Help Ned find uppercase N! Tap the box with uppercase N!,Letter_N_Upper,Letter_N_Upper_Instruction,N,Letter_N_Upper,M|H|Z
+QT11,KE_PPP_ELA_07_01_01,Focus Lowercase n,Identify lowercase n,2,1,120,Find lowercase n to help Ned! Tap lowercase n!,Letter_N_Lower,Letter_N_Lower_Instruction,n,Letter_N_Lower,m|h|r
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_07_02,Lesson 2: M & N Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters M and N.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_07_02,Lesson 2 Quiz: M & N Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_07_02_01,M & N Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters M and N.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_07_02_01,Sound M Q,Identify picture starting with /m/ sound,2,1,120,1,1,Which picture starts with the /m/ sound? Tap it!,Moon,Moon,Sound_M_Instruction
+QT10,KE_PPP_ELA_07_02_01,Sound N Q,Identify picture starting with /n/ sound,2,1,120,2,1,Which picture starts with the /n/ sound? Tap it!,Nest,Nest,Sound_N_Instruction
+QT10,KE_PPP_ELA_07_02_01,Object M Q,Identify object starting with /m/,2,1,120,3,1,Maya drinks this healthy white drink! Tap the /m/ /m/ Milk!,Milk,Milk,Object_M_Instruction
+QT10,KE_PPP_ELA_07_02_01,Object N Q,Identify object starting with /n/,2,1,120,4,1,Ned sees where birds lay eggs! Tap the /n/ /n/ Nest!,Nest,Nest,Object_N_Instruction
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_08_01,Lesson 1: O & P Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters O and P.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_08_01,Lesson 1 Quiz: O & P Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_08_01_01,O & P Letter Recognition,Identify uppercase and lowercase letters O and P.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_08_01_01,Focus Uppercase O,Identify uppercase O,2,1,120,Help Ollie find uppercase O! Tap the box with uppercase O!,Letter_O_Upper,Letter_O_Upper_Instruction,O,Letter_O_Upper,C|Q|G
+QT11,KE_PPP_ELA_08_01_01,Focus Lowercase o,Identify lowercase o,2,1,120,Find lowercase o! Tap the box with lowercase o!,Letter_O_Lower,Letter_O_Lower_Instruction,o,Letter_O_Lower,c|a|e
+QT11,KE_PPP_ELA_08_01_01,Focus Uppercase P,Identify uppercase P,2,1,120,Help Penny find uppercase P! Tap the box with uppercase P!,Letter_P_Upper,Letter_P_Upper_Instruction,P,Letter_P_Upper,B|R|D
+QT11,KE_PPP_ELA_08_01_01,Focus Lowercase p,Identify lowercase p,2,1,120,Find lowercase p to help Penny! Tap lowercase p!,Letter_P_Lower,Letter_P_Lower_Instruction,p,Letter_P_Lower,q|b|d
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_08_02,Lesson 2: O & P Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters O and P.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_08_02,Lesson 2 Quiz: O & P Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_08_02_01,O & P Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters O and P.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_08_02_01,Sound O Q,Identify picture starting with /o/ sound,2,1,120,1,1,Which picture starts with the /o/ sound? Tap it!,Orange,Orange,Sound_O_Instruction
+QT10,KE_PPP_ELA_08_02_01,Sound P Q,Identify picture starting with /p/ sound,2,1,120,2,1,Which picture starts with the /p/ sound? Tap it!,Pencil,Pencil,Sound_P_Instruction
+QT10,KE_PPP_ELA_08_02_01,Object O Q,Identify object starting with /o/,2,1,120,3,1,Ollie loves swimming! Tap the 8-legged /o/ /o/ Octopus!,Octopus,Octopus,Object_O_Instruction
+QT10,KE_PPP_ELA_08_02_01,Object P Q,Identify object starting with /p/,2,1,120,4,1,Penny uses this to draw pictures! Tap the /p/ /p/ Pencil!,Pencil,Pencil,Object_P_Instruction
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_09_01,Lesson 1: Q & R Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters Q and R.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_09_01,Lesson 1 Quiz: Q & R Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_09_01_01,Q & R Letter Recognition,Identify uppercase and lowercase letters Q and R.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_09_01_01,Focus Uppercase Q,Identify uppercase Q,2,1,120,Help Queenie find uppercase Q! Tap the box with uppercase Q!,Letter_Q_Upper,Letter_Q_Upper_Instruction,Q,Letter_Q_Upper,O|G|C
+QT11,KE_PPP_ELA_09_01_01,Focus Lowercase q,Identify lowercase q,2,1,120,Find lowercase q! Tap the box with lowercase q!,Letter_Q_Lower,Letter_Q_Lower_Instruction,q,Letter_Q_Lower,p|g|d
+QT11,KE_PPP_ELA_09_01_01,Focus Uppercase R,Identify uppercase R,2,1,120,Help Rosie find uppercase R! Tap the box with uppercase R!,Letter_R_Upper,Letter_R_Upper_Instruction,R,Letter_R_Upper,P|B|K
+QT11,KE_PPP_ELA_09_01_01,Focus Lowercase r,Identify lowercase r,2,1,120,Find lowercase r to help Rosie! Tap lowercase r!,Letter_R_Lower,Letter_R_Lower_Instruction,r,Letter_R_Lower,n|v|m
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_09_02,Lesson 2: Q & R Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters Q and R.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_09_02,Lesson 2 Quiz: Q & R Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_09_02_01,Q & R Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters Q and R.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_09_02_01,Sound Q Q,Identify picture starting with /kw/ sound,2,1,120,1,1,Which picture starts with the /kw/ sound? Tap it!,Queen,Queen,Sound_Q_Instruction
+QT10,KE_PPP_ELA_09_02_01,Sound R Q,Identify picture starting with /r/ sound,2,1,120,2,1,Which picture starts with the /r/ sound? Tap it!,Ring,Ring,Sound_R_Instruction
+QT10,KE_PPP_ELA_09_02_01,Object Q Q,Identify object starting with /kw/,2,1,120,3,1,Queenie keeps warm under this! Tap the /kw/ /kw/ Quilt!,Quilt,Quilt,Object_Q_Instruction
+QT10,KE_PPP_ELA_09_02_01,Object R Q,Identify object starting with /r/,2,1,120,4,1,Rosie smells a red garden flower! Tap the /r/ /r/ Rose!,Rose,Rose,Object_R_Instruction
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_10_01,Lesson 1: S & T Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters S and T.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_10_01,Lesson 1 Quiz: S & T Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_10_01_01,S & T Letter Recognition,Identify uppercase and lowercase letters S and T.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_10_01_01,Focus Uppercase S,Identify uppercase S,2,1,120,Help Sammy find uppercase S! Tap the box with uppercase S!,Letter_S_Upper,Letter_S_Upper_Instruction,S,Letter_S_Upper,Z|C|E
+QT11,KE_PPP_ELA_10_01_01,Focus Lowercase s,Identify lowercase s,2,1,120,Find lowercase s! Tap the box with lowercase s!,Letter_S_Lower,Letter_S_Lower_Instruction,s,Letter_S_Lower,z|c|x
+QT11,KE_PPP_ELA_10_01_01,Focus Uppercase T,Identify uppercase T,2,1,120,Help Tommy find uppercase T! Tap the box with uppercase T!,Letter_T_Upper,Letter_T_Upper_Instruction,T,Letter_T_Upper,I|L|F
+QT11,KE_PPP_ELA_10_01_01,Focus Lowercase t,Identify lowercase t,2,1,120,Find lowercase t to help Tommy! Tap lowercase t!,Letter_T_Lower,Letter_T_Lower_Instruction,t,Letter_T_Lower,f|l|i
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_10_02,Lesson 2: S & T Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters S and T.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_10_02,Lesson 2 Quiz: S & T Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_10_02_01,S & T Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters S and T.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_10_02_01,Sound S Q,Identify picture starting with /s/ sound,2,1,120,1,1,Which picture starts with the /s/ sound? Tap it!,Sun,Sun,Sound_S_Instruction
+QT10,KE_PPP_ELA_10_02_01,Sound T Q,Identify picture starting with /t/ sound,2,1,120,2,1,Which picture starts with the /t/ sound? Tap it!,Tree,Tree,Sound_T_Instruction
+QT10,KE_PPP_ELA_10_02_01,Object S Q,Identify object starting with /s/,2,1,120,3,1,Sammy lies under this bright light! Tap the /s/ /s/ Sun!,Sun,Sun,Object_S_Instruction
+QT10,KE_PPP_ELA_10_02_01,Object T Q,Identify object starting with /t/,2,1,120,4,1,Tommy sees a big wild cat friend! Tap the /t/ /t/ Tiger!,Tiger,Tiger,Object_T_Instruction
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_11_01,Lesson 1: U & V Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters U and V.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_11_01,Lesson 1 Quiz: U & V Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_11_01_01,U & V Letter Recognition,Identify uppercase and lowercase letters U and V.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_11_01_01,Focus Uppercase U,Identify uppercase U,2,1,120,Help Uma find uppercase U! Tap the box with uppercase U!,Letter_U_Upper,Letter_U_Upper_Instruction,U,Letter_U_Upper,V|W|O
+QT11,KE_PPP_ELA_11_01_01,Focus Lowercase u,Identify lowercase u,2,1,120,Find lowercase u! Tap the box with lowercase u!,Letter_U_Lower,Letter_U_Lower_Instruction,u,Letter_U_Lower,v|w|n
+QT11,KE_PPP_ELA_11_01_01,Focus Uppercase V,Identify uppercase V,2,1,120,Help Victor find uppercase V! Tap the box with uppercase V!,Letter_V_Upper,Letter_V_Upper_Instruction,V,Letter_V_Upper,U|W|Y
+QT11,KE_PPP_ELA_11_01_01,Focus Lowercase v,Identify lowercase v,2,1,120,Find lowercase v to help Victor! Tap lowercase v!,Letter_V_Lower,Letter_V_Lower_Instruction,v,Letter_V_Lower,u|w|y
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_11_02,Lesson 2: U & V Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters U and V.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_11_02,Lesson 2 Quiz: U & V Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_11_02_01,U & V Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters U and V.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_11_02_01,Sound U Q,Identify picture starting with /u/ sound,2,1,120,1,1,Which picture starts with the /u/ sound? Tap it!,Umbrella,Umbrella,Sound_U_Instruction
+QT10,KE_PPP_ELA_11_02_01,Sound V Q,Identify picture starting with /v/ sound,2,1,120,2,1,Which picture starts with the /v/ sound? Tap it!,Van,Van,Sound_V_Instruction
+QT10,KE_PPP_ELA_11_02_01,Object U Q,Identify object starting with /u/,2,1,120,3,1,Uma opens this when rain falls! Tap the /u/ /u/ Umbrella!,Umbrella,Umbrella,Object_U_Instruction
+QT10,KE_PPP_ELA_11_02_01,Object V Q,Identify object starting with /v/,2,1,120,4,1,Victor plays music on this instrument! Tap the /v/ /v/ Violin!,Violin,Violin,Object_V_Instruction
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_12_01,Lesson 1: W & X Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters W and X.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_12_01,Lesson 1 Quiz: W & X Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_12_01_01,W & X Letter Recognition,Identify uppercase and lowercase letters W and X.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_12_01_01,Focus Uppercase W,Identify uppercase W,2,1,120,Help Wally find uppercase W! Tap the box with uppercase W!,Letter_W_Upper,Letter_W_Upper_Instruction,W,Letter_W_Upper,M|V|N
+QT11,KE_PPP_ELA_12_01_01,Focus Lowercase w,Identify lowercase w,2,1,120,Find lowercase w! Tap the box with lowercase w!,Letter_W_Lower,Letter_W_Lower_Instruction,w,Letter_W_Lower,m|v|u
+QT11,KE_PPP_ELA_12_01_01,Focus Uppercase X,Identify uppercase X,2,1,120,Help Felix find uppercase X! Tap the box with uppercase X!,Letter_X_Upper,Letter_X_Upper_Instruction,X,Letter_X_Upper,K|V|Y
+QT11,KE_PPP_ELA_12_01_01,Focus Lowercase x,Identify lowercase x,2,1,120,Find lowercase x to help Felix! Tap lowercase x!,Letter_X_Lower,Letter_X_Lower_Instruction,x,Letter_X_Lower,k|v|z
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_12_02,Lesson 2: W & X Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters W and X.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_12_02,Lesson 2 Quiz: W & X Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_12_02_01,W & X Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters W and X.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_12_02_01,Sound W Q,Identify picture starting with /w/ sound,2,1,120,1,1,Which picture starts with the /w/ sound? Tap it!,Watermelon,Watermelon,Sound_W_Instruction
+QT10,KE_PPP_ELA_12_02_01,Sound X Q,Identify picture showing Letter X,2,1,120,2,1,Which picture shows the Letter X? Tap it!,Xylophone,Xylophone,Sound_X_Instruction
+QT10,KE_PPP_ELA_12_02_01,Object W Q,Identify object starting with /w/,2,1,120,3,1,Wally sees a giant swimming friend! Tap the /w/ /w/ Whale!,Whale,Whale,Object_W_Instruction
+QT10,KE_PPP_ELA_12_02_01,Object X Q,Identify object with /ks/ sound,2,1,120,4,1,Felix packs his toys in this! Tap the /ks/ /ks/ Box!,Box,Box,Object_X_Instruction
+
+
+
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_13_01,Lesson 1: Y & Z Detective,Develop letter recognition skills by identifying uppercase and lowercase forms of letters Y and Z.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_13_01,Lesson 1 Quiz: Y & Z Detective (Recognition),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT11,KE_PPP_ELA_13_01_01,Y & Z Letter Recognition,Identify uppercase and lowercase letters Y and Z.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Display Text,Image Filename,Sound Filename,Correct Answer,Answer Sound,Incorrect Answers
+QT11,KE_PPP_ELA_13_01_01,Focus Uppercase Y,Identify uppercase Y,2,1,120,Help Yanni find uppercase Y! Tap the box with uppercase Y!,Letter_Y_Upper,Letter_Y_Upper_Instruction,Y,Letter_Y_Upper,V|X|U
+QT11,KE_PPP_ELA_13_01_01,Focus Lowercase y,Identify lowercase y,2,1,120,Find lowercase y! Tap the box with lowercase y!,Letter_Y_Lower,Letter_Y_Lower_Instruction,y,Letter_Y_Lower,v|g|p
+QT11,KE_PPP_ELA_13_01_01,Focus Uppercase Z,Identify uppercase Z,2,1,120,Help Zeke find uppercase Z! Tap the box with uppercase Z!,Letter_Z_Upper,Letter_Z_Upper_Instruction,Z,Letter_Z_Upper,S|N|E
+QT11,KE_PPP_ELA_13_01_01,Focus Lowercase z,Identify lowercase z,2,1,120,Find lowercase z to help Zeke! Tap lowercase z!,Letter_Z_Lower,Letter_Z_Lower_Instruction,z,Letter_Z_Lower,s|n|x
+Lesson Code,Lesson Title,Lesson Description,,,,,,,,,,
+KE_PPP_ELA_13_02,Lesson 2: Y & Z Sound & Object Match,Associate initial phoneme sounds and vocabulary objects with letters Y and Z.,,,,,,,,,,
+Quiz Name,Quiz Description,,,,,,,,,,,
+KE_PPP_ELA_13_02,Lesson 2 Quiz: Y & Z Sound & Object Match (MC Images),,,,,,,,,,,
+Quiz Section Type,Quiz Section Code,Quiz Section Title,Quiz Section Description,,,,,,,,,,
+QT10,KE_PPP_ELA_13_02_01,Y & Z Sound & Object Match,Identify pictures that match the corresponding initial sounds for letters Y and Z.,,,,,,,,,,
+Question type,Codename,Name,Description,Iteration,Weight,Timer,Answer No,Option No,Text,Hidden Answer,Image Filename,Sound Filename
+QT10,KE_PPP_ELA_13_02_01,Sound Y Q,Identify picture starting with /y/ sound,2,1,120,1,1,Which picture starts with the /y/ sound? Tap it!,Yarn,Yarn,Sound_Y_Instruction
+QT10,KE_PPP_ELA_13_02_01,Sound Z Q,Identify picture starting with /z/ sound,2,1,120,2,1,Which picture starts with the /z/ sound? Tap it!,Zipper,Zipper,Sound_Z_Instruction
+QT10,KE_PPP_ELA_13_02_01,Object Y Q,Identify object starting with /y/,2,1,120,3,1,Yanni spins this fun toy on a string! Tap the /y/ /y/ Yo-Yo!,Yo-Yo,Yo-Yo,Object_Y_Instruction
+QT10,KE_PPP_ELA_13_02_01,Object Z Q,Identify object starting with /z/,2,1,120,4,1,Zeke fastens his jacket with this! Tap the /z/ /z/ Zipper!,Zipper,Zipper,Object_Z_Instruction
+
+
+

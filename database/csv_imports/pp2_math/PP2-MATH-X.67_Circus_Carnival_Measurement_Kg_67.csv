@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Carnival Measurement Kg 67,Which circus item weighs 10 Kilograms (Kg)?,kg_q1.webp,audio_q1.mp3,1,🏋️,Feather 🪶,Popcorn 🍿,,,1,,,,,,,
+speak_repeat,Circus Carnival Measurement Kg 67,Say out loud: TEN KILOGRAMS IS HEAVY!,kg_speak.webp,audio_q2.mp3,1,Ten Kilograms Is Heavy,,,,,,Ten Kilograms Is Heavy,,,,,,
+matching,Circus Carnival Measurement Kg 67,Match circus weights!,,,1,,,,,,Dumbbell 🏋️,10 Kg (Heavy),Popcorn 🍿,100g (Light),Feather 🪶,1g (Tiny),,

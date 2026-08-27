@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Grammar Nouns Naming People,Which picture shows a PERSON?,teacher_q1.webp,audio_q1.mp3,1,Teacher 👩‍🏫,Apple 🍎,Book 📚,,,1,,,,,,,
+speak_repeat,Grammar Nouns Naming People,Say out loud: TEACHER IS A PERSON!,teach_speak.webp,audio_q2.mp3,1,Teacher Is A Person,,,,,,Teacher Is A Person,,,,,,
+matching,Grammar Nouns Naming People,Match people nouns!,,,1,,,,,,Teacher 👩‍🏫,Person,Doctor 🧑‍⚕️,Person,Baby 👶,Person,,

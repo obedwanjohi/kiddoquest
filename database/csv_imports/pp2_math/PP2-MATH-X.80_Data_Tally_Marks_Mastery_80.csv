@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Data Tally Marks Mastery 80,How many tally marks are in 3 bundles (卌 卌 卌)?,tally15_q1.webp,audio_q1.mp3,1,15,10,20,,,1,,,,,,,
+speak_repeat,Data Tally Marks Mastery 80,Say out loud: FIVE TEN FIFTEEN TALLY MARKS!,tally_speak.webp,audio_q2.mp3,1,Five Ten Fifteen Tally Marks,,,,,,Five Ten Fifteen Tally Marks,,,,,,
+matching,Data Tally Marks Mastery 80,Match tally bundles!,,,1,,,,,,卌,5,卌 卌,10,卌 卌 卌,15,,

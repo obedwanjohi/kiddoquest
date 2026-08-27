@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Storybook Master Recap,Which pig house kept everyone safe from the big wolf?,recap_pigs_brick.webp,audio_q1.mp3,1,Brick House,Straw House,Stick House,,,1,,,,,,,
+multiple_choice,Storybook Master Recap,Which porridge bowl was just right for Goldilocks?,recap_bears_bowl.webp,audio_q2.mp3,1,Baby Bear's Bowl,Papa Bear's Bowl,Mama Bear's Bowl,,,1,,,,,,,
+multiple_choice,Storybook Master Recap,Which slow animal won the race step by step?,recap_tortoise_race.webp,audio_q3.mp3,1,Slow Tortoise,Fast Hare,Sleeping Dog,,,1,,,,,,,
+multiple_choice,Storybook Master Recap,Touch the Giant Storybook of moral tales!,recap_giant_storybook.webp,audio_q4.mp3,1,Giant Storybook,Toy Box,School Bag,,,1,,,,,,,
+speak_repeat,Storybook Master Recap,Say out loud clearly: STORYBOOK MASTER RECAP!,speak_storybook_recap.webp,audio_q5.mp3,1,Storybook Master Recap,,,,,,Storybook Master Recap,,,,,,
+speak_repeat,Storybook Master Recap,Say out loud: WE LOVE STORYTIME!,speak_love_storytime.webp,audio_q6.mp3,1,We Love Storytime,,,,,,We Love Storytime,,,,,,
+matching,Storybook Master Recap,Match classic stories to characters!,,,1,,,,,,,,Pigs,Three Little Pigs,Bears,Three Bears,Race,Tortoise and Hare
+matching,Storybook Master Recap,Match story lessons!,,,1,,,,,,,,Pigs,Brick House,Bears,Just Right,Tortoise,Slow and Steady

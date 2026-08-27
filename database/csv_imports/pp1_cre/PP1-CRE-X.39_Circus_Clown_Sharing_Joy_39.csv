@@ -1,0 +1,13 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Clown Sharing Joy 39,Blend /c/ + /a/ + /t/? (think -in words),cvc_in1.webp,audio_q1.mp3,1,Pin,Dog,Sun,,,,,,,,,,
+multiple_choice,Circus Clown Sharing Joy 39,Which word rhymes with Pin?,cvc_in2.webp,audio_q2.mp3,1,Bin,Bed,Cup,,,,,,,,,,
+multiple_choice,Circus Clown Sharing Joy 39,Touch the picture that rhymes with Bin!,cvc_in3.webp,audio_q3.mp3,1,Win,Frog,Bird,,,,,,,,,,
+multiple_choice,Circus Clown Sharing Joy 39,Which word ends in /in/?,cvc_in4.webp,audio_q4.mp3,1,Tin,Tree,Fish,,,,,,,,,,
+multiple_choice,Circus Clown Sharing Joy 39,Touch the -in word!,cvc_in5.webp,audio_q5.mp3,1,Fin,Jump,Rain,,,,,,,,,,
+multiple_choice,Circus Clown Sharing Joy 39,Spell out Pin — how many letters?,cvc_spell.webp,audio_q6.mp3,1,3,4,5,,,,,,,,,,
+speak_repeat,Circus Clown Sharing Joy 39,Say out loud: PIN — BIN — WIN!,cvc_say.webp,audio_q7.mp3,1,Pin Bin Win,,,,,,Pin Bin Win,,,,,,
+speak_repeat,Circus Clown Sharing Joy 39,Say: THEY ALL RHYME WITH -IN!,cvc_rhyme.webp,audio_q8.mp3,1,They All Rhyme With -in,,,,,,They All Rhyme With -in,,,,,,
+speak_repeat,Circus Clown Sharing Joy 39,Spell it out: P-I-N spells PIN!,cvc_spell2.webp,audio_q9.mp3,1,P-I-N Spells Pin,,,,,,P-I-N Spells Pin,,,,,,
+matching,Circus Clown Sharing Joy 39,Match -in words to pictures!,,,1,,,,,,,,Pin,📌,Bin,🗑,Win,🏆
+matching,Circus Clown Sharing Joy 39,Match rhyming word pairs!,,,1,,,,,,,,Pin,Bin,Win,Tin,Fin,Pin
+matching,Circus Clown Sharing Joy 39,Match word to its meaning!,,,1,,,,,,,,Pin,A Pin,Bin,A Bin,Win,A Win

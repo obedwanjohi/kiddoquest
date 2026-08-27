@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Grammar Noun Naming Safari 74,Which picture is a NOUN that names an animal?,lion_q1.webp,audio_q1.mp3,1,Lion 🦁,Run 🏃,Big,,,1,,,,,,,
+speak_repeat,Grammar Noun Naming Safari 74,Say out loud: NOUN IS A NAMING WORD!,noun_speak.webp,audio_q2.mp3,1,Noun Is A Naming Word,,,,,,Noun Is A Naming Word,,,,,,
+matching,Grammar Noun Naming Safari 74,Match noun categories!,,,1,,,,,,Teacher 👩‍🏫,Person,Lion 🦁,Animal,School 🏫,Place,,

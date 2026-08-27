@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,David and Goliath,Who trusted God bravely and defeated the giant Goliath?,cre_young_david.webp,audio_q1.mp3,1,Young David,King Saul,DUCK,,,1,,,,,,,
+multiple_choice,David and Goliath,What tool did young David use with small smooth stones?,cre_leather_sling.webp,audio_q2.mp3,1,Leather Sling,SWORD,Spear,,,1,,,,,,,
+multiple_choice,David and Goliath,Why was young David not afraid of giant Goliath?,cre_david_faith.webp,audio_q3.mp3,1,God Was With Him,He Had Armor,He Ran Away,,,1,,,,,,,
+speak_repeat,David and Goliath,Say out loud clearly: DAVID AND GOLIATH!,speak_david_goliath.webp,audio_q4.mp3,1,David and Goliath,,,,,,David and Goliath,,,,,,
+speak_repeat,David and Goliath,Say out loud: GOD IS WITH ME!,speak_god_with_me.webp,audio_q5.mp3,1,God Is With Me,,,,,,God Is With Me,,,,,,
+matching,David and Goliath,Match story characters!,,,1,,,,,,,,David,Young Shepherd,Goliath,SOLDIER,God,Helper and Shield
+matching,David and Goliath,Match David's tools!,,,1,,,,,,,,David,Young David,Sling,Leather Sling,Stones,Smooth Stones

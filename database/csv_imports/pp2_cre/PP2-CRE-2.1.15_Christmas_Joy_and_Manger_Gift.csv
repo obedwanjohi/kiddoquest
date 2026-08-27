@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Christmas Joy and Manger Gift,What greatest gift did God give the world on Christmas?,xmas_q1.webp,audio_q1.mp3,1,👶,A Toy Car,A Box,,,1,,,,,,,
+speak_repeat,Christmas Joy and Manger Gift,Say out loud clearly: JESUS IS THE BEST CHRISTMAS GIFT!,xmas_speak.webp,audio_q2.mp3,1,Jesus Is The Best Christmas Gift,,,,,,Jesus Is The Best Christmas Gift,,,,,,
+matching,Christmas Joy and Manger Gift,Match Christmas story!,,,1,,,,,,Manger 🌾,Baby Jesus,Star 🌟,Guided Wise Men,Angels 👼,Sang Glory,,

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Alien Phonics,Which friendly alien makes the /a/ sound for Alien?,alien_character.webp,audio_q1.mp3,1,Friendly Alien,Space Monster,Rocket,,,1,,,,,,,
+multiple_choice,Space Alien Phonics,Touch the alien's flying saucer spacecraft!,alien_saucer.webp,audio_q2.mp3,1,Flying Saucer,Bus,Boat,,,1,,,,,,,
+multiple_choice,Space Alien Phonics,Touch the strange glowing planet in space!,alien_planet.webp,audio_q3.mp3,1,Glowing Planet,Moon,Sun,,,1,,,,,,,
+speak_repeat,Space Alien Phonics,Say out loud clearly: SPACE ALIEN PHONICS!,speak_alien_phonics.webp,audio_q4.mp3,1,Space Alien Phonics,,,,,,Space Alien Phonics,,,,,,
+speak_repeat,Space Alien Phonics,Say out loud: FRIENDLY ALIEN SOUNDS!,speak_alien_sounds.webp,audio_q5.mp3,1,Friendly Alien Sounds,,,,,,Friendly Alien Sounds,,,,,,
+matching,Space Alien Phonics,Match space alien items!,,,1,,,,,,,,Alien,Friendly Alien,Saucer,Flying Saucer,Planet,Glowing Planet
+matching,Space Alien Phonics,Match alien letter sounds!,,,1,,,,,,,,/a/,Alien,/s/,Saucer,/p/,Planet

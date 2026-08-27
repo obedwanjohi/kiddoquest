@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter N Nose,Which letter makes the /n/ sound in N N N - /n/ /n/ /n/ - Nose Nose?,letter_n_card.webp,audio_q1.mp3,1,N,M,O,,,1,,,,,,,
+multiple_choice,Letter N Nose,Touch the nose body part starting with letter N!,nose_n.webp,audio_q2.mp3,1,Nose,Ear,Eye,,,1,,,,,,,
+multiple_choice,Letter N Nose,Listen to the song: N N N - /n/ /n/ /n/ - Nose!,nose_song.webp,audio_q3.mp3,1,Nose,Lion,Monkey,,,1,,,,,,,
+speak_repeat,Letter N Nose,Say the phonics song chant: N N N - NOSE!,speak_nose_n.webp,audio_q4.mp3,1,Nose,,,,,,Nose,,,,,,
+speak_repeat,Letter N Nose,Say out loud clearly: LETTER N!,speak_letter_n.webp,audio_q5.mp3,1,Letter N,,,,,,Letter N,,,,,,
+matching,Letter N Nose,Match letter N to Nose!,,,1,,,,,,,,N,N,Nose,Nose,sound /n/,Nose
+matching,Letter N Nose,Match letter N sound /n/!,,,1,,,,,,,,N,N,/n/ /n/ /n/,Nose,Nose,Nose

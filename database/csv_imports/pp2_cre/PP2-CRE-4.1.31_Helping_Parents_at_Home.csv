@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Helping Parents at Home,How can we show love to Mommy and Daddy at home?,help_q1.webp,audio_q1.mp3,1,🧹,Make a mess,Refuse to help,,,1,,,,,,,
+speak_repeat,Helping Parents at Home,Say out loud clearly: I AM A HELPFUL CHILD!,help_speak.webp,audio_q2.mp3,1,I Am A Helpful Child,,,,,,I Am A Helpful Child,,,,,,
+matching,Helping Parents at Home,Match home helping!,,,1,,,,,,Toys 🧸,Pick Up,Table 🍽️,Set Table,Parents 👨‍👩‍👧,Honor & Help,,

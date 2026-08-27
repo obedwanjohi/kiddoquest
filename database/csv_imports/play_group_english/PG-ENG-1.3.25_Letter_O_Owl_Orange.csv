@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter O Octopus,Which letter makes the /o/ sound in O O O - /o/ /o/ /o/ - Octopus Octopus?,letter_o_card.webp,audio_q1.mp3,1,O,N,P,,,1,,,,,,,
+multiple_choice,Letter O Octopus,Touch the sea animal starting with letter O!,octopus_o.webp,audio_q2.mp3,1,Octopus,Fish,Frog,,,1,,,,,,,
+multiple_choice,Letter O Octopus,Listen to the song: O O O - /o/ /o/ /o/ - Octopus!,octopus_song.webp,audio_q3.mp3,1,Octopus,Lion,Pig,,,1,,,,,,,
+speak_repeat,Letter O Octopus,Say the phonics song chant: O O O - OCTOPUS!,speak_octopus_o.webp,audio_q4.mp3,1,Octopus,,,,,,Octopus,,,,,,
+speak_repeat,Letter O Octopus,Say out loud clearly: LETTER O!,speak_letter_o.webp,audio_q5.mp3,1,Letter O,,,,,,Letter O,,,,,,
+matching,Letter O Octopus,Match letter O to Octopus!,,,1,,,,,,,,O,O,Octopus,Octopus,sound /o/,Octopus
+matching,Letter O Octopus,Match letter O sound /o/!,,,1,,,,,,,,O,O,/o/ /o/ /o/,Octopus,Octopus,Octopus

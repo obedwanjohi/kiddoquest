@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Church and Worship Fellowship 67,What day do we gather at Church to worship God?,sun_q1.webp,audio_q1.mp3,1,Sunday ⛪,Monday,Friday,,,1,,,,,,,
+speak_repeat,Church and Worship Fellowship 67,Say out loud: I JOYFULLY WORSHIP GOD!,worsh_speak.webp,audio_q2.mp3,1,I Joyfully Worship God,,,,,,I Joyfully Worship God,,,,,,
+matching,Church and Worship Fellowship 67,Match worship fellowship!,,,1,,,,,,Church ⛪,House of God,Sunday 🗓️,Worship Day,Praise 🎶,Joyful Songs,,

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Tracing Circle Shapes,Which shape is perfectly round like a sun?,trace_circle_sun.webp,audio_q1.mp3,1,Circle Shape,Square Box,Straight Line,,,1,,,,,,,
+multiple_choice,Tracing Circle Shapes,Touch the round ball to trace around!,trace_circle_ball.webp,audio_q2.mp3,1,Round Ball,Triangle,Zigzag Line,,,1,,,,,,,
+multiple_choice,Tracing Circle Shapes,Help Leo trace all the way around the bus wheel!,trace_circle_wheel.webp,audio_q3.mp3,1,Round Wheel,Straight Slide,Rainbow Arc,,,1,,,,,,,
+speak_repeat,Tracing Circle Shapes,Say out loud clearly: TRACING CIRCLES!,speak_tracing_circles.webp,audio_q4.mp3,1,Tracing Circles,,,,,,Tracing Circles,,,,,,
+speak_repeat,Tracing Circle Shapes,Say out loud: ROUND AND ROUND!,speak_circle_round.webp,audio_q5.mp3,1,Round and Round,,,,,,Round and Round,,,,,,
+matching,Tracing Circle Shapes,Match round objects to shapes!,,,1,,,,,,,,Sun,Circle,Ball,Circle,Wheel,Circle
+matching,Tracing Circle Shapes,Match shape movements!,,,1,,,,,,,,Circle,Round and Round,Line,Straight,Path,Continuous

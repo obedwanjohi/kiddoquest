@@ -1,0 +1,54 @@
+Created At: 2026-07-17T19:16:49Z
+Completed At: 2026-07-17T19:16:49Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3158
+Total Bytes: 146333
+Showing lines 2310 to 2355
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2310:                 type: 'drag_sequence',
+2311:             });
+2312: 
+2313:             setTimeout(() => { this.leoCelebrating = false; }, 600);
+2314: 
+2315:             // ✨ AUTO-ADVANCE after 2.5s (so kid sees the green/red feedback)
+2316:             setTimeout(() => { this.nextQuestion(); }, 2500);
+2317:         },
+2318: 
+2319:         // ---- DRAG & SORT LOGIC (QT-04) ----
+2320:         // Tap-to-sort pattern: child taps an item, then taps a category bucket.
+2321:         // No drag-and-drop needed — works perfectly on touchscreens!
+2322:         initSorting() {
+2323:             this.sortAnswered = false;
+2324:             this.sortSelectedChip = null;
+2325:             this.sortSelectedBucket = null;
+2326: 
+2327:             // If categories metadata is missing, derive it from the options' match_key
+2328:             if (!this.currentQuestion.metadata) {
+2329:                 this.currentQuestion.metadata = {};
+2330:             }
+2331:             if (!this.currentQuestion.metadata.categories || this.currentQuestion.metadata.categories.length === 0) {
+2332:                 const buckets = [...new Set(this.currentQuestion.options.map(o => o.match_key))];
+2333:                 this.currentQuestion.metadata.categories = buckets.filter(b => b); // filter out nulls/empty
+2334:             }
+2335: 
+2336:             // Build chips from options. Each option has:
+2337:             //   - text (e.g., "🐷 Pig")
+2338:             //   - match_key = the correct category (e.g., "🚜 Farm")
+2339:             //   - metadata.categories = array of category labels
+2340:             this.sortChips = this.currentQuestion.options.map((o) => ({
+2341:                 text: o.text,
+2342:                 correctBucket: o.match_key,   // e.g., "🚜 Farm"
+2343:                 bucket: null,                  // null = in tray (unsorted)
+2344:             }));
+2345: 
+2346:             // Shuffle the chips so they appear in random order in the tray
+2347:             this.sortChips = this.shuffleArray(this.sortChips);
+2348:         },
+2349: 
+2350:         selectSortChip(chipIndex) {
+2351:             this.resetIdleTimer();
+2352:             if (this.sortAnswered) return;
+2353:             // If chip is in a bucket, tapping it returns it to the tray
+2354:             if (this.sortChips[chipIndex].bucket !== null) {
+2355:                 this.sortChips[chipIndex].bucket = null;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

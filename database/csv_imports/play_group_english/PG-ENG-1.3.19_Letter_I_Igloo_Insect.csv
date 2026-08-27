@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter I Igloo Insect,Which letter makes the /i/ sound for Igloo?,letter_i_card.webp,audio_q1.mp3,1,I,H,A,,,1,,,,,,,
+multiple_choice,Letter I Igloo Insect,Touch the ice home starting with letter I!,igloo_i.webp,audio_q2.mp3,1,Igloo,House,Hat,,,1,,,,,,,
+multiple_choice,Letter I Igloo Insect,Touch the tiny bug starting with letter I!,insect_i.webp,audio_q3.mp3,1,Insect,Cat,Dog,,,1,,,,,,,
+speak_repeat,Letter I Igloo Insect,Say the letter sound out loud: /i/ /i/ IGLOO!,speak_igloo_i.webp,audio_q4.mp3,1,Igloo,,,,,,Igloo,,,,,,
+speak_repeat,Letter I Igloo Insect,Say out loud clearly: LETTER I!,speak_letter_i.webp,audio_q5.mp3,1,Letter I,,,,,,Letter I,,,,,,
+matching,Letter I Igloo Insect,Match letter I to words starting with I!,,,1,,,,,,,,I,I,Igloo,Igloo,Insect,Insect
+matching,Letter I Igloo Insect,Match letter I sound /i/!,,,1,,,,,,,,I,I,sound /i/,Igloo,words,Insect

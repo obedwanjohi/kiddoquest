@@ -1,0 +1,49 @@
+Created At: 2026-07-17T11:37:16Z
+Completed At: 2026-07-17T11:37:17Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3069
+Total Bytes: 141052
+Showing lines 960 to 1000
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+960:     </div>
+961: 
+962:     {{-- MAIN QUIZ AREA (hidden when complete) --}}
+963:     <template x-if="!quizComplete">
+964:         <div>
+965:             {{-- LEO + QUESTION (side-by-side in landscape) --}}
+966:             <div class="quiz-landscape-split">
+967:                 {{-- LEO ZONE --}}
+968:                 <div class="leo-zone" x-show="leoMessage">
+969:                     <div class="leo-mascot" :class="{ celebrating: leoCelebrating }">🦁</div>
+970:                     <div class="leo-bubble" x-text="leoMessage"></div>
+971:                 </div>
+972: 
+973:                 {{-- QUESTION --}}
+974:                 <div class="question-zone" :key="'q-' + currentIndex">
+975:                 <div class="question-badge" x-text="`${currentQuestion.typeIcon} ${currentQuestion.typeName}`"></div>
+976:                 <template x-if="currentQuestion.image">
+977:                     <img :src="currentQuestion.image" alt="Question image" class="question-image">
+978:                 </template>
+979:                 <div class="question-prompt" x-text="currentQuestion.prompt"></div>
+980:                 <template x-if="currentQuestion.hint && showHint">
+981:                     <p style="color: var(--kid-text-muted); font-size: 16px; margin-top: 8px;">
+982:                         💡 <span x-text="currentQuestion.hint"></span>
+983:                     </p>
+984:                 </template>
+985:                 </div>
+986:             </div>
+987: 
+988:             {{-- ANSWERS --}}
+989:             <div class="answer-zone" :key="'a-' + currentIndex">
+990: 
+991:                 {{-- Multiple Choice / Tap Answer / True False / Fill Blank --}}
+992:                 <template x-if="['multiple_choice','tap_answer','true_false','fill_blank'].includes(currentQuestion.type)">
+993:                     <div class="answer-grid" :data-count="currentQuestion.options.length">
+994:                         <template x-for="(option, i) in currentQuestion.options" :key="option.id">
+995:                             <div class="answer-card"
+996:                                  :class="getCardClass(i, option.is_correct)"
+997:                                  :style="`animation-delay: ${0.1 + i * 0.08}s`"
+998:                                  @click="selectOption(i)"
+999:                                  :aria-label="`Answer: ${option.text}`"
+1000:                                  role="button" tabindex="0"
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

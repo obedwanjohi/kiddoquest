@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Word Story Subtraction Sums 20 81,Leo has 20 bananas. Monkeys eat 8. How many bananas left?,ban_q1.webp,audio_q1.mp3,1,12,10,14,,,1,,,,,,,
+speak_repeat,Word Story Subtraction Sums 20 81,Say out loud: TWENTY MINUS EIGHT IS TWELVE!,ban_speak.webp,audio_q2.mp3,1,Twenty Minus Eight Is Twelve,,,,,,Twenty Minus Eight Is Twelve,,,,,,
+matching,Word Story Subtraction Sums 20 81,Match subtraction stories!,,,1,,,,,,20 - 8,12 Bananas 🍌,15,10,18,10,,

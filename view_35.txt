@@ -1,0 +1,81 @@
+Created At: 2026-07-18T09:04:06Z
+Completed At: 2026-07-18T09:04:06Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 2993
+Total Bytes: 136922
+Showing lines 1250 to 1350
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1250:                                  :class="getCardClass(i, option.is_correct)"
+1251:                                  @click="selectOption(i)">
+1252:                                 <template x-if="option.image">
+1253:                                     <img :src="option.image" :alt="option.text" class="card-image" style="max-width: 100%; max-height: 80px; object-fit: contain; margin-bottom: 4px; border-radius: 8px;">
+1254:                                 </template>
+1255:                                 <template x-if="option.text && option.text.trim() !== ''">
+1256:                                     <span x-text="option.text"></span>
+1257:                                 </template>
+1258:                             </div>
+1259:                         </template>
+1260:                     </div>
+1261:                 </template>
+1262: 
+1263:                 {{-- EXPLANATION --}}
+1264:                 <template x-if="answered && currentQuestion.explanation">
+1265:                     <div class="explanation-box">
+1266:                         <p>💡 <span x-text="currentQuestion.explanation"></span></p>
+1267:                     </div>
+1268:                 </template>
+1269:             </div>
+1270: 
+1271:             {{-- FOOTER --}}
+1272:             <div class="quiz-footer">
+1273:                 <template x-if="!answered && !showIdleHint">
+1274:                     <div class="footer-prompt">👆 Tap the right answer!</div>
+1275:                 </template>
+1276:                 <template x-if="answered">
+1277:               
+<truncated 1640 bytes>
+1307:                 </button>
+1308: 
+1309:                 <button @click="restartQuiz()" class="footer-prompt"
+1310:                         style="margin-top: 16px; text-decoration: underline; cursor: pointer; background: none; border: none;">
+1311:                     Play Again
+1312:                 </button>
+1313:             </div>
+1314:         </div>
+1315:     </template>
+1316: 
+1317:     {{-- CELEBRATION OVERLAY --}}
+1318:     <div class="celebration-overlay" :class="{ visible: celebrating }" @click="dismissCelebration()">
+1319:         <div class="celebration-box" @click.stop>
+1320:             <div class="celebration-emoji" x-text="celebrationData.emoji || '🎉'"></div>
+1321:             <div class="celebration-title" x-text="celebrationData.title || 'Great!'"></div>
+1322:             <div class="celebration-subtitle" x-text="celebrationData.subtitle || ''"></div>
+1323:         </div>
+1324:     </div>
+1325: 
+1326:     {{-- IDLE HINT --}}
+1327:     <div class="idle-hint" :class="{ visible: showIdleHint }">
+1328:         🦁 <span x-text="idleHintText"></span>
+1329:     </div>
+1330: </div>
+1331: 
+1332: @endsection
+1333: 
+1334: @push('scripts')
+1335: <script src="{{ asset('js/kid/quiz-event-bus.js') }}"></script>
+1336: <script src="{{ asset('js/kid/quiz-sound-layer.js') }}"></script>
+1337: <script src="{{ asset('js/kid/quiz-reward-layer.js') }}"></script>
+1338: <script>
+1339: function quizEngine(config) {
+1340:     return {
+1341:         // ---- STATE ----
+1342:         questions: config.questions,
+1343:         submitUrl: config.submitUrl,
+1344:         exitUrl: config.exitUrl,
+1345:         initialized: false,
+1346:         currentIndex: 0,
+1347:         currentQuestion: null,
+1348:         selectedIndex: null,
+1349:         answered: false,
+1350:         wrongIndices: [],
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

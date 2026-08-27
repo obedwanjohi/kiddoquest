@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Starry Sentence Building 26,"Which word completes sentence: ""The rocket ___ high into space""?",fly_q1.webp,audio_q1.mp3,1,FLIES 🚀,RUNS,SWIMS,,,1,,,,,,,
+speak_repeat,Space Starry Sentence Building 26,Say out loud: THE ROCKET FLIES HIGH!,rock_speak.webp,audio_q2.mp3,1,The Rocket Flies High,,,,,,The Rocket Flies High,,,,,,
+matching,Space Starry Sentence Building 26,Match space sentences!,,,1,,,,,,Rocket 🚀,Flies,Star ⭐,Shines,Astronaut 👨‍🚀,Explores,,

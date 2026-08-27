@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter Z Phonics Safari,Which safari animal starts with the /z/ sound?,zebra_q1.webp,audio_q1.mp3,1,🦓,Apple 🍎,Ball ⚽,,,1,,,,,,,
+multiple_choice,Letter Z Phonics Safari,Tap the uppercase letter Z!,letterZ.webp,audio_q2.mp3,1,Z,Y,X,,,1,,,,,,,
+speak_repeat,Letter Z Phonics Safari,Say out loud clearly: /z/ /z/ ZEBRA!,zebra_speak.webp,audio_q3.mp3,1,/z/ /z/ Zebra,,,,,,/z/ /z/ Zebra,,,,,,
+matching,Letter Z Phonics Safari,Match Uppercase Z to Lowercase z!,,,1,,,,,,Z,z,Y,y,X,x,,

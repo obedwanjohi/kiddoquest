@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter M Monkey,Which letter makes the /m/ sound in M M M - /m/ /m/ /m/ - Monkey Monkey?,letter_m_card.webp,audio_q1.mp3,1,M,L,N,,,1,,,,,,,
+multiple_choice,Letter M Monkey,Touch the cheeky monkey starting with letter M!,monkey_m.webp,audio_q2.mp3,1,Monkey,Lion,Pig,,,1,,,,,,,
+multiple_choice,Letter M Monkey,Listen to the song: M M M - /m/ /m/ /m/ - Monkey!,monkey_song.webp,audio_q3.mp3,1,Monkey,Dog,Octopus,,,1,,,,,,,
+speak_repeat,Letter M Monkey,Say the phonics song chant: M M M - MONKEY!,speak_monkey_m.webp,audio_q4.mp3,1,Monkey,,,,,,Monkey,,,,,,
+speak_repeat,Letter M Monkey,Say out loud clearly: LETTER M!,speak_letter_m.webp,audio_q5.mp3,1,Letter M,,,,,,Letter M,,,,,,
+matching,Letter M Monkey,Match letter M to Monkey!,,,1,,,,,,,,M,M,Monkey,Monkey,sound /m/,Monkey
+matching,Letter M Monkey,Match letter M sound /m/!,,,1,,,,,,,,M,M,/m/ /m/ /m/,Monkey,Monkey,Monkey

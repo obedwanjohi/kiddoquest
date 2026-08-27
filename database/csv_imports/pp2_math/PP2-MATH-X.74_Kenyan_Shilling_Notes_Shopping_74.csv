@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Kenyan Shilling Notes Shopping 74,You have one 100 KSh note and buy a book for 70 KSh. Change = ?,ksh70_q1.webp,audio_q1.mp3,1,30,20,40,,,1,,,,,,,
+speak_repeat,Kenyan Shilling Notes Shopping 74,Say out loud: ONE HUNDRED MINUS SEVENTY IS THIRTY!,ksh_speak.webp,audio_q2.mp3,1,One Hundred Minus Seventy Is Thirty,,,,,,One Hundred Minus Seventy Is Thirty,,,,,,
+matching,Kenyan Shilling Notes Shopping 74,Match shopping change!,,,1,,,,,,100 - 70 KSh,30 KSh,100,50,50,30,,

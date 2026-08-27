@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Sentence Building 109,"Which action verb completes: ""The superhero boy ___ the car""?",lift_q1.webp,audio_q1.mp3,1,LIFTS 🚗,EATS,SLEEPS,,,1,,,,,,,
+speak_repeat,Superhero Sentence Building 109,Say out loud: SUPERHERO BOY LIFTS THE CAR!,lift_speak.webp,audio_q2.mp3,1,Superhero Boy Lifts The Car,,,,,,Superhero Boy Lifts The Car,,,,,,
+matching,Superhero Sentence Building 109,Match hero actions!,,,1,,,,,,Hero Boy 👦,Lifts Car 🚗,👧,🕊️,🐕,🏃,,

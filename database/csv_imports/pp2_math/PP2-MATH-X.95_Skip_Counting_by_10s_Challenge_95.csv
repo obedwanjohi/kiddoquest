@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Skip Counting by 10s Challenge 95,Complete 10s skip counting: 50 60 70 _ 90 100?,skip70_q1.webp,audio_q1.mp3,1,80,75,85,,,,,,,,,,
+speak_repeat,Skip Counting by 10s Challenge 95,Say out loud: FIFTY SIXTY SEVENTY EIGHTY NINETY ONE HUNDRED!,skip_speak.webp,audio_q2.mp3,1,Fifty Sixty Seventy Eighty Ninety One Hundred,,,,,,Fifty Sixty Seventy Eighty Ninety One Hundred,,,,,,
+matching,Skip Counting by 10s Challenge 95,Match 10s skip!,,,1,,,,,,50 60,70,70,90,80,100,,

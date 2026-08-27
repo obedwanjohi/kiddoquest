@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Armor of God 54,What belt represents God's truth in the Superhero armor?,belt_q1.webp,audio_q1.mp3,1,🥋,BELT,Rope,,,1,,,,,,,
+speak_repeat,Superhero Armor of God 54,Say out loud: PUT ON THE ARMOR OF GOD!,arm_speak.webp,audio_q2.mp3,1,Put On The Armor Of God,,,,,,Put On The Armor Of God,,,,,,
+matching,Superhero Armor of God 54,Match hero armor!,,,1,,,,,,Belt 🥋,Truth,Shield 🛡️,Faith,Helmet 🪖,Salvation,,

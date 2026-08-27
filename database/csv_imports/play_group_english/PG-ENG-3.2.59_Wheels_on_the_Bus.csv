@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Wheels on the Bus,How do the wheels on the bus go in the song?,bus_wheels.webp,audio_q1.mp3,1,Round and Round,Up and Down,Swish Swish,,,1,,,,,,,
+multiple_choice,Wheels on the Bus,How does the bus horn go beep beep?,bus_horn.webp,audio_q2.mp3,1,Beep Beep Beep,Swish Swish Swish,Moo Moo Moo,,,1,,,,,,,
+multiple_choice,Wheels on the Bus,How do the wipers on the bus go on rainy days?,bus_wipers.webp,audio_q3.mp3,1,Swish Swish Swish,Round and Round,Beep Beep Beep,,,1,,,,,,,
+multiple_choice,Wheels on the Bus,Touch the big yellow bus!,bus_yellow.webp,audio_q4.mp3,1,Yellow Bus,Toy Car,Red Van,,,1,,,,,,,
+speak_repeat,Wheels on the Bus,Say out loud clearly: THE WHEELS ON THE BUS!,speak_wheels_bus.webp,audio_q5.mp3,1,The Wheels On The Bus,,,,,,The Wheels On The Bus,,,,,,
+speak_repeat,Wheels on the Bus,Say out loud: GO ROUND AND ROUND!,speak_round_round.webp,audio_q6.mp3,1,Go Round And Round,,,,,,Go Round And Round,,,,,,
+matching,Wheels on the Bus,Match bus actions!,,,1,,,,,,,,Wheels,Round and Round,Wipers,Swish Swish,Horn,Beep Beep
+matching,Wheels on the Bus,Match bus song items!,,,1,,,,,,,,Vehicle,Bus,Wheel,Wheel,Driver,Driver

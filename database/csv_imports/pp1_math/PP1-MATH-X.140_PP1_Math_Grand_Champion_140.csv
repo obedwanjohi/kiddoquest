@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,PP1 Math Grand Champion 140,Tap the GOLDEN GRAND CHAMPION CROWN for completing PP1 Math!,crown_q1.webp,audio_q1.mp3,1,🏆,🏆,🏆,,,1,,,,,,,
+speak_repeat,PP1 Math Grand Champion 140,Say out loud: PP1 MATH GRAND CHAMPION!,champ_speak.webp,audio_q2.mp3,1,PP1 Math Grand Champion,,,,,,PP1 Math Grand Champion,,,,,,
+matching,PP1 Math Grand Champion 140,Match PP1 Math graduation!,,,1,,,,,,PP1 Math,Graduated 🎓,Numbers 0-20,Mastered,Addition 1-10,Mastered,,

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Kind Friend,Who is our best, kindest friend every day?,cre_jesus_kind_friend.webp,audio_q1.mp3,1,Jesus,No One,STRANGER,,,1,,,,,,
+multiple_choice,Jesus Kind Friend,Touch the helping hand showing kindness to a friend!,cre_helping_hand.webp,audio_q2.mp3,1,Helping Hand,Pushing Hand,FACE,,,1,,,,,,,
+multiple_choice,Jesus Kind Friend,How does Jesus want us to treat our friends?,cre_kindness_love.webp,audio_q3.mp3,1,With Kindness and Love,Shout at Them,Fight,,,1,,,,,,,
+speak_repeat,Jesus Kind Friend,Say out loud clearly: JESUS IS MY BEST FRIEND!,speak_best_friend.webp,audio_q4.mp3,1,Jesus Is My Best Friend,,,,,,Jesus Is My Best Friend,,,,,,
+speak_repeat,Jesus Kind Friend,Say out loud: BE A KIND FRIEND!,speak_be_kind_friend.webp,audio_q5.mp3,1,Be A Kind Friend,,,,,,Be A Kind Friend,,,,,,
+matching,Jesus Kind Friend,Match friendship actions!,,,1,,,,,,,,Jesus,Kind Friend,Hand,Helping Hand,Heart,Love
+matching,Jesus Kind Friend,Match friendship themes!,,,1,,,,,,,,Smile,Happy,Share,Toys,Care,Friends

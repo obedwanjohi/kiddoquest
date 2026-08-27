@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter E Phonics Safari,Which picture starts with the /e/ sound?,egg_q1.webp,audio_q1.mp3,1,🥚,Frog 🐸,Giraffe 🦒,,,1,,,,,,,
+multiple_choice,Letter E Phonics Safari,Tap the uppercase letter E!,letterE.webp,audio_q2.mp3,1,E,D,F,,,1,,,,,,,
+speak_repeat,Letter E Phonics Safari,Say out loud clearly: /e/ /e/ EGG!,egg_speak.webp,audio_q3.mp3,1,/e/ /e/ Egg,,,,,,/e/ /e/ Egg,,,,,,
+matching,Letter E Phonics Safari,Match Uppercase E to Lowercase e!,,,1,,,,,,E,e,D,d,F,f,,

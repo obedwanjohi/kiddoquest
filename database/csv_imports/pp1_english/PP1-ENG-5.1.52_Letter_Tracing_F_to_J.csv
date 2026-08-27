@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter Tracing F to J,Trace the lines to form uppercase Letter F!,traceF.webp,audio_q1.mp3,1,🔤,G,H,,,1,,,,,,,
+speak_repeat,Letter Tracing F to J,Say out loud: TRACING F G H I J!,trace_speak.webp,audio_q2.mp3,1,Tracing F G H I J,,,,,,Tracing F G H I J,,,,,,
+matching,Letter Tracing F to J,Match uppercase tracing!,,,1,,,,,,F,Fish 🐟,G,Giraffe 🦒,H,Hat 🎩,,

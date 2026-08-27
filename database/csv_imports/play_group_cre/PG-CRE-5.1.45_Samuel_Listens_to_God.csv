@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Samuel Listens God,What did young Samuel say when God called his name?,cre_samuel_listening.webp,audio_q1.mp3,1,Speak Lord I Am Listening,Go Away,I Am Sleepy,,,1,,,,,,,
+multiple_choice,Samuel Listens God,Where was young Samuel serving when he heard God's voice?,cre_samuel_temple.webp,audio_q2.mp3,1,In God's Temple,On A Boat,In A Market,,,1,,,,,,,
+multiple_choice,Samuel Listens God,Touch young Samuel listening carefully to God!,cre_young_samuel.webp,audio_q3.mp3,1,Young Samuel,Goldilocks,WOLF,,,1,,,,,,,
+speak_repeat,Samuel Listens God,Say out loud clearly: SPEAK LORD I AM LISTENING!,speak_speak_lord.webp,audio_q4.mp3,1,Speak Lord I Am Listening,,,,,,Speak Lord I Am Listening,,,,,,
+speak_repeat,Samuel Listens God,Say out loud: SAMUEL LISTENS TO GOD!,speak_samuel_listens.webp,audio_q5.mp3,1,Samuel Listens To God,,,,,,Samuel Listens To God,,,,,,
+matching,Samuel Listens God,Match Samuel story elements!,,,1,,,,,,,,Samuel,Young Servant,Response,I Am Listening,Place,God's Temple
+matching,Samuel Listens God,Match Samuel pictures!,,,1,,,,,,,,Samuel,Young Samuel,Ears,Listening Ears,Temple,God's Temple

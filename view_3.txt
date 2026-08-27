@@ -1,0 +1,83 @@
+Created At: 2026-07-17T11:22:07Z
+Completed At: 2026-07-17T11:22:08Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3069
+Total Bytes: 141022
+Showing lines 1 to 100
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: @extends('kids.layouts.app')
+2: 
+3: @section('title', "{$quiz->title} — Quiz Time!")
+4: 
+5: @push('kid-styles')
+6: <style>
+7:     /* ============================================================
+8:        REAL QUIZ ENGINE — Polished Architecture
+9:        Reads from DB, uses Event Bus + Sound + Reward layers
+10:        ============================================================ */
+11: 
+12:     .quiz-stage {
+13:         max-width: 720px; margin: 0 auto; min-height: 100vh;
+14:         display: flex; flex-direction: column; position: relative;
+15:         background: linear-gradient(180deg, #FEF3C7 0%, #FDE68A 50%, #FBCFE8 100%);
+16:     }
+17: 
+18:     /* ---- HEADER ---- */
+19:     .quiz-header {
+20:         display: flex; align-items: center; gap: var(--kid-space-3);
+21:         padding: var(--kid-space-3) var(--kid-space-4);
+22:         background: rgba(255,255,255,0.9); backdrop-filter: blur(8px);
+23:         position: sticky; top: 0; z-index: 50;
+24:         box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+25:     }
+26:     .quiz-header .exit-btn {
+27:         width: 44px; height: 44px; border-radius: var(--kid-radius-full);
+28:         background: var(--kid-bg-card); border: none; cursor: pointer;
+29:         display: flex; align-items: center; justify-content: center;
+30:         font-size: 22px; box-shadow: var(--kid-shadow-soft);
+31:         transition: transform 0.15s ease; touch-action: manipulation;
+32:         text-decoration: none;
+33:     }
+34:     .quiz-header .exit-btn:hover { transform: scale(1.1); }
+35:     .quiz-hea
+<truncated 1446 bytes>
+mily: var(--kid-font-heading); font-weight: 900;
+63:         font-size: 18px; color: #92400E;
+64:         box-shadow: var(--kid-shadow-soft);
+65:         transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+66:     }
+67:     .quiz-header .star-pill.pulse { transform: scale(1.2); }
+68: 
+69:     /* ---- LEO MASCOT ---- */
+70:     .leo-zone {
+71:         display: flex; align-items: flex-start; gap: var(--kid-space-3);
+72:         padding: var(--kid-space-4);
+73:         animation: kid-bounce-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+74:     }
+75:     .leo-mascot {
+76:         font-size: 48px; flex-shrink: 0;
+77:         animation: kid-wiggle 3s ease-in-out infinite;
+78:         transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+79:     }
+80:     .leo-mascot.celebrating { animation: celebrate-bounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+81:     .leo-bubble {
+82:         background: white; border-radius: var(--kid-radius-lg);
+83:         padding: var(--kid-space-3) var(--kid-space-4); position: relative;
+84:         box-shadow: var(--kid-shadow-soft); flex: 1; max-width: 320px;
+85:         font-family: var(--kid-font-heading); font-weight: 500;
+86:         font-size: var(--kid-text-body, 18px); color: var(--kid-text); line-height: 1.4;
+87:     }
+88:     .leo-bubble::before {
+89:         content: ''; position: absolute; left: -10px; top: 16px;
+90:         width: 0; height: 0; border-top: 6px solid transparent;
+91:         border-bottom: 6px solid transparent; border-right: 10px solid white;
+92:     }
+93: 
+94:     /* ---- QUESTION ---- */
+95:     .question-zone {
+96:         text-align: center; padding: var(--kid-space-4) var(--kid-space-5);
+97:     }
+98:     .question-prompt {
+99:         font-family: var(--kid-font-heading);
+100:         font-size: clamp(24px, 5vw, 32px);
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

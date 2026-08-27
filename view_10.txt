@@ -1,0 +1,79 @@
+Created At: 2026-07-17T15:34:31Z
+Completed At: 2026-07-17T15:34:31Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3090
+Total Bytes: 142344
+Showing lines 2750 to 2850
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2750:         // The child taps "I'm Done!" when finished — always encouraging.
+2751: 
+2752:         initTracingCanvas(canvasEl) {
+2753:             this.$nextTick(() => {
+2754:                 const ctx = canvasEl.getContext('2d');
+2755:                 const size = 300;
+2756:                 canvasEl.width = size;
+2757:                 canvasEl.height = size;
+2758:                 this.tracingCanvasEl = canvasEl;
+2759:                 this.drawTracingGuide(ctx, size);
+2760: 
+2761:                 // Event listeners for touch + mouse
+2762:                 let isDrawing = false;
+2763:                 let lastPos = null;
+2764:                 const getPos = (e) => {
+2765:                     const rect = canvasEl.getBoundingClientRect();
+2766:                     const sx = size / rect.width;
+2767:                     const sy = size / rect.height;
+2768:                     const px = e.touches ? e.touches[0].clientX : e.clientX;
+2769:                     const py = e.touches ? e.touches[0].clientY : e.clientY;
+2770:                     return { x: (px - rect.left) * sx, y: (py - rect.top) * sy };
+2771:                 };
+2772:                 const start = (e) => {
+2773:                     e.preventDefault(); isDrawing = true;
+2774:                     this.resetIdleTimer();
+2775:                     const p = getPos(e);
+2776:                     lastPos = p;
+2777:                     ctx.beginPath(); ctx.moveTo(p.x, p.y);
+2778:                 };
+2779:                 const move = (e) => {
+2780:                     if (!isDraw
+<truncated 1684 bytes>
+const fontSize = 200;
+2813:             const cx = size / 2;
+2814:             const cy = size / 2 + 10;
+2815: 
+2816:             ctx.clearRect(0, 0, size, size);
+2817:             ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+2818:             ctx.textAlign = 'center';
+2819:             ctx.textBaseline = 'middle';
+2820: 
+2821:             ctx.fillStyle = 'rgba(196, 181, 253, 0.15)';
+2822:             ctx.fillText(character, cx, cy);
+2823: 
+2824:             ctx.strokeStyle = '#C4B5FD';
+2825:             ctx.lineWidth = 2;
+2826:             ctx.setLineDash([12, 8]);
+2827:             ctx.strokeText(character, cx, cy);
+2828:             ctx.setLineDash([]);
+2829: 
+2830:             // Set child stroke style (purple)
+2831:             ctx.strokeStyle = '#7C3AED';
+2832:             ctx.lineWidth = 16;
+2833:             ctx.lineCap = 'round';
+2834:             ctx.lineJoin = 'round';
+2835:         },
+2836: 
+2837:         // ---- STROKE PATHS (real writing order) ----
+2838:         // Each character = array of strokes; each stroke = array of [x, y] points.
+2839:         // The animated pencil follows these exact paths in order.
+2840:         tracingStrokePaths() {
+2841:             return {
+2842:                 // Letter A — 3 strokes: left leg, right leg, crossbar
+2843:                 'A': [
+2844:                     [[85, 225], [150, 95]],          // left diagonal (bottom → top)
+2845:                     [[150, 95], [215, 225]],          // right diagonal (top → bottom)
+2846:                     [[108, 170], [192, 170]],         // crossbar (left → right)
+2847:                 ],
+2848:                 // Letter B — 3 strokes: spine, top bump, bottom bump
+2849:                 'B': [
+2850:                     [[110, 95], [110, 225]],          // vertical spine (top → bottom)
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

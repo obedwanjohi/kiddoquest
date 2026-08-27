@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Sharing Lunch Quest,What generous action do we do with our lunch basket?,cre_sharing_lunch.webp,audio_q1.mp3,1,Share With Friends,Hide Food,Eat All Alone,,,1,,,,,,,
+multiple_choice,Sharing Lunch Quest,Touch the crunchy red apple from the lunch basket!,cre_lunch_apple.webp,audio_q2.mp3,1,APPLE,Stone,Paper,,,1,,,,,,,
+multiple_choice,Sharing Lunch Quest,Touch the fresh bread loaf to share!,cre_lunch_bread.webp,audio_q3.mp3,1,Bread Loaf,Toy Car,Book,,,1,,,,,,,
+speak_repeat,Sharing Lunch Quest,Say out loud clearly: SHARING LUNCH BASKET QUEST!,speak_sharing_quest.webp,audio_q4.mp3,1,Sharing Lunch Basket Quest,,,,,,Sharing Lunch Basket Quest,,,,,,
+speak_repeat,Sharing Lunch Quest,Say out loud: SHARING IS CARING!,speak_sharing_is_caring.webp,audio_q5.mp3,1,Sharing Is Caring,,,,,,Sharing Is Caring,,,,,,
+matching,Sharing Lunch Quest,Match lunch items!,,,1,,,,,,,,Bread,Bread Loaf,Apple,APPLE,Basket,Lunch Basket
+matching,Sharing Lunch Quest,Match sharing actions!,,,1,,,,,,,,Basket,Lunch Basket,Action,Share With Friends,Joy,Generous Heart

@@ -1,0 +1,17 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Dinosaur Creation Praise 33,Who created the giant dinosaurs on Earth?,cre_dino1.webp,audio_q1.mp3,1,GOD,STARS,WIND,,,1,,,,,,,
+multiple_choice,Dinosaur Creation Praise 33,Who made the big animals step on the ground?,cre_dino2.webp,audio_q2.mp3,1,GOD,MOON,RAIN,,,1,,,,,,,
+multiple_choice,Dinosaur Creation Praise 33,What should we do for God creating dinosaurs?,cre_dino3.webp,audio_q3.mp3,1,PRAISE,CRY,HIDE,,,1,,,,,,,
+multiple_choice,Dinosaur Creation Praise 33,Who made the tall trees for dinosaurs to eat?,cre_dino4.webp,audio_q4.mp3,1,GOD,ROADS,CARS,,,1,,,,,,,
+multiple_choice,Dinosaur Creation Praise 33,God made big dinosaurs to show His great...?,cre_dino5.webp,audio_q5.mp3,1,POWER,FEAR,SADNESS,,,1,,,,,,,
+multiple_choice,Dinosaur Creation Praise 33,We say thank you to God for creating...?,cre_dino6.webp,audio_q6.mp3,1,ANIMALS,TOYS,SHOES,,,1,,,,,,,
+count_objects,Dinosaur Creation Praise 33,Count 4 giant T-Rex dinosaurs created by God!,cre_count1.webp,audio_q7.mp3,1,4,3,5,,🦕,4,,,,,,,
+count_objects,Dinosaur Creation Praise 33,Count 2 big green dinosaurs praising God!,cre_count2.webp,audio_q8.mp3,1,2,1,4,,🦖,2,,,,,,,
+count_objects,Dinosaur Creation Praise 33,Count 5 tall creation trees for the dinosaurs!,cre_count3.webp,audio_q9.mp3,1,5,3,2,,🌴,5,,,,,,,
+count_objects,Dinosaur Creation Praise 33,Count 3 dinosaur eggs made by God!,cre_count4.webp,audio_q10.mp3,1,3,2,4,,🥚,3,,,,,,,
+speak_repeat,Dinosaur Creation Praise 33,Say out loud clearly: GOD MADE THE DINOSAURS!,speak_cre1.webp,audio_q11.mp3,1,God Made The Dinosaurs,,,,,,God Made The Dinosaurs,,,,,,,
+speak_repeat,Dinosaur Creation Praise 33,Say out loud clearly: PRAISE GOD FOR BIG ANIMALS!,speak_cre2.webp,audio_q12.mp3,1,Praise God For Big Animals,,,,,,Praise God For Big Animals,,,,,,,
+speak_repeat,Dinosaur Creation Praise 33,Say out loud clearly: THANK YOU GOD FOR CREATION!,speak_cre3.webp,audio_q13.mp3,1,Thank You God For Creation,,,,,,Thank You God For Creation,,,,,,,
+matching,Dinosaur Creation Praise 33,Match God's creation items!,,,1,,,,,,,,Dino 🦕,1,Tree 🌿,2,Sun ☀️,3
+matching,Dinosaur Creation Praise 33,Match the big dinosaurs made by God!,,,1,,,,,,,,T-Rex 🦖,1,Dino 🦕,2,Egg 🥚,3
+matching,Dinosaur Creation Praise 33,Match the elements of God's world!,,,1,,,,,,,,Dino 🦕,1,Leaf 🍃,2,Star ⭐,3

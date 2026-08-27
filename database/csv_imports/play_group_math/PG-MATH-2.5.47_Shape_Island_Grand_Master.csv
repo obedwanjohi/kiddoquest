@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Shape Island Grand Master,Which shape is the round Circle?,shape_circle.webp,audio_q1.mp3,1,🟡,🟦,🔺,,,1,,,,,,,
+multiple_choice,Shape Island Grand Master,Which shape is the 4-sided equal Square?,shape_square.webp,audio_q2.mp3,1,🟦,🟡,🟧,,,1,,,,,,,
+multiple_choice,Shape Island Grand Master,Which shape is the 3-cornered Triangle?,shape_tri.webp,audio_q3.mp3,1,🔺,🟦,🟡,,,1,,,,,,,
+multiple_choice,Shape Island Grand Master,Which shape is the long Rectangle?,shape_rect.webp,audio_q4.mp3,1,🟧,🟡,🔺,,,1,,,,,,,

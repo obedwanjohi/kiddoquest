@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Measurement Clock Time Hours 55,Where does the short hour hand point for 9 O'Clock?,clk9_q1.webp,audio_q1.mp3,1,🕘,Number 12,Number 6,,,1,,,,,,,
+speak_repeat,Measurement Clock Time Hours 55,Say out loud: NINE OCLOCK AT BEDTIME!,clk_speak.webp,audio_q2.mp3,1,Nine OClock At Bedtime,,,,,,Nine OClock At Bedtime,,,,,,
+matching,Measurement Clock Time Hours 55,Match night clock!,,,1,,,,,,9 OClock 🕘,9:00,8,8:00,7,7:00,,

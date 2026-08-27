@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Farm Animal Sounds,Which farm animal goes MOO MOO?,farm_cow.webp,audio_q1.mp3,1,Cow,Sheep,Duck,,,1,,,,,,,
+multiple_choice,Farm Animal Sounds,Which farm animal goes BAA BAA?,farm_sheep.webp,audio_q2.mp3,1,Sheep,Cow,Dog,,,1,,,,,,,
+multiple_choice,Farm Animal Sounds,Which farm animal goes QUACK QUACK?,farm_duck.webp,audio_q3.mp3,1,Duck,Cat,Cow,,,1,,,,,,,
+multiple_choice,Farm Animal Sounds,Touch the friendly cow on the farm!,cow_picture.webp,audio_q4.mp3,1,Cow,Lion,Monkey,,,1,,,,,,,
+speak_repeat,Farm Animal Sounds,Say out loud: THE COW SAYS MOO!,speak_cow_moo.webp,audio_q5.mp3,1,The Cow Says Moo,,,,,,The Cow Says Moo,,,,,,
+speak_repeat,Farm Animal Sounds,Say out loud: FARM ANIMALS!,speak_farm_animals.webp,audio_q6.mp3,1,Farm Animals,,,,,,Farm Animals,,,,,,
+matching,Farm Animal Sounds,Match farm animals to their sounds!,,,1,,,,,,,,Cow,Moo,Sheep,Baa,Duck,Quack
+matching,Farm Animal Sounds,Match farm animals to names!,,,1,,,,,,,,Cow,Cow,Sheep,Sheep,Duck,Duck

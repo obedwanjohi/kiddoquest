@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Singing Praise Songs,How do we express joy to God in church?,cre_singing_praise.webp,audio_q1.mp3,1,Singing Songs of Praise,Shouting In Anger,Sleeping,,,1,,,,,,,
+multiple_choice,Singing Praise Songs,Touch the musical instrument played during worship!,cre_praise_piano.webp,audio_q2.mp3,1,Piano,Toy Car,Broom,,,1,,,,,,,
+multiple_choice,Singing Praise Songs,Touch Leo clapping his hands while singing to God!,cre_leo_clapping.webp,audio_q3.mp3,1,Leo Clapping,Sleeping Cat,Running Dog,,,1,,,,,,,
+speak_repeat,Singing Praise Songs,Say out loud clearly: SING SONGS OF PRAISE!,speak_sing_praise.webp,audio_q4.mp3,1,Sing Songs Of Praise,,,,,,Sing Songs Of Praise,,,,,,
+speak_repeat,Singing Praise Songs,Say out loud: MAKE A JOYFUL NOISE!,speak_joyful_noise.webp,audio_q5.mp3,1,Make A Joyful Noise,,,,,,Make A Joyful Noise,,,,,,
+matching,Singing Praise Songs,Match worship music items!,,,1,,,,,,,,Sing,Songs of Praise,Play,Piano,Hands,Clap Joyfully
+matching,Singing Praise Songs,Match praise pictures!,,,1,,,,,,,,Song,Singing Praise,Instrument,Piano,Clap,Leo Clapping

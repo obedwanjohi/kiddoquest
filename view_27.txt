@@ -1,0 +1,34 @@
+Created At: 2026-07-17T19:17:54Z
+Completed At: 2026-07-17T19:17:54Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3159
+Total Bytes: 146397
+Showing lines 2330 to 2355
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2330:             if (this.currentQuestion.metadata && this.currentQuestion.metadata.categories && this.currentQuestion.metadata.categories.length > 0) {
+2331:                 this.sortCategories = this.currentQuestion.metadata.categories;
+2332:             } else {
+2333:                 const buckets = [...new Set(this.currentQuestion.options.map(o => o.match_key))];
+2334:                 this.sortCategories = buckets.filter(b => b); // filter out nulls/empty
+2335:             }
+2336: 
+2337:             // Build chips from options. Each option has:
+2338:             //   - text (e.g., "🐷 Pig")
+2339:             //   - match_key = the correct category (e.g., "🚜 Farm")
+2340:             //   - metadata.categories = array of category labels
+2341:             this.sortChips = this.currentQuestion.options.map((o) => ({
+2342:                 text: o.text,
+2343:                 correctBucket: o.match_key,   // e.g., "🚜 Farm"
+2344:                 bucket: null,                  // null = in tray (unsorted)
+2345:             }));
+2346: 
+2347:             // Shuffle the chips so they appear in random order in the tray
+2348:             this.sortChips = this.shuffleArray(this.sortChips);
+2349:         },
+2350: 
+2351:         selectSortChip(chipIndex) {
+2352:             this.resetIdleTimer();
+2353:             if (this.sortAnswered) return;
+2354:             // If chip is in a bucket, tapping it returns it to the tray
+2355:             if (this.sortChips[chipIndex].bucket !== null) {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

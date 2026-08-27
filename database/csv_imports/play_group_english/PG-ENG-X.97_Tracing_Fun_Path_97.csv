@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Tracing Fun Path,Which line goes straight from top to bottom?,fun_straight.webp,audio_q1.mp3,1,Straight Line,Zigzag Trail,Circle Loop,,,1,,,,,,,
+multiple_choice,Tracing Fun Path,Which line curves up and over like a rainbow?,fun_curved.webp,audio_q2.mp3,1,Rainbow Arc,Straight Line,Square Box,,,1,,,,,,,
+multiple_choice,Tracing Fun Path,Which path goes up and down like mountain peaks?,fun_zigzag.webp,audio_q3.mp3,1,Zigzag Path,Straight Line,Round Ball,,,1,,,,,,,
+speak_repeat,Tracing Fun Path,Say out loud clearly: TRACING FUN PATH!,speak_tracing_path.webp,audio_q4.mp3,1,Tracing Fun Path,,,,,,Tracing Fun Path,,,,,,
+speak_repeat,Tracing Fun Path,Say out loud: TRACE ALL THE LINES!,speak_trace_lines.webp,audio_q5.mp3,1,Trace All The Lines,,,,,,Trace All The Lines,,,,,,
+matching,Tracing Fun Path,Match line types!,,,1,,,,,,,,Straight,Straight Line,Curved,Rainbow Arc,Zigzag,Mountain Peaks
+matching,Tracing Fun Path,Match path actions!,,,1,,,,,,,,Down,Top to Bottom,Curve,Up and Over,Zigzag,Up and Down

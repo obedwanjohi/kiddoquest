@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Helping Parents at Home,How can we show love to Mommy and Daddy at home?,help_q1.webp,audio_q1.mp3,1,By Helping,Making a Mess,Refusing to Help,,,1,,,,,,,
+multiple_choice,Helping Parents at Home,The Bible says to honour your father and mother. What does honour mean?,hon_q2.webp,audio_q2.mp3,1,Respect & Obey,Fight & Shout,Ignore,,,1,,,,,,,
+multiple_choice,Helping Parents at Home,Touch the child helping Mommy sweep the floor!,sweep_q3.webp,audio_q3.mp3,1,Helping Child,Naughty Child,Sleeping Child,,,1,,,,,,,
+multiple_choice,Helping Parents at Home,What chore can you do to help at home?,chore_q4.webp,audio_q4.mp3,1,Pick Up Toys,Break Things,Make Noise,,,1,,,,,,,
+multiple_choice,Helping Parents at Home,How did Jesus show respect to Mary and Joseph?,jesus_q5.webp,audio_q5.mp3,1,He Obeyed Them,He Ignored Them,He Ran Away,,,1,,,,,,,
+multiple_choice,Helping Parents at Home,What should you say when Mommy asks you to help?,say_q6.webp,audio_q6.mp3,1,Yes Mommy,No Way,Not Now,,,1,,,,,,,
+multiple_choice,Helping Parents at Home,Helping at home makes your parents feel what?,feel_q7.webp,audio_q7.mp3,1,Happy and Loved,Angry,Sad,,,1,,,,,,,
+multiple_choice,Helping Parents at Home,Where does God want children to start helping first?,where_q8.webp,audio_q8.mp3,1,At Home,At the Market,Nowhere,,,1,,,,,,,
+speak_repeat,Helping Parents at Home,Say out loud clearly: I AM A HELPFUL CHILD!,help_speak.webp,audio_q9.mp3,1,I Am A Helpful Child,,,,,,I Am A Helpful Child,,,,,,
+speak_repeat,Helping Parents at Home,Say out loud: I LOVE HELPING MY FAMILY!,love_speak.webp,audio_q10.mp3,1,I Love Helping My Family,,,,,,I Love Helping My Family,,,,,,
+speak_repeat,Helping Parents at Home,Say out loud: HONOUR YOUR FATHER AND MOTHER!,hon_speak.webp,audio_q11.mp3,1,Honour Your Father And Mother,,,,,,Honour Your Father And Mother,,,,,,
+matching,Helping Parents at Home,Match home helping chores!,,,1,,,,,,,,Toys,Pick Up,Table,Set It,Parents,Honour & Help
+matching,Helping Parents at Home,Match who helps whom!,,,1,,,,,,,,Child,Helps Parents,Jesus,Obeyed Mary,God,Helps Everyone
+matching,Helping Parents at Home,Match helping at home to why!,,,1,,,,,,,,Help at Home,Shows Love,Obey Parents,Honour Them,Clean Up,Be Responsible

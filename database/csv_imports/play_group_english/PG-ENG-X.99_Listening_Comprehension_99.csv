@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Listening Comprehension,Listen: Touch the red apple sitting on the grass!,listen_apple_grass.webp,audio_q1.mp3,1,Apple On Grass,Yellow Sun,Blue Box,,,1,,,,,,,
+multiple_choice,Listening Comprehension,Listen: Touch the cute kitten sleeping on a pillow!,listen_kitten_pillow.webp,audio_q2.mp3,1,Sleeping Kitten,Running Dog,Flying Bird,,,1,,,,,,,
+multiple_choice,Listening Comprehension,Listen: Touch Leo waving hello under the sun!,listen_leo_waving.webp,audio_q3.mp3,1,Waving Leo,Sleeping Cat,Toy Car,,,1,,,,,,,
+speak_repeat,Listening Comprehension,Say out loud clearly: LISTENING COMPREHENSION!,speak_listening_comp.webp,audio_q4.mp3,1,Listening Comprehension,,,,,,Listening Comprehension,,,,,,
+speak_repeat,Listening Comprehension,Say out loud: I LISTEN VERY WELL!,speak_listen_well.webp,audio_q5.mp3,1,I Listen Very Well,,,,,,I Listen Very Well,,,,,,
+matching,Listening Comprehension,Match sentences to scenes!,,,1,,,,,,,,Apple,On Grass,Kitten,On Pillow,Leo,Waving Hello
+matching,Listening Comprehension,Match audio listening scenes!,,,1,,,,,,,,Apple,Apple,Kitten,Kitten,Leo,Leo

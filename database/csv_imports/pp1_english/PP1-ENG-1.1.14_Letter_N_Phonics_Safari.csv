@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter N Phonics Safari,Which picture starts with the /n/ sound?,nest_q1.webp,audio_q1.mp3,1,🪺,Owl 🦉,Pen 🖊️,,,1,,,,,,,
+multiple_choice,Letter N Phonics Safari,Tap the uppercase letter N!,letterN.webp,audio_q2.mp3,1,N,M,O,,,1,,,,,,,
+speak_repeat,Letter N Phonics Safari,Say out loud clearly: /n/ /n/ NEST!,nest_speak.webp,audio_q3.mp3,1,/n/ /n/ Nest,,,,,,/n/ /n/ Nest,,,,,,
+matching,Letter N Phonics Safari,Match Uppercase N to Lowercase n!,,,1,,,,,,N,n,M,m,O,o,,

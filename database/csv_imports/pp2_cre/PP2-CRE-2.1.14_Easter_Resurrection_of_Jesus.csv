@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Easter Resurrection of Jesus,What happy truth do we celebrate on Easter Sunday?,east_q1.webp,audio_q1.mp3,1,✝️,Jesus stays in tomb,Nothing,,,1,,,,,,,
+speak_repeat,Easter Resurrection of Jesus,Say out loud clearly: JESUS IS ALIVE TODAY!,east_speak.webp,audio_q2.mp3,1,Jesus Is Alive Today,,,,,,Jesus Is Alive Today,,,,,,
+matching,Easter Resurrection of Jesus,Match Easter joy!,,,1,,,,,,Empty Tomb 🪨,Jesus Rose,Cross ✝️,Gods Love,🌅,Victory over Death,,

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Power Count 81 to 100,Which superhero shield has number 100?,sh100.webp,audio_q1.mp3,1,100,90,95,,,100,,,,,,,
+count_objects,Superhero Power Count 81 to 100,Count all 90 superhero power badges!,badge90.webp,audio_q2.mp3,1,90,85,95,,🎖️,90,,,,,,,
+matching,Superhero Power Count 81 to 100,Match hero numbers!,,,1,,,,,,85 Badges,85,90,90,100,100,,

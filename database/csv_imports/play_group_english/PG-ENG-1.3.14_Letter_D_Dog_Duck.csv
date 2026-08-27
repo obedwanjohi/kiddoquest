@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter D Dog Duck,Which letter makes the /d/ sound for Dog?,letter_d_card.webp,audio_q1.mp3,1,D,B,C,,,1,,,,,,,
+multiple_choice,Letter D Dog Duck,Touch the playful puppy that starts with letter D!,dog_d.webp,audio_q2.mp3,1,Dog,Cat,Ball,,,1,,,,,,,
+multiple_choice,Letter D Dog Duck,Touch the yellow bird that swims starting with letter D!,duck_d.webp,audio_q3.mp3,1,Duck,Apple,Car,,,1,,,,,,,
+speak_repeat,Letter D Dog Duck,Say the letter sound out loud: /d/ /d/ DOG!,speak_dog_d.webp,audio_q4.mp3,1,Dog,,,,,,Dog,,,,,,
+speak_repeat,Letter D Dog Duck,Say out loud clearly: LETTER D!,speak_letter_d.webp,audio_q5.mp3,1,Letter D,,,,,,Letter D,,,,,,
+matching,Letter D Dog Duck,Match letter D to words starting with D!,,,1,,,,,,,,D,D,Dog,Dog,Duck,Duck
+matching,Letter D Dog Duck,Match letter D sound /d/!,,,1,,,,,,,,D,D,sound /d/,Dog,words,Duck

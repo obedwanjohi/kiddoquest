@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Writing Tracing 70,Trace S-T-A-R. What superhero word did you write?,star_q1.webp,audio_q1.mp3,1,STAR ⭐,MOON,SUN,,,1,,,,,,,
+speak_repeat,Superhero Writing Tracing 70,Say out loud: I CAN TRACE AND WRITE STAR!,star_speak.webp,audio_q2.mp3,1,I Can Trace And Write Star,,,,,,I Can Trace And Write Star,,,,,,
+matching,Superhero Writing Tracing 70,Match traced words!,,,1,,,,,,s-t-a-r,STAR ⭐,c-a-p-e,CAPE 🦸,h-e-r-o,HERO 🦸‍♂️,,

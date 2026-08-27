@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter D Phonics Safari,Which picture starts with the /d/ sound?,dog_q1.webp,audio_q1.mp3,1,🐶,Elephant 🐘,Fish 🐟,,,1,,,,,,,
+multiple_choice,Letter D Phonics Safari,Tap the uppercase letter D!,letterD.webp,audio_q2.mp3,1,D,C,B,,,1,,,,,,,
+speak_repeat,Letter D Phonics Safari,Say out loud clearly: /d/ /d/ DOG!,dog_speak.webp,audio_q3.mp3,1,/d/ /d/ Dog,,,,,,/d/ /d/ Dog,,,,,,
+matching,Letter D Phonics Safari,Match Uppercase D to Lowercase d!,,,1,,,,,,D,d,C,c,B,b,,

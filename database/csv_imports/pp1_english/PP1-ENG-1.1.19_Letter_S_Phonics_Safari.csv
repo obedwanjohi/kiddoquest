@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter S Phonics Safari,Which picture starts with the /s/ sound?,sun_q1.webp,audio_q1.mp3,1,☀️,Tree 🌳,Turtle 🐢,,,1,,,,,,,
+multiple_choice,Letter S Phonics Safari,Tap the uppercase letter S!,letterS.webp,audio_q2.mp3,1,S,R,T,,,1,,,,,,,
+speak_repeat,Letter S Phonics Safari,Say out loud clearly: /s/ /s/ SUN!,sun_speak.webp,audio_q3.mp3,1,/s/ /s/ Sun,,,,,,/s/ /s/ Sun,,,,,,
+matching,Letter S Phonics Safari,Match Uppercase S to Lowercase s!,,,1,,,,,,S,s,R,r,T,t,,

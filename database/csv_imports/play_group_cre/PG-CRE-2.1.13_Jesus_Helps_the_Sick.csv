@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Helps Sick,What does Jesus do for people who are sick?,cre_jesus_healing.webp,audio_q1.mp3,1,Heals Them With Care,Walks Away,Ignores Them,,,1,,,,,,,
+multiple_choice,Jesus Helps Sick,Touch Jesus reaching out with a gentle touch!,cre_gentle_touch.webp,audio_q2.mp3,1,Gentle Touch,HAND,Cold Wind,,,1,,,,,,,
+multiple_choice,Jesus Helps Sick,How do people feel after Jesus heals them?,cre_healthy_happy.webp,audio_q3.mp3,1,Healthy and Happy,Sad and Sick,Sleepy,,,1,,,,,,,
+speak_repeat,Jesus Helps Sick,Say out loud clearly: JESUS HELPS THE SICK!,speak_jesus_helps_sick.webp,audio_q4.mp3,1,Jesus Helps The Sick,,,,,,Jesus Helps The Sick,,,,,,
+speak_repeat,Jesus Helps Sick,Say out loud: JESUS CARES FOR ME!,speak_jesus_cares_me.webp,audio_q5.mp3,1,Jesus Cares For Me,,,,,,Jesus Cares For Me,,,,,,
+matching,Jesus Helps Sick,Match story themes!,,,1,,,,,,,,Jesus,Healer,Sick,Care,Heart,Love
+matching,Jesus Helps Sick,Match healing pictures!,,,1,,,,,,,,Touch,Gentle Touch,Smile,Healthy Smile,Heart,Love

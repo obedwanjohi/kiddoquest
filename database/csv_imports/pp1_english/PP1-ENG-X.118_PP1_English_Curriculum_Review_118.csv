@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,PP1 English Curriculum Review 118,Which English skill did you master in PP1?,rev_q1.webp,audio_q1.mp3,1,🔤,Sleeping,Nothing,,,1,,,,,,,
+speak_repeat,PP1 English Curriculum Review 118,Say out loud: I AM READY FOR GRAND CHAMPION!,rev_speak.webp,audio_q2.mp3,1,I Am Ready For Grand Champion,,,,,,I Am Ready For Grand Champion,,,,,,
+matching,PP1 English Curriculum Review 118,Match PP1 English topics!,,,1,,,,,,Phonics,A to Z,Reading,CVC Words,Grammar,Nouns & Verbs,,

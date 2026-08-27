@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Helping at Home,How can we help Mommy and Daddy at home?,cre_helping_home.webp,audio_q1.mp3,1,Pick Up Toys,Make A Mess,Break Things,,,1,,,,,,,
+multiple_choice,Helping at Home,Touch the toy chest where we store clean toys!,cre_toy_chest_clean.webp,audio_q2.mp3,1,Toy Chest,Trash Can,Mud Puddle,,,1,,,,,,,
+multiple_choice,Helping at Home,Touch Leo helping to sweep the floor with Mommy!,cre_leo_sweeping.webp,audio_q3.mp3,1,Leo Sweeping,Leo Sleeping,Leo Fighting,,,1,,,,,,,
+speak_repeat,Helping at Home,Say out loud clearly: HELPING AT HOME!,speak_helping_home.webp,audio_q4.mp3,1,Helping At Home,,,,,,Helping At Home,,,,,,
+speak_repeat,Helping at Home,Say out loud: I LOVE HELPING MY FAMILY!,speak_love_helping_family.webp,audio_q5.mp3,1,I Love Helping My Family,,,,,,I Love Helping My Family,,,,,,
+matching,Helping at Home,Match helping actions!,,,1,,,,,,,,Toys,Pick Them Up,Floor,Sweep Clean,Home,Help Family
+matching,Helping at Home,Match home items!,,,1,,,,,,,,Toys,Toy Chest,Floor,Broom,Home,HOUSE

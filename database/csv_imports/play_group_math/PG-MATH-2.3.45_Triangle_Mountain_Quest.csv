@@ -1,0 +1,6 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Triangle Mountain Quest,Which object has 3 corners and is shaped like a Triangle?,tri_slice.webp,audio_q1.mp3,1,🍕,🪙,🪟,,,1,,,,,,,
+multiple_choice,Triangle Mountain Quest,Find the yellow Triangle item at the party!,tri_hat.webp,audio_q2.mp3,1,🥳,📦,🕒,,,1,,,,,,,
+multiple_choice,Triangle Mountain Quest,Which sign on the road is a Triangle shape?,tri_sign.webp,audio_q3.mp3,1,⚠️,⚽,📚,,,1,,,,,,,
+multiple_choice,Triangle Mountain Quest,Tap the Triangle mountain peak!,tri_peak.webp,audio_q4.mp3,1,🏔️,☀️,🏠,,,1,,,,,,,
+multiple_choice,Triangle Mountain Quest,Which food slice is a Triangle shape?,tri_watermelon.webp,audio_q5.mp3,1,🍉,🍊,🍪,,,1,,,,,,,

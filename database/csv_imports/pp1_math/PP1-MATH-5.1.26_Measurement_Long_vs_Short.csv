@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Measurement Long vs Short,Which snake is LONGER: Snake A (10cm) or Snake B (3cm)?,long_q1.webp,audio_q1.mp3,1,🐍,Snake B (Short),Equal,,,1,,,,,,,
+speak_repeat,Measurement Long vs Short,Say out loud clearly: LONG AND SHORT!,long_speak.webp,audio_q2.mp3,1,Long and Short,,,,,,Long and Short,,,,,,
+matching,Measurement Long vs Short,Match length comparisons!,,,1,,,,,,ops,Snake A 🐍,Long,🐍,Short,Ruler 📏,Measure,

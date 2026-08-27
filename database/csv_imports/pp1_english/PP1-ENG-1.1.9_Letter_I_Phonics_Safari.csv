@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter I Phonics Safari,Which picture starts with the /i/ sound?,igloo_q1.webp,audio_q1.mp3,1,🧊,Jug 🏺,Kite 🪁,,,1,,,,,,,
+multiple_choice,Letter I Phonics Safari,Tap the uppercase letter I!,letterI.webp,audio_q2.mp3,1,I,H,J,,,1,,,,,,,
+speak_repeat,Letter I Phonics Safari,Say out loud clearly: /i/ /i/ IGLOO!,igloo_speak.webp,audio_q3.mp3,1,/i/ /i/ Igloo,,,,,,/i/ /i/ Igloo,,,,,,
+matching,Letter I Phonics Safari,Match Uppercase I to Lowercase i!,,,1,,,,,,I,i,H,h,J,j,,

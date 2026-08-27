@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter T Train,Which letter makes the /t/ sound in T T T - /t/ /t/ /t/ - Train Train?,letter_t_card.webp,audio_q1.mp3,1,T,S,U,,,1,,,,,,,
+multiple_choice,Letter T Train,Touch the toy train starting with letter T!,train_t.webp,audio_q2.mp3,1,Train,Sun,Ring,,,1,,,,,,,
+multiple_choice,Letter T Train,Listen to the song: T T T - /t/ /t/ /t/ - Train!,train_song.webp,audio_q3.mp3,1,Train,Car,Van,,,1,,,,,,,
+speak_repeat,Letter T Train,Say the phonics song chant: T T T - TRAIN!,speak_train_t.webp,audio_q4.mp3,1,Train,,,,,,Train,,,,,,
+speak_repeat,Letter T Train,Say out loud clearly: LETTER T!,speak_letter_t.webp,audio_q5.mp3,1,Letter T,,,,,,Letter T,,,,,,
+matching,Letter T Train,Match letter T to Train!,,,1,,,,,,,,T,T,Train,Train,sound /t/,Train
+matching,Letter T Train,Match letter T sound /t/!,,,1,,,,,,,,T,T,/t/ /t/ /t/,Train,Train,Train

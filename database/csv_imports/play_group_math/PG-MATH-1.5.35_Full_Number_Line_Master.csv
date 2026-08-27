@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Full Number Line Master,Which number completes the line: 1 2 3 4 5 6 7 8 _ 10?,numline_q1.webp,audio_q1.mp3,1,9,8,10,,,,,,,,,,
+complete_pattern,Full Number Line Master,Which number comes after 5: 1 2 3 4 5 _ 7 8 9 10?,numline_q2.webp,audio_q2.mp3,1,6,5,7,,,,,,,,,,
+complete_pattern,Full Number Line Master,Which number comes after 7: 1 2 3 4 5 6 7 _ 9 10?,numline_q3.webp,audio_q3.mp3,1,8,7,9,,,,,,,,,,
+complete_pattern,Full Number Line Master,Which number comes at the end: 1 2 3 4 5 6 7 8 9 _?,numline_q4.webp,audio_q4.mp3,1,10,9,8,,,,,,,,,,
+multiple_choice,Full Number Line Master,Which spot on the line is Number 6?,spot6.webp,audio_q5.mp3,1,6,5,7,,,6,,,,,,,
+multiple_choice,Full Number Line Master,Which spot on the line is Number 8?,spot8.webp,audio_q6.mp3,1,8,7,9,,,8,,,,,,,
+multiple_choice,Full Number Line Master,Which spot on the line is Number 10?,spot10.webp,audio_q7.mp3,1,10,9,8,,,10,,,,,,,

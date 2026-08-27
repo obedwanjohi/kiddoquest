@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Saying Good Morning,What do we say when the golden sun rises in the morning?,sun_rising.webp,audio_q1.mp3,1,Good Morning,Good Night,Goodbye,,,1,,,,,,,
+multiple_choice,Saying Good Morning,Point to the rooster crowing in the morning!,rooster_crowing.webp,audio_q2.mp3,1,Morning Rooster,Night Owl,Sleeping Dog,,,1,,,,,,,
+multiple_choice,Saying Good Morning,Which picture shows waking up in the morning?,wake_up.webp,audio_q3.mp3,1,Waking Up,Going to Bed,Playing Toys,,,1,,,,,,,
+speak_repeat,Saying Good Morning,Say out loud clearly: GOOD MORNING!,speak_good_morning.webp,audio_q4.mp3,1,Good Morning,,,,,,Good Morning,,,,,,
+speak_repeat,Saying Good Morning,Say out loud: GOOD MORNING LEO!,speak_gm_leo.webp,audio_q5.mp3,1,Good Morning Leo,,,,,,Good Morning Leo,,,,,,
+matching,Saying Good Morning,Match morning signs to names!,,,1,,,,,,,,Morning,Morning,Rooster,Rooster,Sun,Sun
+matching,Saying Good Morning,Match greetings to time of day!,,,1,,,,,,,,Morning,Good Morning,Night,Good Night,Hello,Jambo

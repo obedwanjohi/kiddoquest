@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Popcorn Addition,4 Popcorn Boxes + 4 Popcorn Boxes = ?,pop_q1.webp,audio_q1.mp3,1,8,7,9,,,1,,,,,,,
+speak_repeat,Circus Popcorn Addition,Say out loud: FOUR PLUS FOUR IS EIGHT!,pop_speak.webp,audio_q2.mp3,1,Four Plus Four Is Eight,,,,,,Four Plus Four Is Eight,,,,,,
+matching,Circus Popcorn Addition,Match popcorn addition!,,,1,,,,,,4 + 4,8,5,9,3,8,,

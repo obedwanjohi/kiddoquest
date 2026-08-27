@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Made Trees Flowers,Touch the tall green tree made by God!,cre_green_tree.webp,audio_q1.mp3,1,TREE,Toy Car,Book,,,1,,,,,,,
+multiple_choice,God Made Trees Flowers,Touch the pretty red flower from God's garden!,cre_red_flower.webp,audio_q2.mp3,1,FLOWER,Stone,Paper,,,1,,,,,,,
+multiple_choice,God Made Trees Flowers,Touch the green leaf growing on trees!,cre_green_leaf.webp,audio_q3.mp3,1,LEAF,Pencil,Shoes,,,1,,,,,,,
+speak_repeat,God Made Trees Flowers,Say out loud clearly: GOD MADE TREES AND FLOWERS!,speak_trees_flowers.webp,audio_q4.mp3,1,God Made Trees and Flowers,,,,,,God Made Trees and Flowers,,,,,,
+speak_repeat,God Made Trees Flowers,Say out loud: BEAUTIFUL GARDEN!,speak_beautiful_garden.webp,audio_q5.mp3,1,Beautiful Garden,,,,,,Beautiful Garden,,,,,,
+matching,God Made Trees Flowers,Match garden creations!,,,1,,,,,,,,Tree,TREE,Flower,FLOWER,Leaf,LEAF
+matching,God Made Trees Flowers,Match plant items!,,,1,,,,,,,,Tree,Tree,Flower,Flower,Leaf,Leaf

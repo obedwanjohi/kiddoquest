@@ -1,0 +1,7 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Saying Thank You,What polite word do we say when someone gives us a gift?,gift_given.webp,audio_q1.mp3,1,Thank You,No,Go Away,,,1,,,,,,,
+multiple_choice,Saying Thank You,Touch Leo smiling and saying Thank You!,leo_thankful.webp,audio_q2.mp3,1,Happy Thank You,Sad Face,Angry Face,,,1,,,,,,,
+multiple_choice,Saying Thank You,Which picture shows sharing a yummy apple?,sharing_apple.webp,audio_q3.mp3,1,Sharing Apple,Taking Toy,Sleeping,,,1,,,,,,,
+speak_repeat,Saying Thank You,Say out loud clearly: THANK YOU!,speak_thank_you.webp,audio_q4.mp3,1,Thank You,,,,,,Thank You,,,,,,
+speak_repeat,Saying Thank You,Say out loud: THANK YOU VERY MUCH!,speak_thank_you_much.webp,audio_q5.mp3,1,Thank You Very Much,,,,,,Thank You Very Much,,,,,,
+matching,Saying Thank You,Match polite words to situations!,,,1,,,,,,,,Gift,Thank You,Greeting,Jambo,Morning,Good Morning

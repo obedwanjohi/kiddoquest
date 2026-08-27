@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Underwater ABC Kingdom,Which sea creature starts with letter D?,kingdom_dolphin_d.webp,audio_q1.mp3,1,Dolphin,Fish,Octopus,,,1,,,,,,,
+multiple_choice,Underwater ABC Kingdom,Touch the glowing pearl inside the giant seashell!,kingdom_pearl.webp,audio_q2.mp3,1,Glowing Pearl,Coral,Submarine,,,1,,,,,,,
+multiple_choice,Underwater ABC Kingdom,Touch the royal underwater ocean palace!,kingdom_palace.webp,audio_q3.mp3,1,Ocean Palace,Cloud Castle,Brick House,,,1,,,,,,,
+multiple_choice,Underwater ABC Kingdom,Touch the shiny Underwater ABC Crown!,kingdom_crown.webp,audio_q4.mp3,1,Underwater ABC Crown,Hat,Cape,,,1,,,,,,,
+speak_repeat,Underwater ABC Kingdom,Say out loud clearly: UNDERWATER ABC KINGDOM!,speak_underwater_kingdom.webp,audio_q5.mp3,1,Underwater ABC Kingdom,,,,,,Underwater ABC Kingdom,,,,,,
+speak_repeat,Underwater ABC Kingdom,Say out loud: ROYAL OCEAN GRADUATION!,speak_ocean_graduation.webp,audio_q6.mp3,1,Royal Ocean Graduation,,,,,,Royal Ocean Graduation,,,,,,
+matching,Underwater ABC Kingdom,Match sea creatures to initial letters!,,,1,,,,,,,,D,Dolphin,F,Fish,O,Octopus
+matching,Underwater ABC Kingdom,Match ocean palace items!,,,1,,,,,,,,Palace,Ocean Palace,Pearl,Glowing Pearl,Crown,ABC Crown

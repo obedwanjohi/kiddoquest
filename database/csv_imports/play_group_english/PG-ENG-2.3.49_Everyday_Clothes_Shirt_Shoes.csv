@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Everyday Clothes,Touch the bright blue shirt!,clothes_shirt.webp,audio_q1.mp3,1,Shirt,Shoes,Hat,,,1,,,,,,,
+multiple_choice,Everyday Clothes,Touch the comfortable walking shoes!,clothes_shoes.webp,audio_q2.mp3,1,Shoes,Shirt,Pencil,,,1,,,,,,,
+multiple_choice,Everyday Clothes,Touch the safari sun hat!,clothes_hat.webp,audio_q3.mp3,1,Hat,Shirt,Shoes,,,1,,,,,,,
+speak_repeat,Everyday Clothes,Say out loud clearly: EVERYDAY CLOTHES!,speak_everyday_clothes.webp,audio_q4.mp3,1,Everyday Clothes,,,,,,Everyday Clothes,,,,,,
+speak_repeat,Everyday Clothes,Say out loud: SHIRT AND SHOES!,speak_shirt_shoes.webp,audio_q5.mp3,1,Shirt and Shoes,,,,,,Shirt and Shoes,,,,,,
+matching,Everyday Clothes,Match clothes to names!,,,1,,,,,,,,Shirt,Shirt,Shoes,Shoes,Hat,Hat
+matching,Everyday Clothes,Match clothes to body locations!,,,1,,,,,,,,Body,Shirt,Feet,Shoes,Head,Hat

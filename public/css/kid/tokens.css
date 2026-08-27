@@ -1,0 +1,189 @@
+/* ============================================================
+   KID UI — DESIGN TOKENS
+   The single source of truth for all visual values.
+   Change a token here → entire kid app updates.
+   ============================================================ */
+
+:root {
+    /* ---- COLOR: BRAND ---- */
+    --kid-primary: #7C3AED;
+    --kid-primary-light: #A78BFA;
+    --kid-primary-dark: #6D28D9;
+    --kid-success: #22C55E;
+    --kid-success-dark: #16A34A;
+    --kid-success-light: #DCFCE7;
+    --kid-encourage: #F59E0B;
+    --kid-encourage-dark: #D97706;
+    --kid-danger: #EF4444;        /* Only for exit/delete, NEVER wrong answers */
+    --kid-danger-light: #FEE2E2;
+    --kid-warning: #F59E0B;
+    --kid-warning-light: #FEF3C7;
+    --kid-bg: #FFF9F0;            /* Warm off-white */
+    --kid-bg-card: #FFFFFF;
+    --kid-text: #1F2937;
+    --kid-text-muted: #6B7280;
+    --kid-text-light: #9CA3AF;
+    --kid-border: #E5E7EB;
+    --kid-border-incorrect: #9CA3AF;
+    --kid-shadow-color: rgba(0, 0, 0, 0.12);
+
+    /* ---- COLOR: WORLD THEMES (set dynamically per world) ---- */
+    --world-primary: var(--kid-primary);
+    --world-primary-light: var(--kid-primary-light);
+    --world-accent: var(--kid-encourage);
+    --world-gradient-from: #EDE9FE;
+    --world-gradient-to: #F5F3FF;
+
+    /* ---- RADIUS ---- */
+    --kid-radius-xs: 8px;      /* badges, pills inside cards */
+    --kid-radius-sm: 12px;     /* small chips */
+    --kid-radius-md: 16px;     /* buttons, inputs */
+    --kid-radius-lg: 24px;     /* cards */
+    --kid-radius-xl: 32px;     /* large containers, modals */
+    --kid-radius-full: 9999px; /* circular avatars, pills */
+
+    /* ---- SPACING ---- */
+    --kid-space-1: 4px;
+    --kid-space-2: 8px;
+    --kid-space-3: 12px;
+    --kid-space-4: 16px;
+    --kid-space-5: 24px;
+    --kid-space-6: 32px;
+    --kid-space-7: 48px;
+    --kid-space-8: 64px;
+
+    /* ---- FONT SIZES ---- */
+    --kid-text-hero: 2.5rem;     /* 40px — Map title */
+    --kid-text-title: 1.75rem;   /* 28px — Section heading */
+    --kid-text-mission: 1.25rem; /* 20px — Mission title */
+    --kid-text-body: 1rem;       /* 16px — Default body */
+    --kid-text-caption: 0.875rem;/* 14px — Small captions */
+    --kid-text-question: 1.5rem; /* 24px — Quiz question */
+    --kid-text-answer: 1.125rem; /* 18px — Answer option */
+    --kid-text-counter: 1.125rem;/* 18px — Star/coin counters */
+
+    /* ---- FONT WEIGHTS ---- */
+    --kid-weight-normal: 400;
+    --kid-weight-medium: 600;
+    --kid-weight-bold: 700;
+    --kid-weight-black: 800;
+
+    /* ---- FONT FAMILIES ---- */
+    --kid-font-heading: 'Baloo 2', 'Nunito', sans-serif;
+    --kid-font-body: 'Nunito', system-ui, sans-serif;
+
+    /* ---- LINE HEIGHTS ---- */
+    --kid-leading-tight: 1.1;
+    --kid-leading-snug: 1.3;
+    --kid-leading-normal: 1.5;
+    --kid-leading-relaxed: 1.6;
+
+    /* ---- SHADOWS ---- */
+    --kid-shadow-soft: 0 2px 8px var(--kid-shadow-color);
+    --kid-shadow-medium: 0 4px 16px var(--kid-shadow-color);
+    --kid-shadow-popup: 0 8px 32px rgba(0, 0, 0, 0.18);
+    --kid-shadow-3d: 0 4px 0 rgba(0, 0, 0, 0.15);   /* 3D button bottom edge */
+    --kid-shadow-3d-pressed: 0 1px 0 rgba(0, 0, 0, 0.15);
+
+    /* ---- ANIMATION DURATIONS ---- */
+    --kid-speed-fast: 100ms;     /* button press */
+    --kid-speed-normal: 300ms;   /* card appear */
+    --kid-speed-slow: 500ms;     /* page transition */
+    --kid-speed-celebrate: 1000ms;/* celebration burst */
+    --kid-speed-confetti: 2000ms; /* confetti fall */
+
+    /* ---- ANIMATION EASING ---- */
+    --kid-ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --kid-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* back-out */
+    --kid-ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* ---- TOUCH TARGETS ---- */
+    --kid-touch-min: 48px;
+    --kid-touch-recommended: 64px;
+    --kid-touch-large: 72px;
+
+    /* ---- Z-INDEX SCALE ---- */
+    --kid-z-base: 0;
+    --kid-z-header: 10;
+    --kid-z-dropdown: 20;
+    --kid-z-overlay: 50;
+    --kid-z-modal: 100;
+    --kid-z-celebration: 200;
+    --kid-z-toast: 300;
+
+    /* ---- LAYOUT ---- */
+    --kid-content-max: 960px;
+    --kid-content-padding: var(--kid-space-6); /* 32px */
+
+    /* ---- TRANSITIONS (shorthand using tokens) ---- */
+    --kid-transition-fast: var(--kid-speed-fast) var(--kid-ease-out);
+    --kid-transition-normal: var(--kid-speed-normal) var(--kid-ease-spring);
+    --kid-transition-slow: var(--kid-speed-slow) var(--kid-ease-smooth);
+}
+
+/* ---- WORLD THEME OVERRIDES ---- */
+/* Applied via class on the world container: class="world-forest" */
+
+.world-forest {
+    --world-primary: #16A34A;
+    --world-primary-light: #4ADE80;
+    --world-accent: #FBBF24;
+    --world-gradient-from: #86EFAC;
+    --world-gradient-to: #34D399;
+}
+
+.world-safari {
+    --world-primary: #D97706;
+    --world-primary-light: #FBBF24;
+    --world-accent: #84CC16;
+    --world-gradient-from: #FCD34D;
+    --world-gradient-to: #FB923C;
+}
+
+.world-ocean {
+    --world-primary: #0284C7;
+    --world-primary-light: #38BDF8;
+    --world-accent: #F97316;
+    --world-gradient-from: #7DD3FC;
+    --world-gradient-to: #22D3EE;
+}
+
+.world-castle {
+    --world-primary: #7C3AED;
+    --world-primary-light: #C4B5FD;
+    --world-accent: #FACC15;
+    --world-gradient-from: #DDD6FE;
+    --world-gradient-to: #F0ABFC;
+}
+
+.world-space {
+    --world-primary: #4338CA;
+    --world-primary-light: #818CF8;
+    --world-accent: #22D3EE;
+    --world-gradient-from: #A5B4FC;
+    --world-gradient-to: #A78BFA;
+}
+
+.world-savanna {
+    --world-primary: #D97706;
+    --world-primary-light: #FBBF24;
+    --world-accent: #84CC16;
+    --world-gradient-from: #FCD34D;
+    --world-gradient-to: #FB923C;
+}
+
+.world-candy {
+    --world-primary: #EC4899;
+    --world-primary-light: #F9A8D4;
+    --world-accent: #A855F7;
+    --world-gradient-from: #FBCFE8;
+    --world-gradient-to: #F0ABFC;
+}
+
+.world-arctic {
+    --world-primary: #0EA5E9;
+    --world-primary-light: #7DD3FC;
+    --world-accent: #F0F9FF;
+    --world-gradient-from: #BAE6FD;
+    --world-gradient-to: #E0F2FE;
+}

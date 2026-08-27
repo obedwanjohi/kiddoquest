@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter O Phonics Safari,Which picture starts with the /o/ sound?,owl_q1.webp,audio_q1.mp3,1,🦉,Pen 🖊️,Queen 👑,,,1,,,,,,,
+multiple_choice,Letter O Phonics Safari,Tap the uppercase letter O!,letterO.webp,audio_q2.mp3,1,O,N,P,,,1,,,,,,,
+speak_repeat,Letter O Phonics Safari,Say out loud clearly: /o/ /o/ OWL!,owl_speak.webp,audio_q3.mp3,1,/o/ /o/ Owl,,,,,,/o/ /o/ Owl,,,,,,
+matching,Letter O Phonics Safari,Match Uppercase O to Lowercase o!,,,1,,,,,,O,o,N,n,P,p,,

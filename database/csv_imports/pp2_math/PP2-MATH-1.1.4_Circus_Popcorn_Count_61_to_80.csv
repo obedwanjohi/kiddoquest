@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Popcorn Count 61 to 80,Which bucket has 70 bags of popcorn?,pop70.webp,audio_q1.mp3,1,70,65,75,,,70,,,,,,,
+count_objects,Circus Popcorn Count 61 to 80,Count all 70 popcorn bags at the carnival!,carn70.webp,audio_q2.mp3,1,70,68,72,,🍿,70,,,,,,,
+matching,Circus Popcorn Count 61 to 80,Match popcorn counts!,,,1,,,,,,65 Popcorns,65,70,70,75,75,,

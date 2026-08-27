@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Prepositions In On Under 78,"Where is the pencil in the picture: ""The pencil is ___ the table""?",on_q1.webp,audio_q1.mp3,1,ON ✏️,IN,UNDER,,,1,,,,,,,
+speak_repeat,Prepositions In On Under 78,Say out loud: THE PENCIL IS ON THE TABLE!,pen_speak.webp,audio_q2.mp3,1,The Pencil Is On The Table,,,,,,The Pencil Is On The Table,,,,,,
+matching,Prepositions In On Under 78,Match prepositions!,,,1,,,,,,ON ✏️,Top of Table,IN 🎒,Inside Bag,UNDER 🪑,Below Chair,,

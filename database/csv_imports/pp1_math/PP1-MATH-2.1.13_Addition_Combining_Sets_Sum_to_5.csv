@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Addition Combining Sets Sum to 5,2 Red Balls + 3 Blue Balls = ?,sum5_q1.webp,audio_q1.mp3,1,5,4,6,,,1,,,,,,,
+multiple_choice,Addition Combining Sets Sum to 5,What is 1 + 4?,sum5_q2.webp,audio_q2.mp3,1,5,4,3,,,1,,,,,,,
+speak_repeat,Addition Combining Sets Sum to 5,Say out loud: TWO PLUS THREE IS FIVE!,sum5_speak.webp,audio_q3.mp3,1,Two Plus Three Is Five,,,,,,Two Plus Three Is Five,,,,,,
+matching,Addition Combining Sets Sum to 5,Match equations to sum 5!,,,1,,,,,,ops,2 + 3,5,1,5,0,5,

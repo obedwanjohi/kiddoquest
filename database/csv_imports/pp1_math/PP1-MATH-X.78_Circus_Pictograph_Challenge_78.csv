@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Pictograph Challenge 78,How many balloons are shown on the circus chart?,pic_q1.webp,audio_q1.mp3,1,8,6,7,,,1,,,,,,,
+speak_repeat,Circus Pictograph Challenge 78,Say out loud: EIGHT BALLOONS ON CHART!,pic_speak.webp,audio_q2.mp3,1,Eight Balloons On Chart,,,,,,Eight Balloons On Chart,,,,,,
+matching,Circus Pictograph Challenge 78,Match chart counts!,,,1,,,,,,Balloons 🎈,8,Popcorn 🍿,5,Tickets 🎟️,6,,

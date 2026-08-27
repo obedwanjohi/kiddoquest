@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,The Lost Sheep Found with Joy,What does the Good Shepherd do when 1 sheep gets lost out of 100?,sheep_q1.webp,audio_q1.mp3,1,🐑,Leaves it,Forgets it,,,1,,,,,,,
+speak_repeat,The Lost Sheep Found with Joy,Say out loud clearly: JESUS SEARCHES AND SAVES US!,sheep_speak.webp,audio_q2.mp3,1,Jesus Searches And Saves Us,,,,,,Jesus Searches And Saves Us,,,,,,
+matching,The Lost Sheep Found with Joy,Match lost sheep story!,,,1,,,,,,Shepherd 🧔,Searched Joyfully,🐑,Rescued,Heaven ☁️,Rejoiced,,

@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Alphabet Launch,Which letter starts Space Rocket?,launch_rocket_r.webp,audio_q1.mp3,1,R,S,M,,,1,,,,,,,
+multiple_choice,Space Alphabet Launch,Which letter starts Space Satellite?,launch_satellite_s.webp,audio_q2.mp3,1,S,R,P,,,1,,,,,,,
+multiple_choice,Space Alphabet Launch,Which letter starts Moon?,launch_moon_m.webp,audio_q3.mp3,1,M,S,R,,,1,,,,,,,
+multiple_choice,Space Alphabet Launch,Touch the glowing space satellite!,launch_satellite.webp,audio_q4.mp3,1,Space Satellite,Moon,Sun,,,1,,,,,,,
+speak_repeat,Space Alphabet Launch,Say out loud clearly: SPACE ALPHABET LAUNCH!,speak_space_launch.webp,audio_q5.mp3,1,Space Alphabet Launch,,,,,,Space Alphabet Launch,,,,,,
+speak_repeat,Space Alphabet Launch,Say out loud: GALAXY LETTER QUEST!,speak_galaxy_quest.webp,audio_q6.mp3,1,Galaxy Letter Quest,,,,,,Galaxy Letter Quest,,,,,,
+matching,Space Alphabet Launch,Match space items to letters!,,,1,,,,,,,,R,Rocket,S,Satellite,M,Moon
+matching,Space Alphabet Launch,Match space gear!,,,1,,,,,,,,Rocket,Space Rocket,Satellite,Space Satellite,Moon,Glowing Moon

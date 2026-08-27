@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Singing Praise Songs,How do we express joy and praise to God?,sing_q1.webp,audio_q1.mp3,1,Singing,Shouting Angrily,Crying,,,1,,,,,,,
+multiple_choice,Singing Praise Songs,What body part do we use to sing praise songs?,voice_q2.webp,audio_q2.mp3,1,Voice,Feet,Hands,,,1,,,,,,,
+multiple_choice,Singing Praise Songs,Touch the child happily singing a praise song to God!,child_q3.webp,audio_q3.mp3,1,Singing Child,Crying Child,Sleeping Child,,,1,,,,,,,
+multiple_choice,Singing Praise Songs,What do we clap when we sing praise to God?,clap_q4.webp,audio_q4.mp3,1,Our Hands,Our Books,Our Shoes,,,1,,,,,,,
+multiple_choice,Singing Praise Songs,Why do we sing praise songs to God?,why_q5.webp,audio_q5.mp3,1,Because He Is Good,Because We Are Bored,For No Reason,,,1,,,,,,,
+multiple_choice,Singing Praise Songs,The Bible says to make a joyful what to the Lord?,noise_q6.webp,audio_q6.mp3,1,Noise,Mess,Problem,,,1,,,,,,,
+multiple_choice,Singing Praise Songs,We can sing praise at church. Where else can we sing?,where_q7.webp,audio_q7.mp3,1,At Home,Only at Church,Only Outside,,,1,,,,,,,
+multiple_choice,Singing Praise Songs,What instrument can we shake to praise God?,tamb_q8.webp,audio_q8.mp3,1,Tambourine,Hammer,Spoon,,,1,,,,,,,
+speak_repeat,Singing Praise Songs,Say out loud clearly: PRAISE THE LORD WITH JOY!,praise_speak.webp,audio_q9.mp3,1,Praise The Lord With Joy,,,,,,Praise The Lord With Joy,,,,,,
+speak_repeat,Singing Praise Songs,Say out loud: I SING BECAUSE GOD IS GOOD!,good_speak.webp,audio_q10.mp3,1,I Sing Because God Is Good,,,,,,I Sing Because God Is Good,,,,,,
+speak_repeat,Singing Praise Songs,Say out loud: HALLELUJAH PRAISE THE LORD!,hallel_speak.webp,audio_q11.mp3,1,Hallelujah Praise The Lord,,,,,,Hallelujah Praise The Lord,,,,,,
+matching,Singing Praise Songs,Match ways to worship with song!,,,1,,,,,,,,Voice,Sing Praise,Hands,Clap Joyfully,Heart,Full of Praise
+matching,Singing Praise Songs,Match praise instruments!,,,1,,,,,,,,Tambourine,Shake,Drum,Beat,Voice,Sing
+matching,Singing Praise Songs,Match where we can praise God!,,,1,,,,,,,,Church,With Others,Home,With Family,Everywhere,Always Praise

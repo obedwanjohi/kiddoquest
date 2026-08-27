@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Protects Us Day and Night,Who watches over us while we sleep at night?,sleep_q1.webp,audio_q1.mp3,1,God,Nobody,Monsters,,,1,,,,,,,
+multiple_choice,God Protects Us Day and Night,Who keeps us safe when we walk to school?,walk_q2.webp,audio_q2.mp3,1,God,A Ghost,Nobody,,,1,,,,,,,
+multiple_choice,God Protects Us Day and Night,What do we do before bed to thank God for keeping us safe?,bed_q3.webp,audio_q3.mp3,1,Pray,Shout,Run,,,1,,,,,,,
+multiple_choice,God Protects Us Day and Night,God sends angels to do what for us?,angel_q4.webp,audio_q4.mp3,1,Guard Us,Scare Us,Ignore Us,,,1,,,,,,,
+multiple_choice,God Protects Us Day and Night,When we feel scared at night what should we remember?,scare_q5.webp,audio_q5.mp3,1,God Is Near,Run Away,Hide,,,1,,,,,,,
+multiple_choice,God Protects Us Day and Night,Touch the picture showing a child sleeping peacefully under God's care!,peace_q6.webp,audio_q6.mp3,1,Sleeping,Running,Crying,,,1,,,,,,,
+multiple_choice,God Protects Us Day and Night,What time does God's protection stop?,stop_q7.webp,audio_q7.mp3,1,Never,At Night,At Noon,,,1,,,,,,,
+multiple_choice,God Protects Us Day and Night,What prayer do we say in the morning to thank God for the new day?,morn_q8.webp,audio_q8.mp3,1,Thank You God,Go Away God,I Am Angry,,,1,,,,,,,
+speak_repeat,God Protects Us Day and Night,Say out loud clearly: GOD PROTECTS ME NIGHT AND DAY!,prot_speak.webp,audio_q9.mp3,1,God Protects Me Night And Day,,,,,,God Protects Me Night And Day,,,,,,
+speak_repeat,God Protects Us Day and Night,Say out loud: GOD WATCHES OVER ME!,watch_speak.webp,audio_q10.mp3,1,God Watches Over Me,,,,,,God Watches Over Me,,,,,,
+speak_repeat,God Protects Us Day and Night,Say out loud: I AM SAFE WITH GOD!,safe_speak.webp,audio_q11.mp3,1,I Am Safe With God,,,,,,I Am Safe With God,,,,,,
+matching,God Protects Us Day and Night,Match God's protection through the day!,,,1,,,,,,,,Day ☀️,God Guides,Night 🌙,God Guards,Sleep 🛌,Peaceful Rest
+matching,God Protects Us Day and Night,Match what God does for us!,,,1,,,,,,,,Protects,Always,Watches,Night & Day,Loves,Forever
+matching,God Protects Us Day and Night,Match prayer time to the reason!,,,1,,,,,,,,Morning Prayer,New Day,Bedtime Prayer,Safe Sleep,Meal Prayer,Thank God

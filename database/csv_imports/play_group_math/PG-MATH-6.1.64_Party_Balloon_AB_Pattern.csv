@@ -1,0 +1,7 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Party Balloon AB Pattern,Which balloon comes next: Red Blue Red Blue Red _?,ab_q1.webp,audio_q1.mp3,1,🎈,🎈,🎈,,,,,,,,,,
+complete_pattern,Party Balloon AB Pattern,Which balloon completes the AB pattern: 🔴 🔵 🔴 🔵 _?,ab_q2.webp,audio_q2.mp3,1,🔴,🔵,🟡,,,,,,,,,,
+complete_pattern,Party Balloon AB Pattern,Find the missing middle balloon: Red Blue _ Blue Red Blue!,ab_q3.webp,audio_q3.mp3,1,🎈,🎈,🎈,,,,,,,,,,
+complete_pattern,Party Balloon AB Pattern,Which balloon completes the pattern: Yellow Green Yellow Green _?,ab_q4.webp,audio_q4.mp3,1,🎈,🎈,🎈,,,,,,,,,,
+multiple_choice,Party Balloon AB Pattern,Which balloon is the RED balloon in the AB pattern?,red_balloon.webp,audio_q5.mp3,1,🎈,🎈,🎈,,,1,,,,,,,
+multiple_choice,Party Balloon AB Pattern,Which balloon is the BLUE balloon in the AB pattern?,blue_balloon.webp,audio_q6.mp3,1,🎈,🎈,🎈,,,1,,,,,,,

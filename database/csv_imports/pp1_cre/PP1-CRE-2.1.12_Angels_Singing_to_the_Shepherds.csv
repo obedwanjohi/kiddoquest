@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Angels Singing to the Shepherds,Who sang good news of great joy to the shepherds at night?,angel_q1.webp,audio_q1.mp3,1,Angels,Birds,Wolves,,,1,,,,,,,
+multiple_choice,Angels Singing to the Shepherds,Where were the shepherds when the angels appeared?,field_q2.webp,audio_q2.mp3,1,Field,Market,River,,,1,,,,,,,
+multiple_choice,Angels Singing to the Shepherds,What were the shepherds looking after when angels appeared?,sheep_q3.webp,audio_q3.mp3,1,Sheep,Cattle,Fish,,,1,,,,,,,
+multiple_choice,Angels Singing to the Shepherds,What great news did the angel tell the shepherds?,news_q4.webp,audio_q4.mp3,1,Jesus Is Born,Rain Is Coming,A Party,,,1,,,,,,,
+multiple_choice,Angels Singing to the Shepherds,What did the shepherds do after hearing the good news?,visit_q5.webp,audio_q5.mp3,1,Visited Jesus,Stayed Home,Ran Away,,,1,,,,,,,
+multiple_choice,Angels Singing to the Shepherds,What did the angels sing to praise God?,sing_q6.webp,audio_q6.mp3,1,Glory To God,La La La,Nothing,,,1,,,,,,,
+multiple_choice,Angels Singing to the Shepherds,How did the shepherds feel when they saw Jesus?,feel_q7.webp,audio_q7.mp3,1,Full of Joy,Angry,Bored,,,1,,,,,,,
+multiple_choice,Angels Singing to the Shepherds,After seeing Jesus the shepherds went and told everyone. Were they happy?,happy_q8.webp,audio_q8.mp3,1,Yes,No,Maybe,,,1,,,,,,,
+speak_repeat,Angels Singing to the Shepherds,Say out loud clearly: GLORY TO GOD IN THE HIGHEST!,glory_speak.webp,audio_q9.mp3,1,Glory To God In The Highest,,,,,,Glory To God In The Highest,,,,,,
+speak_repeat,Angels Singing to the Shepherds,Say out loud: GOOD NEWS OF GREAT JOY!,joy_speak.webp,audio_q10.mp3,1,Good News Of Great Joy,,,,,,Good News Of Great Joy,,,,,,
+speak_repeat,Angels Singing to the Shepherds,Say out loud: JESUS IS BORN IN BETHLEHEM!,beth_speak.webp,audio_q11.mp3,1,Jesus Is Born In Bethlehem,,,,,,Jesus Is Born In Bethlehem,,,,,,
+matching,Angels Singing to the Shepherds,Match the angel message story!,,,1,,,,,,,,Angels 👼,Good News,Shepherds 🐑,Night Field,Joy 🎉,Great News
+matching,Angels Singing to the Shepherds,Match who did what in the story!,,,1,,,,,,,,Angels 👼,Sang Glory,Shepherds 🐑,Visited Jesus,Jesus 👶,Was Born
+matching,Angels Singing to the Shepherds,Match feelings to the story!,,,1,,,,,,,,Shepherds,Full of Joy,Angels,Singing Praise,Mary,Grateful Heart

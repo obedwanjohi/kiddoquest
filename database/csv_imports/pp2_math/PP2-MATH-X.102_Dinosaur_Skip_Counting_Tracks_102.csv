@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Dinosaur Skip Counting Tracks 102,Complete 10s skip counting: 20 30 40 _ 60 70?,track50_q1.webp,audio_q1.mp3,1,50,45,55,,,,,,,,,,
+speak_repeat,Dinosaur Skip Counting Tracks 102,Say out loud: TWENTY THIRTY FORTY FIFTY SIXTY SEVENTY!,track_speak.webp,audio_q2.mp3,1,Twenty Thirty Forty Fifty Sixty Seventy,,,,,,Twenty Thirty Forty Fifty Sixty Seventy,,,,,,
+matching,Dinosaur Skip Counting Tracks 102,Match 10s dino tracks!,,,1,,,,,,20 30,40,40,60,60,80,,

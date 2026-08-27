@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Joseph Coat Colors,What special gift did father Jacob give to his son Joseph?,cre_coat_many_colors.webp,audio_q1.mp3,1,Coat Of Many Colors,Toy Car,Pair of Shoes,,,1,,,,,,,
+multiple_choice,Joseph Coat Colors,Touch Joseph wearing his beautiful colorful coat!,cre_joseph_coat.webp,audio_q2.mp3,1,Joseph In Coat,WOLF,Goldilocks,,,1,,,,,,,
+multiple_choice,Joseph Coat Colors,What bright colors were woven into Joseph's coat?,cre_coat_stripes.webp,audio_q3.mp3,1,Red Blue and Yellow,ONLY,ONLY,,,1,,,,,,,
+speak_repeat,Joseph Coat Colors,Say out loud clearly: JOSEPH'S COAT OF MANY COLORS!,speak_joseph_coat.webp,audio_q4.mp3,1,Joseph's Coat Of Many Colors,,,,,,Joseph's Coat Of Many Colors,,,,,,
+speak_repeat,Joseph Coat Colors,Say out loud: BEAUTIFUL COLORFUL COAT!,speak_colorful_coat.webp,audio_q5.mp3,1,Beautiful Colorful Coat,,,,,,Beautiful Colorful Coat,,,,,,
+matching,Joseph Coat Colors,Match Joseph story items!,,,1,,,,,,,,Joseph,Son,Coat,Many Colors,Father,Jacob
+matching,Joseph Coat Colors,Match Joseph pictures!,,,1,,,,,,,,Joseph,Joseph,Coat,Coat Of Many Colors,Colors,Red Blue Yellow

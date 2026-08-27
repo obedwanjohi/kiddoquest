@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Grows Up in Nazareth,In which town did young Jesus grow up?,town_q1.webp,audio_q1.mp3,1,Nazareth,Bethlehem,Egypt,,,1,,,,,,,
+multiple_choice,Jesus Grows Up in Nazareth,How did young Jesus behave at home with Mary and Joseph?,obey_q2.webp,audio_q2.mp3,1,Obedient,Naughty,Lazy,,,1,,,,,,,
+multiple_choice,Jesus Grows Up in Nazareth,What did Jesus grow in as He became older?,wise_q3.webp,audio_q3.mp3,1,Wisdom,Anger,Fear,,,1,,,,,,,
+multiple_choice,Jesus Grows Up in Nazareth,Touch the picture of young Jesus learning and growing!,learn_q4.webp,audio_q4.mp3,1,Learning,Fighting,Crying,,,1,,,,,,,
+multiple_choice,Jesus Grows Up in Nazareth,Jesus grew up in a family. Who was His earthly mother?,mom_q5.webp,audio_q5.mp3,1,Mary,Ruth,Hannah,,,1,,,,,,,
+multiple_choice,Jesus Grows Up in Nazareth,Jesus was also called the Son of whom?,son_q6.webp,audio_q6.mp3,1,God,A King,A Farmer,,,1,,,,,,,
+multiple_choice,Jesus Grows Up in Nazareth,What does it mean to grow in wisdom?,mean_q7.webp,audio_q7.mp3,1,Become Wiser,Become Taller,Become Louder,,,1,,,,,,,
+multiple_choice,Jesus Grows Up in Nazareth,How should we grow up like Jesus — in wisdom and what else?,fav_q8.webp,audio_q8.mp3,1,Favour,Anger,Laziness,,,1,,,,,,,
+speak_repeat,Jesus Grows Up in Nazareth,Say out loud clearly: JESUS GREW IN WISDOM AND FAVOUR!,wise_speak.webp,audio_q9.mp3,1,Jesus Grew In Wisdom And Favour,,,,,,Jesus Grew In Wisdom And Favour,,,,,,
+speak_repeat,Jesus Grows Up in Nazareth,Say out loud: I WILL GROW LIKE JESUS!,grow_speak.webp,audio_q10.mp3,1,I Will Grow Like Jesus,,,,,,I Will Grow Like Jesus,,,,,,
+speak_repeat,Jesus Grows Up in Nazareth,Say out loud: OBEY YOUR PARENTS LIKE JESUS DID!,obey_speak.webp,audio_q11.mp3,1,Obey Your Parents Like Jesus Did,,,,,,Obey Your Parents Like Jesus Did,,,,,,
+matching,Jesus Grows Up in Nazareth,Match Jesus childhood facts!,,,1,,,,,,,,Nazareth,Home Town,Mary & Joseph,Parents,Wisdom,He Grew In
+matching,Jesus Grows Up in Nazareth,Match how Jesus grew!,,,1,,,,,,,,Wisdom 🧠,Grew Daily,Favour 💖,With God,Obedience,At Home
+matching,Jesus Grows Up in Nazareth,Match how children should grow like Jesus!,,,1,,,,,,,,Obey Parents,Like Jesus,Learn Daily,Like Jesus,Be Kind,Like Jesus

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter H Hat House,Which letter makes the /h/ sound for Hat?,letter_h_card.webp,audio_q1.mp3,1,H,G,B,,,1,,,,,,,
+multiple_choice,Letter H Hat House,Touch the safari hat starting with letter H!,hat_h.webp,audio_q2.mp3,1,Hat,Ball,Egg,,,1,,,,,,,
+multiple_choice,Letter H Hat House,Touch the cozy house starting with letter H!,house_h.webp,audio_q3.mp3,1,House,Car,Tree,,,1,,,,,,,
+speak_repeat,Letter H Hat House,Say the letter sound out loud: /h/ /h/ HAT!,speak_hat_h.webp,audio_q4.mp3,1,Hat,,,,,,Hat,,,,,,
+speak_repeat,Letter H Hat House,Say out loud clearly: LETTER H!,speak_letter_h.webp,audio_q5.mp3,1,Letter H,,,,,,Letter H,,,,,,
+matching,Letter H Hat House,Match letter H to words starting with H!,,,1,,,,,,,,H,H,Hat,Hat,House,House
+matching,Letter H Hat House,Match letter H sound /h/!,,,1,,,,,,,,H,H,sound /h/,Hat,words,House

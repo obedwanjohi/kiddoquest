@@ -1,0 +1,52 @@
+Created At: 2026-07-18T09:03:55Z
+Completed At: 2026-07-18T09:03:55Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 2993
+Total Bytes: 136922
+Showing lines 1100 to 1190
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1100:                         {{-- Answer choices --}}
+1101:                         <div class="answer-grid" :data-count="currentQuestion.options.length">
+1102:                             <template x-for="(option, i) in currentQuestion.options" :key="option.id">
+1103:                                 <div class="answer-card"
+1104:                                      :class="getCardClass(i, option.is_correct)"
+1105:                                      :style="`animation-delay: ${0.1 + i * 0.08}s`"
+1106:                                      @click="selectOption(i)"
+1107:                                      :aria-label="`Answer: ${option.text}`"
+1108:                                      role="button" tabindex="0"
+1109:                                      @keydown.enter="selectOption(i)"
+1110:                                      @keydown.space.prevent="selectOption(i)">
+1111:                                     <template x-if="option.image">
+1112:                                         <img :src="option.image" :alt="option.text" class="card-image" style="max-width: 100%; max-height: 80px; object-fit: contain; margin-bottom: 4px; border-radius: 8px;">
+1113:                                     </template>
+1114:                                     <template x-if="option.text && option.text.trim() !== ''">
+1115:                                         <span x-text="option.text"></span>
+1116:                                     </template>
+1117:                                     <template x-if="answered && selectedIndex === i && option.is_correct">
+<truncated 3280 bytes>
+ ? 'Playing...' : 'HEAR IT'"></span>
+1167:                         </button>
+1168: 
+1169:                         {{-- Mic button — HOLD TO RECORD (press = start, release = stop & check) --}}
+1170:                         <button class="speak-mic-btn"
+1171:                                 :class="{ listening: speakListening }"
+1172:                                 @mousedown.prevent="startSpeakHold()"
+1173:                                 @mouseup.prevent="endSpeakHold()"
+1174:                                 @mouseleave.prevent="endSpeakHold()"
+1175:                                 @touchstart.prevent="startSpeakHold()"
+1176:                                 @touchend.prevent="endSpeakHold()"
+1177:                                 @touchcancel.prevent="endSpeakHold()"
+1178:                                 @contextmenu.prevent=""
+1179:                                 :disabled="speakCompleted"
+1180:                                 :aria-label="speakListening ? 'Listening... Release to check!' : 'Hold to speak!'">
+1181:                             <span class="mic-waves"></span>
+1182:                             <span class="mic-waves" style="animation-delay: 0.3s;"></span>
+1183:                             <span class="mic-icon" x-text="speakListening ? '🔴' : '🎤'"></span>
+1184:                             <span class="mic-label" x-text="speakListening ? 'LISTENING...' : 'HOLD TO SPEAK!'"></span>
+1185:                         </button>
+1186:                         <p style="font-family:var(--kid-font-heading);font-weight:700;font-size:14px;color:var(--kid-text-muted);margin-top:-12px;margin-bottom:var(--kid-space-3);">
+1187:                             ✋ Press & hold the mic, say the word, then let go!
+1188:                         </p>
+1189: 
+1190:                         {{-- Status message --}}
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

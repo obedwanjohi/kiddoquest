@@ -1,0 +1,44 @@
+Created At: 2026-07-17T19:01:32Z
+Completed At: 2026-07-17T19:01:32Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3122
+Total Bytes: 144140
+Showing lines 1050 to 1085
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1050:                     </div>
+1051:                 </template>
+1052: 
+1053:                 {{-- Matching (QT-03) --}}
+1054:                 <template x-if="currentQuestion.type === 'matching'">
+1055:                     <div>
+1056:                         <div class="matching-progress">
+1057:                             <span class="check" x-text="matchedPairs.length"></span>
+1058:                             / <span x-text="currentQuestion.options.length"></span> pairs matched!
+1059:                         </div>
+1060:                         <div class="matching-board">
+1061:                             <div class="matching-column">
+1062:                                 <template x-for="(option, i) in currentQuestion.options" :key="'L-' + option.id">
+1063:                                     <div class="matching-item"
+1064:                                          :class="getMatchItemClass('left', i)"
+1065:                                          @click="selectMatch('left', i)">
+1066:                                         <span x-text="option.text"></span>
+1067:                                     </div>
+1068:                                 </template>
+1069:                             </div>
+1070:                             <div class="matching-column">
+1071:                                 <template x-for="(item, j) in matchRightItems" :key="'R-' + item.originalIndex">
+1072:                                     <div class="matching-item"
+1073:                                          :class="getMatchItemClass('right', j)"
+1074:                                          @click="selectMatch('right', j)">
+1075:                                         <span x-text="item.text"></span>
+1076:                                     </div>
+1077:                                 </template>
+1078:                             </div>
+1079:                         </div>
+1080:                     </div>
+1081:                 </template>
+1082: 
+1083:                 {{-- Sequence / Drag & Drop Order (QT-05) --}}
+1084:                 <template x-if="currentQuestion.type === 'drag_sequence'">
+1085:                     <div class="sequence-board">
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

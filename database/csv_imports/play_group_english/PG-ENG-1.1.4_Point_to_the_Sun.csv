@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Point to the Sun,Point up high: Touch the bright sun!,sun_bright.webp,audio_q1.mp3,1,Bright Sun,White Cloud,Night Moon,,,1,,,,,,,
+multiple_choice,Point to the Sun,Listen to Leo: Touch the fluffy cloud!,cloud_fluffy.webp,audio_q2.mp3,1,Fluffy Cloud,Bright Sun,Green Leaf,,,1,,,,,,,
+multiple_choice,Point to the Sun,Listen: Point to the flying bird!,bird_flying.webp,audio_q3.mp3,1,Flying Bird,Sleeping Cat,Yellow Star,,,1,,,,,,,
+multiple_choice,Point to the Sun,Which sky picture shows the daytime sun?,sky_day.webp,audio_q4.mp3,1,Yellow Sun,Night Moon,Blue Box,,,1,,,,,,,
+speak_repeat,Point to the Sun,Say out loud clearly: SUN!,speak_sun.webp,audio_q5.mp3,1,Sun,,,,,,Sun,,,,,,
+speak_repeat,Point to the Sun,Say out loud: POINT TO THE SUN!,speak_point_sun.webp,audio_q6.mp3,1,Point To The Sun,,,,,,Point To The Sun,,,,,,
+matching,Point to the Sun,Match sky objects to names!,,,1,,,,,,,,Sun,Sun,Cloud,Cloud,Bird,Bird
+matching,Point to the Sun,Match day vs night sky!,,,1,,,,,,,,Day,Sun,Night,Moon,Stars,Stars

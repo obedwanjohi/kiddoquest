@@ -1,0 +1,13 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pirate David Goliath Courage 36,Blend /c/ + /a/ + /t/? (think -at words),cvc_at1.webp,audio_q1.mp3,1,Cat,Dog,Sun,,,,,,,,,,
+multiple_choice,Pirate David Goliath Courage 36,Which word rhymes with Cat?,cvc_at2.webp,audio_q2.mp3,1,Hat,Bed,Cup,,,,,,,,,,
+multiple_choice,Pirate David Goliath Courage 36,Touch the picture that rhymes with Hat!,cvc_at3.webp,audio_q3.mp3,1,Mat,Frog,Bird,,,,,,,,,,
+multiple_choice,Pirate David Goliath Courage 36,Which word ends in /at/?,cvc_at4.webp,audio_q4.mp3,1,Bat,Tree,Fish,,,,,,,,,,
+multiple_choice,Pirate David Goliath Courage 36,Touch the -at word!,cvc_at5.webp,audio_q5.mp3,1,Rat,Jump,Rain,,,,,,,,,,
+multiple_choice,Pirate David Goliath Courage 36,Spell out Cat — how many letters?,cvc_spell.webp,audio_q6.mp3,1,3,4,5,,,,,,,,,,
+speak_repeat,Pirate David Goliath Courage 36,Say out loud: CAT — HAT — MAT!,cvc_say.webp,audio_q7.mp3,1,Cat Hat Mat,,,,,,Cat Hat Mat,,,,,,
+speak_repeat,Pirate David Goliath Courage 36,Say: THEY ALL RHYME WITH -AT!,cvc_rhyme.webp,audio_q8.mp3,1,They All Rhyme With -at,,,,,,They All Rhyme With -at,,,,,,
+speak_repeat,Pirate David Goliath Courage 36,Spell it out: C-A-T spells CAT!,cvc_spell2.webp,audio_q9.mp3,1,C-A-T Spells Cat,,,,,,C-A-T Spells Cat,,,,,,
+matching,Pirate David Goliath Courage 36,Match -at words to pictures!,,,1,,,,,,,,Cat,🐱,Hat,🎩,Mat,🧹
+matching,Pirate David Goliath Courage 36,Match rhyming word pairs!,,,1,,,,,,,,Cat,Hat,Mat,Bat,Rat,Cat
+matching,Pirate David Goliath Courage 36,Match word to its meaning!,,,1,,,,,,,,Cat,Pet animal,Hat,A Hat,Mat,A Mat

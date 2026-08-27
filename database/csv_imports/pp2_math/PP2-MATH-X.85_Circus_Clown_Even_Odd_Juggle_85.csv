@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Clown Even Odd Juggle 85,Which juggling number is ODD: 15 or 16?,odd_q1.webp,audio_q1.mp3,1,15,16,18,,,1,,,,,,,
+speak_repeat,Circus Clown Even Odd Juggle 85,Say out loud: FIFTEEN IS AN ODD NUMBER!,odd_speak.webp,audio_q2.mp3,1,Fifteen Is An Odd Number,,,,,,Fifteen Is An Odd Number,,,,,,
+matching,Circus Clown Even Odd Juggle 85,Match circus even odd!,,,1,,,,,,15,Odd,16,Even,17,Odd,,

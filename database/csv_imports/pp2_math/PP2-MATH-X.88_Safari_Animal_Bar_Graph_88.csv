@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Safari Animal Bar Graph 88,Look at the safari bar chart! Which animal has 25 votes?,graph_q1.webp,audio_q1.mp3,1,🦁,Zebras (15 Votes),Elephants (10 Votes),,,1,,,,,,,
+speak_repeat,Safari Animal Bar Graph 88,Say out loud: LIONS HAVE TWENTY-FIVE VOTES!,lion_speak.webp,audio_q2.mp3,1,Lions Have Twenty-Five Votes,,,,,,Lions Have Twenty-Five Votes,,,,,,
+matching,Safari Animal Bar Graph 88,Match safari chart!,,,1,,,,,,Lions 🦁,25 Votes (Most),Zebras 🦓,15,Elephants 🐘,10,,

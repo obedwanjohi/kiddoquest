@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Patterns Master Grand Master,Tap the GOLDEN PATTERN TROPHY for mastering Patterns!,trophy_q1.webp,audio_q1.mp3,1,🏆,🏆,🏆,,,1,,,,,,,
+speak_repeat,Patterns Master Grand Master,Say out loud: I CAN COMPLETE ANY PATTERN!,pat_speak.webp,audio_q2.mp3,1,I Can Complete Any Pattern,,,,,,I Can Complete Any Pattern,,,,,,
+matching,Patterns Master Grand Master,Match pattern master rules!,,,1,,,,,,ops,AB Pattern,Alternate,AABB Pattern,Doubles,ABC Pattern,Triples,

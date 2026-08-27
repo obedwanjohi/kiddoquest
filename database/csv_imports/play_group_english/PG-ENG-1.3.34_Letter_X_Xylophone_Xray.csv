@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter X Box,Which letter makes the /ks/ sound in X X X - /ks/ /ks/ /ks/ - Box Box?,letter_x_card.webp,audio_q1.mp3,1,X,W,Y,,,1,,,,,,,
+multiple_choice,Letter X Box,Touch the gift box with the /ks/ sound for letter X!,box_x.webp,audio_q2.mp3,1,Box,Watch,Yo-yo,,,1,,,,,,,
+multiple_choice,Letter X Box,Listen to the song: X X X - /ks/ /ks/ /ks/ - Box!,box_song.webp,audio_q3.mp3,1,Box,Van,Train,,,1,,,,,,,
+speak_repeat,Letter X Box,Say the phonics song chant: X X X - BOX!,speak_box_x.webp,audio_q4.mp3,1,Box,,,,,,Box,,,,,,
+speak_repeat,Letter X Box,Say out loud clearly: LETTER X!,speak_letter_x.webp,audio_q5.mp3,1,Letter X,,,,,,Letter X,,,,,,
+matching,Letter X Box,Match letter X to Box!,,,1,,,,,,,,X,X,Box,Box,sound /ks/,Box
+matching,Letter X Box,Match letter X sound /ks/!,,,1,,,,,,,,X,X,/ks/ /ks/ /ks/,Box,Box,Box

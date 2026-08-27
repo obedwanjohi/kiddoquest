@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Moses in the Bulrushes,Baby Moses was placed in a basket in which river?,river_q1.webp,audio_q1.mp3,1,Nile,Amazon,Jordan,,,1,,,,,,,
+multiple_choice,Moses in the Bulrushes,Who was Moses mother who made the basket to protect him?,mom_q2.webp,audio_q2.mp3,1,Jochebed,Mary,Ruth,,,1,,,,,,,
+multiple_choice,Moses in the Bulrushes,Who watched over the basket from a distance?,mir_q3.webp,audio_q3.mp3,1,Miriam,Goliath,Joseph,,,1,,,,,,,
+multiple_choice,Moses in the Bulrushes,Who found baby Moses in the river?,prin_q4.webp,audio_q4.mp3,1,Princess,Farmer,Shepherd,,,1,,,,,,,
+multiple_choice,Moses in the Bulrushes,What was baby Moses placed in to float on the river?,basket_q5.webp,audio_q5.mp3,1,Basket,Box,Bag,,,1,,,,,,,
+multiple_choice,Moses in the Bulrushes,Why did Moses mother hide him in the basket?,why_q6.webp,audio_q6.mp3,1,To Keep Him Safe,To Lose Him,For Fun,,,1,,,,,,,
+multiple_choice,Moses in the Bulrushes,God protected Moses. What does that tell us about God?,god_q7.webp,audio_q7.mp3,1,He Protects Us,He Forgets Us,He Leaves Us,,,1,,,,,,,
+multiple_choice,Moses in the Bulrushes,Touch baby Moses safely floating in the basket!,float_q8.webp,audio_q8.mp3,1,Basket,Boat,Ship,,,1,,,,,,,
+speak_repeat,Moses in the Bulrushes,Say out loud clearly: GOD WATCHES OVER BABY MOSES!,moses_speak.webp,audio_q9.mp3,1,God Watches Over Baby Moses,,,,,,God Watches Over Baby Moses,,,,,,
+speak_repeat,Moses in the Bulrushes,Say out loud: GOD PROTECTS LITTLE CHILDREN!,protect_speak.webp,audio_q10.mp3,1,God Protects Little Children,,,,,,God Protects Little Children,,,,,,
+speak_repeat,Moses in the Bulrushes,Say out loud: GOD HAS A PLAN FOR MY LIFE!,plan_speak.webp,audio_q11.mp3,1,God Has A Plan For My Life,,,,,,God Has A Plan For My Life,,,,,,
+matching,Moses in the Bulrushes,Match Moses story!,,,1,,,,,,,,Basket 🧺,River Nile,Miriam 👧,Watched Over,Princess 👑,Found Moses
+matching,Moses in the Bulrushes,Match who did what!,,,1,,,,,,,,Mother,Made Basket,Miriam,Watched Over,Princess,Rescued Moses
+matching,Moses in the Bulrushes,Match what we learn from Moses!,,,1,,,,,,,,God,Protects Us,Trust,His Plan,He,Watches Always

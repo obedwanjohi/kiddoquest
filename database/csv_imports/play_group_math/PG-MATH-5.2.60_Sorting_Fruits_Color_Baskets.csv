@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+matching,Sorting Fruits Color Baskets,Sort RED fruits into the RED basket!,,,1,,,,,,,,🍎,RED,🍓,RED,🍒,RED
+matching,Sorting Fruits Color Baskets,Sort YELLOW fruits into the YELLOW basket!,,,1,,,,,,,,🍌,YELLOW,🍋,YELLOW,🥭,YELLOW
+matching,Sorting Fruits Color Baskets,Sort GREEN fruits into the GREEN basket!,,,1,,,,,,,,🍏,GREEN,🍐,GREEN,🥝,GREEN
+matching,Sorting Fruits Color Baskets,Sort ORANGE fruits into the ORANGE basket!,,,1,,,,,,,,🍊,ORANGE,🍑,ORANGE,ORANGE,ORANGE
+matching,Sorting Fruits Color Baskets,Sort PURPLE fruits into the PURPLE basket!,,,1,,,,,,,,🍇,PURPLE,🫐,PURPLE,PURPLE,PURPLE
+multiple_choice,Sorting Fruits Color Baskets,Which basket is for RED fruits?,red_basket.webp,audio_q6.mp3,1,🧺,🧺,🧺,,,1,,,,,,,
+multiple_choice,Sorting Fruits Color Baskets,Which basket is for YELLOW fruits?,yellow_basket.webp,audio_q7.mp3,1,🧺,🧺,🧺,,,1,,,,,,,

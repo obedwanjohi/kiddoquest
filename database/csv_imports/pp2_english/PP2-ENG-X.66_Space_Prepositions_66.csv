@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Prepositions 66,"Where is the rocket: ""The rocket is ___ the launchpad""?",on_q1.webp,audio_q1.mp3,1,ON 🚀,IN,UNDER,,,1,,,,,,,
+speak_repeat,Space Prepositions 66,Say out loud: ROCKET IS ON THE LAUNCHPAD!,rock_speak.webp,audio_q2.mp3,1,Rocket Is On The Launchpad,,,,,,Rocket Is On The Launchpad,,,,,,
+matching,Space Prepositions 66,Match space prepositions!,,,1,,,,,,ON 🚀,On Launchpad,IN 🌌,In Space,UNDER 🪐,Below Planet,,

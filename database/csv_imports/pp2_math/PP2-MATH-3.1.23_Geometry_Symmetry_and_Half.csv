@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Geometry Symmetry and Half,When we cut a juicy apple right down the middle, what do we get?,sym_q1.webp,audio_q1.mp3,1,🍎,Three pieces,Whole apple,,,1,,,,,,
+speak_repeat,Geometry Symmetry and Half,Say out loud clearly: TWO EQUAL HALVES!,half_speak.webp,audio_q2.mp3,1,Two Equal Halves,,,,,,Two Equal Halves,,,,,,
+matching,Geometry Symmetry and Half,Match symmetry!,,,1,,,,,,Symmetry 🦋,Matching Sides,Half 🍎,1,Whole 🔴,Full Shape,,

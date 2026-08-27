@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pirate Coin Addition Quest,5 Gold Coins + 3 Gold Coins = ?,coins_q1.webp,audio_q1.mp3,1,8,7,9,,,1,,,,,,,
+speak_repeat,Pirate Coin Addition Quest,Say out loud: FIVE PLUS THREE IS EIGHT!,coin_add_speak.webp,audio_q2.mp3,1,Five Plus Three Is Eight,,,,,,Five Plus Three Is Eight,,,,,,
+matching,Pirate Coin Addition Quest,Match coin addition!,,,1,,,,,,5 + 3,8,4,8,6,8,,

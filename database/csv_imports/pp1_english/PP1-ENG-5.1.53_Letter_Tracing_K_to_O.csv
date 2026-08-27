@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter Tracing K to O,Trace the lines to form uppercase Letter K!,traceK.webp,audio_q1.mp3,1,🔤,L,M,,,1,,,,,,,
+speak_repeat,Letter Tracing K to O,Say out loud: TRACING K L M N O!,trace_speak.webp,audio_q2.mp3,1,Tracing K L M N O,,,,,,Tracing K L M N O,,,,,,
+matching,Letter Tracing K to O,Match uppercase tracing!,,,1,,,,,,K,Kite 🪁,L,Lion 🦁,M,Monkey 🐒,,

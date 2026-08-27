@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Picnic Basket Counter,How many red strawberries are packed in the picnic basket?,picnic_strawberries.webp,audio_q1.mp3,1,9,8,7,,strawberry.webp,9,,,,,,,
+count_objects,Picnic Basket Counter,Count the delicious sandwiches on the picnic blanket!,picnic_sandwiches.webp,audio_q2.mp3,1,8,9,7,,sandwich.webp,8,,,,,,,
+count_objects,Picnic Basket Counter,How many juice boxes did Leo unpack for picnic?,picnic_juice.webp,audio_q3.mp3,1,7,8,9,,juice.webp,7,,,,,,,
+multiple_choice,Picnic Basket Counter,Which card shows 9 fresh strawberries?,mc_nine_strawberries.webp,audio_q4.mp3,1,9,7,8,,,9,,,,,,,

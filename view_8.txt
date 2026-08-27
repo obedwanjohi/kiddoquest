@@ -1,0 +1,49 @@
+Created At: 2026-07-17T11:37:48Z
+Completed At: 2026-07-17T11:37:48Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3090
+Total Bytes: 142312
+Showing lines 1650 to 1690
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1650:             // Initialize memory match if this is a memory_match question
+1651:             if (this.currentQuestion.type === 'memory_match') {
+1652:                 this.initMemoryMatch();
+1653:             }
+1654: 
+1655:             // Initialize speak & repeat if this is a speak_repeat question
+1656:             if (this.currentQuestion.type === 'speak_repeat') {
+1657:                 this.initSpeakRecognition();
+1658:             }
+1659: 
+1660:             // Reset tracing state if this is a tracing question
+1661:             if (this.currentQuestion.type === 'tracing') {
+1662:                 this.tracingStrokes = 0;
+1663:                 this.tracingStatus = '✏️ Trace with your finger!';
+1664:                 this.tracingCompleted = false;
+1665:                 this.tracingDemoPlaying = false;
+1666:             }
+1667: 
+1668:             if (window.KidQuizEvents) {
+1669:                 window.KidQuizEvents.emit(window.KidQuizEvents.EVENTS.QUESTION_STARTED, {
+1670:                     index: this.currentIndex,
+1671:                     prompt: this.currentQuestion.prompt,
+1672:                 });
+1673:             }
+1674: 
+1675:             // 🔊 AUTO-PLAY question audio (narration or prompt_audio_url)
+1676:             // For listen_choose / speak_repeat, their own init methods handle audio.
+1677:             const skipAutoPlay = ['listen_choose', 'speak_repeat'].includes(this.currentQuestion.type);
+1678:             if (this.currentQuestion.audio && !skipAutoPlay) {
+1679:                 setTimeout(() => this.playQuestionAudio(), 600);
+1680:             }
+1681: 
+1682:             this.resetIdleTimer();
+1683:         },
+1684: 
+1685:         // 🔊 Play question narration / prompt audio
+1686:         playQuestionAudio() {
+1687:             // Cancel any ongoing TTS speech
+1688:             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+1689:             
+1690:             if (this.currentQuestion.audio) {
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

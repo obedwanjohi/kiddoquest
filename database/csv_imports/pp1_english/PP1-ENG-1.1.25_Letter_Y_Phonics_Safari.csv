@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter Y Phonics Safari,Which toy starts with the /y/ sound?,yoyo_q1.webp,audio_q1.mp3,1,🪀,Zebra 🦓,Apple 🍎,,,1,,,,,,,
+multiple_choice,Letter Y Phonics Safari,Tap the uppercase letter Y!,letterY.webp,audio_q2.mp3,1,Y,X,Z,,,1,,,,,,,
+speak_repeat,Letter Y Phonics Safari,Say out loud clearly: /y/ /y/ YOYO!,yoyo_speak.webp,audio_q3.mp3,1,/y/ /y/ YoYo,,,,,,/y/ /y/ YoYo,,,,,,
+matching,Letter Y Phonics Safari,Match Uppercase Y to Lowercase y!,,,1,,,,,,Y,y,X,x,Z,z,,

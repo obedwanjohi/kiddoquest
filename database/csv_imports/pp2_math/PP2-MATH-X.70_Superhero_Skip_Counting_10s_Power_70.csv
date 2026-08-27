@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Superhero Skip Counting 10s Power 70,Complete hero 10s skip counting: 40 50 60 _ 80 90?,skip10_q1.webp,audio_q1.mp3,1,70,65,75,,,,,,,,,,
+speak_repeat,Superhero Skip Counting 10s Power 70,Say out loud: FORTY FIFTY SIXTY SEVENTY EIGHTY NINETY!,skip_speak.webp,audio_q2.mp3,1,Forty Fifty Sixty Seventy Eighty Ninety,,,,,,Forty Fifty Sixty Seventy Eighty Ninety,,,,,,
+matching,Superhero Skip Counting 10s Power 70,Match hero 10s!,,,1,,,,,,40 50,60,60,80,80,100,,

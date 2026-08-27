@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Fruit Basket Counter,How many red apples are in the fruit basket?,basket_apples.webp,audio_q1.mp3,1,1,2,3,,apple.webp,1,,,,,,,
+count_objects,Fruit Basket Counter,Count the yellow bananas in the market basket!,basket_bananas.webp,audio_q2.mp3,1,2,1,3,,banana.webp,2,,,,,,,
+count_objects,Fruit Basket Counter,How many sweet oranges did Leo put in the bowl?,basket_oranges.webp,audio_q3.mp3,1,3,2,1,,orange.webp,3,,,,,,,
+multiple_choice,Fruit Basket Counter,Touch the shiny Number 1 to 3 Counter Trophy!,master_number_13_badge.webp,audio_q4.mp3,1,🏆,🏆,Hat,,,1,,,,,,,

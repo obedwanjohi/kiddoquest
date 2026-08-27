@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Gods Armor Shield 41,What shield protects our faith in God's superhero team?,shield_q1.webp,audio_q1.mp3,1,🛡️,Wooden Board,Nothing,,,1,,,,,,,
+speak_repeat,Superhero Gods Armor Shield 41,Say out loud: SHIELD OF FAITH IN GOD!,faith_speak.webp,audio_q2.mp3,1,Shield Of Faith In God,,,,,,Shield Of Faith In God,,,,,,
+matching,Superhero Gods Armor Shield 41,Match Gods armor!,,,1,,,,,,Shield 🛡️,Faith,Belt 🥋,Truth,Helmet 🪖,Salvation,,

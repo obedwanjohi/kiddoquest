@@ -1,0 +1,6 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Bird Above Fish Below,Which animal is ABOVE in the sky?,bird_above.webp,audio_q1.mp3,1,🐦,🐟,🦔,,,1,,,,,,,
+multiple_choice,Bird Above Fish Below,Which animal is BELOW in the water?,fish_below.webp,audio_q2.mp3,1,🐟,🐦,☁️,,,1,,,,,,,
+multiple_choice,Bird Above Fish Below,Tap the cloud that is ABOVE the tree!,cloud_above.webp,audio_q3.mp3,1,☁️,🪨,🌿,,,1,,,,,,,
+multiple_choice,Bird Above Fish Below,Tap the turtle that is BELOW the water!,turtle_below.webp,audio_q4.mp3,1,🐢,🐦,☀️,,,1,,,,,,,
+multiple_choice,Bird Above Fish Below,Which aeroplane is flying ABOVE the clouds?,plane_above.webp,audio_q5.mp3,1,✈️,🚤,🚗,,,1,,,,,,,

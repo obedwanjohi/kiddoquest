@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Stand Up Sit Down,Listen to Leo: Stand up tall!,stand_up.webp,audio_q1.mp3,1,Stand Up,Sit Down,Sleep,,,1,,,,,,,
+multiple_choice,Stand Up Sit Down,Listen: Sit down on the chair!,sit_down.webp,audio_q2.mp3,1,Sit Down,Stand Up,Run,,,1,,,,,,,
+multiple_choice,Stand Up Sit Down,Which picture shows Leo sitting down?,leo_sitting.webp,audio_q3.mp3,1,Sitting Leo,Standing Leo,Sleeping Leo,,,1,,,,,,,
+multiple_choice,Stand Up Sit Down,Which picture shows standing up high?,leo_standing.webp,audio_q4.mp3,1,Standing Leo,Sitting Leo,Sleeping Leo,,,1,,,,,,,
+speak_repeat,Stand Up Sit Down,Say out loud clearly: STAND UP!,speak_stand_up.webp,audio_q5.mp3,1,Stand Up,,,,,,Stand Up,,,,,,
+speak_repeat,Stand Up Sit Down,Say out loud: SIT DOWN!,speak_sit_down.webp,audio_q6.mp3,1,Sit Down,,,,,,Sit Down,,,,,,
+matching,Stand Up Sit Down,Match opposite commands!,,,1,,,,,,,,Stand Up,Stand Up,Sit Down,Sit Down,Clap Hands,Clap Hands
+matching,Stand Up Sit Down,Match action words!,,,1,,,,,,,,Up,Up,Down,Down,Stop,Stop

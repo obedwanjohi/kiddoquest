@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Daniel Lions Den,How many times a day did Daniel pray to God?,cre_daniel_praying.webp,audio_q1.mp3,1,Three Times A Day,Zero Times,Once A Year,,,1,,,,,,,
+multiple_choice,Daniel Lions Den,Who protected Daniel inside the lions' den?,cre_angel_protection.webp,audio_q2.mp3,1,God's Angel,KING,SOLDIER,,,1,,,,,,,
+multiple_choice,Daniel Lions Den,Touch the gentle lions lying down safely with Daniel!,cre_safe_lions.webp,audio_q3.mp3,1,Safe Lions,Wild Bears,Scary Monsters,,,1,,,,,,,
+speak_repeat,Daniel Lions Den,Say out loud clearly: DANIEL IN THE LIONS' DEN!,speak_daniel_lions.webp,audio_q4.mp3,1,Daniel In The Lions' Den,,,,,,Daniel In The Lions' Den,,,,,,
+speak_repeat,Daniel Lions Den,Say out loud: GOD KEEPS ME SAFE!,speak_god_keeps_safe.webp,audio_q5.mp3,1,God Keeps Me Safe,,,,,,God Keeps Me Safe,,,,,,
+matching,Daniel Lions Den,Match Daniel story elements!,,,1,,,,,,,,Daniel,Man of Prayer,Lions,Mouths Closed,Angel,God's Protector
+matching,Daniel Lions Den,Match Daniel pictures!,,,1,,,,,,,,Daniel,Daniel Praying,Angel,God's Angel,Lions,Safe Lions

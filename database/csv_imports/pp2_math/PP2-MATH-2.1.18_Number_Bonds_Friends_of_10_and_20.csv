@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Number Bonds Friends of 10 and 20,What is the bond pair for 15 to make 20?,bond_q1.webp,audio_q1.mp3,1,5,4,6,,,1,,,,,,,
+speak_repeat,Number Bonds Friends of 10 and 20,Say out loud clearly: FIFTEEN AND FIVE MAKE TWENTY!,bond_speak.webp,audio_q2.mp3,1,Fifteen and Five Make Twenty,,,,,,Fifteen and Five Make Twenty,,,,,,
+matching,Number Bonds Friends of 10 and 20,Match friends of 20!,,,1,,,,,,15,5,10,10,18,2,,

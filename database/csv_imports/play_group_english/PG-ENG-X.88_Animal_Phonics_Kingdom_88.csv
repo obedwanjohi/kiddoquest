@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Animal Phonics Kingdom,Which animal starts with the letter L sound /l/?,kingdom_lion_l.webp,audio_q1.mp3,1,Lion,Cat,Dog,,,1,,,,,,,
+multiple_choice,Animal Phonics Kingdom,Which animal starts with the letter C sound /k/?,kingdom_cat_c.webp,audio_q2.mp3,1,Cat,Lion,Pig,,,1,,,,,,,
+multiple_choice,Animal Phonics Kingdom,Which animal starts with the letter E sound /e/?,kingdom_elephant_e.webp,audio_q3.mp3,1,Elephant,Duck,Frog,,,1,,,,,,,
+speak_repeat,Animal Phonics Kingdom,Say out loud clearly: ANIMAL PHONICS KINGDOM!,speak_animal_kingdom.webp,audio_q4.mp3,1,Animal Phonics Kingdom,,,,,,Animal Phonics Kingdom,,,,,,
+speak_repeat,Animal Phonics Kingdom,Say out loud: LION AND CAT!,speak_lion_cat.webp,audio_q5.mp3,1,Lion and Cat,,,,,,Lion and Cat,,,,,,
+matching,Animal Phonics Kingdom,Match animals to phonics letters!,,,1,,,,,,,,L,Lion,C,Cat,E,Elephant
+matching,Animal Phonics Kingdom,Match animal sounds!,,,1,,,,,,,,Roar,Lion,Meow,Cat,Trumpet,Elephant

@@ -1,0 +1,79 @@
+Created At: 2026-07-17T19:08:12Z
+Completed At: 2026-07-17T19:08:12Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3132
+Total Bytes: 145020
+Showing lines 2020 to 2100
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2020:             clearTimeout(this.idleTimer);
+2021:             this.idleTimer = setTimeout(() => this.checkIdle(), 5000);
+2022:         },
+2023: 
+2024:         checkIdle() {
+2025:             if (this.answered || this.quizComplete) return;
+2026:             const elapsed = (Date.now() - this.lastInteraction) / 1000;
+2027:             if (elapsed > 15 && elapsed < 30) {
+2028:                 this.idleHintText = "Tap an answer! 👆";
+2029:                 this.showIdleHint = true;
+2030:             } else if (elapsed >= 30) {
+2031:                 this.idleHintText = "Need help? Tap any picture! 💛";
+2032:                 this.showIdleHint = true;
+2033:             }
+2034:             this.idleTimer = setTimeout(() => this.checkIdle(), 5000);
+2035:         },
+2036: 
+2037:         // ---- MATCHING LOGIC (QT-03) ----
+2038:         initMatching() {
+2039:             this.matchSelectedSide = null;
+2040:             this.matchSelectedIndex = null;
+2041:             this.matchedPairs = [];
+2042:             this.matchWrongPair = null;
+2043:             // Build shuffled right column from options.
+2044:             // KEY: right column shows match_key (the paired value), NOT the left text.
+2045:             // e.g., left="🍎 Apple", right="Red" — they share match_key="Red"
+2046:             const opts = this.currentQuestion.options.map((o, i) => ({
+2047:                 text: o.match_key || o.text,
+2048:                 matchKey: o.match_key,
+2049:                 originalIndex: i,
+2050:             }));
+2051:             this.m
+<truncated 426 bytes>
+             this.resetIdleTimer();
+2064:             if (this.answered) return;
+2065: 
+2066:             // If already matched, ignore
+2067:             if (side === 'left' && this.matchedPairs.some(p => p.leftIndex === index)) return;
+2068:             if (side === 'right' && this.matchedPairs.some(p => p.rightIndex === index)) return;
+2069: 
+2070:             // If clicking same side, just switch selection
+2071:             if (this.matchSelectedSide === side) {
+2072:                 this.matchSelectedIndex = index;
+2073:                 return;
+2074:             }
+2075: 
+2076:             // If nothing selected yet, select this
+2077:             if (this.matchSelectedSide === null) {
+2078:                 this.matchSelectedSide = side;
+2079:                 this.matchSelectedIndex = index;
+2080:                 return;
+2081:             }
+2082: 
+2083:             // We have a selection on the other side — check match!
+2084:             const leftIndex = side === 'left' ? index : this.matchSelectedIndex;
+2085:             const rightIndex = side === 'right' ? index : this.matchSelectedIndex;
+2086: 
+2087:             const leftOpt = this.currentQuestion.options[leftIndex];
+2088:             const rightItem = this.matchRightItems[rightIndex];
+2089: 
+2090:             if (leftOpt.match_key === rightItem.matchKey) {
+2091:                 // Correct match!
+2092:                 this.matchedPairs.push({
+2093:                     leftIndex: leftIndex,
+2094:                     rightIndex: rightIndex,
+2095:                     matchKey: leftOpt.match_key,
+2096:                 });
+2097: 
+2098:                 if (window.KidQuizEvents) {
+2099:                     window.KidQuizEvents.emit(window.KidQuizEvents.EVENTS.ANSWER_CORRECT, {
+2100:                         index: leftIndex, firstTry: true,
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

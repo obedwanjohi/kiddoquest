@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Gave Me My Friends,How should we treat our friends at school?,friends_q1.webp,audio_q1.mp3,1,Kindly,Fight,Be Mean,,,1,,,,,,,
+multiple_choice,God Gave Me My Friends,Touch the picture showing friends playing happily together!,play_q2.webp,audio_q2.mp3,1,Playing,Fighting,Crying,,,1,,,,,,,
+multiple_choice,God Gave Me My Friends,What do good friends share with each other?,share_q3.webp,audio_q3.mp3,1,Toys,Punches,Nothing,,,1,,,,,,,
+multiple_choice,God Gave Me My Friends,When a friend is sad what should we do?,sad_q4.webp,audio_q4.mp3,1,Comfort,Laugh,Ignore,,,1,,,,,,,
+multiple_choice,God Gave Me My Friends,Who gave us friends to play and learn with?,who_q5.webp,audio_q5.mp3,1,God,A Robot,Nobody,,,1,,,,,,,
+multiple_choice,God Gave Me My Friends,What kind of words should we say to friends?,words_q6.webp,audio_q6.mp3,1,Kind,Rude,Hurtful,,,1,,,,,,,
+multiple_choice,God Gave Me My Friends,Good friends help each other. Touch the helping picture!,help_q7.webp,audio_q7.mp3,1,Helping,Pushing,Sleeping,,,1,,,,,,,
+multiple_choice,God Gave Me My Friends,What do we say when we hurt a friend by mistake?,sorry_q8.webp,audio_q8.mp3,1,Sorry,Nothing,Blame Them,,,1,,,,,,,
+speak_repeat,God Gave Me My Friends,Say out loud clearly: BE KIND TO FRIENDS!,friend_speak.webp,audio_q9.mp3,1,Be Kind To Friends,,,,,,Be Kind To Friends,,,,,,
+speak_repeat,God Gave Me My Friends,Say out loud: GOD GAVE ME GOOD FRIENDS!,gave_speak.webp,audio_q10.mp3,1,God Gave Me Good Friends,,,,,,God Gave Me Good Friends,,,,,,
+speak_repeat,God Gave Me My Friends,Say out loud: I AM A GOOD FRIEND!,good_speak.webp,audio_q11.mp3,1,I Am A Good Friend,,,,,,I Am A Good Friend,,,,,,
+matching,God Gave Me My Friends,Match good friend actions!,,,1,,,,,,,,Toys 🧸,Share,Words 💬,Kind,Help 🤝,Always
+matching,God Gave Me My Friends,Match friendship to its meaning!,,,1,,,,,,,,Kind,Good Friend,Rude,Bad Friend,Share,Good Friend
+matching,God Gave Me My Friends,Match friends to what they do together!,,,1,,,,,,,,Play ⚽,Together,Sing 🎵,Together,Learn 📚,Together

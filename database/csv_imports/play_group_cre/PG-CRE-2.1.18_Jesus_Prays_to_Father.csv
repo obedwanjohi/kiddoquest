@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Prays Father,Who did Jesus pray to early in the morning?,cre_heavenly_father.webp,audio_q1.mp3,1,Heavenly Father,WIND,CLOUD,,,1,,,,,,,
+multiple_choice,Jesus Prays Father,Touch Jesus kneeling quietly to pray on the hill!,cre_jesus_kneeling.webp,audio_q2.mp3,1,Jesus Kneeling,Running Cub,Sleeping Cat,,,1,,,,,,,
+multiple_choice,Jesus Prays Father,What does prayer give to our hearts?,cre_prayer_peace.webp,audio_q3.mp3,1,Peace and Strength,Fear,Anger,,,1,,,,,,,
+speak_repeat,Jesus Prays Father,Say out loud clearly: JESUS PRAYS TO HEAVENLY FATHER!,speak_jesus_prays.webp,audio_q4.mp3,1,Jesus Prays To Heavenly Father,,,,,,Jesus Prays To Heavenly Father,,,,,,
+speak_repeat,Jesus Prays Father,Say out loud: PRAY EVERY DAY!,speak_pray_everyday.webp,audio_q5.mp3,1,Pray Every Day,,,,,,Pray Every Day,,,,,,
+matching,Jesus Prays Father,Match prayer elements!,,,1,,,,,,,,Jesus,Prayed Often,Father,Heavenly Father,Heart,Peace
+matching,Jesus Prays Father,Match prayer pictures!,,,1,,,,,,,,Kneeling,Jesus Kneeling,Sunrise,Morning Prayer,Heart,Peace

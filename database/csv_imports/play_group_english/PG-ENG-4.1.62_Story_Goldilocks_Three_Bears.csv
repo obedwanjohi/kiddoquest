@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Goldilocks Three Bears,Which porridge bowl was just right for Goldilocks?,goldi_porridge.webp,audio_q1.mp3,1,Baby Bear's Bowl,Papa Bear's Bowl,Mama Bear's Bowl,,,1,,,,,,,
+multiple_choice,Goldilocks Three Bears,Touch Goldilocks in the story!,goldi_character.webp,audio_q2.mp3,1,Goldilocks,Little Pig,Red Riding Hood,,,1,,,,,,,
+multiple_choice,Goldilocks Three Bears,Which bear had the biggest chair?,goldi_papa_bear.webp,audio_q3.mp3,1,Papa Bear,Baby Bear,Mama Bear,,,1,,,,,,,
+multiple_choice,Goldilocks Three Bears,Which bed was cozy and just right?,goldi_bed.webp,audio_q4.mp3,1,Small Bed,Giant Bed,Hard Chair,,,1,,,,,,,
+speak_repeat,Goldilocks Three Bears,Say out loud clearly: THREE BEARS!,speak_three_bears.webp,audio_q5.mp3,1,Three Bears,,,,,,Three Bears,,,,,,
+speak_repeat,Goldilocks Three Bears,Say out loud: JUST RIGHT!,speak_just_right.webp,audio_q6.mp3,1,Just Right,,,,,,Just Right,,,,,,
+matching,Goldilocks Three Bears,Match bears to porridge bowls!,,,1,,,,,,,,Papa Bear,Hot Bowl,Mama Bear,Cold Bowl,Baby Bear,Just Right
+matching,Goldilocks Three Bears,Match story items!,,,1,,,,,,,,Goldilocks,Goldilocks,Porridge,Porridge,Bed,Bed

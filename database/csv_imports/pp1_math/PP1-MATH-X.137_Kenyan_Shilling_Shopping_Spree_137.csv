@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Kenyan Shilling Shopping Spree 137,You buy an apple for 10 KSh and a juice for 10 KSh. Total = ?,ksh_q1.webp,audio_q1.mp3,1,20,15,10,,,1,,,,,,,
+speak_repeat,Kenyan Shilling Shopping Spree 137,Say out loud: TEN PLUS TEN IS TWENTY SHILLINGS!,ksh_speak.webp,audio_q2.mp3,1,Ten Plus Ten Is Twenty Shillings,,,,,,Ten Plus Ten Is Twenty Shillings,,,,,,
+matching,Kenyan Shilling Shopping Spree 137,Match shopping total!,,,1,,,,,,10 + 10 KSh,20 KSh,5,10,10,15,,

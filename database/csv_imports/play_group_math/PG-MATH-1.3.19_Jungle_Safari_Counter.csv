@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Jungle Safari Counter,How many striped zebras are walking across the savanna?,safari_zebras.webp,audio_q1.mp3,1,5,4,3,,zebra.webp,5,,,,,,,
+count_objects,Jungle Safari Counter,Count the friendly lions resting under the shade tree!,safari_lions.webp,audio_q2.mp3,1,4,5,3,,lion.webp,4,,,,,,,
+count_objects,Jungle Safari Counter,How many big elephants did Leo see drinking water?,safari_elephants.webp,audio_q3.mp3,1,3,4,5,,elephant.webp,3,,,,,,,
+multiple_choice,Jungle Safari Counter,Which card shows 5 striped zebras?,mc_five_zebras.webp,audio_q4.mp3,1,5,4,3,,,5,,,,,,,

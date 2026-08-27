@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Dinosaur Grammar Pronouns 102,"Which pronoun replaces ""The Dino Queen""?",she_q1.webp,audio_q1.mp3,1,SHE 👑,HE,THEY,,,1,,,,,,,
+speak_repeat,Dinosaur Grammar Pronouns 102,Say out loud: SHE IS THE DINO QUEEN!,queen_speak.webp,audio_q2.mp3,1,She Is The Dino Queen,,,,,,She Is The Dino Queen,,,,,,
+matching,Dinosaur Grammar Pronouns 102,Match dino pronouns!,,,1,,,,,,Queen 👑,SHE,King 👑,HE,Dinos 🦖🦕,THEY,,

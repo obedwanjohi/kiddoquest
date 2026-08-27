@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Geometry Fractions Half and Quarter,If a pizza is cut into 4 equal slices, what is 1 slice called?,frac_q1.webp,audio_q1.mp3,1,🍕,One Half (1/2),Whole,,,1,,,,,,
+speak_repeat,Geometry Fractions Half and Quarter,Say out loud clearly: ONE QUARTER IS ONE OF FOUR PARTS!,frac_speak.webp,audio_q2.mp3,1,One Quarter Is One Of Four Parts,,,,,,One Quarter Is One Of Four Parts,,,,,,
+matching,Geometry Fractions Half and Quarter,Match fractions!,,,1,,,,,,Whole 🍕,Full Pizza,Half 🍕,2,Quarter 🍕,4,,

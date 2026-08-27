@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Tracing Zigzag Paths,Which line goes up and down like mountain peaks?,trace_zigzag_mountain.webp,audio_q1.mp3,1,Zigzag Path,Straight Line,Circle Loop,,,1,,,,,,,
+multiple_choice,Tracing Zigzag Paths,Touch the sharp lightning bolt path!,trace_zigzag_lightning.webp,audio_q2.mp3,1,Lightning Path,Smooth Arc,Straight Line,,,1,,,,,,,
+multiple_choice,Tracing Zigzag Paths,Help the kangaroo hop along the zigzag trail!,trace_kangaroo_zigzag.webp,audio_q3.mp3,1,Zigzag Trail,Straight Line,Curved Arc,,,1,,,,,,,
+speak_repeat,Tracing Zigzag Paths,Say out loud clearly: ZIGZAG PATHS!,speak_zigzag_paths.webp,audio_q4.mp3,1,Zigzag Paths,,,,,,Zigzag Paths,,,,,,
+speak_repeat,Tracing Zigzag Paths,Say out loud: UP AND DOWN!,speak_up_and_down.webp,audio_q5.mp3,1,Up and Down,,,,,,Up and Down,,,,,,
+matching,Tracing Zigzag Paths,Match zigzag patterns!,,,1,,,,,,,,Zigzag,Mountain Peaks,Lightning,Zigzag Bolt,Trail,Up and Down
+matching,Tracing Zigzag Paths,Match line features!,,,1,,,,,,,,Corners,Sharp Turn,Path,Zigzag,Motion,Hop

@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Wise Men Bringing Gifts,What guided the Wise Men to find Baby Jesus?,star_q1.webp,audio_q1.mp3,1,Star,Map,Cloud,,,1,,,,,,,
+multiple_choice,Wise Men Bringing Gifts,How many Wise Men came to visit Baby Jesus?,num_q2.webp,audio_q2.mp3,1,3,5,10,,,1,,,,,,,
+multiple_choice,Wise Men Bringing Gifts,What did the Wise Men bring to Jesus?,gift_q3.webp,audio_q3.mp3,1,Gifts,Toys,Books,,,1,,,,,,,
+multiple_choice,Wise Men Bringing Gifts,One gift the Wise Men brought was shiny and precious. It was?,gold_q4.webp,audio_q4.mp3,1,Gold,Sand,Mud,,,1,,,,,,,
+multiple_choice,Wise Men Bringing Gifts,The Wise Men travelled a very long way. How did they travel?,cam_q5.webp,audio_q5.mp3,1,On Camels,By Car,By Plane,,,1,,,,,,,
+multiple_choice,Wise Men Bringing Gifts,What does it mean to be wise?,wise_q6.webp,audio_q6.mp3,1,Very Smart,Very Loud,Very Silly,,,1,,,,,,,
+multiple_choice,Wise Men Bringing Gifts,The Wise Men worshipped Baby Jesus. What does worship mean?,wor_q7.webp,audio_q7.mp3,1,Praise God,Fight,Play Games,,,1,,,,,,,
+multiple_choice,Wise Men Bringing Gifts,What can we give Jesus today as our gift?,give_q8.webp,audio_q8.mp3,1,Our Heart,A Toy,Nothing,,,1,,,,,,,
+speak_repeat,Wise Men Bringing Gifts,Say out loud clearly: GIFTS FOR BABY JESUS!,gift_speak.webp,audio_q9.mp3,1,Gifts For Baby Jesus,,,,,,Gifts For Baby Jesus,,,,,,
+speak_repeat,Wise Men Bringing Gifts,Say out loud: FOLLOW THE STAR TO JESUS!,star_speak.webp,audio_q10.mp3,1,Follow The Star To Jesus,,,,,,Follow The Star To Jesus,,,,,,
+speak_repeat,Wise Men Bringing Gifts,Say out loud: WE WORSHIP JESUS THE KING!,king_speak.webp,audio_q11.mp3,1,We Worship Jesus The King,,,,,,We Worship Jesus The King,,,,,,
+matching,Wise Men Bringing Gifts,Match gifts to their meaning!,,,1,,,,,,,,Gold 🪙,For A King,Frankincense 🏺,For Prayer,Myrrh 📦,Special Oil
+matching,Wise Men Bringing Gifts,Match Wise Men story facts!,,,1,,,,,,,,Star ⭐,Guided Path,Camels 🐪,How They Travelled,Jesus 👶,Who They Found
+matching,Wise Men Bringing Gifts,Match worship actions!,,,1,,,,,,,,Kneel,Worship,Give Gifts,Honour,Praise,With Heart

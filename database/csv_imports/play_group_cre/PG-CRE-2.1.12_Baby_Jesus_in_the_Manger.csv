@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Baby Jesus in Manger,Where was Baby Jesus born in the Christmas story?,cre_wooden_manger.webp,audio_q1.mp3,1,In A Manger,In A Palace,In A Car,,,1,,,,,,,
+multiple_choice,Baby Jesus in Manger,What shone bright in the sky over Bethlehem?,cre_star_bethlehem.webp,audio_q2.mp3,1,STAR,CLOUD,Raindrop,,,1,,,,,,,
+multiple_choice,Baby Jesus in Manger,Touch Mary holding Baby Jesus warmly!,cre_mary_baby.webp,audio_q3.mp3,1,Mary And Baby,PIG,Goldilocks,,,1,,,,,,,
+speak_repeat,Baby Jesus in Manger,Say out loud clearly: BABY JESUS IN THE MANGER!,speak_baby_jesus.webp,audio_q4.mp3,1,Baby Jesus In The Manger,,,,,,Baby Jesus In The Manger,,,,,,
+speak_repeat,Baby Jesus in Manger,Say out loud: HAPPY CHRISTMAS JOY!,speak_christmas_joy.webp,audio_q5.mp3,1,Happy Christmas Joy,,,,,,Happy Christmas Joy,,,,,,
+matching,Baby Jesus in Manger,Match nativity story items!,,,1,,,,,,,,Baby,Jesus,Bed,Manger,Sky,STAR
+matching,Baby Jesus in Manger,Match nativity pictures!,,,1,,,,,,,,Baby,Baby Jesus,Manger,MANGER,Star,STAR

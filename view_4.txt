@@ -1,0 +1,49 @@
+Created At: 2026-07-17T11:35:26Z
+Completed At: 2026-07-17T11:35:26Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3069
+Total Bytes: 141052
+Showing lines 1660 to 1700
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1660:                 window.KidQuizEvents.emit(window.KidQuizEvents.EVENTS.QUESTION_STARTED, {
+1661:                     index: this.currentIndex,
+1662:                     prompt: this.currentQuestion.prompt,
+1663:                 });
+1664:             }
+1665: 
+1666:             // 🔊 AUTO-PLAY question audio (narration or prompt_audio_url)
+1667:             // For listen_choose / speak_repeat, their own init methods handle audio.
+1668:             const skipAutoPlay = ['listen_choose', 'speak_repeat'].includes(this.currentQuestion.type);
+1669:             if (this.currentQuestion.audio && !skipAutoPlay) {
+1670:                 setTimeout(() => this.playQuestionAudio(), 600);
+1671:             }
+1672: 
+1673:             this.resetIdleTimer();
+1674:         },
+1675: 
+1676:         // 🔊 Play question narration / prompt audio
+1677:         playQuestionAudio() {
+1678:             if (!this.currentQuestion.audio) return;
+1679:             // Cancel any ongoing TTS speech
+1680:             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+1681:             const audio = new Audio(this.currentQuestion.audio);
+1682:             audio.play().catch(e => console.log('Question audio playback deferred:', e));
+1683:         },
+1684: 
+1685:         // 🔊 Play an option's audio (tap-to-play)
+1686:         // Called when a kid taps an answer card that has audio attached.
+1687:         // Returns true if audio was played (so the caller can decide whether
+1688:         // to also select the option or wait for the audio to finish).
+1689:         playOptionAudio(option) {
+1690:             if (!option.audio) return false;
+1691:             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+1692:             const audio = new Audio(option.audio);
+1693:             audio.play().catch(e => console.log('Option audio playback deferred:', e));
+1694:             return true;
+1695:         },
+1696: 
+1697:         getEncouragement() {
+1698:             const msgs = ["You can do it! 🌟", "Take your time! 😊", "I believe in you! 💪", "Let's go! 🚀"];
+1699:             return msgs[Math.floor(Math.random() * msgs.length)];
+1700:         },
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

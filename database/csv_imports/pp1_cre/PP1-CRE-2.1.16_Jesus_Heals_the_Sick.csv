@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Heals the Sick,What did Jesus do when sick people came to Him?,heal_q1.webp,audio_q1.mp3,1,Healed Them,Ignored Them,Sent Away,,,1,,,,,,,
+multiple_choice,Jesus Heals the Sick,Jesus healed a blind man. The man could not do what before?,blind_q2.webp,audio_q2.mp3,1,See,Hear,Walk,,,1,,,,,,,
+multiple_choice,Jesus Heals the Sick,After Jesus healed the blind man what could the man do?,sight_q3.webp,audio_q3.mp3,1,See Clearly,Run Fast,Sing Loud,,,1,,,,,,,
+multiple_choice,Jesus Heals the Sick,What did sick people need to have in Jesus to be healed?,faith_q4.webp,audio_q4.mp3,1,Faith,Money,Power,,,1,,,,,,,
+multiple_choice,Jesus Heals the Sick,Jesus healed ten sick men with a skin disease called?,leper_q5.webp,audio_q5.mp3,1,Leprosy,Cold,Rash,,,1,,,,,,,
+multiple_choice,Jesus Heals the Sick,How many of the ten healed men came back to say thank you?,ten_q6.webp,audio_q6.mp3,1,1,5,10,,,1,,,,,,,
+multiple_choice,Jesus Heals the Sick,What should we do when God heals us or answers our prayer?,thanks_q7.webp,audio_q7.mp3,1,Say Thanks,Be Greedy,Walk Away,,,1,,,,,,,
+multiple_choice,Jesus Heals the Sick,Can Jesus heal people today if we pray and believe?,today_q8.webp,audio_q8.mp3,1,Yes,No,Maybe,,,1,,,,,,,
+speak_repeat,Jesus Heals the Sick,Say out loud clearly: JESUS IS THE GREAT HEALER!,heal_speak.webp,audio_q9.mp3,1,Jesus Is The Great Healer,,,,,,Jesus Is The Great Healer,,,,,,
+speak_repeat,Jesus Heals the Sick,Say out loud: JESUS CAN HEAL ALL SICKNESS!,all_speak.webp,audio_q10.mp3,1,Jesus Can Heal All Sickness,,,,,,Jesus Can Heal All Sickness,,,,,,
+speak_repeat,Jesus Heals the Sick,Say out loud: THANK YOU JESUS FOR HEALING!,ty_speak.webp,audio_q11.mp3,1,Thank You Jesus For Healing,,,,,,Thank You Jesus For Healing,,,,,,
+matching,Jesus Heals the Sick,Match who Jesus healed!,,,1,,,,,,,,Blind Man,Received Sight,Sick Man,Healed,Lepers,Made Clean
+matching,Jesus Heals the Sick,Match healing story facts!,,,1,,,,,,,,Faith,Needed to Be Healed,Jesus,Does the Healing,Prayer,How We Ask
+matching,Jesus Heals the Sick,Match our response to healing!,,,1,,,,,,,,Be Healed,Say Thanks,See a Miracle,Praise God,Stay Sick,Keep Praying

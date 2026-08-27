@@ -1,0 +1,83 @@
+/* MATCHING STYLES */
+
+.matching-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.match-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.match-card {
+    height: 90px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 4px solid #E2E8F0;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.05);
+    transition: all 0.1s;
+    font-size: 35px;
+    font-weight: 800;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.match-card:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+}
+
+.match-card.selected {
+    border-color: #1cb0f6;
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 0 rgba(28, 176, 246, 0.3);
+    z-index: 10;
+}
+
+.match-card.matched {
+    border-color: #58cc02;
+    background: #D1FAE5;
+    color: #047857;
+    opacity: 0.7;
+    cursor: default;
+    transform: scale(0.95);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+}
+
+.match-card.wrong {
+    border-color: #ff4b4b;
+    background: #FEE2E2;
+    color: #B91C1C;
+    animation: gentle-shake 0.4s;
+}
+
+/* Landscape Tweaks */
+@media (min-width: 500px) and (orientation: landscape) {
+    .matching-container {
+        gap: 15px;
+    }
+    .match-column {
+        gap: 8px;
+    }
+    .match-card {
+        height: 60px;
+        border-width: 3px;
+        border-radius: 12px;
+        font-size: 24px;
+    }
+}

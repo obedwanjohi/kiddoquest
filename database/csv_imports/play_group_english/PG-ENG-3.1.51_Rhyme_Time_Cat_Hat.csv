@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Rhyme Time Cat Hat,Which word rhymes with CAT?,rhyme_cat.webp,audio_q1.mp3,1,Hat,Dog,Sun,,,1,,,,,,,
+multiple_choice,Rhyme Time Cat Hat,Touch the picture that rhymes with HAT!,rhyme_hat.webp,audio_q2.mp3,1,Cat,Frog,Star,,,1,,,,,,,
+multiple_choice,Rhyme Time Cat Hat,Which picture rhymes with MAT?,rhyme_mat.webp,audio_q3.mp3,1,Hat,Car,Ball,,,1,,,,,,,
+speak_repeat,Rhyme Time Cat Hat,Say out loud clearly: CAT AND HAT!,speak_cat_hat.webp,audio_q4.mp3,1,Cat and Hat,,,,,,Cat and Hat,,,,,,
+speak_repeat,Rhyme Time Cat Hat,Say out loud: THEY RHYME!,speak_they_rhyme.webp,audio_q5.mp3,1,They Rhyme,,,,,,They Rhyme,,,,,,
+matching,Rhyme Time Cat Hat,Match rhyming words!,,,1,,,,,,,,Cat,Hat,Mat,Bat,Rat,Hat
+matching,Rhyme Time Cat Hat,Match rhymes to pictures!,,,1,,,,,,,,Cat,Cat,Hat,Hat,Mat,Mat

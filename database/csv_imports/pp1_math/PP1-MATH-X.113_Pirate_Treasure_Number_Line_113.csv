@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Pirate Treasure Number Line 113,Which number fills the map blank: 15 16 17 _ 19?,map_q1.webp,audio_q1.mp3,1,18,17,19,,,,,,,,,,
+speak_repeat,Pirate Treasure Number Line 113,Say out loud: EIGHTEEN ON THE PIRATE MAP!,map_speak.webp,audio_q2.mp3,1,Eighteen On The Pirate Map,,,,,,Eighteen On The Pirate Map,,,,,,
+matching,Pirate Treasure Number Line 113,Match pirate map numbers!,,,1,,,,,,15 16,17,17,19,19,21,,

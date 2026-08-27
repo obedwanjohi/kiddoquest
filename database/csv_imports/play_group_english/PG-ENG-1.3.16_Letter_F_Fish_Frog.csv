@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter F Fish Frog,Which letter makes the /f/ sound for Fish?,letter_f_card.webp,audio_q1.mp3,1,F,E,B,,,1,,,,,,,
+multiple_choice,Letter F Fish Frog,Touch the swimming animal starting with letter F!,fish_f.webp,audio_q2.mp3,1,Fish,Egg,Duck,,,1,,,,,,,
+multiple_choice,Letter F Fish Frog,Touch the hopping green frog starting with letter F!,frog_f.webp,audio_q3.mp3,1,Frog,Dog,Cat,,,1,,,,,,,
+speak_repeat,Letter F Fish Frog,Say the letter sound out loud: /f/ /f/ FISH!,speak_fish_f.webp,audio_q4.mp3,1,Fish,,,,,,Fish,,,,,,
+speak_repeat,Letter F Fish Frog,Say out loud clearly: LETTER F!,speak_letter_f.webp,audio_q5.mp3,1,Letter F,,,,,,Letter F,,,,,,
+matching,Letter F Fish Frog,Match letter F to words starting with F!,,,1,,,,,,,,F,F,Fish,Fish,Frog,Frog
+matching,Letter F Fish Frog,Match letter F sound /f/!,,,1,,,,,,,,F,F,sound /f/,Fish,words,Frog

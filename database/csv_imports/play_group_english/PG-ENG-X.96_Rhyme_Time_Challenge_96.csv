@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Rhyme Time Challenge,Which word rhymes with CAT?,challenge_cat.webp,audio_q1.mp3,1,Hat,Dog,Sun,,,1,,,,,,,
+multiple_choice,Rhyme Time Challenge,Which word rhymes with DOG?,challenge_dog.webp,audio_q2.mp3,1,Frog,Cat,Car,,,1,,,,,,,
+multiple_choice,Rhyme Time Challenge,Which word rhymes with SUN?,challenge_sun.webp,audio_q3.mp3,1,Fun,Star,Tree,,,1,,,,,,,
+speak_repeat,Rhyme Time Challenge,Say out loud clearly: RHYME TIME CHALLENGE!,speak_rhyme_challenge.webp,audio_q4.mp3,1,Rhyme Time Challenge,,,,,,Rhyme Time Challenge,,,,,,
+speak_repeat,Rhyme Time Challenge,Say out loud: WORDS THAT RHYME!,speak_words_rhyme.webp,audio_q5.mp3,1,Words That Rhyme,,,,,,Words That Rhyme,,,,,,
+matching,Rhyme Time Challenge,Match rhyming pairs!,,,1,,,,,,,,Cat,Hat,Dog,Frog,Sun,Fun
+matching,Rhyme Time Challenge,Match rhyming sounds!,,,1,,,,,,,,-at,Hat,-og,Frog,-un,Fun

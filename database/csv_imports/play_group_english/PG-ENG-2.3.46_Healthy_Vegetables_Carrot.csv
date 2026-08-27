@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Healthy Vegetables,Touch the crunchy orange carrot!,veggie_carrot.webp,audio_q1.mp3,1,Carrot,Tomato,Corn,,,1,,,,,,,
+multiple_choice,Healthy Vegetables,Touch the round red tomato!,veggie_tomato.webp,audio_q2.mp3,1,Tomato,Carrot,Banana,,,1,,,,,,,
+multiple_choice,Healthy Vegetables,Touch the sweet yellow corn!,veggie_corn.webp,audio_q3.mp3,1,Corn,Tomato,Apple,,,1,,,,,,,
+speak_repeat,Healthy Vegetables,Say out loud clearly: HEALTHY VEGETABLES!,speak_healthy_veggies.webp,audio_q4.mp3,1,Healthy Vegetables,,,,,,Healthy Vegetables,,,,,,
+speak_repeat,Healthy Vegetables,Say out loud: CRUNCHY CARROT!,speak_crunchy_carrot.webp,audio_q5.mp3,1,Crunchy Carrot,,,,,,Crunchy Carrot,,,,,,
+matching,Healthy Vegetables,Match vegetables to colors!,,,1,,,,,,,,Carrot,Orange,Tomato,Red,Corn,Yellow
+matching,Healthy Vegetables,Match vegetables to names!,,,1,,,,,,,,Carrot,Carrot,Tomato,Tomato,Corn,Corn

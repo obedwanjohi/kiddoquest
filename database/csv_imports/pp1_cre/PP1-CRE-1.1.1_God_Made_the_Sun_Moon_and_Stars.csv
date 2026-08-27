@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Made the Sun Moon and Stars,Who created the glowing sun to give us daylight?,sun_q1.webp,audio_q1.mp3,1,God,A Robot,Nobody,,,1,,,,,,,
+multiple_choice,God Made the Sun Moon and Stars,What does the bright sun give us during the day?,sun_q2.webp,audio_q2.mp3,1,Light,Rain,Wind,,,1,,,,,,,
+multiple_choice,God Made the Sun Moon and Stars,Who made the shining moon that glows at night?,moon_q3.webp,audio_q3.mp3,1,God,The Farmer,A Builder,,,1,,,,,,,
+multiple_choice,God Made the Sun Moon and Stars,When do we see the moon in the sky?,moon_q4.webp,audio_q4.mp3,1,Night,Morning,Noon,,,1,,,,,,,
+multiple_choice,God Made the Sun Moon and Stars,Who created the tiny twinkling stars?,stars_q5.webp,audio_q5.mp3,1,God,A Painter,Nobody,,,1,,,,,,,
+multiple_choice,God Made the Sun Moon and Stars,How many big lights did God put in the sky?,sky_q6.webp,audio_q6.mp3,1,2,5,10,,,1,,,,,,,
+multiple_choice,God Made the Sun Moon and Stars,What gives the earth warmth and light every day?,warm_q7.webp,audio_q7.mp3,1,Sun,Moon,Cloud,,,1,,,,,,,
+multiple_choice,God Made the Sun Moon and Stars,Touch the picture that shows a beautiful starry night sky!,night_q8.webp,audio_q8.mp3,1,Stars,Toys,Cars,,,1,,,,,,,
+speak_repeat,God Made the Sun Moon and Stars,Say out loud clearly: GOD MADE THE SUN!,sun_speak.webp,audio_q9.mp3,1,God Made The Sun,,,,,,God Made The Sun,,,,,,
+speak_repeat,God Made the Sun Moon and Stars,Say out loud: GOD MADE THE MOON AND STARS!,moon_speak.webp,audio_q10.mp3,1,God Made The Moon And Stars,,,,,,God Made The Moon And Stars,,,,,,
+speak_repeat,God Made the Sun Moon and Stars,Say out loud: THANK YOU GOD FOR DAY AND NIGHT!,thanks_speak.webp,audio_q11.mp3,1,Thank You God For Day And Night,,,,,,Thank You God For Day And Night,,,,,,
+matching,God Made the Sun Moon and Stars,Match sky creations to their time!,,,1,,,,,,,,Sun ☀️,Day,Moon 🌙,Night,Stars ⭐,Night
+matching,God Made the Sun Moon and Stars,Match what God created to what it does!,,,1,,,,,,,,Sun ☀️,Gives Light,Moon 🌙,Shines At Night,Stars ⭐,Twinkle
+matching,God Made the Sun Moon and Stars,Match creator to creation!,,,1,,,,,,,,God,Sun ☀️,God,Moon 🌙,God,Stars ⭐

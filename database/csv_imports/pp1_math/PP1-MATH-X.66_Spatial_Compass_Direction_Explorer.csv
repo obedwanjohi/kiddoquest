@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Spatial Compass Direction Explorer,Which direction is the flying Pterodactyl: UP in the sky or DOWN on the ground?,sky_q1.webp,audio_q1.mp3,1,UP in the sky ⬆️,DOWN on ground ⬇️,Inside,,,1,,,,,,,
+speak_repeat,Spatial Compass Direction Explorer,Say out loud: UP AND DOWN DIRECTIONS!,dir_speak.webp,audio_q2.mp3,1,Up and Down Directions,,,,,,Up and Down Directions,,,,,,
+matching,Spatial Compass Direction Explorer,Match directions!,,,1,,,,,,Sky ⬆️,Up,Ground ⬇️,Down,Hand ✋,Side,,

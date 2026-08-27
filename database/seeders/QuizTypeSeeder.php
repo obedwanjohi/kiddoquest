@@ -1,0 +1,178 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\QuizType;
+use Illuminate\Database\Seeder;
+
+class QuizTypeSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $types = [
+            [
+                'code' => 'QT-01',
+                'name' => 'Multiple Choice (Tap Answer)',
+                'slug' => 'multiple-choice',
+                'description' => 'Child taps the correct answer from a set of options (e.g., "Tap the letter A").',
+                'icon' => '👆',
+                'interaction_mode' => 'tap',
+                'has_options' => true,
+                'has_media_prompt' => false,
+                'is_scoring_type' => true,
+                'sort_order' => 1,
+            ],
+            [
+                'code' => 'QT-02',
+                'name' => 'True / False (Yes/No)',
+                'slug' => 'true-false',
+                'description' => 'Child answers Yes or No to a statement (e.g., "Is this the letter A?").',
+                'icon' => '✅',
+                'interaction_mode' => 'tap',
+                'has_options' => true,
+                'has_media_prompt' => false,
+                'is_scoring_type' => true,
+                'sort_order' => 2,
+            ],
+            [
+                'code' => 'QT-03',
+                'name' => 'Matching',
+                'slug' => 'matching',
+                'description' => 'Child matches pairs (e.g., Match "A" to "Apple"). Uses match_key on options.',
+                'icon' => '🔗',
+                'interaction_mode' => 'drag',
+                'has_options' => true,
+                'has_media_prompt' => false,
+                'is_scoring_type' => true,
+                'sort_order' => 3,
+            ],
+            [
+                'code' => 'QT-04',
+                'name' => 'Drag & Drop — Sort',
+                'slug' => 'drag-sort',
+                'description' => 'Child drags items into categories (e.g., drag all A\'s into the box).',
+                'icon' => '📦',
+                'interaction_mode' => 'drag',
+                'has_options' => true,
+                'has_media_prompt' => false,
+                'is_scoring_type' => true,
+                'sort_order' => 4,
+            ],
+            [
+                'code' => 'QT-05',
+                'name' => 'Drag & Drop — Sequence',
+                'slug' => 'drag-sequence',
+                'description' => 'Child puts items in order (e.g., put letters A, B, C in order).',
+                'icon' => '🔢',
+                'interaction_mode' => 'drag',
+                'has_options' => true,
+                'has_media_prompt' => false,
+                'is_scoring_type' => true,
+                'sort_order' => 5,
+            ],
+            [
+                'code' => 'QT-06',
+                'name' => 'Listen & Choose',
+                'slug' => 'listen-choose',
+                'description' => 'Audio prompt plays, child taps the correct option (e.g., 🔊 "Ah" → tap the right letter).',
+                'icon' => '🔊',
+                'interaction_mode' => 'tap',
+                'has_options' => true,
+                'has_media_prompt' => true,
+                'is_scoring_type' => true,
+                'sort_order' => 6,
+            ],
+            [
+                'code' => 'QT-07',
+                'name' => 'Speak & Repeat',
+                'slug' => 'speak-repeat',
+                'description' => 'Child repeats a word/sound aloud (e.g., say "A"). Future AI speech recognition.',
+                'icon' => '🎤',
+                'interaction_mode' => 'voice',
+                'has_options' => false,
+                'has_media_prompt' => true,
+                'is_scoring_type' => false,
+                'sort_order' => 7,
+            ],
+            [
+                'code' => 'QT-08',
+                'name' => 'Spell / Fill the Blank',
+                'slug' => 'fill-blank',
+                'description' => 'Child fills in the missing letter/word (e.g., "A__ple" → drag A).',
+                'icon' => '✏️',
+                'interaction_mode' => 'drag',
+                'has_options' => true,
+                'has_media_prompt' => false,
+                'is_scoring_type' => true,
+                'sort_order' => 8,
+            ],
+            [
+                'code' => 'QT-09',
+                'name' => 'Count the Objects',
+                'slug' => 'count-objects',
+                'description' => 'Child counts objects and taps the correct number (e.g., "How many apples?").',
+                'icon' => '🔢',
+                'interaction_mode' => 'tap',
+                'has_options' => true,
+                'has_media_prompt' => true,
+                'is_scoring_type' => true,
+                'sort_order' => 9,
+            ],
+            [
+                'code' => 'QT-10',
+                'name' => 'Complete the Pattern',
+                'slug' => 'complete-pattern',
+                'description' => 'Child identifies the next item in a pattern (e.g., A B A B A __ → ?).',
+                'icon' => '🔁',
+                'interaction_mode' => 'tap',
+                'has_options' => true,
+                'has_media_prompt' => false,
+                'is_scoring_type' => true,
+                'sort_order' => 10,
+            ],
+            [
+                'code' => 'QT-11',
+                'name' => 'Memory Match',
+                'slug' => 'memory-match',
+                'description' => 'Child flips cards to find matching pairs (e.g., letter + picture).',
+                'icon' => '🃏',
+                'interaction_mode' => 'tap',
+                'has_options' => true,
+                'has_media_prompt' => false,
+                'is_scoring_type' => true,
+                'sort_order' => 11,
+            ],
+            [
+                'code' => 'QT-12',
+                'name' => 'Tracing',
+                'slug' => 'tracing',
+                'description' => 'Child traces a shape/letter with their finger (e.g., trace the letter A).',
+                'icon' => '✍️',
+                'interaction_mode' => 'draw',
+                'has_options' => false,
+                'has_media_prompt' => false,
+                'is_scoring_type' => false,
+                'sort_order' => 12,
+            ],
+            [
+                'code' => 'QT-13',
+                'name' => 'Spot / Find',
+                'slug' => 'spot-find',
+                'description' => 'Child finds all instances in an image (e.g., "Find all the A\'s in the picture").',
+                'icon' => '🔍',
+                'interaction_mode' => 'tap',
+                'has_options' => false,
+                'has_media_prompt' => true,
+                'is_scoring_type' => true,
+                'sort_order' => 13,
+            ],
+        ];
+
+        foreach ($types as $type) {
+            QuizType::updateOrCreate(
+                ['code' => $type['code']],
+                $type
+            );
+        }
+    }
+}

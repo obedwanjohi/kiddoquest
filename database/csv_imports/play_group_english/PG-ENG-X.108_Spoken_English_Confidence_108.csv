@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Spoken English Confidence,Touch the Golden Microphone for speaking clearly!,confidence_mic.webp,audio_q1.mp3,1,Golden Microphone,Book,Pencil,,,1,,,,,,,
+multiple_choice,Spoken English Confidence,Touch Leo speaking on stage with big confidence!,confidence_stage.webp,audio_q2.mp3,1,Leo On Stage,Sleeping Cat,Toy Car,,,1,,,,,,,
+speak_repeat,Spoken English Confidence,Say out loud with big confidence: MY NAME IS LEO!,speak_name_leo.webp,audio_q3.mp3,1,My Name Is Leo,,,,,,My Name Is Leo,,,,,,
+speak_repeat,Spoken English Confidence,Say out loud clearly: I CAN SPEAK ENGLISH CONFIDENTLY!,speak_speak_english.webp,audio_q4.mp3,1,I Can Speak English Confidentially,,,,,,I Can Speak English Confidentially,,,,,,
+speak_repeat,Spoken English Confidence,Say out loud: GOOD MORNING TEACHER!,speak_gm_teacher.webp,audio_q5.mp3,1,Good Morning Teacher,,,,,,Good Morning Teacher,,,,,,
+speak_repeat,Spoken English Confidence,Say out loud: THANK YOU VERY MUCH!,speak_thank_you_confidence.webp,audio_q6.mp3,1,Thank You Very Much,,,,,,Thank You Very Much,,,,,,
+matching,Spoken English Confidence,Match speaking phrases!,,,1,,,,,,,,Greeting,Good Morning,Name,My Name Is Leo,Polite,Thank You
+matching,Spoken English Confidence,Match confidence gear!,,,1,,,,,,,,Microphone,Golden Mic,Stage,Bright Lights,Speaker,Confident Leo

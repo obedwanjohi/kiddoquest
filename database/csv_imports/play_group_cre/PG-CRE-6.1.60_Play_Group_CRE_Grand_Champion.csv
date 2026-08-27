@@ -1,0 +1,11 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,CRE Grand Champion,Who created the sun, sky, animals, and plants?,cre_grand_god_creation.webp,audio_q1.mp3,1,God,A Car,The Wind,,,1,,,,
+multiple_choice,CRE Grand Champion,Who loves all the little children of the world?,cre_grand_jesus_children.webp,audio_q2.mp3,1,Jesus,The Big Wolf,LION,,,1,,,,,,,
+multiple_choice,CRE Grand Champion,What magic word do we say when asking politely?,cre_grand_saying_please.webp,audio_q3.mp3,1,Please,No,Go Away,,,1,,,,,,,
+multiple_choice,CRE Grand Champion,What special building is God's house of worship?,cre_grand_church_house.webp,audio_q4.mp3,1,Church Building,Toy Shop,Market,,,1,,,,,,,
+multiple_choice,CRE Grand Champion,Who built the giant ark and brought animals two by two?,cre_grand_noah_ark.webp,audio_q5.mp3,1,Noah,David,Jonah,,,1,,,,,,,
+multiple_choice,CRE Grand Champion,Touch the official Play Group CRE Diploma!,cre_grand_diploma.webp,audio_q6.mp3,1,🏆,STAR,Hat,,,1,,,,,,,
+multiple_choice,CRE Grand Champion,Touch the shiny Play Group CRE Grand Champion Trophy!,cre_grand_trophy.webp,audio_q7.mp3,1,🏆,Toy Chest,School Bag,,,1,,,,,,,
+speak_repeat,CRE Grand Champion,Say out loud with pride: I AM A PLAY GROUP CRE GRAND CHAMPION!,speak_cre_grand_champion.webp,audio_q8.mp3,1,I Am A Play Group CRE Grand Champion,,,,,,I Am A Play Group CRE Grand Champion,,,,,,
+speak_repeat,CRE Grand Champion,Say out loud: HOORAY FOR GOD'S LOVE!,speak_hooray_gods_love.webp,audio_q9.mp3,1,Hooray For God's Love,,,,,,Hooray For God's Love,,,,,,
+matching,CRE Grand Champion,Match core CRE subjects to champions!,,,1,,,,,,,,Creation,God Made Sky,Jesus,Loves Children,Church,God's House

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Celebrating Christmas Joy,Whose birthday do we celebrate on Christmas Day?,cre_christmas_jesus.webp,audio_q1.mp3,1,Baby Jesus,Santa,LION,,,1,,,,,,,
+multiple_choice,Celebrating Christmas Joy,Touch the shining Christmas star over Bethlehem!,cre_christmas_star.webp,audio_q2.mp3,1,Christmas Star,Sun,Moon,,,1,,,,,,,
+multiple_choice,Celebrating Christmas Joy,Touch the manger scene showing Baby Jesus born in love!,cre_manger_scene.webp,audio_q3.mp3,1,Manger Scene,Toy Box,School Bag,,,1,,,,,,,
+speak_repeat,Celebrating Christmas Joy,Say out loud clearly: MERRY CHRISTMAS JESUS!,speak_merry_christmas.webp,audio_q4.mp3,1,Merry Christmas Jesus,,,,,,Merry Christmas Jesus,,,,,,
+speak_repeat,Celebrating Christmas Joy,Say out loud: CHRISTMAS IS JESUS BIRTHDAY!,speak_jesus_birthday.webp,audio_q5.mp3,1,Christmas Is Jesus Birthday,,,,,,Christmas Is Jesus Birthday,,,,,,
+matching,Celebrating Christmas Joy,Match Christmas elements!,,,1,,,,,,,,Birthday,Baby Jesus,Sky,Christmas Star,Place,Bethlehem Manger
+matching,Celebrating Christmas Joy,Match Christmas pictures!,,,1,,,,,,,,Star,Christmas Star,Manger,Manger Scene,Jesus,Baby Jesus

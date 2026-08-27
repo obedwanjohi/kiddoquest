@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Color Phonics Safari,Which color starts with the letter R sound /r/?,color_red_r.webp,audio_q1.mp3,1,Red,Blue,Yellow,,,1,,,,,,,
+multiple_choice,Color Phonics Safari,Which color starts with the letter B sound /b/?,color_blue_b.webp,audio_q2.mp3,1,Blue,Red,Green,,,1,,,,,,,
+multiple_choice,Color Phonics Safari,Which color starts with the letter Y sound /y/?,color_yellow_y.webp,audio_q3.mp3,1,Yellow,Blue,Red,,,1,,,,,,,
+speak_repeat,Color Phonics Safari,Say out loud clearly: COLOR PHONICS SAFARI!,speak_color_safari.webp,audio_q4.mp3,1,Color Phonics Safari,,,,,,Color Phonics Safari,,,,,,
+speak_repeat,Color Phonics Safari,Say out loud: RED BLUE AND YELLOW!,speak_red_blue_yellow.webp,audio_q5.mp3,1,Red Blue and Yellow,,,,,,Red Blue and Yellow,,,,,,
+matching,Color Phonics Safari,Match colors to initial letters!,,,1,,,,,,,,R,Red,B,Blue,Y,Yellow
+matching,Color Phonics Safari,Match colors to objects!,,,1,,,,,,,,Red,Apple,Blue,Sky,Yellow,Sun

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Storybook Moral Lesson Mastery 108,What lesson did the Boy Who Cried Wolf teach us?,wolf_q1.webp,audio_q1.mp3,1,💖,Keep Lying,Run Away,,,1,,,,,,,
+speak_repeat,Storybook Moral Lesson Mastery 108,Say out loud: TRUTH IS VERY IMPORTANT!,truth_speak.webp,audio_q2.mp3,1,Truth Is Very Important,,,,,,Truth Is Very Important,,,,,,
+matching,Storybook Moral Lesson Mastery 108,Match story lessons!,,,1,,,,,,Boy & Wolf 🐺,Tell Truth,🐔,Work Hard,Gingerbread 🍪,Run Fast,,

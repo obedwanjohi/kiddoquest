@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Safari Addition Story 84,Leo sees 6 birds in a tree. 3 more birds join. How many birds total?,story_q1.webp,audio_q1.mp3,1,9,8,10,,,1,,,,,,,
+speak_repeat,Safari Addition Story 84,Say out loud: SIX PLUS THREE IS NINE!,story_speak.webp,audio_q2.mp3,1,Six Plus Three Is Nine,,,,,,Six Plus Three Is Nine,,,,,,
+matching,Safari Addition Story 84,Match bird addition!,,,1,,,,,,6 + 3,9,5,9,7,9,,

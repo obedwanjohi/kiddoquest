@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Underwater Capacity Liters Reef 126,Which sea tank holds 20 Liters of water?,tank_q1.webp,audio_q1.mp3,1,20,10,5,,,1,,,,,,,
+speak_repeat,Underwater Capacity Liters Reef 126,Say out loud: TWENTY LITERS REEF TANK!,tank_speak.webp,audio_q2.mp3,1,Twenty Liters Reef Tank,,,,,,Twenty Liters Reef Tank,,,,,,
+matching,Underwater Capacity Liters Reef 126,Match reef capacity!,,,1,,,,,,20 Liters 🪣,Giant Tank,10,Medium Tank,5,JUG,,

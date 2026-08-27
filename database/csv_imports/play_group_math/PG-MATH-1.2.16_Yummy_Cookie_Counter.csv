@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Yummy Cookie Counter,How many chocolate chip cookies are on the baking tray?,cookie_tray.webp,audio_q1.mp3,1,5,4,3,,cookie.webp,5,,,,,,,
+count_objects,Yummy Cookie Counter,Count the cookies placed on the glass plate!,cookie_plate.webp,audio_q2.mp3,1,4,5,3,,cookie.webp,4,,,,,,,
+count_objects,Yummy Cookie Counter,How many sweet cookies did Leo baked for snack?,cookie_baked.webp,audio_q3.mp3,1,3,4,5,,cookie.webp,3,,,,,,,
+multiple_choice,Yummy Cookie Counter,Which card shows 5 yummy cookies?,mc_five_cookies.webp,audio_q4.mp3,1,5,4,3,,,5,,,,,,,

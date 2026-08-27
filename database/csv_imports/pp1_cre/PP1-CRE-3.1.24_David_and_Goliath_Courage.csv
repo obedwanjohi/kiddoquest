@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,David and Goliath Courage,Who defeated giant Goliath with a slingshot and faith?,david_q1.webp,audio_q1.mp3,1,David,Samson,Moses,,,1,,,,,,,
+multiple_choice,David and Goliath Courage,What was David before he became a hero?,job_q2.webp,audio_q2.mp3,1,Shepherd Boy,King,Farmer,,,1,,,,,,,
+multiple_choice,David and Goliath Courage,What weapon did David use to defeat Goliath?,sling_q3.webp,audio_q3.mp3,1,Slingshot,Sword,Bow,,,1,,,,,,,
+multiple_choice,David and Goliath Courage,How many smooth stones did David pick up from the river?,stones_q4.webp,audio_q4.mp3,1,5,10,1,,,1,,,,,,,
+multiple_choice,David and Goliath Courage,What gave David courage to face the giant?,courage_q5.webp,audio_q5.mp3,1,Trust in God,Big Muscles,Armor,,,1,,,,,,,
+multiple_choice,David and Goliath Courage,How tall and scary was Goliath compared to David?,tall_q6.webp,audio_q6.mp3,1,Very Giant,Same Size,Smaller,,,1,,,,,,,
+multiple_choice,David and Goliath Courage,David won because God was with him. What does that teach us?,teach_q7.webp,audio_q7.mp3,1,God Helps the Brave,Big Always Wins,Run Away,,,1,,,,,,,
+multiple_choice,David and Goliath Courage,Touch little brave David ready to face the giant!,brave_q8.webp,audio_q8.mp3,1,Brave David,Hiding Boy,Sleeping Giant,,,1,,,,,,,
+speak_repeat,David and Goliath Courage,Say out loud clearly: GOD IS MY STRENGTH!,dave_speak.webp,audio_q9.mp3,1,God Is My Strength,,,,,,God Is My Strength,,,,,,
+speak_repeat,David and Goliath Courage,Say out loud: I CAN BE BRAVE LIKE DAVID!,brave_speak.webp,audio_q10.mp3,1,I Can Be Brave Like David,,,,,,I Can Be Brave Like David,,,,,,
+speak_repeat,David and Goliath Courage,Say out loud: GOD FIGHTS FOR ME!,fight_speak.webp,audio_q11.mp3,1,God Fights For Me,,,,,,God Fights For Me,,,,,,
+matching,David and Goliath Courage,Match David story facts!,,,1,,,,,,,,David,Shepherd Boy,Goliath,Giant,Slingshot,5 Smooth Stones
+matching,David and Goliath Courage,Match who did what!,,,1,,,,,,,,David,Had Faith,God,Gave Strength,Goliath,Was Defeated
+matching,David and Goliath Courage,Match what we learn from David!,,,1,,,,,,,,Be Brave,Like David,Trust God,Always,Small Can,Beat Big

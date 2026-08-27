@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus The Good Shepherd 65,Who looks after us like a loving Shepherd looks after sheep?,shep_q1.webp,audio_q1.mp3,1,✝️,Wolf,Stranger,,,1,,,,,,,
+speak_repeat,Jesus The Good Shepherd 65,Say out loud: JESUS IS MY GOOD SHEPHERD!,shep_speak.webp,audio_q2.mp3,1,Jesus Is My Good Shepherd,,,,,,Jesus Is My Good Shepherd,,,,,,
+matching,Jesus The Good Shepherd 65,Match Good Shepherd!,,,1,,,,,,Jesus ✝️,Good Shepherd,We 🐑,His Sheep,Love ❤️,Protects Us,,

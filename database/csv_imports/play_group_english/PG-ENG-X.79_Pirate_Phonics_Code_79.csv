@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pirate Phonics Code,Follow sound /m/: Which item leads to the treasure?,pirate_map_m.webp,audio_q1.mp3,1,Treasure Map,Gold Ring,Key,,,1,,,,,,,
+multiple_choice,Pirate Phonics Code,Follow sound /c/: Touch the shiny golden coin!,pirate_coin_c.webp,audio_q2.mp3,1,Gold Coin,Apple,Hat,,,1,,,,,,,
+multiple_choice,Pirate Phonics Code,Which secret code unlocks the pirate cave door?,pirate_cave_key.webp,audio_q3.mp3,1,Key Code,Book,Pencil,,,1,,,,,,,
+speak_repeat,Pirate Phonics Code,Say out loud clearly: UNLOCK THE TREASURE CODE!,speak_unlock_code.webp,audio_q4.mp3,1,Unlock The Treasure Code,,,,,,Unlock The Treasure Code,,,,,,
+speak_repeat,Pirate Phonics Code,Say out loud: PIRATE PHONICS CODE!,speak_pirate_code.webp,audio_q5.mp3,1,Pirate Phonics Code,,,,,,Pirate Phonics Code,,,,,,
+matching,Pirate Phonics Code,Match pirate sounds to code clues!,,,1,,,,,,,,/m/,Treasure Map,/c/,Gold Coin,/k/,Cave Key
+matching,Pirate Phonics Code,Match secret code items!,,,1,,,,,,,,Map,Map,Coin,Coin,Key,Key

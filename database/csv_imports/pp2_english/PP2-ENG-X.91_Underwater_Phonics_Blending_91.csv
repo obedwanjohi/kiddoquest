@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Underwater Phonics Blending 91,Blend /s/ /h/ /i/ /p/. What sea boat is it?,ship_q1.webp,audio_q1.mp3,1,SHIP 🚢,FISH,SHELL,,,1,,,,,,,
+speak_repeat,Underwater Phonics Blending 91,Say out loud: SHIP SAILS ON THE OCEAN!,ship_speak.webp,audio_q2.mp3,1,Ship Sails On The Ocean,,,,,,Ship Sails On The Ocean,,,,,,
+matching,Underwater Phonics Blending 91,Match sea phonics!,,,1,,,,,,SHIP,🚢,FISH,🐟,SHELL,🐚,,

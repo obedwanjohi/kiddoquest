@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Tracing Curved Lines,Which line curves like a colorful rainbow?,trace_curved_rainbow.webp,audio_q1.mp3,1,Rainbow Arc,Straight Line,Zigzag Path,,,1,,,,,,,
+multiple_choice,Tracing Curved Lines,Touch the picture showing smooth ocean waves!,trace_curved_waves.webp,audio_q2.mp3,1,Ocean Waves,Straight Line,Box Shape,,,1,,,,,,,
+multiple_choice,Tracing Curved Lines,Help the butterfly fly along the curved path!,trace_butterfly_curve.webp,audio_q3.mp3,1,Curved Path,Straight Line,Square,,,1,,,,,,,
+speak_repeat,Tracing Curved Lines,Say out loud clearly: CURVED LINES!,speak_curved_lines.webp,audio_q4.mp3,1,Curved Lines,,,,,,Curved Lines,,,,,,
+speak_repeat,Tracing Curved Lines,Say out loud: SMOOTH RAINBOW ARC!,speak_rainbow_arc.webp,audio_q5.mp3,1,Smooth Rainbow Arc,,,,,,Smooth Rainbow Arc,,,,,,
+matching,Tracing Curved Lines,Match line shapes!,,,1,,,,,,,,Curve,Rainbow,Wave,Ocean Wave,Line,Curved Line
+matching,Tracing Curved Lines,Match line directions!,,,1,,,,,,,,Arc,Up and Over,Wave,Bouncy Curve,Line,Smooth

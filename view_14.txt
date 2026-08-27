@@ -1,0 +1,37 @@
+Created At: 2026-07-17T15:43:28Z
+Completed At: 2026-07-17T15:43:28Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3115
+Total Bytes: 143837
+Showing lines 1650 to 1678
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1650:             }
+1651: 
+1652:             // Initialize memory match if this is a memory_match question
+1653:             if (this.currentQuestion.type === 'memory_match') {
+1654:                 this.initMemoryMatch();
+1655:             }
+1656: 
+1657:             // Initialize speak & repeat if this is a speak_repeat question
+1658:             if (this.currentQuestion.type === 'speak_repeat') {
+1659:                 this.initSpeakRecognition();
+1660:             }
+1661: 
+1662:             // Reset tracing state if this is a tracing question
+1663:             if (this.currentQuestion.type === 'tracing') {
+1664:                 this.tracingStrokes = 0;
+1665:                 this.tracingStatus = '✏️ Trace with your finger!';
+1666:                 this.tracingCompleted = false;
+1667:                 this.tracingDemoPlaying = false;
+1668:             }
+1669: 
+1670:             if (window.KidQuizEvents) {
+1671:                 window.KidQuizEvents.emit(window.KidQuizEvents.EVENTS.QUESTION_STARTED, {
+1672:                     index: this.currentIndex,
+1673:                     prompt: this.currentQuestion.prompt,
+1674:                 });
+1675:             }
+1676: 
+1677:             // 🔊 AUTO-PLAY question audio (narration or prompt_audio_url)
+1678:             // For listen_choose / speak_repeat, their own init methods handle audio.
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

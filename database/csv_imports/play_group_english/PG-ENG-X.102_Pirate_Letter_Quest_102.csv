@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pirate Letter Quest,Which pirate vehicle starts with letter P?,quest_ship_p.webp,audio_q1.mp3,1,Pirate Ship,Car,Rocket,,,1,,,,,,,
+multiple_choice,Pirate Letter Quest,Touch the legendary pirate chest of gold coins!,quest_legend_chest.webp,audio_q2.mp3,1,Legend Chest,Toy Box,School Bag,,,1,,,,,,,
+multiple_choice,Pirate Letter Quest,Touch the golden pirate crown!,quest_crown.webp,audio_q3.mp3,1,Pirate Crown,Hat,Cap,,,1,,,,,,,
+multiple_choice,Pirate Letter Quest,Follow sound /m/: Touch the treasure map!,quest_map_m.webp,audio_q4.mp3,1,Treasure Map,Book,Pencil,,,1,,,,,,,
+speak_repeat,Pirate Letter Quest,Say out loud clearly: PIRATE LETTER QUEST!,speak_pirate_quest.webp,audio_q5.mp3,1,Pirate Letter Quest,,,,,,Pirate Letter Quest,,,,,,
+speak_repeat,Pirate Letter Quest,Say out loud: TREASURE FOUND!,speak_treasure_found.webp,audio_q6.mp3,1,Treasure Found,,,,,,Treasure Found,,,,,,
+matching,Pirate Letter Quest,Match pirate letters to items!,,,1,,,,,,,,P,Pirate Ship,C,Crown,M,Treasure Map
+matching,Pirate Letter Quest,Match pirate quest treasures!,,,1,,,,,,,,Ship,Pirate Ship,Chest,Legend Chest,Crown,Gold Crown

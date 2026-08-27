@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Spatial East vs West 99,If the sun rises in the morning, which direction is that?,east_q1.webp,audio_q1.mp3,1,EAST 🌅,WEST,SOUTH,,,1,,,,,,
+speak_repeat,Spatial East vs West 99,Say out loud: MORNING SUN RISES IN THE EAST!,east_speak.webp,audio_q2.mp3,1,Morning Sun Rises In The East,,,,,,Morning Sun Rises In The East,,,,,,
+matching,Spatial East vs West 99,Match morning compass!,,,1,,,,,,East 🌅,Morning Rise,West 🌇,Evening Set,North 🧭,Top,,

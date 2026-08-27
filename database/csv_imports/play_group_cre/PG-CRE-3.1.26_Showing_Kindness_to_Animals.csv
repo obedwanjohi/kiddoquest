@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Kindness to Animals,How should we treat pets and animals created by God?,cre_gentle_petting.webp,audio_q1.mp3,1,With Gentle Kindness,Hurt Them,Throw Stones,,,1,,,,,,,
+multiple_choice,Kindness to Animals,Touch the child giving water to a pet dog!,cre_water_pet_dog.webp,audio_q2.mp3,1,Pet Dog,Wild Wolf,Monster,,,1,,,,,,,
+multiple_choice,Kindness to Animals,Touch the soft kitten being gently petted!,cre_gentle_kitten.webp,audio_q3.mp3,1,Gentle Kitten,LION,Scary Bear,,,1,,,,,,,
+speak_repeat,Kindness to Animals,Say out loud clearly: BE KIND TO ANIMALS!,speak_kind_to_animals.webp,audio_q4.mp3,1,Be Kind To Animals,,,,,,Be Kind To Animals,,,,,,
+speak_repeat,Kindness to Animals,Say out loud: GENTLE HANDS!,speak_gentle_hands.webp,audio_q5.mp3,1,Gentle Hands,,,,,,Gentle Hands,,,,,,
+matching,Kindness to Animals,Match animal care actions!,,,1,,,,,,,,Dog,Give Water,Kitten,Pet Gently,Animals,Be Kind
+matching,Kindness to Animals,Match care pictures!,,,1,,,,,,,,Hands,Gentle Hands,Dog,Pet Dog,Kitten,Gentle Kitten

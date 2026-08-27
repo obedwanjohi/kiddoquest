@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,My Feelings,Which face shows feeling HAPPY and smiling?,feeling_happy.webp,audio_q1.mp3,1,Happy,Sad,Sleepy,,,1,,,,,,,
+multiple_choice,My Feelings,Which face shows feeling SAD?,feeling_sad.webp,audio_q2.mp3,1,Sad,Happy,Excited,,,1,,,,,,,
+multiple_choice,My Feelings,Which face shows feeling SLEEPY and yawning?,feeling_sleepy.webp,audio_q3.mp3,1,Sleepy,Happy,Sad,,,1,,,,,,,
+speak_repeat,My Feelings,Say out loud clearly: I AM HAPPY!,speak_i_am_happy.webp,audio_q4.mp3,1,I Am Happy,,,,,,I Am Happy,,,,,,
+speak_repeat,My Feelings,Say out loud: SMILE AND BE HAPPY!,speak_smile_happy.webp,audio_q5.mp3,1,Smile and Be Happy,,,,,,Smile and Be Happy,,,,,,
+matching,My Feelings,Match feelings to descriptions!,,,1,,,,,,,,Happy,Happy,Sad,Sad,Sleepy,Sleepy
+matching,My Feelings,Match opposite feelings!,,,1,,,,,,,,Happy,Happy,Sad,Sad,Excited,Excited

@@ -1,0 +1,53 @@
+Created At: 2026-07-17T19:01:57Z
+Completed At: 2026-07-17T19:01:57Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3132
+Total Bytes: 145020
+Showing lines 880 to 924
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+880: </style>
+881: @endpush
+882: 
+883: @section('kid-content')
+884: 
+885: @php
+886:     // Build questions JSON for Alpine.js — REAL data from database
+887:     $questionsJson = $mission->questions->map(function ($q) {
+888:         // Normalize slug: DB uses hyphens (multiple-choice), JS uses underscores (multiple_choice)
+889:         $rawSlug = $q->quizType ? $q->quizType->slug : 'multiple-choice';
+890:         $typeSlug = str_replace('-', '_', $rawSlug);
+891:         $typeName = $q->quizType ? $q->quizType->name : 'Question';
+892:         $typeIcon = $q->quizType ? ($q->quizType->icon ?? '❓') : '❓';
+893: 
+894:         // Resolve narration audio (if narration_id is set)
+895:         $narrationAudioUrl = null;
+896:         if ($q->narration && $q->narration->has_audio) {
+897:             $narrationAudioUrl = $q->narration->audio_url;
+898:         }
+899: 
+900:         return [
+901:             'id' => $q->id,
+902:             'prompt' => $q->prompt,
+903:             'hint' => $q->hint,
+904:             'explanation' => $q->explanation,
+905:             'image' => $q->prompt_image_url,
+906:             // Audio: prefer direct prompt_audio_url, fall back to narration audio
+907:             'audio' => $q->prompt_audio_url ?: $narrationAudioUrl,
+908:             'type' => $typeSlug,
+909:             'typeName' => $typeName,
+910:             'typeIcon' => $typeIcon,
+911:             'points' => $q->points,
+912:             'metadata' => $q->metadata,
+913:             'options' => $q->options->map(function ($opt) {
+914:                 return [
+915:                     'id' => $opt->id,
+916:                     'text' => $opt->text_value,
+917:                     'image' => $opt->image_url,
+918:                     'audio' => $opt->audio_url,
+919:                     'is_correct' => (bool) $opt->is_correct,
+920:                     'content_type' => $opt->content_type,
+921:                     'match_key' => $opt->match_key,
+922:                 ];
+923:             })->values()->toArray(),
+924:         ];
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

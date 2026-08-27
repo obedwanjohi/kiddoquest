@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter Tracing P to T,Trace the lines to form uppercase Letter P!,traceP.webp,audio_q1.mp3,1,🔤,Q,R,,,1,,,,,,,
+speak_repeat,Letter Tracing P to T,Say out loud: TRACING P Q R S T!,trace_speak.webp,audio_q2.mp3,1,Tracing P Q R S T,,,,,,Tracing P Q R S T,,,,,,
+matching,Letter Tracing P to T,Match uppercase tracing!,,,1,,,,,,P,Pig 🐷,Q,Queen 👑,R,Rose 🌹,,

@@ -1,0 +1,6 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Station Countdown 6 to 10,Which space rocket shows Number 12?,rocket12.webp,audio_q1.mp3,1,12,11,13,,,12,,,,,,,
+multiple_choice,Space Station Countdown 6 to 10,Tap Number 15 on the astronaut helmet!,helmet15.webp,audio_q2.mp3,1,15,14,16,,,15,,,,,,,
+count_objects,Space Station Countdown 6 to 10,Count all 12 shining stars in orbit!,stars12.webp,audio_q3.mp3,1,12,11,13,,⭐,12,,,,,,,
+speak_repeat,Space Station Countdown 6 to 10,Say out loud: FIFTEEN ROCKETS!,fifteen_speak.webp,audio_q4.mp3,1,Fifteen Rockets,,,,,,Fifteen Rockets,,,,,,
+matching,Space Station Countdown 6 to 10,Match rockets to numbers 11-15!,,,1,,,,,,ops,11 Stars ⭐,11,13,13,15,15,

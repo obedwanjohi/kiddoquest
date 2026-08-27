@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Addition Vertical Column Sums,Solve vertical sum: 14 + 3 = ?,vert_q1.webp,audio_q1.mp3,1,17,16,18,,,1,,,,,,,
+speak_repeat,Addition Vertical Column Sums,Say out loud clearly: FOURTEEN PLUS THREE IS SEVENTEEN!,vert_speak.webp,audio_q2.mp3,1,Fourteen Plus Three Is Seventeen,,,,,,Fourteen Plus Three Is Seventeen,,,,,,
+matching,Addition Vertical Column Sums,Match vertical addition!,,,1,,,,,,14 + 3,17,11,15,16,18,,

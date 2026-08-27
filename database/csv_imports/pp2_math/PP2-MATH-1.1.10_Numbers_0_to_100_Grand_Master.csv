@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Numbers 0 to 100 Grand Master,Tap the GOLDEN 100 TROPHY for mastering numbers up to 100!,trophy_q1.webp,audio_q1.mp3,1,🏆,🏆,🏆,,,1,,,,,,,
+speak_repeat,Numbers 0 to 100 Grand Master,Say out loud: I CAN COUNT ALL THE WAY TO ONE HUNDRED!,cent_speak.webp,audio_q2.mp3,1,I Can Count All The Way To One Hundred,,,,,,I Can Count All The Way To One Hundred,,,,,,
+matching,Numbers 0 to 100 Grand Master,Match 100 milestone!,,,1,,,,,,Numbers 0-100,Mastered,Skip Counting,5s & 10s,Even & Odd,Mastered,,

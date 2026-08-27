@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter C Phonics Safari,Which picture starts with the /c/ sound?,cat_q1.webp,audio_q1.mp3,1,🐱,Dog 🐶,Bird 🐦,,,1,,,,,,,
+multiple_choice,Letter C Phonics Safari,Tap the uppercase letter C!,letterC.webp,audio_q2.mp3,1,C,B,A,,,1,,,,,,,
+speak_repeat,Letter C Phonics Safari,Say out loud clearly: /c/ /c/ CAT!,cat_speak.webp,audio_q3.mp3,1,/c/ /c/ Cat,,,,,,/c/ /c/ Cat,,,,,,
+matching,Letter C Phonics Safari,Match Uppercase C to Lowercase c!,,,1,,,,,,C,c,B,b,A,a,,

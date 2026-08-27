@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Alien Praise Song 38,What song of praise do we sing to God in space?,song_q1.webp,audio_q1.mp3,1,🎶,Sad Song,No Song,,,1,,,,,,,
+speak_repeat,Space Alien Praise Song 38,Say out loud: THIS IS THE DAY THE LORD HAS MADE!,day_speak.webp,audio_q2.mp3,1,This Is The Day The Lord Has Made,,,,,,This Is The Day The Lord Has Made,,,,,,
+matching,Space Alien Praise Song 38,Match praise songs!,,,1,,,,,,Joy 🎶,Sing Praise,Hands 👏,Clap,Heart 💖,Rejoice,,

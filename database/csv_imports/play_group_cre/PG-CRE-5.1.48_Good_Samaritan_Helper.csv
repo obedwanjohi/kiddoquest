@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Good Samaritan Helper,Who stopped on the road to help the hurting traveler?,cre_good_samaritan.webp,audio_q1.mp3,1,Good Samaritan,Robber,Stranger Who Passed,,,1,,,,,,,
+multiple_choice,Good Samaritan Helper,Touch the friendly donkey carrying the hurting man to safety!,cre_samaritan_donkey.webp,audio_q2.mp3,1,Samaritan Donkey,Wild Lion,Fast Horse,,,1,,,,,,,
+multiple_choice,Good Samaritan Helper,What did the Good Samaritan show to the traveler?,cre_samaritan_love.webp,audio_q3.mp3,1,Love and Compassion,Anger,Fear,,,1,,,,,,,
+speak_repeat,Good Samaritan Helper,Say out loud clearly: THE GOOD SAMARITAN HELPER!,speak_good_samaritan.webp,audio_q4.mp3,1,The Good Samaritan Helper,,,,,,The Good Samaritan Helper,,,,,,
+speak_repeat,Good Samaritan Helper,Say out loud: BE A KIND HELPER!,speak_be_kind_helper.webp,audio_q5.mp3,1,Be A Kind Helper,,,,,,Be A Kind Helper,,,,,,
+matching,Good Samaritan Helper,Match story actions!,,,1,,,,,,,,Samaritan,Good Helper,Traveler,Hurting Friend,Donkey,Safe Ride
+matching,Good Samaritan Helper,Match story pictures!,,,1,,,,,,,,Samaritan,Good Samaritan,Donkey,Samaritan Donkey,Heart,Compassion

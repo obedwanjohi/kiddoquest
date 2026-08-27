@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter X Phonics Safari,Which picture has the /x/ sound like Xylophone?,xylo_q1.webp,audio_q1.mp3,1,Xylophone 🎼,Yak 🐂,Zebra 🦓,,,1,,,,,,,
+multiple_choice,Letter X Phonics Safari,Tap the uppercase letter X!,letterX.webp,audio_q2.mp3,1,X,W,Y,,,1,,,,,,,
+speak_repeat,Letter X Phonics Safari,Say out loud clearly: /x/ /x/ XYLOPHONE!,xylo_speak.webp,audio_q3.mp3,1,/x/ /x/ Xylophone,,,,,,/x/ /x/ Xylophone,,,,,,
+matching,Letter X Phonics Safari,Match Uppercase X to Lowercase x!,,,1,,,,,,X,x,W,w,Y,y,,

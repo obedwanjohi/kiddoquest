@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Made Animals Birds,Touch the friendly lion created by God!,cre_lion.webp,audio_q1.mp3,1,Friendly Lion,Bus,Table,,,1,,,,,,,
+multiple_choice,God Made Animals Birds,Touch the little bird singing in the sky!,cre_singing_bird.webp,audio_q2.mp3,1,Singing Bird,Dog,Cat,,,1,,,,,,,
+multiple_choice,God Made Animals Birds,Touch the fish swimming in the water!,cre_swimming_fish.webp,audio_q3.mp3,1,Swimming Fish,Tree,Flower,,,1,,,,,,,
+speak_repeat,God Made Animals Birds,Say out loud clearly: GOD MADE ALL ANIMALS!,speak_god_made_animals.webp,audio_q4.mp3,1,God Made All Animals,,,,,,God Made All Animals,,,,,,
+speak_repeat,God Made Animals Birds,Say out loud: BIRDS AND FISH!,speak_birds_fish.webp,audio_q5.mp3,1,Birds and Fish,,,,,,Birds and Fish,,,,,,
+matching,God Made Animals Birds,Match animals to God's world!,,,1,,,,,,,,Lion,Land,Bird,Sky,Fish,Water
+matching,God Made Animals Birds,Match animal creations!,,,1,,,,,,,,Lion,Lion,Bird,Bird,Fish,Fish

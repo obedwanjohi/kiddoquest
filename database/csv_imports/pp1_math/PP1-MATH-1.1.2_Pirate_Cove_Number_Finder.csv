@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pirate Cove Number Finder,Tap the gold coin showing Number 6!,coin6.webp,audio_q1.mp3,1,6,5,7,,,6,,,,,,,
+multiple_choice,Pirate Cove Number Finder,Which pirate flag has Number 8?,flag8.webp,audio_q2.mp3,1,8,7,9,,,8,,,,,,,
+multiple_choice,Pirate Cove Number Finder,Tap Number 10 on the treasure chest!,chest10.webp,audio_q3.mp3,1,10,9,8,,,10,,,,,,,
+count_objects,Pirate Cove Number Finder,How many gold coins are in the chest?,coins_count.webp,audio_q4.mp3,1,7,6,8,,🪙,7,,,,,,,
+count_objects,Pirate Cove Number Finder,Count all 9 ruby gems on the map!,gems_count.webp,audio_q5.mp3,1,9,8,10,,💎,9,,,,,,,
+speak_repeat,Pirate Cove Number Finder,Say out loud: NUMBER TEN!,num10_speak.webp,audio_q6.mp3,1,Number Ten,,,,,,Number Ten,,,,,,
+matching,Pirate Cove Number Finder,Match gold coins to numbers 6-10!,,,1,,,,,,ops,6 Coins 🪙,6,8,8,10,10,

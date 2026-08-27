@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,SH Digraph Shop Ship Fish,Which letters make the /sh/ sound as in SHIP?,ship.webp,audio_q1.mp3,1,SH 🚢,CH 🪵,TH 🧵,,,1,,,,,,,
+speak_repeat,SH Digraph Shop Ship Fish,Say out loud clearly: SH SAYS SHHH AS IN SHIP!,ship_speak.webp,audio_q2.mp3,1,Sh Says Shhh As In Ship,,,,,,Sh Says Shhh As In Ship,,,,,,
+matching,SH Digraph Shop Ship Fish,Match SH words!,,,1,,,,,,SHIP,🚢,SHOP,🛍️,FISH,🐟,,

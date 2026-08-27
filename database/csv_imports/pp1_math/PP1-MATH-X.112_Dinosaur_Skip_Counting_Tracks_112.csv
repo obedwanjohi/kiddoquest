@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Dinosaur Skip Counting Tracks 112,Complete 2s skip counting: 8 10 12 _ 16 18?,track_q1.webp,audio_q1.mp3,1,14,13,15,,,,,,,,,,
+speak_repeat,Dinosaur Skip Counting Tracks 112,Say out loud: EIGHT TEN TWELVE FOURTEEN SIXTEEN!,track_speak.webp,audio_q2.mp3,1,Eight Ten Twelve Fourteen Sixteen,,,,,,Eight Ten Twelve Fourteen Sixteen,,,,,,
+matching,Dinosaur Skip Counting Tracks 112,Match 2s skip tracks!,,,1,,,,,,8 10,12,12,16,16,20,,

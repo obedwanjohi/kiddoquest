@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Made Me Special,Who created you in a wonderfully special way?,me_q1.webp,audio_q1.mp3,1,God,A Machine,Nobody,,,1,,,,,,,
+multiple_choice,God Made Me Special,Does God love every single child He created?,love_q2.webp,audio_q2.mp3,1,Yes,No,Maybe,,,1,,,,,,,
+multiple_choice,God Made Me Special,Touch the happy child that shows God made us special!,happy_q3.webp,audio_q3.mp3,1,Happy Child,Sad Robot,Empty Box,,,1,,,,,,,
+multiple_choice,God Made Me Special,What does God think about the child He created?,think_q4.webp,audio_q4.mp3,1,Wonderful,Boring,Nothing,,,1,,,,,,,
+multiple_choice,God Made Me Special,God gave you eyes to do what?,eyes_q5.webp,audio_q5.mp3,1,See,Eat,Run,,,1,,,,,,,
+multiple_choice,God Made Me Special,God gave you ears to do what?,ears_q6.webp,audio_q6.mp3,1,Hear,Jump,Draw,,,1,,,,,,,
+multiple_choice,God Made Me Special,God gave you hands to do what?,hands_q7.webp,audio_q7.mp3,1,Touch,See,Taste,,,1,,,,,,,
+multiple_choice,God Made Me Special,God gave you legs to do what?,legs_q8.webp,audio_q8.mp3,1,Walk,Sing,Read,,,1,,,,,,,
+speak_repeat,God Made Me Special,Say out loud clearly: GOD MADE ME SPECIAL!,me_speak.webp,audio_q9.mp3,1,God Made Me Special,,,,,,God Made Me Special,,,,,,
+speak_repeat,God Made Me Special,Say out loud: I AM WONDERFULLY MADE!,made_speak.webp,audio_q10.mp3,1,I Am Wonderfully Made,,,,,,I Am Wonderfully Made,,,,,,
+speak_repeat,God Made Me Special,Say out loud: GOD LOVES ME!,love_speak.webp,audio_q11.mp3,1,God Loves Me,,,,,,God Loves Me,,,,,,
+matching,God Made Me Special,Match what God gave me to what it does!,,,1,,,,,,,,Eyes 👀,See,Ears 👂,Hear,Mouth 👄,Speak
+matching,God Made Me Special,Match God's gift to its purpose!,,,1,,,,,,,,Hands 🤲,Touch,Legs 🦵,Walk,Brain 🧠,Think
+matching,God Made Me Special,Match words about being special!,,,1,,,,,,,,God,Loves Me,I Am,Special,He Made,Me

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter J Juice,Which letter makes the /j/ sound in J J J - /j/ /j/ /j/ - Juice Juice?,letter_j_card.webp,audio_q1.mp3,1,J,I,G,,,1,,,,,,,
+multiple_choice,Letter J Juice,Touch the cold juice starting with letter J!,juice_j.webp,audio_q2.mp3,1,Juice,Milk,Egg,,,1,,,,,,,
+multiple_choice,Letter J Juice,Listen to the song: J J J - /j/ /j/ /j/ - Juice!,juice_song.webp,audio_q3.mp3,1,Juice,Apple,Cake,,,1,,,,,,,
+speak_repeat,Letter J Juice,Say the phonics song chant: J J J - JUICE!,speak_juice_j.webp,audio_q4.mp3,1,Juice,,,,,,Juice,,,,,,
+speak_repeat,Letter J Juice,Say out loud clearly: LETTER J!,speak_letter_j.webp,audio_q5.mp3,1,Letter J,,,,,,Letter J,,,,,,
+matching,Letter J Juice,Match letter J to Juice!,,,1,,,,,,,,J,J,Juice,Juice,sound /j/,Juice
+matching,Letter J Juice,Match letter J sound /j/!,,,1,,,,,,,,J,J,/j/ /j/ /j/,Juice,Juice,Juice

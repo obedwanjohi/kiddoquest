@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Dinosaur Letter Hunt,Touch the dinosaur egg stamped with letter A!,dino_egg_a.webp,audio_q1.mp3,1,Letter A Egg,Letter B Egg,Letter C Egg,,,1,,,,,,,
+multiple_choice,Dinosaur Letter Hunt,Touch the fossil rock with letter B!,dino_fossil_b.webp,audio_q2.mp3,1,Letter B Fossil,Letter A Fossil,Letter D Fossil,,,1,,,,,,,
+multiple_choice,Dinosaur Letter Hunt,Find the dinosaur nest hidden under giant leaves!,dino_nest_c.webp,audio_q3.mp3,1,Dino Nest,Tree House,Cave,,,1,,,,,,,
+speak_repeat,Dinosaur Letter Hunt,Say out loud clearly: DINOSAUR LETTER HUNT!,speak_dino_hunt.webp,audio_q4.mp3,1,Dinosaur Letter Hunt,,,,,,Dinosaur Letter Hunt,,,,,,
+speak_repeat,Dinosaur Letter Hunt,Say out loud: FOUND THE LETTER EGG!,speak_found_egg.webp,audio_q5.mp3,1,Found The Letter Egg,,,,,,Found The Letter Egg,,,,,,
+matching,Dinosaur Letter Hunt,Match dinosaur letter items!,,,1,,,,,,,,Egg,A,Fossil,B,Nest,C
+matching,Dinosaur Letter Hunt,Match hunt items!,,,1,,,,,,,,Dino,Dino,Egg,Egg,Fossil,Fossil

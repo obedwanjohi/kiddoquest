@@ -1,0 +1,39 @@
+Created At: 2026-07-17T19:17:21Z
+Completed At: 2026-07-17T19:17:21Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3158
+Total Bytes: 146333
+Showing lines 1520 to 1550
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1520:         starPulse: false,
+1521:         quizComplete: false,
+1522:         resultMessage: '',
+1523: 
+1524:         // Leo
+1525:         leoMessage: '',
+1526:         leoCelebrating: false,
+1527: 
+1528:         // Hint
+1529:         showHint: false,
+1530: 
+1531:         // Matching (QT-03)
+1532:         matchSelectedSide: null,
+1533:         matchSelectedIndex: null,
+1534:         matchedPairs: [],
+1535:         matchRightItems: [],
+1536:         matchWrongPair: null,
+1537: 
+1538:         // Sequence (QT-05)
+1539:         seqCards: [],      // shuffled cards [{text, correctIndex}]
+1540:         seqSlots: [],      // array of indices into seqCards, or null
+1541:         seqSelectedCard: null,
+1542:         seqAnswered: false,
+1543: 
+1544:         // Drag & Sort (QT-04)
+1545:         sortChips: [],         // [{text, correctBucket, bucket}]
+1546:         sortSelectedChip: null,
+1547:         sortAnswered: false,
+1548: 
+1549:         // Listen & Choose (QT-06)
+1550:         isSpeaking: false,
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

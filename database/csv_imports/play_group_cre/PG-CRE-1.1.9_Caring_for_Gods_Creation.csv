@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Caring for Creation,Touch the watering can used to give water to flowers!,cre_watering_can.webp,audio_q1.mp3,1,Watering Can,Toy Car,Hat,,,1,,,,,,,
+multiple_choice,Caring for Creation,Touch the child feeding a hungry little bird!,cre_feeding_bird.webp,audio_q2.mp3,1,Feeding Bird,Throwing Stones,Cutting Tree,,,1,,,,,,,
+multiple_choice,Caring for Creation,How should we treat God's world and animals?,cre_loving_care.webp,audio_q3.mp3,1,With Gentle Care,Hurt Animals,Break Flowers,,,1,,,,,,,
+speak_repeat,Caring for Creation,Say out loud clearly: CARING FOR GOD'S CREATION!,speak_caring_creation.webp,audio_q4.mp3,1,Caring For God's Creation,,,,,,Caring For God's Creation,,,,,,
+speak_repeat,Caring for Creation,Say out loud: WE LOVE OUR WORLD!,speak_love_world.webp,audio_q5.mp3,1,We Love Our World,,,,,,We Love Our World,,,,,,
+matching,Caring for Creation,Match caring actions!,,,1,,,,,,,,Flowers,Water Them,Animals,Feed Them,World,Love It
+matching,Caring for Creation,Match caring items!,,,1,,,,,,,,Can,Watering Can,Bird,Food,Plant,Water

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Blesses Little Children,What did Jesus say when disciples tried to stop children?,child_q1.webp,audio_q1.mp3,1,👦,Send them away,Be quiet,,,1,,,,,,,
+speak_repeat,Jesus Blesses Little Children,Say out loud clearly: JESUS LOVES ALL THE CHILDREN!,child_speak.webp,audio_q2.mp3,1,Jesus Loves All The Children,,,,,,Jesus Loves All The Children,,,,,,
+matching,Jesus Blesses Little Children,Match Jesus love!,,,1,,,,,,Jesus ✝️,Welcomed Children,Children 🧒,Blessed,Love ❤️,Unlimited,,

@@ -1,0 +1,65 @@
+Created At: 2026-07-17T19:13:58Z
+Completed At: 2026-07-17T19:13:58Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3148
+Total Bytes: 145735
+Showing lines 1080 to 1150
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1080:                                         <template x-if="item.image">
+1081:                                             <img :src="item.image" style="max-width: 100%; max-height: 100px; border-radius: 8px; margin-bottom: 4px;" alt="">
+1082:                                         </template>
+1083:                                         <template x-if="item.text && item.text.trim() !== ''">
+1084:                                             <span x-text="item.text"></span>
+1085:                                         </template>
+1086:                                     </div>
+1087:                                 </template>
+1088:                             </div>
+1089:                         </div>
+1090:                     </div>
+1091:                 </template>
+1092: 
+1093:                 {{-- Sequence / Drag & Drop Order (QT-05) --}}
+1094:                 <template x-if="currentQuestion.type === 'drag_sequence'">
+1095:                     <div class="sequence-board">
+1096:                         {{-- Answer slots (numbered positions) --}}
+1097:                         <div class="sequence-slots-label">📋 Put them in order here:</div>
+1098:                         <div class="sequence-slots">
+1099:                             <template x-for="(slot, i) in seqSlots" :key="'slot-' + i">
+1100:                                 <div class="sequence-slot"
+1101:                                      :class="getSeqSlotClass(i)"
+1102:                                      @click="selectSeqSlot(i)">
+1103:                              
+<truncated 1184 bytes>
+)"
+1120:                                      @click="selectSeqCard(i)">
+1121:                                     <span x-text="card.text"></span>
+1122:                                 </div>
+1123:                             </template>
+1124:                         </div>
+1125: 
+1126:                         {{-- Check button --}}
+1127:                         <button class="sequence-check-btn"
+1128:                                 :disabled="seqSlots.includes(null)"
+1129:                                 @click="checkSequence()">
+1130:                             ✅ Check My Answer!
+1131:                         </button>
+1132:                     </div>
+1133:                 </template>
+1134: 
+1135:                 {{-- Count Objects (QT-09) --}}
+1136:                 <template x-if="currentQuestion.type === 'count_objects'">
+1137:                     <div>
+1138:                         <div class="count-objects-display">
+1139:                             <div class="count-objects-emoji">
+1140:                                 <template x-for="(emoji, i) in (currentQuestion.metadata?.objects || [])" :key="i">
+1141:                                     <span class="count-emoji" x-text="emoji"></span>
+1142:                                 </template>
+1143:                             </div>
+1144:                         </div>
+1145:                         <div class="count-number-cards">
+1146:                             <template x-for="(option, i) in currentQuestion.options" :key="option.id">
+1147:                                 <div class="answer-card"
+1148:                                      :class="getCardClass(i, option.is_correct)"
+1149:                                      :style="`animation-delay: ${0.1 + i * 0.08}s`"
+1150:                                      @click="selectOption(i)"
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

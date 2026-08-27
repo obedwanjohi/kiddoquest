@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Dinosaur Skip Counting 5s 118,Complete dino skip counting: 60 65 70 _ 80 85?,skip75_q1.webp,audio_q1.mp3,1,75,72,78,,,,,,,,,,
+speak_repeat,Dinosaur Skip Counting 5s 118,Say out loud: SIXTY SIXTY-FIVE SEVENTY SEVENTY-FIVE EIGHTY EIGHTY-FIVE!,skip_speak.webp,audio_q2.mp3,1,Sixty Sixty-Five Seventy Seventy-Five Eighty Eighty-Five,,,,,,Sixty Sixty-Five Seventy Seventy-Five Eighty Eighty-Five,,,,,,
+matching,Dinosaur Skip Counting 5s 118,Match dino 5s higher!,,,1,,,,,,60 65,70,70,80,80,90,,

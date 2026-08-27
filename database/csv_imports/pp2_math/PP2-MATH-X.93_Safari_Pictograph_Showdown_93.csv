@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Safari Pictograph Showdown 93,How many giraffes are on the safari chart?,graph_q1.webp,audio_q1.mp3,1,12,10,14,,,1,,,,,,,
+speak_repeat,Safari Pictograph Showdown 93,Say out loud: TWELVE GIRAFFES ON CHART!,gir_speak.webp,audio_q2.mp3,1,Twelve Giraffes On Chart,,,,,,Twelve Giraffes On Chart,,,,,,
+matching,Safari Pictograph Showdown 93,Match safari graph!,,,1,,,,,,Giraffes 🦒,12,Lions 🦁,8,Zebras 🦓,6,,

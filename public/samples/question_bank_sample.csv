@@ -1,0 +1,9 @@
+question_type,prompt,prompt_image,prompt_audio,hint,explanation,points,count_emoji,count_image,target_count,blank_text,target_char,target_word,option_1,option_1_img,option_2,option_2_img,option_3,option_3_img,option_4,option_4_img,pair_1_left,pair_1_left_img,pair_1_right,pair_1_right_img,pair_2_left,pair_2_left_img,pair_2_right,pair_2_right_img,pair_3_left,pair_3_left_img,pair_3_right,pair_3_right_img,correct_answer
+multiple_choice,"Which item is a Fruit?",,,Count carefully!,Apples are delicious fruits,10,,,,,,,,Apple,apple.png,Cat,cat.png,Car,car.png,Dog,dog.png,,,,,,,,,,,,1
+count_objects,"How many apples are in the tree?",,,Tap each apple to count them!,There are 3 juicy red apples,10,🍎,,3,,,,,,1,,3,,5,,2,,,,,,,,,,,,2
+matching,"Match each animal to what they produce!",,,Think about farm animals!,Cows give milk and hens lay eggs,15,,,,,,,,,,,,,,,,Cow,cow.png,Milk,milk.png,Hen,hen.png,Egg,egg.png,Bee,bee.png,Honey,honey.png,1
+complete_pattern,"What comes next in the fruit pattern?",pattern_landscape.png,,Look at the sequence pattern!,The pattern repeats Apple then Orange,10,,,,,,,,Orange,orange.png,Apple,apple.png,Banana,banana.png,Grape,grape.png,,,,,,,,,,,,1
+true_false,"A lion says Meow!",lion.png,,Lions make a big loud roar!,Lions roar while cats say meow,10,,,,,,,,,,,,,,,,,,,,,,,,,,,,false
+fill_blank,"Complete the word: C _ T",cat.png,,Think of a furry pet!,The word is CAT,10,,,,C _ T,A,,,,A,,O,,U,,I,,,,,,,,,,,,1
+drag_sequence,"Put the numbers in order from 1 to 3",,,Count upwards!,The correct order is 1 -> 2 -> 3,10,,,,,,,,1,,2,,3,,,,,,,,,,,,,,1
+speak_repeat,"Say the word: Apple",apple.png,,Speak clearly into the mic!,Great pronunciation!,10,,,,,,Apple,Apple,apple.png,,,,,,,,,,,,,,,,,,1

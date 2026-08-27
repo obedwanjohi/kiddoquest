@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Measurement Buying Fruit at Market,If an apple costs 5 Shillings, which coin do we use to buy it?,buy_q1.webp,audio_q1.mp3,1,5,1,100,,,1,,,,,,
+speak_repeat,Measurement Buying Fruit at Market,Say out loud clearly: BUYING AT THE MARKET!,mkt_speak.webp,audio_q2.mp3,1,Buying At The Market,,,,,,Buying At The Market,,,,,,
+matching,Measurement Buying Fruit at Market,Match market items!,,,1,,,,,,ops,Apple 🍎,5,Banana 🍌,2,Orange 🍊,5,

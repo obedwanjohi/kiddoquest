@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Loves Children,Who loves all the little children of the world?,cre_jesus_children.webp,audio_q1.mp3,1,Jesus,The Big Wolf,LION,,,1,,,,,,,
+multiple_choice,Jesus Loves Children,What does Jesus do when children come to Him?,cre_jesus_arms.webp,audio_q2.mp3,1,Welcomes With Open Arms,Sends Away,Ignores Them,,,1,,,,,,,
+multiple_choice,Jesus Loves Children,Touch Jesus smiling warmly at the children!,cre_jesus_smile.webp,audio_q3.mp3,1,Jesus Smiling,FACE,FACE,,,1,,,,,,,
+speak_repeat,Jesus Loves Children,Say out loud clearly: JESUS LOVES THE CHILDREN!,speak_jesus_loves_children.webp,audio_q4.mp3,1,Jesus Loves The Children,,,,,,Jesus Loves The Children,,,,,,
+speak_repeat,Jesus Loves Children,Say out loud: I AM LOVED BY JESUS!,speak_loved_by_jesus.webp,audio_q5.mp3,1,I Am Loved By Jesus,,,,,,I Am Loved By Jesus,,,,,,
+matching,Jesus Loves Children,Match Jesus' love items!,,,1,,,,,,,,Jesus,Love,Children,Welcome,Heart,Care
+matching,Jesus Loves Children,Match story images!,,,1,,,,,,,,Jesus,Jesus,Children,Children,Smile,Smile

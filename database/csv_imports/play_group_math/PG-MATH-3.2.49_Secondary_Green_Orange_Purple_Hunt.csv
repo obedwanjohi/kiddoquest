@@ -1,0 +1,6 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Secondary Green Orange Purple Hunt,Which leaf is bright GREEN?,green_leaf.webp,audio_q1.mp3,1,🍃,🥕,🍇,,,1,,,,,,,
+multiple_choice,Secondary Green Orange Purple Hunt,Which vegetable is bright ORANGE?,orange_carrot.webp,audio_q2.mp3,1,🥕,🍃,🍆,,,1,,,,,,,
+multiple_choice,Secondary Green Orange Purple Hunt,Which fruit is bright PURPLE?,purple_grapes.webp,audio_q3.mp3,1,🍇,🍏,🍊,,,1,,,,,,,
+multiple_choice,Secondary Green Orange Purple Hunt,Tap the GREEN frog on the lily pad!,green_frog.webp,audio_q4.mp3,1,🐸,🐱,🐦,,,1,,,,,,,
+multiple_choice,Secondary Green Orange Purple Hunt,Tap the ORANGE pumpkin in the garden!,orange_pumpkin.webp,audio_q5.mp3,1,🎃,🍃,🍇,,,1,,,,,,,

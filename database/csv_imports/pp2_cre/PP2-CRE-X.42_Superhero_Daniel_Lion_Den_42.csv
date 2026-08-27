@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Daniel Lion Den 42,Why were the wild lions gentle with Daniel overnight?,lion_q1.webp,audio_q1.mp3,1,👼,They were asleep,They were toys,,,1,,,,,,,
+speak_repeat,Superhero Daniel Lion Den 42,Say out loud: GOD IS MY PROTECTOR!,prot_speak.webp,audio_q2.mp3,1,God Is My Protector,,,,,,God Is My Protector,,,,,,
+matching,Superhero Daniel Lion Den 42,Match Daniel miracle!,,,1,,,,,,Daniel 🧔,Trusts God,Angel 👼,Shuts Lions Mouths,King 👑,Honored God,,

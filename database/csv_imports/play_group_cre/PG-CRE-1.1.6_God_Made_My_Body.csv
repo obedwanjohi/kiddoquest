@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Made My Body,Which body parts created by God do we use to clap?,cre_body_hands.webp,audio_q1.mp3,1,Hands,Feet,Ears,,,1,,,,,,,
+multiple_choice,God Made My Body,Which body parts created by God do we use to walk?,cre_body_feet.webp,audio_q2.mp3,1,Feet,Hands,Nose,,,1,,,,,,,
+multiple_choice,God Made My Body,Which body parts do we use to see God's world?,cre_body_eyes.webp,audio_q3.mp3,1,Eyes,Ears,Mouth,,,1,,,,,,,
+speak_repeat,God Made My Body,Say out loud clearly: THANK YOU GOD FOR MY BODY!,speak_thank_body.webp,audio_q4.mp3,1,Thank You God For My Body,,,,,,Thank You God For My Body,,,,,,
+speak_repeat,God Made My Body,Say out loud: HANDS FEET EYES EARS!,speak_hands_feet_eyes.webp,audio_q5.mp3,1,Hands Feet Eyes Ears,,,,,,Hands Feet Eyes Ears,,,,,,
+matching,God Made My Body,Match body parts to uses!,,,1,,,,,,,,Hands,Clap,Feet,Walk,Eyes,See
+matching,God Made My Body,Match body creations!,,,1,,,,,,,,Hands,Hands,Feet,Feet,Eyes,Eyes

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Bible Hero Courage Quest 60,Who was brave and obeyed God when facing lions?,dan_q1.webp,audio_q1.mp3,1,🧔,Goliath,Pharaoh,,,1,,,,,,,
+speak_repeat,Bible Hero Courage Quest 60,Say out loud: BE BRAVE AND TRUST GOD!,brave_speak.webp,audio_q2.mp3,1,Be Brave and Trust God,,,,,,Be Brave and Trust God,,,,,,
+matching,Bible Hero Courage Quest 60,Match Bible heroes!,,,1,,,,,,Daniel 🧔,Brave in Lions Den,David 👦,Brave against Giant,Noah ⛵,Obedient in Ark,,

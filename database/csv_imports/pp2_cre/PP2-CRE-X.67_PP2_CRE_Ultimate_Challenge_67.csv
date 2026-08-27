@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,PP2 CRE Ultimate Challenge 67,Who is the Good Shepherd that guides and loves us?,shep_q1.webp,audio_q1.mp3,1,✝️,Nobody,Wolf,,,1,,,,,,,
+speak_repeat,PP2 CRE Ultimate Challenge 67,Say out loud: THE LORD IS MY SHEPHERD!,shep_speak.webp,audio_q2.mp3,1,The Lord Is My Shepherd,,,,,,The Lord Is My Shepherd,,,,,,
+matching,PP2 CRE Ultimate Challenge 67,Match ultimate CRE!,,,1,,,,,,Shepherd ✝️,Jesus,Sheep 🐑,Believers,Love ❤️,Forever,,

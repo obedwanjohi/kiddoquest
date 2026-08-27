@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Underwater Phonics Reef,Which sea creature starts with letter F?,reef_fish_f.webp,audio_q1.mp3,1,Fish,Cat,Dog,,,1,,,,,,,
+multiple_choice,Underwater Phonics Reef,Touch the eight-armed octopus under the sea!,reef_octopus_o.webp,audio_q2.mp3,1,Octopus,Pig,Lion,,,1,,,,,,,
+multiple_choice,Underwater Phonics Reef,Touch Submarine Leo exploring the ocean reef!,reef_submarine_leo.webp,audio_q3.mp3,1,Submarine Leo,Rocket,Bus,,,1,,,,,,,
+speak_repeat,Underwater Phonics Reef,Say out loud clearly: UNDERWATER PHONICS REEF!,speak_underwater_reef.webp,audio_q4.mp3,1,Underwater Phonics Reef,,,,,,Underwater Phonics Reef,,,,,,
+speak_repeat,Underwater Phonics Reef,Say out loud: FISH AND OCTOPUS!,speak_fish_octopus.webp,audio_q5.mp3,1,Fish and Octopus,,,,,,Fish and Octopus,,,,,,
+matching,Underwater Phonics Reef,Match ocean letters to animals!,,,1,,,,,,,,F,Fish,O,Octopus,S,Submarine
+matching,Underwater Phonics Reef,Match ocean items!,,,1,,,,,,,,Fish,Fish,Octopus,Octopus,Reef,Coral Reef

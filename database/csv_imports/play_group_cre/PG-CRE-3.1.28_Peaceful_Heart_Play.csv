@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Peaceful Heart Play,How should we play together on the playground?,cre_peaceful_play.webp,audio_q1.mp3,1,Peacefully Without Pushing,Push Friends,Fight For Slide,,,1,,,,,,,
+multiple_choice,Peaceful Heart Play,Touch Leo waiting patiently for his turn on the slide!,cre_waiting_turn.webp,audio_q2.mp3,1,Waiting Turn,Pushing Ahead,Running Away,,,1,,,,,,,
+multiple_choice,Peaceful Heart Play,What does God call children who make peace?,cre_peacemakers.webp,audio_q3.mp3,1,Peacemakers,Fighters,Trouble,,,1,,,,,,,
+speak_repeat,Peaceful Heart Play,Say out loud clearly: BLESSED ARE THE PEACEMAKERS!,speak_blessed_peacemakers.webp,audio_q4.mp3,1,Blessed Are The Peacemakers,,,,,,Blessed Are The Peacemakers,,,,,,
+speak_repeat,Peaceful Heart Play,Say out loud: PLAY IN PEACE!,speak_play_in_peace.webp,audio_q5.mp3,1,Play In Peace,,,,,,Play In Peace,,,,,,
+matching,Peaceful Heart Play,Match peaceful play choices!,,,1,,,,,,,,Turn,Wait Patiently,Playground,Play Peacefully,God,Blessed
+matching,Peaceful Heart Play,Match peaceful play pictures!,,,1,,,,,,,,Slide,Playground Slide,Turn,Waiting Turn,Heart,Peaceful Heart

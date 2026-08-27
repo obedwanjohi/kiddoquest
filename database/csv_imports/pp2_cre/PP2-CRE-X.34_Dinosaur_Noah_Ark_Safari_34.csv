@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Dinosaur Noah Ark Safari 34,How many of each dino animal entered Noah's Ark?,ark_q1.webp,audio_q1.mp3,1,🦕,Ten,One,,,1,,,,,,,
+speak_repeat,Dinosaur Noah Ark Safari 34,Say out loud: TWO BY TWO INTO THE ARK!,ark_speak.webp,audio_q2.mp3,1,Two By Two Into The Ark,,,,,,Two By Two Into The Ark,,,,,,
+matching,Dinosaur Noah Ark Safari 34,Match Ark pairs!,,,1,,,,,,Noah ⛵,Obeyed,Ark 🪵,Safety,Rainbow 🌈,Promise,,

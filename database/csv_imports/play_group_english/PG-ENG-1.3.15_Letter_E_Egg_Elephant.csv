@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter E Egg Elephant,Which letter makes the /e/ sound for Egg?,letter_e_card.webp,audio_q1.mp3,1,E,A,D,,,1,,,,,,,
+multiple_choice,Letter E Egg Elephant,Touch the food object starting with letter E!,egg_e.webp,audio_q2.mp3,1,Egg,Apple,Ball,,,1,,,,,,,
+multiple_choice,Letter E Egg Elephant,Touch the big animal starting with letter E!,elephant_e.webp,audio_q3.mp3,1,Elephant,Dog,Cat,,,1,,,,,,,
+speak_repeat,Letter E Egg Elephant,Say the letter sound out loud: /e/ /e/ EGG!,speak_egg_e.webp,audio_q4.mp3,1,Egg,,,,,,Egg,,,,,,
+speak_repeat,Letter E Egg Elephant,Say out loud clearly: LETTER E!,speak_letter_e.webp,audio_q5.mp3,1,Letter E,,,,,,Letter E,,,,,,
+matching,Letter E Egg Elephant,Match letter E to words starting with E!,,,1,,,,,,,,E,E,Egg,Egg,Elephant,Elephant
+matching,Letter E Egg Elephant,Match letter E sound /e/!,,,1,,,,,,,,E,E,sound /e/,Egg,words,Elephant

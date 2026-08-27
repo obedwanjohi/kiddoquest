@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Creation Realm Master,Who created the sun, sky, animals, and trees?,master_god_creation.webp,audio_q1.mp3,1,God,A Car,The Wind,,,1,,,,
+multiple_choice,God Made the Sky Sun,Touch the golden sun created by God!,master_sun.webp,audio_q2.mp3,1,SUN,MOON,BOX,,,1,,,,,,,
+multiple_choice,Creation Realm Master,Which body parts created by God do we use to clap?,master_hands.webp,audio_q3.mp3,1,Hands,Feet,Ears,,,1,,,,,,,
+multiple_choice,Creation Realm Master,Touch the Creation Realm Master Trophy!,master_cre_badge.webp,audio_q4.mp3,1,🏆,Toy Box,Hat,,,1,,,,,,,
+speak_repeat,Creation Realm Master,Say out loud clearly: CREATION REALM MASTER!,speak_creation_master.webp,audio_q5.mp3,1,Creation Realm Master,,,,,,Creation Realm Master,,,,,,
+speak_repeat,Creation Realm Master,Say out loud: GOD MADE ALL THINGS WELL!,speak_god_made_well.webp,audio_q6.mp3,1,God Made All Things Well,,,,,,God Made All Things Well,,,,,,
+matching,Creation Realm Master,Match creations to God's love!,,,1,,,,,,,,Sun,Day,Trees,Nature,Family,Love
+matching,Creation Realm Master,Match creation items!,,,1,,,,,,,,Sky,SKY,Body,Hands,Trophy,Creation Master

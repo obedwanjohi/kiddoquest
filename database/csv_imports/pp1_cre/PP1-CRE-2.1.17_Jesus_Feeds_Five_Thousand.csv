@@ -1,0 +1,15 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Feeds Five Thousand,How many loaves of bread did the little boy share?,bread_q1.webp,audio_q1.mp3,1,5,10,2,,,1,,,,,,,
+multiple_choice,Jesus Feeds Five Thousand,How many fish did the boy share with Jesus?,fish_q2.webp,audio_q2.mp3,1,2,5,10,,,1,,,,,,,
+multiple_choice,Jesus Feeds Five Thousand,How many people were fed by Jesus that day?,crowd_q3.webp,audio_q3.mp3,1,5000,100,50,,,1,,,,,,,
+multiple_choice,Jesus Feeds Five Thousand,What did Jesus do before giving out the food?,pray_q4.webp,audio_q4.mp3,1,Prayed & Thanked,Cooked It,Bought It,,,1,,,,,,,
+multiple_choice,Jesus Feeds Five Thousand,How many baskets of food were left over after everyone ate?,left_q5.webp,audio_q5.mp3,1,12,2,0,,,1,,,,,,,
+multiple_choice,Jesus Feeds Five Thousand,Who gave his small lunch to help Jesus feed everyone?,boy_q6.webp,audio_q6.mp3,1,A Little Boy,A King,A Farmer,,,1,,,,,,,
+multiple_choice,Jesus Feeds Five Thousand,What does this miracle teach us about Jesus?,teach_q7.webp,audio_q7.mp3,1,He Provides,He Is Hungry,He Needs Help,,,1,,,,,,,
+multiple_choice,Jesus Feeds Five Thousand,What small thing did Jesus use to do something great?,small_q8.webp,audio_q8.mp3,1,Small Lunch,Big Feast,Gold Coins,,,1,,,,,,,
+speak_repeat,Jesus Feeds Five Thousand,Say out loud clearly: JESUS PROVIDES FOR EVERYONE!,feed_speak.webp,audio_q9.mp3,1,Jesus Provides For Everyone,,,,,,Jesus Provides For Everyone,,,,,,
+speak_repeat,Jesus Feeds Five Thousand,Say out loud: FIVE LOAVES AND TWO FISH!,five_speak.webp,audio_q10.mp3,1,Five Loaves And Two Fish,,,,,,Five Loaves And Two Fish,,,,,,
+speak_repeat,Jesus Feeds Five Thousand,Say out loud: GOD CAN USE MY SMALL GIFT!,gift_speak.webp,audio_q11.mp3,1,God Can Use My Small Gift,,,,,,God Can Use My Small Gift,,,,,,
+matching,Jesus Feeds Five Thousand,Match the miracle of feeding!,,,1,,,,,,,,5 Loaves 🍞,Bread,2 Fish 🐟,Fish,5000 👥,All Fed
+matching,Jesus Feeds Five Thousand,Match story details!,,,1,,,,,,,,Little Boy,Shared Lunch,Jesus,Multiplied Food,12 Baskets,Leftovers
+matching,Jesus Feeds Five Thousand,Match what we learn from this story!,,,1,,,,,,,,Share,Like the Boy,Trust Jesus,To Provide,Give Thanks,After Eating

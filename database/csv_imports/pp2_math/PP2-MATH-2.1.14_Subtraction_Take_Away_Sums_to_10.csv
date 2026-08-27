@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Subtraction Take Away Sums to 10,10 Apples - 4 Apples = ?,sub_q1.webp,audio_q1.mp3,1,6,5,7,,,1,,,,,,,
+speak_repeat,Subtraction Take Away Sums to 10,Say out loud clearly: TEN MINUS FOUR IS SIX!,sub_speak.webp,audio_q2.mp3,1,Ten Minus Four Is Six,,,,,,Ten Minus Four Is Six,,,,,,
+matching,Subtraction Take Away Sums to 10,Match subtraction sums!,,,1,,,,,,10 - 4,6,8,5,9,4,,

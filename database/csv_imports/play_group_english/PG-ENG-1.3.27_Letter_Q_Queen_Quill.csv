@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter Q Queen,Which letter makes the /kw/ sound in Q Q Q - /kw/ /kw/ /kw/ - Queen Queen?,letter_q_card.webp,audio_q1.mp3,1,Q,P,R,,,1,,,,,,,
+multiple_choice,Letter Q Queen,Touch the royal queen with a crown starting with letter Q!,queen_q.webp,audio_q2.mp3,1,Queen,Girl,Pig,,,1,,,,,,,
+multiple_choice,Letter Q Queen,Listen to the song: Q Q Q - /kw/ /kw/ /kw/ - Queen!,queen_song.webp,audio_q3.mp3,1,Queen,Lion,Monkey,,,1,,,,,,,
+speak_repeat,Letter Q Queen,Say the phonics song chant: Q Q Q - QUEEN!,speak_queen_q.webp,audio_q4.mp3,1,Queen,,,,,,Queen,,,,,,
+speak_repeat,Letter Q Queen,Say out loud clearly: LETTER Q!,speak_letter_q.webp,audio_q5.mp3,1,Letter Q,,,,,,Letter Q,,,,,,
+matching,Letter Q Queen,Match letter Q to Queen!,,,1,,,,,,,,Q,Q,Queen,Queen,sound /kw/,Queen
+matching,Letter Q Queen,Match letter Q sound /kw/!,,,1,,,,,,,,Q,Q,/kw/ /kw/ /kw/,Queen,Queen,Queen

@@ -1,0 +1,69 @@
+Created At: 2026-07-17T19:20:58Z
+Completed At: 2026-07-17T19:20:58Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3169
+Total Bytes: 147159
+Showing lines 2360 to 2420
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+2360: 
+2361:         selectSortChip(chipIndex) {
+2362:             this.resetIdleTimer();
+2363:             if (this.sortAnswered) return;
+2364:             // If chip is in a bucket, tapping it returns it to the tray
+2365:             if (this.sortChips[chipIndex].bucket !== null) {
+2366:                 this.sortChips[chipIndex].bucket = null;
+2367:                 return;
+2368:             }
+2369:             // Toggle selection
+2370:             this.sortSelectedChip = (this.sortSelectedChip === chipIndex) ? null : chipIndex;
+2371:         },
+2372: 
+2373:         selectSortBucket(bucketIndex) {
+2374:             this.resetIdleTimer();
+2375:             if (this.sortAnswered) return;
+2376:             if (this.sortSelectedChip === null) return;
+2377: 
+2378:             const categories = this.currentQuestion.metadata?.categories || [];
+2379:             const categoryName = categories[bucketIndex];
+2380: 
+2381:             // Place the selected chip into this bucket
+2382:             this.sortChips[this.sortSelectedChip].bucket = categoryName;
+2383:             this.sortSelectedChip = null;
+2384:         },
+2385: 
+2386:         getSortChipClass(chipIndex) {
+2387:             if (this.sortSelectedChip === chipIndex) return 'selected';
+2388:             return '';
+2389:         },
+2390: 
+2391:         getSortBucketClass(bucketIndex) {
+2392:             const categories = this.currentQuestion.metadata?.categories || [];
+2393:             const categoryName = categories[bucketIndex];
+2394: 
+2395:             if (this.sortAnswered) {
+2396:                 // Check if all chips in this bucket are correct
+2397:                 const chipsInBucket = this.sortChips.filter(c => c.bucket === categoryName);
+2398:                 const allCorrect = chipsInBucket.every(c => c.correctBucket === categoryName);
+2399:                 return allCorrect ? 'correct' : 'incorrect';
+2400:             }
+2401: 
+2402:             // Highlight the bucket when a chip is selected (invites the child to tap)
+2403:             if (this.sortSelectedChip !== null) return 'highlight';
+2404:             return '';
+2405:         },
+2406: 
+2407:         getSortChipInBucketClass(chipIndex) {
+2408:             if (!this.sortAnswered) return '';
+2409:             const chip = this.sortChips[chipIndex];
+2410:             return chip.correctBucket === chip.bucket ? 'correct' : 'incorrect';
+2411:         },
+2412: 
+2413:         checkSorting() {
+2414:             this.resetIdleTimer();
+2415:             if (this.sortAnswered) return;
+2416:             if (this.sortChips.some(c => c.bucket === null)) return;
+2417: 
+2418:             this.sortAnswered = true;
+2419:             this.answered = true;
+2420: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

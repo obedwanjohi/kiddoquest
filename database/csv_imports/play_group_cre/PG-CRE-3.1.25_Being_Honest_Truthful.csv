@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Being Honest Truthful,What should we always tell when we make a mistake?,cre_tell_truth.webp,audio_q1.mp3,1,Tell The Truth,Tell A Lie,Hide Away,,,1,,,,,,,
+multiple_choice,Being Honest Truthful,Touch the shining heart of an honest child!,cre_shining_heart.webp,audio_q2.mp3,1,Shining Heart,Broken Toy,CLOUD,,,1,,,,,,,
+multiple_choice,Being Honest Truthful,How does God feel when we speak the truth?,cre_god_loves_truth.webp,audio_q3.mp3,1,God Is Pleased,God Is Angry,God Is Sad,,,1,,,,,,,
+speak_repeat,Being Honest Truthful,Say out loud clearly: ALWAYS TELL THE TRUTH!,speak_always_tell_truth.webp,audio_q4.mp3,1,Always Tell The Truth,,,,,,Always Tell The Truth,,,,,,
+speak_repeat,Being Honest Truthful,Say out loud: HONESTY PLEASES GOD!,speak_honesty_pleases_god.webp,audio_q5.mp3,1,Honesty Pleases God,,,,,,Honesty Pleases God,,,,,,
+matching,Being Honest Truthful,Match truthfulness concepts!,,,1,,,,,,,,Words,Tell Truth,Heart,Honest,God,Pleased
+matching,Being Honest Truthful,Match honesty pictures!,,,1,,,,,,,,Truth,Tell Truth,Heart,Shining Heart,Smile,FACE

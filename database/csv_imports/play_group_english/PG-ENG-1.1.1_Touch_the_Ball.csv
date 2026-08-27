@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Touch the Ball,Listen to Leo: Touch the red ball!,ball_red.webp,audio_q1.mp3,1,Red Ball,Blue Box,Yellow Star,,,1,,,,,,,
+multiple_choice,Touch the Ball,Listen to Leo: Touch the yellow star!,star_yellow.webp,audio_q2.mp3,1,Yellow Star,Red Apple,Green Leaf,,,1,,,,,,,
+multiple_choice,Touch the Ball,Listen: Point to the sleeping cat!,cat_sleeping.webp,audio_q3.mp3,1,Cat,Dog,Bird,,,1,,,,,,,
+multiple_choice,Touch the Ball,Listen: Touch the smiling sun!,sun_smiling.webp,audio_q4.mp3,1,Smiling Sun,Moon,Cloud,,,1,,,,,,,
+speak_repeat,Touch the Ball,Say out loud clearly: BALL!,speak_ball.webp,audio_q5.mp3,1,Ball,,,,,,Ball,,,,,,
+speak_repeat,Touch the Ball,Say out loud: TOUCH THE BALL!,speak_touch_ball.webp,audio_q6.mp3,1,Touch The Ball,,,,,,Touch The Ball,,,,,,
+matching,Touch the Ball,Match objects to pictures!,,,1,,,,,,,,Ball,Ball,Cat,Cat,Sun,Sun
+matching,Touch the Ball,Match action icons!,,,1,,,,,,,,Touch,Hand,Listen,Ear,Look,Eye

@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Addition Adding 2 More Dino Eggs,You have 4 dino eggs and find 2 more. How many total?,add2_q1.webp,audio_q1.mp3,1,6,5,7,,,1,,,,,,,
+multiple_choice,Addition Adding 2 More Dino Eggs,What is 6 + 2?,add2_q2.webp,audio_q2.mp3,1,8,7,9,,,1,,,,,,,
+speak_repeat,Addition Adding 2 More Dino Eggs,Say out loud: FOUR PLUS TWO IS SIX!,add2_speak.webp,audio_q3.mp3,1,Four Plus Two Is Six,,,,,,Four Plus Two Is Six,,,,,,
+matching,Addition Adding 2 More Dino Eggs,Match 2 more equations!,,,1,,,,,,ops,4 + 2,6,6,8,7,9,

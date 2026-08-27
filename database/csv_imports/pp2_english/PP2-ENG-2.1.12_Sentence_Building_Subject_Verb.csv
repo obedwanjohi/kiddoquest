@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Sentence Building Subject Verb,"Which action verb completes sentence: ""The dog ___ fast""?",run.webp,audio_q1.mp3,1,RUNS 🏃,SLEEPS 💤,EATS 🍎,,,1,,,,,,,
+speak_repeat,Sentence Building Subject Verb,Say out loud clearly: THE DOG RUNS FAST!,dog_speak.webp,audio_q2.mp3,1,The Dog Runs Fast,,,,,,The Dog Runs Fast,,,,,,
+matching,Sentence Building Subject Verb,Match action sentences!,,,1,,,,,,Dog 🐕,Runs 🏃,Cat 🐈,Sleeps 💤,Bird 🐦,Flies 🕊️,,

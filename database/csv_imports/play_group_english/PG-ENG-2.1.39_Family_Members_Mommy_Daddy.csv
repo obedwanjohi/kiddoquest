@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Family Members,Touch Mommy Lion in the family picture!,family_mommy.webp,audio_q1.mp3,1,Mommy,Daddy,Baby,,,1,,,,,,,
+multiple_choice,Family Members,Touch Daddy Lion standing tall!,family_daddy.webp,audio_q2.mp3,1,Daddy,Mommy,Sister,,,1,,,,,,,
+multiple_choice,Family Members,Touch cute Baby Cub sleeping!,family_baby.webp,audio_q3.mp3,1,Baby,Daddy,Brother,,,1,,,,,,,
+speak_repeat,Family Members,Say out loud clearly: I LOVE MY FAMILY!,speak_love_family.webp,audio_q4.mp3,1,I Love My Family,,,,,,I Love My Family,,,,,,
+speak_repeat,Family Members,Say out loud: MOMMY AND DADDY!,speak_mommy_daddy.webp,audio_q5.mp3,1,Mommy and Daddy,,,,,,Mommy and Daddy,,,,,,
+matching,Family Members,Match family members!,,,1,,,,,,,,Mommy,Mommy,Daddy,Daddy,Baby,Baby
+matching,Family Members,Match family terms!,,,1,,,,,,,,Brother,Brother,Sister,Sister,Family,Family

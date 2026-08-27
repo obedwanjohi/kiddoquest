@@ -1,0 +1,441 @@
+/* premium_style.css - The new UI overhaul based on mockups */
+:root {
+    --kid-bg: #FFF9E6;
+    --kid-primary: #FFB347;
+    --kid-text: #5A3E36;
+    --kid-text-muted: #8C6F66;
+    --kid-bubble-bg: #FFFFFF;
+    
+    --btn-blue: #60A5FA;
+    --btn-blue-dark: #3B82F6;
+    --btn-green: #34D399;
+    --btn-green-dark: #10B981;
+    --btn-red: #F87171;
+    --btn-red-dark: #EF4444;
+    --btn-yellow: #FCD34D;
+    --btn-yellow-dark: #F59E0B;
+}
+
+body {
+    background-color: var(--kid-bg);
+    /* Subtle background pattern - using radial gradients for dots and basic shapes */
+    background-image: radial-gradient(#FDE68A 10%, transparent 11%), radial-gradient(#FDE68A 10%, transparent 11%);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    color: var(--kid-text);
+    font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Hide that intrusive tooltip immediately */
+.idle-hint {
+    display: none !important;
+}
+
+.quiz-stage {
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+/* HEADER */
+.quiz-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    z-index: 20;
+}
+
+.quiz-header .exit-btn, .quiz-header .settings-btn {
+    text-decoration: none;
+    font-size: 28px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.05);
+    color: var(--kid-text);
+}
+
+.quiz-header .progress-wrap {
+    flex-grow: 1;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quiz-header .progress-bar-bg {
+    width: 100%;
+    max-width: 400px;
+    height: 16px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.quiz-header .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--btn-green), var(--btn-yellow), var(--btn-red));
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+/* LEO ZONE (Centered) */
+.leo-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 24px;
+    z-index: 10;
+}
+
+.leo-mascot {
+    font-size: 80px;
+    line-height: 1;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    margin-bottom: 12px;
+}
+
+.leo-bubble {
+    background: var(--kid-bubble-bg);
+    color: var(--kid-text);
+    padding: 16px 32px;
+    border-radius: 24px;
+    font-size: 22px;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: relative;
+    text-align: center;
+    max-width: 80%;
+}
+
+.leo-bubble::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 12px 12px 12px;
+    border-style: solid;
+    border-color: transparent transparent var(--kid-bubble-bg) transparent;
+}
+
+/* QUESTION ZONE */
+.question-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.question-image {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    /* REMOVED checkerboard class/styles. Let it sit naturally. */
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
+}
+
+/* LANDSCAPE RESPONSIVE SPLIT */
+@media (min-width: 768px) and (orientation: landscape) {
+    .quiz-landscape-split {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 20px;
+    }
+    .leo-zone {
+        flex: 1;
+        margin: 0;
+        align-items: flex-end;
+    }
+    .leo-bubble {
+        margin-top: 16px;
+    }
+    .leo-bubble::before {
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 0 12px 12px 12px;
+        border-color: transparent transparent var(--kid-bubble-bg) transparent;
+    }
+    .question-zone {
+        flex: 1;
+        align-items: flex-start;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* CHUNKY BUTTONS (Answer Cards & Puzzle Slots) */
+.answer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 20px;
+}
+
+.answer-card {
+    background: white;
+    border: 4px solid #E5E7EB;
+    border-bottom-width: 8px; /* Chunky 3D effect */
+    border-radius: 20px;
+    padding: 20px;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--kid-text);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.answer-card:hover {
+    transform: translateY(-2px);
+}
+
+.answer-card:active {
+    transform: translateY(4px);
+    border-bottom-width: 4px;
+    margin-bottom: 4px; /* offset the border change */
+}
+
+/* Coloring specific cards based on content or state */
+.answer-card.color-blue { border-color: var(--btn-blue-dark); color: var(--btn-blue-dark); }
+.answer-card.color-green { border-color: var(--btn-green-dark); color: var(--btn-green-dark); }
+.answer-card.color-red { border-color: var(--btn-red-dark); color: var(--btn-red-dark); }
+.answer-card.color-yellow { border-color: var(--btn-yellow-dark); color: var(--btn-yellow-dark); }
+
+.answer-card.correct {
+    border-color: var(--btn-green-dark);
+    background: #D1FAE5;
+    color: var(--btn-green-dark);
+    animation: kid-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.answer-card.incorrect {
+    border-color: #E5E7EB;
+    background: #F3F4F6;
+    color: #9CA3AF;
+    opacity: 0.7;
+    animation: gentle-shake 0.4s ease;
+}
+
+/* FILL IN THE BLANK (Puzzle Slots) */
+.fill-blank-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.puzzle-word {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.puzzle-slot {
+    width: 60px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 900;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.puzzle-slot.filled {
+    color: var(--kid-text);
+    background: transparent;
+}
+
+.puzzle-slot.blank {
+    background: white;
+    border: 3px dashed #CBD5E1;
+    color: transparent;
+}
+
+.puzzle-slot.blank.revealed {
+    background: transparent;
+    border: none;
+    color: var(--kid-text);
+    border-bottom: 4px solid var(--kid-text);
+    animation: kid-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.puzzle-options {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.puzzle-option {
+    width: 70px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 4px solid #E5E7EB;
+    border-bottom-width: 8px;
+    border-radius: 16px;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--kid-text);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.puzzle-option:active {
+    transform: translateY(4px);
+    border-bottom-width: 4px;
+}
+
+/* MATCHING BOARD */
+.matching-board {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.matching-item {
+    background: white;
+    border: 4px solid #E5E7EB;
+    border-bottom-width: 8px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    aspect-ratio: 1; /* Make them squares */
+}
+
+.matching-item:active {
+    transform: translateY(4px);
+    border-bottom-width: 4px;
+}
+
+.matching-item.selected {
+    border-color: var(--btn-blue-dark);
+    background: #EFF6FF;
+    transform: translateY(2px);
+    border-bottom-width: 6px;
+}
+
+.matching-item.matched {
+    border-color: var(--btn-green-dark);
+    background: #D1FAE5;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes kid-pop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+@keyframes gentle-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+
+/* Colored borders for puzzle options and answer cards */
+.puzzle-option:nth-child(3n+1), .answer-card:nth-child(3n+1) { border-color: var(--btn-green); color: var(--btn-green-dark); }
+.puzzle-option:nth-child(3n+2), .answer-card:nth-child(3n+2) { border-color: var(--btn-blue); color: var(--btn-blue-dark); }
+.puzzle-option:nth-child(3n+3), .answer-card:nth-child(3n+3) { border-color: var(--btn-red); color: var(--btn-red-dark); }
+.puzzle-option:nth-child(4n), .answer-card:nth-child(4n) { border-color: var(--btn-yellow); color: var(--btn-yellow-dark); }
+
+/* Remove default background if any */
+.puzzle-option, .answer-card { background: white; }
+
+
+/* Dynamic Multiple Choice Layouts */
+
+/* Square Layout */
+.answer-grid.layout-square {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+.answer-grid.layout-square .answer-card {
+    width: 110px;
+    height: 110px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+}
+.answer-grid.layout-square .answer-card img {
+    max-height: 50px;
+    margin-bottom: 8px;
+}
+
+/* Vertical List Layout */
+.answer-grid.layout-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.answer-grid.layout-vertical .answer-card {
+    position: relative;
+    padding: 16px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.answer-grid.layout-vertical .card-index {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-size: 20px;
+    font-weight: 900;
+}
+.answer-grid.layout-vertical .card-image {
+    max-height: 80px;
+    object-fit: contain;
+}

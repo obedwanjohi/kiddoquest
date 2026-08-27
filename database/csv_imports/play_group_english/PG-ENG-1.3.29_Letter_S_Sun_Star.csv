@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter S Sun,Which letter makes the /s/ sound in S S S - /s/ /s/ /s/ - Sun Sun?,letter_s_card.webp,audio_q1.mp3,1,S,R,T,,,1,,,,,,,
+multiple_choice,Letter S Sun,Touch the bright yellow sun starting with letter S!,sun_s.webp,audio_q2.mp3,1,Sun,Ring,Hat,,,1,,,,,,,
+multiple_choice,Letter S Sun,Listen to the song: S S S - /s/ /s/ /s/ - Sun!,sun_song.webp,audio_q3.mp3,1,Sun,Moon,Star,,,1,,,,,,,
+speak_repeat,Letter S Sun,Say the phonics song chant: S S S - SUN!,speak_sun_s.webp,audio_q4.mp3,1,Sun,,,,,,Sun,,,,,,
+speak_repeat,Letter S Sun,Say out loud clearly: LETTER S!,speak_letter_s.webp,audio_q5.mp3,1,Letter S,,,,,,Letter S,,,,,,
+matching,Letter S Sun,Match letter S to Sun!,,,1,,,,,,,,S,S,Sun,Sun,sound /s/,Sun
+matching,Letter S Sun,Match letter S sound /s/!,,,1,,,,,,,,S,S,/s/ /s/ /s/,Sun,Sun,Sun

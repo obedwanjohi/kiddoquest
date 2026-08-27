@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Play Group Math Grand Champion,Count the safari apples: How many red apples are on the tree?,champion_q1.webp,audio_q1.mp3,1,3,2,4,,🍎,3,,,,,,,
+multiple_choice,Play Group Math Grand Champion,Which shape is the round Circle?,champion_q2.webp,audio_q2.mp3,1,🟡,🟦,🔺,,,1,,,,,,,
+multiple_choice,Play Group Math Grand Champion,Which fruit is bright RED?,champion_q3.webp,audio_q3.mp3,1,🍎,🫐,🍌,,,1,,,,,,,
+multiple_choice,Play Group Math Grand Champion,Which animal is BIG?,champion_q4.webp,audio_q4.mp3,1,🦕,🐭,🐜,,,1,,,,,,,
+multiple_choice,Play Group Math Grand Champion,Sort the fruits: Which item is a FRUIT?,champion_q5.webp,audio_q5.mp3,1,🍎,🥦,🥕,,,1,,,,,,,
+multiple_choice,Play Group Math Grand Champion,Complete the pattern: Red Blue Red _?,champion_q6.webp,audio_q6.mp3,1,💙,❤️,💛,,,,,,,,,,
+multiple_choice,Play Group Math Grand Champion,Which bird is ABOVE in the sky?,champion_q7.webp,audio_q7.mp3,1,🐦,🐟,🐰,,,1,,,,,,,

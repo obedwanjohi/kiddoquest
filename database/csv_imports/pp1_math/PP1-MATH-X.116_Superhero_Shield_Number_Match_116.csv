@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Shield Number Match 116,Which superhero shield shows Number 19?,sh19.webp,audio_q1.mp3,1,19,18,20,,,19,,,,,,,
+speak_repeat,Superhero Shield Number Match 116,Say out loud: SUPERHERO NINETEEN!,sh_speak.webp,audio_q2.mp3,1,Superhero Nineteen,,,,,,Superhero Nineteen,,,,,,
+matching,Superhero Shield Number Match 116,Match hero shields!,,,1,,,,,,17 Shield 🛡️,17,19,19,20,20,,

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter L Lion,Which letter makes the /l/ sound in L L L - /l/ /l/ /l/ - Lion Lion?,letter_l_card.webp,audio_q1.mp3,1,L,K,M,,,1,,,,,,,
+multiple_choice,Letter L Lion,Touch Leo the lion starting with letter L!,lion_l.webp,audio_q2.mp3,1,Lion,Monkey,Kangaroo,,,1,,,,,,,
+multiple_choice,Letter L Lion,Listen to the song: L L L - /l/ /l/ /l/ - Lion!,lion_song.webp,audio_q3.mp3,1,Lion,Dog,Cat,,,1,,,,,,,
+speak_repeat,Letter L Lion,Say the phonics song chant: L L L - LION!,speak_lion_l.webp,audio_q4.mp3,1,Lion,,,,,,Lion,,,,,,
+speak_repeat,Letter L Lion,Say out loud clearly: LETTER L!,speak_letter_l.webp,audio_q5.mp3,1,Letter L,,,,,,Letter L,,,,,,
+matching,Letter L Lion,Match letter L to Lion!,,,1,,,,,,,,L,L,Lion,Lion,sound /l/,Lion
+matching,Letter L Lion,Match letter L sound /l/!,,,1,,,,,,,,L,L,/l/ /l/ /l/,Lion,Lion,Lion

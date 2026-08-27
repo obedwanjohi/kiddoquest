@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Writing Readiness Master,Which line goes straight from top to bottom?,master_straight_line.webp,audio_q1.mp3,1,Straight Line,Zigzag Path,Circle Loop,,,1,,,,,,,
+multiple_choice,Writing Readiness Master,Which shape goes all the way round and round?,master_circle_shape.webp,audio_q2.mp3,1,Circle Shape,Straight Line,Square Box,,,1,,,,,,,
+multiple_choice,Writing Readiness Master,Which line goes up and down like mountain peaks?,master_zigzag_path.webp,audio_q3.mp3,1,Zigzag Path,Rainbow Arc,Straight Slide,,,1,,,,,,,
+multiple_choice,Writing Readiness Master,Touch the Writing Readiness Master Trophy!,master_writing_badge.webp,audio_q4.mp3,1,🏆,Golden Star,Crayon Box,,,1,,,,,,,
+speak_repeat,Writing Readiness Master,Say out loud clearly: WRITING READINESS MASTER!,speak_writing_master.webp,audio_q5.mp3,1,Writing Readiness Master,,,,,,Writing Readiness Master,,,,,,
+speak_repeat,Writing Readiness Master,Say out loud: I CAN TRACE ALL MY LINES!,speak_can_trace.webp,audio_q6.mp3,1,I Can Trace All My Lines,,,,,,I Can Trace All My Lines,,,,,,
+matching,Writing Readiness Master,Match line types to examples!,,,1,,,,,,,,Straight,Straight Line,Curved,Rainbow Arc,Zigzag,Mountain Peaks
+matching,Writing Readiness Master,Match pre-writing items!,,,1,,,,,,,,Circle,Round Shape,Line,Straight Path,Badge,Master Trophy

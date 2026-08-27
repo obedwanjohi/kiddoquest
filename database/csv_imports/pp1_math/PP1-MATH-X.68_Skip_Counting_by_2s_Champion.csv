@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Skip Counting by 2s Champion,Complete skip counting: 10 12 14 _ 18 20?,skip_q1.webp,audio_q1.mp3,1,16,15,17,,,,,,,,,,
+speak_repeat,Skip Counting by 2s Champion,Say out loud: TEN TWELVE FOURTEEN SIXTEEN EIGHTEEN TWENTY!,skip_speak.webp,audio_q2.mp3,1,Ten Twelve Fourteen Sixteen Eighteen Twenty,,,,,,Ten Twelve Fourteen Sixteen Eighteen Twenty,,,,,,
+matching,Skip Counting by 2s Champion,Match 2s skip counting!,,,1,,,,,,10 12,14,14,18,18,22,,

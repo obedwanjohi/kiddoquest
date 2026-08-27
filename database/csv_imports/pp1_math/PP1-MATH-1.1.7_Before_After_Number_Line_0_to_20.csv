@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Before After Number Line 0 to 20,Which number comes AFTER 7 on the number line: 6 7 _ 9?,seq_q1.webp,audio_q1.mp3,1,8,7,9,,,,,,,,,,
+complete_pattern,Before After Number Line 0 to 20,Which number comes BEFORE 15: _ 15 16 17?,seq_q2.webp,audio_q2.mp3,1,14,15,13,,,,,,,,,,
+speak_repeat,Before After Number Line 0 to 20,Say out loud: BEFORE AND AFTER!,before_speak.webp,audio_q3.mp3,1,Before and After,,,,,,Before and After,,,,,,
+matching,Before After Number Line 0 to 20,Match numbers to what comes next!,,,1,,,,,,ops,4,5,9,10,14,15,

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pirate Cove Sight Words Map 24,"Which sight word completes the pirate map: ""I SEE THE ___""?",gold_q1.webp,audio_q1.mp3,1,GOLD 🪙,SEE,RUN,,,1,,,,,,,
+speak_repeat,Pirate Cove Sight Words Map 24,Say out loud: I SEE THE PIRATE GOLD!,gold_speak.webp,audio_q2.mp3,1,I See The Pirate Gold,,,,,,I See The Pirate Gold,,,,,,
+matching,Pirate Cove Sight Words Map 24,Match pirate sight words!,,,1,,,,,,SEE,👀,FIND,🔍,GOLD,🪙,,

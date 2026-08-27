@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Fraction Galaxy 66,If a space station is cut into 2 equal halves, what is 1 half?,space_q1.webp,audio_q1.mp3,1,🛸,One Quarter (1/4),Whole,,,1,,,,,,
+speak_repeat,Space Fraction Galaxy 66,Say out loud: ONE HALF OF THE SPACE STATION!,half_speak.webp,audio_q2.mp3,1,One Half Of The Space Station,,,,,,One Half Of The Space Station,,,,,,
+matching,Space Fraction Galaxy 66,Match space fractions!,,,1,,,,,,Half 🛸,1 of 2 Parts,Quarter 🛸,1,Whole 🛸,Full Station,,

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Number Line Mastery 0 to 20,Which number fills the blank: 16 17 _ 19 20?,num_q1.webp,audio_q1.mp3,1,18,17,19,,,,,,,,,,
+speak_repeat,Number Line Mastery 0 to 20,Say out loud: EIGHTEEN ON THE NUMBER LINE!,num_speak.webp,audio_q2.mp3,1,Eighteen On The Number Line,,,,,,Eighteen On The Number Line,,,,,,
+matching,Number Line Mastery 0 to 20,Match number lines!,,,1,,,,,,16 17,18,18,20,13,15,,

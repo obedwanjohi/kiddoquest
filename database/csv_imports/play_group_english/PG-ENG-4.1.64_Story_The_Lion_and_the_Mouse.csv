@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Lion and Mouse,Which tiny animal saved the big lion from the net?,story_tiny_mouse.webp,audio_q1.mp3,1,Tiny Mouse,Big Bear,Fast Hare,,,1,,,,,,,
+multiple_choice,Lion and Mouse,How did the tiny mouse set the lion free from the rope net?,story_nibble_net.webp,audio_q2.mp3,1,Nibbled Ropes,Pushed Rock,Roared Loud,,,1,,,,,,,
+multiple_choice,Lion and Mouse,Touch the big lion who learned small friends can help!,story_big_lion.webp,audio_q3.mp3,1,Big Lion,Small Frog,Little Bird,,,1,,,,,,,
+speak_repeat,Lion and Mouse,Say out loud clearly: LITTLE FRIENDS CAN HELP!,speak_little_friends.webp,audio_q4.mp3,1,Little Friends Can Help,,,,,,Little Friends Can Help,,,,,,
+speak_repeat,Lion and Mouse,Say out loud: LION AND MOUSE!,speak_lion_mouse.webp,audio_q5.mp3,1,Lion and Mouse,,,,,,Lion and Mouse,,,,,,
+matching,Lion and Mouse,Match story actions!,,,1,,,,,,,,Lion,Roared,Mouse,Nibbled Ropes,Net,Caught
+matching,Lion and Mouse,Match story characters!,,,1,,,,,,,,Lion,Big,Mouse,Tiny,Friend,Helper

@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Underwater Reef Gods Fish 43,Who created all the colorful sea creatures swimming in the ocean?,fish_q1.webp,audio_q1.mp3,1,🙏,Submarine,Nobody,,,1,,,,,,,
+speak_repeat,Underwater Reef Gods Fish 43,Say out loud: GOD MADE THE SEA CREATURES!,sea_speak.webp,audio_q2.mp3,1,God Made The Sea Creatures,,,,,,God Made The Sea Creatures,,,,,,
+matching,Underwater Reef Gods Fish 43,Match sea creations!,,,1,,,,,,Fish 🐟,Ocean,Whale 🐋,SEA,Pearls 🦪,Reef,,

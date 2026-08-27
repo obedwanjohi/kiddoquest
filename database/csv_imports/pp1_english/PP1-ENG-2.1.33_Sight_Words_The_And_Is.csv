@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Sight Words The And Is,Tap the sight word THE!,the_q1.webp,audio_q1.mp3,1,THE,AND,IS,,,1,,,,,,,
+speak_repeat,Sight Words The And Is,Say out loud clearly: THE CAT AND THE DOG!,sight_speak.webp,audio_q2.mp3,1,The Cat and The Dog,,,,,,The Cat and The Dog,,,,,,
+matching,Sight Words The And Is,Match sight words!,,,1,,,,,,THE,The,AND,And,IS,Is,,

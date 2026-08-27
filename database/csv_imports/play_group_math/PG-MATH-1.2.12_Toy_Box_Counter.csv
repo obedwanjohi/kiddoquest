@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Toy Box Counter,How many soft teddy bears are in the toy chest?,toy_bears.webp,audio_q1.mp3,1,3,2,4,,bear.webp,3,,,,,,,
+count_objects,Toy Box Counter,Count the wooden building blocks on the rug!,toy_blocks.webp,audio_q2.mp3,1,4,3,2,,block.webp,4,,,,,,,
+count_objects,Toy Box Counter,How many toy bears did Leo line up?,toy_lined.webp,audio_q3.mp3,1,2,3,4,,bear.webp,2,,,,,,,
+multiple_choice,Toy Box Counter,Which card shows 4 wooden blocks?,mc_four_blocks.webp,audio_q4.mp3,1,4,2,3,,,4,,,,,,,

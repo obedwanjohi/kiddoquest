@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Greetings and Manners,What polite magic word do we say when someone gives a gift?,manners_thank_you.webp,audio_q1.mp3,1,Thank You,No,Go Away,,,1,,,,,,,
+multiple_choice,Greetings and Manners,What polite word do we say when asking for something?,manners_please.webp,audio_q2.mp3,1,Please,Thank You,Goodbye,,,1,,,,,,,
+multiple_choice,Greetings and Manners,What friendly morning greeting do we say to Leo?,manners_good_morning.webp,audio_q3.mp3,1,Good Morning,Good Night,Sleep,,,1,,,,,,,
+speak_repeat,Greetings and Manners,Say out loud clearly: PLEASE AND THANK YOU!,speak_please_thankyou.webp,audio_q4.mp3,1,Please and Thank You,,,,,,Please and Thank You,,,,,,
+speak_repeat,Greetings and Manners,Say out loud: GOOD MANNERS!,speak_good_manners.webp,audio_q5.mp3,1,Good Manners,,,,,,Good Manners,,,,,,
+matching,Greetings and Manners,Match polite words to situations!,,,1,,,,,,,,Gift,Thank You,Ask,Please,Morning,Good Morning
+matching,Greetings and Manners,Match greetings!,,,1,,,,,,,,Morning,Good Morning,Leaving,Goodbye,Safari,Jambo

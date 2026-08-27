@@ -1,0 +1,29 @@
+Created At: 2026-07-17T11:37:06Z
+Completed At: 2026-07-17T11:37:06Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3069
+Total Bytes: 141052
+Showing lines 920 to 940
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+920:                     'content_type' => $opt->content_type,
+921:                     'match_key' => $opt->match_key,
+922:                 ];
+923:             })->values()->toArray(),
+924:         ];
+925:     })->values()->toArray();
+926: @endphp
+927: 
+928: <script>
+929:     window.__quizConfig = {
+930:         questions: @json($questionsJson),
+931:         childStars: {{ (int)($child->total_stars ?? 0) }},
+932:         quizId: {{ (int)$mission->id }},
+933:         submitUrl: @json(route('kids.mission.submit', [$world, $mission])),
+934:         exitUrl: @json($world ? route('kids.mission-video', [$world, $mission]) : route('kids.map')),
+935:         csrfToken: @json(csrf_token()),
+936:     };
+937: </script>
+938: <div class="quiz-stage" x-data="quizEngine(window.__quizConfig)" x-init="init()">
+939: 
+940:     {{-- Loading state (shown until Alpine initializes) --}}
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter G Girl,Which letter makes the /g/ sound in G G G - /g/ /g/ /g/ - Girl Girl?,letter_g_card.webp,audio_q1.mp3,1,G,F,C,,,1,,,,,,,
+multiple_choice,Letter G Girl,Touch the happy girl starting with letter G!,girl_g.webp,audio_q2.mp3,1,Girl,Cat,Fish,,,1,,,,,,,
+multiple_choice,Letter G Girl,Listen to the song: G G G - /g/ /g/ /g/ - Girl!,girl_song.webp,audio_q3.mp3,1,Girl,Dog,Frog,,,1,,,,,,,
+speak_repeat,Letter G Girl,Say the phonics song chant: G G G - GIRL!,speak_girl_g.webp,audio_q4.mp3,1,Girl,,,,,,Girl,,,,,,
+speak_repeat,Letter G Girl,Say out loud clearly: LETTER G!,speak_letter_g.webp,audio_q5.mp3,1,Letter G,,,,,,Letter G,,,,,,
+matching,Letter G Girl,Match letter G to Girl!,,,1,,,,,,,,G,G,Girl,Girl,sound /g/,Girl
+matching,Letter G Girl,Match letter G sound /g/!,,,1,,,,,,,,G,G,/g/ /g/ /g/,Girl,Girl,Girl

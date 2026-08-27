@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Pirate Treasure Number Line 39,Which number comes after 89 on the map: 87 88 89 _?,map_q1.webp,audio_q1.mp3,1,90,88,91,,,,,,,,,,
+speak_repeat,Pirate Treasure Number Line 39,Say out loud: NINETY ON THE TREASURE MAP!,map_speak.webp,audio_q2.mp3,1,Ninety On The Treasure Map,,,,,,Ninety On The Treasure Map,,,,,,
+matching,Pirate Treasure Number Line 39,Match map numbers!,,,1,,,,,,89 ➔,90,59 ➔,60,79 ➔,80,,

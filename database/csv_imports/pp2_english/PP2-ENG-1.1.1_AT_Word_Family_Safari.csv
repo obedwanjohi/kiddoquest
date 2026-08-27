@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,AT Word Family Safari,Blend the sounds: /c/ /a/ /t/. What word does it make?,cat.webp,audio_q1.mp3,1,CAT 🐱,DOG 🐶,SUN ☀️,,,1,,,,,,,
+speak_repeat,AT Word Family Safari,Say out loud clearly: /c/ /a/ /t/ CAT!,cat_speak.webp,audio_q2.mp3,1,Cat,,,,,,Cat,,,,,,
+matching,AT Word Family Safari,Match CVC words to pictures!,,,1,,,,,,CAT,🐱,HAT,🧢,MAT,🦶,,

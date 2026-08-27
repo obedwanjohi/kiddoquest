@@ -1,0 +1,6 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Juice Jug Cookie Jar Capacity,Which container holds MORE liquid?,more_jug.webp,audio_q1.mp3,1,🏺,🥛,🥄,,,1,,,,,,,
+multiple_choice,Juice Jug Cookie Jar Capacity,Which container holds LESS liquid?,less_cup.webp,audio_q2.mp3,1,🥛,🏺,🛢️,,,1,,,,,,,
+multiple_choice,Juice Jug Cookie Jar Capacity,Tap the container that is FULL of cookies!,full_jar.webp,audio_q3.mp3,1,🍪,🫙,HALF,,,1,,,,,,,
+multiple_choice,Juice Jug Cookie Jar Capacity,Tap the glass that is EMPTY!,empty_glass.webp,audio_q4.mp3,1,🫗,🥛,HALF,,,1,,,,,,,
+multiple_choice,Juice Jug Cookie Jar Capacity,Which bucket holds MORE water?,more_bucket.webp,audio_q5.mp3,1,🪣,☕,🍾,,,1,,,,,,,

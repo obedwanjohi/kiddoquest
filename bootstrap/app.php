@@ -11,7 +11,18 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->alias([
+            'admin.auth' => \App\Http\Middleware\AdminAuth::class,
+            'admin.guest' => \App\Http\Middleware\AdminGuest::class,
+            'guardian.auth' => \App\Http\Middleware\GuardianAuth::class,
+            'guardian.guest' => \App\Http\Middleware\GuardianGuest::class,
+            'ensure.child.session' => \App\Http\Middleware\EnsureChildSession::class,
+        ]);
+
+        // ✅ MOBILE / TUNNEL TESTING: Trust all proxies
+        // Required so HTTPS tunnels (ngrok, cloudflared) pass the correct
+        // protocol to Laravel via X-Forwarded-Proto.
+        $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

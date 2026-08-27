@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Superhero Faith Shield 63,What piece of God's armor shields us from fear?,shield_q1.webp,audio_q1.mp3,1,🛡️,Helmet,Belt,,,1,,,,,,,
+speak_repeat,Superhero Faith Shield 63,Say out loud: FAITH IN GOD PROTECTS ME!,faith_speak.webp,audio_q2.mp3,1,Faith In God Protects Me,,,,,,Faith In God Protects Me,,,,,,
+matching,Superhero Faith Shield 63,Match faith shield!,,,1,,,,,,Shield 🛡️,Faith in God,Hero 🦸,Trusts God,Protection 💖,Complete,,

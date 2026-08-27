@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Space Number Master,Which number is painted on the side of the space rocket?,space_rocket_9.webp,audio_q1.mp3,1,9,2,4,,,1,,,,,,,
+multiple_choice,Space Number Master,Which number is glowing on the astronaut's suit?,space_suit_10.webp,audio_q2.mp3,1,10,5,3,,,1,,,,,,,
+multiple_choice,Space Number Master,Count all 10 candles on the birthday cake!,space_candles_10.webp,audio_q3.mp3,1,10,8,9,,,10,,,,,,,
+multiple_choice,Space Number Master,Touch the shiny Number 1 to 10 Master Trophy!,master_number_110_badge.webp,audio_q4.mp3,1,🏆,🏆,Hat,,,1,,,,,,,

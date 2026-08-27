@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,School Backpack Counter,How many blue backpacks are on the classroom shelf?,backpack_shelf.webp,audio_q1.mp3,1,2,3,4,,backpack.webp,2,,,,,,,
+count_objects,School Backpack Counter,Count all the yellow pencils in the pencil case!,pencil_case.webp,audio_q2.mp3,1,4,2,3,,pencil.webp,4,,,,,,,
+count_objects,School Backpack Counter,How many backpacks did Leo get ready for school?,backpack_ready.webp,audio_q3.mp3,1,3,2,4,,backpack.webp,3,,,,,,,
+multiple_choice,School Backpack Counter,Which card shows 4 yellow pencils?,mc_four_pencils.webp,audio_q4.mp3,1,4,2,3,,,4,,,,,,,

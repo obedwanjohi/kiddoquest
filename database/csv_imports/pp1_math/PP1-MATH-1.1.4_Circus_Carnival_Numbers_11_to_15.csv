@@ -1,0 +1,6 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Circus Carnival Numbers 11 to 15,Which circus tent shows Number 18?,tent18.webp,audio_q1.mp3,1,18,17,19,,,18,,,,,,,
+multiple_choice,Circus Carnival Numbers 11 to 15,Tap Number 20 on the grand circus balloon!,balloon20.webp,audio_q2.mp3,1,20,19,18,,,20,,,,,,,
+count_objects,Circus Carnival Numbers 11 to 15,How many popcorn boxes are at the stand?,popcorn18.webp,audio_q3.mp3,1,18,17,19,,🍿,18,,,,,,,
+speak_repeat,Circus Carnival Numbers 11 to 15,Say out loud: TWENTY BALLOONS!,twenty_speak.webp,audio_q4.mp3,1,Twenty Balloons,,,,,,Twenty Balloons,,,,,,
+matching,Circus Carnival Numbers 11 to 15,Match circus balloons to numbers 16-20!,,,1,,,,,,ops,16 Balloons 🎈,16,18,18,20,20,

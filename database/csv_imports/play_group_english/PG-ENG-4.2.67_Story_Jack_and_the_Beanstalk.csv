@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jack and Beanstalk,What magical seeds did Jack plant in his garden?,jack_beans.webp,audio_q1.mp3,1,Magic Beans,Turnip Seeds,Apple Seeds,,,1,,,,,,,
+multiple_choice,Jack and Beanstalk,What grew high up into the clouds overnight?,jack_beanstalk.webp,audio_q2.mp3,1,Giant Beanstalk,Brick Wall,Turnip Plant,,,1,,,,,,,
+multiple_choice,Jack and Beanstalk,Touch the castle sitting high in the clouds!,jack_castle.webp,audio_q3.mp3,1,Cloud Castle,Grandma's House,Farm Barn,,,1,,,,,,,
+speak_repeat,Jack and Beanstalk,Say out loud clearly: JACK AND THE BEANSTALK!,speak_jack_beanstalk.webp,audio_q4.mp3,1,Jack and the Beanstalk,,,,,,Jack and the Beanstalk,,,,,,
+speak_repeat,Jack and Beanstalk,Say out loud: MAGIC BEANS!,speak_magic_beans.webp,audio_q5.mp3,1,Magic Beans,,,,,,Magic Beans,,,,,,
+matching,Jack and Beanstalk,Match story elements!,,,1,,,,,,,,Beans,Magic,Beanstalk,Giant,Castle,Clouds
+matching,Jack and Beanstalk,Match story items!,,,1,,,,,,,,Jack,Jack,Beans,Beans,Castle,Castle

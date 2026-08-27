@@ -1,0 +1,12 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+matching,Color Sorting Basket,Sort red fruits into the RED basket!,,,1,,,,,,,,🍎,RED,🍓,RED,🍒,RED
+matching,Color Sorting Basket,Sort blue items into the BLUE basket!,,,1,,,,,,,,🐦,BLUE,🫐,BLUE,BLUE,BLUE
+matching,Color Sorting Basket,Sort yellow fruits into the YELLOW basket!,,,1,,,,,,,,🍌,YELLOW,🍋,YELLOW,☀️,YELLOW
+matching,Color Sorting Basket,Sort green vegetables into the GREEN basket!,,,1,,,,,,,,🥦,GREEN,🍃,GREEN,🥒,GREEN
+matching,Color Sorting Basket,Sort orange items into the ORANGE basket!,,,1,,,,,,,,🍊,ORANGE,🥕,ORANGE,🎃,ORANGE
+matching,Color Sorting Basket,Sort purple items into the PURPLE basket!,,,1,,,,,,,,🍇,PURPLE,🍆,PURPLE,🫐,PURPLE
+count_objects,Color Sorting Basket,How many red apples are in the red basket?,red_basket_count.webp,audio_q7.mp3,1,4,3,5,,🍎,4,,,,,,,
+count_objects,Color Sorting Basket,Count all 5 yellow bananas in the yellow basket!,yellow_basket_count.webp,audio_q8.mp3,1,5,4,6,,🍌,5,,,,,,,
+multiple_choice,Color Sorting Basket,Which basket has RED apples?,mc_q9.webp,audio_q9.mp3,1,🧺,🧺,🧺,,,1,,,,,,,
+multiple_choice,Color Sorting Basket,Which basket has BLUE berries?,mc_q10.webp,audio_q10.mp3,1,🧺,🧺,🧺,,,1,,,,,,,
+multiple_choice,Color Sorting Basket,Which basket has YELLOW lemons?,mc_q11.webp,audio_q11.mp3,1,🧺,🧺,🧺,,,1,,,,,,,

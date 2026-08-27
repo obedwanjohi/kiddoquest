@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Phonics Mastery 96,Blend /h/ /u/ /t/. What simple house is it?,hut_q1.webp,audio_q1.mp3,1,HUT 🛖,MAT,CAT,,,1,,,,,,,
+speak_repeat,Phonics Mastery 96,Say out loud: /h/ /u/ /t/ HUT!,hut_speak.webp,audio_q2.mp3,1,Hut,,,,,,Hut,,,,,,
+matching,Phonics Mastery 96,Match CVC hut!,,,1,,,,,,HUT,🛖,MAT,🦶,CAT,🐱,,

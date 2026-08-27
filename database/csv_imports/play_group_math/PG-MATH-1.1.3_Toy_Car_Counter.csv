@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Toy Car Counter,How many red toy cars are on the track?,car_track.webp,audio_q1.mp3,1,1,2,3,,car.webp,1,,,,,,,
+count_objects,Toy Car Counter,Count the zooming toy cars in the garage!,car_garage.webp,audio_q2.mp3,1,2,1,3,,car.webp,2,,,,,,,
+count_objects,Toy Car Counter,How many toy cars did Leo line up?,car_line.webp,audio_q3.mp3,1,3,2,1,,car.webp,3,,,,,,,
+multiple_choice,Toy Car Counter,Which picture shows 3 red toy cars?,mc_three_cars.webp,audio_q4.mp3,1,3,1,2,,,3,,,,,,,
+speak_repeat,Toy Car Counter,Say out loud clearly: ZOOM ZOOM TOY CARS!,speak_zoom_cars.webp,audio_q5.mp3,1,Zoom Zoom Toy Cars,,,,,,Zoom Zoom Toy Cars,,,,,,
+matching,Toy Car Counter,Match toy car groups to numbers!,,,1,,,,,,,,1,1,2,2,3,3
+matching,Toy Car Counter,Match numbers to car sets!,,,1,,,,,,,,1,1,2,2,3,3

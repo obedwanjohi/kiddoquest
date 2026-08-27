@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Made the Sky Sun,Who made the golden sun shining in the sky?,cre_bright_sun.webp,audio_q1.mp3,1,God,WIND,CAR,,,1,,,,,,,
+multiple_choice,God Made the Sky Sun,Touch the bright yellow sun created by God!,cre_yellow_sun.webp,audio_q2.mp3,1,SUN,MOON,BOX,,,1,,,,,,,
+multiple_choice,God Made the Sky Sun,Touch the beautiful blue sky!,cre_blue_sky.webp,audio_q3.mp3,1,SKY,TREE,BALL,,,1,,,,,,,
+speak_repeat,God Made the Sky Sun,Say out loud clearly: GOD MADE THE SUN!,speak_god_made_sun.webp,audio_q4.mp3,1,God Made The Sun,,,,,,God Made The Sun,,,,,,
+speak_repeat,God Made the Sky Sun,Say out loud: THANK YOU GOD!,speak_thank_you_god.webp,audio_q5.mp3,1,Thank You God,,,,,,Thank You God,,,,,,
+matching,God Made the Sky Sun,Match sky creations!,,,1,,,,,,,,Sun,SUN,Sky,SKY,Clouds,CLOUDS
+matching,God Made the Sky Sun,Match creation items!,,,1,,,,,,,,Sun,Sun,Sky,Sky,Clouds,Clouds

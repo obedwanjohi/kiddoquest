@@ -1,0 +1,6 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Outer Space Rocket Launch,Tap the rocket with number 15 ready for blastoff!,rock15.webp,audio_q1.mp3,1,15,12,18,,,15,,,,,,,
+multiple_choice,Outer Space Rocket Launch,Which planet has the number 20?,plan20.webp,audio_q2.mp3,1,20,10,19,,,20,,,,,,,
+count_objects,Outer Space Rocket Launch,How many red space rockets are docked at the station?,dock_rock.webp,audio_q9.mp3,1,12,10,14,,🚀,12,,,,,,,
+count_objects,Outer Space Rocket Launch,Count all 15 glowing green planets in the galaxy!,plan15.webp,audio_q10.mp3,1,15,13,16,,🪐,15,,,,,,,
+matching,Outer Space Rocket Launch,Match rockets 11 to 15 to space stations!,,,1,,,,,,11 Rockets,11,13,13,15,15,,

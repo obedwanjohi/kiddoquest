@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Letter M Phonics Safari,Which picture starts with the /m/ sound?,monk_q1.webp,audio_q1.mp3,1,🐒,Nest 🪺,Owl 🦉,,,1,,,,,,,
+multiple_choice,Letter M Phonics Safari,Tap the uppercase letter M!,letterM.webp,audio_q2.mp3,1,M,L,N,,,1,,,,,,,
+speak_repeat,Letter M Phonics Safari,Say out loud clearly: /m/ /m/ MONKEY!,monk_speak.webp,audio_q3.mp3,1,/m/ /m/ Monkey,,,,,,/m/ /m/ Monkey,,,,,,
+matching,Letter M Phonics Safari,Match Uppercase M to Lowercase m!,,,1,,,,,,M,m,L,l,N,n,,

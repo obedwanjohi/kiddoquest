@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+complete_pattern,Space Rocket Countdown,Which number comes next in countdown: 5 4 3 _ 1?,down_q1.webp,audio_q1.mp3,1,2,3,1,,,,,,,,,,
+complete_pattern,Space Rocket Countdown,Which number completes countdown: 10 9 8 7 6 5 4 3 _ 1?,down_q2.webp,audio_q2.mp3,1,2,3,1,,,,,,,,,,
+complete_pattern,Space Rocket Countdown,Find missing countdown number: 3 2 _ BLAST OFF!,down_q3.webp,audio_q3.mp3,1,1,2,3,,,,,,,,,,
+complete_pattern,Space Rocket Countdown,Which number comes after 1 in forward launch: 1 _ 3 4 5?,up_q4.webp,audio_q4.mp3,1,2,1,3,,,,,,,,,,
+multiple_choice,Space Rocket Countdown,Which countdown timer shows 3 seconds remaining?,time3.webp,audio_q5.mp3,1,3,2,1,,,3,,,,,,,
+multiple_choice,Space Rocket Countdown,Which countdown timer shows 1 second remaining?,time1.webp,audio_q6.mp3,1,1,2,3,,,1,,,,,,,
+multiple_choice,Space Rocket Countdown,Which launch button shows Number 10?,btn10.webp,audio_q7.mp3,1,10,9,8,,,10,,,,,,,

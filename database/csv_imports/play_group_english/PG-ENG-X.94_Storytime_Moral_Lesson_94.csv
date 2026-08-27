@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Storytime Moral Lesson,What lesson did Tortoise teach us in the race?,moral_tortoise.webp,audio_q1.mp3,1,Slow and Steady Wins,Go Away,Take A Nap,,,1,,,,,,,
+multiple_choice,Storytime Moral Lesson,What lesson did Tiny Mouse teach big Lion?,moral_mouse.webp,audio_q2.mp3,1,Little Friends Can Help,Run Away,Roar Loud,,,1,,,,,,,
+multiple_choice,Storytime Moral Lesson,What lesson did the Turnip story teach us?,moral_turnip.webp,audio_q3.mp3,1,Pull Together,Eat Vegetables,Sleep Early,,,1,,,,,,,
+speak_repeat,Storytime Moral Lesson,Say out loud clearly: KINDNESS AND TEAMWORK!,speak_kindness_teamwork.webp,audio_q4.mp3,1,Kindness and Teamwork,,,,,,Kindness and Teamwork,,,,,,
+speak_repeat,Storytime Moral Lesson,Say out loud: GOOD MORAL LESSONS!,speak_moral_lessons.webp,audio_q5.mp3,1,Good Moral Lessons,,,,,,Good Moral Lessons,,,,,,
+matching,Storytime Moral Lesson,Match moral lessons to stories!,,,1,,,,,,,,Tortoise,Slow and Steady,Mouse,Little Helper,Turnip,Pull Together
+matching,Storytime Moral Lesson,Match moral values!,,,1,,,,,,,,Slow,Steady,Tiny,Helper,Family,Together

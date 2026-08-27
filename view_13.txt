@@ -1,0 +1,59 @@
+Created At: 2026-07-17T15:36:21Z
+Completed At: 2026-07-17T15:36:21Z
+File Path: `file:///c:/xampp/htdocs/kid/resources/views/kids/mission/engine.blade.php`
+Total Lines: 3115
+Total Bytes: 143837
+Showing lines 950 to 1000
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+950:         <a href="#" class="exit-btn" @click.prevent="exitQuiz()" aria-label="Exit quiz">🗺️</a>
+951:         <div class="progress-wrap">
+952:             <div class="progress-bar-bg">
+953:                 <div class="progress-bar-fill" :style="`width: ${progressPercent}%`"></div>
+954:             </div>
+955:             <div class="progress-label" x-text="`Question ${currentIndex + 1} of ${questions.length}`"></div>
+956:         </div>
+957:         <div class="star-pill" :class="{ pulse: starPulse }">
+958:             <span style="font-size:20px;">⭐</span>
+959:             <span x-text="totalStars"></span>
+960:         </div>
+961:     </div>
+962: 
+963:     {{-- MAIN QUIZ AREA (hidden when complete) --}}
+964:     <template x-if="!quizComplete">
+965:         <div>
+966:             {{-- LEO + QUESTION (side-by-side in landscape) --}}
+967:             <div class="quiz-landscape-split">
+968:                 {{-- LEO ZONE --}}
+969:                 <div class="leo-zone" x-show="leoMessage">
+970:                     <div class="leo-mascot" :class="{ celebrating: leoCelebrating }">🦁</div>
+971:                     <div class="leo-bubble" x-text="leoMessage"></div>
+972:                 </div>
+973: 
+974:                 {{-- QUESTION --}}
+975:                 <div class="question-zone" :key="'q-' + currentIndex">
+976:                 <div class="question-badge" x-text="`${currentQuestion.typeIcon} ${currentQuestion.typeName}`"></div>
+977:                 <template x-if="currentQuestion.image">
+978:                     <img :src="currentQuestion.image" alt="Question image" class="question-image">
+979:                 </template>
+980:                 <div style="display: inline-flex; align-items: center; gap: 8px; justify-content: center; flex-wrap: wrap;">
+981:                     <button @click="playQuestionAudio()" 
+982:                             class="kid-btn" 
+983:                             style="width: 48px; height: 48px; border-radius: 50%; background: var(--kid-primary); color: white; border: none; cursor: pointer; font-size: 24px; box-shadow: 0 4px 0 rgba(0,0,0,0.15);"
+984:                             aria-label="Replay Audio">
+985:                         🔊
+986:                     </button>
+987:                     <div class="question-prompt" x-text="currentQuestion.prompt" style="margin: 0;"></div>
+988:                 </div>
+989:                 <template x-if="currentQuestion.hint && showHint">
+990:                     <p style="color: var(--kid-text-muted); font-size: 16px; margin-top: 8px;">
+991:                         💡 <span x-text="currentQuestion.hint"></span>
+992:                     </p>
+993:                 </template>
+994:                 </div>
+995:             </div>
+996: 
+997:             {{-- ANSWERS --}}
+998:             <div class="answer-zone" :key="'a-' + currentIndex">
+999: 
+1000:                 {{-- Multiple Choice / Tap Answer / True False / Fill Blank --}}
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

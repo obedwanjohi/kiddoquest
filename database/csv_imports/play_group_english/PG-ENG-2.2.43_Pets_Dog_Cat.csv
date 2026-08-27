@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Pets Dog Cat,Which friendly pet goes WOOF WOOF?,pet_dog.webp,audio_q1.mp3,1,Dog,Cat,Lion,,,1,,,,,,,
+multiple_choice,Pets Dog Cat,Which friendly pet goes MEOW MEOW?,pet_cat.webp,audio_q2.mp3,1,Cat,Dog,Cow,,,1,,,,,,,
+multiple_choice,Pets Dog Cat,Touch the cute puppy playing with a ball!,pet_puppy.webp,audio_q3.mp3,1,Dog,Elephant,Giraffe,,,1,,,,,,,
+speak_repeat,Pets Dog Cat,Say out loud clearly: PET DOG!,speak_pet_dog.webp,audio_q4.mp3,1,Pet Dog,,,,,,Pet Dog,,,,,,
+speak_repeat,Pets Dog Cat,Say out loud: PET CAT!,speak_pet_cat.webp,audio_q5.mp3,1,Pet Cat,,,,,,Pet Cat,,,,,,
+matching,Pets Dog Cat,Match pets to their sounds!,,,1,,,,,,,,Dog,Woof,Cat,Meow,Bird,Chirp
+matching,Pets Dog Cat,Match pets to names!,,,1,,,,,,,,Dog,Dog,Cat,Cat,Bird,Bird

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,God Made Water Rivers,Touch the clear blue river flowing with fresh water!,cre_blue_river.webp,audio_q1.mp3,1,RIVER,Dry Road,Sand Dune,,,1,,,,,,,
+multiple_choice,God Made Water Rivers,Touch the falling raindrops from the sky!,cre_raindrops.webp,audio_q2.mp3,1,Raindrops,Sunlight,Fire,,,1,,,,,,,
+multiple_choice,God Made Water Rivers,Touch the cup of clean drinking water!,cre_water_cup.webp,audio_q3.mp3,1,Water Cup,Toy Box,Book,,,1,,,,,,,
+speak_repeat,God Made Water Rivers,Say out loud clearly: GOD MADE THE WATER!,speak_god_made_water.webp,audio_q4.mp3,1,God Made The Water,,,,,,God Made The Water,,,,,,
+speak_repeat,God Made Water Rivers,Say out loud: THANK YOU FOR RAIN!,speak_thank_you_rain.webp,audio_q5.mp3,1,Thank You For Rain,,,,,,Thank You For Rain,,,,,,
+matching,God Made Water Rivers,Match water sources!,,,1,,,,,,,,River,RIVER,Rain,Raindrops,Drink,Water Cup
+matching,God Made Water Rivers,Match water items!,,,1,,,,,,,,River,River,Rain,Rain,Cup,Cup

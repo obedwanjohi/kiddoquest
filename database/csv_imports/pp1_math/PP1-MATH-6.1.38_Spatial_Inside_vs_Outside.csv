@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Spatial Inside vs Outside,Which kitten is INSIDE the toy basket?,inside_q1.webp,audio_q1.mp3,1,🐱,Kitten Outside,Kitten Above,,,1,,,,,,,
+speak_repeat,Spatial Inside vs Outside,Say out loud clearly: INSIDE AND OUTSIDE!,inside_speak.webp,audio_q2.mp3,1,Inside and Outside,,,,,,Inside and Outside,,,,,,
+matching,Spatial Inside vs Outside,Match inside outside!,,,1,,,,,,ops,Kitten 🐱,Inside,Dog 🐶,Outside,Bird 🐦,In Cage,

@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Calm Storm Adventure,Who spoke to the wild wind and waves on the sea?,cre_jesus_calm_adventure.webp,audio_q1.mp3,1,Jesus,WIND,FISH,,,1,,,,,,,
+multiple_choice,Calm Storm Adventure,What words did Jesus say to quiet the storm?,cre_peace_be_still_adv.webp,audio_q2.mp3,1,Peace Be Still,Blow Harder,Go Away,,,1,,,,,,,
+multiple_choice,Calm Storm Adventure,Touch the peaceful calm sea after the storm!,cre_sparkling_lake.webp,audio_q3.mp3,1,Sparkling Lake,Stormy Waves,CLOUD,,,1,,,,,,,
+speak_repeat,Calm Storm Adventure,Say out loud clearly: JESUS CALMS THE STORM!,speak_jesus_calms_storm_adv.webp,audio_q4.mp3,1,Jesus Calms The Storm,,,,,,Jesus Calms The Storm,,,,,,
+speak_repeat,Calm Storm Adventure,Say out loud: FAITH OVER FEAR!,speak_faith_over_fear.webp,audio_q5.mp3,1,Faith Over Fear,,,,,,Faith Over Fear,,,,,,
+matching,Calm Storm Adventure,Match storm adventure themes!,,,1,,,,,,,,Storm,Wind and Waves,Command,Peace Be Still,Result,Sparkling Lake
+matching,Calm Storm Adventure,Match adventure pictures!,,,1,,,,,,,,Boat,Fishing Boat,Sea,Sparkling Lake,Jesus,Savior

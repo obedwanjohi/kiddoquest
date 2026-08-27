@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,PP1 English Century Master 100,Tap the GOLDEN CENTURY TROPHY for reaching 100 English Missions!,trophy_q1.webp,audio_q1.mp3,1,🏆,🏆,🏆,,,1,,,,,,,
+speak_repeat,PP1 English Century Master 100,Say out loud: ONE HUNDRED ENGLISH MISSIONS!,cent_speak.webp,audio_q2.mp3,1,One Hundred English Missions,,,,,,One Hundred English Missions,,,,,,
+matching,PP1 English Century Master 100,Match century milestones!,,,1,,,,,,Mission 100,Century Master,Phonics A-Z,Mastered,CVC Blends,Mastered,,

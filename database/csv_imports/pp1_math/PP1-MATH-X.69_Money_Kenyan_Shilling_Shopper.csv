@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Money Kenyan Shilling Shopper,Which coin is worth MORE: 10 Shillings or 5 Shillings?,ksh_q1.webp,audio_q1.mp3,1,10,5,Equal,,,1,,,,,,,
+speak_repeat,Money Kenyan Shilling Shopper,Say out loud: TEN SHILLINGS IS MORE THAN FIVE!,ksh_speak.webp,audio_q2.mp3,1,Ten Shillings Is More Than Five,,,,,,Ten Shillings Is More Than Five,,,,,,
+matching,Money Kenyan Shilling Shopper,Match coin values!,,,1,,,,,,10 KSh 🪙,More,5,Less,20,Most,,

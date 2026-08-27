@@ -1,0 +1,5 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Classroom Supply Counter,How many rainbow crayons are in the crayon pot?,supply_crayons.webp,audio_q1.mp3,1,10,8,9,,crayon.webp,10,,,,,,,
+count_objects,Classroom Supply Counter,Count the wooden paintbrushes on the art desk!,supply_brushes.webp,audio_q2.mp3,1,9,10,8,,paintbrush.webp,9,,,,,,,
+count_objects,Classroom Supply Counter,How many eraser blocks are lined up in class?,supply_erasers.webp,audio_q3.mp3,1,8,9,10,,eraser.webp,8,,,,,,,
+multiple_choice,Classroom Supply Counter,Which card shows 10 rainbow crayons?,mc_ten_crayons.webp,audio_q4.mp3,1,10,8,9,,,10,,,,,,,

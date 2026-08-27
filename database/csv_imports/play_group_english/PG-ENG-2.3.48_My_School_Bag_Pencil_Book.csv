@@ -1,0 +1,8 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,My School Bag,Touch the yellow pencil used for drawing!,school_pencil.webp,audio_q1.mp3,1,Pencil,Book,School Bag,,,1,,,,,,,
+multiple_choice,My School Bag,Touch the colorful storybook!,school_book.webp,audio_q2.mp3,1,Book,Pencil,Teddy Bear,,,1,,,,,,,
+multiple_choice,My School Bag,Touch the backpack used for school!,school_bag.webp,audio_q3.mp3,1,School Bag,Toy Chest,Hat,,,1,,,,,,,
+speak_repeat,My School Bag,Say out loud clearly: MY SCHOOL BAG!,speak_school_bag.webp,audio_q4.mp3,1,My School Bag,,,,,,My School Bag,,,,,,
+speak_repeat,My School Bag,Say out loud: PENCIL AND BOOK!,speak_pencil_book.webp,audio_q5.mp3,1,Pencil and Book,,,,,,Pencil and Book,,,,,,
+matching,My School Bag,Match school supplies to names!,,,1,,,,,,,,Pencil,Pencil,Book,Book,School Bag,School Bag
+matching,My School Bag,Match school supplies to uses!,,,1,,,,,,,,Draw,Pencil,Read,Book,Pack,School Bag

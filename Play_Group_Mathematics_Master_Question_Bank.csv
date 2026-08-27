@@ -1,0 +1,21 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Safari Apple Counter,How many juicy red apples are hanging on the tree?,apple_tree.webp,audio_q1.mp3,1,1,2,3,,🍎,1,,,,,,,
+count_objects,Safari Apple Counter,Count all the red apples on the branch!,apple_branch.webp,audio_q2.mp3,1,2,1,3,,🍎,2,,,,,,,
+count_objects,Safari Apple Counter,How many apples are in the basket?,apple_basket.webp,audio_q3.mp3,1,3,2,1,,🍎,3,,,,,,,
+count_objects,Safari Apple Counter,Count the juicy red apples on the grass!,apple_grass.webp,audio_q4.mp3,1,1,2,3,,🍎,1,,,,,,,
+count_objects,Safari Apple Counter,How many red apples did Leo pick?,apple_picked.webp,audio_q5.mp3,1,2,1,3,,🍎,2,,,,,,,
+count_objects,Safari Apple Counter,Count all 3 apples in the box!,apple_box.webp,audio_q6.mp3,1,3,1,2,,🍎,3,,,,,,,
+count_objects,Safari Apple Counter,How many apples are hanging near the top?,apple_top.webp,audio_q7.mp3,1,1,3,2,,🍎,1,,,,,,,
+count_objects,Safari Apple Counter,Count all the red apples together!,apple_all.webp,audio_q8.mp3,1,2,3,1,,🍎,2,,,,,,,
+multiple_choice,Safari Apple Counter,Which picture shows 1 red apple?,mc_q9.webp,audio_q9.mp3,1,1 Apple,2 Apples,3 Apples,,,1,,,,,,,
+multiple_choice,Safari Apple Counter,Which basket has 2 red apples?,mc_q10.webp,audio_q10.mp3,1,2 Apples,1 Apple,3 Apples,,,2,,,,,,,
+multiple_choice,Safari Apple Counter,Which tree has 3 red apples?,mc_q11.webp,audio_q11.mp3,1,3 Apples,2 Apples,1 Apple,,,3,,,,,,,
+multiple_choice,Safari Apple Counter,Tap the card with 1 apple!,mc_q12.webp,audio_q12.mp3,1,1 Apple,3 Apples,2 Apples,,,1,,,,,,,
+multiple_choice,Safari Apple Counter,Tap the card with 2 apples!,mc_q13.webp,audio_q13.mp3,1,2 Apples,1 Apple,3 Apples,,,2,,,,,,,
+multiple_choice,Safari Apple Counter,Tap the card with 3 apples!,mc_q14.webp,audio_q14.mp3,1,3 Apples,2 Apples,1 Apple,,,3,,,,,,,
+speak_repeat,Safari Apple Counter,Say out loud: ONE APPLE!,apple_single.webp,audio_q15.mp3,1,One Apple,,,,,,One Apple,,,,,,
+speak_repeat,Safari Apple Counter,Say out loud: TWO APPLES!,apple_two.webp,audio_q16.mp3,1,Two Apples,,,,,,Two Apples,,,,,,
+speak_repeat,Safari Apple Counter,Say out loud: THREE APPLES!,apple_three.webp,audio_q17.mp3,1,Three Apples,,,,,,Three Apples,,,,,,
+matching,Safari Apple Counter,Match apple groups to number cards!,,,1,,,,,,,,,1 Apple 🍎,1,2 Apples 🍎🍎,2,3 Apples 🍎🍎🍎,3
+matching,Safari Apple Counter,Match fruits to number cards!,,,1,,,,,,,,,1 Banana 🍌,1,2 Oranges 🍊🍊,2,3 Apples 🍎🍎🍎,3
+matching,Safari Apple Counter,Match number symbols to star badges!,,,1,,,,,,,,,1,⭐,2,⭐⭐,3,⭐⭐⭐

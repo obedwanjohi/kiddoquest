@@ -1,0 +1,12 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+matching,Rainbow Colour Matcher,Match colored balloons to their matching color baskets!,,,1,,,,,,,,🎈,RED,🎈,BLUE,🎈,YELLOW
+matching,Rainbow Colour Matcher,Match colored fruits to their matching color plates!,,,1,,,,,,,,🍎,RED,🍏,GREEN,🍊,ORANGE
+matching,Rainbow Colour Matcher,Match colored socks to their pair!,,,1,,,,,,,,RED,RED,BLUE,BLUE,YELLOW,YELLOW
+matching,Rainbow Colour Matcher,Match rainbow colors to paint pots!,,,1,,,,,,,,🎨,RED,🎨,GREEN,🎨,PURPLE
+matching,Rainbow Colour Matcher,Match colored cars to parking spots!,,,1,,,,,,,,🚗,RED,🚙,BLUE,🚕,YELLOW
+matching,Rainbow Colour Matcher,Match colored flowers to vases!,,,1,,,,,,,,🌹,RED,🌻,YELLOW,🪻,BLUE
+count_objects,Rainbow Colour Matcher,How many colorful rainbow balloons do you see?,balloon_count.webp,audio_q7.mp3,1,5,4,6,,🎈,5,,,,,,,
+count_objects,Rainbow Colour Matcher,Count all 7 rainbow stripes across the sky!,rainbow_count.webp,audio_q8.mp3,1,7,6,8,,🌈,7,,,,,,,
+multiple_choice,Rainbow Colour Matcher,Which card matches RED with RED?,mc_q9.webp,audio_q9.mp3,1,🍎,RED,RED,,,1,,,,,,,
+multiple_choice,Rainbow Colour Matcher,Which card matches BLUE with BLUE?,mc_q10.webp,audio_q10.mp3,1,🐦,BLUE,BLUE,,,1,,,,,,,
+multiple_choice,Rainbow Colour Matcher,Which card matches YELLOW with YELLOW?,mc_q11.webp,audio_q11.mp3,1,🍌,YELLOW,YELLOW,,,1,,,,,,,

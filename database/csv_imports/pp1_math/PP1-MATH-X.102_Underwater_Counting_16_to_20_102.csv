@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+count_objects,Underwater Counting 16 to 20 102,Count all 17 swimming fish in the reef!,fish17.webp,audio_q1.mp3,1,17,16,18,,🐟,17,,,,,,,
+speak_repeat,Underwater Counting 16 to 20 102,Say out loud: SEVENTEEN FISH!,fish_speak.webp,audio_q2.mp3,1,Seventeen Fish,,,,,,Seventeen Fish,,,,,,
+matching,Underwater Counting 16 to 20 102,Match sea counting!,,,1,,,,,,17 Fish 🐟,17,18,18,19,19,,

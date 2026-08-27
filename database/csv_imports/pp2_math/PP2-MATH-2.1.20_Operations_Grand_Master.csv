@@ -1,0 +1,4 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Operations Grand Master,Tap the GOLDEN MATH OPERATIONS TROPHY for mastering Addition & Subtraction!,trophy_q1.webp,audio_q1.mp3,1,🏆,🏆,🏆,,,1,,,,,,,
+speak_repeat,Operations Grand Master,Say out loud: I AM AN ADDITION AND SUBTRACTION MASTER!,op_speak.webp,audio_q2.mp3,1,I Am An Addition and Subtraction Master,,,,,,I Am An Addition and Subtraction Master,,,,,,
+matching,Operations Grand Master,Match operation summary!,,,1,,,,,,Addition ➕,Sums up to 20,Subtraction ➖,Take away to 20,Friends of 20,Number Bonds,,

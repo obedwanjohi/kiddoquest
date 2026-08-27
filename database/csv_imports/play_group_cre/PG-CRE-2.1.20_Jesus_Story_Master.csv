@@ -1,0 +1,9 @@
+question_type,lesson_title,prompt,prompt_image,prompt_audio,correct_answer,option_1,option_2,option_3,option_4,count_emoji_or_image,target_count,target_word,pair_1_left,pair_1_right,pair_2_left,pair_2_right,pair_3_left,pair_3_right
+multiple_choice,Jesus Story Master,Who spoke to the storm and said Peace Be Still?,master_calms_storm.webp,audio_q1.mp3,1,Jesus,WIND,LION,,,1,,,,,,,
+multiple_choice,Jesus Story Master,How many loaves of bread did the boy share?,master_five_loaves.webp,audio_q2.mp3,1,5 Loaves,100 Loaves,0 Loaves,,,1,,,,,,,
+multiple_choice,Jesus Story Master,Who is our Good Shepherd who carries His little lamb?,master_shepherd.webp,audio_q3.mp3,1,Jesus,WOLF,Fox,,,1,,,,,,,
+multiple_choice,Jesus Story Master,Touch the shiny Jesus Story Master Trophy!,master_jesus_trophy.webp,audio_q4.mp3,1,🏆,Toy Box,Hat,,,1,,,,,,,
+speak_repeat,Jesus Story Master,Say out loud clearly: JESUS STORY MASTER!,speak_jesus_story_master.webp,audio_q5.mp3,1,Jesus Story Master,,,,,,Jesus Story Master,,,,,,
+speak_repeat,Jesus Story Master,Say out loud: I LOVE JESUS!,speak_i_love_jesus.webp,audio_q6.mp3,1,I Love Jesus,,,,,,I Love Jesus,,,,,,
+matching,Jesus Story Master,Match stories to lessons!,,,1,,,,,,,,Storm,Peace Be Still,Bread,5 Loaves 2 Fish,Shepherd,Carried Lamb
+matching,Jesus Story Master,Match master items!,,,1,,,,,,,,Manger,Baby Jesus,Easter,Jesus Is Alive,Trophy,🏆
