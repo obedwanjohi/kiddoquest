@@ -6,6 +6,12 @@ if [ ! -f /var/www/html/database/database.sqlite ]; then
     touch /var/www/html/database/database.sqlite
 fi
 
+# Ensure storage framework directories exist
+mkdir -p /var/www/html/storage/framework/sessions \
+         /var/www/html/storage/framework/views \
+         /var/www/html/storage/framework/cache \
+         /var/www/html/storage/logs
+
 # Ensure storage & database directories have correct permissions
 chown -R www-data:www-data /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache
 chmod -R 775 /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache

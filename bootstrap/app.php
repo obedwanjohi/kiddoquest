@@ -28,8 +28,8 @@ $app = Application::configure(basePath: dirname(__DIR__))
         //
     })->create();
 
-// Point storage to writable /tmp on serverless environments
-if (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL']) || env('APP_ENV') === 'production' || getenv('APP_STORAGE')) {
+// Point storage to writable /tmp only on serverless environments (e.g. Vercel)
+if (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL']) || getenv('APP_STORAGE')) {
     $app->useStoragePath(getenv('APP_STORAGE') ?: '/tmp/storage');
 }
 

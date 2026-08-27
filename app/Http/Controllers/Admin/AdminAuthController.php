@@ -35,6 +35,9 @@ class AdminAuthController extends Controller
             return redirect()->intended(route('admin.dashboard'));
         }
 
+        return back()->withErrors(['email' => 'Invalid credentials.'])->onlyInput('email');
+    }
+
     public function showRegister(): View|\Illuminate\Http\RedirectResponse
     {
         // Auto-lock: If an admin already exists, lock the setup screen
