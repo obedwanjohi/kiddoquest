@@ -81,14 +81,6 @@ class Child extends Model
     }
 
     /**
-     * Get the character name representation.
-     */
-    public function getAvatarNameAttribute(): string
-    {
-        return self::AVATARS[$this->avatar]['name'] ?? 'Friend';
-    }
-
-    /**
      * Get the emoji representation for equipped hat.
      */
     public function getEquippedHatEmojiAttribute(): ?string
