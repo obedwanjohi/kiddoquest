@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('question_banks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('lesson_id')->constrained()->cascadeOnDelete();
+            $table->unsignedBigInteger('lesson_id')->nullable();
             $table->string('name');
             $table->text('description')->nullable();
             $table->integer('pool_size')->default(5);          // questions per attempt
