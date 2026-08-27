@@ -8,17 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        try {
-            \Illuminate\Support\Facades\DB::statement('DROP INDEX IF EXISTS question_banks_lesson_id_status_index');
-        } catch (\Throwable $e) {}
-
         Schema::table('question_banks', function (Blueprint $table) {
-            try {
-                $table->dropIndex(['lesson_id', 'status']);
-            } catch (\Throwable $e) {}
-            try {
-                $table->dropForeign(['lesson_id']);
-            } catch (\Throwable $e) {}
             $table->dropColumn(['lesson_id', 'pool_size', 'pass_threshold', 'max_attempts', 'shuffle']);
         });
     }

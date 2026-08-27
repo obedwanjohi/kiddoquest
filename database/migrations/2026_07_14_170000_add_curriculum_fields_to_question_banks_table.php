@@ -19,17 +19,12 @@ return new class extends Migration
 
             // Metadata
             $table->string('difficulty', 10)->default('medium')->after('description'); // easy|medium|hard
-
-            $table->index(['subject_id', 'status']);
-            $table->index(['quiz_type_id', 'status']);
         });
     }
 
     public function down(): void
     {
         Schema::table('question_banks', function (Blueprint $table) {
-            $table->dropIndex(['subject_id', 'status']);
-            $table->dropIndex(['quiz_type_id', 'status']);
             $table->dropColumn(['subject_id', 'sub_strand_id', 'quiz_type_id', 'difficulty']);
             $table->foreignId('lesson_id')->nullable(false)->change();
         });

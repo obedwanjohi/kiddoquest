@@ -20,8 +20,6 @@ return new class extends Migration
             $table->string('status', 20)->default('draft');    // draft | published
             $table->integer('sort_order')->default(0);
             $table->timestamps();
-
-            $table->index(['lesson_id', 'status']);
         });
     }
 
