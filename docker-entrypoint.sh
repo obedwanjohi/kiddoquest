@@ -16,8 +16,8 @@ mkdir -p /var/www/html/storage/framework/sessions \
 chown -R www-data:www-data /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache
 chmod -R 775 /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Run database migrations automatically
-php artisan migrate --force --graceful || true
+# Run all database migrations automatically
+php artisan migrate --force
 
 # Execute Apache in foreground
 exec apache2-foreground

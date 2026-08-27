@@ -59,15 +59,20 @@ class ChildController extends Controller
             'birthdate'      => ['nullable', 'date', 'before:today', 'after:1900-01-01'],
         ]);
 
-        $child = $guardian->children()->create([
+        $childData = [
             'name'              => trim($validated['name']),
             'avatar'            => $validated['avatar'],
             'favorite_color'    => $validated['favorite_color'] ?? 'purple',
             'birthdate'         => $validated['birthdate'] ?? null,
             'recommended_level' => Child::recommendLevel($validated['birthdate'] ?? null),
             'total_stars'       => 0,
-            'star_coins'        => 0,
-        ]);
+        ];
+
+        if (\Illuminate\Support\Facades\Schema::hasColumn('children', 'star_coins')) {
+            $childData['star_coins'] = 0;
+        }
+
+        $child = $guardian->children()->create($childData);
 
         // Redirect to the magical onboarding welcome screen
         return redirect()
