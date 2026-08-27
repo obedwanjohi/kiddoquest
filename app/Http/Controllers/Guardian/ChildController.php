@@ -29,8 +29,13 @@ class ChildController extends Controller
     /**
      * Show the form for creating a new child.
      */
-    public function create(): View
+    public function create()
     {
+        $guardian = Auth::guard('guardian')->user();
+        if (! $guardian) {
+            return redirect()->route('guardian.login')->with('error', 'Please sign in to add a child.');
+        }
+
         return view('guardian.children.create', [
             'avatars' => Child::AVATARS,
             'colors'  => self::COLORS,
@@ -42,6 +47,11 @@ class ChildController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $guardian = Auth::guard('guardian')->user();
+        if (! $guardian) {
+            return redirect()->route('guardian.login')->with('error', 'Please sign in to add a child.');
+        }
+
         $validated = $request->validate([
             'name'           => ['required', 'string', 'max:255'],
             'avatar'         => ['required', 'string', Rule::in(Child::avatarIdentifiers())],
@@ -49,15 +59,14 @@ class ChildController extends Controller
             'birthdate'      => ['nullable', 'date', 'before:today', 'after:1900-01-01'],
         ]);
 
-        $guardian = Auth::guard('guardian')->user();
-
         $child = $guardian->children()->create([
-            'name'              => $validated['name'],
+            'name'              => trim($validated['name']),
             'avatar'            => $validated['avatar'],
-            'favorite_color'    => $validated['favorite_color'] ?? null,
+            'favorite_color'    => $validated['favorite_color'] ?? 'purple',
             'birthdate'         => $validated['birthdate'] ?? null,
             'recommended_level' => Child::recommendLevel($validated['birthdate'] ?? null),
             'total_stars'       => 0,
+            'star_coins'        => 0,
         ]);
 
         // Redirect to the magical onboarding welcome screen
