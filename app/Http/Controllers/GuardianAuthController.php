@@ -22,6 +22,8 @@ class GuardianAuthController extends Controller
             'password' => ['required', 'string'],
         ]);
 
+        $credentials['email'] = strtolower(trim($credentials['email']));
+
         if (Auth::guard('guardian')->attempt($credentials, $request->boolean('remember'))) {
             $guardian = Auth::guard('guardian')->user();
 
@@ -53,10 +55,13 @@ class GuardianAuthController extends Controller
             'phone'    => ['nullable', 'string', 'max:20'],
         ]);
 
+        $email = strtolower(trim($validated['email']));
+
+        // Pass plain password directly: Guardian model has 'password' => 'hashed' cast
         $guardian = Guardian::create([
-            'name'      => $validated['name'],
-            'email'     => $validated['email'],
-            'password'  => \Illuminate\Support\Facades\Hash::make($validated['password']),
+            'name'      => trim($validated['name']),
+            'email'     => $email,
+            'password'  => $validated['password'],
             'phone'     => $validated['phone'] ?? null,
             'is_active' => true,
         ]);

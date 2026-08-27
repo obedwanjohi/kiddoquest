@@ -22,6 +22,8 @@ class AdminAuthController extends Controller
             'password' => ['required', 'string'],
         ]);
 
+        $credentials['email'] = strtolower(trim($credentials['email']));
+
         if (Auth::guard('admin')->attempt($credentials, $request->boolean('remember'))) {
             $admin = Auth::guard('admin')->user();
 
@@ -61,10 +63,12 @@ class AdminAuthController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
+        $email = strtolower(trim($validated['email']));
+
         $admin = \App\Models\Admin::create([
-            'name'      => $validated['name'],
-            'email'     => $validated['email'],
-            'password'  => \Illuminate\Support\Facades\Hash::make($validated['password']),
+            'name'      => trim($validated['name']),
+            'email'     => $email,
+            'password'  => $validated['password'], // Casts handles hashing automatically
             'role'      => 'admin',
             'is_active' => true,
         ]);
