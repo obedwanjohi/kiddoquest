@@ -1,14 +1,14 @@
 @extends('layouts.app')
-@section('title', 'Add Child — BZabc Kids')
+@section('title', 'Add a Child — KiddoQuest CBC')
 
 @section('content')
-<div class="min-h-screen bg-gray-50">
-    <header class="bg-white shadow-sm">
+<div class="min-h-screen bg-[#FCFAFF]">
+    <header class="bg-white border-b border-purple-100 shadow-sm">
         <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <a href="{{ route('guardian.dashboard') }}" class="text-gray-500 hover:text-gray-700 text-sm">← Back</a>
-                <span class="text-2xl">🌈</span>
-                <h1 class="text-xl font-bold text-purple-600">Add a Child</h1>
+                <a href="{{ route('kids.profiles') }}" class="text-slate-500 hover:text-purple-600 text-sm font-bold">← Back to Profiles</a>
+                <span class="text-2xl">🦁</span>
+                <h1 class="text-xl font-black text-purple-700 font-heading">Add a New Child</h1>
             </div>
         </div>
     </header>
@@ -91,8 +91,8 @@
                 </div>
 
                 <div class="flex items-center justify-between gap-4">
-                    <a href="{{ route('guardian.dashboard') }}" class="text-gray-500 hover:text-gray-700 text-sm font-medium">Cancel</a>
-                    <button type="submit" class="bg-purple-600 text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-purple-700 transition shadow-sm">
+                    <a href="{{ route('kids.profiles') }}" class="text-slate-500 hover:text-slate-700 text-sm font-bold">Cancel</a>
+                    <button type="submit" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3.5 rounded-2xl font-black text-lg hover:shadow-lg transition transform hover:scale-102 cursor-pointer font-heading">
                         ✨ Create Profile
                     </button>
                 </div>

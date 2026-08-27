@@ -22,10 +22,13 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-// Root redirect -> Go to Kid Profiles ("Who's Playing?")
+// Root route: If guardian is logged in, go to profiles. If not, show World-Class Landing Page!
 Route::get('/', function () {
-    return redirect()->route('kids.profiles');
-});
+    if (\Illuminate\Support\Facades\Auth::guard('guardian')->check()) {
+        return redirect()->route('kids.profiles');
+    }
+    return view('welcome');
+})->name('home');
 
 Route::get('/build-all-full-scripts-now', function() {
     $base_dir = base_path() . "/";
@@ -216,8 +219,18 @@ Route::prefix('kids')->group(function () {
 Route::get('/parent/login', [App\Http\Controllers\GuardianAuthController::class, 'showLogin'])->name('guardian.login');
 Route::post('/parent/login', [App\Http\Controllers\GuardianAuthController::class, 'login']);
 Route::get('/parent/register', [App\Http\Controllers\GuardianAuthController::class, 'showRegister'])->name('guardian.register');
-Route::post('/parent/register', [App\Http\Controllers\GuardianAuthController::class, 'register']);
+Route::post('/parent/register', [App\Http\Controllers\GuardianAuthController::class, 'register'])->name('guardian.register.post');
 Route::post('/parent/logout', [App\Http\Controllers\GuardianAuthController::class, 'logout'])->name('guardian.logout');
+
+// Guardian Child Management
+Route::middleware(['guardian.auth'])->prefix('parent')->name('guardian.children.')->group(function () {
+    Route::get('/children/create', [App\Http\Controllers\Guardian\ChildController::class, 'create'])->name('create');
+    Route::post('/children', [App\Http\Controllers\Guardian\ChildController::class, 'store'])->name('store');
+    Route::get('/children/{child}/welcome', [App\Http\Controllers\Guardian\ChildController::class, 'welcome'])->name('welcome');
+    Route::get('/children/{child}/edit', [App\Http\Controllers\Guardian\ChildController::class, 'edit'])->name('edit');
+    Route::put('/children/{child}', [App\Http\Controllers\Guardian\ChildController::class, 'update'])->name('update');
+    Route::delete('/children/{child}', [App\Http\Controllers\Guardian\ChildController::class, 'destroy'])->name('destroy');
+});
 
 // Parent Zone (Unified Single-App Model behind 4-digit PIN Gate)
 Route::get('/parent/pin-gate', [App\Http\Controllers\Parent\ParentDashboardController::class, 'showPinGate'])->name('parent.pin_gate');

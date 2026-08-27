@@ -50,13 +50,13 @@
 
             {{-- CTAs --}}
             <div class="space-y-3">
-                <a href="{{ route('kids.profiles') }}"
-                   class="block w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white py-4 rounded-xl font-bold text-xl hover:shadow-lg hover:scale-105 transition">
-                    🚀 Let's Go on an Adventure!
+                <a href="{{ route('kids.enter', $child) }}"
+                   class="block w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white py-4 rounded-2xl font-black text-xl hover:shadow-lg hover:scale-105 transition font-heading">
+                    🚀 Let's Start Learning!
                 </a>
-                <a href="{{ route('guardian.dashboard') }}"
-                   class="block text-gray-500 hover:text-gray-700 text-sm font-medium py-2">
-                    ← Back to Dashboard
+                <a href="{{ route('kids.profiles') }}"
+                   class="block text-slate-500 hover:text-slate-800 text-sm font-bold py-2">
+                    ← Back to Profiles
                 </a>
             </div>
         </div>

@@ -63,8 +63,8 @@ class GuardianAuthController extends Controller
         Auth::guard('guardian')->login($guardian);
         $request->session()->regenerate();
 
-        // Redirect directly to Kid UI Profile Selector
-        return redirect()->route('kids.profiles')->with('success', 'Welcome to KiddoQuest CBC! Let\'s choose your child\'s avatar.');
+        // Redirect directly to Add Child Profile
+        return redirect()->route('guardian.children.create')->with('success', 'Welcome to KiddoQuest CBC! Let\'s add your child\'s profile.');
     }
 
     public function logout(Request $request): RedirectResponse
@@ -72,6 +72,6 @@ class GuardianAuthController extends Controller
         Auth::guard('guardian')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('kids.profiles');
+        return redirect()->route('home');
     }
 }

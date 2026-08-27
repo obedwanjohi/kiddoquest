@@ -89,8 +89,8 @@
 </head>
 <body>
     <div class="login-card">
-        <h1>🔐 Admin Panel</h1>
-        <p class="subtitle">Kids Learning Platform — Content Management</p>
+        <h1>🔐 Admin Portal</h1>
+        <p class="subtitle">KiddoQuest CBC — Content & Mission Management</p>
 
         @if (session('error'))
             <div class="alert-error">{{ session('error') }}</div>
@@ -107,19 +107,23 @@
         <form method="POST" action="{{ route('admin.login.post') }}">
             @csrf
             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" value="{{ old('email') }}" required autofocus>
+                <label for="email">Admin Email Address</label>
+                <input type="email" id="email" name="email" value="{{ old('email') }}" required autofocus placeholder="admin@example.com">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required placeholder="••••••••">
             </div>
             <div class="remember-row">
                 <input type="checkbox" id="remember" name="remember">
                 <label for="remember">Remember me</label>
             </div>
-            <button type="submit" class="btn-login">Sign In</button>
+            <button type="submit" class="btn-login">Sign In to Admin Dashboard</button>
         </form>
+
+        <div style="text-align: center; margin-top: 20px; font-size: 13px;">
+            <a href="{{ url('/') }}" style="color: #667eea; text-decoration: none; font-weight: 600;">← Back to KiddoQuest Home</a>
+        </div>
     </div>
 </body>
 </html>

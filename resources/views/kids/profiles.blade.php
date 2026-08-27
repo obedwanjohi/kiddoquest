@@ -26,7 +26,7 @@
             <p class="mb-6" style="font-size: var(--kid-text-body); color: var(--kid-text-muted);">
                 Let's add your first child to begin the learning adventure.
             </p>
-            <a href="{{ route('parent.pin_gate') }}">
+            <a href="{{ route('guardian.children.create') }}">
                 <x-kid.button icon="➕" label="Add Your First Child" />
             </a>
         </div>
@@ -69,7 +69,7 @@
             @endforeach
 
             {{-- Add New Child Card --}}
-            <a href="{{ route('parent.pin_gate') }}"
+            <a href="{{ route('guardian.children.create') }}"
                class="block border-[3px] border-dashed border-white/70 rounded-[var(--kid-radius-xl)] p-6 text-center
                       flex flex-col items-center justify-center
                       transition-all duration-300 hover:bg-white/20 hover:scale-105
@@ -83,10 +83,13 @@
         </div>
     @endif
 
-    {{-- Parent Zone Button --}}
-    <div class="mt-4">
+    {{-- Bottom Action Row --}}
+    <div class="mt-4 flex flex-wrap items-center justify-center gap-4">
         <a href="{{ route('parent.pin_gate') }}">
             <x-kid.secondary-button icon="🔐">Parent Zone (PIN Protected)</x-kid.secondary-button>
+        </a>
+        <a href="{{ url('/') }}" class="bg-white/80 hover:bg-white text-slate-700 font-bold px-5 py-2.5 rounded-full shadow-sm text-sm transition">
+            🏠 Home
         </a>
     </div>
 </div>
