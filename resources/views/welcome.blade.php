@@ -86,7 +86,16 @@
     </style>
 </head>
 
-<body class="bg-[#FAF5FF] text-slate-900 antialiased overflow-x-hidden" x-data="{ authModal: false, authTab: 'register', mobileMenu: false }">
+<body class="bg-[#FAF5FF] text-slate-900 antialiased overflow-x-hidden" x-data="{ authModal: {{ $errors->any() ? 'true' : 'false' }}, authTab: '{{ old('name') || $errors->has('name') ? 'register' : 'login' }}', mobileMenu: false }">
+
+    {{-- Error Toast Notification --}}
+    @if($errors->any())
+        <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 5000)" x-show="show" x-transition
+             class="fixed top-5 right-5 z-50 bg-rose-600 text-white font-black px-5 py-3 rounded-2xl shadow-2xl border-2 border-white text-xs sm:text-sm flex items-center gap-2">
+            <span>⚠️</span>
+            <span>{{ $errors->first() }}</span>
+        </div>
+    @endif
 
     {{-- TOP BANNER --}}
     <div class="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-500 text-white text-xs sm:text-sm font-extrabold py-2 px-3 text-center shadow-sm">
@@ -830,6 +839,13 @@
                     Sign In 🔐
                 </button>
             </div>
+
+            {{-- Error banner inside modal --}}
+            @if ($errors->any())
+                <div class="mb-4 bg-rose-50 border border-rose-300 text-rose-700 px-4 py-3 rounded-2xl text-xs font-black text-center">
+                    ⚠️ {{ $errors->first() }}
+                </div>
+            @endif
 
             {{-- Register Form --}}
             <form x-show="authTab === 'register'" action="{{ url('/parent/register') }}" method="POST" class="space-y-3">

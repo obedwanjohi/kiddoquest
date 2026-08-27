@@ -54,10 +54,11 @@ class GuardianAuthController extends Controller
         ]);
 
         $guardian = Guardian::create([
-            'name'     => $validated['name'],
-            'email'    => $validated['email'],
-            'password' => $validated['password'],
-            'phone'    => $validated['phone'] ?? null,
+            'name'      => $validated['name'],
+            'email'     => $validated['email'],
+            'password'  => \Illuminate\Support\Facades\Hash::make($validated['password']),
+            'phone'     => $validated['phone'] ?? null,
+            'is_active' => true,
         ]);
 
         Auth::guard('guardian')->login($guardian);
