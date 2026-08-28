@@ -57,14 +57,36 @@ class KidController extends Controller
     public function map(): View
     {
         $child = $this->activeChild();
-        $levelCode = $child->recommended_level;
+        $rawLevel = strtolower(str_replace(['_', '-'], ' ', $child->recommended_level ?? ''));
 
         $worldsQuery = AdventureWorld::with('subject.level')->orderBy('sort_order');
 
-        if ($levelCode) {
-            $worlds = $worldsQuery->whereHas('subject.level', function($q) use ($levelCode) {
-                $q->where('code', $levelCode)
-                  ->orWhere('name', 'like', "%{$levelCode}%");
+        if ($rawLevel) {
+            $worlds = $worldsQuery->where(function ($query) use ($rawLevel) {
+                $query->whereHas('subject.level', function ($q) use ($rawLevel) {
+                    if (str_contains($rawLevel, 'play') || str_contains($rawLevel, 'pg')) {
+                        $q->where('code', 'PG')
+                          ->orWhere('name', 'like', '%play%');
+                    } elseif (str_contains($rawLevel, 'pp1')) {
+                        $q->where('code', 'PP1')
+                          ->orWhere('name', 'like', '%pp1%');
+                    } elseif (str_contains($rawLevel, 'pp2')) {
+                        $q->where('code', 'PP2')
+                          ->orWhere('name', 'like', '%pp2%');
+                    } else {
+                        $q->where('code', strtoupper($rawLevel))
+                          ->orWhere('name', 'like', "%{$rawLevel}%");
+                    }
+                });
+
+                // Match Playgroup world slugs directly for Play Group profiles
+                if (str_contains($rawLevel, 'play') || str_contains($rawLevel, 'pg')) {
+                    $query->orWhereIn('slug', [
+                        'whispering-forest', 'sunny-meadow', 'cookie-trail',
+                        'safari-plains', 'castle-of-discovery',
+                        'ocean-cove', 'kindness-village', 'rainbow-mountain'
+                    ]);
+                }
             })->get();
         } else {
             $worlds = $worldsQuery->get();

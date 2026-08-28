@@ -10,9 +10,9 @@ class AdventureWorldSeeder extends Seeder
 {
     public function run(): void
     {
-        $mathId = $mathSubject?->id ?? Subject::where('slug', 'like', 'mathematics%')->value('id');
-        $engId  = $engSubject?->id ?? Subject::where('slug', 'like', 'language%')->value('id');
-        $creId  = $creSubject?->id ?? Subject::where('slug', 'like', 'cre%')->value('id');
+        $mathId = Subject::where('slug', 'mathematics-pg')->value('id') ?? Subject::where('slug', 'like', 'mathematics%')->value('id');
+        $engId  = Subject::where('slug', 'language-phonics-pg')->value('id') ?? Subject::where('slug', 'like', 'language%')->value('id');
+        $creId  = Subject::where('slug', 'cre-values-pg')->value('id') ?? Subject::where('slug', 'like', 'cre%')->value('id');
 
         $worlds = [
             // 🔢 MATHEMATICS WORLDS (Playgroup)
