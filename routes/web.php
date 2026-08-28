@@ -261,6 +261,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminDashboardController::class, 'index'])->name('dashboard');
 
     // Adventure Worlds
+    Route::get('/seed-worlds', function() {
+        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'AdventureWorldSeeder', '--force' => true]);
+        return redirect()->route('admin.adventure-worlds.index')->with('success', '✨ All 8 Playgroup Worlds seeded successfully!');
+    })->name('adventure-worlds.seed');
     Route::post('/adventure-worlds/{world}/move', [App\Http\Controllers\Admin\AdventureWorldController::class, 'move'])->name('adventure-worlds.move');
     Route::post('/worlds/{world}/move', [App\Http\Controllers\Admin\AdventureWorldController::class, 'move'])->name('worlds.move');
     Route::resource('/worlds', App\Http\Controllers\Admin\AdventureWorldController::class);

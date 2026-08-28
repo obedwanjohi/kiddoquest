@@ -5,14 +5,20 @@
 <div class="card">
     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
         <h3>🗺️ Adventure Worlds</h3>
-        <a href="{{ route('admin.adventure-worlds.create') }}" class="btn btn-primary">➕ New World</a>
+        <div style="display: flex; gap: 8px;">
+            <a href="{{ route('admin.adventure-worlds.seed') }}" class="btn btn-secondary" style="background: #10B981; color: #fff; border: none; font-weight: bold;">🌱 Seed 8 Playgroup Worlds</a>
+            <a href="{{ route('admin.adventure-worlds.create') }}" class="btn btn-primary">➕ New World</a>
+        </div>
     </div>
     
     <div class="card-body p-0">
         @if($worlds->isEmpty())
             <div style="padding: 30px; text-align: center; color: #64748b;">
                 <p>No Adventure Worlds created yet.</p>
-                <a href="{{ route('admin.adventure-worlds.create') }}" class="btn btn-primary" style="margin-top: 10px;">Create your first world</a>
+                <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+                    <a href="{{ route('admin.adventure-worlds.seed') }}" class="btn btn-secondary" style="background: #10B981; color: #fff; border: none; font-weight: bold;">🌱 Auto-Seed 8 Playgroup Worlds</a>
+                    <a href="{{ route('admin.adventure-worlds.create') }}" class="btn btn-primary">Create manually</a>
+                </div>
             </div>
         @else
             <table class="table">
