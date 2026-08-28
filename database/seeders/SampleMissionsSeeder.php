@@ -177,12 +177,22 @@ class SampleMissionsSeeder extends Seeder
     private function seedWorldMissions(AdventureWorld $world, array $missionsData): void
     {
         foreach ($missionsData as $mData) {
+            $cleanTitle = trim(preg_replace('/[^\p{L}\p{N}\s]/u', '', $mData['title']));
+            $firstWord = explode(' ', $cleanTitle)[0] ?? 'Safari';
+            $secondWord = explode(' ', $cleanTitle)[1] ?? 'Apple';
+
+            $lesson = Lesson::where('title', 'ilike', "%{$firstWord}%{$secondWord}%")
+                ->orWhere('title', 'ilike', "%{$secondWord}%")
+                ->orWhere('slug', 'ilike', '%' . \Illuminate\Support\Str::slug($cleanTitle) . '%')
+                ->first() ?? Lesson::first();
+
             $mission = Mission::updateOrCreate(
                 [
                     'adventure_world_id' => $world->id,
                     'title' => $mData['title'],
                 ],
                 [
+                    'lesson_id' => $lesson?->id,
                     'display_title' => $mData['display_title'],
                     'slug' => \Illuminate\Support\Str::slug($mData['title']) . '-' . $world->id,
                     'description' => $mData['display_title'],
