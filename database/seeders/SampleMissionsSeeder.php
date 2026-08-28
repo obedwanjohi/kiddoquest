@@ -217,11 +217,7 @@ class SampleMissionsSeeder extends Seeder
             );
 
             // Auto-link Video Media if present
-            $videoMedia = \App\Models\Media::where('type', 'video')
-                ->where(function($q) {
-                    $q->where('name', 'ilike', '%math%1%')
-                      ->orWhere('file_name', 'ilike', '%math%1%');
-                })->first();
+            $videoMedia = \App\Models\Media::where('type', 'video')->latest()->first();
 
             if ($videoMedia && $mData['sort_order'] === 1 && $world->slug === 'whispering-forest') {
                 $mission->video_media_id = $videoMedia->id;

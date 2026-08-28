@@ -54,7 +54,12 @@ class Media extends Model
 
     public function getUrlAttribute(): string
     {
-        return asset('storage/' . $this->file_path);
+        if (str_starts_with($this->file_path, 'http://') || str_starts_with($this->file_path, 'https://')) {
+            return $this->file_path;
+        }
+
+        $supabase = app(\App\Services\SupabaseStorageService::class);
+        return $supabase->getPublicUrl($this->file_path);
     }
 
     public function getThumbnailUrlAttribute(): ?string
