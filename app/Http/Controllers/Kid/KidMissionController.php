@@ -101,16 +101,20 @@ class KidMissionController extends Controller
                 // 1b. Record individual question attempts for Exclusion Filter & Struggle Analytics
                 if (is_array($validated['answers'])) {
                     foreach ($validated['answers'] as $qAns) {
-                        if (is_array($qAns) && isset($qAns['question_id'])) {
-                            \App\Models\ChildQuestionAttempt::create([
-                                'child_id'           => $child->id,
-                                'mission_id'         => $mission->id,
-                                'question_bank_id'   => $mission->questionBank->id ?? null,
-                                'question_id'        => (int) $qAns['question_id'],
-                                'is_correct'         => (bool) ($qAns['correct'] ?? $qAns['is_correct'] ?? false),
-                                'time_spent_seconds' => (int) ($qAns['time_spent'] ?? 0),
-                                'attempted_at'       => now(),
-                            ]);
+                        if (is_array($qAns) && isset($qAns['question_id']) && \App\Models\QuizQuestion::where('id', $qAns['question_id'])->exists()) {
+                            try {
+                                \App\Models\ChildQuestionAttempt::create([
+                                    'child_id'           => $child->id,
+                                    'mission_id'         => $mission->id,
+                                    'question_bank_id'   => $mission->questionBank->id ?? null,
+                                    'question_id'        => (int) $qAns['question_id'],
+                                    'is_correct'         => (bool) ($qAns['correct'] ?? $qAns['is_correct'] ?? false),
+                                    'time_spent_seconds' => (int) ($qAns['time_spent'] ?? 0),
+                                    'attempted_at'       => now(),
+                                ]);
+                            } catch (\Throwable $attemptErr) {
+                                Log::warning('Failed to log question attempt', ['error' => $attemptErr->getMessage()]);
+                            }
                         }
                     }
                 }

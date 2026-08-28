@@ -1,7 +1,7 @@
 @php
     // Resolve child from session (celebration route is a closure)
     $childId = session('active_child_id');
-    $child = $childId ? \App\Models\Child::find($childId) : null;
+    $child = $childId ? \App\Models\Child::find($childId)?->fresh() : null;
 
     // Get celebration data from flash session
     $celebration = session('celebration', []);
