@@ -287,24 +287,33 @@
                             <span>🌟</span> Competencies Mastered:
                         </h4>
                         <div class="space-y-1.5 mb-3">
-                            @foreach($canDo as $cd)
+                            @forelse($canDo as $cd)
                                 <div class="flex items-start gap-2 text-xs text-slate-100 font-bold">
                                     <span class="text-emerald-400 flex-shrink-0">✅</span>
                                     <span>{{ $cd }}</span>
                                 </div>
-                            @endforeach
+                            @empty
+                                <div class="flex items-center gap-2 text-xs text-slate-400 font-medium py-1">
+                                    <span>ℹ️</span>
+                                    <span>No missions completed yet for {{ $child->name }}. Complete a mission to unlock competencies!</span>
+                                </div>
+                            @endforelse
                         </div>
 
                         <h4 class="font-black text-xs text-indigo-300 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
                             <span>🔜</span> Learning Next:
                         </h4>
                         <div class="space-y-1">
-                            @foreach($learningNext as $ln)
+                            @forelse($learningNext as $ln)
                                 <div class="flex items-start gap-2 text-xs text-indigo-200 font-semibold">
                                     <span class="text-amber-400 flex-shrink-0">🔜</span>
                                     <span>{{ $ln }}</span>
                                 </div>
-                            @endforeach
+                            @empty
+                                <div class="text-xs text-slate-400 font-medium py-1">
+                                    <span>Start Mission 1 on the Adventure Map</span>
+                                </div>
+                            @endforelse
                         </div>
                     </div>
 
@@ -320,7 +329,7 @@
                                     <div class="flex items-center gap-1.5 flex-1 max-w-[200px]">
                                         <div class="flex gap-1 flex-1">
                                             @for($b = 1; $b <= ($hm['total'] ?? 8); $b++)
-                                                <div class="h-2.5 flex-1 rounded-sm {{ $b <= ($hm['bar'] ?? 5) ? 'skill-block-filled' : 'skill-block-empty' }}"></div>
+                                                <div class="h-2.5 flex-1 rounded-sm {{ $b <= ($hm['bar'] ?? 0) ? 'skill-block-filled' : 'skill-block-empty' }}"></div>
                                             @endfor
                                         </div>
                                         <span class="font-black text-indigo-300 text-[11px] w-8 text-right">{{ $hm['score'] }}%</span>
@@ -347,12 +356,13 @@
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-slate-800 font-semibold">
-                                    @foreach($history as $idx => $mh)
+                                    @forelse($history as $idx => $mh)
                                         <tr class="hover:bg-slate-800/50 transition-all">
                                             <td class="p-3 font-bold text-white">{{ $mh['mission_title'] }}</td>
                                             <td class="p-3 text-center tabular-nums">{{ $mh['attempts_count'] }}</td>
                                             <td class="p-3 text-center text-amber-400">
                                                 @for($s = 1; $s <= $mh['best_stars']; $s++) ⭐ @endfor
+                                                @if(($mh['best_stars'] ?? 0) == 0) <span class="text-slate-500 font-normal">No stars</span> @endif
                                             </td>
                                             <td class="p-3 text-right">
                                                 <button @click="activeHistoryModal = {{ $idx }}" class="bg-indigo-600/40 hover:bg-indigo-600 text-indigo-200 hover:text-white border border-indigo-500/40 font-bold px-2.5 py-1 rounded-xl text-[11px] transition-all">
@@ -360,7 +370,13 @@
                                                 </button>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                        <tr>
+                                            <td colspan="4" class="p-4 text-center text-xs text-slate-400 font-medium">
+                                                No mission attempts recorded yet for {{ $child->name }}.
+                                            </td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>

@@ -160,20 +160,6 @@ class ParentDashboardController extends Controller
                 // Keep clean empty fallbacks
             }
 
-            // Fallback for demo when child hasn't played any missions yet
-            if (empty($missionHistory)) {
-                $missionHistory = [
-                    [
-                        'mission_title' => 'Safari Apple Counter 🍎',
-                        'attempts_count' => 0,
-                        'best_stars' => 0,
-                        'last_played' => 'Not played yet',
-                        'attempts' => [],
-                        'mistakes' => [],
-                    ],
-                ];
-            }
-
             // 📈 Dynamic Real Database Analytics for Competencies & Heat Map
             $realCanDo = [];
             $realLearningNext = [];
@@ -184,23 +170,13 @@ class ParentDashboardController extends Controller
             $completedMissionsList = Mission::whereIn('id', $completedMissionIds)->get();
 
             foreach ($completedMissionsList as $cMiss) {
-                $realCanDo[] = "Mastered {$cMiss->title} (100% score)";
-            }
-
-            if (empty($realCanDo)) {
-                $realCanDo = [
-                    "Counting Numbers 1 to 3 with friendly apples & stars",
-                    "Recognizing basic shapes and visual quantities",
-                ];
+                $realCanDo[] = "Mastered {$cMiss->title}";
             }
 
             // Find next upcoming missions not completed yet
             $nextMissions = Mission::whereNotIn('id', $completedMissionIds)->take(3)->get();
             foreach ($nextMissions as $nMiss) {
                 $realLearningNext[] = $nMiss->title;
-            }
-            if (empty($realLearningNext)) {
-                $realLearningNext = ["Advanced Counting & Addition within 5", "Phonics Letter Blends"];
             }
 
             // Calculate Real Heat Map per Subject from actual database attempts
