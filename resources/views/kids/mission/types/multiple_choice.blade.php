@@ -34,8 +34,6 @@
                                          :class="getCardClass(i, option.is_correct) + ' ' + (i%4===0 ? 'green' : i%4===1 ? 'blue' : i%4===2 ? 'red' : 'yellow')"
                                          @click="selectOption(i)">
                                         
-                                        <div class="index-num" x-text="i + 1"></div>
-                                        
                                         <template x-if="option.image">
                                             <img :src="option.image" class="card-img" x-on:error="option.image = null">
                                         </template>

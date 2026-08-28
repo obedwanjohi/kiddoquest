@@ -278,7 +278,7 @@ class SampleMissionsSeeder extends Seeder
                             'sort_order' => $oIdx + 1,
                         ],
                         [
-                            'text_value' => $isCountType ? ($oIdx + 1) : '',
+                            'text_value' => $isCountType ? $optText : '',
                             'content_type' => $optImage ? 'image' : 'text',
                             'is_correct' => ($oIdx === $qData['correct']),
                             'image_url' => $optImage,

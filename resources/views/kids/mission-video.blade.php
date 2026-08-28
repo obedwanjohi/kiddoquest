@@ -60,6 +60,32 @@
                 </div>
             </div>
 
+            {{-- Speed Regulator Buttons (🐌 0.75x | 🚶 1.0x | 🐇 1.25x) --}}
+            @if($mission->videoMedia)
+            <div class="w-full flex justify-center items-end gap-3 md:gap-6 flex-shrink-0 my-4 max-w-md mx-auto">
+                {{-- Snail (0.75x) --}}
+                <button @click="setSpeed(0.75)" 
+                        class="relative flex flex-col items-center justify-center flex-1 max-w-[100px] h-16 md:h-20 rounded-2xl transition-all duration-150"
+                        :class="playbackRate === 0.75 ? 'bg-orange-400 text-white translate-y-1 shadow-none border-b-4 border-orange-600' : 'bg-white text-gray-400 shadow-[0_6px_0_#d1d5db] active:shadow-none active:translate-y-2'">
+                    <span class="text-3xl md:text-4xl drop-shadow-sm">🐌</span>
+                </button>
+
+                {{-- Walk (1.0x) --}}
+                <button @click="setSpeed(1.0)" 
+                        class="relative flex flex-col items-center justify-center flex-1 max-w-[100px] h-20 md:h-24 rounded-2xl transition-all duration-150"
+                        :class="playbackRate === 1.0 ? 'bg-green-400 text-white translate-y-1 shadow-none border-b-4 border-green-600' : 'bg-white text-gray-400 shadow-[0_6px_0_#d1d5db] active:shadow-none active:translate-y-2'">
+                    <span class="text-3xl md:text-4xl drop-shadow-sm">🚶</span>
+                </button>
+
+                {{-- Rabbit (1.25x) --}}
+                <button @click="setSpeed(1.25)" 
+                        class="relative flex flex-col items-center justify-center flex-1 max-w-[100px] h-16 md:h-20 rounded-2xl transition-all duration-150"
+                        :class="playbackRate === 1.25 ? 'bg-blue-400 text-white translate-y-1 shadow-none border-b-4 border-blue-600' : 'bg-white text-gray-400 shadow-[0_6px_0_#d1d5db] active:shadow-none active:translate-y-2'">
+                    <span class="text-3xl md:text-4xl drop-shadow-sm">🐇</span>
+                </button>
+            </div>
+            @endif
+
             {{-- Always Visible "Start Mission Game" Button --}}
             @if($mission->question_bank_id)
             <div class="w-full max-w-md mx-auto my-4 px-2">

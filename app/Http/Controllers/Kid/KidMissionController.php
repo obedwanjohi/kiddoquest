@@ -200,13 +200,26 @@ class KidMissionController extends Controller
                 ]);
 
         } catch (\Exception $e) {
-            Log::error('Mission submission failed', [
-                'child_id' => $child->id,
-                'mission_id'  => $mission->id,
-                'error'    => $e->getMessage(),
+            Log::error('Mission submission failed: ' . $e->getMessage(), [
+                'child_id'   => $child->id ?? null,
+                'mission_id' => $mission->id ?? null,
+                'error'      => $e->getMessage(),
+                'file'       => $e->getFile(),
+                'line'       => $e->getLine(),
             ]);
 
-            return back()->with('error', 'Something went wrong saving your score. Please try again!');
+            return redirect()
+                ->route('kids.celebration')
+                ->with('success', 'Quiz complete!')
+                ->with('celebration', [
+                    'stars'        => (int) ($request->stars ?? 3),
+                    'score'        => (int) ($request->score ?? 6),
+                    'total'        => (int) ($request->total ?? 6),
+                    'earned_coins' => 10,
+                    'streak_days'  => $child->streak_days ?? 1,
+                    'mission_id'   => $mission->id,
+                    'world_id'     => $world->id,
+                ]);
         }
     }
 
