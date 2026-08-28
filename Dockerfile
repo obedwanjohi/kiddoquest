@@ -13,7 +13,7 @@ FROM php:8.3-apache
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
 # Install required PHP extensions instantly
-RUN install-php-extensions pdo pdo_mysql pdo_sqlite mbstring exif pcntl bcmath gd zip opcache
+RUN install-php-extensions pdo pdo_mysql pdo_sqlite pdo_pgsql pgsql mbstring exif pcntl bcmath gd zip opcache
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

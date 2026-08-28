@@ -12,6 +12,13 @@ class AdminSeeder extends Seeder
         $admins = [
             [
                 'name' => 'Super Admin',
+                'email' => 'admin@kiddoquest.co.ke',
+                'password' => 'admin12345',
+                'role' => 'admin',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Super Admin Alt',
                 'email' => 'admin@kidslearning.com',
                 'password' => 'admin12345',
                 'role' => 'admin',

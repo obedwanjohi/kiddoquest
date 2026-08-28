@@ -19,5 +19,8 @@ chmod -R 775 /var/www/html/database /var/www/html/storage /var/www/html/bootstra
 # Run all database migrations automatically
 php artisan migrate --force
 
+# Seed default starter accounts and curriculum if database is fresh
+php artisan db:seed --force || true
+
 # Execute Apache in foreground
 exec apache2-foreground

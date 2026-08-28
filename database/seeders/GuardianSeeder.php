@@ -22,8 +22,9 @@ class GuardianSeeder extends Seeder
         // ── Create Guardian (Parent) ──
         $guardian = Guardian::create([
             'name' => 'Demo Parent',
-            'email' => 'parent@kidlearn.com',
-            'password' => Hash::make('password123'),
+            'email' => 'parent@kiddoquest.co.ke',
+            'password' => '12345678', // Eloquent casts automatically hashes this cleanly
+            'parent_pin' => '1234',
             'is_active' => true,
         ]);
 
