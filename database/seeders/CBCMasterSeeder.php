@@ -366,13 +366,12 @@ class CBCMasterSeeder extends Seeder
     private function seedTopicsAndLessons(Subject $subject, array $topicsData): void
     {
         foreach ($topicsData as $tIdx => $tData) {
+            $topicSlug = Str::slug($tData['name']);
             $topic = Topic::updateOrCreate(
+                ['slug' => $topicSlug],
                 [
                     'subject_id' => $subject->id,
                     'name' => $tData['name'],
-                ],
-                [
-                    'slug' => Str::slug($tData['name']),
                     'description' => "Strand: {$tData['name']}",
                     'sort_order' => $tIdx + 1,
                     'status' => 'published',
@@ -380,13 +379,12 @@ class CBCMasterSeeder extends Seeder
             );
 
             foreach ($tData['lessons'] as $lIdx => $lessonTitle) {
+                $lessonSlug = Str::slug($lessonTitle);
                 Lesson::updateOrCreate(
+                    ['slug' => $lessonSlug],
                     [
                         'topic_id' => $topic->id,
                         'title' => $lessonTitle,
-                    ],
-                    [
-                        'slug' => Str::slug($lessonTitle),
                         'description' => "Lesson: {$lessonTitle}",
                         'sort_order' => $lIdx + 1,
                         'status' => 'published',
