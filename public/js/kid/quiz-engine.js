@@ -493,6 +493,11 @@ function quizEngine(config) {
 
             this.spawnConfetti(40);
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Automatically submit form to backend to persist score, stars, and coins in PostgreSQL
+            setTimeout(() => {
+                this.submitQuiz();
+            }, 1200);
         },
 
         calculateStars() {
