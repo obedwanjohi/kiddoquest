@@ -92,70 +92,79 @@ class ParentDashboardController extends Controller
 
         $reports = [];
         foreach ($children as $child) {
-            $totalMissions = 3;
-            $passedMissions = 3;
-            $totalQuestions = 15;
-            $correctQuestions = 13;
-            $accuracyRate = 87;
+            $totalMissions = 0;
+            $passedMissions = 0;
+            $totalQuestions = 0;
+            $correctQuestions = 0;
+            $accuracyRate = 0;
+            $missionHistory = [];
 
             try {
-                $attempts = MissionAttempt::where('child_id', $child->id)->get();
+                $attempts = MissionAttempt::where('child_id', $child->id)
+                    ->with('mission')
+                    ->orderByDesc('completed_at')
+                    ->get();
+
                 $questionAttempts = ChildQuestionAttempt::where('child_id', $child->id)->get();
 
                 if ($attempts->isNotEmpty()) {
-                    $totalMissions = $attempts->count();
-                    $passedMissions = $attempts->where('passed', true)->count();
+                    $totalMissions = $attempts->pluck('mission_id')->unique()->count();
+                    $passedMissions = $attempts->where('passed', true)->pluck('mission_id')->unique()->count();
+
+                    // Build real mission history from database attempts
+                    $groupedAttempts = $attempts->groupBy('mission_id');
+                    foreach ($groupedAttempts as $missionId => $mAttempts) {
+                        $mObj = $mAttempts->first()->mission;
+                        $title = $mObj ? ($mObj->title ?? $mObj->display_title ?? $mObj->name) : "Mission #{$missionId}";
+                        
+                        $attemptList = [];
+                        foreach ($mAttempts->take(5) as $idx => $att) {
+                            $attemptList[] = [
+                                'attempt' => $mAttempts->count() - $idx,
+                                'score'   => $att->percentage() . '%',
+                                'date'    => $att->completed_at ? $att->completed_at->diffForHumans() : 'Recently',
+                            ];
+                        }
+
+                        $missionHistory[] = [
+                            'mission_title'  => $title,
+                            'attempts_count' => $mAttempts->count(),
+                            'best_stars'     => $mAttempts->max('stars'),
+                            'last_played'    => $mAttempts->first()->completed_at ? $mAttempts->first()->completed_at->diffForHumans() : 'Recently',
+                            'attempts'       => array_reverse($attemptList),
+                            'mistakes'       => [],
+                        ];
+                    }
                 }
+
                 if ($questionAttempts->isNotEmpty()) {
                     $totalQuestions = $questionAttempts->count();
                     $correctQuestions = $questionAttempts->where('is_correct', true)->count();
-                    $accuracyRate = $totalQuestions > 0 ? (int) round(($correctQuestions / $totalQuestions) * 100) : 84;
+                    $accuracyRate = $totalQuestions > 0 ? (int) round(($correctQuestions / $totalQuestions) * 100) : 0;
+                } elseif ($attempts->isNotEmpty()) {
+                    // Fallback to overall score from mission_attempts if question_attempts is empty
+                    $sumScore = $attempts->sum('score');
+                    $sumTotal = $attempts->sum('total');
+                    $accuracyRate = $sumTotal > 0 ? (int) round(($sumScore / $sumTotal) * 100) : 0;
+                    $totalQuestions = $sumTotal;
                 }
             } catch (\Throwable $e) {
-                // Fallback to default metrics
+                // Keep clean empty fallbacks
             }
 
-            // 📈 Mission History & Drilldown Attempt Records
-            $missionHistory = [
-                [
-                    'mission_title' => 'Counting Apples 🍎',
-                    'attempts_count' => 3,
-                    'best_stars' => 3,
-                    'last_played' => 'Today',
-                    'attempts' => [
-                        ['attempt' => 1, 'score' => '60%', 'date' => '2 days ago'],
-                        ['attempt' => 2, 'score' => '80%', 'date' => 'Yesterday'],
-                        ['attempt' => 3, 'score' => '100%', 'date' => 'Today'],
+            // Fallback for demo when child hasn't played any missions yet
+            if (empty($missionHistory)) {
+                $missionHistory = [
+                    [
+                        'mission_title' => 'Safari Apple Counter 🍎',
+                        'attempts_count' => 0,
+                        'best_stars' => 0,
+                        'last_played' => 'Not played yet',
+                        'attempts' => [],
+                        'mistakes' => [],
                     ],
-                    'mistakes' => [
-                        'Question 4: Confused 6 and 9',
-                        'Question 7: Counted 5 instead of 6',
-                    ],
-                ],
-                [
-                    'mission_title' => 'Pattern Matching 🧩',
-                    'attempts_count' => 2,
-                    'best_stars' => 2,
-                    'last_played' => 'Yesterday',
-                    'attempts' => [
-                        ['attempt' => 1, 'score' => '50%', 'date' => '3 days ago'],
-                        ['attempt' => 2, 'score' => '75%', 'date' => 'Yesterday'],
-                    ],
-                    'mistakes' => [
-                        'Question 3: Confused A-B-A-B sequence',
-                    ],
-                ],
-                [
-                    'mission_title' => 'Animal Sounds 🦁',
-                    'attempts_count' => 1,
-                    'best_stars' => 3,
-                    'last_played' => '3 days ago',
-                    'attempts' => [
-                        ['attempt' => 1, 'score' => '100%', 'date' => '3 days ago'],
-                    ],
-                    'mistakes' => [],
-                ],
-            ];
+                ];
+            }
 
             // Subject-Specific Data Master Map
             $subjectData = [
@@ -295,38 +304,38 @@ class ParentDashboardController extends Controller
     }
 
     /**
-     * Ask AI Pedagogy Assistant endpoint (with guardrails for out-of-scope questions).
+     * Ask AI Pedagogy Assistant endpoint (with guardrails & free LLM integration).
      */
     public function askAi(Request $request): JsonResponse
     {
-        $question = strtolower(trim($request->input('question', '')));
+        $question = trim($request->input('question', ''));
+        $childId = $request->input('child_id');
 
-        // Strict Pedagogy Relevance Check: Question MUST relate to learning, parenting, or child development
-        $educationalKeywords = ['child', 'kid', 'learn', 'count', 'math', 'number', 'shape', 'letter', 'read', 'phonic', 'sound', 'screen', 'time', 'struggl', 'confus', 'school', 'game', 'practice', 'age', '6 and 9', 'strengthen', 'focus', 'help', 'parent'];
-        $isRelevant = false;
-        foreach ($educationalKeywords as $word) {
-            if (str_contains($question, $word)) {
-                $isRelevant = true;
-                break;
-            }
+        $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
+        $child = $childId 
+            ? Child::find($childId) 
+            : (($guardian && $guardian->exists) ? $guardian->children()->first() : Child::first());
+
+        if (!$child) {
+            $child = new Child(['name' => 'your child', 'total_stars' => 0, 'star_coins' => 0]);
         }
 
-        if (!$isRelevant) {
-            return response()->json([
-                'success' => true,
-                'answer'  => "🌟 **AI Parent Coach Guardrail:** I'm specialized specifically in early-childhood learning, CBC curriculum, and parenting tips for young kids! I can't help with general questions like cooking or non-learning topics—but feel free to ask me anything about your child's counting, phonics, screen time, or learning progress!",
-            ]);
-        }
+        // Calculate performance summary for AI context
+        $attempts = MissionAttempt::where('child_id', $child->id)->get();
+        $passedMissions = $attempts->where('passed', true)->pluck('mission_id')->unique()->count();
+        $totalMissions = $attempts->pluck('mission_id')->unique()->count();
+        $sumScore = $attempts->sum('score');
+        $sumTotal = $attempts->sum('total');
+        $accuracyRate = $sumTotal > 0 ? (int) round(($sumScore / $sumTotal) * 100) : 80;
 
-        if (str_contains($question, 'struggl') || str_contains($question, '6 and 9') || str_contains($question, 'confus')) {
-            $answer = "💡 **Pedagogy Insight:** Many children aged 3–5 confuse 6 and 9 because their visual-spatial perception is still developing! \n\n**Try this 1-minute home trick:** Draw 6 and 9 side-by-side with different colored crayons on paper. Ask your child to trace the top loop of 9 and the bottom loop of 6 with their finger!";
-        } elseif (str_contains($question, 'time') || str_contains($question, 'how long') || str_contains($question, 'minutes')) {
-            $answer = "⏰ **Recommended Screen Time:** Early childhood specialists recommend 15 to 30 minutes of interactive educational play daily. Quality micro-sessions build higher retention than long marathons!";
-        } elseif (str_contains($question, 'letter') || str_contains($question, 'phonic') || str_contains($question, 'read')) {
-            $answer = "📖 **Phonics Tip:** Practice letter sounds using physical objects around the house! For example, point at a Banana and emphasize the '/b/' sound ('b-b-banana').";
-        } else {
-            $answer = "🌟 **AI Parent Coach:** Early childhood learning is built through short, positive repetition. Celebrate small wins, keep sessions under 30 minutes, and play our recommended 1-minute home activities!";
-        }
+        $perf = [
+            'accuracy_rate'   => $accuracyRate,
+            'passed_missions' => $passedMissions,
+            'total_missions'  => $totalMissions,
+        ];
+
+        $aiService = app(\App\Services\ParentAiService::class);
+        $answer = $aiService->generateAdvice($child, $perf, $question);
 
         return response()->json([
             'success' => true,
