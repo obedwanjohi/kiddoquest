@@ -13,6 +13,9 @@ mkdir -p /var/www/html/storage/framework/sessions \
          /var/www/html/storage/logs
 touch /var/www/html/storage/logs/laravel.log
 
+# Ensure public storage symlink exists
+php artisan storage:link --force || true
+
 # Run all database migrations automatically
 php artisan migrate --force || true
 

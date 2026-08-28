@@ -206,8 +206,25 @@ class SampleMissionsSeeder extends Seeder
                 ]
             );
 
+            // Auto-link Video Media if present
+            $videoMedia = \App\Models\Media::where('type', 'video')
+                ->where(function($q) {
+                    $q->where('name', 'ilike', '%math%1%')
+                      ->orWhere('file_name', 'ilike', '%math%1%');
+                })->first();
+
+            if ($videoMedia && $mData['sort_order'] === 1 && $world->slug === 'whispering-forest') {
+                $mission->video_media_id = $videoMedia->id;
+            }
+
             $mission->question_bank_id = $bank->id;
             $mission->save();
+
+            // Resolve uploaded image media
+            $appleMedia = \App\Models\Media::where('name', 'ilike', 'apple%')->first();
+            $card1Media = \App\Models\Media::where('name', 'ilike', '%card%1%')->first();
+            $card2Media = \App\Models\Media::where('name', 'ilike', '%card%2%')->first();
+            $card3Media = \App\Models\Media::where('name', 'ilike', '%card%3%')->first();
 
             // Create Questions
             foreach ($mData['questions'] as $qIdx => $qData) {
@@ -224,6 +241,15 @@ class SampleMissionsSeeder extends Seeder
 
                 // Options
                 foreach ($qData['options'] as $oIdx => $optText) {
+                    $optImage = null;
+                    if (str_contains($optText, '1 Apple') && $card1Media) {
+                        $optImage = $card1Media->url;
+                    } elseif (str_contains($optText, '2 Apples') && $card2Media) {
+                        $optImage = $card2Media->url;
+                    } elseif (str_contains($optText, '3 Apples') && $card3Media) {
+                        $optImage = $card3Media->url;
+                    }
+
                     QuestionOption::updateOrCreate(
                         [
                             'question_id' => $question->id,
@@ -231,6 +257,7 @@ class SampleMissionsSeeder extends Seeder
                         ],
                         [
                             'is_correct' => ($oIdx === $qData['correct']),
+                            'image_url' => $optImage,
                             'sort_order' => $oIdx + 1,
                         ]
                     );
