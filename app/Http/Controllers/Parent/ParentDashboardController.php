@@ -230,19 +230,41 @@ class ParentDashboardController extends Controller
                 'activity' => 'Practice counting physical objects like 3 apples or spoons at home together!',
             ];
 
+            // Calculate Real Growth % from actual attempt scores
+            $growthLabel = '🌱 Ready to Start';
+            $growthPercent = 0;
+
+            if ($attempts->count() >= 2) {
+                $oldestPct = $attempts->last()->percentage();
+                $latestPct = $attempts->first()->percentage();
+                $diff = $latestPct - $oldestPct;
+
+                if ($diff > 0) {
+                    $growthLabel = "📈 +{$diff}% Growth";
+                } elseif ($diff == 0) {
+                    $growthLabel = "⭐ Consistent ({$latestPct}%)";
+                } else {
+                    $growthLabel = "🔄 Practice Mode ({$latestPct}%)";
+                }
+                $growthPercent = $diff;
+            } elseif ($attempts->count() === 1) {
+                $latestPct = $attempts->first()->percentage();
+                $growthLabel = "🌟 First Mission ({$latestPct}%)";
+            }
+
             $reports[$child->id] = [
-                'total_missions'     => max(1, $totalMissions),
-                'passed_missions'    => max(1, $passedMissions),
-                'total_questions'    => max(5, $totalQuestions),
+                'total_missions'     => $totalMissions,
+                'passed_missions'    => $passedMissions,
+                'total_questions'    => $totalQuestions,
                 'accuracy_rate'      => $accuracyRate,
                 'learning_time_today'=> '22 mins',
                 'learning_time_week' => '2 hrs 18 mins',
-                'streak_days'        => $child->streak_days ?? 7,
+                'streak_days'        => $child->streak_days ?? 1,
                 'can_do_now'         => $activeData['can_do'],
                 'learning_next'      => $activeData['learning_next'],
                 'skills_heat_map'    => $activeData['heat_map'],
                 'roadmap'            => $activeData['roadmap'],
-                'growth'             => ['past_score' => 58, 'current_score' => $accuracyRate, 'growth_percent' => 26],
+                'growth'             => ['growth_label' => $growthLabel, 'growth_percent' => $growthPercent],
                 'mistake_action'     => ['mistake' => $activeData['mistake'], 'activity' => $activeData['activity']],
                 'mission_history'    => $missionHistory,
                 'assigned_mission'   => $child->assigned_mission_id ? Mission::find($child->assigned_mission_id) : null,

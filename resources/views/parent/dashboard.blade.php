@@ -276,7 +276,7 @@
 
                         <div class="text-right">
                             <div class="inline-flex items-center gap-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs font-black px-2.5 py-1 rounded-xl">
-                                📈 +{{ $growth['growth_percent'] ?? 26 }}% Growth
+                                {{ $growth['growth_label'] ?? '🌱 Ready to Start' }}
                             </div>
                         </div>
                     </div>
