@@ -206,7 +206,9 @@ class ParentDashboardController extends Controller
             // Calculate Real Heat Map per Subject from actual database attempts
             $allSubjects = \App\Models\Subject::all();
             foreach ($allSubjects as $subj) {
-                $subjMissions = Mission::where('subject_id', $subj->id)->pluck('id');
+                $worldIds = \App\Models\AdventureWorld::where('subject_id', $subj->id)->pluck('id');
+                $subjMissions = Mission::whereIn('adventure_world_id', $worldIds)->pluck('id');
+
                 if ($subjMissions->isEmpty()) {
                     continue;
                 }
