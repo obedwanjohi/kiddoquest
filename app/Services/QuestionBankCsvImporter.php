@@ -230,21 +230,46 @@ class QuestionBankCsvImporter
             return $path;
         }
 
-        // Search media map by lower-cased filename
         $cleanName = strtolower(basename($path));
+        $nameWithoutExt = pathinfo($cleanName, PATHINFO_FILENAME);
+
+        // 1. Direct exact filename match in media map
         if ($mediaMap->has($cleanName)) {
             return $mediaMap->get($cleanName)->url;
         }
 
-        // Check image file extensions
-        $ext = strtolower(pathinfo($cleanName, PATHINFO_EXTENSION));
-        if (in_array($ext, ['png', 'jpg', 'jpeg', 'webp', 'svg', 'gif'])) {
-            if (file_exists(public_path('storage/media/' . $path))) {
-                return asset('storage/media/' . $path);
-            }
-            if (file_exists(public_path('uploads/media/' . $path))) {
-                return asset('uploads/media/' . $path);
-            }
+        // 2. Match with alternate extension (.webp vs .png vs .jpg)
+        if ($mediaMap->has($nameWithoutExt . '.webp')) {
+            return $mediaMap->get($nameWithoutExt . '.webp')->url;
+        }
+        if ($mediaMap->has($nameWithoutExt . '.png')) {
+            return $mediaMap->get($nameWithoutExt . '.png')->url;
+        }
+        if ($mediaMap->has($nameWithoutExt . '.jpg')) {
+            return $mediaMap->get($nameWithoutExt . '.jpg')->url;
+        }
+
+        // 3. Match by original filename attribute in media records
+        $mediaByOrig = \App\Models\Media::where('original_filename', 'ilike', "{$nameWithoutExt}%")
+            ->orWhere('file_name', 'ilike', "{$nameWithoutExt}%")
+            ->first();
+
+        if ($mediaByOrig) {
+            return $mediaByOrig->url;
+        }
+
+        // 4. Check direct public file locations
+        if (file_exists(public_path('images/questions/' . $cleanName))) {
+            return asset('images/questions/' . $cleanName);
+        }
+        if (file_exists(public_path('images/questions/' . $nameWithoutExt . '.webp'))) {
+            return asset('images/questions/' . $nameWithoutExt . '.webp');
+        }
+        if (file_exists(public_path('images/questions/' . $nameWithoutExt . '.png'))) {
+            return asset('images/questions/' . $nameWithoutExt . '.png');
+        }
+        if (file_exists(public_path('storage/media/' . $path))) {
+            return asset('storage/media/' . $path);
         }
 
         return $path;

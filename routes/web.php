@@ -264,7 +264,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/seed-worlds', function() {
         \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'CBCMasterSeeder', '--force' => true]);
         \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'AdventureWorldSeeder', '--force' => true]);
-        return redirect()->route('admin.adventure-worlds.index')->with('success', '✨ All 8 Playgroup Worlds, Topics & 65 Lessons seeded successfully!');
+        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'SampleMissionsSeeder', '--force' => true]);
+        return redirect()->route('admin.adventure-worlds.index')->with('success', '✨ All 8 Playgroup Worlds, Topics, 65 Lessons & Mission 1 seeded successfully!');
     })->name('adventure-worlds.seed');
     Route::post('/adventure-worlds/{world}/move', [App\Http\Controllers\Admin\AdventureWorldController::class, 'move'])->name('adventure-worlds.move');
     Route::post('/worlds/{world}/move', [App\Http\Controllers\Admin\AdventureWorldController::class, 'move'])->name('worlds.move');

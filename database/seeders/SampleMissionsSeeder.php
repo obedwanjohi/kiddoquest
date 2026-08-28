@@ -29,24 +29,41 @@ class SampleMissionsSeeder extends Seeder
         if ($forestWorld) {
             $this->seedWorldMissions($forestWorld, [
                 [
-                    'title' => 'Counting Apples 🍎',
-                    'display_title' => 'Count 1 to 5 with Leo!',
+                    'title' => 'Safari Apple Counter 🍎',
+                    'display_title' => 'Count Apples 1 to 3 with Leo!',
                     'sort_order' => 1,
                     'questions' => [
+                        // FORMAT B: Count & Tap Number (Questions 1, 2, 3)
                         [
-                            'question' => 'How many red apples are on the tree? 🍎🍎🍎',
-                            'options' => ['3', '2', '5', '4'],
-                            'correct' => 0,
+                            'question' => 'How many juicy red apples do you see? Tap their number! 🍎',
+                            'options' => ['1', '2', '3'],
+                            'correct' => 0, // '1'
                         ],
                         [
-                            'question' => 'Count the friendly frogs: 🐸🐸',
-                            'options' => ['1', '2', '3', '4'],
-                            'correct' => 1,
+                            'question' => 'How many juicy red apples do you see? Tap their number! 🍎🍎',
+                            'options' => ['2', '1', '3'],
+                            'correct' => 0, // '2'
                         ],
                         [
-                            'question' => 'Which number comes after 3?',
-                            'options' => ['2', '5', '4', '1'],
-                            'correct' => 2,
+                            'question' => 'How many juicy red apples do you see? Tap their number! 🍎🍎🍎',
+                            'options' => ['3', '2', '1'],
+                            'correct' => 0, // '3'
+                        ],
+                        // FORMAT C: Image Card Choice (Questions 4, 5, 6)
+                        [
+                            'question' => 'Which picture card shows 1 red apple? Tap it!',
+                            'options' => ['1 Apple 🍎', '2 Apples 🍎🍎', '3 Apples 🍎🍎🍎'],
+                            'correct' => 0, // '1 Apple 🍎'
+                        ],
+                        [
+                            'question' => 'Which picture card shows 2 red apples? Tap it!',
+                            'options' => ['1 Apple 🍎', '2 Apples 🍎🍎', '3 Apples 🍎🍎🍎'],
+                            'correct' => 1, // '2 Apples 🍎🍎'
+                        ],
+                        [
+                            'question' => 'Which picture card shows 3 red apples? Tap it!',
+                            'options' => ['1 Apple 🍎', '2 Apples 🍎🍎', '3 Apples 🍎🍎🍎'],
+                            'correct' => 2, // '3 Apples 🍎🍎🍎'
                         ],
                     ]
                 ],
