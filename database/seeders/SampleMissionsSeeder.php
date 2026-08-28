@@ -236,15 +236,19 @@ class SampleMissionsSeeder extends Seeder
             $card2Media = \App\Models\Media::where('name', 'ilike', '%card%2%')->first();
             $card3Media = \App\Models\Media::where('name', 'ilike', '%card%3%')->first();
 
+            // Resolve Quiz Type (QT-01: Multiple Choice / Card Tap)
+            $mcTypeId = \App\Models\QuizType::where('code', 'QT-01')->value('id') ?? 1;
+
             // Create Questions
             foreach ($mData['questions'] as $qIdx => $qData) {
                 $question = QuizQuestion::updateOrCreate(
                     [
                         'question_bank_id' => $bank->id,
-                        'question' => $qData['question'],
+                        'prompt' => $qData['question'],
                     ],
                     [
-                        'question_type' => 'multiple_choice',
+                        'quiz_type_id' => $mcTypeId,
+                        'points' => 1,
                         'sort_order' => $qIdx + 1,
                     ]
                 );
@@ -263,9 +267,10 @@ class SampleMissionsSeeder extends Seeder
                     QuestionOption::updateOrCreate(
                         [
                             'question_id' => $question->id,
-                            'option_text' => $optText,
+                            'text_value' => $optText,
                         ],
                         [
+                            'content_type' => $optImage ? 'image' : 'text',
                             'is_correct' => ($oIdx === $qData['correct']),
                             'image_url' => $optImage,
                             'sort_order' => $oIdx + 1,
