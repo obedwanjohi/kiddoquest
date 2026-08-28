@@ -102,15 +102,11 @@ class AdventureWorldSeeder extends Seeder
             ],
         ];
 
-        // Remove stale/orphan legacy worlds (e.g. star-valley)
-        $validSlugs = array_column($worlds, 'slug');
-        AdventureWorld::whereNotIn('slug', $validSlugs)->delete();
+        // Wipe all old/testing worlds completely to start fresh with our 8 clean Playgroup worlds
+        AdventureWorld::query()->delete();
 
         foreach ($worlds as $world) {
-            AdventureWorld::updateOrCreate(
-                ['slug' => $world['slug']],
-                $world
-            );
+            AdventureWorld::create($world);
         }
     }
 }
