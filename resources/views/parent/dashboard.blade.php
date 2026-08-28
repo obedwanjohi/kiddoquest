@@ -462,7 +462,7 @@
 
                     {{-- 🤖 HERO FEATURE: ASK AI PEDAGOGY COACH --}}
                     <div class="bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900 border border-indigo-500/40 rounded-2xl p-4 shadow-xl" 
-                         x-data="{ aiQuestion: '', aiAnswer: '', loading: false, ask(q) { this.aiQuestion = q; this.submitAi(); }, submitAi() { if(!this.aiQuestion) return; this.loading = true; fetch('{{ route('parent.ask_ai') }}', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': '{{ csrf_token() }}' }, body: JSON.stringify({ question: this.aiQuestion }) }).then(r=>r.json()).then(d=>{ this.aiAnswer = d.answer; this.loading = false; }); } }">
+                         x-data="{ aiQuestion: '', aiAnswer: '', loading: false, ask(q) { this.aiQuestion = q; this.submitAi(); }, submitAi() { if(!this.aiQuestion) return; this.loading = true; fetch('{{ route('parent.ask_ai') }}', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': '{{ csrf_token() }}' }, body: JSON.stringify({ question: this.aiQuestion, child_id: '{{ $child->id }}' }) }).then(r=>r.json()).then(d=>{ this.aiAnswer = d.answer; this.loading = false; }); } }">
                         
                         <div class="flex items-center justify-between mb-3">
                             <div class="flex items-center gap-2">
