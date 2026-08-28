@@ -459,3 +459,16 @@ Route::get('/dev/subscription', function () {
     $recentPayments = \App\Models\Payment::where('guardian_id', $guardian->id)->orderBy('created_at', 'desc')->get();
     return view('parent.subscription', compact('guardian', 'activeSubscription', 'recentPayments'));
 })->name('dev.subscription');
+
+// Storage media fallback route (guarantees uploaded media and videos serve cleanly)
+Route::get('/storage/{path}', function ($path) {
+    $filePath = storage_path('app/public/' . $path);
+    if (!file_exists($filePath)) {
+        $rootPath = storage_path('app/' . $path);
+        if (file_exists($rootPath)) {
+            return response()->file($rootPath);
+        }
+        abort(404);
+    }
+    return response()->file($filePath);
+})->where('path', '.*')->name('storage.fallback');

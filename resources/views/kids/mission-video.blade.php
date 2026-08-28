@@ -15,13 +15,6 @@
         <x-kid.exit-bar :stars="$child->total_stars" :exitRoute="'kids.world'" :exitRouteParam="[$world]" :title="$mission->title" />
 
         <div class="pt-20 px-4 max-w-2xl mx-auto flex flex-col items-center">
-            {{-- Compact Title --}}
-            <div class="bg-white/80 backdrop-blur-md rounded-full px-6 py-2 shadow-sm mb-4 border-2 border-white">
-                <h1 class="text-xl md:text-2xl font-black text-gray-800" style="font-family: var(--kid-font-heading);">
-                    {{ $mission->title }}
-                </h1>
-            </div>
-
             {{-- Sleek Mascot Banner --}}
             <div class="w-full bg-white rounded-3xl p-4 shadow-[0_6px_0_rgba(0,0,0,0.05)] flex items-center gap-4 mb-6 cursor-pointer transform transition-transform active:scale-95" onclick="speakLessonIntro()" id="mascot-banner">
                 <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-4xl shadow-inner flex-shrink-0 animate-bounce">
