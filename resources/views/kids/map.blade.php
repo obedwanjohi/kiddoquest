@@ -171,6 +171,16 @@
         </div>
 
         {{-- 3. ADVENTURE WORLDS & WINDING STEPPING-STONE TRAILS --}}
+        @if($worlds->isEmpty())
+            <div class="w-full max-w-sm mx-auto bg-white/90 backdrop-blur-md rounded-3xl p-8 text-center border-2 border-dashed border-purple-200 shadow-sm my-8">
+                <div class="text-5xl mb-3 animate-bounce">🏝️</div>
+                <h3 class="text-base font-heading font-black text-slate-800 mb-1">No Worlds For This Level Yet</h3>
+                <p class="text-xs text-slate-500 font-bold max-w-xs mx-auto">
+                    Adventure worlds for <span class="text-purple-700 font-black">{{ $child->recommended_level ?? 'your level' }}</span> are coming soon!
+                </p>
+            </div>
+        @endif
+
         @php
             $prevCompleted = true;
             $foundCurrent = false;
