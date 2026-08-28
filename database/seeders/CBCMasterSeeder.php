@@ -80,9 +80,6 @@ class CBCMasterSeeder extends Seeder
             );
         }
 
-        // We focus our 65 movies on the active primary learning level (PP2 / PP1)
-        $targetLevel = $levels['PP2'];
-
         // ════════════════════════════════════════════════════════
         // 3. SEED 3 CORE SUBJECTS FOR ALL 3 LEVELS (PG, PP1, PP2)
         // ════════════════════════════════════════════════════════
@@ -96,14 +93,14 @@ class CBCMasterSeeder extends Seeder
             ],
             'english' => [
                 'name' => 'Language & Phonics Activities',
-                'description' => 'Letter sounds, vocabulary, phonics blends, listening comprehension, and speech.',
+                'description' => 'Listening, action verbs, greetings, letter sounds A-Z, vocabulary and rhymes.',
                 'icon' => '📖',
                 'color' => '#0284C7',
                 'sort_order' => 2,
             ],
             'cre' => [
                 'name' => 'Religious Education & Moral Values',
-                'description' => 'God\'s creation, family love, respect, sharing, gratitude, and moral character.',
+                'description' => 'God\'s creation, life of Jesus, family love, respect, sharing, and honesty.',
                 'icon' => '✝️',
                 'color' => '#059669',
                 'sort_order' => 3,
@@ -127,7 +124,7 @@ class CBCMasterSeeder extends Seeder
                     ]
                 );
 
-                // Store references for Playgroup / target level for topics & lessons attachment
+                // Store references for Playgroup (PG) for our first 65 missions
                 if ($lvlCode === 'PG' || !isset($subjects[$key])) {
                     $subjects[$key] = $subject;
                 }
@@ -135,23 +132,23 @@ class CBCMasterSeeder extends Seeder
         }
 
         // ════════════════════════════════════════════════════════
-        // 4. TOPICS & LESSONS (Structured for the 65 Missions)
+        // 4. TOPICS & LESSONS (100% Synced to Playgroup CSVs)
         // ════════════════════════════════════════════════════════
 
-        // A. MATHEMATICS (20 Movie Missions Framework - Playgroup)
+        // A. MATHEMATICS (20 Playgroup Missions)
         $mathTopics = [
             [
                 'name' => 'Counting Numbers 1 to 3 (Missions 1 to 10)',
                 'lessons' => [
                     'Safari Apple Counter (1 to 3)',
-                    'Banana Basket Counter',
-                    'Toy Car Counter',
-                    'Cute Kitten Counter',
-                    'Shiny Star Counter',
-                    'Red Balloon Counter',
-                    'Flying Bird Counter',
-                    'Yummy Cake Counter',
-                    'Farm Animal Counter',
+                    'Banana Basket Counter (1 to 3)',
+                    'Toy Car Counter (1 to 3)',
+                    'Cute Kitten Counter (1 to 3)',
+                    'Shiny Star Counter (1 to 3)',
+                    'Red Balloon Counter (1 to 3)',
+                    'Flying Bird Counter (1 to 3)',
+                    'Yummy Cake Counter (1 to 3)',
+                    'Farm Animal Counter (1 to 3)',
                     'Fruit Basket Grand Counter (Trophy 1 to 3)',
                 ],
             ],
@@ -159,9 +156,9 @@ class CBCMasterSeeder extends Seeder
                 'name' => 'Counting Numbers 1 to 4 (Missions 11 to 15)',
                 'lessons' => [
                     'School Backpack Counter (1 to 4)',
-                    'Toy Box Counter',
-                    'Chirping Bird Counter',
-                    'Zooming Car Counter',
+                    'Toy Box Counter (1 to 4)',
+                    'Chirping Bird Counter (1 to 4)',
+                    'Zooming Car Counter (1 to 4)',
                     'Tall Tree Forest Counter (Trophy 1 to 4)',
                 ],
             ],
@@ -169,119 +166,109 @@ class CBCMasterSeeder extends Seeder
                 'name' => 'Counting Numbers 1 to 5 (Missions 16 to 20)',
                 'lessons' => [
                     'Yummy Cookie Counter (1 to 5)',
-                    'Deep Forest Counter',
-                    'Ocean Reef Counter',
-                    'Jungle Safari Counter',
+                    'Deep Forest Counter (1 to 5)',
+                    'Ocean Reef Counter (1 to 5)',
+                    'Jungle Safari Counter (1 to 5)',
                     'Market Stall Grand Counter (Trophy 1 to 5)',
                 ],
             ],
         ];
         $this->seedTopicsAndLessons($subjects['math'], $mathTopics);
 
-        // B. ENGLISH & PHONICS (20 Movie Missions Framework)
+        // B. ENGLISH & PHONICS (20 Playgroup Missions)
         $engTopics = [
             [
-                'name' => 'Letter Sounds & Phonics (A to J)',
+                'name' => 'Listening & Action Verbs (Missions 1 to 6)',
                 'lessons' => [
-                    'Letter Sounds A and B',
-                    'Letter Sounds C and D',
-                    'Letter Sounds E and F',
-                    'Letter Sounds G, H and I',
-                    'Letter Sounds J and K',
+                    'Touch the Ball',
+                    'Clap Your Hands',
+                    'Wave Hello',
+                    'Point to the Sun',
+                    'Stand Up, Sit Down',
+                    'Open and Close',
                 ],
             ],
             [
-                'name' => 'Letter Sounds & Phonics (L to Z)',
+                'name' => 'Greetings & Polite Manners (Missions 7 to 10)',
                 'lessons' => [
-                    'Letter Sounds L, M and N',
-                    'Letter Sounds O, P and Q',
-                    'Letter Sounds R, S and T',
-                    'Letter Sounds U, V and W',
-                    'Letter Sounds X, Y and Z',
+                    'Greetings Safari Jambo',
+                    'Saying Good Morning',
+                    'Saying Thank You',
+                    'Saying Goodbye',
                 ],
             ],
             [
-                'name' => 'Everyday Words & Vocabulary',
+                'name' => 'Letter Sounds A to J (Missions 11 to 20)',
                 'lessons' => [
-                    'My Family and Home Words',
-                    'Classroom and School Objects',
-                    'Farm and Safari Animals',
-                    'Colors and Fruits Vocabulary',
-                    'Action Words (Jump, Run, Sing)',
-                ],
-            ],
-            [
-                'name' => 'Listening, Rhymes & Stories',
-                'lessons' => [
-                    'Fun Rhyming Words',
-                    'Animal Sounds Match',
-                    'Leo\'s Short Safari Story',
-                    'Following Friendly Instructions',
-                    'Picture Story Reading',
+                    'Letter A (Apple & Ant)',
+                    'Letter B (Ball & Bear)',
+                    'Letter C (Cat & Car)',
+                    'Letter D (Dog & Duck)',
+                    'Letter E (Egg & Elephant)',
+                    'Letter F (Fish & Frog)',
+                    'Letter G (Giraffe & Goat)',
+                    'Letter H (Hat & House)',
+                    'Letter I (Igloo & Insect)',
+                    'Letter J (Jug & Jelly)',
                 ],
             ],
         ];
         $this->seedTopicsAndLessons($subjects['english'], $engTopics);
 
-        // C. CRE & MORAL VALUES (25 Movie Missions Framework)
+        // C. CRE & MORAL VALUES (25 Playgroup Missions)
         $creTopics = [
             [
-                'name' => 'God\'s Wonderful Creation',
+                'name' => 'God\'s Wonderful Creation (Missions 1 to 10)',
                 'lessons' => [
-                    'God Made the Sun, Moon and Stars',
-                    'God Made the Rivers, Hills and Oceans',
-                    'God Made Trees, Flowers and Fruits',
-                    'God Made Birds and Wild Animals',
-                    'God Made Fish and Sea Creatures',
-                    'My Body is Fearfully and Wonderfully Made',
-                    'Caring for God\'s Earth and Environment',
+                    'God Made the Sky and Sun',
+                    'God Made Trees and Flowers',
+                    'God Made Animals and Birds',
+                    'God Made Water and Rivers',
+                    'God Made Me Unique',
+                    'God Made My Body',
+                    'God Loves My Family',
+                    'Thanking God in Prayer',
+                    'Caring for God\'s Creation',
+                    'Creation Realm Grand Master (Trophy)',
                 ],
             ],
             [
-                'name' => 'My Family & Community Gift',
+                'name' => 'Life of Jesus & Miracles (Missions 11 to 20)',
                 'lessons' => [
-                    'Thanking God for Father and Mother',
-                    'Loving My Brothers and Sisters',
-                    'Respecting Grandparents and Elders',
-                    'Helping with Chores at Home',
-                    'Being a Good Neighbor and Friend',
-                    'Showing Kindness to Visitors',
+                    'Jesus Loves the Children',
+                    'Baby Jesus in the Manger',
+                    'Jesus Helps the Sick',
+                    'Jesus Calms the Storm',
+                    'Jesus Feeds 5,000',
+                    'Jesus the Good Shepherd',
+                    'Jesus Our Kind Friend',
+                    'Jesus Prays to the Father',
+                    'Jesus Resurrection Joy',
+                    'Jesus Story Grand Master (Trophy)',
                 ],
             ],
             [
-                'name' => 'Living Moral Values & Good Deeds',
+                'name' => 'Christian Values & Kindness (Missions 21 to 25)',
                 'lessons' => [
-                    'Sharing Toys, Food and Love',
-                    'Saying "Please" and "Thank You"',
-                    'Saying "I Am Sorry" and Forgiving Others',
-                    'Telling the Truth Always (Honesty)',
-                    'Being Patient and Waiting My Turn',
-                    'Caring for Sick and Hurt Friends',
-                ],
-            ],
-            [
-                'name' => 'Prayer, Gratitude & Worship',
-                'lessons' => [
-                    'Talking to God in the Morning (Morning Prayer)',
-                    'Saying Grace and Blessing Our Meals',
-                    'Singing Praises and Joyful Songs',
-                    'Bedtime Prayer and Peace at Night',
-                    'Thanking God for Every Good Gift',
-                    'God Is Always With Me and Loves Me',
+                    'Sharing Toys with Friends',
+                    'Saying "Thank You" and "Please"',
+                    'Helping Family at Home',
+                    'Obeying Parents and Teachers',
+                    'Being Honest and Truthful',
                 ],
             ],
         ];
         $this->seedTopicsAndLessons($subjects['cre'], $creTopics);
 
         // ════════════════════════════════════════════════════════
-        // 5. THE 7 ADVENTURE WORLDS (Math, English, and CRE)
+        // 5. THE 8 ADVENTURE WORLDS (Exact Subject & CSV Matching)
         // ════════════════════════════════════════════════════════
         $worldsData = [
             // MATHEMATICS WORLDS 🔢
             [
                 'name' => 'Whispering Forest',
                 'slug' => 'whispering-forest',
-                'description' => 'Where counting trees share secrets and every leaf is a math adventure!',
+                'description' => 'Counting Numbers 1 to 3 with friendly apples, kittens, and shiny stars!',
                 'icon' => '🌲',
                 'theme_color' => '#10B981',
                 'subject_id' => $subjects['math']->id,
@@ -289,67 +276,77 @@ class CBCMasterSeeder extends Seeder
                 'is_locked' => false,
             ],
             [
-                'name' => 'Star Galaxy',
-                'slug' => 'star-galaxy',
-                'description' => 'Blast off to outer space with addition, subtraction and rocket counters!',
-                'icon' => '🚀',
-                'theme_color' => '#6366F1',
+                'name' => 'Sunny Meadow',
+                'slug' => 'sunny-meadow',
+                'description' => 'Counting Numbers 1 to 4 with backpacks, toy boxes, and zooming cars!',
+                'icon' => '🎒',
+                'theme_color' => '#F59E0B',
                 'subject_id' => $subjects['math']->id,
                 'sort_order' => 2,
+                'is_locked' => false,
+            ],
+            [
+                'name' => 'Yummy Cookie Trail',
+                'slug' => 'cookie-trail',
+                'description' => 'Counting Numbers 1 to 5 with sweet cookies, fruit baskets, and market friends!',
+                'icon' => '🍪',
+                'theme_color' => '#E11D48',
+                'subject_id' => $subjects['math']->id,
+                'sort_order' => 3,
                 'is_locked' => false,
             ],
 
             // LANGUAGE & PHONICS WORLDS 📖
             [
-                'name' => 'Safari Plains',
+                'name' => 'Safari Action Plains',
                 'slug' => 'safari-plains',
-                'description' => 'Golden African savanna where letter sounds and animal friends come alive!',
+                'description' => 'Action verbs, greetings, jambo safari and polite manners (Missions 1-10)!',
                 'icon' => '🦁',
                 'theme_color' => '#F59E0B',
                 'subject_id' => $subjects['english']->id,
-                'sort_order' => 3,
+                'sort_order' => 4,
                 'is_locked' => false,
             ],
             [
-                'name' => 'Castle of Discovery',
+                'name' => 'Alphabet Kingdom',
                 'slug' => 'castle-of-discovery',
-                'description' => 'Magical castle full of classic storybooks, sight words and rhyme spells!',
+                'description' => 'Explore Letter Sounds A to J with animals, apples, cars and jelly (Missions 11-20)!',
                 'icon' => '🏰',
                 'theme_color' => '#EC4899',
                 'subject_id' => $subjects['english']->id,
-                'sort_order' => 4,
+                'sort_order' => 5,
                 'is_locked' => false,
             ],
 
             // CRE & MORAL VALUES WORLDS ✝️
             [
-                'name' => 'Ocean Cove',
+                'name' => 'Ocean Cove Creation',
                 'slug' => 'ocean-cove',
-                'description' => 'Dive into sparkling waters discovering God\'s wonderful creation!',
+                'description' => 'God made the sun, stars, animals, trees, and my unique body (Missions 1-10)!',
                 'icon' => '🌊',
                 'theme_color' => '#0284C7',
-                'subject_id' => $subjects['cre']->id,
-                'sort_order' => 5,
-                'is_locked' => false,
-            ],
-            [
-                'name' => 'Kindness Village',
-                'slug' => 'kindness-village',
-                'description' => 'A joyful village learning the life of Jesus, sharing toys, and loving neighbors!',
-                'icon' => '🏡',
-                'theme_color' => '#14B8A6',
                 'subject_id' => $subjects['cre']->id,
                 'sort_order' => 6,
                 'is_locked' => false,
             ],
             [
-                'name' => 'Rainbow Mountain',
+                'name' => 'Kindness Village',
+                'slug' => 'kindness-village',
+                'description' => 'The life and miracles of Jesus, calming the storm and loving friends (Missions 11-20)!',
+                'icon' => '🏡',
+                'theme_color' => '#14B8A6',
+                'subject_id' => $subjects['cre']->id,
+                'sort_order' => 7,
+                'is_locked' => false,
+            ],
+            [
+                'name' => 'Rainbow Mountain Values',
                 'slug' => 'rainbow-mountain',
-                'description' => 'Climb to the mountaintop celebrating God\'s promises, prayer and joyful songs!',
+                'description' => 'Sharing toys, saying thank you, helping family, and honesty (Missions 21-25)!',
                 'icon' => '🌈',
                 'theme_color' => '#A855F7',
                 'subject_id' => $subjects['cre']->id,
-                'sort_order' => 7,
+                'sort_order' => 8,
                 'is_locked' => false,
             ],
         ];
