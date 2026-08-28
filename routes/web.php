@@ -281,6 +281,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/lessons/{lesson}/approve', [App\Http\Controllers\Admin\LessonController::class, 'approve'])->name('lessons.approve');
     Route::post('/lessons/{lesson}/reject', [App\Http\Controllers\Admin\LessonController::class, 'reject'])->name('lessons.reject');
     Route::resource('/lessons', App\Http\Controllers\Admin\LessonController::class);
+    Route::get('/missions', [App\Http\Controllers\Admin\MissionController::class, 'globalIndex'])->name('missions.index');
     Route::resource('lessons.missions', App\Http\Controllers\Admin\MissionController::class);
     Route::resource('/missions', App\Http\Controllers\Admin\MissionController::class);
 

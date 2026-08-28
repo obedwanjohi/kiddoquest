@@ -40,10 +40,14 @@ class MissionController extends Controller
         return view('admin.missions.global-index', compact('missions', 'lessons', 'subjects', 'levels'));
     }
 
-    public function index(Lesson $lesson)
+    public function index(Request $request, ?Lesson $lesson = null)
     {
-        $lesson->load(['missions.questionBank', 'missions.thumbnailMedia', 'topic.subject']);
-        return view('admin.missions.index', compact('lesson'));
+        if ($lesson && $lesson->exists) {
+            $lesson->load(['missions.questionBank', 'missions.thumbnailMedia', 'topic.subject']);
+            return view('admin.missions.index', compact('lesson'));
+        }
+
+        return $this->globalIndex($request);
     }
 
     public function create(Lesson $lesson)

@@ -1,13 +1,15 @@
 @extends('admin.layouts.app')
-@section('title', 'Missions — ' . $lesson->title)
+@section('title', 'Missions — ' . ($lesson->title ?? 'All Missions'))
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        <h3>🎯 Missions — {{ $lesson->title }}</h3>
+        <h3>🎯 Missions — {{ $lesson->title ?? 'Overview' }}</h3>
         <div>
-            <a href="{{ route('admin.lessons.show', $lesson) }}" class="btn btn-secondary" style="font-size:12px;">← Lesson</a>
-            <a href="{{ route('admin.lessons.missions.create', $lesson) }}" class="btn btn-primary" style="font-size:12px;">➕ New Mission</a>
+            @if(isset($lesson) && $lesson)
+                <a href="{{ route('admin.lessons.show', $lesson) }}" class="btn btn-secondary" style="font-size:12px;">← Lesson</a>
+                <a href="{{ route('admin.lessons.missions.create', $lesson) }}" class="btn btn-primary" style="font-size:12px;">➕ New Mission</a>
+            @endif
         </div>
     </div>
     <div class="card-body" style="padding:12px 20px;">
