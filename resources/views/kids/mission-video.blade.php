@@ -75,7 +75,6 @@
                     <span class="text-3xl">🎯</span> Start Mission Game!
                 </a>
             </div>
-            @endif  </div>
             @endif
 
             {{-- Alpine Video Logic --}}
