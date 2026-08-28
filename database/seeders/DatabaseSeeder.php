@@ -10,10 +10,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             AdminSeeder::class,
-            QuizTypeSeeder::class,
-            AdventureWorldSeeder::class,
-            ContentSeeder::class,
-            CurriculumSeeder::class,
+            CBCMasterSeeder::class,
             GuardianSeeder::class,
             SampleMissionsSeeder::class,
             FirstLearningPathSeeder::class,
