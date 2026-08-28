@@ -84,7 +84,7 @@
 {{-- Exit Bar: Stars + Coins + Exit --}}
 <x-kid.exit-bar :stars="$child->total_stars" :coins="$child->star_coins" :title="'Adventure Map'" />
 
-<div x-data="{ activeSubject: 'all' }" class="pt-22 sm:pt-26 pb-28 min-h-screen map-canvas relative overflow-hidden">
+<div x-data="{ activeSubject: 'all' }" class="pt-20 sm:pt-24 pb-28 min-h-screen map-canvas relative overflow-hidden">
 
     {{-- Floating Decorative Clouds & Scenery --}}
     <div class="absolute top-28 left-3 text-4xl sm:text-5xl opacity-30 pointer-events-none animate-pulse">☁️</div>
@@ -95,7 +95,7 @@
     <div class="max-w-lg mx-auto px-3 sm:px-4 relative z-10">
 
         {{-- 1. HERO MASCOT WELCOME CARD (Compact Mobile Friendly) --}}
-        <div class="mb-4 bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 shadow-lg border-2 border-white flex items-center justify-between gap-2.5">
+        <div class="mt-2 mb-4 bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 shadow-lg border-2 border-white flex items-center justify-between gap-2.5">
             <div class="flex items-center gap-3 min-w-0">
                 <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-amber-400 to-yellow-300 border-2 border-amber-200 flex items-center justify-center text-2xl sm:text-3xl flex-shrink-0 shadow-inner">
                     {{ $child->avatar_emoji ?? '🦁' }}
