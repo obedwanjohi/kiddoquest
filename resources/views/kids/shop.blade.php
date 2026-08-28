@@ -1,6 +1,6 @@
 @extends('kids.layouts.app')
 
-@section('title', "Reward Shop — BZabc Kids")
+@section('title', "Reward Shop — KiddoQuest CBC")
 
 @push('kid-styles')
 <style>
@@ -9,54 +9,54 @@
     }
     .shop-card {
         background: #FFFFFF;
-        border-radius: 20px;
+        border-radius: 24px;
         border: 3px solid #F3F4F6;
-        padding: 12px;
+        padding: 14px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         position: relative;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
         transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
     .shop-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
     }
     .shop-tab-active-char {
         background: #D97706 !important;
         color: #FFFFFF !important;
         font-weight: 900 !important;
-        border-radius: 16px !important;
+        border-radius: 18px !important;
         box-shadow: 0 4px 0 #92400E !important;
     }
     .shop-tab-active-hat {
         background: #7C3AED !important;
         color: #FFFFFF !important;
         font-weight: 900 !important;
-        border-radius: 16px !important;
+        border-radius: 18px !important;
         box-shadow: 0 4px 0 #5B21B6 !important;
     }
     .shop-tab-inactive {
         background: #FFFFFF !important;
         color: #374151 !important;
         font-weight: 800 !important;
-        border-radius: 16px !important;
+        border-radius: 18px !important;
         border: 2px solid #E5E7EB !important;
     }
     .btn-3d-amber {
-        background: #F59E0B;
+        background: linear-gradient(180deg, #FBBF24 0%, #F59E0B 100%);
         color: #FFFFFF;
         font-weight: 900;
-        font-size: 12px;
-        padding: 8px 12px;
-        border-radius: 12px;
+        font-size: 13px;
+        padding: 10px 14px;
+        border-radius: 14px;
         width: 100%;
         border: none;
         border-bottom: 4px solid #B45309;
         cursor: pointer;
-        text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         transition: transform 0.05s ease;
     }
     .btn-3d-amber:active {
@@ -64,17 +64,17 @@
         border-bottom-width: 2px;
     }
     .btn-3d-purple {
-        background: #8B5CF6;
+        background: linear-gradient(180deg, #A78BFA 0%, #8B5CF6 100%);
         color: #FFFFFF;
         font-weight: 900;
-        font-size: 12px;
-        padding: 8px 12px;
-        border-radius: 12px;
+        font-size: 13px;
+        padding: 10px 14px;
+        border-radius: 14px;
         width: 100%;
         border: none;
         border-bottom: 4px solid #6D28D9;
         cursor: pointer;
-        text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         transition: transform 0.05s ease;
     }
     .btn-3d-purple:active {
@@ -82,17 +82,17 @@
         border-bottom-width: 2px;
     }
     .btn-3d-pink {
-        background: #EC4899;
+        background: linear-gradient(180deg, #F472B6 0%, #EC4899 100%);
         color: #FFFFFF;
         font-weight: 900;
-        font-size: 12px;
-        padding: 8px 12px;
-        border-radius: 12px;
+        font-size: 13px;
+        padding: 10px 14px;
+        border-radius: 14px;
         width: 100%;
         border: none;
         border-bottom: 4px solid #BE185D;
         cursor: pointer;
-        text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         transition: transform 0.05s ease;
     }
     .btn-3d-pink:active {
@@ -100,17 +100,17 @@
         border-bottom-width: 2px;
     }
     .btn-3d-green {
-        background: #22C55E;
+        background: linear-gradient(180deg, #4ADE80 0%, #22C55E 100%);
         color: #FFFFFF;
         font-weight: 900;
-        font-size: 12px;
-        padding: 8px 12px;
-        border-radius: 12px;
+        font-size: 13px;
+        padding: 10px 14px;
+        border-radius: 14px;
         width: 100%;
         border: none;
         border-bottom: 4px solid #15803D;
         cursor: pointer;
-        text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         transition: transform 0.05s ease;
     }
     .btn-3d-green:active {
@@ -121,9 +121,9 @@
         background: #DCFCE7;
         color: #15803D;
         font-weight: 900;
-        font-size: 12px;
-        padding: 8px 12px;
-        border-radius: 12px;
+        font-size: 13px;
+        padding: 10px 14px;
+        border-radius: 14px;
         width: 100%;
         border: 2px solid #86EFAC;
         text-align: center;
