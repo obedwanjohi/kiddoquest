@@ -10,9 +10,9 @@ class AdventureWorldSeeder extends Seeder
 {
     public function run(): void
     {
-        $mathSubject = Subject::where('slug', 'like', 'mathematics%')->first();
-        $engSubject  = Subject::where('slug', 'like', 'language%')->first();
-        $creSubject  = Subject::where('slug', 'like', 'cre%')->first();
+        $mathId = $mathSubject?->id ?? Subject::where('slug', 'like', 'mathematics%')->value('id');
+        $engId  = $engSubject?->id ?? Subject::where('slug', 'like', 'language%')->value('id');
+        $creId  = $creSubject?->id ?? Subject::where('slug', 'like', 'cre%')->value('id');
 
         $worlds = [
             // 🔢 MATHEMATICS WORLDS (Playgroup)
@@ -22,7 +22,7 @@ class AdventureWorldSeeder extends Seeder
                 'description' => 'Counting Numbers 1 to 3 with friendly apples, kittens, and shiny stars!',
                 'icon' => '🌲',
                 'theme_color' => '#10B981',
-                'subject_id' => $mathSubject?->id,
+                'subject_id' => $mathId,
                 'sort_order' => 1,
                 'is_locked' => false,
             ],
@@ -32,7 +32,7 @@ class AdventureWorldSeeder extends Seeder
                 'description' => 'Counting Numbers 1 to 4 with backpacks, toy boxes, and zooming cars!',
                 'icon' => '🎒',
                 'theme_color' => '#F59E0B',
-                'subject_id' => $mathSubject?->id,
+                'subject_id' => $mathId,
                 'sort_order' => 2,
                 'is_locked' => false,
             ],
@@ -42,7 +42,7 @@ class AdventureWorldSeeder extends Seeder
                 'description' => 'Counting Numbers 1 to 5 with sweet cookies, fruit baskets, and market friends!',
                 'icon' => '🍪',
                 'theme_color' => '#E11D48',
-                'subject_id' => $mathSubject?->id,
+                'subject_id' => $mathId,
                 'sort_order' => 3,
                 'is_locked' => false,
             ],
@@ -54,7 +54,7 @@ class AdventureWorldSeeder extends Seeder
                 'description' => 'Action verbs, greetings, jambo safari and polite manners (Missions 1-10)!',
                 'icon' => '🦁',
                 'theme_color' => '#F59E0B',
-                'subject_id' => $engSubject?->id,
+                'subject_id' => $engId,
                 'sort_order' => 4,
                 'is_locked' => false,
             ],
@@ -64,7 +64,7 @@ class AdventureWorldSeeder extends Seeder
                 'description' => 'Explore Letter Sounds A to J with animals, apples, cars and jelly (Missions 11-20)!',
                 'icon' => '🏰',
                 'theme_color' => '#EC4899',
-                'subject_id' => $engSubject?->id,
+                'subject_id' => $engId,
                 'sort_order' => 5,
                 'is_locked' => false,
             ],
@@ -76,7 +76,7 @@ class AdventureWorldSeeder extends Seeder
                 'description' => 'God made the sun, stars, animals, trees, and my unique body (Missions 1-10)!',
                 'icon' => '🌊',
                 'theme_color' => '#0284C7',
-                'subject_id' => $creSubject?->id,
+                'subject_id' => $creId,
                 'sort_order' => 6,
                 'is_locked' => false,
             ],
@@ -86,7 +86,7 @@ class AdventureWorldSeeder extends Seeder
                 'description' => 'The life and miracles of Jesus, calming the storm and loving friends (Missions 11-20)!',
                 'icon' => '🏡',
                 'theme_color' => '#14B8A6',
-                'subject_id' => $creSubject?->id,
+                'subject_id' => $creId,
                 'sort_order' => 7,
                 'is_locked' => false,
             ],
@@ -96,17 +96,17 @@ class AdventureWorldSeeder extends Seeder
                 'description' => 'Sharing toys, saying thank you, helping family, and honesty (Missions 21-25)!',
                 'icon' => '🌈',
                 'theme_color' => '#A855F7',
-                'subject_id' => $creSubject?->id,
+                'subject_id' => $creId,
                 'sort_order' => 8,
                 'is_locked' => false,
             ],
         ];
 
-        // Wipe all old/testing worlds completely to start fresh with our 8 clean Playgroup worlds
-        AdventureWorld::query()->delete();
-
         foreach ($worlds as $world) {
-            AdventureWorld::create($world);
+            AdventureWorld::updateOrCreate(
+                ['slug' => $world['slug']],
+                $world
+            );
         }
     }
 }
