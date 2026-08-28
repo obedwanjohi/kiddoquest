@@ -98,6 +98,8 @@ class MediaController extends Controller
                         $height = $imageInfo[1];
                     }
                 }
+            }
+
             // Upload to Supabase Storage Bucket
             $supabase = app(\App\Services\SupabaseStorageService::class);
             $localFileToRead = storage_path("app/public/{$filePath}");
