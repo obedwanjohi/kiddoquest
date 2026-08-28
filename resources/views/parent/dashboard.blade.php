@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Parent Dashboard — BZabc Kids')
+@section('title', 'Parent Dashboard — KiddoQuest')
 
 @push('styles')
 <style>

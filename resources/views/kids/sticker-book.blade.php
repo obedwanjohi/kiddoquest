@@ -1,6 +1,6 @@
 @extends('kids.layouts.app')
 
-@section('title', "Sticker Book — BZabc Kids")
+@section('title', "Sticker Book — KiddoQuest")
 
 @section('kid-content')
 <script>

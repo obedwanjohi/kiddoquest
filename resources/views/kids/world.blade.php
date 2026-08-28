@@ -1,6 +1,6 @@
 @extends('kids.layouts.app')
 
-@section('title', "{$world->name} — BZabc Kids")
+@section('title', "{$world->name} — KiddoQuest")
 
 @push('kid-styles')
 <style>

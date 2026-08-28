@@ -91,21 +91,50 @@ class ParentAiService
             $prompt = "You are an early childhood education specialist advising a parent about their child {$child->name}. " .
                 "{$child->name}'s score accuracy: {$perf['accuracy_rate']}%. Completed missions: {$perf['passed_missions']}. " .
                 "Parent Question: {$question}. " .
-                "Provide a brief, warm, practical answer with a 1-minute home learning activity.";
+                "Provide a brief, warm, practical answer (2-3 short paragraphs or bullet points) with a 1-minute home learning activity.";
 
+            // Try gemini-1.5-flash first
             $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={$apiKey}";
 
-            $response = Http::timeout(8)->post($url, [
+            $response = Http::timeout(10)->post($url, [
                 'contents' => [
-                    ['parts' => [['text' => $prompt]]]
+                    [
+                        'role'  => 'user',
+                        'parts' => [['text' => $prompt]]
+                    ]
                 ]
             ]);
 
             if ($response->successful()) {
-                return $response->json('candidates.0.content.parts.0.text');
+                $text = $response->json('candidates.0.content.parts.0.text');
+                if ($text) return $text;
             }
+
+            // Fallback to gemini-2.0-flash if 1.5 failed
+            $url2 = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={$apiKey}";
+            $response2 = Http::timeout(10)->post($url2, [
+                'contents' => [
+                    [
+                        'role'  => 'user',
+                        'parts' => [['text' => $prompt]]
+                    ]
+                ]
+            ]);
+
+            if ($response2->successful()) {
+                $text2 = $response2->json('candidates.0.content.parts.0.text');
+                if ($text2) return $text2;
+            }
+
+            Log::warning('Gemini AI API call failed', [
+                'status1' => $response->status(),
+                'body1'   => $response->body(),
+                'status2' => $response2->status(),
+                'body2'   => $response2->body(),
+            ]);
+
         } catch (\Throwable $e) {
-            Log::warning('Gemini AI API call failed: ' . $e->getMessage());
+            Log::warning('Gemini AI API exception: ' . $e->getMessage());
         }
 
         return null;

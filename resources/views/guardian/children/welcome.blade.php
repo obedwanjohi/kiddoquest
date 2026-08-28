@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Welcome — BZabc Kids')
+@section('title', 'Welcome — KiddoQuest')
 
 @section('content')
 <div class="min-h-screen flex items-center justify-center p-4"

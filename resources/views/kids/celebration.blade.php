@@ -34,7 +34,7 @@
 @endphp
 
 @extends('kids.layouts.app')
-@section('title', $headline . ' — BZabc Kids')
+@section('title', $headline . ' — KiddoQuest')
 
 @push('kid-styles')
 <style>

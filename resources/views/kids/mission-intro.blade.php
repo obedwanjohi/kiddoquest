@@ -1,6 +1,6 @@
 @extends('kids.layouts.app')
 
-@section('title', "Mission Briefing — BZabc Kids")
+@section('title', "Mission Briefing — KiddoQuest")
 
 @push('kid-styles')
 <style>

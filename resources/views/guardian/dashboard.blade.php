@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Parent Dashboard — BZabc Kids')
+@section('title', 'Parent Dashboard — KiddoQuest')
 
 @section('content')
 <div class="min-h-screen bg-gray-50">
@@ -8,7 +8,7 @@
         <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <span class="text-2xl">🌈</span>
-                <h1 class="text-xl font-bold text-purple-600">BZabc Kids</h1>
+                <h1 class="text-xl font-bold text-purple-600">KiddoQuest</h1>
             </div>
             <div class="flex items-center gap-4">
                 <span class="text-sm text-gray-600">Hi, {{ $guardian->name }}!</span>

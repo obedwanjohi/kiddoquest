@@ -1,6 +1,6 @@
 @extends('kids.layouts.app')
 
-@section('title', "{$mission->title} — BZabc Kids")
+@section('title', "{$mission->title} — KiddoQuest")
 
 @section('kid-content')
 {{-- Global Alpine state to manage immersive mode across the whole page --}}
