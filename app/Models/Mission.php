@@ -54,6 +54,19 @@ class Mission extends Model
         'randomize_questions' => 'boolean',
     ];
 
+    /**
+     * Resolve route model binding by either ID or slug.
+     */
+    public function resolveRouteBinding($value, $field = null)
+    {
+        if (is_numeric($value)) {
+            return $this->where('id', (int) $value)->first() 
+                ?? $this->where('slug', $value)->firstOrFail();
+        }
+
+        return $this->where('slug', $value)->firstOrFail();
+    }
+
     // ── Relationships ──────────────────────────────────────────
 
     public function lesson(): BelongsTo
