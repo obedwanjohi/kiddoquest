@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             ContentSeeder::class,
             CurriculumSeeder::class,
             GuardianSeeder::class,
+            SampleMissionsSeeder::class,
             FirstLearningPathSeeder::class,
             SortQuizSeeder::class,
             MemoryMatchSeeder::class,
