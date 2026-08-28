@@ -197,6 +197,7 @@ Route::prefix('kids')->group(function () {
     // Adventure map (requires active child session)
     Route::middleware(['ensure.child.session'])->group(function () {
         Route::get('/map', [KidController::class, 'map'])->name('kids.map');
+        Route::get('/world/{world}', [KidController::class, 'world'])->name('kids.world');
         Route::get('/world/{world}/mission/{mission}/intro', [KidController::class, 'missionIntro'])->name('kids.mission-intro');
         Route::get('/world/{world}/mission/{mission}/video', [KidController::class, 'video'])->name('kids.mission-video');
         Route::get('/mission/{mission}/intro', function(\App\Models\Mission $mission) {
