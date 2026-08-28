@@ -236,44 +236,56 @@ class SampleMissionsSeeder extends Seeder
             $card2Media = \App\Models\Media::where('name', 'ilike', '%card%2%')->first();
             $card3Media = \App\Models\Media::where('name', 'ilike', '%card%3%')->first();
 
-            // Resolve Quiz Type (QT-01: Multiple Choice / Card Tap)
-            $mcTypeId = \App\Models\QuizType::where('code', 'QT-01')->value('id') ?? 1;
+            // Resolve Quiz Types
+            $countTypeId = \App\Models\QuizType::where('code', 'QT-09')->value('id') ?? 9;
+            $mcTypeId    = \App\Models\QuizType::where('code', 'QT-01')->value('id') ?? 1;
 
             // Create Questions
             foreach ($mData['questions'] as $qIdx => $qData) {
+                $isCountType = ($qIdx < 3);
+                $quizTypeId  = $isCountType ? $countTypeId : $mcTypeId;
+                $targetCount = ($qIdx % 3) + 1; // 1, 2, 3
+
                 $question = QuizQuestion::updateOrCreate(
                     [
                         'question_bank_id' => $bank->id,
                         'prompt' => $qData['question'],
                     ],
                     [
-                        'quiz_type_id' => $mcTypeId,
+                        'quiz_type_id' => $quizTypeId,
                         'points' => 1,
                         'sort_order' => $qIdx + 1,
+                        'scoring_config' => $isCountType ? [
+                            'count' => $targetCount,
+                            'target_count' => $targetCount,
+                            'image_url' => $appleMedia?->url,
+                        ] : null,
                     ]
                 );
 
                 // Options
                 foreach ($qData['options'] as $oIdx => $optText) {
                     $optImage = null;
-                    if (str_contains($optText, '1 Apple') && $card1Media) {
-                        $optImage = $card1Media->url;
-                    } elseif (str_contains($optText, '2 Apples') && $card2Media) {
-                        $optImage = $card2Media->url;
-                    } elseif (str_contains($optText, '3 Apples') && $card3Media) {
-                        $optImage = $card3Media->url;
+                    if (!$isCountType) {
+                        if (str_contains($optText, '1 Apple') || $oIdx === 0) {
+                            $optImage = $card1Media?->url;
+                        } elseif (str_contains($optText, '2 Apples') || $oIdx === 1) {
+                            $optImage = $card2Media?->url;
+                        } elseif (str_contains($optText, '3 Apples') || $oIdx === 2) {
+                            $optImage = $card3Media?->url;
+                        }
                     }
 
                     QuestionOption::updateOrCreate(
                         [
                             'question_id' => $question->id,
-                            'text_value' => $optText,
+                            'sort_order' => $oIdx + 1,
                         ],
                         [
+                            'text_value' => $isCountType ? ($oIdx + 1) : '',
                             'content_type' => $optImage ? 'image' : 'text',
                             'is_correct' => ($oIdx === $qData['correct']),
                             'image_url' => $optImage,
-                            'sort_order' => $oIdx + 1,
                         ]
                     );
                 }
