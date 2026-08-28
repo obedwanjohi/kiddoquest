@@ -351,6 +351,10 @@ class CBCMasterSeeder extends Seeder
             ],
         ];
 
+        // Remove stale/orphan legacy worlds (e.g. star-valley)
+        $validSlugs = array_column($worldsData, 'slug');
+        AdventureWorld::whereNotIn('slug', $validSlugs)->delete();
+
         foreach ($worldsData as $wData) {
             AdventureWorld::updateOrCreate(
                 ['slug' => $wData['slug']],
