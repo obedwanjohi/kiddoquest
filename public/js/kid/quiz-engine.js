@@ -1617,34 +1617,48 @@ function quizEngine(config) {
             setTimeout(() => { this.nextQuestion(); }, 2000);
         },
 
-        // ---- SUBMIT QUIZ (via dynamically created form on document.body) ----
-        submitQuiz() {
-            // Build a form OUTSIDE of any Alpine template and append to <body>
-            const form = document.createElement('form');
-            form.method = 'POST';
-            // Use relative URL to avoid APP_URL port mismatch
-            form.action = config.submitUrl;
+        // ---- SUBMIT QUIZ (via AJAX JSON POST -> Returns HTTP 200 OK) ----
+        async submitQuiz() {
+            console.log('%c 🚀 [QUIZ-ENGINE] Submitting Quiz Results via Fetch JSON AJAX...', 'background: #22c55e; color: white; font-size: 14px; font-weight: bold; padding: 4px 8px; border-radius: 4px;', {
+                action: config.submitUrl,
+                score: this.score,
+                total: this.questions.length,
+                stars: this.starsEarned,
+                timeSpent: this.timeSpent
+            });
 
-            const addHidden = (name, value) => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = name;
-                input.value = value;
-                form.appendChild(input);
-            };
+            try {
+                const response = await fetch(config.submitUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': config.csrfToken
+                    },
+                    body: JSON.stringify({
+                        _token: config.csrfToken,
+                        score: this.score,
+                        total: this.questions.length,
+                        stars: this.starsEarned,
+                        time_spent: this.timeSpent,
+                        answers: JSON.stringify(this.answerLog)
+                    })
+                });
 
-            // CSRF token (from global config — bulletproof, no x-ref dependency)
-            addHidden('_token', config.csrfToken);
+                const data = await response.json();
+                console.log('✅ BACKEND RESPONSE STATUS:', response.status, data);
 
-            // Quiz data
-            addHidden('score', this.score);
-            addHidden('total', this.questions.length);
-            addHidden('stars', this.starsEarned);
-            addHidden('time_spent', this.timeSpent);
-            addHidden('answers', JSON.stringify(this.answerLog));
-
-            document.body.appendChild(form);
-            form.submit();
+                if (response.ok && data.success) {
+                    // Navigate cleanly to celebration screen
+                    window.location.href = data.redirect_url || '/celebration';
+                } else {
+                    console.error('❌ SUBMISSION FAILED:', data);
+                    alert('Server error saving quiz: ' + (data.error || JSON.stringify(data)));
+                }
+            } catch (err) {
+                console.error('❌ FETCH NETWORK ERROR:', err);
+                alert('Network error submitting quiz: ' + err.message);
+            }
         },
 
         // ---- EXIT / RESTART ----

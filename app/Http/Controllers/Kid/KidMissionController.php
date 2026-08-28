@@ -54,29 +54,29 @@ class KidMissionController extends Controller
     /**
      * Submit quiz answers — saves attempt, updates progress, awards stars.
      */
-    public function submit(Request $request, AdventureWorld $world, Mission $mission): \Illuminate\Http\RedirectResponse
+    public function submit(Request $request, AdventureWorld $world, Mission $mission)
     {
         $validated = $request->validate([
             'score'      => 'required|integer|min:0',
             'total'      => 'required|integer|min:1',
             'stars'      => 'required|integer|min:0|max:3',
-            'answers'    => 'nullable|string', // JSON string from Alpine.js JSON.stringify()
+            'answers'    => 'nullable',
             'time_spent' => 'nullable|integer|min:0',
         ]);
 
         $child = $this->activeChild();
 
-        // Decode JSON answers string into array for storage
-        if (! empty($validated['answers'])) {
+        // Decode JSON answers string if sent as string
+        if (! empty($validated['answers']) && is_string($validated['answers'])) {
             $decoded = json_decode($validated['answers'], true);
             $validated['answers'] = is_array($decoded) ? $decoded : [];
         }
 
         try {
             DB::transaction(function () use ($validated, $child, $mission) {
-                $score      = $validated['score'];
-                $total      = $validated['total'];
-                $stars      = $validated['stars'];
+                $score      = (int) $validated['score'];
+                $total      = (int) $validated['total'];
+                $stars      = (int) $validated['stars'];
                 $percentage = $total > 0 ? (int) round(($score / $total) * 100) : 0;
                 $passed     = $percentage >= ($mission->pass_threshold_percent ?? 60);
 
@@ -86,19 +86,19 @@ class KidMissionController extends Controller
                     ->max('stars') ?? 0;
 
                 // 1. Save the mission attempt (permanent record)
-                $attempt = MissionAttempt::create([
-                    'child_id'    => $child->id,
-                    'mission_id'  => $mission->id,
-                    'score'       => $score,
-                    'total'       => $total,
-                    'stars'       => $stars,
-                    'passed'      => $passed,
-                    'answers'     => $validated['answers'] ?? [],
-                    'time_spent'  => $validated['time_spent'] ?? 0,
+                MissionAttempt::create([
+                    'child_id'     => $child->id,
+                    'mission_id'   => $mission->id,
+                    'score'        => $score,
+                    'total'        => $total,
+                    'stars'        => $stars,
+                    'passed'       => $passed,
+                    'answers'      => $validated['answers'] ?? [],
+                    'time_spent'   => $validated['time_spent'] ?? 0,
                     'completed_at' => now(),
                 ]);
 
-                // 1b. Record individual question attempts for Exclusion Filter & Struggle Analytics
+                // 1b. Record individual question attempts
                 if (is_array($validated['answers'])) {
                     foreach ($validated['answers'] as $qAns) {
                         if (is_array($qAns) && isset($qAns['question_id']) && \App\Models\QuizQuestion::where('id', $qAns['question_id'])->exists()) {
@@ -121,16 +121,14 @@ class KidMissionController extends Controller
 
                 // 2. Update child progress for this mission
                 $progress = ChildProgress::firstOrNew([
-                    'child_id'  => $child->id,
+                    'child_id'   => $child->id,
                     'mission_id' => $mission->id,
                 ]);
 
-                // Only upgrade stars (never downgrade if they did better before)
                 if ($stars > ($progress->stars_earned ?? 0)) {
                     $progress->stars_earned = $stars;
                 }
 
-                // Mark completed if passed
                 if ($passed) {
                     $progress->status       = 'completed';
                     $progress->completed_at = now();
@@ -144,7 +142,7 @@ class KidMissionController extends Controller
 
                 $progress->save();
 
-                // 3. Award net-new stars to child's total (only improvement)
+                // 3. Award net-new stars to child's total
                 $netNewStars = max(0, $stars - $previousBest);
 
                 // 4. Calculate & Award Star Coins + Streak Bonus
@@ -186,19 +184,17 @@ class KidMissionController extends Controller
 
                 $child->refresh();
 
-                // Save calculated earned coins for view response
                 $validated['earned_coins'] = $earnedCoins;
             });
 
-            $score = $validated['score'];
-            $total = $validated['total'];
-            $stars = $validated['stars'];
-            $earnedCoins = $validated['earned_coins'] ?? 10;
+            $score = (int) $validated['score'];
+            $total = (int) $validated['total'];
+            $stars = (int) $validated['stars'];
+            $earnedCoins = (int) ($validated['earned_coins'] ?? 10);
 
-            return redirect()
-                ->route('kids.celebration')
-                ->with('success', "Quiz complete! You scored {$score}/{$total} and earned {$stars} star(s) and {$earnedCoins} coins!")
-                ->with('celebration', [
+            // Store in session for celebration view fallback
+            session([
+                'celebration' => [
                     'stars'        => $stars,
                     'score'        => $score,
                     'total'        => $total,
@@ -206,7 +202,25 @@ class KidMissionController extends Controller
                     'streak_days'  => $child->streak_days ?? 1,
                     'mission_id'   => $mission->id,
                     'world_id'     => $world->id,
-                ]);
+                ]
+            ]);
+
+            if ($request->wantsJson() || $request->isJson() || $request->header('Accept') === 'application/json') {
+                return response()->json([
+                    'success'      => true,
+                    'score'        => $score,
+                    'total'        => $total,
+                    'stars'        => $stars,
+                    'earned_coins' => $earnedCoins,
+                    'total_stars'  => $child->total_stars,
+                    'star_coins'   => $child->star_coins,
+                    'redirect_url' => route('kids.celebration')
+                ], 200);
+            }
+
+            return redirect()
+                ->route('kids.celebration')
+                ->with('success', 'Quiz complete!');
 
         } catch (\Exception $e) {
             Log::error('Mission submission failed: ' . $e->getMessage(), [
@@ -215,20 +229,21 @@ class KidMissionController extends Controller
                 'error'      => $e->getMessage(),
                 'file'       => $e->getFile(),
                 'line'       => $e->getLine(),
+                'trace'      => $e->getTraceAsString(),
             ]);
+
+            if ($request->wantsJson() || $request->isJson() || $request->header('Accept') === 'application/json') {
+                return response()->json([
+                    'success' => false,
+                    'error'   => $e->getMessage(),
+                    'file'    => $e->getFile(),
+                    'line'    => $e->getLine(),
+                ], 500);
+            }
 
             return redirect()
                 ->route('kids.celebration')
-                ->with('success', 'Quiz complete!')
-                ->with('celebration', [
-                    'stars'        => (int) ($request->stars ?? 3),
-                    'score'        => (int) ($request->score ?? 6),
-                    'total'        => (int) ($request->total ?? 6),
-                    'earned_coins' => 10,
-                    'streak_days'  => $child->streak_days ?? 1,
-                    'mission_id'   => $mission->id,
-                    'world_id'     => $world->id,
-                ]);
+                ->with('error', $e->getMessage());
         }
     }
 
