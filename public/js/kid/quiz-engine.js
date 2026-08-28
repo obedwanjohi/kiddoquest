@@ -479,6 +479,7 @@ function quizEngine(config) {
         },
 
         finishQuiz() {
+            console.log('%c 🎉 [QUIZ-ENGINE] Quiz Finished! Preparing submission...', 'background: #3b82f6; color: white; font-size: 14px; font-weight: bold; padding: 4px 8px; border-radius: 4px;');
             this.quizComplete = true;
             this.timeSpent = Math.round((Date.now() - this.startTime) / 1000);
             this.calculateStars();
