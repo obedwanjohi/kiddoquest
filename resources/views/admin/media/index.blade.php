@@ -52,8 +52,8 @@
         @else
             <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">
                 @foreach ($mediaItems as $media)
-                    <a href="{{ route('admin.media.show', $media) }}" style="text-decoration:none;color:inherit;">
-                        <div style="border:2px solid #e5e7eb;border-radius:12px;overflow:hidden;transition:transform 0.15s,border-color 0.15s;" onmouseover="this.style.borderColor='#4f46e5';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e5e7eb';this.style.transform='none'">
+                    <div style="border:2px solid #e5e7eb;border-radius:12px;overflow:hidden;background:white;position:relative;">
+                        <a href="{{ route('admin.media.show', $media) }}" style="text-decoration:none;color:inherit;">
                             {{-- Thumbnail / Preview --}}
                             <div style="height:140px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;overflow:hidden;">
                                 @if ($media->isImage())
@@ -74,8 +74,18 @@
                                     <span>{{ $media->size_formatted }}</span>
                                 </div>
                             </div>
+                        </a>
+                        {{-- Actions Bar --}}
+                        <div style="padding:8px 12px;border-top:1px solid #f1f5f9;background:#fafafa;display:flex;justify-content:space-between;align-items:center;">
+                            <a href="{{ route('admin.media.show', $media) }}" class="btn btn-sm btn-secondary" style="font-size:11px;padding:3px 8px;">👁️ View</a>
+                            <a href="{{ route('admin.media.edit', $media) }}" class="btn btn-sm btn-secondary" style="font-size:11px;padding:3px 8px;">✏️ Edit</a>
+                            <form action="{{ route('admin.media.destroy', $media) }}" method="POST" onsubmit="return confirm('Delete this media permanently?')" style="margin:0;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger" style="font-size:11px;padding:3px 8px;">🗑️</button>
+                            </form>
                         </div>
-                    </a>
+                    </div>
                 @endforeach
             </div>
 

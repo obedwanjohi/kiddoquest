@@ -316,7 +316,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     // Media, Voices, Sounds
     Route::get('/media/search', [App\Http\Controllers\Admin\MediaController::class, 'searchApi'])->name('media.search');
-    Route::resource('/media', App\Http\Controllers\Admin\MediaController::class);
+    Route::resource('/media', App\Http\Controllers\Admin\MediaController::class)->parameters(['media' => 'media']);
     Route::post('/voices/{voice}/toggle', [App\Http\Controllers\Admin\VoiceController::class, 'toggle'])->name('voices.toggle');
     Route::resource('/voices', App\Http\Controllers\Admin\VoiceController::class);
     Route::post('/sounds/upload', [App\Http\Controllers\Admin\SoundController::class, 'upload'])->name('sounds.upload');
