@@ -54,11 +54,22 @@ class AdventureWorld extends Model
      */
     public function getSubjectCategoryAttribute(): string
     {
-        $name = strtolower($this->name);
-        if (str_contains($name, 'phonics') || str_contains($name, 'letter') || str_contains($name, 'english') || str_contains($name, 'word')) {
+        if ($this->subject) {
+            $sName = strtolower($this->subject->name . ' ' . $this->subject->slug);
+            if (str_contains($sName, 'english') || str_contains($sName, 'language') || str_contains($sName, 'phonic')) {
+                return 'english';
+            }
+            if (str_contains($sName, 'cre') || str_contains($sName, 'relig') || str_contains($sName, 'value') || str_contains($sName, 'god') || str_contains($sName, 'moral')) {
+                return 'cre';
+            }
+            return 'math';
+        }
+
+        $name = strtolower($this->name . ' ' . $this->slug);
+        if (str_contains($name, 'safari') || str_contains($name, 'phonics') || str_contains($name, 'letter') || str_contains($name, 'english') || str_contains($name, 'word') || str_contains($name, 'castle') || str_contains($name, 'treasure')) {
             return 'english';
         }
-        if (str_contains($name, 'creation') || str_contains($name, 'value') || str_contains($name, 'cre') || str_contains($name, 'god')) {
+        if (str_contains($name, 'ocean') || str_contains($name, 'cove') || str_contains($name, 'creation') || str_contains($name, 'value') || str_contains($name, 'cre') || str_contains($name, 'god') || str_contains($name, 'village') || str_contains($name, 'rainbow')) {
             return 'cre';
         }
         return 'math';
@@ -70,8 +81,8 @@ class AdventureWorld extends Model
     public function getSubjectNameAttribute(): string
     {
         return match($this->subject_category) {
-            'english' => 'English & Phonics 📖',
-            'cre'     => 'CRE & Values ✝️',
+            'english' => 'Language & Phonics 📖',
+            'cre'     => 'CRE & Moral Values ✝️',
             default   => 'Mathematics 🔢',
         };
     }

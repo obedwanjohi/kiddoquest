@@ -84,12 +84,11 @@ class CBCMasterSeeder extends Seeder
         $targetLevel = $levels['PP2'];
 
         // ════════════════════════════════════════════════════════
-        // 3. THE 3 SUBJECTS
+        // 3. SEED 3 CORE SUBJECTS FOR ALL 3 LEVELS (PG, PP1, PP2)
         // ════════════════════════════════════════════════════════
-        $subjectsData = [
+        $subjectsTemplate = [
             'math' => [
                 'name' => 'Mathematics Activities',
-                'slug' => 'mathematics',
                 'description' => 'Number sense, counting, basic shapes, size comparisons, and cheerful addition.',
                 'icon' => '🔢',
                 'color' => '#F59E0B',
@@ -97,7 +96,6 @@ class CBCMasterSeeder extends Seeder
             ],
             'english' => [
                 'name' => 'Language & Phonics Activities',
-                'slug' => 'language-phonics',
                 'description' => 'Letter sounds, vocabulary, phonics blends, listening comprehension, and speech.',
                 'icon' => '📖',
                 'color' => '#0284C7',
@@ -105,7 +103,6 @@ class CBCMasterSeeder extends Seeder
             ],
             'cre' => [
                 'name' => 'Religious Education & Moral Values',
-                'slug' => 'cre-values',
                 'description' => 'God\'s creation, family love, respect, sharing, gratitude, and moral character.',
                 'icon' => '✝️',
                 'color' => '#059669',
@@ -114,14 +111,27 @@ class CBCMasterSeeder extends Seeder
         ];
 
         $subjects = [];
-        foreach ($subjectsData as $key => $sData) {
-            $subjects[$key] = Subject::updateOrCreate(
-                ['slug' => $sData['slug']],
-                array_merge($sData, [
-                    'level_id' => $targetLevel->id,
-                    'status' => 'published',
-                ])
-            );
+        foreach ($levels as $lvlCode => $level) {
+            foreach ($subjectsTemplate as $key => $sData) {
+                $slug = Str::slug($sData['name']) . '-' . strtolower($lvlCode);
+                $subject = Subject::updateOrCreate(
+                    ['slug' => $slug],
+                    [
+                        'name' => $sData['name'],
+                        'description' => $sData['description'],
+                        'icon' => $sData['icon'],
+                        'color' => $sData['color'],
+                        'sort_order' => $sData['sort_order'],
+                        'level_id' => $level->id,
+                        'status' => 'published',
+                    ]
+                );
+
+                // Store references for Playgroup / target level for topics & lessons attachment
+                if ($lvlCode === 'PG' || !isset($subjects[$key])) {
+                    $subjects[$key] = $subject;
+                }
+            }
         }
 
         // ════════════════════════════════════════════════════════
@@ -264,9 +274,10 @@ class CBCMasterSeeder extends Seeder
         $this->seedTopicsAndLessons($subjects['cre'], $creTopics);
 
         // ════════════════════════════════════════════════════════
-        // 5. THE 3 ADVENTURE WORLDS
+        // 5. THE 7 ADVENTURE WORLDS (Math, English, and CRE)
         // ════════════════════════════════════════════════════════
         $worldsData = [
+            // MATHEMATICS WORLDS 🔢
             [
                 'name' => 'Whispering Forest',
                 'slug' => 'whispering-forest',
@@ -278,23 +289,67 @@ class CBCMasterSeeder extends Seeder
                 'is_locked' => false,
             ],
             [
+                'name' => 'Star Galaxy',
+                'slug' => 'star-galaxy',
+                'description' => 'Blast off to outer space with addition, subtraction and rocket counters!',
+                'icon' => '🚀',
+                'theme_color' => '#6366F1',
+                'subject_id' => $subjects['math']->id,
+                'sort_order' => 2,
+                'is_locked' => false,
+            ],
+
+            // LANGUAGE & PHONICS WORLDS 📖
+            [
                 'name' => 'Safari Plains',
                 'slug' => 'safari-plains',
                 'description' => 'Golden African savanna where letter sounds and animal friends come alive!',
                 'icon' => '🦁',
                 'theme_color' => '#F59E0B',
                 'subject_id' => $subjects['english']->id,
-                'sort_order' => 2,
+                'sort_order' => 3,
                 'is_locked' => false,
             ],
             [
+                'name' => 'Castle of Discovery',
+                'slug' => 'castle-of-discovery',
+                'description' => 'Magical castle full of classic storybooks, sight words and rhyme spells!',
+                'icon' => '🏰',
+                'theme_color' => '#EC4899',
+                'subject_id' => $subjects['english']->id,
+                'sort_order' => 4,
+                'is_locked' => false,
+            ],
+
+            // CRE & MORAL VALUES WORLDS ✝️
+            [
                 'name' => 'Ocean Cove',
                 'slug' => 'ocean-cove',
-                'description' => 'Dive into sparkling waters discovering God\'s creation, love, and moral values!',
+                'description' => 'Dive into sparkling waters discovering God\'s wonderful creation!',
                 'icon' => '🌊',
                 'theme_color' => '#0284C7',
                 'subject_id' => $subjects['cre']->id,
-                'sort_order' => 3,
+                'sort_order' => 5,
+                'is_locked' => false,
+            ],
+            [
+                'name' => 'Kindness Village',
+                'slug' => 'kindness-village',
+                'description' => 'A joyful village learning the life of Jesus, sharing toys, and loving neighbors!',
+                'icon' => '🏡',
+                'theme_color' => '#14B8A6',
+                'subject_id' => $subjects['cre']->id,
+                'sort_order' => 6,
+                'is_locked' => false,
+            ],
+            [
+                'name' => 'Rainbow Mountain',
+                'slug' => 'rainbow-mountain',
+                'description' => 'Climb to the mountaintop celebrating God\'s promises, prayer and joyful songs!',
+                'icon' => '🌈',
+                'theme_color' => '#A855F7',
+                'subject_id' => $subjects['cre']->id,
+                'sort_order' => 7,
                 'is_locked' => false,
             ],
         ];
