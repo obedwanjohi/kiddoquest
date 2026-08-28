@@ -3,35 +3,49 @@
 @section('title', "Who's Playing Today? — KiddoQuest CBC")
 
 @section('kid-content')
-<div class="h-screen max-h-screen bg-gradient-to-b from-[#DDD6FE] via-[#FEF3C7] to-[#FCE7F3] flex flex-col justify-between px-3 sm:px-6 py-3 sm:py-5 relative overflow-hidden">
+<div class="h-[100dvh] max-h-[100dvh] bg-gradient-to-b from-[#DDD6FE] via-[#FEF3C7] to-[#FCE7F3] flex flex-col justify-between p-3 sm:p-5 relative overflow-hidden select-none">
 
-    {{-- Floating Decorative Elements --}}
-    <div class="absolute top-4 left-4 text-3xl opacity-30 pointer-events-none animate-pulse">☁️</div>
-    <div class="absolute top-6 right-6 text-3xl opacity-30 pointer-events-none animate-pulse">⭐</div>
-    <div class="absolute bottom-12 left-6 text-2xl opacity-20 pointer-events-none">🎈</div>
-    <div class="absolute bottom-14 right-6 text-2xl opacity-20 pointer-events-none">✨</div>
+    {{-- Decorative Background Floaters --}}
+    <div class="absolute top-8 left-4 text-3xl opacity-30 pointer-events-none animate-pulse">☁️</div>
+    <div class="absolute top-10 right-6 text-3xl opacity-30 pointer-events-none animate-pulse">⭐</div>
+    <div class="absolute bottom-10 left-6 text-2xl opacity-20 pointer-events-none">🎈</div>
+    <div class="absolute bottom-12 right-6 text-2xl opacity-20 pointer-events-none">✨</div>
 
-    {{-- 1. HEADER SECTION (Compact 100vh fit) --}}
-    <header class="w-full max-w-lg mx-auto text-center relative z-10 pt-1 sm:pt-2">
-        <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md px-3.5 py-1 rounded-full border border-white shadow-xs mb-1.5">
-            <span class="text-lg">🦁</span>
-            <span class="font-black text-[11px] text-purple-900 uppercase tracking-wider">KiddoQuest CBC</span>
+    {{-- 1. TOP HEADER WITH INTEGRATED PARENT & HOME BUTTONS (No footer clutter) --}}
+    <header class="w-full max-w-xl mx-auto relative z-10 flex items-center justify-between gap-2 pt-1">
+        {{-- Left: Home / Website --}}
+        <a href="{{ url('/') }}" 
+           class="flex items-center gap-1 bg-white/90 hover:bg-white text-slate-800 border border-slate-200 px-3 py-1.5 rounded-xl font-black text-xs shadow-xs active:scale-95 transition cursor-pointer flex-shrink-0"
+           title="Go to Website">
+            <span class="text-sm">🏠</span>
+            <span class="hidden sm:inline">Home</span>
+        </a>
+
+        {{-- Center: Title Badge --}}
+        <div class="text-center min-w-0">
+            <div class="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-purple-100 shadow-xs">
+                <span class="text-base">🦁</span>
+                <span class="font-heading font-black text-xs sm:text-sm text-slate-900 truncate">
+                    Who's Playing?
+                </span>
+            </div>
         </div>
-        <h1 class="font-heading text-xl sm:text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight"
-            style="text-shadow: 0 1px 0 rgba(255,255,255,0.8);">
-            Who's Playing Today?
-        </h1>
-        <p class="text-[11px] sm:text-xs text-slate-600 font-bold mt-0.5 max-w-xs mx-auto">
-            Tap your hero picture to jump into your adventure! 🚀
-        </p>
+
+        {{-- Right: Parent Zone PIN Lock --}}
+        <a href="{{ route('parent.pin_gate') }}" 
+           class="flex items-center gap-1 bg-white/90 hover:bg-white text-purple-900 border border-purple-200 px-3 py-1.5 rounded-xl font-black text-xs shadow-xs active:scale-95 transition cursor-pointer flex-shrink-0"
+           title="Parent Zone (PIN Protected)">
+            <span class="text-sm">🔐</span>
+            <span class="hidden sm:inline">Parents</span>
+        </a>
     </header>
 
-    {{-- 2. MAIN PROFILES CONTAINER (Centered vertically, Zero Scroll) --}}
-    <main class="w-full max-w-xl mx-auto flex-1 flex flex-col items-center justify-center relative z-10 my-auto px-1">
+    {{-- 2. CENTER STAGE: CHARACTER PROFILE CARDS --}}
+    <main class="w-full max-w-lg mx-auto flex-1 flex flex-col items-center justify-center relative z-10 my-auto px-1">
         
         @if($children->isEmpty())
             {{-- Empty State --}}
-            <div class="bg-white/95 backdrop-blur-md rounded-3xl p-5 sm:p-6 text-center shadow-xl border-2 border-white max-w-sm w-full">
+            <div class="bg-white/95 backdrop-blur-md rounded-3xl p-5 text-center shadow-xl border-2 border-white max-w-sm w-full">
                 <div class="text-5xl mb-2 animate-bounce">🧒</div>
                 <h2 class="font-heading text-lg font-black text-slate-900 mb-1">
                     No Adventurers Yet!
@@ -40,17 +54,17 @@
                     Add your child to unlock personalized games, stories, and star rewards!
                 </p>
                 <a href="{{ route('guardian.children.create') }}" 
-                   class="inline-flex items-center justify-center gap-2 w-full bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white font-heading font-black text-xs sm:text-sm py-3 px-5 rounded-2xl shadow-md hover:scale-102 transition cursor-pointer">
+                   class="inline-flex items-center justify-center gap-2 w-full bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white font-heading font-black text-xs py-3 px-5 rounded-2xl shadow-md hover:scale-102 transition cursor-pointer">
                     <span>✨ Add Your First Child</span>
                     <span>→</span>
                 </a>
             </div>
         @else
-            {{-- Responsive Profile Cards Grid --}}
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-4 w-full">
+            {{-- 2-Column Responsive Card Grid (Fits 100% on any mobile screen) --}}
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 w-full">
                 @foreach($children as $child)
                     <a href="{{ route('kids.enter', $child) }}"
-                       class="group bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3 sm:p-4 text-center shadow-lg border-2 border-white hover:border-purple-300 hover:shadow-xl transition transform hover:-translate-y-1 active:scale-95 flex flex-col items-center justify-between min-h-[145px] sm:min-h-[165px] relative overflow-hidden">
+                       class="group bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3 sm:p-4 text-center shadow-lg border-2 border-white hover:border-purple-300 hover:shadow-xl transition transform hover:-translate-y-1 active:scale-95 flex flex-col items-center justify-between min-h-[145px] sm:min-h-[165px] relative overflow-hidden cursor-pointer">
                         
                         {{-- Top Badge: Level / Status --}}
                         <div class="w-full flex items-center justify-between mb-1">
@@ -101,7 +115,7 @@
 
                 {{-- Add New Child Card --}}
                 <a href="{{ route('guardian.children.create') }}"
-                   class="group bg-white/50 hover:bg-white/90 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3 sm:p-4 text-center border-2 border-dashed border-purple-300 hover:border-purple-500 transition transform hover:-translate-y-1 active:scale-95 flex flex-col items-center justify-center min-h-[145px] sm:min-h-[165px] shadow-xs hover:shadow-md cursor-pointer">
+                   class="group bg-white/60 hover:bg-white/90 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3 sm:p-4 text-center border-2 border-dashed border-purple-300 hover:border-purple-500 transition transform hover:-translate-y-1 active:scale-95 flex flex-col items-center justify-center min-h-[145px] sm:min-h-[165px] shadow-xs hover:shadow-md cursor-pointer">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-purple-100 group-hover:bg-purple-600 text-purple-700 group-hover:text-white flex items-center justify-center text-xl sm:text-2xl shadow-xs transition mb-1">
                         ➕
                     </div>
@@ -117,19 +131,11 @@
 
     </main>
 
-    {{-- 3. FOOTER CONTROLS ROW (Always 100% visible on screen without scrolling) --}}
-    <footer class="w-full max-w-md mx-auto flex items-center justify-center gap-2.5 pt-1 pb-1.5 relative z-10">
-        <a href="{{ route('parent.pin_gate') }}" 
-           class="flex items-center gap-1 bg-white/90 hover:bg-white text-slate-800 border border-purple-200 px-3.5 py-2 rounded-xl font-black text-[11px] shadow-xs hover:shadow-sm transition active:scale-95 cursor-pointer">
-            <span>🔐</span>
-            <span>Parent Zone</span>
-        </a>
-        
-        <a href="{{ url('/') }}" 
-           class="flex items-center gap-1 bg-white/90 hover:bg-white text-slate-700 border border-slate-200 px-3.5 py-2 rounded-xl font-black text-[11px] shadow-xs hover:shadow-sm transition active:scale-95 cursor-pointer">
-            <span>🏠</span>
-            <span>Website</span>
-        </a>
+    {{-- 3. SUBTLE BOTTOM HINT --}}
+    <footer class="w-full max-w-md mx-auto text-center pb-1 relative z-10">
+        <p class="text-[10px] sm:text-[11px] font-bold text-slate-600/80">
+            ✨ Tap a picture to jump into your CBC adventure!
+        </p>
     </footer>
 
 </div>
