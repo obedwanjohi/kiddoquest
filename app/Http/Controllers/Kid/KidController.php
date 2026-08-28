@@ -57,7 +57,20 @@ class KidController extends Controller
     public function map(): View
     {
         $child = $this->activeChild();
-        $worlds = AdventureWorld::orderBy('sort_order')->get();
+        $levelCode = $child->recommended_level;
+
+        $worldsQuery = AdventureWorld::with('subject.level')->orderBy('sort_order');
+
+        if ($levelCode) {
+            $filteredWorlds = (clone $worldsQuery)->whereHas('subject.level', function($q) use ($levelCode) {
+                $q->where('code', $levelCode)
+                  ->orWhere('name', 'like', "%{$levelCode}%");
+            })->get();
+
+            $worlds = $filteredWorlds->isNotEmpty() ? $filteredWorlds : $worldsQuery->get();
+        } else {
+            $worlds = $worldsQuery->get();
+        }
 
         return view('kids.map', compact('child', 'worlds'));
     }
