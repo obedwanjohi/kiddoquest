@@ -197,9 +197,16 @@ Route::prefix('kids')->group(function () {
     // Adventure map (requires active child session)
     Route::middleware(['ensure.child.session'])->group(function () {
         Route::get('/map', [KidController::class, 'map'])->name('kids.map');
-        Route::get('/world/{world}', [KidController::class, 'world'])->name('kids.world');
         Route::get('/world/{world}/mission/{mission}/intro', [KidController::class, 'missionIntro'])->name('kids.mission-intro');
         Route::get('/world/{world}/mission/{mission}/video', [KidController::class, 'video'])->name('kids.mission-video');
+        Route::get('/mission/{mission}/intro', function(\App\Models\Mission $mission) {
+            $world = $mission->adventureWorld ?? \App\Models\AdventureWorld::first();
+            return app(KidController::class)->missionIntro($world, $mission);
+        })->name('kids.mission.intro');
+        Route::get('/mission/{mission}/video', function(\App\Models\Mission $mission) {
+            $world = $mission->adventureWorld ?? \App\Models\AdventureWorld::first();
+            return app(KidController::class)->video($world, $mission);
+        })->name('kids.mission.video');
         Route::get('/world/{world}/mission/{mission}/play', [KidMissionController::class, 'show'])->name('kids.mission.play');
         Route::post('/world/{world}/mission/{mission}/submit', [KidMissionController::class, 'submit'])->name('kids.mission.submit');
         Route::get('/celebration', fn () => view('kids.celebration'))->name('kids.celebration');

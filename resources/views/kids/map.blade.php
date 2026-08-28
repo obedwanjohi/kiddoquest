@@ -268,7 +268,7 @@
                             
                             @if($isCompleted)
                                 {{-- COMPLETED NODE (Green 3D + Stars) --}}
-                                <a href="{{ route('kids.mission.intro', $mission) }}" class="flex flex-col items-center group">
+                                <a href="{{ route('kids.mission-intro', [$world, $mission]) }}" class="flex flex-col items-center group">
                                     <div class="mission-node-btn node-completed">
                                         <span class="text-xl sm:text-2xl font-black">✓</span>
                                         <span class="text-[9px] font-black mt-0.5">Lv {{ $mIdx + 1 }}</span>
@@ -285,7 +285,7 @@
 
                             @elseif($isActiveTarget)
                                 {{-- ACTIVE PLAY NODE (Glowing Orange Pulse) --}}
-                                <a href="{{ route('kids.mission.intro', $mission) }}" class="flex flex-col items-center group">
+                                <a href="{{ route('kids.mission-intro', [$world, $mission]) }}" class="flex flex-col items-center group">
                                     <div class="relative">
                                         {{-- Tap To Play Speech Bubble --}}
                                         <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-amber-500 text-slate-950 font-black text-[9px] px-2.5 py-0.5 rounded-full whitespace-nowrap shadow-md animate-bounce border border-white">
