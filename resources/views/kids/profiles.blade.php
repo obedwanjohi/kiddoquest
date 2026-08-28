@@ -13,12 +13,12 @@
 
     {{-- 1. TOP HEADER WITH INTEGRATED PARENT & HOME BUTTONS (No footer clutter) --}}
     <header class="w-full max-w-xl mx-auto relative z-10 flex items-center justify-between gap-2 pt-1">
-        {{-- Left: Home / Website --}}
-        <a href="{{ url('/') }}" 
-           class="flex items-center gap-1 bg-white/90 hover:bg-white text-slate-800 border border-slate-200 px-3 py-1.5 rounded-xl font-black text-xs shadow-xs active:scale-95 transition cursor-pointer flex-shrink-0"
-           title="Go to Website">
-            <span class="text-sm">🏠</span>
-            <span class="hidden sm:inline">Home</span>
+        {{-- Left: Sign Out / Exit to Landing Page --}}
+        <a href="{{ route('kids.signout') }}" 
+           class="flex items-center gap-1 bg-white/90 hover:bg-rose-50 text-rose-700 border border-rose-200 px-2.5 sm:px-3 py-1.5 rounded-xl font-black text-xs shadow-xs active:scale-95 transition cursor-pointer flex-shrink-0"
+           title="Sign Out & Exit to Home Page">
+            <span class="text-sm">🚪</span>
+            <span>Sign Out</span>
         </a>
 
         {{-- Center: Title Badge --}}

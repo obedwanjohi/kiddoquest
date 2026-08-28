@@ -220,7 +220,8 @@ Route::get('/parent/login', [App\Http\Controllers\GuardianAuthController::class,
 Route::post('/parent/login', [App\Http\Controllers\GuardianAuthController::class, 'login']);
 Route::get('/parent/register', [App\Http\Controllers\GuardianAuthController::class, 'showRegister'])->name('guardian.register');
 Route::post('/parent/register', [App\Http\Controllers\GuardianAuthController::class, 'register'])->name('guardian.register.post');
-Route::post('/parent/logout', [App\Http\Controllers\GuardianAuthController::class, 'logout'])->name('guardian.logout');
+Route::match(['get', 'post'], '/parent/logout', [App\Http\Controllers\GuardianAuthController::class, 'logout'])->name('guardian.logout');
+Route::match(['get', 'post'], '/kids/signout', [App\Http\Controllers\GuardianAuthController::class, 'logout'])->name('kids.signout');
 
 // Guardian Child Management
 Route::middleware(['guardian.auth'])->prefix('parent')->name('guardian.children.')->group(function () {
