@@ -221,10 +221,14 @@ class KidMissionController extends Controller
             abort(redirect()->route('kids.profiles'));
         }
 
-        $guardian = Auth::guard('guardian')->user();
         $child = Child::find($childId);
 
-        if (! $child || $child->guardian_id !== $guardian->id) {
+        if (! $child) {
+            abort(redirect()->route('kids.profiles'));
+        }
+
+        $guardian = Auth::guard('guardian')->user();
+        if ($guardian && $child->guardian_id !== $guardian->id) {
             abort(redirect()->route('kids.profiles'));
         }
 

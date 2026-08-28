@@ -36,9 +36,14 @@ class KidController extends Controller
     {
         $guardian = Auth::guard('guardian')->user();
 
-        // Security: ensure this child belongs to the logged-in guardian
-        if ($child->guardian_id !== $guardian->id) {
-            abort(403);
+        // If a guardian session is active, verify ownership
+        if ($guardian && $child->guardian_id !== $guardian->id) {
+            abort(403, 'Unauthorized child profile access.');
+        }
+
+        // Auto-login the child's guardian if accessing in kid mode
+        if (!$guardian && $child->guardian) {
+            Auth::guard('guardian')->login($child->guardian);
         }
 
         session(['active_child_id' => $child->id]);
@@ -113,10 +118,14 @@ class KidController extends Controller
             abort(redirect()->route('kids.profiles'));
         }
 
-        $guardian = Auth::guard('guardian')->user();
         $child = Child::find($childId);
 
-        if (! $child || $child->guardian_id !== $guardian->id) {
+        if (! $child) {
+            abort(redirect()->route('kids.profiles'));
+        }
+
+        $guardian = Auth::guard('guardian')->user();
+        if ($guardian && $child->guardian_id !== $guardian->id) {
             abort(redirect()->route('kids.profiles'));
         }
 
