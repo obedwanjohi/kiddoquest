@@ -385,10 +385,11 @@ class CBCMasterSeeder extends Seeder
                     [
                         'topic_id' => $topic->id,
                         'title' => $lessonTitle,
-                        'description' => "Lesson: {$lessonTitle}",
+                        'summary' => "Lesson: {$lessonTitle}",
                         'sort_order' => $lIdx + 1,
                         'status' => 'published',
-                        'difficulty' => 'easy',
+                        'content_type' => 'video',
+                        'duration_minutes' => 5,
                     ]
                 );
             }
