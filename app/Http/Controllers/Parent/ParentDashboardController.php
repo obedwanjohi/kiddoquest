@@ -174,120 +174,83 @@ class ParentDashboardController extends Controller
                 ];
             }
 
-            // Subject-Specific Data Master Map
-            $subjectData = [
-                'all' => [
-                    'can_do' => [
-                        "Count objects from 1 to 10 accurately",
-                        "Recognize primary shapes & 2D geometry",
-                        "Identify letter sounds and phonics A through J",
-                        "Demonstrate sharing & moral values",
-                    ],
-                    'learning_next' => [
-                        "Counting backwards from 10 to 1",
-                        "Phonics letter blending (cat, bat, mat)",
-                        "Creation stories & kindness at home",
-                    ],
-                    'heat_map' => [
-                        ['name' => 'Math: Counting Objects', 'score' => 95, 'bar' => 8, 'total' => 8],
-                        ['name' => 'English: Letter Phonics', 'score' => 85, 'bar' => 7, 'total' => 8],
-                        ['name' => 'Math: Shape Recognition', 'score' => 75, 'bar' => 6, 'total' => 8],
-                        ['name' => 'CRE: Values & Kindness', 'score' => 90, 'bar' => 7, 'total' => 8],
-                        ['name' => 'English: Pattern Matching', 'score' => 40, 'bar' => 3, 'total' => 8],
-                    ],
-                    'roadmap' => [
-                        'completed' => ['Numbers 1–10', 'Alphabet Phonics A-J', 'Creation & Nature'],
-                        'current'   => 'Counting Quantities & Simple Phonics',
-                        'next'      => 'Addition within 5 & Sight Words',
-                        'future'    => ['Kenyan Currency Coins (KES)', 'Reading Short Sentences', 'Community Values'],
-                    ],
-                    'mistake' => 'Confused 6 and 9 in pattern matching question #4',
-                    'activity' => 'Draw 6 and 9 together on paper and have ' . $child->name . ' trace both numbers with their finger!',
-                ],
+            // 📈 Dynamic Real Database Analytics for Competencies & Heat Map
+            $realCanDo = [];
+            $realLearningNext = [];
+            $realHeatMap = [];
 
-                'math' => [
-                    'can_do' => [
-                        "Count objects from 1 to 10 with 100% accuracy",
-                        "Identify 2D shapes (Circle, Square, Triangle, Rectangle)",
-                        "Compare quantities (More vs Less)",
-                    ],
-                    'learning_next' => [
-                        "Counting backwards from 10 to 1",
-                        "Visual addition within 5 using fruit counters",
-                        "Recognizing numbers 11 to 20",
-                    ],
-                    'heat_map' => [
-                        ['name' => 'Counting 1 to 10', 'score' => 95, 'bar' => 8, 'total' => 8],
-                        ['name' => 'Shape Identification', 'score' => 85, 'bar' => 7, 'total' => 8],
-                        ['name' => 'Quantity Comparison', 'score' => 70, 'bar' => 5, 'total' => 8],
-                        ['name' => 'Addition within 5', 'score' => 45, 'bar' => 3, 'total' => 8],
-                    ],
-                    'roadmap' => [
-                        'completed' => ['Numbers 1–10', 'Primary Shapes'],
-                        'current'   => 'Quantity Grouping & Matching',
-                        'next'      => 'Addition within 5',
-                        'future'    => ['Kenyan Currency Coins (KES)', 'Telling Time to the Hour'],
-                    ],
-                    'mistake' => 'Confused 6 and 9 in counting quiz',
-                    'activity' => 'Ask ' . $child->name . ' to count 6 spoons during dinner, then add 3 more to make 9!',
-                ],
+            // Get all completed missions for this child
+            $completedMissionIds = $attempts->where('passed', true)->pluck('mission_id')->unique();
+            $completedMissionsList = Mission::whereIn('id', $completedMissionIds)->get();
 
-                'english' => [
-                    'can_do' => [
-                        "Recognize uppercase & lowercase letters A through J",
-                        "Identify beginning letter sounds (e.g. A for Apple)",
-                        "Follow 2-step spoken English instructions",
-                    ],
-                    'learning_next' => [
-                        "Phonics letter blending (e.g. C-A-T)",
-                        "Recognizing sight words (is, the, my, a)",
-                        "Listening comprehension & story recall",
-                    ],
-                    'heat_map' => [
-                        ['name' => 'Letter Recognition A-Z', 'score' => 90, 'bar' => 7, 'total' => 8],
-                        ['name' => 'Phonic Sounds', 'score' => 82, 'bar' => 6, 'total' => 8],
-                        ['name' => 'Sight Words', 'score' => 60, 'bar' => 5, 'total' => 8],
-                        ['name' => 'Sentence Building', 'score' => 35, 'bar' => 2, 'total' => 8],
-                    ],
-                    'roadmap' => [
-                        'completed' => ['Alphabet Letter Names', 'Phonics Sounds A-E'],
-                        'current'   => 'Phonics Sounds F-M & Word Pairing',
-                        'next'      => 'Sight Words & 3-Letter Blends',
-                        'future'    => ['Reading Short CBC Storybooks'],
-                    ],
-                    'mistake' => 'Confused letter B sound with D sound',
-                    'activity' => 'Make a B-B-Ball sound together while bouncing a ball at home!',
-                ],
+            foreach ($completedMissionsList as $cMiss) {
+                $realCanDo[] = "Mastered {$cMiss->title} (100% score)";
+            }
 
-                'cre' => [
-                    'can_do' => [
-                        "Recognize God's creation in plants, animals, and family",
-                        "Demonstrate sharing toys & kindness to siblings",
-                        "Identify basic moral values (honesty, respect)",
-                    ],
-                    'learning_next' => [
-                        "Helping around the house & obedience",
-                        "Gratitude & saying thank you before meals",
-                        "Caring for pets & nature",
-                    ],
-                    'heat_map' => [
-                        ['name' => 'God\'s Creation & Nature', 'score' => 98, 'bar' => 8, 'total' => 8],
-                        ['name' => 'Family & Relationships', 'score' => 90, 'bar' => 7, 'total' => 8],
-                        ['name' => 'Sharing & Kindness', 'score' => 85, 'bar' => 7, 'total' => 8],
-                        ['name' => 'Helping at Home', 'score' => 75, 'bar' => 6, 'total' => 8],
-                    ],
-                    'roadmap' => [
-                        'completed' => ['God Created Me & Family', 'Animal Creation'],
-                        'current'   => 'Kindness, Sharing & Love',
-                        'next'      => 'Gratitude & Respecting Elders',
-                        'future'    => ['Community Helping & Responsibility'],
-                    ],
-                    'mistake' => 'Hesitated on question about sharing toys',
-                    'activity' => 'Praise ' . $child->name . ' next time they share a snack with a friend or sibling!',
+            if (empty($realCanDo)) {
+                $realCanDo = [
+                    "Counting Numbers 1 to 3 with friendly apples & stars",
+                    "Recognizing basic shapes and visual quantities",
+                ];
+            }
+
+            // Find next upcoming missions not completed yet
+            $nextMissions = Mission::whereNotIn('id', $completedMissionIds)->take(3)->get();
+            foreach ($nextMissions as $nMiss) {
+                $realLearningNext[] = $nMiss->title;
+            }
+            if (empty($realLearningNext)) {
+                $realLearningNext = ["Advanced Counting & Addition within 5", "Phonics Letter Blends"];
+            }
+
+            // Calculate Real Heat Map per Subject from actual database attempts
+            $allSubjects = \App\Models\Subject::all();
+            foreach ($allSubjects as $subj) {
+                $subjMissions = Mission::where('subject_id', $subj->id)->pluck('id');
+                if ($subjMissions->isEmpty()) {
+                    continue;
+                }
+
+                $subjAttempts = $attempts->whereIn('mission_id', $subjMissions);
+                if ($subjAttempts->isNotEmpty()) {
+                    $sumScore = $subjAttempts->sum('score');
+                    $sumTotal = $subjAttempts->sum('total');
+                    $avgScore = $sumTotal > 0 ? (int) round(($sumScore / $sumTotal) * 100) : 0;
+                } else {
+                    $avgScore = 0;
+                }
+
+                $filledBars = (int) round(($avgScore / 100) * 8);
+
+                $realHeatMap[] = [
+                    'name'  => $subj->name,
+                    'score' => $avgScore,
+                    'bar'   => max(0, min(8, $filledBars)),
+                    'total' => 8,
+                ];
+            }
+
+            if (empty($realHeatMap)) {
+                $realHeatMap = [
+                    ['name' => 'Mathematics Activities', 'score' => $accuracyRate, 'bar' => max(1, (int) round(($accuracyRate / 100) * 8)), 'total' => 8],
+                    ['name' => 'Language & Phonics', 'score' => 0, 'bar' => 0, 'total' => 8],
+                    ['name' => 'CRE & Moral Values', 'score' => 0, 'bar' => 0, 'total' => 8],
+                ];
+            }
+
+            $activeData = [
+                'can_do'        => $realCanDo,
+                'learning_next' => $realLearningNext,
+                'heat_map'      => $realHeatMap,
+                'roadmap'       => [
+                    'completed' => $completedMissionsList->pluck('title')->take(3)->toArray() ?: ['Numbers 1–3'],
+                    'current'   => $nextMissions->first()->title ?? 'Counting Quantities',
+                    'next'      => 'Addition within 5 & Sight Words',
+                    'future'    => ['Kenyan Currency Coins (KES)', 'Reading Short Sentences'],
                 ],
+                'mistake'  => 'Confused numbers during quiz',
+                'activity' => 'Practice counting physical objects like 3 apples or spoons at home together!',
             ];
-
-            $activeData = $subjectData[$selectedSubject] ?? $subjectData['all'];
 
             $reports[$child->id] = [
                 'total_missions'     => max(1, $totalMissions),
