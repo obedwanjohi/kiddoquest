@@ -90,7 +90,15 @@ class ParentDashboardController extends Controller
             $allMissions = Mission::all();
         }
 
-        $reports = [];
+        // Child Selection Dropdown Logic
+        $selectedChildId = (int) ($request->query('child_id') ?? $request->query('child'));
+        $selectedChild = $children->firstWhere('id', $selectedChildId);
+
+        if (! $selectedChild) {
+            $playedChildId = MissionAttempt::latest('completed_at')->value('child_id');
+            $selectedChild = $children->firstWhere('id', $playedChildId) ?? $children->first();
+            $selectedChildId = $selectedChild ? $selectedChild->id : null;
+        }
         foreach ($children as $child) {
             $totalMissions = 0;
             $passedMissions = 0;
@@ -300,7 +308,7 @@ class ParentDashboardController extends Controller
             ];
         }
 
-        return view('parent.dashboard', compact('guardian', 'children', 'reports', 'timeframe', 'selectedSubject', 'allMissions'));
+        return view('parent.dashboard', compact('guardian', 'children', 'reports', 'timeframe', 'selectedSubject', 'allMissions', 'selectedChildId', 'selectedChild'));
     }
 
     /**

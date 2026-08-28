@@ -77,6 +77,29 @@
             </div>
         @endif
 
+        {{-- 🧒 PROMINENT STUDENT SELECTOR DROPDOWN --}}
+        <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-indigo-500/40 rounded-2xl p-3.5 mb-5 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+                <div class="text-2xl">👧👦</div>
+                <div>
+                    <span class="text-[10px] font-black text-indigo-300 uppercase tracking-wider block">Selected Student Profile:</span>
+                    <span class="text-sm font-extrabold text-white">{{ $selectedChild->name ?? 'Select Student' }}</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+                <select onchange="window.location.href='?child_id=' + this.value + '&subject={{ $selectedSubject }}&timeframe={{ $timeframe }}'"
+                        style="background-color: #0F172A !important; color: #FFFFFF !important;"
+                        class="bg-slate-900 text-white text-xs font-black rounded-xl px-4 py-2 border border-indigo-400/60 focus:outline-none focus:border-indigo-300 flex-1 sm:flex-initial shadow-inner">
+                    @foreach($children as $c)
+                        <option value="{{ $c->id }}" {{ $c->id == $selectedChildId ? 'selected' : '' }} style="background-color: #0F172A !important; color: #FFFFFF !important;">
+                            {{ $c->avatar_emoji ?? '👤' }} {{ $c->name }} ({{ $c->total_stars ?? 0 }} Stars ⭐)
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
         {{-- 4-TAB INFORMATION ARCHITECTURE NAVIGATION --}}
         <div class="grid grid-cols-4 gap-1.5 mb-6 bg-slate-900/70 p-1.5 rounded-2xl border border-slate-800">
             <button @click="tab = 'overview'" 
@@ -104,11 +127,16 @@
             </button>
         </div>
 
+        @php
+            $displayChildren = $children->where('id', $selectedChildId);
+            if ($displayChildren->isEmpty()) { $displayChildren = $children; }
+        @endphp
+
         {{-- ========================================================= --}}
         {{-- TAB 1: 🏠 OVERVIEW (DAILY SNAPSHOT — "How is my child doing today?") --}}
         {{-- ========================================================= --}}
         <div x-show="tab === 'overview'" class="space-y-6">
-            @foreach($children as $child)
+            @foreach($displayChildren as $child)
                 @php
                     $rep = $reports[$child->id] ?? [];
                     $canDo = $rep['can_do_now'] ?? [];
@@ -223,7 +251,7 @@
                 </a>
             </div>
 
-            @foreach($children as $child)
+            @foreach($displayChildren as $child)
                 @php
                     $rep = $reports[$child->id] ?? [];
                     $canDo = $rep['can_do_now'] ?? [];
@@ -391,7 +419,7 @@
         {{-- TAB 3: 🎯 LEARNING SUPPORT ("How can I help?") --}}
         {{-- ========================================================= --}}
         <div x-show="tab === 'support'" class="space-y-6" style="display: none;">
-            @foreach($children as $child)
+            @foreach($displayChildren as $child)
                 @php
                     $rep = $reports[$child->id] ?? [];
                     $mistakeAct = $rep['mistake_action'] ?? [];
@@ -531,7 +559,7 @@
             </div>
             
             {{-- Screen Time Limits --}}
-            @foreach($children as $child)
+            @foreach($displayChildren as $child)
                 <div class="parent-card p-5">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="text-3xl">{{ $child->avatar_emoji }}</div>
