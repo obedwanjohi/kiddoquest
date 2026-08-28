@@ -147,10 +147,6 @@ class KidMissionController extends Controller
                 // 3. Award net-new stars to child's total (only improvement)
                 $netNewStars = max(0, $stars - $previousBest);
 
-                if ($netNewStars > 0) {
-                    $child->increment('total_stars', $netNewStars);
-                }
-
                 // 4. Calculate & Award Star Coins + Streak Bonus
                 $baseCoins = 10;
                 $performanceCoins = match ($stars) {
@@ -177,9 +173,18 @@ class KidMissionController extends Controller
                 }
 
                 $earnedCoins = $baseCoins + $performanceCoins + $streakBonusCoins;
-                $child->star_coins = ($child->star_coins ?? 0) + $earnedCoins;
                 $child->last_played_at = now();
                 $child->save();
+
+                // Increment total_stars and star_coins atomically in database
+                if ($netNewStars > 0) {
+                    $child->increment('total_stars', $netNewStars);
+                }
+                if ($earnedCoins > 0) {
+                    $child->increment('star_coins', $earnedCoins);
+                }
+
+                $child->refresh();
 
                 // Save calculated earned coins for view response
                 $validated['earned_coins'] = $earnedCoins;
