@@ -39,8 +39,9 @@ COPY . .
 # Copy built frontend assets from node_builder stage
 COPY --from=node_builder /app/public/build ./public/build
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+# Install PHP dependencies with robust network timeout
+RUN composer config --global process-timeout 2000 \
+    && composer install --no-dev --optimize-autoloader --prefer-dist --no-interaction
 
 # Set correct permissions for storage and bootstrap/cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
