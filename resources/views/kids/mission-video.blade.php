@@ -46,70 +46,17 @@
             {{-- TV Chassis --}}
             <div class="bg-blue-400 p-2 md:p-4 rounded-[2rem] shadow-[0_8px_0_#2563EB,0_15px_20px_rgba(0,0,0,0.2)] w-full mb-4 relative z-10 transition-all duration-500 flex-1 min-h-0 flex flex-col"
                  :class="isImmersive ? 'rounded-2xl md:rounded-[2rem]' : ''">
-                 
-                {{-- Inner Screen --}}
-                <div class="bg-black rounded-2xl overflow-hidden relative shadow-inner flex-1 w-full flex items-center justify-center transition-all duration-500"
-                     :class="isImmersive ? 'border-2 border-blue-900/50 rounded-xl md:rounded-2xl' : 'border-4 border-blue-900/50 aspect-video'">
-                    
-                    @if($mission->videoMedia)
-                        <video x-ref="video" preload="metadata" class="max-w-full max-h-full object-contain block cursor-pointer"
-                               src="{{ $mission->videoMedia->url }}"
-                               @timeupdate="updateProgress"
-                               @ended="onEnded"
-                               @click="togglePlay">
+                                 @if($mission->videoMedia)
+                        <video x-ref="video" preload="auto" class="w-full h-full object-contain block cursor-pointer rounded-2xl"
+                               controls
+                               playsinline
+                               controlsList="nodownload">
+                            <source src="{{ $mission->videoMedia->url }}" type="{{ $mission->videoMedia->mime_type ?? 'video/mp4' }}">
+                            Your browser does not support video playback.
                         </video>
-
-                        {{-- Massive Play/Pause Overlay (Hidden when finished) --}}
-                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none" 
-                             x-transition.opacity.duration.300ms
-                             x-show="(!isPlaying || showControls) && !isFinished">
-                            <button @click.stop="togglePlay" 
-                                    class="pointer-events-auto w-24 h-24 md:w-32 md:h-32 flex items-center justify-center rounded-full bg-white/95 text-blue-500 text-6xl shadow-[0_8px_16px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 transition-all">
-                                <span x-text="isPlaying ? '⏸' : '▶'" :style="isPlaying ? '' : 'margin-left: 8px;'"></span>
-                            </button>
-                        </div>
-
-                        {{-- Scrubbable Progress Bar --}}
-                        <div class="absolute bottom-0 left-0 right-0 h-6 bg-black/50 backdrop-blur-sm group" x-show="!isFinished" x-transition>
-                            {{-- Visual Fill --}}
-                            <div class="absolute top-1 bottom-1 left-0 bg-green-400 rounded-r-full shadow-[0_0_10px_rgba(74,222,128,0.5)] transition-all duration-100 pointer-events-none" :style="'width: ' + progress + '%'"></div>
-                            {{-- Invisible Interactive Scrubber --}}
-                            <input type="range" min="0" max="100" step="0.1" 
-                                   x-model="progress" 
-                                   @input="scrub" 
-                                   @mousedown="isScrubbing = true" 
-                                   @mouseup="isScrubbing = false"
-                                   @touchstart="isScrubbing = true"
-                                   @touchend="isScrubbing = false"
-                                   class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20">
-                        </div>
-
-                        {{-- "Video Complete" Action Screen --}}
-                        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center gap-4 z-30"
-                             x-show="isFinished" x-transition.opacity.duration.500ms style="display: none;">
-                            
-                            <h2 class="text-3xl md:text-5xl font-black text-white drop-shadow-lg text-center px-4" style="font-family: var(--kid-font-heading);">
-                                Great job watching!
-                            </h2>
-
-                            <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md px-6">
-                                <button @click="replayVideo" 
-                                        class="flex-1 flex items-center justify-center gap-2 font-bold text-gray-700 bg-white py-4 rounded-2xl shadow-[0_6px_0_#d1d5db] active:shadow-none active:translate-y-1 transition-all text-xl">
-                                    <span>🔄</span> Replay
-                                </button>
-
-                                @if($mission->question_bank_id)
-                                <a href="{{ route('kids.mission.play', [$world, $mission]) }}"
-                                   class="flex-1 flex items-center justify-center gap-2 font-black text-slate-950 bg-gradient-to-b from-yellow-400 to-yellow-500 border-2 border-yellow-200 py-4 rounded-2xl shadow-[0_6px_0_#ca8a04,0_0_20px_rgba(250,204,21,0.5)] active:shadow-none active:translate-y-1 transition-all text-xl animate-pulse">
-                                    <span>🎯</span> Go to Test!
-                                </a>
-                                @endif
-                            </div>
-                        </div>
-
                     @elseif($mission->video_url)
                         <div class="w-full h-full relative">
-                            <iframe class="absolute top-0 left-0 w-full h-full" src="{{ $mission->video_url }}" frameborder="0" allowfullscreen></iframe>
+                            <iframe class="absolute top-0 left-0 w-full h-full rounded-2xl" src="{{ $mission->video_url }}" frameborder="0" allowfullscreen></iframe>
                         </div>
                     @else
                         <div class="text-white text-center p-8">
@@ -120,32 +67,15 @@
                 </div>
             </div>
 
-            {{-- Squishy Speed Controls --}}
-            @if($mission->videoMedia)
-            <div class="w-full flex justify-center items-end gap-3 md:gap-6 flex-shrink-0" :class="isImmersive ? 'mb-0' : 'mb-8'" x-show="!isFinished" x-transition>
-                
-                {{-- Snail (0.75x) --}}
-                <button @click="setSpeed(0.75)" 
-                        class="relative flex flex-col items-center justify-center flex-1 max-w-[100px] h-16 md:h-24 rounded-2xl transition-all duration-150"
-                        :class="playbackRate === 0.75 ? 'bg-orange-400 text-white translate-y-1 md:translate-y-2 shadow-none border-b-2 md:border-b-4 border-orange-600' : 'bg-white text-gray-400 shadow-[0_6px_0_#d1d5db] active:shadow-none active:translate-y-2'">
-                    <span class="text-3xl md:text-5xl drop-shadow-sm">🐌</span>
-                </button>
-
-                {{-- Walk (1.0x) - Slightly taller to indicate default/normal --}}
-                <button @click="setSpeed(1.0)" 
-                        class="relative flex flex-col items-center justify-center flex-1 max-w-[100px] h-20 md:h-28 rounded-2xl transition-all duration-150"
-                        :class="playbackRate === 1.0 ? 'bg-green-400 text-white translate-y-1 md:translate-y-2 shadow-none border-b-2 md:border-b-4 border-green-600' : 'bg-white text-gray-400 shadow-[0_6px_0_#d1d5db] active:shadow-none active:translate-y-2'">
-                    <span class="text-3xl md:text-5xl drop-shadow-sm">🚶</span>
-                </button>
-
-                {{-- Rabbit (1.25x) --}}
-                <button @click="setSpeed(1.25)" 
-                        class="relative flex flex-col items-center justify-center flex-1 max-w-[100px] h-16 md:h-24 rounded-2xl transition-all duration-150"
-                        :class="playbackRate === 1.25 ? 'bg-blue-400 text-white translate-y-1 md:translate-y-2 shadow-none border-b-2 md:border-b-4 border-blue-600' : 'bg-white text-gray-400 shadow-[0_6px_0_#d1d5db] active:shadow-none active:translate-y-2'">
-                    <span class="text-3xl md:text-5xl drop-shadow-sm">🐇</span>
-                </button>
-                
+            {{-- Always Visible "Start Mission Game" Button --}}
+            @if($mission->question_bank_id)
+            <div class="w-full max-w-md mx-auto my-4 px-2">
+                <a href="{{ route('kids.mission.play', [$world, $mission]) }}"
+                   class="w-full flex items-center justify-center gap-3 font-black text-slate-950 bg-gradient-to-b from-yellow-400 to-amber-500 border-4 border-yellow-200 py-4 px-6 rounded-3xl shadow-[0_8px_0_#b45309,0_10px_25px_rgba(245,158,11,0.5)] active:shadow-none active:translate-y-2 transition-all text-xl sm:text-2xl text-center">
+                    <span class="text-3xl">🎯</span> Start Mission Game!
+                </a>
             </div>
+            @endif  </div>
             @endif
 
             {{-- Alpine Video Logic --}}
