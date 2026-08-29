@@ -63,13 +63,6 @@ class SupabaseStorageService
             return $remotePath;
         }
 
-        $cleanPath = ltrim($remotePath, '/');
-        $bucketPrefix = $this->bucket . '/';
-
-        if (str_starts_with($cleanPath, $bucketPrefix)) {
-            $cleanPath = substr($cleanPath, strlen($bucketPrefix));
-        }
-
-        return "{$this->baseUrl}/object/public/{$this->bucket}/" . ltrim($cleanPath, '/');
+        return "{$this->baseUrl}/object/public/{$this->bucket}/" . ltrim($remotePath, '/');
     }
 }

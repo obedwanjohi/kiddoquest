@@ -39,17 +39,22 @@
             {{-- TV Chassis --}}
             <div class="bg-blue-400 p-2 md:p-4 rounded-[2rem] shadow-[0_8px_0_#2563EB,0_15px_20px_rgba(0,0,0,0.2)] w-full mb-4 relative z-10 transition-all duration-500 flex-1 min-h-0 flex flex-col"
                  :class="isImmersive ? 'rounded-2xl md:rounded-[2rem]' : ''">
-                                 @if($mission->videoMedia)
+                                 @php
+                        $videoSrc = $mission->videoMedia ? $mission->videoMedia->url : $mission->video_url;
+                        $isMp4 = $videoSrc && (str_contains(strtolower($videoSrc), '.mp4') || str_contains(strtolower($videoSrc), 'supabase.co'));
+                    @endphp
+
+                    @if($isMp4)
                         <video x-ref="video" preload="auto" class="w-full h-full object-contain block cursor-pointer rounded-2xl"
                                controls
                                playsinline
                                controlsList="nodownload">
-                            <source src="{{ $mission->videoMedia->url }}" type="{{ $mission->videoMedia->mime_type ?? 'video/mp4' }}">
+                            <source src="{{ $videoSrc }}" type="video/mp4">
                             Your browser does not support video playback.
                         </video>
-                    @elseif($mission->video_url)
-                        <div class="w-full h-full relative">
-                            <iframe class="absolute top-0 left-0 w-full h-full rounded-2xl" src="{{ $mission->video_url }}" frameborder="0" allowfullscreen></iframe>
+                    @elseif($videoSrc)
+                        <div class="w-full h-full relative min-h-[300px]">
+                            <iframe class="absolute top-0 left-0 w-full h-full rounded-2xl" src="{{ $videoSrc }}" frameborder="0" allowfullscreen></iframe>
                         </div>
                     @else
                         <div class="text-white text-center p-8">
