@@ -91,14 +91,30 @@ class PlaygroupMathSeeder extends Seeder
             $plur = $mData['item_plural'];
             $maxC = $mData['max_count'];
 
-            // Find uploaded video for this mission (type: video)
-            $videoUrl = $this->findMediaUrl('video', ["math_m{$mNum}_video", "m{$mNum}_video", "m{$mNum}"]);
+            // Find uploaded video for this mission (e.g. Pg Math 1.Mp4)
+            $videoUrl = $this->findMediaUrl('video', [
+                "Pg Math {$mNum}",
+                "Pg Math{$mNum}",
+                "math_m{$mNum}_video",
+                "m{$mNum}",
+            ]);
 
-            // Find counting prompt voiceover audio (type: audio)
-            $promptAudioUrl = $this->findMediaUrl('audio', [$mData['audio_prompt_key'], "count_{$sing}", "{$sing}_count"]);
+            // Find counting prompt voiceover audio (e.g. apple count or apple_count)
+            $promptAudioUrl = $this->findMediaUrl('audio', [
+                $mData['audio_prompt_key'],
+                str_replace('_', ' ', $mData['audio_prompt_key']),
+                "{$sing} count",
+                "count {$sing}",
+                "count_{$sing}",
+            ]);
 
-            // Find single item image (type: image)
-            $singleItemImgUrl = $this->findMediaUrl('image', ["1_{$sing}", "obj_{$sing}", $sing]);
+            // Find single item image (e.g. 1 apple or 1_apple)
+            $singleItemImgUrl = $this->findMediaUrl('image', [
+                "1 {$sing}",
+                "1_{$sing}",
+                "obj_{$sing}",
+                $sing,
+            ]);
 
             // Create Question Bank
             $qBank = QuestionBank::create([
@@ -179,8 +195,9 @@ class PlaygroupMathSeeder extends Seeder
                 $cardPromptText = "Which picture card shows {$cardTarget} {$itemName}? Tap it!";
 
                 // Card Audio (type: audio)
-                $cardAudioKey = ($cardTarget === 1) ? "1_{$sing}" : "{$cardTarget}_{$plur}";
-                $cardAudioUrl = $this->findMediaUrl('audio', [$cardAudioKey, "{$cardTarget}_{$sing}"]);
+                $cardAudioKeyUnderscore = ($cardTarget === 1) ? "1_{$sing}" : "{$cardTarget}_{$plur}";
+                $cardAudioKeySpace      = ($cardTarget === 1) ? "1 {$sing}" : "{$cardTarget} {$plur}";
+                $cardAudioUrl = $this->findMediaUrl('audio', [$cardAudioKeySpace, $cardAudioKeyUnderscore, "{$cardTarget} {$sing}", "{$cardTarget}_{$sing}"]);
 
                 $qIndex = $maxC + $cardTarget;
                 $cardQuestion = QuizQuestion::create([
@@ -194,9 +211,11 @@ class PlaygroupMathSeeder extends Seeder
 
                 // Options with picture card images
                 for ($optCard = 1; $optCard <= $maxC; $optCard++) {
-                    $optKey = ($optCard === 1) ? "1_{$sing}" : "{$optCard}_{$plur}";
-                    $cardImgUrl = $this->findMediaUrl('image', [$optKey, "{$optCard}_{$sing}"]);
-                    $optAudioUrl = $this->findMediaUrl('audio', [$optKey, "{$optCard}_{$sing}"]);
+                    $optKeyUnderscore = ($optCard === 1) ? "1_{$sing}" : "{$optCard}_{$plur}";
+                    $optKeySpace      = ($optCard === 1) ? "1 {$sing}" : "{$optCard} {$plur}";
+
+                    $cardImgUrl  = $this->findMediaUrl('image', [$optKeySpace, $optKeyUnderscore, "{$optCard} {$sing}", "{$optCard}_{$sing}"]);
+                    $optAudioUrl = $this->findMediaUrl('audio', [$optKeySpace, $optKeyUnderscore, "{$optCard} {$sing}", "{$optCard}_{$sing}"]);
 
                     QuestionOption::create([
                         'question_id' => $cardQuestion->id,
