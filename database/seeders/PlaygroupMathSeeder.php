@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\AdventureWorld;
+use App\Models\Lesson;
 use App\Models\Media;
 use App\Models\Mission;
 use App\Models\QuestionBank;
