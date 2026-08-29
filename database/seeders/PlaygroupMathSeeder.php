@@ -356,7 +356,6 @@ class PlaygroupMathSeeder extends Seeder
                 ['slug' => Str::slug($mData['title'])],
                 [
                     'title' => $mData['title'],
-                    'description' => "Counting lesson for {$mData['title']}",
                     'sort_order' => $mNum,
                 ]
             );
