@@ -85,30 +85,37 @@ window.KidSoundLayer = (function () {
         noise.start(time);
     }
 
-    // Helper to play custom random audio with a fallback to the synth
+    // Helper to play custom sound FX with a fallback to synth
     function playCustomSound(type, count, fallbackSynth) {
         if (muted) return;
-        // Randomly pick a number between 1 and count
+        init();
+
+        const customUrl = window.KID_SOUND_FX ? window.KID_SOUND_FX[type] : null;
+        if (customUrl) {
+            const audio = new Audio(customUrl);
+            audio.play().catch(e => {
+                fallbackSynth();
+            });
+            return;
+        }
+
         const randomNum = Math.floor(Math.random() * count) + 1;
         const filePath = `/sounds/${type}/${randomNum}.mp3`;
         
         const audio = new Audio(filePath);
         audio.play().catch(e => {
-            // If the file doesn't exist or fails to play, use our built-in sounds!
             fallbackSynth();
         });
     }
 
     // ---- SOUND PRESETS (all gentle, kid-safe) ----
     const sounds = {
-        // Correct answer: Tries to play /sounds/correct/1.mp3 to 5.mp3
+        // Correct answer: Plays uploaded correct.mp3 or celebration fallback
         correct() {
             playCustomSound('correct', 5, () => {
-                // Celebration Fanfare Fallback
                 playTone([523.25, 659.25, 783.99], 0.2, 'triangle');
                 playTone([1046.50], 0.6, 'sine', 0.2);
                 
-                // Generate a crowd applause effect (20 claps over 1.5 seconds)
                 if (!muted && audioCtx) {
                     const now = audioCtx.currentTime;
                     for(let i = 0; i < 20; i++) {
@@ -118,10 +125,9 @@ window.KidSoundLayer = (function () {
             });
         },
 
-        // Wrong answer: Tries to play /sounds/wrong/1.mp3 to 5.mp3
+        // Wrong answer: Plays uploaded wrong.mp3 or fallback
         wrong() {
             playCustomSound('wrong', 5, () => {
-                // Fallback: gentle descending two-note
                 playTone([392.00, 349.23], 0.3, 'sine');
             });
         },
@@ -141,10 +147,18 @@ window.KidSoundLayer = (function () {
             playTone([1046.50, 1318.51, 1567.98], 0.3, 'triangle');
         },
 
-        // Celebration: fanfare (C-E-G major chord arpeggio up)
+        // Celebration: Plays uploaded celebration.mp3 or synth fanfare
         celebration() {
-            playTone([523.25, 659.25, 783.99], 0.15, 'triangle');
-            playTone([1046.50], 0.4, 'triangle', 0.45);
+            if (window.KID_SOUND_FX && window.KID_SOUND_FX.celebration) {
+                const audio = new Audio(window.KID_SOUND_FX.celebration);
+                audio.play().catch(e => {
+                    playTone([523.25, 659.25, 783.99], 0.15, 'triangle');
+                    playTone([1046.50], 0.4, 'triangle', 0.45);
+                });
+            } else {
+                playTone([523.25, 659.25, 783.99], 0.15, 'triangle');
+                playTone([1046.50], 0.4, 'triangle', 0.45);
+            }
         },
 
         // Hint appears: gentle attention chime

@@ -97,11 +97,12 @@ class PlaygroupMathSeeder extends Seeder
                 "Pg Math{$mNum}",
             ]);
 
-            // Find counting prompt voiceover audio (e.g. banana_count.mp3 / 1_apple.mp3)
+            // Find counting prompt voiceover audio
             $promptAudioUrl = $this->findMediaUrl('audio', [
                 "{$sing}_count",
                 "1_{$sing}",
                 "count_{$sing}",
+                "{$sing}",
             ]);
 
             // Find single item image (e.g. 1_apple.jpg -> ID 13/33, 1_banana.jpg -> ID 16/36)

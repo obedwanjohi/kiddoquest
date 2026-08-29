@@ -67,7 +67,18 @@
     })->values()->toArray();
 @endphp
 
+@php
+    $correctSoundUrl = \App\Models\Media::where('type', 'ILIKE', '%audio%')->where('name', 'ILIKE', '%correct%')->first()?->url;
+    $wrongSoundUrl   = \App\Models\Media::where('type', 'ILIKE', '%audio%')->where('name', 'ILIKE', '%wrong%')->first()?->url;
+    $celebSoundUrl   = \App\Models\Media::where('type', 'ILIKE', '%audio%')->where('name', 'ILIKE', '%celebration%')->first()?->url;
+@endphp
 <script>
+    window.KID_SOUND_FX = {
+        correct: @json($correctSoundUrl),
+        wrong: @json($wrongSoundUrl),
+        celebration: @json($celebSoundUrl),
+    };
+
     window.__quizConfig = {
         questions: @json($questionsJson),
         childStars: {{ (int)($child->total_stars ?? 0) }},
