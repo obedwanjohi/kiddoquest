@@ -265,13 +265,18 @@ Route::get('/admin/setup', [App\Http\Controllers\Admin\AdminAuthController::clas
 Route::post('/admin/setup', [App\Http\Controllers\Admin\AdminAuthController::class, 'register'])->name('admin.setup.post');
 Route::post('/admin/logout', [App\Http\Controllers\Admin\AdminAuthController::class, 'logout'])->name('admin.logout');
 
+Route::get('/seed-math', function() {
+    \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'PlaygroupMathSeeder', '--force' => true]);
+    return "✨ Mission 1 (Apple) & Mission 2 (Banana) seeded successfully! You can now go to https://www.kiddoquest.co.ke/kids to play!";
+});
+
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminDashboardController::class, 'index'])->name('dashboard');
 
     // Fast Dedicated Playgroup Math Seeder
     Route::get('/seed-math', function() {
         \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'PlaygroupMathSeeder', '--force' => true]);
-        return redirect()->route('admin.adventure-worlds.index')->with('success', '✨ All 20 Mathematics Playgroup Missions & Media seeded successfully in 3 seconds!');
+        return redirect()->route('admin.adventure-worlds.index')->with('success', '✨ Mission 1 (Apple) & Mission 2 (Banana) seeded successfully in 3 seconds!');
     })->name('admin.seed-math');
 
     Route::get('/seed-worlds', function() {
