@@ -45,13 +45,13 @@ class PlaygroupMathSeeder extends Seeder
         );
 
         // 2. Clean up legacy test missions from World 1 so old dummy questions are wiped
-        $oldMissions = Mission::where('adventure_world_id', $forestWorld->id)->get();
+        $oldMissions = Mission::withTrashed()->where('adventure_world_id', $forestWorld->id)->get();
         foreach ($oldMissions as $oldM) {
             if ($oldM->questionBank) {
-                $oldM->questionBank->questions()->delete();
-                $oldM->questionBank->delete();
+                $oldM->questionBank->questions()->withTrashed()->forceDelete();
+                $oldM->questionBank->forceDelete();
             }
-            $oldM->delete();
+            $oldM->forceDelete();
         }
 
         // 3. Define ONLY Mission 1 (Apple) & Mission 2 (Banana) for initial testing
@@ -117,21 +117,26 @@ class PlaygroupMathSeeder extends Seeder
                 ]
             );
 
-            // Create Mission
-            $mission = Mission::create([
-                'slug'                   => Str::slug($mData['title']),
-                'adventure_world_id'     => $mData['world']->id,
-                'lesson_id'              => $lesson->id,
-                'question_bank_id'       => $qBank->id,
-                'title'                  => $mData['title'],
-                'display_title'          => $mData['title'],
-                'description'            => "Count {$plur} with Leo the Lion!",
-                'video_url'              => $videoUrl,
-                'status'                 => 'published',
-                'sort_order'             => $mNum,
-                'pass_threshold_percent' => 60,
-                'stars_reward'           => 3,
-            ]);
+            // Create or restore Mission
+            $mission = Mission::withTrashed()->updateOrCreate(
+                ['slug' => Str::slug($mData['title'])],
+                [
+                    'adventure_world_id'     => $mData['world']->id,
+                    'lesson_id'              => $lesson->id,
+                    'question_bank_id'       => $qBank->id,
+                    'title'                  => $mData['title'],
+                    'display_title'          => $mData['title'],
+                    'description'            => "Count {$plur} with Leo the Lion!",
+                    'video_url'              => $videoUrl,
+                    'status'                 => 'published',
+                    'sort_order'             => $mNum,
+                    'pass_threshold_percent' => 60,
+                    'stars_reward'           => 3,
+                ]
+            );
+            if ($mission->trashed()) {
+                $mission->restore();
+            }
 
             // Resolve Quiz Types
             $countTypeId = \App\Models\QuizType::where('code', 'QT-09')->value('id') ?? 9;
