@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             AdventureWorldSeeder::class,
             GuardianSeeder::class,
             SampleMissionsSeeder::class,
+            PlaygroupMathSeeder::class,
             FirstLearningPathSeeder::class,
             SortQuizSeeder::class,
             MemoryMatchSeeder::class,
