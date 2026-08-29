@@ -350,11 +350,22 @@ class PlaygroupMathSeeder extends Seeder
                 ['subject_id' => $mathSubject->id, 'description' => "Questions for {$mData['title']}"]
             );
 
+            // Find or create Lesson for this mission
+            $lesson = Lesson::firstOrCreate(
+                ['slug' => Str::slug($mData['title'])],
+                [
+                    'title' => $mData['title'],
+                    'description' => "Counting lesson for {$mData['title']}",
+                    'sort_order' => $mNum,
+                ]
+            );
+
             // Create Mission
             $mission = Mission::updateOrCreate(
                 ['slug' => Str::slug($mData['title'])],
                 [
                     'adventure_world_id' => $mData['world']->id,
+                    'lesson_id'          => $lesson->id,
                     'question_bank_id'   => $qBank->id,
                     'title'              => $mData['title'],
                     'display_title'      => $mData['title'],
