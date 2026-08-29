@@ -265,6 +265,10 @@ Route::get('/admin/setup', [App\Http\Controllers\Admin\AdminAuthController::clas
 Route::post('/admin/setup', [App\Http\Controllers\Admin\AdminAuthController::class, 'register'])->name('admin.setup.post');
 Route::post('/admin/logout', [App\Http\Controllers\Admin\AdminAuthController::class, 'logout'])->name('admin.logout');
 
+Route::get('/debug-media', function() {
+    return response()->json(\App\Models\Media::orderBy('id')->get(['id', 'name', 'file_name', 'file_path', 'type']));
+});
+
 Route::get('/seed-math', function() {
     \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'PlaygroupMathSeeder', '--force' => true]);
     return "✨ Mission 1 (Apple) & Mission 2 (Banana) seeded successfully! You can now go to https://www.kiddoquest.co.ke/kids to play!";
