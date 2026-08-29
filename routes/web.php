@@ -268,11 +268,13 @@ Route::post('/admin/logout', [App\Http\Controllers\Admin\AdminAuthController::cl
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminDashboardController::class, 'index'])->name('dashboard');
 
-    // Adventure Worlds & Curriculum Seeder
+    // Fast Dedicated Playgroup Math Seeder
+    Route::get('/seed-math', function() {
+        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'PlaygroupMathSeeder', '--force' => true]);
+        return redirect()->route('admin.adventure-worlds.index')->with('success', '✨ All 20 Mathematics Playgroup Missions & Media seeded successfully in 3 seconds!');
+    })->name('admin.seed-math');
+
     Route::get('/seed-worlds', function() {
-        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'CBCMasterSeeder', '--force' => true]);
-        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'AdventureWorldSeeder', '--force' => true]);
-        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'SampleMissionsSeeder', '--force' => true]);
         \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'PlaygroupMathSeeder', '--force' => true]);
         return redirect()->route('admin.adventure-worlds.index')->with('success', '✨ All 20 Mathematics Playgroup Missions & Media seeded successfully!');
     })->name('adventure-worlds.seed');
