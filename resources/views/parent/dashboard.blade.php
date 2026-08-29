@@ -452,17 +452,19 @@
                         </div>
                     </div>
 
-                    {{-- 🎯 SPECIFIC MISTAKE HOME ACTIVITY --}}
+                    {{-- 🎯 SPECIFIC MISTAKE / LEARNING INSIGHT HOME ACTIVITY --}}
                     @if(!empty($mistakeAct))
-                        <div class="bg-amber-950/40 border border-amber-400/40 rounded-2xl p-4 mb-5 shadow-md">
+                        <div class="{{ ($mistakeAct['has_struggle'] ?? false) ? 'bg-amber-950/40 border-amber-400/40' : 'bg-emerald-950/40 border-emerald-400/40' }} border rounded-2xl p-4 mb-5 shadow-md">
                             <div class="flex gap-3 items-start">
-                                <div class="text-2xl flex-shrink-0">🎯</div>
+                                <div class="text-2xl flex-shrink-0">{{ ($mistakeAct['has_struggle'] ?? false) ? '🎯' : '🎉' }}</div>
                                 <div>
-                                    <div class="text-[10px] font-black text-amber-400 uppercase tracking-wider mb-0.5">Struggle Area Identified</div>
-                                    <p class="text-xs font-bold text-amber-200 mb-2">"{{ $mistakeAct['mistake'] }}"</p>
+                                    <div class="text-[10px] font-black {{ ($mistakeAct['has_struggle'] ?? false) ? 'text-amber-400' : 'text-emerald-400' }} uppercase tracking-wider mb-0.5">
+                                        {{ ($mistakeAct['has_struggle'] ?? false) ? 'Struggle Area Identified' : 'Learning Insight' }}
+                                    </div>
+                                    <p class="text-xs font-bold {{ ($mistakeAct['has_struggle'] ?? false) ? 'text-amber-200' : 'text-emerald-200' }} mb-2">{{ $mistakeAct['mistake'] }}</p>
                                     
-                                    <div class="bg-amber-900/30 rounded-xl p-3 border border-amber-500/30 text-xs text-amber-100 font-semibold leading-relaxed">
-                                        <strong class="text-amber-300 block mb-1">💡 Recommended 1-Minute Home Activity:</strong> 
+                                    <div class="{{ ($mistakeAct['has_struggle'] ?? false) ? 'bg-amber-900/30 border-amber-500/30 text-amber-100' : 'bg-emerald-900/30 border-emerald-500/30 text-emerald-100' }} rounded-xl p-3 border text-xs font-semibold leading-relaxed">
+                                        <strong class="{{ ($mistakeAct['has_struggle'] ?? false) ? 'text-amber-300' : 'text-emerald-300' }} block mb-1">💡 Recommended 1-Minute Home Activity:</strong> 
                                         {{ $mistakeAct['activity'] }}
                                     </div>
                                 </div>

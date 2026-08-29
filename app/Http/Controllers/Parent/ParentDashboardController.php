@@ -216,6 +216,30 @@ class ParentDashboardController extends Controller
                 ];
             }
 
+            // Calculate Real Struggle Area & Recommended Home Activity from Database
+            $wrongAttempt = ChildQuestionAttempt::where('child_id', $child->id)
+                ->where('is_correct', false)
+                ->with(['question', 'mission'])
+                ->latest('attempted_at')
+                ->first();
+
+            if ($wrongAttempt) {
+                $qText = $wrongAttempt->question->prompt_text ?? $wrongAttempt->question->question_text ?? 'quiz question';
+                $mTitle = $wrongAttempt->mission->title ?? 'quiz';
+                $realMistake = "Struggled on {$mTitle}: \"{$qText}\"";
+                $realActivity = "Practice counting 3 physical objects (like spoons or toys) with {$child->name} at home while touching each object!";
+                $hasStruggle = true;
+            } elseif ($attempts->isNotEmpty() && $attempts->first()->passed) {
+                $mTitle = $attempts->first()->mission->title ?? 'Mission';
+                $realMistake = "No struggle areas identified! {$child->name} scored {$attempts->first()->percentage()}% on {$mTitle}!";
+                $realActivity = "Keep up the great momentum! Assign tomorrow's focus mission to continue {$child->name}'s learning adventure.";
+                $hasStruggle = false;
+            } else {
+                $realMistake = "No struggle areas recorded yet for {$child->name}.";
+                $realActivity = "Start Mission 1 on the Adventure Map to track {$child->name}'s learning progress!";
+                $hasStruggle = false;
+            }
+
             $activeData = [
                 'can_do'        => $realCanDo,
                 'learning_next' => $realLearningNext,
@@ -226,8 +250,9 @@ class ParentDashboardController extends Controller
                     'next'      => 'Addition within 5 & Sight Words',
                     'future'    => ['Kenyan Currency Coins (KES)', 'Reading Short Sentences'],
                 ],
-                'mistake'  => 'Confused numbers during quiz',
-                'activity' => 'Practice counting physical objects like 3 apples or spoons at home together!',
+                'mistake'      => $realMistake,
+                'activity'     => $realActivity,
+                'has_struggle' => $hasStruggle,
             ];
 
             // Calculate Real Growth % from actual attempt scores
