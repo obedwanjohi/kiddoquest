@@ -346,7 +346,7 @@ class PlaygroupMathSeeder extends Seeder
 
             // Create Question Bank
             $qBank = QuestionBank::updateOrCreate(
-                ['title' => "Question Bank — {$mData['title']}"],
+                ['name' => "Question Bank — {$mData['title']}"],
                 ['subject_id' => $mathSubject->id, 'description' => "Questions for {$mData['title']}"]
             );
 
