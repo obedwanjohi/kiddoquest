@@ -91,28 +91,23 @@ class PlaygroupMathSeeder extends Seeder
             $plur = $mData['item_plural'];
             $maxC = $mData['max_count'];
 
-            // Find uploaded video for this mission (e.g. Pg Math 1.Mp4)
+            // Find uploaded video for this mission (e.g. Pg Math 1.Mp4 -> ID 176)
             $videoUrl = $this->findMediaUrl('video', [
                 "Pg Math {$mNum}",
                 "Pg Math{$mNum}",
-                "math_m{$mNum}_video",
-                "m{$mNum}",
             ]);
 
-            // Find counting prompt voiceover audio (e.g. apple count or apple_count)
+            // Find counting prompt voiceover audio (e.g. banana_count.mp3 / 1_apple.mp3)
             $promptAudioUrl = $this->findMediaUrl('audio', [
-                $mData['audio_prompt_key'],
-                str_replace('_', ' ', $mData['audio_prompt_key']),
-                "{$sing} count",
-                "count {$sing}",
+                "{$sing}_count",
+                "1_{$sing}",
                 "count_{$sing}",
             ]);
 
-            // Find single item image (e.g. 1 apple or 1_apple)
+            // Find single item image (e.g. 1_apple.jpg -> ID 13/33, 1_banana.jpg -> ID 16/36)
             $singleItemImgUrl = $this->findMediaUrl('image', [
-                "1 {$sing}",
                 "1_{$sing}",
-                "obj_{$sing}",
+                "{$sing}.jpg",
                 $sing,
             ]);
 
@@ -195,9 +190,8 @@ class PlaygroupMathSeeder extends Seeder
                 $cardPromptText = "Which picture card shows {$cardTarget} {$itemName}? Tap it!";
 
                 // Card Audio (type: audio)
-                $cardAudioKeyUnderscore = ($cardTarget === 1) ? "1_{$sing}" : "{$cardTarget}_{$plur}";
-                $cardAudioKeySpace      = ($cardTarget === 1) ? "1 {$sing}" : "{$cardTarget} {$plur}";
-                $cardAudioUrl = $this->findMediaUrl('audio', [$cardAudioKeySpace, $cardAudioKeyUnderscore, "{$cardTarget} {$sing}", "{$cardTarget}_{$sing}"]);
+                $cardAudioKey = ($cardTarget === 1) ? "1_{$sing}" : "{$cardTarget}_{$plur}";
+                $cardAudioUrl = $this->findMediaUrl('audio', [$cardAudioKey, "{$cardTarget}_{$sing}"]);
 
                 $qIndex = $maxC + $cardTarget;
                 $cardQuestion = QuizQuestion::create([
@@ -211,11 +205,11 @@ class PlaygroupMathSeeder extends Seeder
 
                 // Options with picture card images
                 for ($optCard = 1; $optCard <= $maxC; $optCard++) {
-                    $optKeyUnderscore = ($optCard === 1) ? "1_{$sing}" : "{$optCard}_{$plur}";
-                    $optKeySpace      = ($optCard === 1) ? "1 {$sing}" : "{$optCard} {$plur}";
+                    $cardKey = ($optCard === 1) ? "1_{$sing}" : "{$optCard}_{$plur}";
+                    $cardPrefixKey = "card_{$optCard}_{$sing}";
 
-                    $cardImgUrl  = $this->findMediaUrl('image', [$optKeySpace, $optKeyUnderscore, "{$optCard} {$sing}", "{$optCard}_{$sing}"]);
-                    $optAudioUrl = $this->findMediaUrl('audio', [$optKeySpace, $optKeyUnderscore, "{$optCard} {$sing}", "{$optCard}_{$sing}"]);
+                    $cardImgUrl  = $this->findMediaUrl('image', [$cardPrefixKey, $cardKey, "{$optCard}_{$sing}"]);
+                    $optAudioUrl = $this->findMediaUrl('audio', [$cardKey, "{$optCard}_{$sing}"]);
 
                     QuestionOption::create([
                         'question_id' => $cardQuestion->id,
@@ -231,12 +225,12 @@ class PlaygroupMathSeeder extends Seeder
     }
 
     /**
-     * Helper to find uploaded media public URL by type and matching keywords against name/file_name/file_path.
+     * Helper to find uploaded media public URL by case-insensitive type and keyword search.
      */
     protected function findMediaUrl(string $type, array $keywords): ?string
     {
         foreach ($keywords as $kw) {
-            $media = Media::where('type', $type)
+            $media = Media::where('type', 'ILIKE', "%{$type}%")
                 ->where(function ($q) use ($kw) {
                     $q->where('name', 'ILIKE', "%{$kw}%")
                       ->orWhere('file_name', 'ILIKE', "%{$kw}%")
