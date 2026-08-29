@@ -10,6 +10,7 @@ use App\Models\QuestionBank;
 use App\Models\QuestionOption;
 use App\Models\QuizQuestion;
 use App\Models\Subject;
+use App\Models\Topic;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -19,6 +20,15 @@ class PlaygroupMathSeeder extends Seeder
     {
         $mathSubject = Subject::where('slug', 'like', 'mathematics%')->first()
             ?? Subject::firstOrCreate(['slug' => 'mathematics-pg'], ['name' => 'Mathematics Activities', 'code' => 'MATH']);
+
+        $topic = Topic::firstOrCreate(
+            ['slug' => 'counting-numbers-1-to-5-playgroup'],
+            [
+                'name' => 'Counting Numbers 1 to 5',
+                'subject_id' => $mathSubject->id,
+                'sort_order' => 1,
+            ]
+        );
 
         // 1. Ensure 3 Mathematics Worlds Exist
         $forestWorld = AdventureWorld::updateOrCreate(
@@ -355,7 +365,8 @@ class PlaygroupMathSeeder extends Seeder
             $lesson = Lesson::firstOrCreate(
                 ['slug' => Str::slug($mData['title'])],
                 [
-                    'title' => $mData['title'],
+                    'topic_id'   => $topic->id,
+                    'title'      => $mData['title'],
                     'sort_order' => $mNum,
                 ]
             );
