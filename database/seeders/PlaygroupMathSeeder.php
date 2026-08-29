@@ -389,6 +389,10 @@ class PlaygroupMathSeeder extends Seeder
                 ]
             );
 
+            // Resolve Quiz Types
+            $countTypeId = \App\Models\QuizType::where('code', 'QT-09')->value('id') ?? 9;
+            $mcTypeId    = \App\Models\QuizType::where('code', 'QT-01')->value('id') ?? 1;
+
             // Delete old questions to re-seed cleanly
             $qBank->questions()->delete();
 
@@ -398,24 +402,27 @@ class PlaygroupMathSeeder extends Seeder
                 $qText = "{$mData['prompt']} {$emojis}";
 
                 $question = QuizQuestion::create([
-                    'question_bank_id'   => $qBank->id,
-                    'question_text'      => $qText,
-                    'prompt_text'        => $qText,
-                    'question_type'      => 'multiple_choice',
-                    'audio_url'          => $promptAudioUrl,
-                    'single_item_img_url'=> $singleItemImgUrl,
-                    'target_count'       => $countTarget,
-                    'sort_order'         => $countTarget,
+                    'question_bank_id' => $qBank->id,
+                    'quiz_type_id'     => $countTypeId,
+                    'prompt'           => $qText,
+                    'prompt_audio_url' => $promptAudioUrl,
+                    'points'           => 1,
+                    'sort_order'       => $countTarget,
+                    'scoring_config'   => [
+                        'count'        => $countTarget,
+                        'target_count' => $countTarget,
+                        'image_url'    => $singleItemImgUrl,
+                    ],
                 ]);
 
                 // Create options (1, 2, 3...)
                 $optionsArray = range(1, $maxC);
-                foreach ($optionsArray as $optNum) {
+                foreach ($optionsArray as $optIdx => $optNum) {
                     QuestionOption::create([
-                        'quiz_question_id' => $question->id,
-                        'option_text'      => (string) $optNum,
-                        'text_value'       => (string) $optNum,
-                        'is_correct'       => ($optNum === $countTarget),
+                        'question_id' => $question->id,
+                        'text_value'  => (string) $optNum,
+                        'is_correct'  => ($optNum === $countTarget),
+                        'sort_order'  => $optIdx + 1,
                     ]);
                 }
             }
@@ -431,25 +438,27 @@ class PlaygroupMathSeeder extends Seeder
 
                 $qIndex = $maxC + $cardTarget;
                 $cardQuestion = QuizQuestion::create([
-                    'question_bank_id'   => $qBank->id,
-                    'question_text'      => $cardPromptText,
-                    'prompt_text'        => $cardPromptText,
-                    'question_type'      => 'multiple_choice',
-                    'audio_url'          => $cardAudioUrl ?? $promptAudioUrl,
-                    'sort_order'         => $qIndex,
+                    'question_bank_id' => $qBank->id,
+                    'quiz_type_id'     => $mcTypeId,
+                    'prompt'           => $cardPromptText,
+                    'prompt_audio_url' => $cardAudioUrl ?? $promptAudioUrl,
+                    'points'           => 1,
+                    'sort_order'       => $qIndex,
                 ]);
 
                 // Options with picture card images
                 for ($optCard = 1; $optCard <= $maxC; $optCard++) {
                     $optKey = ($optCard === 1) ? "1_{$sing}" : "{$optCard}_{$plur}";
                     $cardImgUrl = $this->findMediaUrl([$optKey, "{$optCard}_{$sing}"]);
+                    $optAudioUrl = $this->findMediaUrl([$optKey, "{$optCard}_{$sing}"]);
 
                     QuestionOption::create([
-                        'quiz_question_id' => $cardQuestion->id,
-                        'option_text'      => "Card {$optCard}",
-                        'text_value'       => (string) $optCard,
-                        'image_url'        => $cardImgUrl,
-                        'is_correct'       => ($optCard === $cardTarget),
+                        'question_id' => $cardQuestion->id,
+                        'text_value'  => (string) $optCard,
+                        'image_url'   => $cardImgUrl,
+                        'audio_url'   => $optAudioUrl,
+                        'is_correct'  => ($optCard === $cardTarget),
+                        'sort_order'  => $optCard,
                     ]);
                 }
             }
