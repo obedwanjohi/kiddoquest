@@ -269,6 +269,13 @@ Route::get('/debug-media', function() {
     return response()->json(\App\Models\Media::orderBy('id')->get(['id', 'name', 'file_name', 'file_path', 'type']));
 });
 
+Route::get('/debug-seed', function() {
+    $missions = \App\Models\Mission::whereIn('sort_order', [1, 2])
+        ->with(['questionBank.questions.options'])
+        ->get(['id', 'title', 'slug', 'video_url', 'question_bank_id']);
+    return response()->json($missions);
+});
+
 Route::get('/seed-math', function() {
     \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'PlaygroupMathSeeder', '--force' => true]);
     return "✨ Mission 1 (Apple) & Mission 2 (Banana) seeded successfully! You can now go to https://www.kiddoquest.co.ke/kids to play!";
