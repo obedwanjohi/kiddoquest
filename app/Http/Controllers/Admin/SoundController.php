@@ -3,93 +3,94 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Media;
+use App\Services\SupabaseStorageService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class SoundController extends Controller
 {
     /**
-     * Display the sounds management page.
+     * Display the game sounds management page (Correct, Wrong, Celebration).
      */
     public function index()
     {
-        $correctPath = public_path('sounds/correct');
-        $wrongPath = public_path('sounds/wrong');
+        $correctSounds = Media::where('type', 'ILIKE', '%audio%')
+            ->where('name', 'ILIKE', '%correct%')
+            ->orderBy('id', 'desc')
+            ->get();
 
-        if (!File::exists($correctPath)) File::makeDirectory($correctPath, 0755, true);
-        if (!File::exists($wrongPath)) File::makeDirectory($wrongPath, 0755, true);
+        $wrongSounds = Media::where('type', 'ILIKE', '%audio%')
+            ->where('name', 'ILIKE', '%wrong%')
+            ->orderBy('id', 'desc')
+            ->get();
 
-        // Fetch existing sounds
-        $correctSounds = collect(File::files($correctPath))
-            ->filter(fn($file) => $file->getExtension() === 'mp3')
-            ->map(fn($file) => $file->getFilename())
-            ->sort()
-            ->values();
+        $celebSounds = Media::where('type', 'ILIKE', '%audio%')
+            ->where('name', 'ILIKE', '%celebration%')
+            ->orderBy('id', 'desc')
+            ->get();
 
-        $wrongSounds = collect(File::files($wrongPath))
-            ->filter(fn($file) => $file->getExtension() === 'mp3')
-            ->map(fn($file) => $file->getFilename())
-            ->sort()
-            ->values();
-
-        return view('admin.sounds.index', compact('correctSounds', 'wrongSounds'));
+        return view('admin.sounds.index', compact('correctSounds', 'wrongSounds', 'celebSounds'));
     }
 
     /**
-     * Upload a new sound.
+     * Upload a new sound (MP3, WAV, OGG, M4A).
      */
     public function upload(Request $request)
     {
         $request->validate([
-            'type' => 'required|in:correct,wrong',
-            'sound' => 'required|file|mimes:mp3|max:5120', // max 5MB
+            'type' => 'required|in:correct,wrong,celebration',
+            'sound' => 'required|file|max:10240', // max 10MB
         ]);
 
         $type = $request->input('type');
-        $path = public_path("sounds/{$type}");
+        $file = $request->file('sound');
 
-        if (!File::exists($path)) {
-            File::makeDirectory($path, 0755, true);
+        $mimeType = $file->getMimeType();
+        $extension = strtolower($file->getClientOriginalExtension());
+        
+        $folder = "media/audios";
+        $randomName = Str::random(40);
+        $fileName = $randomName . '.' . $extension;
+        $filePath = $file->storeAs($folder, $fileName, 'public');
+
+        // Upload to Supabase Storage Bucket
+        $supabase = app(SupabaseStorageService::class);
+        $localFileToRead = storage_path("app/public/{$filePath}");
+        if (file_exists($localFileToRead)) {
+            $supabaseUrl = $supabase->uploadFile($filePath, file_get_contents($localFileToRead), $mimeType);
+            if ($supabaseUrl) {
+                @unlink($localFileToRead);
+            }
         }
 
-        // Find next available slot
-        $files = collect(File::files($path))
-            ->filter(fn($file) => $file->getExtension() === 'mp3');
+        Media::create([
+            'uploaded_by' => auth('admin')->id(),
+            'name' => "{$type}.{$extension}",
+            'disk' => 'public',
+            'file_path' => $filePath,
+            'file_name' => $file->getClientOriginalName(),
+            'mime_type' => $mimeType,
+            'extension' => $extension,
+            'type' => 'audio',
+            'size_bytes' => $file->getSize(),
+        ]);
 
-        if ($files->count() >= 5) {
-            return back()->with('error', 'You can only upload up to 5 sounds per category.');
-        }
-
-        // Find lowest available number from 1 to 5
-        $existingNumbers = $files->map(fn($file) => (int) $file->getFilenameWithoutExtension())->toArray();
-        $nextNum = 1;
-        while (in_array($nextNum, $existingNumbers) && $nextNum <= 5) {
-            $nextNum++;
-        }
-
-        $fileName = "{$nextNum}.mp3";
-        $request->file('sound')->move($path, $fileName);
-
-        return back()->with('success', 'Sound uploaded successfully!');
+        return back()->with('success', ucfirst($type) . ' sound uploaded successfully to Supabase!');
     }
 
     /**
-     * Delete a sound.
+     * Delete a sound from database & Supabase.
      */
     public function destroy(Request $request)
     {
         $request->validate([
-            'type' => 'required|in:correct,wrong',
-            'filename' => 'required|string',
+            'id' => 'required|exists:media,id',
         ]);
 
-        $type = $request->input('type');
-        $filename = $request->input('filename');
-        $path = public_path("sounds/{$type}/{$filename}");
-
-        // Security check: only delete mp3 files in the specific directories
-        if (File::exists($path) && pathinfo($path, PATHINFO_EXTENSION) === 'mp3') {
-            File::delete($path);
+        $media = Media::find($request->input('id'));
+        if ($media) {
+            $media->delete();
             return back()->with('success', 'Sound deleted successfully!');
         }
 
