@@ -243,9 +243,7 @@
                         @php
                             $progress = $child->missionProgress($mission);
                             $isCompleted = $progress && $progress->status === 'completed';
-                            $starsEarned = $progress->stars_earned ?? 0;
-
-                            $isUnlocked = $prevCompleted || $isCompleted;
+                            $isUnlocked = true; // All missions unlocked for instant teacher & kid testing!
                             $isActiveTarget = $isUnlocked && !$isCompleted && !$foundCurrent;
 
                             if ($isActiveTarget) {
