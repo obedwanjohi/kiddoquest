@@ -76,7 +76,7 @@ class ParentDashboardController extends Controller
             $children = collect([
                 new Child([
                     'id' => 1,
-                    'name' => 'Winnie',
+                    'name' => 'Obed',
                     'avatar' => 'panda',
                     'total_stars' => 45,
                     'star_coins' => 150,

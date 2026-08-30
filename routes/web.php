@@ -377,7 +377,7 @@ Route::get('/dev/admin', function () {
 })->name('dev.admin');
 
 Route::get('/dev/map', function () {
-    $child = \App\Models\Child::first() ?? new \App\Models\Child(['id' => 1, 'name' => 'Winnie', 'avatar' => 'panda', 'total_stars' => 45, 'star_coins' => 150]);
+    $child = \App\Models\Child::first() ?? new \App\Models\Child(['id' => 1, 'name' => 'Obed', 'avatar' => 'panda', 'total_stars' => 45, 'star_coins' => 150]);
     session(['active_child_id' => $child->id]);
     $worlds = \App\Models\AdventureWorld::orderBy('sort_order')->get();
     return view('kids.map', compact('child', 'worlds'));
@@ -394,7 +394,7 @@ Route::get('/dev/parent-dashboard', function () {
     $children = \App\Models\Child::all();
     if ($children->isEmpty()) {
         $children = collect([
-            new \App\Models\Child(['id' => 1, 'name' => 'Winnie', 'avatar' => 'panda', 'total_stars' => 45, 'star_coins' => 150, 'daily_time_limit_minutes' => 30]),
+            new \App\Models\Child(['id' => 1, 'name' => 'Obed', 'avatar' => 'panda', 'total_stars' => 45, 'star_coins' => 150, 'daily_time_limit_minutes' => 30]),
             new \App\Models\Child(['id' => 2, 'name' => 'Leo Jr', 'avatar' => 'lion', 'total_stars' => 20, 'star_coins' => 50, 'daily_time_limit_minutes' => 0]),
         ]);
     }
@@ -435,7 +435,7 @@ Route::get('/dev/parent-dashboard', function () {
             ],
             'mistake_action' => [
                 'mistake' => 'Confused 6 and 9 in pattern matching question #4',
-                'activity' => 'Draw 6 and 9 together on paper and have Winnie trace both numbers with her finger to feel the loop direction!',
+                'activity' => 'Draw 6 and 9 together on paper and have Obed trace both numbers with his finger to feel the loop direction!',
             ],
             'assigned_mission' => null,
         ],

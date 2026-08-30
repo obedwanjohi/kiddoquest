@@ -539,7 +539,7 @@
                                     📊
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-sm text-white">Winnie's Learning Report</h4>
+                                    <h4 class="font-bold text-sm text-white">Obed's Learning Report</h4>
                                     <p class="text-xs text-slate-400">Pre-Primary 1 • Active Today</p>
                                 </div>
                             </div>
@@ -581,7 +581,7 @@
 
                         <div class="bg-slate-950 rounded-2xl p-4 border border-slate-800 text-xs text-slate-300 font-medium">
                             <span class="text-amber-400 font-black">💡 Leo's Tip for Parents:</span>
-                            "Winnie is doing great! Point out 3-sided pizza slices vs 4-sided books during snack time to solidify shapes!"
+                            "Obed is doing great! Point out 3-sided pizza slices vs 4-sided books during snack time to solidify shapes!"
                         </div>
                     </div>
                 </div>
