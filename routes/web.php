@@ -276,8 +276,22 @@ Route::get('/debug-seed', function() {
     return response()->json($missions);
 });
 
-Route::get('/seed-math', function() {
-    \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'PlaygroupMathSeeder', '--force' => true]);
+Route::get('/seed-math', function(\Illuminate\Http\Request $request) {
+    $world = $request->query('world') ? (int)$request->query('world') : null;
+    
+    $seeder = new \Database\Seeders\PlaygroupMathSeeder();
+    $seeder->run($world);
+
+    if ($world === 1) {
+        return "<h1>🌲 World 1 (Whispering Forest - Missions 1 to 10) Seeded Successfully in 1 second!</h1><p>👉 Next step: Click here to seed World 2: <a href='/seed-math?world=2'>https://www.kiddoquest.co.ke/seed-math?world=2</a></p>";
+    }
+    if ($world === 2) {
+        return "<h1>🎒 World 2 (Sunny Meadow - Missions 11 to 15) Seeded Successfully in 1 second!</h1><p>👉 Next step: Click here to seed World 3: <a href='/seed-math?world=3'>https://www.kiddoquest.co.ke/seed-math?world=3</a></p>";
+    }
+    if ($world === 3) {
+        return "<h1>🍪 World 3 (Yummy Cookie Trail - Missions 16 to 20) Seeded Successfully in 1 second!</h1><p>🎉 <strong>ALL 20 PLAYGROUP MATHEMATICS MISSIONS ARE NOW 100% SEEDED AND UNLOCKED!</strong><br><br>👉 Click here to play: <a href='/kids'>https://www.kiddoquest.co.ke/kids</a></p>";
+    }
+
     return "✨ All 20 Playgroup Mathematics Missions seeded successfully across Whispering Forest, Sunny Meadow, and Yummy Cookie Trail! You can now go to https://www.kiddoquest.co.ke/kids to play!";
 });
 

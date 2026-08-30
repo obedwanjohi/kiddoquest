@@ -16,7 +16,7 @@ use Illuminate\Support\Str;
 
 class PlaygroupMathSeeder extends Seeder
 {
-    public function run(): void
+    public function run(?int $targetWorld = null): void
     {
         $mathSubject = Subject::where('slug', 'like', 'mathematics%')->first()
             ?? Subject::firstOrCreate(['slug' => 'mathematics-pg'], ['name' => 'Mathematics Activities', 'code' => 'MATH']);
@@ -70,10 +70,17 @@ class PlaygroupMathSeeder extends Seeder
             ]
         );
 
-        // 2. Fast Bulk Cleanup (4 bulk DB queries instead of 1,000 slow model queries)
-        $worldIds = [$forestWorld->id, $meadowWorld->id, $cookieWorld->id];
-        $missionIds = \DB::table('missions')->whereIn('adventure_world_id', $worldIds)->pluck('id');
-        $qBankIds   = \DB::table('question_banks')->whereIn('id', \DB::table('missions')->whereIn('adventure_world_id', $worldIds)->pluck('question_bank_id'))->pluck('id');
+        // Filter target worlds if specified
+        $targetWorldIds = match ($targetWorld) {
+            1 => [$forestWorld->id],
+            2 => [$meadowWorld->id],
+            3 => [$cookieWorld->id],
+            default => [$forestWorld->id, $meadowWorld->id, $cookieWorld->id],
+        };
+
+        // 2. Fast Bulk Cleanup for target world(s)
+        $missionIds  = \DB::table('missions')->whereIn('adventure_world_id', $targetWorldIds)->pluck('id');
+        $qBankIds    = \DB::table('question_banks')->whereIn('id', \DB::table('missions')->whereIn('adventure_world_id', $targetWorldIds)->pluck('question_bank_id'))->pluck('id');
         $questionIds = \DB::table('quiz_questions')->whereIn('question_bank_id', $qBankIds)->pluck('id');
 
         \DB::table('question_options')->whereIn('question_id', $questionIds)->delete();
@@ -352,6 +359,9 @@ class PlaygroupMathSeeder extends Seeder
 
         // 4. Process Each Mission and Wire Uploaded Media
         foreach ($missionsData as $mData) {
+            if ($targetWorld && !in_array($mData['world']->id, $targetWorldIds)) {
+                continue;
+            }
             $mNum = $mData['num'];
             $sing = $mData['item_singular'];
             $plur = $mData['item_plural'];
