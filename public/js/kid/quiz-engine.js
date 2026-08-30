@@ -250,10 +250,8 @@ function quizEngine(config) {
 
             const option = this.currentQuestion.options[index];
 
-            // 🔊 If this option has audio, play it (tap-to-play)
-            // This is important for listen_choose and any type where options
-            // have associated audio clips.
-            if (option.audio) {
+            // 🔊 Only play option audio for listen_choose type to prevent overlapping correct/wrong sound effects
+            if (option.audio && this.currentQuestion.type === 'listen_choose') {
                 this.playOptionAudio(option);
             }
 
