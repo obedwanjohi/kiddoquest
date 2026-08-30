@@ -55,11 +55,9 @@ window.KidRewardLayer = (function () {
 
         window.KidQuizEvents.emit(window.KidQuizEvents.EVENTS.STREAK_UPDATED, { streak: state.streak });
 
-        // Celebration logic (anti-over-celebration)
+        // Only trigger visual celebration on streaks of 3+
         if (state.streak >= 3 && state.streak % 3 === 0) {
             triggerCelebration(CELEBRATION_LEVELS.SMALL);
-        } else {
-            triggerCelebration(CELEBRATION_LEVELS.MINI);
         }
     }
 

@@ -201,13 +201,11 @@ window.KidSoundLayer = (function () {
 
         window.KidQuizEvents.on(E.ANSWER_CORRECT, () => sounds.correct());
         window.KidQuizEvents.on(E.ANSWER_INCORRECT, () => sounds.wrong());
-        window.KidQuizEvents.on(E.ANSWER_SELECTED, () => sounds.tap());
         window.KidQuizEvents.on(E.HINT_SHOWN, () => sounds.hint());
         window.KidQuizEvents.on(E.ANSWER_REVEALED, () => sounds.reveal());
         window.KidQuizEvents.on(E.QUESTION_STARTED, () => sounds.questionEnter());
         window.KidQuizEvents.on(E.QUIZ_COMPLETED, () => sounds.celebration());
         window.KidQuizEvents.on(E.STAR_EARNED, () => sounds.star());
-        window.KidQuizEvents.on(E.CELEBRATION_TRIGGERED, () => sounds.celebration());
         window.KidQuizEvents.on(E.NEXT_QUESTION, () => sounds.buttonClick());
     }
 
