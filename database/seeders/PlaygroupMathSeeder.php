@@ -30,12 +30,12 @@ class PlaygroupMathSeeder extends Seeder
             ]
         );
 
-        // 1. Ensure Whispering Forest World Exists
+        // 1. Ensure 3 Mathematics Worlds Exist
         $forestWorld = AdventureWorld::updateOrCreate(
             ['slug' => 'whispering-forest'],
             [
                 'name' => 'Whispering Forest',
-                'description' => 'Counting Numbers 1 to 3 with friendly apples & bananas!',
+                'description' => 'Counting Numbers 1 to 3 with apples, animals, cars, and shiny stars!',
                 'icon' => '🌲',
                 'theme_color' => '#10B981',
                 'subject_id' => $mathSubject->id,
@@ -44,8 +44,35 @@ class PlaygroupMathSeeder extends Seeder
             ]
         );
 
-        // 2. Clean up legacy test missions from World 1 so old dummy questions are wiped
-        $oldMissions = Mission::withTrashed()->where('adventure_world_id', $forestWorld->id)->get();
+        $meadowWorld = AdventureWorld::updateOrCreate(
+            ['slug' => 'sunny-meadow'],
+            [
+                'name' => 'Sunny Meadow',
+                'description' => 'Counting Numbers 1 to 4 with school bags, bears, and zooming cars!',
+                'icon' => '🎒',
+                'theme_color' => '#F59E0B',
+                'subject_id' => $mathSubject->id,
+                'sort_order' => 2,
+                'is_locked' => false,
+            ]
+        );
+
+        $cookieWorld = AdventureWorld::updateOrCreate(
+            ['slug' => 'cookie-trail'],
+            [
+                'name' => 'Yummy Cookie Trail',
+                'description' => 'Counting Numbers 1 to 5 with cookies, rabbits, fish, and zebras!',
+                'icon' => '🍪',
+                'theme_color' => '#EC4899',
+                'subject_id' => $mathSubject->id,
+                'sort_order' => 3,
+                'is_locked' => false,
+            ]
+        );
+
+        // 2. Clean up legacy test missions from all 3 Worlds
+        $worldIds = [$forestWorld->id, $meadowWorld->id, $cookieWorld->id];
+        $oldMissions = Mission::withTrashed()->whereIn('adventure_world_id', $worldIds)->get();
         foreach ($oldMissions as $oldM) {
             if ($oldM->questionBank) {
                 $oldM->questionBank->questions()->withTrashed()->forceDelete();
@@ -54,8 +81,9 @@ class PlaygroupMathSeeder extends Seeder
             $oldM->forceDelete();
         }
 
-        // 3. Define ONLY Mission 1 (Apple) & Mission 2 (Banana) for initial testing
+        // 3. Define All 20 Playgroup Mathematics Missions
         $missionsData = [
+            // ── World 1: Whispering Forest (Missions 1 to 10 - Count 1..3) ──
             [
                 'world' => $forestWorld,
                 'num' => 1,
@@ -81,6 +109,244 @@ class PlaygroupMathSeeder extends Seeder
                 'prompt' => 'How many sweet yellow bananas do you see? Tap their number!',
                 'audio_prompt_key' => 'banana_count',
                 'max_count' => 3,
+            ],
+            [
+                'world' => $forestWorld,
+                'num' => 3,
+                'title' => 'Speedy Car Counter 🚗',
+                'item_singular' => 'car',
+                'item_plural' => 'cars',
+                'item_name' => 'speedy red car',
+                'item_names' => 'speedy red cars',
+                'item_emoji' => '🚗',
+                'prompt' => 'How many speedy red cars do you see? Tap their number!',
+                'audio_prompt_key' => 'car_count',
+                'max_count' => 3,
+            ],
+            [
+                'world' => $forestWorld,
+                'num' => 4,
+                'title' => 'Playful Cat Counter 🐱',
+                'item_singular' => 'cat',
+                'item_plural' => 'cats',
+                'item_name' => 'playful cat',
+                'item_names' => 'playful cats',
+                'item_emoji' => '🐱',
+                'prompt' => 'How many playful cats do you see? Tap their number!',
+                'audio_prompt_key' => 'cat_count',
+                'max_count' => 3,
+            ],
+            [
+                'world' => $forestWorld,
+                'num' => 5,
+                'title' => 'Glowing Star Counter ⭐',
+                'item_singular' => 'star',
+                'item_plural' => 'stars',
+                'item_name' => 'glowing star',
+                'item_names' => 'glowing stars',
+                'item_emoji' => '⭐',
+                'prompt' => 'How many glowing stars do you see? Tap their number!',
+                'audio_prompt_key' => 'star_count',
+                'max_count' => 3,
+            ],
+            [
+                'world' => $forestWorld,
+                'num' => 6,
+                'title' => 'Floating Balloon Counter 🎈',
+                'item_singular' => 'ballon',
+                'item_plural' => 'ballons',
+                'item_name' => 'floating balloon',
+                'item_names' => 'floating balloons',
+                'item_emoji' => '🎈',
+                'prompt' => 'How many floating balloons do you see? Tap their number!',
+                'audio_prompt_key' => 'ballon_count',
+                'max_count' => 3,
+            ],
+            [
+                'world' => $forestWorld,
+                'num' => 7,
+                'title' => 'Chirping Bird Counter 🐦',
+                'item_singular' => 'bird',
+                'item_plural' => 'birds',
+                'item_name' => 'chirping bird',
+                'item_names' => 'chirping birds',
+                'item_emoji' => '🐦',
+                'prompt' => 'How many chirping birds do you see? Tap their number!',
+                'audio_prompt_key' => 'bird_count',
+                'max_count' => 3,
+            ],
+            [
+                'world' => $forestWorld,
+                'num' => 8,
+                'title' => 'Frosted Cake Counter 🍰',
+                'item_singular' => 'cake',
+                'item_plural' => 'cakes',
+                'item_name' => 'frosted cake',
+                'item_names' => 'frosted cakes',
+                'item_emoji' => '🍰',
+                'prompt' => 'How many frosted cakes do you see? Tap their number!',
+                'audio_prompt_key' => 'cake_count',
+                'max_count' => 3,
+            ],
+            [
+                'world' => $forestWorld,
+                'num' => 9,
+                'title' => 'Playful Animal Counter 🐮',
+                'item_singular' => 'animal',
+                'item_plural' => 'animals',
+                'item_name' => 'friendly animal',
+                'item_names' => 'friendly animals',
+                'item_emoji' => '🐮',
+                'prompt' => 'How many friendly animals do you see? Tap their number!',
+                'audio_prompt_key' => 'animal_count',
+                'max_count' => 3,
+            ],
+            [
+                'world' => $forestWorld,
+                'num' => 10,
+                'title' => 'Mixed Fruit Counter 🧺',
+                'item_singular' => 'fruit',
+                'item_plural' => 'fruits',
+                'item_name' => 'yummy fruit',
+                'item_names' => 'yummy fruits',
+                'item_emoji' => '🧺',
+                'prompt' => 'How many yummy fruits do you see? Tap their number!',
+                'audio_prompt_key' => 'fruit_count',
+                'max_count' => 3,
+            ],
+
+            // ── World 2: Sunny Meadow (Missions 11 to 15 - Count 1..4) ──
+            [
+                'world' => $meadowWorld,
+                'num' => 11,
+                'title' => 'School Bag Counter 🎒',
+                'item_singular' => 'bag',
+                'item_plural' => 'bags',
+                'item_name' => 'school bag',
+                'item_names' => 'school bags',
+                'item_emoji' => '🎒',
+                'prompt' => 'How many school bags do you see? Tap their number!',
+                'audio_prompt_key' => 'bag_count',
+                'max_count' => 4,
+            ],
+            [
+                'world' => $meadowWorld,
+                'num' => 12,
+                'title' => 'Brown Bear Counter 🧸',
+                'item_singular' => 'bear',
+                'item_plural' => 'bears',
+                'item_name' => 'cuddly brown bear',
+                'item_names' => 'cuddly brown bears',
+                'item_emoji' => '🧸',
+                'prompt' => 'How many cuddly brown bears do you see? Tap their number!',
+                'audio_prompt_key' => 'bear_count',
+                'max_count' => 4,
+            ],
+            [
+                'world' => $meadowWorld,
+                'num' => 13,
+                'title' => 'Chirping Bird Counter 🐦',
+                'item_singular' => 'bird',
+                'item_plural' => 'birds',
+                'item_name' => 'chirping bird',
+                'item_names' => 'chirping birds',
+                'item_emoji' => '🐦',
+                'prompt' => 'How many chirping birds do you see? Tap their number!',
+                'audio_prompt_key' => 'bird_count',
+                'max_count' => 4,
+            ],
+            [
+                'world' => $meadowWorld,
+                'num' => 14,
+                'title' => 'Speedy Car Counter 🚗',
+                'item_singular' => 'car',
+                'item_plural' => 'cars',
+                'item_name' => 'speedy red car',
+                'item_names' => 'speedy red cars',
+                'item_emoji' => '🚗',
+                'prompt' => 'How many speedy red cars do you see? Tap their number!',
+                'audio_prompt_key' => 'car_count',
+                'max_count' => 4,
+            ],
+            [
+                'world' => $meadowWorld,
+                'num' => 15,
+                'title' => 'Green Tree Counter 🌲',
+                'item_singular' => 'tree',
+                'item_plural' => 'trees',
+                'item_name' => 'green tree',
+                'item_names' => 'green trees',
+                'item_emoji' => '🌲',
+                'prompt' => 'How many green trees do you see? Tap their number!',
+                'audio_prompt_key' => 'tree_count',
+                'max_count' => 4,
+            ],
+
+            // ── World 3: Yummy Cookie Trail (Missions 16 to 20 - Count 1..5) ──
+            [
+                'world' => $cookieWorld,
+                'num' => 16,
+                'title' => 'Crunchy Cookie Counter 🍪',
+                'item_singular' => 'cookie',
+                'item_plural' => 'cookies',
+                'item_name' => 'crunchy cookie',
+                'item_names' => 'crunchy cookies',
+                'item_emoji' => '🍪',
+                'prompt' => 'How many crunchy cookies do you see? Tap their number!',
+                'audio_prompt_key' => 'cookie_count',
+                'max_count' => 5,
+            ],
+            [
+                'world' => $cookieWorld,
+                'num' => 17,
+                'title' => 'Fluffy Rabbit Counter 🐰',
+                'item_singular' => 'rabbit',
+                'item_plural' => 'rabbits',
+                'item_name' => 'fluffy rabbit',
+                'item_names' => 'fluffy rabbits',
+                'item_emoji' => '🐰',
+                'prompt' => 'How many fluffy rabbits do you see? Tap their number!',
+                'audio_prompt_key' => 'rabbit_count',
+                'max_count' => 5,
+            ],
+            [
+                'world' => $cookieWorld,
+                'num' => 18,
+                'title' => 'Swimming Fish Counter 🐠',
+                'item_singular' => 'fish',
+                'item_plural' => 'fishes',
+                'item_name' => 'swimming fish',
+                'item_names' => 'swimming fishes',
+                'item_emoji' => '🐠',
+                'prompt' => 'How many swimming fishes do you see? Tap their number!',
+                'audio_prompt_key' => 'fish_count',
+                'max_count' => 5,
+            ],
+            [
+                'world' => $cookieWorld,
+                'num' => 19,
+                'title' => 'Striped Zebra Counter 🦓',
+                'item_singular' => 'zebra',
+                'item_plural' => 'zebras',
+                'item_name' => 'striped zebra',
+                'item_names' => 'striped zebras',
+                'item_emoji' => '🦓',
+                'prompt' => 'How many striped zebras do you see? Tap their number!',
+                'audio_prompt_key' => 'zebra_count',
+                'max_count' => 5,
+            ],
+            [
+                'world' => $cookieWorld,
+                'num' => 20,
+                'title' => 'Grand Apple Counter 🍎',
+                'item_singular' => 'apple',
+                'item_plural' => 'apples',
+                'item_name' => 'juicy red apple',
+                'item_names' => 'juicy red apples',
+                'item_emoji' => '🍎',
+                'prompt' => 'How many juicy red apples do you see? Tap their number!',
+                'audio_prompt_key' => 'apple_count',
+                'max_count' => 5,
             ],
         ];
 
