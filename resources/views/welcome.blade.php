@@ -6,6 +6,9 @@
     <title>KiddoQuest CBC — Kenya's #1 Learning Adventure for Playgroup, PP1 & PP2</title>
     <meta name="description" content="Engaging voiceover lessons, CBC curriculum quizzes, and magical adventure worlds in Maths, English & CRE for Kenyan kids ages 3 to 6.">
 
+    {{-- Favicon --}}
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦁</text></svg>">
+
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -723,6 +726,75 @@
         </div>
     </section>
 
+    {{-- ABOUT US & FOUNDER SECTION --}}
+    <section id="about" class="py-16 sm:py-24 bg-gradient-to-b from-slate-900 to-slate-950 text-white relative overflow-hidden border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-amber-500/20 text-amber-300 font-extrabold text-xs tracking-wider uppercase px-4 py-1.5 rounded-full border border-amber-500/30 mb-4 inline-block">
+                    🌱 Our Story & Founder Vision
+                </span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-black text-white leading-tight">
+                    Built to Empower the Next Generation of African Learners
+                </h2>
+                <p class="mt-4 text-sm sm:text-base text-slate-300 font-semibold leading-relaxed">
+                    KiddoQuest CBC was created with a bold vision: to transform early childhood education in Kenya by turning CBC curriculum outcomes into interactive, joyful digital learning adventures.
+                </p>
+            </div>
+
+            {{-- FOUNDER CARD --}}
+            <div class="max-w-4xl mx-auto bg-slate-900/90 rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    
+                    {{-- Founder Image Container --}}
+                    <div class="flex flex-col items-center text-center">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 via-purple-500 to-pink-500 rounded-3xl blur-md opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                            <div class="relative w-44 h-44 rounded-2xl overflow-hidden bg-slate-800 border-2 border-amber-400 flex items-center justify-center shadow-inner">
+                                <img src="{{ asset('images/founder.jpg') }}" 
+                                     alt="Obed Wanjohi - Founder & CEO" 
+                                     onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Obed+Wanjohi&background=7C3AED&color=fff&size=200';"
+                                     class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <h3 class="font-heading text-xl font-black text-white mt-4">Obed Wanjohi</h3>
+                        <span class="text-xs font-black text-amber-400 bg-amber-500/20 px-3 py-1 rounded-full border border-amber-500/30 mt-1">
+                            Founder & CEO
+                        </span>
+                    </div>
+
+                    {{-- Founder Vision Text --}}
+                    <div class="md:col-span-2 space-y-4 text-slate-300 text-xs sm:text-sm font-semibold leading-relaxed">
+                        <div class="flex items-center gap-2 text-amber-400 font-heading text-lg font-black">
+                            <span>🚀</span> <span>A Founder's Vision</span>
+                        </div>
+                        <p>
+                            "Every child deserves an education that feels like an exciting quest, not a chore. I started building KiddoQuest single-handedly with a clear vision: to create an ad-free, culturally relevant early learning platform designed specifically for Kenyan children under the Competency-Based Curriculum (CBC)."
+                        </p>
+                        <p>
+                            "From voiceover movie stories to interactive counting, letter tracing, and moral values, every screen in KiddoQuest is crafted to inspire curiosity and confidence in Playgroup, PP1, and PP2 learners."
+                        </p>
+
+                        <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center gap-6 text-xs">
+                            <div class="flex items-center gap-2 text-slate-400">
+                                <span class="text-amber-400 font-black text-base">20+</span>
+                                <span>Math & Tracing Missions</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-400">
+                                <span class="text-emerald-400 font-black text-base">100%</span>
+                                <span>Ad-Free & Safe</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-400">
+                                <span class="text-pink-400 font-black text-base">CBC</span>
+                                <span>Kenya Aligned</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- FOOTER --}}
     <footer class="bg-slate-950 text-white pt-14 pb-24 sm:pb-12 border-t border-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -745,6 +817,7 @@
                     <ul class="space-y-2 text-xs text-slate-400 font-bold">
                         <li><a href="#worlds" class="hover:text-white transition">Subject Worlds</a></li>
                         <li><a href="#levels" class="hover:text-white transition">CBC Levels (PG, PP1, PP2)</a></li>
+                        <li><a href="#about" class="text-amber-400 hover:text-amber-300 transition flex items-center gap-1">🌱 About Us & Founder</a></li>
                         <li><a href="#pricing" class="hover:text-white transition">M-Pesa Pricing</a></li>
                         <li><a href="{{ route('guardian.login') }}" class="hover:text-white transition">Parent Portal</a></li>
                     </ul>
