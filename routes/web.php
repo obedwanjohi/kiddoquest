@@ -338,8 +338,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('/media', App\Http\Controllers\Admin\MediaController::class)->parameters(['media' => 'media']);
     Route::post('/voices/{voice}/toggle', [App\Http\Controllers\Admin\VoiceController::class, 'toggle'])->name('voices.toggle');
     Route::resource('/voices', App\Http\Controllers\Admin\VoiceController::class);
+    Route::get('/sounds', [App\Http\Controllers\Admin\SoundController::class, 'index'])->name('sounds.index');
     Route::post('/sounds/upload', [App\Http\Controllers\Admin\SoundController::class, 'upload'])->name('sounds.upload');
-    Route::resource('/sounds', App\Http\Controllers\Admin\SoundController::class);
+    Route::delete('/sounds/delete', [App\Http\Controllers\Admin\SoundController::class, 'destroy'])->name('sounds.destroy');
+    Route::post('/sounds/delete', [App\Http\Controllers\Admin\SoundController::class, 'destroy']);
 
     // Users & Admins
     Route::resource('/users', App\Http\Controllers\Admin\AdminUserController::class);
