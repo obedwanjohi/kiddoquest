@@ -281,8 +281,8 @@
                                     </span>
                                 </a>
 
-                            @elseif($isActiveTarget)
-                                {{-- ACTIVE PLAY NODE (Glowing Orange Pulse) --}}
+                            @elseif($isUnlocked)
+                                {{-- UNLOCKED PLAYABLE NODE FOR QUICK TEACHER TESTING (Switch back to $isActiveTarget for sequential progression) --}}
                                 <a href="{{ route('kids.mission-intro', [$world, $mission]) }}" class="flex flex-col items-center group">
                                     <div class="relative">
                                         {{-- Tap To Play Speech Bubble --}}
