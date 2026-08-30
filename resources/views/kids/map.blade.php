@@ -251,6 +251,7 @@
                         @php
                             $progress = $child->missionProgress($mission);
                             $isCompleted = $progress && $progress->status === 'completed';
+                            $starsEarned = $progress->stars_earned ?? 0;
                             $isTracingWorld = $world->subject_category === 'tracing';
                             $isUnlocked = $isTracingWorld || $loop->first || $prevCompleted || $isCompleted;
                             $isActiveTarget = $isUnlocked && !$isCompleted && !$foundCurrent;
