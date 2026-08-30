@@ -278,7 +278,7 @@ Route::get('/debug-seed', function() {
 
 Route::get('/seed-math', function() {
     \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'PlaygroupMathSeeder', '--force' => true]);
-    return "✨ Mission 1 (Apple) & Mission 2 (Banana) seeded successfully! You can now go to https://www.kiddoquest.co.ke/kids to play!";
+    return "✨ All 20 Playgroup Mathematics Missions seeded successfully across Whispering Forest, Sunny Meadow, and Yummy Cookie Trail! You can now go to https://www.kiddoquest.co.ke/kids to play!";
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -287,7 +287,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Fast Dedicated Playgroup Math Seeder
     Route::get('/seed-math', function() {
         \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'PlaygroupMathSeeder', '--force' => true]);
-        return redirect()->route('admin.adventure-worlds.index')->with('success', '✨ Mission 1 (Apple) & Mission 2 (Banana) seeded successfully in 3 seconds!');
+        return redirect()->route('admin.adventure-worlds.index')->with('success', '✨ All 20 Playgroup Mathematics Missions seeded successfully across Whispering Forest, Sunny Meadow, and Yummy Cookie Trail!');
     })->name('admin.seed-math');
 
     Route::get('/seed-worlds', function() {
