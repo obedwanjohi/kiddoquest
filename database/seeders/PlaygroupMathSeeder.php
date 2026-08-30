@@ -70,16 +70,16 @@ class PlaygroupMathSeeder extends Seeder
             ]
         );
 
-        // 2. Clean up legacy test missions from all 3 Worlds
+        // 2. Fast Bulk Cleanup (4 bulk DB queries instead of 1,000 slow model queries)
         $worldIds = [$forestWorld->id, $meadowWorld->id, $cookieWorld->id];
-        $oldMissions = Mission::withTrashed()->whereIn('adventure_world_id', $worldIds)->get();
-        foreach ($oldMissions as $oldM) {
-            if ($oldM->questionBank) {
-                $oldM->questionBank->questions()->withTrashed()->forceDelete();
-                $oldM->questionBank->forceDelete();
-            }
-            $oldM->forceDelete();
-        }
+        $missionIds = \DB::table('missions')->whereIn('adventure_world_id', $worldIds)->pluck('id');
+        $qBankIds   = \DB::table('question_banks')->whereIn('id', \DB::table('missions')->whereIn('adventure_world_id', $worldIds)->pluck('question_bank_id'))->pluck('id');
+        $questionIds = \DB::table('quiz_questions')->whereIn('question_bank_id', $qBankIds)->pluck('id');
+
+        \DB::table('question_options')->whereIn('question_id', $questionIds)->delete();
+        \DB::table('quiz_questions')->whereIn('id', $questionIds)->delete();
+        \DB::table('question_banks')->whereIn('id', $qBankIds)->delete();
+        \DB::table('missions')->whereIn('id', $missionIds)->delete();
 
         // 3. Define All 20 Playgroup Mathematics Missions
         $missionsData = [
