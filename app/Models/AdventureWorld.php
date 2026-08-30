@@ -63,12 +63,15 @@ class AdventureWorld extends Model
     }
 
     /**
-     * Determine subject category (math, english, cre).
+     * Determine subject category (math, english, cre, tracing).
      */
     public function getSubjectCategoryAttribute(): string
     {
         if ($this->subject) {
             $sName = strtolower($this->subject->name . ' ' . $this->subject->slug);
+            if (str_contains($sName, 'trace') || str_contains($sName, 'tracing') || str_contains($sName, 'writing')) {
+                return 'tracing';
+            }
             if (str_contains($sName, 'english') || str_contains($sName, 'language') || str_contains($sName, 'phonic')) {
                 return 'english';
             }
@@ -79,6 +82,9 @@ class AdventureWorld extends Model
         }
 
         $name = strtolower($this->name . ' ' . $this->slug);
+        if (str_contains($name, 'trace') || str_contains($name, 'tracing') || str_contains($name, 'pattern') || str_contains($name, 'line-tracing')) {
+            return 'tracing';
+        }
         if (str_contains($name, 'safari') || str_contains($name, 'phonics') || str_contains($name, 'letter') || str_contains($name, 'english') || str_contains($name, 'word') || str_contains($name, 'castle') || str_contains($name, 'treasure')) {
             return 'english';
         }
@@ -94,6 +100,7 @@ class AdventureWorld extends Model
     public function getSubjectNameAttribute(): string
     {
         return match($this->subject_category) {
+            'tracing' => 'Tracing & Writing ✏️',
             'english' => 'Language & Phonics 📖',
             'cre'     => 'CRE & Moral Values ✝️',
             default   => 'Mathematics 🔢',

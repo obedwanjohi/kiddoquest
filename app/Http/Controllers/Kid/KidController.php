@@ -79,6 +79,11 @@ class KidController extends Controller
                     }
                 });
 
+                // Always unlock Tracing Worlds for all levels (Playgroup, PP1, PP2)
+                $query->orWhereIn('slug', [
+                    'line-tracing-trail', 'letter-tracing-safari', 'number-tracing-kingdom'
+                ]);
+
                 // Match Playgroup world slugs directly for Play Group profiles
                 if (str_contains($rawLevel, 'play') || str_contains($rawLevel, 'pg')) {
                     $query->orWhereIn('slug', [

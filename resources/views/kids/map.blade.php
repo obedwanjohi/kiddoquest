@@ -133,39 +133,47 @@
             </div>
         </div>
 
-        {{-- 2. SUBJECT WORLD SELECTOR TABS (4 Touch-Friendly 3D Buttons) --}}
+        {{-- 2. SUBJECT WORLD SELECTOR TABS (5 Touch-Friendly 3D Buttons) --}}
         <div class="mb-6">
-            <div class="grid grid-cols-4 gap-1.5 sm:gap-2">
+            <div class="grid grid-cols-5 gap-1 sm:gap-2">
                 {{-- All Worlds --}}
                 <button @click="activeSubject = 'all'"
                         :class="activeSubject === 'all' ? 'bg-indigo-600 text-white shadow-[0_4px_0_#3730A3] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
-                        class="py-2.5 px-1 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
-                    <span class="text-xl sm:text-2xl">🗺️</span>
-                    <span class="text-[10px] sm:text-xs font-black leading-tight">All</span>
+                        class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
+                    <span class="text-lg sm:text-2xl">🗺️</span>
+                    <span class="text-[9px] sm:text-xs font-black leading-tight">All</span>
                 </button>
 
                 {{-- Math Safari --}}
                 <button @click="activeSubject = 'math'"
                         :class="activeSubject === 'math' ? 'bg-amber-500 text-slate-950 shadow-[0_4px_0_#B45309] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
-                        class="py-2.5 px-1 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
-                    <span class="text-xl sm:text-2xl">🔢</span>
-                    <span class="text-[10px] sm:text-xs font-black leading-tight">Math</span>
+                        class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
+                    <span class="text-lg sm:text-2xl">🔢</span>
+                    <span class="text-[9px] sm:text-xs font-black leading-tight">Math</span>
                 </button>
 
                 {{-- Language & Phonics --}}
                 <button @click="activeSubject = 'english'"
                         :class="activeSubject === 'english' ? 'bg-sky-500 text-white shadow-[0_4px_0_#0369A1] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
-                        class="py-2.5 px-1 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
-                    <span class="text-xl sm:text-2xl">📖</span>
-                    <span class="text-[10px] sm:text-xs font-black leading-tight">Phonics</span>
+                        class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
+                    <span class="text-lg sm:text-2xl">📖</span>
+                    <span class="text-[9px] sm:text-xs font-black leading-tight">Phonics</span>
+                </button>
+
+                {{-- Tracing & Writing --}}
+                <button @click="activeSubject = 'tracing'"
+                        :class="activeSubject === 'tracing' ? 'bg-purple-600 text-white shadow-[0_4px_0_#581C87] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
+                        class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
+                    <span class="text-lg sm:text-2xl">✏️</span>
+                    <span class="text-[9px] sm:text-xs font-black leading-tight">Tracing</span>
                 </button>
 
                 {{-- CRE & Values --}}
                 <button @click="activeSubject = 'cre'"
                         :class="activeSubject === 'cre' ? 'bg-emerald-600 text-white shadow-[0_4px_0_#065F46] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
-                        class="py-2.5 px-1 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
-                    <span class="text-xl sm:text-2xl">✝️</span>
-                    <span class="text-[10px] sm:text-xs font-black leading-tight">Values</span>
+                        class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
+                    <span class="text-lg sm:text-2xl">✝️</span>
+                    <span class="text-[9px] sm:text-xs font-black leading-tight">Values</span>
                 </button>
             </div>
         </div>

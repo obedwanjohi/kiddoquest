@@ -292,7 +292,23 @@ Route::get('/seed-math', function(\Illuminate\Http\Request $request) {
         return "<h1>🍪 World 3 (Yummy Cookie Trail - Missions 16 to 20) Seeded Successfully in 1 second!</h1><p>🎉 <strong>ALL 20 PLAYGROUP MATHEMATICS MISSIONS ARE NOW 100% SEEDED AND UNLOCKED!</strong><br><br>👉 Click here to play: <a href='/kids'>https://www.kiddoquest.co.ke/kids</a></p>";
     }
 
-    return "✨ All 20 Playgroup Mathematics Missions seeded successfully across Whispering Forest, Sunny Meadow, and Yummy Cookie Trail! You can now go to https://www.kiddoquest.co.ke/kids to play!";
+Route::get('/seed-tracing', function(\Illuminate\Http\Request $request) {
+    $world = $request->query('world') ? (int)$request->query('world') : null;
+    
+    $seeder = new \Database\Seeders\TracingWorldSeeder();
+    $seeder->run($world);
+
+    if ($world === 1) {
+        return "<h1>✏️ Tracing World 1 (Line & Pattern Trail) Seeded Successfully in 1 second!</h1><p>👉 Next step: Click here to seed World 2: <a href='/seed-tracing?world=2'>https://www.kiddoquest.co.ke/seed-tracing?world=2</a></p>";
+    }
+    if ($world === 2) {
+        return "<h1>🔤 Tracing World 2 (Alphabet Letter Safari A-Z) Seeded Successfully in 1 second!</h1><p>👉 Next step: Click here to seed World 3: <a href='/seed-tracing?world=3'>https://www.kiddoquest.co.ke/seed-tracing?world=3</a></p>";
+    }
+    if ($world === 3) {
+        return "<h1>🔢 Tracing World 3 (Number Tracing Kingdom 0-10) Seeded Successfully in 1 second!</h1><p>🎉 <strong>ALL 3 DEDICATED TRACING WORLDS ARE NOW 100% SEEDED!</strong><br><br>👉 Click here to play: <a href='/kids'>https://www.kiddoquest.co.ke/kids</a></p>";
+    }
+
+    return "✨ All 3 Dedicated Tracing Worlds (Line Trail, Alphabet Safari A-Z, Number Kingdom 0-10) seeded successfully! You can now go to https://www.kiddoquest.co.ke/kids to play!";
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
