@@ -243,7 +243,7 @@
                         @php
                             $progress = $child->missionProgress($mission);
                             $isCompleted = $progress && $progress->status === 'completed';
-                            $isUnlocked = true; // All missions unlocked for instant teacher & kid testing!
+                            $isUnlocked = $loop->first || $prevCompleted || $isCompleted;
                             $isActiveTarget = $isUnlocked && !$isCompleted && !$foundCurrent;
 
                             if ($isActiveTarget) {
@@ -281,8 +281,8 @@
                                     </span>
                                 </a>
 
-                            @elseif($isUnlocked)
-                                {{-- UNLOCKED PLAYABLE NODE FOR QUICK TEACHER TESTING (Switch back to $isActiveTarget for sequential progression) --}}
+                            @elseif($isActiveTarget)
+                                {{-- ACTIVE PLAY NODE (Glowing Orange Pulse) --}}
                                 <a href="{{ route('kids.mission-intro', [$world, $mission]) }}" class="flex flex-col items-center group">
                                     <div class="relative">
                                         {{-- Tap To Play Speech Bubble --}}
