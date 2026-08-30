@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KiddoQuest CBC — Kenya's #1 Learning Adventure for Playgroup, PP1 & PP2</title>
-    <meta name="description" content="Engaging voiceover lessons, CBC curriculum quizzes, and magical adventure worlds in Maths, English & CRE for Kenyan kids ages 3 to 6.">
+    <title>KiddoQuest — Kenya's #1 Early Childhood Learning App for Playgroup, PP1 & PP2</title>
+    <meta name="description" content="Engaging voiceover lessons, interactive quizzes, and magical adventure worlds in Maths, English & CRE for Kenyan kids ages 3 to 6.">
 
     {{-- Favicon --}}
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦁</text></svg>">
@@ -104,7 +104,7 @@
     <div class="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-500 text-white text-xs sm:text-sm font-extrabold py-2 px-3 text-center shadow-sm">
         <div class="max-w-7xl mx-auto flex items-center justify-center gap-1.5 flex-wrap">
             <span class="inline-block animate-wiggle">🇰🇪</span>
-            <span>Aligned with Kenya CBC Curriculum 2026</span>
+            <span>Designed for Kenyan Kids Aged 3 to 6</span>
             <span class="hidden sm:inline">•</span>
             <span class="hidden sm:inline">825+ Voiceover Missions for Playgroup, PP1 & PP2!</span>
         </div>
@@ -122,14 +122,14 @@
                     <span class="font-heading text-2xl sm:text-3xl font-black tracking-tight text-purple-900">
                         KiddoQuest<span class="text-amber-500">.</span>
                     </span>
-                    <span class="block text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-purple-600 -mt-1">CBC Early Years</span>
+                    <span class="block text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-purple-600 -mt-1">Early Years Learning</span>
                 </div>
             </a>
 
             {{-- Desktop Navigation --}}
             <div class="hidden md:flex items-center gap-6 lg:gap-8 font-extrabold text-sm text-slate-700">
                 <a href="#worlds" class="hover:text-purple-600 transition">Subject Worlds 🌍</a>
-                <a href="#levels" class="hover:text-purple-600 transition">CBC Levels 📚</a>
+                <a href="#levels" class="hover:text-purple-600 transition">Learning Levels 📚</a>
                 <a href="#parent-powers" class="hover:text-purple-600 transition">Parent Zone 🛡️</a>
                 <a href="#pricing" class="hover:text-purple-600 transition">M-Pesa Pricing 💳</a>
             </div>
@@ -186,7 +186,7 @@
                 <div class="lg:col-span-7 text-center lg:text-left">
                     {{-- Curriculum Pill --}}
                     <div class="inline-flex items-center gap-2 bg-purple-100 border border-purple-300 text-purple-900 text-xs sm:text-sm font-black px-4 py-1.5 rounded-full mb-5 shadow-sm">
-                        <span class="text-base">🏆</span> Kenya's #1 Early Childhood CBC App
+                        <span class="text-base">🏆</span> Kenya's #1 Early Childhood Learning App
                     </div>
 
                     {{-- Main Headline --}}
@@ -231,8 +231,8 @@
                             <div class="text-[11px] sm:text-xs font-extrabold text-slate-600">Ad-Free & Safe</div>
                         </div>
                         <div class="bg-white/80 border border-purple-100 rounded-2xl p-3 text-center lg:text-left shadow-sm">
-                            <div class="font-heading text-xl sm:text-2xl font-black text-amber-600">CBC</div>
-                            <div class="text-[11px] sm:text-xs font-extrabold text-slate-600">Aligned 2026</div>
+                            <div class="font-heading text-xl sm:text-2xl font-black text-amber-600">PG-PP2</div>
+                            <div class="text-[11px] sm:text-xs font-extrabold text-slate-600">Built for Kenya</div>
                         </div>
                     </div>
                 </div>
@@ -320,7 +320,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
                 <span class="text-xs font-black uppercase tracking-widest text-purple-700 bg-purple-100 px-4 py-1.5 rounded-full border border-purple-200">
-                    🌍 Comprehensive CBC Curriculum
+                    🌍 Comprehensive Early Childhood Learning
                 </span>
                 <h2 class="font-heading text-3xl sm:text-5xl font-black text-slate-950 mt-4 mb-3">
                     3 Magical Subject Worlds
@@ -434,7 +434,7 @@
                     🎯 Adapted to Every Age
                 </span>
                 <h2 class="font-heading text-3xl sm:text-5xl font-black text-slate-950 mt-4 mb-3">
-                    Tailored for Every CBC Stage
+                    Tailored for Playgroup, PP1 & PP2
                 </h2>
                 <p class="text-sm sm:text-base text-slate-600 font-bold">
                     Age-appropriate pacing ensures your child learns happily without frustration.
@@ -622,7 +622,7 @@
                         </div>
 
                         <ul class="space-y-3 text-xs sm:text-sm font-extrabold text-slate-700 mb-8 text-left max-w-xs mx-auto">
-                            <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-black">✓</span> All 825+ CBC Missions</li>
+                            <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-black">✓</span> All 825+ Learning Missions</li>
                             <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-black">✓</span> Up to 4 Child Profiles</li>
                             <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-black">✓</span> Instant M-Pesa STK Push</li>
                             <li class="flex items-center gap-2.5"><span class="text-emerald-600 font-black">✓</span> Parent Analytics & Screen-Time</li>
@@ -651,7 +651,7 @@
                         </div>
 
                         <ul class="space-y-3 text-xs sm:text-sm font-extrabold text-purple-100 mb-8 text-left max-w-xs mx-auto">
-                            <li class="flex items-center gap-2.5"><span class="text-amber-300 font-black">✓</span> All 825+ CBC Missions</li>
+                            <li class="flex items-center gap-2.5"><span class="text-amber-300 font-black">✓</span> All 825+ Learning Missions</li>
                             <li class="flex items-center gap-2.5"><span class="text-amber-300 font-black">✓</span> Unlimited Child Profiles</li>
                             <li class="flex items-center gap-2.5"><span class="text-amber-300 font-black">✓</span> 3 Months Completely Free</li>
                             <li class="flex items-center gap-2.5"><span class="text-amber-300 font-black">✓</span> Priority Parent Support</li>
@@ -698,7 +698,7 @@
                 <div class="bg-white rounded-3xl p-6 shadow-sm border border-purple-100">
                     <div class="flex text-amber-500 text-sm mb-3">⭐⭐⭐⭐⭐</div>
                     <p class="text-xs sm:text-sm text-slate-700 font-bold leading-relaxed mb-4">
-                        "The fact that it aligns directly with the CBC terms taught in Kenyan pre-primary schools made all the difference. She breezed through her PP2 school assessments!"
+                        "The fact that it matches what pre-primary children learn in Kenyan schools made all the difference. She breezed through her PP2 school assessments!"
                     </p>
                     <div class="flex items-center gap-3">
                         <div class="w-9 h-9 rounded-full bg-pink-100 flex items-center justify-center font-black text-pink-700 text-xs">DO</div>
@@ -737,7 +737,7 @@
                     Built to Empower the Next Generation of African Learners
                 </h2>
                 <p class="mt-4 text-sm sm:text-base text-slate-300 font-semibold leading-relaxed">
-                    KiddoQuest CBC was created with a bold vision: to transform early childhood education in Kenya by turning CBC curriculum outcomes into interactive, joyful digital learning adventures.
+                    KiddoQuest was created with a bold vision: to transform early childhood education in Kenya by turning foundational learning concepts into interactive, joyful digital learning adventures.
                 </p>
             </div>
 
@@ -768,7 +768,7 @@
                             <span>🚀</span> <span>A Founder's Vision</span>
                         </div>
                         <p>
-                            "Every child deserves an education that feels like an exciting quest, not a chore. I started building KiddoQuest single-handedly with a clear vision: to create an ad-free, culturally relevant early learning platform designed specifically for Kenyan children under the Competency-Based Curriculum (CBC)."
+                            "Every child deserves an education that feels like an exciting quest, not a chore. I started building KiddoQuest single-handedly with a clear vision: to create an ad-free, culturally relevant early learning platform designed specifically for Kenyan children in Playgroup, PP1, and PP2."
                         </p>
                         <p>
                             "From voiceover movie stories to interactive counting, letter tracing, and moral values, every screen in KiddoQuest is crafted to inspire curiosity and confidence in Playgroup, PP1, and PP2 learners."
@@ -784,8 +784,8 @@
                                 <span>Ad-Free & Safe</span>
                             </div>
                             <div class="flex items-center gap-2 text-slate-400">
-                                <span class="text-pink-400 font-black text-base">CBC</span>
-                                <span>Kenya Aligned</span>
+                                <span class="text-pink-400 font-black text-base">Kenya</span>
+                                <span>Built</span>
                             </div>
                         </div>
                     </div>
@@ -802,10 +802,10 @@
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-pink-500 flex items-center justify-center text-xl">🦁</div>
-                        <span class="font-heading text-2xl font-black text-white">KiddoQuest CBC</span>
+                        <span class="font-heading text-2xl font-black text-white">KiddoQuest</span>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 max-w-sm leading-relaxed mb-3 font-semibold">
-                        Empowering Kenyan pre-primary learners through gamified CBC mastery, playful voiceover adventures, and peace of mind for parents.
+                        Empowering Kenyan pre-primary learners through gamified early learning mastery, playful voiceover adventures, and peace of mind for parents.
                     </p>
                     <p class="text-xs text-slate-500 font-bold">
                         Nairobi, Kenya • Made with ❤️ for Kenyan Kids
@@ -816,7 +816,7 @@
                     <h4 class="text-xs font-black uppercase tracking-wider text-slate-300 mb-3">Quick Navigation</h4>
                     <ul class="space-y-2 text-xs text-slate-400 font-bold">
                         <li><a href="#worlds" class="hover:text-white transition">Subject Worlds</a></li>
-                        <li><a href="#levels" class="hover:text-white transition">CBC Levels (PG, PP1, PP2)</a></li>
+                        <li><a href="#levels" class="hover:text-white transition">Learning Levels (PG, PP1, PP2)</a></li>
                         <li><a href="#about" class="text-amber-400 hover:text-amber-300 transition flex items-center gap-1">🌱 About Us & Founder</a></li>
                         <li><a href="#pricing" class="hover:text-white transition">M-Pesa Pricing</a></li>
                         <li><a href="{{ route('guardian.login') }}" class="hover:text-white transition">Parent Portal</a></li>
@@ -834,7 +834,7 @@
             </div>
 
             <div class="pt-6 border-t border-slate-900 text-center text-xs text-slate-500 font-bold flex flex-col sm:flex-row items-center justify-between gap-3">
-                <p>&copy; {{ date('Y') }} KiddoQuest CBC. All Rights Reserved.</p>
+                <p>&copy; {{ date('Y') }} KiddoQuest. All Rights Reserved.</p>
                 <p class="flex items-center gap-3">
                     <span>100% Kid Safe & Ad-Free</span>
                     <span>•</span>
