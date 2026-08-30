@@ -251,7 +251,8 @@
                         @php
                             $progress = $child->missionProgress($mission);
                             $isCompleted = $progress && $progress->status === 'completed';
-                            $isUnlocked = $loop->first || $prevCompleted || $isCompleted;
+                            $isTracingWorld = $world->subject_category === 'tracing';
+                            $isUnlocked = $isTracingWorld || $loop->first || $prevCompleted || $isCompleted;
                             $isActiveTarget = $isUnlocked && !$isCompleted && !$foundCurrent;
 
                             if ($isActiveTarget) {
@@ -289,7 +290,7 @@
                                     </span>
                                 </a>
 
-                            @elseif($isActiveTarget)
+                            @elseif($isActiveTarget || $isTracingWorld)
                                 {{-- ACTIVE PLAY NODE (Glowing Orange Pulse) --}}
                                 <a href="{{ route('kids.mission-intro', [$world, $mission]) }}" class="flex flex-col items-center group">
                                     <div class="relative">
