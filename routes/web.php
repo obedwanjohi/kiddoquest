@@ -292,6 +292,9 @@ Route::get('/seed-math', function(\Illuminate\Http\Request $request) {
         return "<h1>🍪 World 3 (Yummy Cookie Trail - Missions 16 to 20) Seeded Successfully in 1 second!</h1><p>🎉 <strong>ALL 20 PLAYGROUP MATHEMATICS MISSIONS ARE NOW 100% SEEDED AND UNLOCKED!</strong><br><br>👉 Click here to play: <a href='/kids'>https://www.kiddoquest.co.ke/kids</a></p>";
     }
 
+    return "✨ All 20 Playgroup Mathematics Missions seeded successfully across Whispering Forest, Sunny Meadow, and Yummy Cookie Trail! You can now go to https://www.kiddoquest.co.ke/kids to play!";
+});
+
 Route::get('/seed-tracing', function(\Illuminate\Http\Request $request) {
     $world = $request->query('world') ? (int)$request->query('world') : null;
     
