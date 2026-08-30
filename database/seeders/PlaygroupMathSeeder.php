@@ -491,22 +491,30 @@ class PlaygroupMathSeeder extends Seeder
         }
     }
 
+    protected ?\Illuminate\Support\Collection $cachedMedia = null;
+
     /**
      * Helper to find uploaded media public URL by case-insensitive type and keyword search.
      */
     protected function findMediaUrl(string $type, array $keywords): ?string
     {
-        foreach ($keywords as $kw) {
-            $media = Media::where('type', 'ILIKE', "%{$type}%")
-                ->where(function ($q) use ($kw) {
-                    $q->where('name', 'ILIKE', "%{$kw}%")
-                      ->orWhere('file_name', 'ILIKE', "%{$kw}%")
-                      ->orWhere('file_path', 'ILIKE', "%{$kw}%");
-                })
-                ->first();
+        if ($this->cachedMedia === null) {
+            $this->cachedMedia = Media::all();
+        }
 
-            if ($media) {
-                return $media->url;
+        foreach ($keywords as $kw) {
+            $found = $this->cachedMedia->first(function ($media) use ($type, $kw) {
+                $typeMatch = str_contains(strtolower($media->type ?? ''), strtolower($type));
+                if (!$typeMatch) return false;
+
+                $kwLower = strtolower($kw);
+                return str_contains(strtolower($media->name ?? ''), $kwLower) ||
+                       str_contains(strtolower($media->file_name ?? ''), $kwLower) ||
+                       str_contains(strtolower($media->file_path ?? ''), $kwLower);
+            });
+
+            if ($found) {
+                return $found->url;
             }
         }
 
