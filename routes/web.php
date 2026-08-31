@@ -33,28 +33,22 @@ Route::get('/clear-cache', function() {
     return "<h1>✨ View Cache Cleared!</h1><p><a href='/'>Click here to return to Home Page</a></p>";
 });
 
-Route::get('/run-cre-seeder', function(\Illuminate\Http\Request $request) {
-    try {
-        $batch = $request->query('batch');
-        $seeder = new \Database\Seeders\CreMissionsSeeder();
-        $batchNum = $batch ? (int)$batch : null;
-        $seeder->run($batchNum);
+Route::get('/seed-cre', function(\Illuminate\Http\Request $request) {
+    $world = $request->query('world');
+    $seeder = new \Database\Seeders\CreMissionsSeeder();
+    $seeder->run($world ? (int)$world : null);
 
-        $msg = $batchNum 
-            ? "🎉 Seeded CRE Batch {$batchNum} (Missions " . (($batchNum-1)*5 + 1) . " to " . ($batchNum*5) . ") Successfully!"
-            : "🎉 All 25 CRE Missions, 200 Questions, Audios, and Images Seeded Successfully!";
-
-        return response()->json([
-            'status' => 'success',
-            'message' => $msg,
-            'next_batch' => ($batchNum && $batchNum < 5) ? url("/run-cre-seeder?batch=" . ($batchNum + 1)) : null,
-        ]);
-    } catch (\Throwable $e) {
-        return response()->json([
-            'status' => 'error',
-            'message' => $e->getMessage(),
-        ], 500);
+    if ($world == 1) {
+        return "<h1>☀️ World 1 (Creation Realm - Missions 1 to 10) Seeded Successfully!</h1><p>👉 Next step: Click here to seed World 2: <a href='/seed-cre?world=2'>https://www.kiddoquest.co.ke/seed-cre?world=2</a></p>";
     }
+    if ($world == 2) {
+        return "<h1>✝️ World 2 (Jesus Realm - Missions 11 to 20) Seeded Successfully!</h1><p>👉 Next step: Click here to seed World 3: <a href='/seed-cre?world=3'>https://www.kiddoquest.co.ke/seed-cre?world=3</a></p>";
+    }
+    if ($world == 3) {
+        return "<h1>🤝 World 3 (Christian Values Realm - Missions 21 to 25) Seeded Successfully!</h1><p>🎉 <strong>ALL 25 CRE MISSIONS ARE NOW 100% SEEDED AND UNLOCKED!</strong><br><br>👉 Click here to play: <a href='/kids'>https://www.kiddoquest.co.ke/kids</a></p>";
+    }
+
+    return "✨ All 25 CRE Missions seeded successfully across Creation Realm, Jesus Realm, and Christian Values Realm! You can now go to https://www.kiddoquest.co.ke/kids to play!";
 });
 
 Route::get('/build-all-full-scripts-now', function() {

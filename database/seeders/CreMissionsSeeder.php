@@ -82,15 +82,13 @@ class CreMissionsSeeder extends Seeder
         $matchTypeId = QuizType::where('code', 'QT-05')->value('id') ?? 5;
         $sortTypeId = QuizType::where('code', 'QT-04')->value('id') ?? 4;
 
-        // Determine range based on batch
+        // Determine range based on world/batch parameter
         $startMission = 1;
         $endMission = 25;
 
-        if ($batch === 1) { $startMission = 1; $endMission = 5; }
-        elseif ($batch === 2) { $startMission = 6; $endMission = 10; }
-        elseif ($batch === 3) { $startMission = 11; $endMission = 15; }
-        elseif ($batch === 4) { $startMission = 16; $endMission = 20; }
-        elseif ($batch === 5) { $startMission = 21; $endMission = 25; }
+        if ($batch === 1) { $startMission = 1; $endMission = 10; }
+        elseif ($batch === 2) { $startMission = 11; $endMission = 20; }
+        elseif ($batch === 3) { $startMission = 21; $endMission = 25; }
 
         // 3. Complete Mission Data Definitions
         $allMissions = [
@@ -290,7 +288,9 @@ class CreMissionsSeeder extends Seeder
             $this->seedQuestionsForMission($qBank, $mNum, $mData, $mcTypeId, $tfTypeId, $matchTypeId, $sortTypeId);
         }
 
-        $this->command->info("🎉 Successfully seeded CRE Missions {$startMission} to {$endMission}!");
+        if ($this->command) {
+            $this->command->info("🎉 Successfully seeded CRE Missions {$startMission} to {$endMission}!");
+        }
     }
 
     private function seedQuestionsForMission($qBank, $mNum, $mData, $mcTypeId, $tfTypeId, $matchTypeId, $sortTypeId): void
