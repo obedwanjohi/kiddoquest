@@ -33,6 +33,24 @@ Route::get('/clear-cache', function() {
     return "<h1>✨ View Cache Cleared!</h1><p><a href='/'>Click here to return to Home Page</a></p>";
 });
 
+Route::get('/run-cre-seeder', function() {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
+            '--class' => 'CreMissionsSeeder',
+            '--force' => true,
+        ]);
+        return response()->json([
+            'status' => 'success',
+            'message' => '🎉 All 25 CRE Missions, 200 Questions, Audios, and Images Seeded Successfully Live on Render!',
+        ]);
+    } catch (\Throwable $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage(),
+        ], 500);
+    }
+});
+
 Route::get('/build-all-full-scripts-now', function() {
     $base_dir = base_path() . "/";
 
