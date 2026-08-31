@@ -166,7 +166,7 @@
 
             {{-- Desktop Actions --}}
             <div class="hidden sm:flex items-center gap-3">
-                @if(Auth::guard('guardian')->check())
+                @if(auth('guardian')->check())
                     <a href="{{ route('kids.profiles') }}"
                        class="font-heading font-black text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white px-5 py-2.5 rounded-2xl shadow-md hover:shadow-purple-500/30 transform hover:scale-105 transition flex items-center gap-2">
                         <span>🌟 Who's Playing?</span>
@@ -185,7 +185,7 @@
 
             {{-- Mobile Menu Trigger Button --}}
             <div class="flex items-center gap-2 sm:hidden">
-                @if(Auth::guard('guardian')->check())
+                @if(auth('guardian')->check())
                     <a href="{{ route('kids.profiles') }}" class="bg-purple-600 text-white text-xs font-black px-3.5 py-2 rounded-xl">
                         🌟 Kids
                     </a>
@@ -232,7 +232,7 @@
 
                     {{-- Hero CTAs --}}
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5 mb-8">
-                        @if(Auth::guard('guardian')->check())
+                        @if(auth('guardian')->check())
                             <a href="{{ route('kids.profiles') }}"
                                class="font-heading font-black text-lg bg-gradient-to-r from-amber-500 via-pink-600 to-purple-700 text-white px-8 py-4 rounded-2xl shadow-xl hover:shadow-purple-500/40 transform hover:scale-105 transition flex items-center justify-center gap-3 text-center">
                                 <span>🚀 Open KiddoQuest Player</span>
@@ -885,7 +885,7 @@
 
     {{-- FLOATING MOBILE BOTTOM BAR (Thumb-friendly CTA for phones) --}}
     <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-purple-200 p-3 sm:hidden shadow-2xl flex items-center gap-2">
-        @if(Auth::guard('guardian')->check())
+        @if(auth('guardian')->check())
             <a href="{{ route('kids.profiles') }}"
                class="flex-1 font-heading font-black text-center text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-xl shadow-md">
                 🌟 Open Kid Player
