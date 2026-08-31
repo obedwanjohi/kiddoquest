@@ -120,7 +120,7 @@
     </style>
 </head>
 
-<body class="bg-[#FAF5FF] text-slate-900 antialiased overflow-x-hidden" x-data="{ authModal: {{ $errors->any() ? 'true' : 'false' }}, authTab: '{{ $errors->has('name') ? 'register' : 'login' }}', mobileMenu: false }">
+<body class="bg-[#FAF5FF] text-slate-900 antialiased overflow-x-hidden" x-data="{ authModal: false, authTab: 'login', mobileMenu: false }">
 
     {{-- Error Toast Notification --}}
     @if($errors->any())
