@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>KiddoQuest — Kenya's #1 Early Childhood Learning App for Playgroup, PP1 & PP2</title>
     <meta name="description" content="Engaging voiceover lessons, interactive quizzes, and magical adventure worlds in Maths, English & CRE for Kenyan kids ages 3 to 6.">
+    <meta name="google-site-verification" content="google18e2c53420c6970b">
     <meta name="keywords" content="kiddoquest, kiddo quest, kiddoquest.co.ke, kiddo quest kenya, obed wanjohi, early childhood learning kenya, playgroup pp1 pp2, kenya kids app">
     <link rel="canonical" href="https://www.kiddoquest.co.ke/">
 
