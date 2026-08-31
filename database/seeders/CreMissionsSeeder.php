@@ -85,10 +85,10 @@ class CreMissionsSeeder extends Seeder
         );
 
         // Quiz Types
-        $mcTypeId = QuizType::where('code', 'QT-01')->value('id') ?? 1;
-        $tfTypeId = QuizType::where('code', 'QT-03')->value('id') ?? 3;
-        $matchTypeId = QuizType::where('code', 'QT-05')->value('id') ?? 5;
-        $sortTypeId = QuizType::where('code', 'QT-04')->value('id') ?? 4;
+        $mcTypeId = QuizType::where('code', 'QT-01')->orWhere('slug', 'multiple-choice')->value('id') ?? 1;
+        $tfTypeId = QuizType::where('code', 'QT-02')->orWhere('slug', 'true-false')->value('id') ?? 2;
+        $matchTypeId = QuizType::where('code', 'QT-03')->orWhere('slug', 'matching')->value('id') ?? 3;
+        $sortTypeId = QuizType::where('code', 'QT-04')->orWhere('slug', 'drag-sort')->value('id') ?? 4;
 
         // Determine range based on world/batch parameter
         $startMission = 1;
