@@ -306,134 +306,45 @@ class CreMissionsSeeder extends Seeder
         for ($q = 1; $q <= 8; $q++) {
             $audioUrl = "/audio/m11/cre_m{$mNum}_q{$q}.mp3";
 
-            if ($mNum <= 10) {
-                // Missions 1 to 10: 4x Multiple Choice + 4x True/False
-                if ($q <= 4) {
-                    $imgFile = $mData['q_imgs'][$q - 1];
-                    $disFile = $mData['distractors'][$q - 1];
-                    $imgUrl = "/images/m11/{$imgFile}";
-                    $disUrl = "/images/m11/{$disFile}";
-                    
-                    $question = QuizQuestion::create([
-                        'question_bank_id' => $qBank->id,
-                        'quiz_type_id' => $mcTypeId,
-                        'prompt' => 'Touch the correct picture!',
-                        'prompt_audio_url' => $audioUrl,
-                        'prompt_image_url' => $imgUrl,
-                        'points' => 10,
-                        'sort_order' => $q,
-                    ]);
+            // For ALL 25 Missions:
+            // Q1 to Q4 = Visual Choice (Multiple Choice)
+            // Q5 to Q8 = True / False (Yes / No)
+            if ($q <= 4) {
+                $imgFile = $mData['q_imgs'][$q - 1] ?? ($mData['q_imgs'][0] ?? "cre_m1_sun.webp");
+                $disFile = $mData['distractors'][$q - 1] ?? ($mData['distractors'][0] ?? "cre_m1_cloud.webp");
+                $imgUrl = "/images/m11/{$imgFile}";
+                $disUrl = "/images/m11/{$disFile}";
+                
+                $question = QuizQuestion::create([
+                    'question_bank_id' => $qBank->id,
+                    'quiz_type_id' => $mcTypeId,
+                    'prompt' => 'Touch the correct picture!',
+                    'prompt_audio_url' => $audioUrl,
+                    'prompt_image_url' => $imgUrl,
+                    'points' => 10,
+                    'sort_order' => $q,
+                ]);
 
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Correct Choice', 'image_url' => $imgUrl, 'is_correct' => true, 'sort_order' => 1]);
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Wrong Choice', 'image_url' => $disUrl, 'is_correct' => false, 'sort_order' => 2]);
-                } else {
-                    $imgFile = $mData['q_imgs'][$q - 1];
-                    $imgUrl = "/images/m11/{$imgFile}";
-
-                    $question = QuizQuestion::create([
-                        'question_bank_id' => $qBank->id,
-                        'quiz_type_id' => $tfTypeId,
-                        'prompt' => 'Touch Yes or No!',
-                        'prompt_audio_url' => $audioUrl,
-                        'prompt_image_url' => $imgUrl,
-                        'points' => 10,
-                        'sort_order' => $q,
-                    ]);
-
-                    $isYes = ($mNum === 9 && $q === 7) ? false : (($mNum === 9 && $q === 8) ? true : ($q <= 7));
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'YES', 'is_correct' => $isYes, 'sort_order' => 1]);
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'NO', 'is_correct' => !$isYes, 'sort_order' => 2]);
-                }
-            } elseif ($mNum <= 20) {
-                // Missions 11 to 20: 4x Multiple Choice + 4x 2D Image Matching
-                if ($q <= 4) {
-                    $imgFile = $mData['q_imgs'][$q - 1];
-                    $disFile = $mData['distractors'][$q - 1];
-                    $imgUrl = "/images/m11/{$imgFile}";
-                    $disUrl = "/images/m11/{$disFile}";
-
-                    $question = QuizQuestion::create([
-                        'question_bank_id' => $qBank->id,
-                        'quiz_type_id' => $mcTypeId,
-                        'prompt' => 'Touch the correct picture!',
-                        'prompt_audio_url' => $audioUrl,
-                        'prompt_image_url' => $imgUrl,
-                        'points' => 10,
-                        'sort_order' => $q,
-                    ]);
-
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Correct Choice', 'image_url' => $imgUrl, 'is_correct' => true, 'sort_order' => 1]);
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Wrong Choice', 'image_url' => $disUrl, 'is_correct' => false, 'sort_order' => 2]);
-                } else {
-                    $p1File = $mData['pair1'];
-                    $p2File = $mData['pair2'];
-                    $p1Url = "/images/m11/{$p1File}";
-                    $p2Url = "/images/m11/{$p2File}";
-
-                    $question = QuizQuestion::create([
-                        'question_bank_id' => $qBank->id,
-                        'quiz_type_id' => $matchTypeId,
-                        'prompt' => 'Match matching pictures!',
-                        'prompt_audio_url' => $audioUrl,
-                        'prompt_image_url' => $p1Url,
-                        'points' => 10,
-                        'sort_order' => $q,
-                    ]);
-
-                    // Pair 1
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Card 1', 'image_url' => $p1Url, 'match_key' => 'pair_1', 'is_correct' => true, 'sort_order' => 1]);
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Match 1', 'image_url' => $p1Url, 'match_key' => 'pair_1', 'is_correct' => true, 'sort_order' => 2]);
-                    // Pair 2
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Card 2', 'image_url' => $p2Url, 'match_key' => 'pair_2', 'is_correct' => true, 'sort_order' => 3]);
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Match 2', 'image_url' => $p2Url, 'match_key' => 'pair_2', 'is_correct' => true, 'sort_order' => 4]);
-                }
+                QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Correct Choice', 'image_url' => $imgUrl, 'is_correct' => true, 'sort_order' => 1]);
+                QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Wrong Choice', 'image_url' => $disUrl, 'is_correct' => false, 'sort_order' => 2]);
             } else {
-                // Missions 21 to 25: 4x Multiple Choice + 4x Category Sorting
-                if ($q <= 4) {
-                    $imgFile = $mData['q_imgs'][$q - 1];
-                    $disFile = $mData['distractors'][$q - 1];
-                    $imgUrl = "/images/m11/{$imgFile}";
-                    $disUrl = "/images/m11/{$disFile}";
+                $imgFile = $mData['q_imgs'][$q - 5] ?? ($mData['q_imgs'][0] ?? "cre_m1_sun.webp");
+                $imgUrl = "/images/m11/{$imgFile}";
 
-                    $question = QuizQuestion::create([
-                        'question_bank_id' => $qBank->id,
-                        'quiz_type_id' => $mcTypeId,
-                        'prompt' => 'Touch the correct picture!',
-                        'prompt_audio_url' => $audioUrl,
-                        'prompt_image_url' => $imgUrl,
-                        'points' => 10,
-                        'sort_order' => $q,
-                    ]);
+                $question = QuizQuestion::create([
+                    'question_bank_id' => $qBank->id,
+                    'quiz_type_id' => $tfTypeId,
+                    'prompt' => 'Touch Yes or No!',
+                    'prompt_audio_url' => $audioUrl,
+                    'prompt_image_url' => $imgUrl,
+                    'points' => 10,
+                    'sort_order' => $q,
+                ]);
 
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Correct Choice', 'image_url' => $imgUrl, 'is_correct' => true, 'sort_order' => 1]);
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'Wrong Choice', 'image_url' => $disUrl, 'is_correct' => false, 'sort_order' => 2]);
-                } else {
-                    $cat1Name = $mData['cat1'];
-                    $cat2Name = $mData['cat2'];
-
-                    $b1_1 = "/images/m11/" . $mData['b1_img1'];
-                    $b1_2 = "/images/m11/" . ($mData['b1_img2'] ?? $mData['b1_img1']);
-                    $b1_3 = "/images/m11/" . ($mData['b1_img3'] ?? $mData['b1_img1']);
-                    $b2_1 = "/images/m11/" . $mData['b2_img1'];
-
-                    $question = QuizQuestion::create([
-                        'question_bank_id' => $qBank->id,
-                        'quiz_type_id' => $sortTypeId,
-                        'prompt' => 'Sort items into the right boxes!',
-                        'prompt_audio_url' => $audioUrl,
-                        'prompt_image_url' => $b1_1,
-                        'metadata' => [
-                            'categories' => [$cat1Name, $cat2Name]
-                        ],
-                        'points' => 10,
-                        'sort_order' => $q,
-                    ]);
-
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => $cat1Name, 'image_url' => $b1_1, 'match_key' => $cat1Name, 'is_correct' => true, 'sort_order' => 1]);
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => $cat1Name, 'image_url' => $b1_2, 'match_key' => $cat1Name, 'is_correct' => true, 'sort_order' => 2]);
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => $cat1Name, 'image_url' => $b1_3, 'match_key' => $cat1Name, 'is_correct' => true, 'sort_order' => 3]);
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => $cat2Name, 'image_url' => $b2_1, 'match_key' => $cat2Name, 'is_correct' => true, 'sort_order' => 4]);
-                }
+                // Determine if YES or NO is correct
+                $isYes = ($mNum === 9 && $q === 7) ? false : (($mNum === 9 && $q === 8) ? true : ($q <= 7));
+                QuestionOption::create(['question_id' => $question->id, 'text_value' => 'YES', 'is_correct' => $isYes, 'sort_order' => 1]);
+                QuestionOption::create(['question_id' => $question->id, 'text_value' => 'NO', 'is_correct' => !$isYes, 'sort_order' => 2]);
             }
         }
     }
