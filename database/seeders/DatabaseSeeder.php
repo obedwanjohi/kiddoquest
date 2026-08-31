@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             MemoryMatchSeeder::class,
             SpeakRepeatSeeder::class,
             TracingSeeder::class,
+            CreMissionsSeeder::class,
         ]);
     }
 }
