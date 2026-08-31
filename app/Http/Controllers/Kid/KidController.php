@@ -59,7 +59,12 @@ class KidController extends Controller
         $child = $this->activeChild();
         $rawLevel = strtolower(str_replace(['_', '-'], ' ', $child->recommended_level ?? ''));
 
-        $worldsQuery = AdventureWorld::with('subject.level')->orderBy('sort_order');
+        $worldsQuery = AdventureWorld::with([
+            'subject.level',
+            'missions' => function ($q) {
+                $q->where('status', 'published')->orderBy('sort_order');
+            }
+        ])->orderBy('sort_order');
 
         if ($rawLevel) {
             $worlds = $worldsQuery->where(function ($query) use ($rawLevel) {
@@ -97,7 +102,12 @@ class KidController extends Controller
             $worlds = $worldsQuery->get();
         }
 
-        return view('kids.map', compact('child', 'worlds'));
+        // Pre-fetch all progress for active child in 1 fast query to eliminate N+1 DB roundtrips
+        $progressRecords = $child->progress()->get();
+        $progressMap = $progressRecords->pluck('status', 'mission_id')->toArray();
+        $starsMap = $progressRecords->pluck('stars_earned', 'mission_id')->toArray();
+
+        return view('kids.map', compact('child', 'worlds', 'progressMap', 'starsMap'));
     }
 
     /**

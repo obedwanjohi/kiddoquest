@@ -99,6 +99,18 @@ class ParentDashboardController extends Controller
             $selectedChild = $children->firstWhere('id', $playedChildId) ?? $children->first();
             $selectedChildId = $selectedChild ? $selectedChild->id : null;
         }
+        $allSubjects = \App\Models\Subject::with('adventureWorlds.missions')->get();
+        $subjectMissionsMap = [];
+        foreach ($allSubjects as $subj) {
+            $mIds = [];
+            foreach ($subj->adventureWorlds as $w) {
+                foreach ($w->missions as $m) {
+                    $mIds[] = $m->id;
+                }
+            }
+            $subjectMissionsMap[$subj->id] = $mIds;
+        }
+
         foreach ($children as $child) {
             $totalMissions = 0;
             $passedMissions = 0;
@@ -179,13 +191,11 @@ class ParentDashboardController extends Controller
                 $realLearningNext[] = $nMiss->title;
             }
 
-            // Calculate Real Heat Map per Subject from actual database attempts
-            $allSubjects = \App\Models\Subject::all();
+            // Calculate Real Heat Map per Subject from pre-fetched in-memory maps
             foreach ($allSubjects as $subj) {
-                $worldIds = \App\Models\AdventureWorld::where('subject_id', $subj->id)->pluck('id');
-                $subjMissions = Mission::whereIn('adventure_world_id', $worldIds)->pluck('id');
+                $subjMissions = $subjectMissionsMap[$subj->id] ?? [];
 
-                if ($subjMissions->isEmpty()) {
+                if (empty($subjMissions)) {
                     continue;
                 }
 

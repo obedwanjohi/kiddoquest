@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>KiddoQuest — Kenya's #1 Early Childhood Learning App for Playgroup, PP1 & PP2</title>
     <meta name="description" content="Engaging voiceover lessons, interactive quizzes, and magical adventure worlds in Maths, English & CRE for Kenyan kids ages 3 to 6.">
+    <meta name="keywords" content="kiddoquest, kiddo quest, kiddoquest.co.ke, kiddo quest kenya, obed wanjohi, early childhood learning kenya, playgroup pp1 pp2, kenya kids app">
+    <link rel="canonical" href="https://www.kiddoquest.co.ke/">
+
+    {{-- OpenGraph & Social Cards --}}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kiddoquest.co.ke/">
+    <meta property="og:title" content="KiddoQuest — Kenya's #1 Early Childhood Learning App">
+    <meta property="og:description" content="Engaging voiceover lessons, interactive quizzes, letter & number tracing, and magical adventure worlds for Playgroup, PP1 & PP2 learners.">
+
+    {{-- JSON-LD Google Structured Data --}}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "KiddoQuest",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web, Android, iOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "200",
+        "priceCurrency": "KES"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Obed Wanjohi"
+      },
+      "description": "Kenya's #1 Early Childhood Learning App for Playgroup, PP1 & PP2 learners."
+    }
+    </script>
 
     {{-- Favicon --}}
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦁</text></svg>">
