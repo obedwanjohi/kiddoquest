@@ -18,7 +18,7 @@
     {{-- JSON-LD Google Structured Data --}}
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
+      "@@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "KiddoQuest",
       "applicationCategory": "EducationalApplication",
