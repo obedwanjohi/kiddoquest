@@ -781,16 +781,9 @@
                             {{-- Glowing Aura on Hover --}}
                             <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 via-pink-500 to-purple-600 rounded-3xl blur-md opacity-70 group-hover:opacity-100 group-hover:blur-lg transition-all duration-500"></div>
                             
-                            @php
-                                $founderImg = file_exists(public_path('images/founder.jpg')) 
-                                    ? asset('images/founder.jpg') 
-                                    : (file_exists(public_path('images/founder.jpg.jpg')) 
-                                        ? asset('images/founder.jpg.jpg') 
-                                        : 'https://ui-avatars.com/api/?name=Obed+Wanjohi&background=7C3AED&color=fff&size=200');
-                            @endphp
                             {{-- Image Container (object-top fixes head crop) --}}
                             <div class="relative w-44 h-52 sm:w-48 sm:h-56 rounded-2xl overflow-hidden bg-slate-800 border-2 border-amber-400/80 group-hover:border-amber-300 transition-all duration-500 flex items-center justify-center shadow-2xl">
-                                <img src="{{ $founderImg }}" 
+                                <img src="{{ asset('images/founder.jpg') }}" 
                                      alt="Obed Wanjohi - Founder & CEO" 
                                      class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500">
                             </div>

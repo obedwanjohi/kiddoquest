@@ -42,6 +42,10 @@ class AppServiceProvider extends ServiceProvider
         //   - http://localhost:8081        (desktop)
         //   - http://192.168.98.55:8081    (phone on LAN)
         //   - https://abc123.ngrok.io      (phone via tunnel)
+        if (app()->environment('production') || env('APP_ENV') === 'production') {
+            URL::forceScheme('https');
+        }
+
         if (app()->environment('local') && request()) {
             $scheme = request()->header('X-Forwarded-Proto', request()->getScheme());
             $host = request()->getHttpHost(); // includes port
