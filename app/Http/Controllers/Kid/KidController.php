@@ -94,7 +94,8 @@ class KidController extends Controller
                     $query->orWhereIn('slug', [
                         'whispering-forest', 'sunny-meadow', 'cookie-trail',
                         'safari-plains', 'castle-of-discovery',
-                        'ocean-cove', 'kindness-village', 'rainbow-mountain'
+                        'ocean-cove', 'kindness-village', 'rainbow-mountain',
+                        'creation-realm', 'jesus-realm', 'christian-values-realm'
                     ]);
                 }
             })->get();

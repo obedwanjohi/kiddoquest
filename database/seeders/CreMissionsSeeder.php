@@ -19,13 +19,21 @@ class CreMissionsSeeder extends Seeder
     public function run(?int $batch = null): void
     {
         // 1. CRE Subject & Topic
+        $pgLevel = \App\Models\Level::where('code', 'PG')->first() 
+            ?? \App\Models\Level::where('slug', 'like', '%play%')->first();
+
         $creSubject = Subject::where('slug', 'like', '%religious%')
             ->orWhere('slug', 'like', '%cre%')
             ->first() ?? Subject::create([
                 'name' => 'Christian Religious Education',
                 'slug' => 'christian-religious-education-pg',
                 'code' => 'CRE',
+                'level_id' => $pgLevel?->id,
             ]);
+
+        if ($pgLevel && !$creSubject->level_id) {
+            $creSubject->update(['level_id' => $pgLevel->id]);
+        }
 
         $topic = Topic::firstOrCreate(
             ['slug' => 'cre-playgroup-foundation'],
