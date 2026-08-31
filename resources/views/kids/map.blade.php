@@ -291,7 +291,7 @@
                                     </span>
                                 </a>
 
-                            @elseif($isActiveTarget || $isTracingWorld)
+                            @elseif(true) {{-- 🔓 ALL MISSIONS UNLOCKED FOR INSTANT TESTING --}}
                                 {{-- ACTIVE PLAY NODE (Glowing Orange Pulse) --}}
                                 <a href="{{ route('kids.mission-intro', [$world, $mission]) }}" class="flex flex-col items-center group">
                                     <div class="relative">
