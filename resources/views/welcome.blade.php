@@ -173,11 +173,11 @@
                         <span>🌟 Who's Playing?</span>
                     </a>
                 @else
-                    <button @click="authModal = true; authTab = 'login'"
+                    <button x-on:click="authModal = true; authTab = 'login'"
                             class="font-extrabold text-sm text-slate-700 hover:text-purple-700 px-4 py-2 rounded-xl transition">
                         Parent Sign In
                     </button>
-                    <button @click="authModal = true; authTab = 'register'"
+                    <button x-on:click="authModal = true; authTab = 'register'"
                             class="font-heading font-black text-sm bg-gradient-to-r from-amber-500 via-orange-500 to-pink-600 text-white px-5 py-2.5 rounded-2xl shadow-md hover:shadow-orange-500/30 transform hover:scale-105 transition flex items-center gap-1.5">
                         <span>Start Free 🚀</span>
                     </button>
@@ -191,10 +191,10 @@
                         🌟 Kids
                     </a>
                 @else
-                    <button @click="authModal = true; authTab = 'login'" class="text-slate-800 text-xs font-extrabold px-2.5 py-1.5 border border-slate-300 rounded-xl">
+                    <button x-on:click="authModal = true; authTab = 'login'" class="text-slate-800 text-xs font-extrabold px-2.5 py-1.5 border border-slate-300 rounded-xl">
                         Sign In
                     </button>
-                    <button @click="authModal = true; authTab = 'register'" class="bg-gradient-to-r from-amber-500 to-pink-600 text-white text-xs font-black px-3.5 py-2 rounded-xl shadow-sm">
+                    <button x-on:click="authModal = true; authTab = 'register'" class="bg-gradient-to-r from-amber-500 to-pink-600 text-white text-xs font-black px-3.5 py-2 rounded-xl shadow-sm">
                         Start Free 🚀
                     </button>
                 @endif
@@ -239,12 +239,12 @@
                                 <span>🚀 Open KiddoQuest Player</span>
                             </a>
                         @else
-                            <button @click="authModal = true; authTab = 'register'"
+                            <button x-on:click="authModal = true; authTab = 'register'"
                                     class="font-heading font-black text-base sm:text-lg bg-gradient-to-r from-amber-500 via-orange-500 to-pink-600 text-white px-8 py-4 rounded-2xl shadow-xl hover:shadow-orange-500/40 transform hover:scale-105 transition flex items-center justify-center gap-3 cursor-pointer text-center">
                                 <span>✨ Start Free 7-Day Trial</span>
                                 <span class="bg-white/20 px-2 py-0.5 rounded-full text-xs font-bold">No Card Required</span>
                             </button>
-                            <button @click="authModal = true; authTab = 'login'"
+                            <button x-on:click="authModal = true; authTab = 'login'"
                                     class="font-heading font-black text-base bg-white border-2 border-purple-200 text-purple-900 px-6 py-4 rounded-2xl hover:border-purple-400 hover:bg-purple-50 transition shadow-sm flex items-center justify-center gap-2 cursor-pointer text-center">
                                 <span>🔐 Parent Sign In</span>
                             </button>
@@ -319,16 +319,16 @@
                             </p>
 
                             <div class="grid grid-cols-3 gap-2">
-                                <button @click="answered = true; correct = false"
+                                <button x-on:click="answered = true; correct = false"
                                         class="py-2.5 bg-white/15 hover:bg-white/25 text-white rounded-xl font-black text-sm border border-white/20 transition">
                                     2
                                 </button>
-                                <button @click="answered = true; correct = true"
+                                <button x-on:click="answered = true; correct = true"
                                         :class="answered && correct ? 'bg-emerald-500 text-white border-emerald-400 shadow-lg' : 'bg-white/15 hover:bg-white/25 text-white'"
                                         class="py-2.5 rounded-xl font-black text-sm border border-white/20 transition">
                                     3 ⭐
                                 </button>
-                                <button @click="answered = true; correct = false"
+                                <button x-on:click="answered = true; correct = false"
                                         class="py-2.5 bg-white/15 hover:bg-white/25 text-white rounded-xl font-black text-sm border border-white/20 transition">
                                     4
                                 </button>
@@ -660,7 +660,7 @@
                         </ul>
                     </div>
 
-                    <button @click="authModal = true; authTab = 'register'"
+                    <button x-on:click="authModal = true; authTab = 'register'"
                             class="w-full font-heading font-black text-base bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-2xl transition cursor-pointer">
                         Get Started →
                     </button>
@@ -689,7 +689,7 @@
                         </ul>
                     </div>
 
-                    <button @click="authModal = true; authTab = 'register'"
+                    <button x-on:click="authModal = true; authTab = 'register'"
                             class="w-full font-heading font-black text-base bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 py-4 rounded-2xl shadow-lg transform hover:scale-105 transition cursor-pointer">
                         Claim Best Value Plan 🚀
                     </button>
@@ -885,11 +885,11 @@
                 🌟 Open Kid Player
             </a>
         @else
-            <button @click="authModal = true; authTab = 'login'"
+            <button x-on:click="authModal = true; authTab = 'login'"
                     class="font-heading font-black text-xs text-slate-700 bg-slate-100 border border-slate-300 px-4 py-3 rounded-xl">
                 Sign In
             </button>
-            <button @click="authModal = true; authTab = 'register'"
+            <button x-on:click="authModal = true; authTab = 'register'"
                     class="flex-1 font-heading font-black text-center text-sm bg-gradient-to-r from-amber-500 via-orange-500 to-pink-600 text-white py-3 rounded-xl shadow-lg">
                 Start Free Trial 🚀
             </button>
@@ -906,14 +906,14 @@
          x-transition:leave-start="opacity-100"
          x-transition:leave-end="opacity-0">
 
-        <div @click.away="authModal = false"
+        <div x-on:click.away="authModal = false"
              class="bg-white rounded-[2.5rem] shadow-2xl p-6 sm:p-8 max-w-md w-full relative border-2 border-purple-200 max-h-[90vh] overflow-y-auto"
              x-transition:enter="transition ease-out duration-300"
              x-transition:enter-start="scale-90 opacity-0"
              x-transition:enter-end="scale-100 opacity-100">
 
             {{-- Close Button --}}
-            <button @click="authModal = false" class="absolute top-5 right-5 text-slate-400 hover:text-slate-800 text-xl font-black p-2">
+            <button x-on:click="authModal = false" class="absolute top-5 right-5 text-slate-400 hover:text-slate-800 text-xl font-black p-2">
                 ✕
             </button>
 
@@ -934,12 +934,12 @@
 
             {{-- Tabs --}}
             <div class="flex bg-slate-100 p-1 rounded-2xl mb-5 border border-slate-200">
-                <button @click="authTab = 'register'"
+                <button x-on:click="authTab = 'register'"
                         :class="authTab === 'register' ? 'bg-white shadow-md text-purple-800 font-black' : 'text-slate-600 font-bold'"
                         class="flex-1 py-2 text-xs rounded-xl transition">
                     Sign Up Free 🚀
                 </button>
-                <button @click="authTab = 'login'"
+                <button x-on:click="authTab = 'login'"
                         :class="authTab === 'login' ? 'bg-white shadow-md text-purple-800 font-black' : 'text-slate-600 font-bold'"
                         class="flex-1 py-2 text-xs rounded-xl transition">
                     Sign In 🔐
