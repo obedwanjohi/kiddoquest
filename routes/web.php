@@ -22,15 +22,8 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-// Root route: If guardian is logged in, go to profiles. If not, show World-Class Landing Page!
+// Root route: Show World-Class Landing Page!
 Route::get('/', function () {
-    try {
-        if (\Illuminate\Support\Facades\Auth::guard('guardian')->check()) {
-            return redirect()->route('kids.profiles');
-        }
-    } catch (\Throwable $e) {
-        // Fail-safe fallback to landing page for guests and search engine crawlers
-    }
     return view('welcome');
 })->name('home');
 
