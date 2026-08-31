@@ -341,8 +341,8 @@ class CreMissionsSeeder extends Seeder
                     ]);
 
                     $isYes = ($q <= 7);
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => '🟢 YES', 'is_correct' => $isYes, 'sort_order' => 1]);
-                    QuestionOption::create(['question_id' => $question->id, 'text_value' => '🔴 NO', 'is_correct' => !$isYes, 'sort_order' => 2]);
+                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'YES', 'is_correct' => $isYes, 'sort_order' => 1]);
+                    QuestionOption::create(['question_id' => $question->id, 'text_value' => 'NO', 'is_correct' => !$isYes, 'sort_order' => 2]);
                 }
             } elseif ($mNum <= 20) {
                 // Missions 11 to 20: 4x Multiple Choice + 4x 2D Image Matching

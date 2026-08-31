@@ -120,7 +120,7 @@
 
             <div class="action-column">
                 <!-- Render global image EXCEPT for specific layouts that use their own images -->
-                <template x-if="currentQuestion.image && !['pattern', 'speak_repeat', 'speak-repeat', 'count_objects', 'count-objects'].includes(currentQuestion.type)">
+                <template x-if="currentQuestion.image && !['pattern', 'speak_repeat', 'speak-repeat', 'count_objects', 'count-objects', 'multiple_choice', 'tap_answer', 'listen_choose'].includes(currentQuestion.type)">
                     <img :src="currentQuestion.image" alt="Question" class="main-image" x-on:error="currentQuestion.image = null">
                 </template>
 
