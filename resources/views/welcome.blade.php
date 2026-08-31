@@ -752,7 +752,7 @@
                             <div class="relative w-44 h-44 rounded-2xl overflow-hidden bg-slate-800 border-2 border-amber-400 flex items-center justify-center shadow-inner">
                                 <img src="{{ asset('images/founder.jpg') }}" 
                                      alt="Obed Wanjohi - Founder & CEO" 
-                                     onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Obed+Wanjohi&background=7C3AED&color=fff&size=200';"
+                                     onerror="if (!this.dataset.retried) { this.dataset.retried = 'true'; this.src='{{ asset('images/founder.jpg.jpg') }}'; } else { this.onerror=null; this.src='https://ui-avatars.com/api/?name=Obed+Wanjohi&background=7C3AED&color=fff&size=200'; }"
                                      class="w-full h-full object-cover">
                             </div>
                         </div>
