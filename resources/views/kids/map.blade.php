@@ -253,7 +253,7 @@
                             $isCompleted = $mStatus === 'completed';
                             $starsEarned = $starsMap[$mission->id] ?? 0;
                             $isTracingWorld = $world->subject_category === 'tracing';
-                            $isUnlocked = $isTracingWorld || $loop->first || $prevCompleted || $isCompleted;
+                            $isUnlocked = true; // Unlocked ALL missions for instant testing!
                             $isActiveTarget = $isUnlocked && !$isCompleted && !$foundCurrent;
 
                             if ($isActiveTarget) {
