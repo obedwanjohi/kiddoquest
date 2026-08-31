@@ -42,6 +42,11 @@ class Subject extends Model
         return $this->hasMany(Topic::class)->orderBy('sort_order');
     }
 
+    public function adventureWorlds(): HasMany
+    {
+        return $this->hasMany(AdventureWorld::class);
+    }
+
     public function lessons(): \Illuminate\Database\Eloquent\Relations\HasManyThrough
     {
         return $this->hasManyThrough(Lesson::class, Topic::class);
