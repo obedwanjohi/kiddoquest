@@ -747,17 +747,20 @@
                     
                     {{-- Founder Image Container --}}
                     <div class="flex flex-col items-center text-center">
-                        <div class="relative group">
-                            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 via-purple-500 to-pink-500 rounded-3xl blur-md opacity-75 group-hover:opacity-100 transition duration-300"></div>
-                            <div class="relative w-44 h-44 rounded-2xl overflow-hidden bg-slate-800 border-2 border-amber-400 flex items-center justify-center shadow-inner">
+                        <div class="relative group cursor-pointer">
+                            {{-- Glowing Aura on Hover --}}
+                            <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 via-pink-500 to-purple-600 rounded-3xl blur-md opacity-70 group-hover:opacity-100 group-hover:blur-lg transition-all duration-500"></div>
+                            
+                            {{-- Image Container (object-top fixes head crop) --}}
+                            <div class="relative w-44 h-52 sm:w-48 sm:h-56 rounded-2xl overflow-hidden bg-slate-800 border-2 border-amber-400/80 group-hover:border-amber-300 transition-all duration-500 flex items-center justify-center shadow-2xl">
                                 <img src="{{ asset('images/founder.jpg') }}" 
                                      alt="Obed Wanjohi - Founder & CEO" 
                                      onerror="if (!this.dataset.retried) { this.dataset.retried = 'true'; this.src='{{ asset('images/founder.jpg.jpg') }}'; } else { this.onerror=null; this.src='https://ui-avatars.com/api/?name=Obed+Wanjohi&background=7C3AED&color=fff&size=200'; }"
-                                     class="w-full h-full object-cover">
+                                     class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500">
                             </div>
                         </div>
-                        <h3 class="font-heading text-xl font-black text-white mt-4">Obed Wanjohi</h3>
-                        <span class="text-xs font-black text-amber-400 bg-amber-500/20 px-3 py-1 rounded-full border border-amber-500/30 mt-1">
+                        <h3 class="font-heading text-xl font-black text-white mt-4 tracking-wide group-hover:text-amber-300 transition-colors">Obed Wanjohi</h3>
+                        <span class="text-xs font-black text-amber-400 bg-amber-500/20 px-3 py-1 rounded-full border border-amber-500/30 mt-1 shadow-sm">
                             Founder & CEO
                         </span>
                     </div>
