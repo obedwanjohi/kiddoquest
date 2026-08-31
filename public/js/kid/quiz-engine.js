@@ -560,30 +560,32 @@ function quizEngine(config) {
             this.matchedPairs = [];
             this.matchWrongPair = null;
 
-            // In our database seeding, left items have is_correct=false, right items have is_correct=true
-            // Split the options into left and right arrays
-            this.matchLeftItems = this.currentQuestion.options.filter(o => o.is_correct === false);
-            
-            const rightOpts = this.currentQuestion.options.filter(o => o.is_correct === true).map((o, i) => ({
+            // Split options into Left Column and Right Column
+            let leftOpts = this.currentQuestion.options.filter(o => o.is_correct === false);
+            let rightOpts = this.currentQuestion.options.filter(o => o.is_correct === true);
+
+            // If options weren't split by is_correct, split 50/50: first 2 left, last 2 right!
+            if (leftOpts.length === 0 || rightOpts.length === 0) {
+                const half = Math.ceil(this.currentQuestion.options.length / 2);
+                leftOpts = this.currentQuestion.options.slice(0, half);
+                rightOpts = this.currentQuestion.options.slice(half);
+            }
+
+            this.matchLeftItems = leftOpts.map((o, i) => ({
                 text: o.text,
                 image: o.image,
-                matchKey: o.match_key,
+                matchKey: o.match_key || o.matchKey,
                 originalIndex: i,
             }));
-            
-            // If the right items weren't seeded (old logic fallback), use the match_key of the left items
-            if (rightOpts.length === 0) {
-                this.matchLeftItems = [...this.currentQuestion.options];
-                const fallbackRight = this.currentQuestion.options.map((o, i) => ({
-                    text: o.match_key || o.text,
-                    image: null,
-                    matchKey: o.match_key,
-                    originalIndex: i,
-                }));
-                this.matchRightItems = this.shuffleArray([...fallbackRight]);
-            } else {
-                this.matchRightItems = this.shuffleArray([...rightOpts]);
-            }
+
+            const rightMapped = rightOpts.map((o, i) => ({
+                text: o.text,
+                image: o.image,
+                matchKey: o.match_key || o.matchKey,
+                originalIndex: i,
+            }));
+
+            this.matchRightItems = this.shuffleArray([...rightMapped]);
         },
 
         shuffleArray(arr) {
@@ -622,12 +624,15 @@ function quizEngine(config) {
             const leftOpt = this.matchLeftItems[leftIndex];
             const rightItem = this.matchRightItems[rightIndex];
 
-            if (leftOpt.match_key === rightItem.matchKey) {
+            const leftKey = leftOpt.matchKey || leftOpt.match_key;
+            const rightKey = rightItem.matchKey || rightItem.match_key;
+
+            if (leftKey && rightKey && leftKey === rightKey) {
                 // Correct match!
                 this.matchedPairs.push({
                     leftIndex: leftIndex,
                     rightIndex: rightIndex,
-                    matchKey: leftOpt.match_key,
+                    matchKey: leftKey,
                 });
 
                 if (window.KidQuizEvents) {
@@ -880,7 +885,16 @@ function quizEngine(config) {
                 selectSortBucket(bucketIndex) {
             this.resetIdleTimer();
             if (this.sortAnswered) return;
-            if (this.sortSelectedChip === null) return;
+
+            // If no chip was explicitly selected, pick the active unsorted target chip!
+            if (this.sortSelectedChip === null) {
+                const activeIndex = this.sortChips.findIndex(c => c.bucket === null);
+                if (activeIndex !== -1) {
+                    this.sortSelectedChip = activeIndex;
+                } else {
+                    return;
+                }
+            }
 
             const categoryName = this.sortCategories[bucketIndex];
 

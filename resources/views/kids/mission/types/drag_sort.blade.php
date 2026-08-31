@@ -1,11 +1,11 @@
 <template x-if="currentQuestion.type === 'drag_sort'">
     <div class="drag-sort-container">
         
-        <!-- TRAY (Unsorted items) -->
+        <!-- TRAY (Unsorted items - Show ONLY 1 Target Item at a time for Playgroup!) -->
         <div class="sort-tray">
             <template x-for="(chip, i) in sortChips" :key="i">
-                <template x-if="chip.bucket === null">
-                    <div class="sort-chip"
+                <template x-if="chip.bucket === null && i === sortChips.findIndex(c => c.bucket === null)">
+                    <div class="sort-chip selected active-target-chip"
                          :class="getSortChipClass(i)"
                          @click="selectSortChip(i)">
                         

@@ -340,7 +340,7 @@ class CreMissionsSeeder extends Seeder
                         'sort_order' => $q,
                     ]);
 
-                    $isYes = ($q <= 7);
+                    $isYes = ($mNum === 9 && $q === 7) ? false : (($mNum === 9 && $q === 8) ? true : ($q <= 7));
                     QuestionOption::create(['question_id' => $question->id, 'text_value' => 'YES', 'is_correct' => $isYes, 'sort_order' => 1]);
                     QuestionOption::create(['question_id' => $question->id, 'text_value' => 'NO', 'is_correct' => !$isYes, 'sort_order' => 2]);
                 }
