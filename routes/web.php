@@ -33,15 +33,21 @@ Route::get('/clear-cache', function() {
     return "<h1>✨ View Cache Cleared!</h1><p><a href='/'>Click here to return to Home Page</a></p>";
 });
 
-Route::get('/run-cre-seeder', function() {
+Route::get('/run-cre-seeder', function(\Illuminate\Http\Request $request) {
     try {
-        \Illuminate\Support\Facades\Artisan::call('db:seed', [
-            '--class' => 'CreMissionsSeeder',
-            '--force' => true,
-        ]);
+        $batch = $request->query('batch');
+        $seeder = new \Database\Seeders\CreMissionsSeeder();
+        $batchNum = $batch ? (int)$batch : null;
+        $seeder->run($batchNum);
+
+        $msg = $batchNum 
+            ? "🎉 Seeded CRE Batch {$batchNum} (Missions " . (($batchNum-1)*5 + 1) . " to " . ($batchNum*5) . ") Successfully!"
+            : "🎉 All 25 CRE Missions, 200 Questions, Audios, and Images Seeded Successfully!";
+
         return response()->json([
             'status' => 'success',
-            'message' => '🎉 All 25 CRE Missions, 200 Questions, Audios, and Images Seeded Successfully Live on Render!',
+            'message' => $msg,
+            'next_batch' => ($batchNum && $batchNum < 5) ? url("/run-cre-seeder?batch=" . ($batchNum + 1)) : null,
         ]);
     } catch (\Throwable $e) {
         return response()->json([
