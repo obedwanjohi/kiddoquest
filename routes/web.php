@@ -27,6 +27,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/clear-cache', function() {
+    \Illuminate\Support\Facades\Artisan::call('view:clear');
+    \Illuminate\Support\Facades\Artisan::call('cache:clear');
+    return "<h1>✨ View Cache Cleared!</h1><p><a href='/'>Click here to return to Home Page</a></p>";
+});
+
 Route::get('/build-all-full-scripts-now', function() {
     $base_dir = base_path() . "/";
 
