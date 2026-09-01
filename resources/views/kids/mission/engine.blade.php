@@ -68,9 +68,16 @@
 @endphp
 
 @php
-    $correctSoundUrl = \App\Models\Media::where('type', 'ILIKE', '%audio%')->where('name', 'ILIKE', '%correct%')->first()?->url;
-    $wrongSoundUrl   = \App\Models\Media::where('type', 'ILIKE', '%audio%')->where('name', 'ILIKE', '%wrong%')->first()?->url;
-    $celebSoundUrl   = \App\Models\Media::where('type', 'ILIKE', '%audio%')->where('name', 'ILIKE', '%celebration%')->first()?->url;
+    $soundFx = \Illuminate\Support\Facades\Cache::remember('kid_sound_fx_urls', 86400, function () {
+        return [
+            'correct' => \App\Models\Media::where('type', 'ILIKE', '%audio%')->where('name', 'ILIKE', '%correct%')->first()?->url,
+            'wrong'   => \App\Models\Media::where('type', 'ILIKE', '%audio%')->where('name', 'ILIKE', '%wrong%')->first()?->url,
+            'celeb'   => \App\Models\Media::where('type', 'ILIKE', '%audio%')->where('name', 'ILIKE', '%celebration%')->first()?->url,
+        ];
+    });
+    $correctSoundUrl = $soundFx['correct'] ?? null;
+    $wrongSoundUrl   = $soundFx['wrong'] ?? null;
+    $celebSoundUrl   = $soundFx['celeb'] ?? null;
 @endphp
 <script>
     window.KID_SOUND_FX = {

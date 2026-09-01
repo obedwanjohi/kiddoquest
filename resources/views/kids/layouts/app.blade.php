@@ -14,12 +14,11 @@
 @endpush
 
 @section('content')
-    <div id="kid-app-viewport" class="kid-app {{ $themeClass }}" style="font-family: var(--kid-font-body); background: var(--kid-bg); color: var(--kid-text);">
+    <div class="kid-app {{ $themeClass }}" style="font-family: var(--kid-font-body); background: var(--kid-bg); color: var(--kid-text);">
         @yield('kid-content')
     </div>
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/kid/kid-spa-router.js') }}?v={{ time() }}"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 @endpush

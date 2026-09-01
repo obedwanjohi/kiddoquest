@@ -1684,13 +1684,7 @@ function quizEngine(config) {
                 console.log('✅ BACKEND RESPONSE STATUS:', response.status, data);
 
                 if (response.ok && data.success) {
-                    // Navigate cleanly via SPA
-                    const targetUrl = data.redirect_url || config.exitUrl;
-                    if (window.KidSPA) {
-                        window.KidSPA.navigate(targetUrl);
-                    } else {
-                        window.location.href = targetUrl;
-                    }
+                    window.location.href = data.redirect_url || config.exitUrl;
                 } else {
                     console.error('❌ SUBMISSION FAILED:', data);
                     alert('Server error saving quiz: ' + (data.error || JSON.stringify(data)));
@@ -1704,11 +1698,7 @@ function quizEngine(config) {
         // ---- EXIT / RESTART ----
         exitQuiz() {
             if (confirm('Leave the quiz? Your progress will be saved.')) {
-                if (window.KidSPA) {
-                    window.KidSPA.navigate(config.exitUrl);
-                } else {
-                    window.location.href = config.exitUrl;
-                }
+                window.location.href = config.exitUrl;
             }
         },
 
