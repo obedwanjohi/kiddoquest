@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
 
 class CreMissionsSeeder extends Seeder
 {
-    public function run(?int $batch = null): void
+    public function run(?int $worldOrBatch = null, ?int $singleMission = null): void
     {
         // 1. CRE Subject & Topic
         $pgLevel = \App\Models\Level::where('code', 'PG')->first() 
@@ -85,19 +85,37 @@ class CreMissionsSeeder extends Seeder
             ]
         );
 
-        // Quiz Types
-        $mcTypeId = QuizType::where('code', 'QT-01')->orWhere('slug', 'multiple-choice')->value('id') ?? 1;
-        $tfTypeId = QuizType::where('code', 'QT-02')->orWhere('slug', 'true-false')->value('id') ?? 2;
-        $matchTypeId = QuizType::where('code', 'QT-03')->orWhere('slug', 'matching')->value('id') ?? 3;
-        $sortTypeId = QuizType::where('code', 'QT-04')->orWhere('slug', 'drag-sort')->value('id') ?? 4;
+        // Ensure Quiz Types are properly resolved with 100% precision
+        $mcType = QuizType::where('slug', 'multiple-choice')->orWhere('slug', 'multiple_choice')->orWhere('code', 'QT-01')->first()
+            ?? QuizType::firstOrCreate(
+                ['slug' => 'multiple-choice'],
+                ['code' => 'QT-01', 'name' => 'Multiple Choice', 'interaction_mode' => 'tap', 'has_options' => true, 'is_scoring_type' => true]
+            );
 
-        // Determine range based on world/batch parameter
+        $tfType = QuizType::where('slug', 'true-false')->orWhere('slug', 'true_false')->orWhere('code', 'QT-02')->first()
+            ?? QuizType::firstOrCreate(
+                ['slug' => 'true-false'],
+                ['code' => 'QT-02', 'name' => 'True / False', 'interaction_mode' => 'tap', 'has_options' => true, 'is_scoring_type' => true]
+            );
+
+        $mcTypeId = $mcType->id;
+        $tfTypeId = $tfType->id;
+
+        // Determine range based on parameters
         $startMission = 1;
         $endMission = 25;
 
-        if ($batch === 1) { $startMission = 1; $endMission = 10; }
-        elseif ($batch === 2) { $startMission = 11; $endMission = 20; }
-        elseif ($batch === 3) { $startMission = 21; $endMission = 25; }
+        if ($singleMission) {
+            $startMission = $singleMission;
+            $endMission = $singleMission;
+        } elseif ($worldOrBatch === 1) { $startMission = 1; $endMission = 10; }
+        elseif ($worldOrBatch === 2) { $startMission = 11; $endMission = 20; }
+        elseif ($worldOrBatch === 3) { $startMission = 21; $endMission = 25; }
+        elseif ($worldOrBatch === 101) { $startMission = 1; $endMission = 5; }
+        elseif ($worldOrBatch === 102) { $startMission = 6; $endMission = 10; }
+        elseif ($worldOrBatch === 103) { $startMission = 11; $endMission = 15; }
+        elseif ($worldOrBatch === 104) { $startMission = 16; $endMission = 20; }
+        elseif ($worldOrBatch === 105) { $startMission = 21; $endMission = 25; }
 
         // 3. Complete Audited Mission Data Definitions (Missions 1 to 25)
         $allMissions = [
@@ -168,7 +186,7 @@ class CreMissionsSeeder extends Seeder
                 'world' => $jesusWorld, 'title' => 'Jesus Loves the Children 👧🧒',
                 'q_imgs' => ['cre_m11_jesus_kids.webp', 'cre_m11_happy_child.webp', 'cre_m11_heart_love.webp', 'cre_m11_happy_child.webp'],
                 'distractors' => ['cre_m11_happy_child.webp', 'cre_m11_heart_love.webp', 'cre_m11_jesus_kids.webp', 'cre_m11_heart_love.webp'],
-                'tf_imgs' => ['cre_m11_jesus_kids.webp', 'cre_m11_happy_child.webp', 'cre_m11_heart_love.webp', 'cre_m11_jesus_kids.webp']
+                'tf_imgs' => ['cre_m11_jesus_kids.webp', 'cre_m11_heart_love.webp', 'cre_m11_happy_child.webp', 'cre_m11_jesus_kids.webp']
             ],
             12 => [
                 'world' => $jesusWorld, 'title' => 'Baby Jesus in the Manger 👶⭐',
@@ -186,7 +204,7 @@ class CreMissionsSeeder extends Seeder
                 'world' => $jesusWorld, 'title' => 'Jesus Calms the Storm ⛵🌊',
                 'q_imgs' => ['cre_m14_jesus_ship.webp', 'cre_m14_boat.webp', 'cre_m14_calm_water.webp', 'cre_m14_calm_water.webp'],
                 'distractors' => ['cre_m14_boat.webp', 'cre_m14_calm_water.webp', 'cre_m14_jesus_ship.webp', 'cre_m14_boat.webp'],
-                'tf_imgs' => ['cre_m14_jesus_ship.webp', 'cre_m14_boat.webp', 'cre_m14_calm_water.webp', 'cre_m14_boat.webp']
+                'tf_imgs' => ['cre_m14_calm_water.webp', 'cre_m14_jesus_ship.webp', 'cre_m14_boat.webp', 'cre_m14_calm_water.webp']
             ],
             15 => [
                 'world' => $jesusWorld, 'title' => 'Jesus Feeds 5,000 🍞🐟',
@@ -204,13 +222,13 @@ class CreMissionsSeeder extends Seeder
                 'world' => $jesusWorld, 'title' => 'Jesus is My Kind Friend 🤝',
                 'q_imgs' => ['cre_m17_friend.webp', 'cre_m17_hug.webp', 'cre_m17_handshake.webp', 'cre_m17_hug.webp'],
                 'distractors' => ['cre_m17_hug.webp', 'cre_m17_handshake.webp', 'cre_m17_friend.webp', 'cre_m17_handshake.webp'],
-                'tf_imgs' => ['cre_m17_friend.webp', 'cre_m17_hug.webp', 'cre_m17_handshake.webp', 'cre_m17_hug.webp']
+                'tf_imgs' => ['cre_m17_friend.webp', 'cre_m17_hug.webp', 'cre_m17_handshake.webp', 'cre_m17_friend.webp']
             ],
             18 => [
                 'world' => $jesusWorld, 'title' => 'Jesus Prays to Father 🙏✨',
                 'q_imgs' => ['cre_m18_jesus_pray.webp', 'cre_m18_light.webp', 'cre_m18_mountain.webp', 'cre_m18_jesus_pray.webp'],
                 'distractors' => ['cre_m18_light.webp', 'cre_m18_mountain.webp', 'cre_m18_jesus_pray.webp', 'cre_m18_light.webp'],
-                'tf_imgs' => ['cre_m18_jesus_pray.webp', 'cre_m18_mountain.webp', 'cre_m18_light.webp', 'cre_m18_jesus_pray.webp']
+                'tf_imgs' => ['cre_m18_jesus_pray.webp', 'cre_m18_light.webp', 'cre_m18_mountain.webp', 'cre_m18_jesus_pray.webp']
             ],
             19 => [
                 'world' => $jesusWorld, 'title' => 'Resurrection Joy & Easter ✝️🌸',
@@ -300,7 +318,7 @@ class CreMissionsSeeder extends Seeder
                 ]
             );
 
-            $this->seedQuestionsForMission($qBank, $mNum, $mData, $mcTypeId, $tfTypeId, $matchTypeId, $sortTypeId);
+            $this->seedQuestionsForMission($qBank, $mNum, $mData, $mcTypeId, $tfTypeId);
         }
 
         if ($this->command) {
@@ -308,7 +326,7 @@ class CreMissionsSeeder extends Seeder
         }
     }
 
-    private function seedQuestionsForMission($qBank, $mNum, $mData, $mcTypeId, $tfTypeId, $matchTypeId, $sortTypeId): void
+    private function seedQuestionsForMission($qBank, $mNum, $mData, $mcTypeId, $tfTypeId): void
     {
         for ($q = 1; $q <= 8; $q++) {
             $audioUrl = "/audio/m11/cre_m{$mNum}_q{$q}.mp3";

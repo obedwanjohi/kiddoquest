@@ -35,7 +35,23 @@ Route::get('/clear-cache', function() {
 
 Route::get('/seed-cre', function(\Illuminate\Http\Request $request) {
     $world = $request->query('world');
+    $batch = $request->query('batch');
+    $mission = $request->query('mission');
+
     $seeder = new \Database\Seeders\CreMissionsSeeder();
+    
+    if ($mission) {
+        $seeder->run(null, (int)$mission);
+        return "<h1>🎯 CRE Mission {$mission} Seeded Successfully!</h1><p>👉 <a href='/kids'>Click here to play</a></p>";
+    }
+    
+    if ($batch) {
+        $batchNum = (int)$batch + 100; // 101, 102, 103, 104, 105
+        $seeder->run($batchNum, null);
+        $nextBatch = (int)$batch < 5 ? (int)$batch + 1 : 1;
+        return "<h1>📦 CRE Batch {$batch} (Missions " . (((int)$batch - 1) * 5 + 1) . " to " . min(25, (int)$batch * 5) . ") Seeded Successfully!</h1><p>👉 Click here to seed next batch: <a href='/seed-cre?batch={$nextBatch}'>https://www.kiddoquest.co.ke/seed-cre?batch={$nextBatch}</a></p>";
+    }
+
     $seeder->run($world ? (int)$world : null);
 
     if ($world == 1) {
