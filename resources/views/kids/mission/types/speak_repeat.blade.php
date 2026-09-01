@@ -2,14 +2,14 @@
     <div class="speak-layout">
         
         <div class="speak-target-card">
-            <!-- Global action-column image rendered manually here to better control layout -->
-            <template x-if="currentQuestion.image">
-                <img :src="currentQuestion.image" class="speak-image">
+            <!-- Target Card Image (Prompt Image or Option 1 Image) -->
+            <template x-if="currentQuestion.image || (currentQuestion.options && currentQuestion.options[0] && currentQuestion.options[0].image)">
+                <img :src="currentQuestion.image || currentQuestion.options[0].image" class="speak-image" x-on:error="$el.style.display='none'">
             </template>
             
             <div class="speak-word">
-                <span x-text="speakTargetWord"></span>
-                <button @click.prevent="playTargetWord()" class="speak-audio-btn" :class="{ 'playing': isSpeaking }">🔊</button>
+                <span x-text="speakTargetWord || (currentQuestion.options && currentQuestion.options[0] ? currentQuestion.options[0].text : '')" style="text-transform: capitalize;"></span>
+                <button @click.prevent="playTargetWord()" class="speak-audio-btn" :class="{ 'playing': isSpeaking }" aria-label="Play Word Audio">🔊</button>
             </div>
         </div>
 

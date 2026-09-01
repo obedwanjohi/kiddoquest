@@ -6,6 +6,7 @@ use App\Models\AdventureWorld;
 use App\Models\Lesson;
 use App\Models\Mission;
 use App\Models\QuestionBank;
+use App\Models\QuestionOption;
 use App\Models\QuizQuestion;
 use App\Models\QuizType;
 use App\Models\Subject;
@@ -56,7 +57,7 @@ class SpeakRepeatWorldSeeder extends Seeder
         $speakType = QuizType::where('slug', 'speak-repeat')->orWhere('slug', 'speak_repeat')->orWhere('code', 'QT-07')->first()
             ?? QuizType::firstOrCreate(
                 ['slug' => 'speak-repeat'],
-                ['code' => 'QT-07', 'name' => 'Speak & Repeat', 'interaction_mode' => 'voice', 'has_options' => false, 'is_scoring_type' => false]
+                ['code' => 'QT-07', 'name' => 'Speak & Repeat', 'interaction_mode' => 'voice', 'has_options' => true, 'is_scoring_type' => true]
             );
 
         $speakTypeId = $speakType->id;
@@ -102,25 +103,43 @@ class SpeakRepeatWorldSeeder extends Seeder
         );
 
         // --- QUESTION 1: CAT ---
-        QuizQuestion::create([
+        $q1 = QuizQuestion::create([
             'question_bank_id' => $qBank->id,
             'quiz_type_id' => $speakTypeId,
             'prompt' => "Listen carefully and say out loud: Cat!",
             'prompt_audio_url' => "/audio/m11/speak_cat.mp3",
-            'prompt_image_url' => "/images/speak/cat.webp",
+            'prompt_image_url' => "/images/speak/cat.jpg",
             'points' => 10,
             'sort_order' => 1,
         ]);
 
+        QuestionOption::create([
+            'question_id' => $q1->id,
+            'text_value' => 'Cat',
+            'image_url' => '/images/speak/cat.jpg',
+            'audio_url' => '/audio/m11/speak_cat.mp3',
+            'is_correct' => true,
+            'sort_order' => 1,
+        ]);
+
         // --- QUESTION 2: COW ---
-        QuizQuestion::create([
+        $q2 = QuizQuestion::create([
             'question_bank_id' => $qBank->id,
             'quiz_type_id' => $speakTypeId,
             'prompt' => "Listen carefully and say out loud: Cow!",
             'prompt_audio_url' => "/audio/m11/speak_cow.mp3",
-            'prompt_image_url' => "/images/speak/cow.webp",
+            'prompt_image_url' => "/images/speak/cow.jpg",
             'points' => 10,
             'sort_order' => 2,
+        ]);
+
+        QuestionOption::create([
+            'question_id' => $q2->id,
+            'text_value' => 'Cow',
+            'image_url' => '/images/speak/cow.jpg',
+            'audio_url' => '/audio/m11/speak_cow.mp3',
+            'is_correct' => true,
+            'sort_order' => 1,
         ]);
     }
 }
