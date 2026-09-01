@@ -68,56 +68,69 @@
     </div>
 </div>
 @else
-<div class="table-responsive">
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Subject</th>
-            <th>Default Type</th>
-            <th>Difficulty</th>
-            <th>Questions</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($banks as $bank)
-        <tr>
-            <td>
-                <strong><a href="{{ route('admin.question-banks.show', $bank) }}">{{ $bank->name }}</a></strong>
-                @if ($bank->description)
-                <br><small class="text-muted">{{ Str::limit($bank->description, 60) }}</small>
-                @endif
-            </td>
-            <td>{{ $bank->subject?->name ?? '—' }}</td>
-            <td>{{ $bank->quizType?->name ?? '—' }}</td>
-            <td>
-                @if ($bank->difficulty)
-                <span class="badge difficulty-{{ $bank->difficulty }}">{{ ucfirst($bank->difficulty) }}</span>
-                @endif
-            </td>
-            <td>
-                <strong>{{ $bank->pool_size }}</strong> /
-                @php
-                    $totalCount = max($bank->assigned_questions_count, $bank->questions_count);
-                @endphp
-                {{ $totalCount }}
-            </td>
-            <td><span class="status-badge status-{{ $bank->status }}">{{ ucfirst($bank->status) }}</span></td>
-            <td>
-                <a href="{{ route('admin.question-banks.questions', $bank) }}" class="btn-sm btn-primary" title="Manage Questions">📋</a>
-                <a href="{{ route('admin.question-banks.show', $bank) }}" class="btn-sm">View</a>
-                <a href="{{ route('admin.question-banks.edit', $bank) }}" class="btn-sm">Edit</a>
-                <a href="{{ route('admin.question-banks.preview', $bank) }}" class="btn-sm">Preview</a>
-                <form method="POST" action="{{ route('admin.question-banks.duplicate', $bank) }}" style="display:inline">
-                    @csrf
-                    <button type="submit" class="btn-sm">Duplicate</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
+<form method="POST" action="{{ route('admin.question-banks.bulk-destroy') }}" id="bulkBankDeleteForm" onsubmit="return confirm('Are you sure you want to delete ALL selected question banks? This action cannot be undone!')">
+    @csrf
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; background:#f8fafc; padding:10px 16px; border-radius:8px; border:1px solid #e2e8f0;">
+        <div style="display:flex; align-items:center; gap:10px;">
+            <input type="checkbox" id="selectAllBanks" style="width:18px; height:18px; cursor:pointer;" onclick="document.querySelectorAll('.bank-checkbox').forEach(cb => cb.checked = this.checked)">
+            <label for="selectAllBanks" style="font-weight:700; font-size:13px; margin:0; cursor:pointer; color:#334155;">Select All Visible Banks</label>
+        </div>
+        <button type="submit" class="btn-sm" style="background:#ef4444; color:white; border:none; padding:6px 14px; border-radius:6px; font-weight:700; cursor:pointer;">🗑️ Delete Selected Banks</button>
+    </div>
+
+    <div class="table-responsive">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th style="width:40px;">#</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Default Type</th>
+                <th>Difficulty</th>
+                <th>Questions</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($banks as $bank)
+            <tr>
+                <td>
+                    <input type="checkbox" name="ids[]" value="{{ $bank->id }}" class="bank-checkbox" style="width:16px; height:16px; cursor:pointer;">
+                </td>
+                <td>
+                    <strong><a href="{{ route('admin.question-banks.show', $bank) }}">{{ $bank->name }}</a></strong>
+                    @if ($bank->description)
+                    <br><small class="text-muted">{{ Str::limit($bank->description, 60) }}</small>
+                    @endif
+                </td>
+                <td>{{ $bank->subject?->name ?? '—' }}</td>
+                <td>{{ $bank->quizType?->name ?? '—' }}</td>
+                <td>
+                    @if ($bank->difficulty)
+                    <span class="badge difficulty-{{ $bank->difficulty }}">{{ ucfirst($bank->difficulty) }}</span>
+                    @endif
+                </td>
+                <td>
+                    <strong>{{ $bank->pool_size }}</strong> /
+                    @php
+                        $totalCount = max($bank->assigned_questions_count, $bank->questions_count);
+                    @endphp
+                    {{ $totalCount }}
+                </td>
+                <td><span class="status-badge status-{{ $bank->status }}">{{ ucfirst($bank->status) }}</span></td>
+                <td>
+                    <a href="{{ route('admin.question-banks.questions', $bank) }}" class="btn-sm btn-primary" title="Manage Questions">📋</a>
+                    <a href="{{ route('admin.question-banks.show', $bank) }}" class="btn-sm">View</a>
+                    <a href="{{ route('admin.question-banks.edit', $bank) }}" class="btn-sm">Edit</a>
+                    <a href="{{ route('admin.question-banks.preview', $bank) }}" class="btn-sm">Preview</a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    </div>
+</form>
 </table>
 </div>
 

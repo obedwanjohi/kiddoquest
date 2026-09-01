@@ -80,27 +80,22 @@ Route::get('/reset-cre-progress', function() {
 });
 
 Route::get('/purge-cre-db', function() {
-    $worldIds = \App\Models\AdventureWorld::whereIn('slug', ['creation-realm', 'jesus-realm', 'christian-values-realm'])->pluck('id');
-    $creMissions = \App\Models\Mission::withTrashed()->whereIn('adventure_world_id', $worldIds)->get();
-    $missionIds = $creMissions->pluck('id');
-    $qBankIds = $creMissions->pluck('question_bank_id')->filter();
+    // 1. Wipe all question options & questions
+    \App\Models\QuestionOption::query()->delete();
+    \Illuminate\Support\Facades\DB::table('question_bank_questions')->delete();
+    \App\Models\QuizQuestion::withTrashed()->forceDelete();
+    \App\Models\QuestionBank::query()->delete();
 
-    // 1. Attempts & Progress
-    \App\Models\ChildQuestionAttempt::whereIn('mission_id', $missionIds)->delete();
-    \App\Models\MissionAttempt::whereIn('mission_id', $missionIds)->delete();
-    \App\Models\ChildProgress::whereIn('mission_id', $missionIds)->delete();
+    // 2. Wipe all attempts and child progress history
+    \App\Models\ChildQuestionAttempt::query()->delete();
+    \App\Models\MissionAttempt::query()->delete();
+    \App\Models\ChildProgress::query()->delete();
 
-    // 2. Options, Pivots & Questions
-    $qIds = \App\Models\QuizQuestion::whereIn('question_bank_id', $qBankIds)->pluck('id');
-    \App\Models\QuestionOption::whereIn('question_id', $qIds)->delete();
-    \Illuminate\Support\Facades\DB::table('question_bank_questions')->whereIn('question_bank_id', $qBankIds)->delete();
-    \App\Models\QuizQuestion::whereIn('question_bank_id', $qBankIds)->forceDelete();
+    // 3. Wipe all missions and lessons completely
+    \App\Models\Mission::withTrashed()->forceDelete();
+    \App\Models\Lesson::query()->delete();
 
-    // 3. Missions & Question Banks
-    \App\Models\Mission::withTrashed()->whereIn('id', $missionIds)->forceDelete();
-    \App\Models\QuestionBank::whereIn('id', $qBankIds)->delete();
-
-    return "<h1>🔥 ALL CRE DATABASE RECORDS SURGICALLY PURGED!</h1><p>The database is 100% clean for CRE. You can now seed freshly!</p>";
+    return "<h1>🔥 100% ABSOLUTE TOTAL DATABASE PURGE COMPLETE!</h1><p>Every single mission, lesson, question, option, attempt, and progress record has been wiped to 0! Database is 100% clean and fresh!</p>";
 });
 
 Route::get('/build-all-full-scripts-now', function() {
@@ -421,11 +416,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/lessons/{lesson}/reject', [App\Http\Controllers\Admin\LessonController::class, 'reject'])->name('lessons.reject');
     Route::resource('/lessons', App\Http\Controllers\Admin\LessonController::class);
     Route::get('/missions', [App\Http\Controllers\Admin\MissionController::class, 'globalIndex'])->name('missions.index');
+    Route::delete('/missions/{mission}/global-delete', [App\Http\Controllers\Admin\MissionController::class, 'destroyGlobal'])->name('missions.destroy-global');
+    Route::post('/missions/bulk-destroy', [App\Http\Controllers\Admin\MissionController::class, 'bulkDestroyGlobal'])->name('missions.bulk-destroy');
     Route::resource('lessons.missions', App\Http\Controllers\Admin\MissionController::class);
     Route::resource('/missions', App\Http\Controllers\Admin\MissionController::class);
 
     // Quizzes & Question Banks
     Route::resource('/quizzes', App\Http\Controllers\Admin\QuizController::class);
+    Route::post('/question-banks/bulk-destroy', [App\Http\Controllers\Admin\QuestionBankController::class, 'bulkDestroy'])->name('question-banks.bulk-destroy');
     Route::get('/question-banks/{questionBank}/questions', [App\Http\Controllers\Admin\QuestionBankController::class, 'manageQuestions'])->name('question-banks.questions');
     Route::get('/question-bank/{questionBank}/questions', [App\Http\Controllers\Admin\QuestionBankController::class, 'manageQuestions'])->name('question-bank.questions');
     Route::post('/question-banks/{questionBank}/assign-questions', [App\Http\Controllers\Admin\QuestionBankController::class, 'assignQuestions'])->name('question-banks.assign-questions');

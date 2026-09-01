@@ -369,11 +369,39 @@ class QuestionBankController extends Controller
     public function destroy(QuestionBank $questionBank)
     {
         $name = $questionBank->name;
+        
+        // Wipe questions & options belonging to this bank
+        $qIds = \App\Models\QuizQuestion::whereIn('question_bank_id', [$questionBank->id])->pluck('id');
+        \App\Models\QuestionOption::whereIn('question_id', $qIds)->delete();
+        \Illuminate\Support\Facades\DB::table('question_bank_questions')->whereIn('question_bank_id', [$questionBank->id])->delete();
+        \App\Models\QuizQuestion::whereIn('question_bank_id', [$questionBank->id])->forceDelete();
+        
         $questionBank->delete();
 
         return redirect()
             ->route('admin.question-banks.index')
             ->with('success', "🗑️ Question Bank '{$name}' deleted.");
+    }
+
+    public function bulkDestroy(Request $request)
+    {
+        $validated = $request->validate([
+            'ids'   => 'required|array|min:1',
+            'ids.*' => 'exists:question_banks,id',
+        ]);
+
+        $ids = $validated['ids'];
+        
+        $qIds = \App\Models\QuizQuestion::whereIn('question_bank_id', $ids)->pluck('id');
+        \App\Models\QuestionOption::whereIn('question_id', $qIds)->delete();
+        \Illuminate\Support\Facades\DB::table('question_bank_questions')->whereIn('question_bank_id', $ids)->delete();
+        \App\Models\QuizQuestion::whereIn('question_bank_id', $ids)->forceDelete();
+        
+        $count = QuestionBank::whereIn('id', $ids)->delete();
+
+        return redirect()
+            ->route('admin.question-banks.index')
+            ->with('success', "🗑️ Successfully bulk deleted {$count} Question Bank(s)!");
     }
 
     /**

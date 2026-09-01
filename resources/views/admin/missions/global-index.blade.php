@@ -60,43 +60,55 @@
 @endif
 
 @if ($missions->isNotEmpty())
-    <div style="display:grid;gap:12px;margin-top:16px;">
-        @foreach ($missions as $mission)
-            <div class="card" style="border-left:4px solid {{ $mission->status_color }};">
-                <div class="card-header">
-                    <h4>
-                        @if ($mission->thumbnailMedia)
-                            <img src="{{ $mission->thumbnailMedia->url }}" style="width:40px;height:40px;border-radius:8px;object-fit:cover;vertical-align:middle;margin-right:8px;">
-                        @else
-                            <span style="font-size:28px;vertical-align:middle;">🎯</span>
-                        @endif
-                        {{ $mission->title }}
-                        <span class="badge badge-{{ $mission->status }}" style="margin-left:8px;">{{ ucfirst(str_replace('_', ' ', $mission->status)) }}</span>
-                    </h4>
-                    <div style="display:flex;gap:6px;">
-                        <a href="{{ route('admin.lessons.missions.show', [$mission->lesson, $mission]) }}" class="btn btn-secondary" style="font-size:12px;">👁 View</a>
-                        <a href="{{ route('admin.lessons.missions.edit', [$mission->lesson, $mission]) }}" class="btn btn-secondary" style="font-size:12px;">✏ Edit</a>
-                    </div>
-                </div>
-                <div class="card-body" style="padding:10px 16px;">
-                    <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:#64748b;">
-                        <span><strong>📝 Lesson:</strong> <a href="{{ route('admin.lessons.show', $mission->lesson) }}">{{ $mission->lesson->title }}</a></span>
-                        @if ($mission->lesson && $mission->lesson->topic)
-                            <span><strong>📚 Subject:</strong> {{ $mission->lesson->topic->subject->name ?? '—' }}</span>
-                        @endif
-                        @if ($mission->questionBank)
-                            <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:10px;">📋 {{ $mission->questionBank->name }}</span>
-                        @endif
-                        <span>⭐ {{ $mission->stars_reward }}</span>
-                        <span>📊 {{ $mission->pass_threshold_percent }}%</span>
-                        @if ($mission->video_url || $mission->videoMedia)
-                            <span>🎬 Video ✓</span>
-                        @endif
-                    </div>
-                </div>
+    <form method="POST" action="{{ route('admin.missions.bulk-destroy') }}" onsubmit="return confirm('Are you sure you want to delete ALL selected missions?')">
+        @csrf
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px; margin-bottom:12px; background:#f8fafc; padding:10px 16px; border-radius:8px; border:1px solid #e2e8f0;">
+            <div style="display:flex; align-items:center; gap:10px;">
+                <input type="checkbox" id="selectAllMissions" style="width:18px; height:18px; cursor:pointer;" onclick="document.querySelectorAll('.mission-checkbox').forEach(cb => cb.checked = this.checked)">
+                <label for="selectAllMissions" style="font-weight:700; font-size:13px; margin:0; cursor:pointer; color:#334155;">Select All Visible Missions</label>
             </div>
-        @endforeach
-    </div>
+            <button type="submit" class="btn btn-danger" style="background:#ef4444; color:white; border:none; padding:6px 14px; border-radius:6px; font-weight:700; cursor:pointer;">🗑️ Delete Selected Missions</button>
+        </div>
+
+        <div style="display:grid;gap:12px;">
+            @foreach ($missions as $mission)
+                <div class="card" style="border-left:4px solid {{ $mission->status_color }};">
+                    <div class="card-header">
+                        <h4>
+                            <input type="checkbox" name="ids[]" value="{{ $mission->id }}" class="mission-checkbox" style="width:18px; height:18px; margin-right:8px; cursor:pointer;">
+                            @if ($mission->thumbnailMedia)
+                                <img src="{{ $mission->thumbnailMedia->url }}" style="width:40px;height:40px;border-radius:8px;object-fit:cover;vertical-align:middle;margin-right:8px;">
+                            @else
+                                <span style="font-size:28px;vertical-align:middle;">🎯</span>
+                            @endif
+                            {{ $mission->title }}
+                            <span class="badge badge-{{ $mission->status }}" style="margin-left:8px;">{{ ucfirst(str_replace('_', ' ', $mission->status)) }}</span>
+                        </h4>
+                        <div style="display:flex;gap:6px;">
+                            <a href="{{ route('admin.lessons.missions.show', [$mission->lesson, $mission]) }}" class="btn btn-secondary" style="font-size:12px;">👁 View</a>
+                            <a href="{{ route('admin.lessons.missions.edit', [$mission->lesson, $mission]) }}" class="btn btn-secondary" style="font-size:12px;">✏ Edit</a>
+                        </div>
+                    </div>
+                    <div class="card-body" style="padding:10px 16px;">
+                        <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:#64748b;">
+                            <span><strong>📝 Lesson:</strong> <a href="{{ route('admin.lessons.show', $mission->lesson) }}">{{ $mission->lesson->title }}</a></span>
+                            @if ($mission->lesson && $mission->lesson->topic)
+                                <span><strong>📚 Subject:</strong> {{ $mission->lesson->topic->subject->name ?? '—' }}</span>
+                            @endif
+                            @if ($mission->questionBank)
+                                <span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:10px;">📋 {{ $mission->questionBank->name }}</span>
+                            @endif
+                            <span>⭐ {{ $mission->stars_reward }}</span>
+                            <span>📊 {{ $mission->pass_threshold_percent }}%</span>
+                            @if ($mission->video_url || $mission->videoMedia)
+                                <span>🎬 Video ✓</span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </form>
 
     {{-- Pagination --}}
     <div style="margin-top:20px;">

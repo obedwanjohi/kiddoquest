@@ -161,10 +161,33 @@ class MissionController extends Controller
     public function destroy(Lesson $lesson, Mission $mission)
     {
         $title = $mission->title;
-        $mission->delete();
+        $mission->forceDelete();
 
         return redirect()->route('admin.lessons.missions.index', $lesson)
             ->with('success', "Mission \"{$title}\" deleted.");
+    }
+
+    public function destroyGlobal(Mission $mission)
+    {
+        $title = $mission->title;
+        $mission->forceDelete();
+
+        return redirect()->back()
+            ->with('success', "🗑️ Mission \"{$title}\" deleted successfully.");
+    }
+
+    public function bulkDestroyGlobal(Request $request)
+    {
+        $validated = $request->validate([
+            'ids'   => 'required|array|min:1',
+            'ids.*' => 'exists:missions,id',
+        ]);
+
+        $ids = $validated['ids'];
+        $count = Mission::withTrashed()->whereIn('id', $ids)->forceDelete();
+
+        return redirect()->back()
+            ->with('success', "🗑️ Successfully bulk deleted {$count} Mission(s)!");
     }
 
     public function duplicate(Lesson $lesson, Mission $mission)
