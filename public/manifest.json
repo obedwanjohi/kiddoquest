@@ -1,4 +1,5 @@
 {
+  "id": "https://www.kiddoquest.co.ke/kids/profiles",
   "name": "KiddoQuest CBC — Learning Adventure",
   "short_name": "KiddoQuest",
   "description": "Fun CBC learning games, tracing, phonics, math, and speech practice for kids!",
@@ -7,12 +8,25 @@
   "orientation": "any",
   "background_color": "#FAF5FF",
   "theme_color": "#3B82F6",
+  "categories": ["education", "kids", "games"],
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "192x192 512x512",
-      "type": "image/svg+xml",
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ]
 }
