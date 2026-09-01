@@ -2,7 +2,7 @@
   "name": "KiddoQuest CBC — Learning Adventure",
   "short_name": "KiddoQuest",
   "description": "Fun CBC learning games, tracing, phonics, math, and speech practice for kids!",
-  "start_url": "/kids",
+  "start_url": "/kids/profiles",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#FAF5FF",
