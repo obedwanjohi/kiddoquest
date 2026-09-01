@@ -133,9 +133,9 @@
             </div>
         </div>
 
-        {{-- 2. SUBJECT WORLD SELECTOR TABS (5 Touch-Friendly 3D Buttons) --}}
+        {{-- 2. SUBJECT WORLD SELECTOR TABS (6 Touch-Friendly 3D Buttons) --}}
         <div class="mb-6">
-            <div class="grid grid-cols-5 gap-1 sm:gap-2">
+            <div class="grid grid-cols-6 gap-1 sm:gap-2">
                 {{-- All Worlds --}}
                 <button @click="activeSubject = 'all'"
                         :class="activeSubject === 'all' ? 'bg-indigo-600 text-white shadow-[0_4px_0_#3730A3] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
@@ -158,6 +158,14 @@
                         class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
                     <span class="text-lg sm:text-2xl">📖</span>
                     <span class="text-[9px] sm:text-xs font-black leading-tight">Phonics</span>
+                </button>
+
+                {{-- Speak & Vocabulary --}}
+                <button @click="activeSubject = 'speak'"
+                        :class="activeSubject === 'speak' ? 'bg-pink-600 text-white shadow-[0_4px_0_#9D174D] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
+                        class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
+                    <span class="text-lg sm:text-2xl">🎙️</span>
+                    <span class="text-[9px] sm:text-xs font-black leading-tight">Speak</span>
                 </button>
 
                 {{-- Tracing & Writing --}}
