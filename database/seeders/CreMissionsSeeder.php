@@ -104,7 +104,7 @@ class CreMissionsSeeder extends Seeder
             1 => [
                 'world' => $creationWorld, 'title' => 'God Made Sky & Sun ☀️',
                 'q_imgs' => ['cre_m1_sun.webp', 'cre_m1_sun.webp', 'cre_m1_sky.webp', 'cre_m1_cloud.webp'],
-                'distractors' => ['cre_m1_cloud.webp', 'cre_m1_sky.webp', 'cre_m1_sun.webp', 'cre_m1_sky.webp'],
+                'distractors' => ['cre_m1_cloud.webp', 'cre_m1_sky.webp', 'cre_m1_sun.webp', 'cre_m1_sun.webp'],
                 'tf_imgs' => ['cre_m1_sun.webp', 'cre_m1_sky.webp', 'cre_m1_sun.webp', 'cre_m1_cloud.webp']
             ],
             2 => [
@@ -171,8 +171,8 @@ class CreMissionsSeeder extends Seeder
             ],
             12 => [
                 'world' => $jesusWorld, 'title' => 'Baby Jesus in the Manger 👶⭐',
-                'q_imgs' => ['cre_m12_manger.webp', 'cre_m12_star.webp', 'cre_m12_mary.webp', 'cre_m12_manger.webp'],
-                'distractors' => ['cre_m12_star.webp', 'cre_m12_mary.webp', 'cre_m12_manger.webp', 'cre_m12_star.webp'],
+                'q_imgs' => ['cre_m12_manger.webp', 'cre_m12_manger.webp', 'cre_m12_star.webp', 'cre_m12_mary.webp'],
+                'distractors' => ['cre_m12_mary.webp', 'cre_m12_mary.webp', 'cre_m12_mary.webp', 'cre_m12_manger.webp'],
                 'tf_imgs' => ['cre_m12_manger.webp', 'cre_m12_star.webp', 'cre_m12_mary.webp', 'cre_m12_manger.webp']
             ],
             13 => [
@@ -183,8 +183,8 @@ class CreMissionsSeeder extends Seeder
             ],
             14 => [
                 'world' => $jesusWorld, 'title' => 'Jesus Calms the Storm ⛵🌊',
-                'q_imgs' => ['cre_m14_jesus_ship.webp', 'cre_m14_boat.webp', 'cre_m14_calm_water.webp', 'cre_m14_jesus_ship.webp'],
-                'distractors' => ['cre_m14_boat.webp', 'cre_m14_calm_water.webp', 'cre_m14_jesus_ship.webp', 'cre_m14_calm_water.webp'],
+                'q_imgs' => ['cre_m14_jesus_ship.webp', 'cre_m14_boat.webp', 'cre_m14_calm_water.webp', 'cre_m14_calm_water.webp'],
+                'distractors' => ['cre_m14_boat.webp', 'cre_m14_calm_water.webp', 'cre_m14_jesus_ship.webp', 'cre_m14_boat.webp'],
                 'tf_imgs' => ['cre_m14_jesus_ship.webp', 'cre_m14_boat.webp', 'cre_m14_calm_water.webp', 'cre_m14_boat.webp']
             ],
             15 => [
@@ -201,7 +201,7 @@ class CreMissionsSeeder extends Seeder
             ],
             17 => [
                 'world' => $jesusWorld, 'title' => 'Jesus is My Kind Friend 🤝',
-                'q_imgs' => ['cre_m17_friend.webp', 'cre_m17_hug.webp', 'cre_m17_handshake.webp', 'cre_m17_friend.webp'],
+                'q_imgs' => ['cre_m17_friend.webp', 'cre_m17_hug.webp', 'cre_m17_handshake.webp', 'cre_m17_hug.webp'],
                 'distractors' => ['cre_m17_hug.webp', 'cre_m17_handshake.webp', 'cre_m17_friend.webp', 'cre_m17_handshake.webp'],
                 'tf_imgs' => ['cre_m17_friend.webp', 'cre_m17_hug.webp', 'cre_m17_handshake.webp', 'cre_m17_hug.webp']
             ],
@@ -219,7 +219,7 @@ class CreMissionsSeeder extends Seeder
             ],
             20 => [
                 'world' => $jesusWorld, 'title' => 'Jesus Story Master 🏆',
-                'q_imgs' => ['cre_m20_bible.webp', 'cre_m20_cross.webp', 'cre_m20_trophy.webp', 'cre_m20_bible.webp'],
+                'q_imgs' => ['cre_m20_bible.webp', 'cre_m20_cross.webp', 'cre_m20_trophy.webp', 'cre_m20_trophy.webp'],
                 'distractors' => ['cre_m20_cross.webp', 'cre_m20_trophy.webp', 'cre_m20_bible.webp', 'cre_m20_cross.webp'],
                 'tf_imgs' => ['cre_m20_bible.webp', 'cre_m20_cross.webp', 'cre_m20_trophy.webp', 'cre_m20_bible.webp']
             ],
@@ -227,31 +227,31 @@ class CreMissionsSeeder extends Seeder
             // REALM 3: CHRISTIAN VALUES (M21 - M25)
             21 => [
                 'world' => $valuesWorld, 'title' => 'Sharing Toys with Friends 🧸',
-                'q_imgs' => ['cre_m21_teddy_bear.webp', 'cre_m21_toy_car.webp', 'cre_m21_blocks.webp', 'cre_m21_teddy_bear.webp'],
+                'q_imgs' => ['cre_m21_teddy_bear.webp', 'cre_m21_blocks.webp', 'cre_m21_toy_basket.webp', 'cre_m21_toy_car.webp'],
                 'distractors' => ['cre_m21_apple_core.webp', 'cre_m21_apple_core.webp', 'cre_m21_apple_core.webp', 'cre_m21_apple_core.webp'],
                 'tf_imgs' => ['cre_m21_teddy_bear.webp', 'cre_m21_toy_car.webp', 'cre_m21_blocks.webp', 'cre_m21_apple_core.webp']
             ],
             22 => [
                 'world' => $valuesWorld, 'title' => 'Saying Thank You & Please 😊',
-                'q_imgs' => ['cre_m22_thank_you_smile.webp', 'cre_m22_please_hands.webp', 'cre_m22_flower_gift.webp', 'cre_m22_thank_you_smile.webp'],
+                'q_imgs' => ['cre_m22_thank_you_smile.webp', 'cre_m22_please_hands.webp', 'cre_m22_flower_gift.webp', 'cre_m22_happy_box.webp'],
                 'distractors' => ['cre_m22_crying_child.webp', 'cre_m22_crying_child.webp', 'cre_m22_crying_child.webp', 'cre_m22_crying_child.webp'],
                 'tf_imgs' => ['cre_m22_thank_you_smile.webp', 'cre_m22_please_hands.webp', 'cre_m22_flower_gift.webp', 'cre_m22_crying_child.webp']
             ],
             23 => [
                 'world' => $valuesWorld, 'title' => 'Helping Family at Home 🧹',
-                'q_imgs' => ['cre_m23_broom.webp', 'cre_m23_dustpan.webp', 'cre_m23_cleaning_bucket.webp', 'cre_m23_broom.webp'],
-                'distractors' => ['cre_m23_teddy_bear.webp', 'cre_m23_toy_car.webp', 'cre_m23_teddy_bear.webp', 'cre_m23_toy_car.webp'],
+                'q_imgs' => ['cre_m23_broom.webp', 'cre_m23_dustpan.webp', 'cre_m23_toy_box.webp', 'cre_m23_cleaning_bucket.webp'],
+                'distractors' => ['cre_m23_teddy_bear.webp', 'cre_m23_toy_car.webp', 'cre_m23_cleaning_bucket.webp', 'cre_m23_teddy_bear.webp'],
                 'tf_imgs' => ['cre_m23_broom.webp', 'cre_m23_dustpan.webp', 'cre_m23_cleaning_bucket.webp', 'cre_m23_teddy_bear.webp']
             ],
             24 => [
                 'world' => $valuesWorld, 'title' => 'Obeying Parents & Teachers 👂',
-                'q_imgs' => ['cre_m24_sitting_quietly.webp', 'cre_m24_raising_hand.webp', 'cre_m24_sitting_quietly.webp', 'cre_m24_raising_hand.webp'],
-                'distractors' => ['cre_m24_standing_on_table.webp', 'cre_m24_screaming_child.webp', 'cre_m24_screaming_child.webp', 'cre_m24_standing_on_table.webp'],
+                'q_imgs' => ['cre_m24_sitting_quietly.webp', 'cre_m24_sitting_quietly.webp', 'cre_m24_sitting_quietly.webp', 'cre_m24_standing_on_table.webp'],
+                'distractors' => ['cre_m24_screaming_child.webp', 'cre_m24_standing_on_table.webp', 'cre_m24_screaming_child.webp', 'cre_m24_raising_hand.webp'],
                 'tf_imgs' => ['cre_m24_sitting_quietly.webp', 'cre_m24_raising_hand.webp', 'cre_m24_sitting_quietly.webp', 'cre_m24_standing_on_table.webp']
             ],
             25 => [
                 'world' => $valuesWorld, 'title' => 'Being Honest & Truthful 💖',
-                'q_imgs' => ['cre_m25_return_toy.webp', 'cre_m25_telling_truth.webp', 'cre_m25_star_badge.webp', 'cre_m25_return_toy.webp'],
+                'q_imgs' => ['cre_m25_return_toy.webp', 'cre_m25_telling_truth.webp', 'cre_m25_star_badge.webp', 'cre_m25_star_box.webp'],
                 'distractors' => ['cre_m25_hiding_toy.webp', 'cre_m25_hiding_toy.webp', 'cre_m25_hiding_toy.webp', 'cre_m25_hiding_toy.webp'],
                 'tf_imgs' => ['cre_m25_telling_truth.webp', 'cre_m25_return_toy.webp', 'cre_m25_star_badge.webp', 'cre_m25_hiding_toy.webp']
             ],
