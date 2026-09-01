@@ -136,6 +136,25 @@ Route::get('/purge-speak-repeat-db', function() {
     return "<h1>🧹 Speak & Repeat Safari Database Records Purged Successfully!</h1><p>Database is clean for Speak & Repeat Safari.</p>";
 });
 
+Route::get('/convert-speak-webp', function() {
+    $dir = public_path('images/speak');
+    $files = ['cat.jpg', 'cow.jpg'];
+    $converted = [];
+
+    foreach ($files as $f) {
+        $src = "{$dir}/{$f}";
+        if (file_exists($src)) {
+            $img = imagecreatefromjpeg($src);
+            $dest = "{$dir}/" . pathinfo($f, PATHINFO_FILENAME) . ".webp";
+            imagewebp($img, $dest, 90);
+            imagedestroy($img);
+            $converted[] = basename($dest);
+        }
+    }
+
+    return "<h1>✅ Converted Speak Images to WebP: " . implode(', ', $converted) . "</h1>";
+});
+
 Route::get('/build-all-full-scripts-now', function() {
     $base_dir = base_path() . "/";
 

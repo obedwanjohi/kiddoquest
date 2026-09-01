@@ -24,8 +24,10 @@
 }
 
 .speak-image {
-    max-height: 80px;
+    max-height: 120px;
+    width: auto;
     object-fit: contain;
+    border-radius: 12px;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
 }
 

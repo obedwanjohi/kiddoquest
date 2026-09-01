@@ -1003,8 +1003,25 @@ function quizEngine(config) {
 
             const word = this.speakTargetWord ||
                 this.currentQuestion.metadata?.word ||
-                this.currentQuestion.options.find(o => o.is_correct)?.text ||
                 '';
+
+            if (this.currentQuestion.audio) {
+                this.isSpeaking = true;
+                this.speakStatus = '🔊 Listen carefully...';
+                const audio = new Audio(this.currentQuestion.audio);
+                audio.play().then(() => {
+                    audio.onended = () => {
+                        this.isSpeaking = false;
+                        if (!this.speakCompleted) {
+                            this.speakStatus = word ? `🎤 Now YOU say "${word}"!` : '🎤 Now YOU say the word!';
+                        }
+                    };
+                }).catch(() => {
+                    this.isSpeaking = false;
+                    this.speakStatus = word ? `🎤 Now YOU say "${word}"!` : '🎤 Now YOU say the word!';
+                });
+                return;
+            }
 
             if (!word) return;
 
@@ -1061,10 +1078,14 @@ function quizEngine(config) {
             this.speakLastHeard = '';
             clearTimeout(this.speakTimer);
 
-            // Extract the target word from metadata or options
+            // Extract the target word from metadata, options, or prompt text
+            const promptMatch = (this.currentQuestion.prompt || '').match(/(?:say|word)\s+(?:out\s+loud\s*:\s*|['"]?\s*)?([A-Za-z0-9\s]+?)(?:['"]|!|\.|\?|$)/i);
+            const promptWord = promptMatch ? promptMatch[1].trim() : '';
+
             this.speakTargetWord = (
                 this.currentQuestion.metadata?.word ||
-                this.currentQuestion.options.find(o => o.is_correct)?.text ||
+                this.currentQuestion.options?.find(o => o.is_correct)?.text ||
+                promptWord ||
                 ''
             ).toLowerCase().trim();
 
