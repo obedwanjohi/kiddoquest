@@ -12,6 +12,7 @@ use App\Models\QuizType;
 use App\Models\Subject;
 use App\Models\Topic;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class CreMissionsSeeder extends Seeder
@@ -179,7 +180,7 @@ class CreMissionsSeeder extends Seeder
                 'world' => $jesusWorld, 'title' => 'Jesus Helps the Sick 🩺❤️',
                 'q_imgs' => ['cre_m13_healing.webp', 'cre_m13_healthy_child.webp', 'cre_m13_heart.webp', 'cre_m13_healing.webp'],
                 'distractors' => ['cre_m13_healthy_child.webp', 'cre_m13_heart.webp', 'cre_m13_healing.webp', 'cre_m13_heart.webp'],
-                'tf_imgs' => ['cre_m13_healing.webp', 'cre_m13_healthy_child.webp', 'cre_m13_heart.webp', 'cre_m13_healing.webp']
+                'tf_imgs' => ['cre_m13_healing.webp', 'cre_m13_heart.webp', 'cre_m13_healthy_child.webp', 'cre_m13_healing.webp']
             ],
             14 => [
                 'world' => $jesusWorld, 'title' => 'Jesus Calms the Storm ⛵🌊',
@@ -209,13 +210,13 @@ class CreMissionsSeeder extends Seeder
                 'world' => $jesusWorld, 'title' => 'Jesus Prays to Father 🙏✨',
                 'q_imgs' => ['cre_m18_jesus_pray.webp', 'cre_m18_light.webp', 'cre_m18_mountain.webp', 'cre_m18_jesus_pray.webp'],
                 'distractors' => ['cre_m18_light.webp', 'cre_m18_mountain.webp', 'cre_m18_jesus_pray.webp', 'cre_m18_light.webp'],
-                'tf_imgs' => ['cre_m18_jesus_pray.webp', 'cre_m18_light.webp', 'cre_m18_mountain.webp', 'cre_m18_jesus_pray.webp']
+                'tf_imgs' => ['cre_m18_jesus_pray.webp', 'cre_m18_mountain.webp', 'cre_m18_light.webp', 'cre_m18_jesus_pray.webp']
             ],
             19 => [
                 'world' => $jesusWorld, 'title' => 'Resurrection Joy & Easter ✝️🌸',
                 'q_imgs' => ['cre_m19_tomb.webp', 'cre_m19_sunrise.webp', 'cre_m19_angel.webp', 'cre_m19_sunrise.webp'],
                 'distractors' => ['cre_m19_sunrise.webp', 'cre_m19_angel.webp', 'cre_m19_tomb.webp', 'cre_m19_angel.webp'],
-                'tf_imgs' => ['cre_m19_tomb.webp', 'cre_m19_sunrise.webp', 'cre_m19_angel.webp', 'cre_m19_tomb.webp']
+                'tf_imgs' => ['cre_m19_sunrise.webp', 'cre_m19_tomb.webp', 'cre_m19_angel.webp', 'cre_m19_tomb.webp']
             ],
             20 => [
                 'world' => $jesusWorld, 'title' => 'Jesus Story Master 🏆',
@@ -270,7 +271,8 @@ class CreMissionsSeeder extends Seeder
                 ]
             );
 
-            // 🧹 WIPE OLD QUESTIONS FOR THIS MISSION BEFORE SEEDING FRESH ONES!
+            // 🧹 WIPE OLD PIVOT RECORDS AND OLD QUESTIONS FOR THIS MISSION BEFORE SEEDING FRESH ONES!
+            DB::table('question_bank_questions')->where('question_bank_id', $qBank->id)->delete();
             QuizQuestion::where('question_bank_id', $qBank->id)->forceDelete();
 
             $lesson = Lesson::firstOrCreate(
