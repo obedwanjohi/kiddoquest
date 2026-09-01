@@ -1003,6 +1003,7 @@ function quizEngine(config) {
 
             const word = this.speakTargetWord ||
                 this.currentQuestion.metadata?.word ||
+                (this.currentQuestion.options && this.currentQuestion.options[0] ? this.currentQuestion.options[0].text : '') ||
                 '';
 
             if (this.currentQuestion.audio) {
@@ -1017,21 +1018,25 @@ function quizEngine(config) {
                         }
                     };
                 }).catch(() => {
-                    this.isSpeaking = false;
-                    this.speakStatus = word ? `🎤 Now YOU say "${word}"!` : '🎤 Now YOU say the word!';
+                    this.speakWithTTS(word);
                 });
                 return;
             }
 
-            if (!word) return;
+            this.speakWithTTS(word);
+        },
 
-            // Cancel any ongoing speech first
+        speakWithTTS(word) {
+            if (!word) {
+                this.isSpeaking = false;
+                return;
+            }
+
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
 
             this.isSpeaking = true;
             this.speakStatus = '🔊 Listen carefully...';
 
-            // Use a slightly slower rate and higher pitch for kid-friendliness
             if ('speechSynthesis' in window) {
                 const utterance = new SpeechSynthesisUtterance(word);
                 utterance.rate = 0.7;   // slow so kids can hear each sound
@@ -1039,7 +1044,6 @@ function quizEngine(config) {
                 utterance.volume = 1.0;
                 utterance.lang = 'en-US';
 
-                // Try to pick a clear English voice
                 const voices = window.speechSynthesis.getVoices();
                 const preferredVoice = voices.find(v =>
                     v.lang.startsWith('en') && (v.name.includes('Female') || v.name.includes('Google') || v.name.includes('Samantha'))
@@ -1048,7 +1052,6 @@ function quizEngine(config) {
 
                 utterance.onend = () => {
                     this.isSpeaking = false;
-                    // After the word plays, prompt the child to repeat
                     if (!this.speakCompleted) {
                         this.speakStatus = `🎤 Now YOU say "${word}"!`;
                         this.leoMessage = `Say "${word}"! 🎤`;
@@ -1063,7 +1066,6 @@ function quizEngine(config) {
 
                 window.speechSynthesis.speak(utterance);
             } else {
-                // No speech synthesis — just show the word prominently
                 this.isSpeaking = false;
                 this.speakStatus = `🎤 Say "${word}"!`;
             }
