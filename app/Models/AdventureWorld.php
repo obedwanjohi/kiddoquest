@@ -72,7 +72,7 @@ class AdventureWorld extends Model
             if (str_contains($sName, 'trace') || str_contains($sName, 'tracing') || str_contains($sName, 'writing')) {
                 return 'tracing';
             }
-            if (str_contains($sName, 'english') || str_contains($sName, 'language') || str_contains($sName, 'phonic')) {
+            if (str_contains($sName, 'english') || str_contains($sName, 'language') || str_contains($sName, 'phonic') || str_contains($sName, 'vocab') || str_contains($sName, 'speak')) {
                 return 'english';
             }
             if (str_contains($sName, 'cre') || str_contains($sName, 'relig') || str_contains($sName, 'value') || str_contains($sName, 'god') || str_contains($sName, 'moral')) {
@@ -85,7 +85,7 @@ class AdventureWorld extends Model
         if (str_contains($name, 'trace') || str_contains($name, 'tracing') || str_contains($name, 'pattern') || str_contains($name, 'line-tracing')) {
             return 'tracing';
         }
-        if (str_contains($name, 'safari') || str_contains($name, 'phonics') || str_contains($name, 'letter') || str_contains($name, 'english') || str_contains($name, 'word') || str_contains($name, 'castle') || str_contains($name, 'treasure')) {
+        if (str_contains($name, 'speak') || str_contains($name, 'safari') || str_contains($name, 'phonics') || str_contains($name, 'letter') || str_contains($name, 'english') || str_contains($name, 'word') || str_contains($name, 'castle') || str_contains($name, 'treasure')) {
             return 'english';
         }
         if (str_contains($name, 'ocean') || str_contains($name, 'cove') || str_contains($name, 'creation') || str_contains($name, 'value') || str_contains($name, 'cre') || str_contains($name, 'god') || str_contains($name, 'village') || str_contains($name, 'rainbow')) {
