@@ -80,16 +80,16 @@ class QuestionBank extends Model
         $baseQuery = $hasAssigned ? $this->assignedQuestions() : $this->questions();
         $idColumn = $hasAssigned ? 'quiz_questions.id' : 'id';
 
-        // Load all available candidate questions with their quizType
+        // Load all available candidate questions with their quizType and options in 1 query
         $query = clone $baseQuery;
         if (!empty($excludeIds)) {
             $query->whereNotIn($idColumn, $excludeIds);
         }
-        $candidates = $query->with('quizType')->get();
+        $candidates = $query->with(['quizType', 'options'])->get();
 
         // If candidates are less than requested, fill with remaining pool
         if ($candidates->count() < $count && !empty($excludeIds)) {
-            $extra = (clone $baseQuery)->whereNotIn($idColumn, $candidates->pluck('id')->toArray())->get();
+            $extra = (clone $baseQuery)->whereNotIn($idColumn, $candidates->pluck('id')->toArray())->with(['quizType', 'options'])->get();
             $candidates = $candidates->concat($extra);
         }
 

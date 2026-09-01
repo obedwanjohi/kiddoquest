@@ -208,8 +208,8 @@
                 $missionsCount = $missions->count();
                 $completedCount = 0;
                 foreach ($missions as $m) {
-                    $p = $child->missionProgress($m);
-                    if ($p && $p->status === 'completed') $completedCount++;
+                    $pStatus = $progressMap[$m->id] ?? null;
+                    if ($pStatus === 'completed') $completedCount++;
                 }
 
                 $subjectCat = $world->subject_category ?? 'all';
