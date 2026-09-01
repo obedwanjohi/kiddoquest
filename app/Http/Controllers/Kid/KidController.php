@@ -95,7 +95,8 @@ class KidController extends Controller
                         'whispering-forest', 'sunny-meadow', 'cookie-trail',
                         'safari-plains', 'castle-of-discovery',
                         'ocean-cove', 'kindness-village', 'rainbow-mountain',
-                        'creation-realm', 'jesus-realm', 'christian-values-realm'
+                        'creation-realm', 'jesus-realm', 'christian-values-realm',
+                        'speak-repeat-safari'
                     ]);
                 }
             })->get();
@@ -114,10 +115,22 @@ class KidController extends Controller
     /**
      * A themed world view.
      */
-    public function world(AdventureWorld $world): View
+    public function world(AdventureWorld $world, \Illuminate\Http\Request $request): View
     {
         $child = $this->activeChild();
-        $missions = $world->missions()->orderBy('sort_order')->get();
+        $query = $world->missions()->orderBy('sort_order');
+
+        if ($tier = $request->query('tier')) {
+            if ($tier === 'easy') {
+                $query->where('title', 'like', '%Easy%');
+            } elseif ($tier === 'medium') {
+                $query->where('title', 'like', '%Medium%');
+            } elseif ($tier === 'hard') {
+                $query->where('title', 'like', '%Hard%');
+            }
+        }
+
+        $missions = $query->get();
 
         return view('kids.world', compact('child', 'world', 'missions'));
     }

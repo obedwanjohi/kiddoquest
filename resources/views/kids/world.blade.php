@@ -34,6 +34,23 @@
         @endif
     </div>
 
+    @if($world->slug === 'speak-repeat-safari')
+        <div class="flex justify-center gap-2 mb-6 px-4 flex-wrap">
+            <a href="{{ request()->fullUrlWithQuery(['tier' => null]) }}" class="px-4 py-2 rounded-full font-black text-sm transition-transform active:scale-95 shadow-sm {{ !request('tier') ? 'bg-blue-600 text-white ring-2 ring-blue-400' : 'bg-white text-gray-600' }}">
+                🌟 All Tiers
+            </a>
+            <a href="{{ request()->fullUrlWithQuery(['tier' => 'easy']) }}" class="px-4 py-2 rounded-full font-black text-sm transition-transform active:scale-95 shadow-sm {{ request('tier') === 'easy' ? 'bg-green-500 text-white ring-2 ring-green-300' : 'bg-white text-gray-600' }}">
+                🟢 Easy
+            </a>
+            <a href="{{ request()->fullUrlWithQuery(['tier' => 'medium']) }}" class="px-4 py-2 rounded-full font-black text-sm transition-transform active:scale-95 shadow-sm {{ request('tier') === 'medium' ? 'bg-amber-500 text-white ring-2 ring-amber-300' : 'bg-white text-gray-600' }}">
+                🟡 Medium
+            </a>
+            <a href="{{ request()->fullUrlWithQuery(['tier' => 'hard']) }}" class="px-4 py-2 rounded-full font-black text-sm transition-transform active:scale-95 shadow-sm {{ request('tier') === 'hard' ? 'bg-red-500 text-white ring-2 ring-red-300' : 'bg-white text-gray-600' }}">
+                🔴 Hard
+            </a>
+        </div>
+    @endif
+
     {{-- Mission Trail --}}
     @if($missions->isEmpty())
         <div class="max-w-md mx-auto px-4">

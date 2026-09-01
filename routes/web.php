@@ -98,6 +98,44 @@ Route::get('/purge-cre-db', function() {
     return "<h1>🔥 100% ABSOLUTE TOTAL DATABASE PURGE COMPLETE!</h1><p>Every single mission, lesson, question, option, attempt, and progress record has been wiped to 0! Database is 100% clean and fresh!</p>";
 });
 
+Route::get('/seed-speak-repeat', function(\Illuminate\Http\Request $request) {
+    $tier = $request->query('tier'); // easy, medium, hard, all
+    $seeder = new \Database\Seeders\SpeakRepeatWorldSeeder();
+    $seeder->run($tier);
+
+    $tierLabel = match($tier) {
+        'easy' => '🟢 Easy Tier (Missions 1 to 10)',
+        'medium' => '🟡 Medium Tier (Missions 11 to 20)',
+        'hard' => '🔴 Hard Tier (Missions 21 to 30)',
+        default => '🎉 All 30 Vocabulary Missions (Easy, Medium, Hard)',
+    };
+
+    return "<h1>🎙️ Speak & Repeat Safari — {$tierLabel} Seeded Successfully!</h1><p>👉 <a href='/kids'>Click here to play & test pronunciation</a></p>";
+});
+
+Route::get('/purge-speak-repeat-db', function() {
+    $world = \App\Models\AdventureWorld::where('slug', 'speak-repeat-safari')->first();
+    if ($world) {
+        $missions = \App\Models\Mission::withTrashed()->where('adventure_world_id', $world->id)->get();
+        $mIds = $missions->pluck('id');
+        $qbIds = $missions->pluck('question_bank_id')->filter();
+
+        \App\Models\ChildQuestionAttempt::whereIn('mission_id', $mIds)->delete();
+        \App\Models\MissionAttempt::whereIn('mission_id', $mIds)->delete();
+        \App\Models\ChildProgress::whereIn('mission_id', $mIds)->delete();
+
+        $qIds = \App\Models\QuizQuestion::whereIn('question_bank_id', $qbIds)->pluck('id');
+        \App\Models\QuestionOption::whereIn('question_id', $qIds)->delete();
+        \Illuminate\Support\Facades\DB::table('question_bank_questions')->whereIn('question_bank_id', $qbIds)->delete();
+        \App\Models\QuizQuestion::whereIn('question_bank_id', $qbIds)->forceDelete();
+
+        \App\Models\Mission::withTrashed()->whereIn('id', $mIds)->forceDelete();
+        \App\Models\QuestionBank::whereIn('id', $qbIds)->delete();
+    }
+
+    return "<h1>🧹 Speak & Repeat Safari Database Records Purged Successfully!</h1><p>Database is clean for Speak & Repeat Safari.</p>";
+});
+
 Route::get('/build-all-full-scripts-now', function() {
     $base_dir = base_path() . "/";
 
