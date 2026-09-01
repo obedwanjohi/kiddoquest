@@ -84,9 +84,9 @@ class KidController extends Controller
                     }
                 });
 
-                // Always unlock Tracing Worlds for all levels (Playgroup, PP1, PP2)
+                // Always unlock Tracing Worlds & Speak Repeat Safari for all levels (Playgroup, PP1, PP2)
                 $query->orWhereIn('slug', [
-                    'line-tracing-trail', 'letter-tracing-safari', 'number-tracing-kingdom'
+                    'line-tracing-trail', 'letter-tracing-safari', 'number-tracing-kingdom', 'speak-repeat-safari'
                 ]);
 
                 // Match Playgroup world slugs directly for Play Group profiles
@@ -95,7 +95,6 @@ class KidController extends Controller
                         'whispering-forest', 'sunny-meadow', 'cookie-trail',
                         'safari-plains', 'castle-of-discovery',
                         'ocean-cove', 'kindness-village', 'rainbow-mountain',
-                        'creation-realm', 'jesus-realm', 'christian-values-realm',
                         'speak-repeat-safari'
                     ]);
                 }
