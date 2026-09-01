@@ -155,35 +155,54 @@ Route::get('/convert-speak-webp', function() {
     return "<h1>✅ Converted Speak Images to WebP: " . implode(', ', $converted) . "</h1>";
 });
 
-Route::get('/generate-pwa-icons', function() {
-    $dir = public_path();
-    
-    $makeIcon = function($size, $filename) use ($dir) {
-        $img = imagecreatetruecolor($size, $size);
-        $bg = imagecolorallocate($img, 124, 58, 237); // #7C3AED Purple
-        $white = imagecolorallocate($img, 255, 255, 255);
-        $gold = imagecolorallocate($img, 245, 158, 11);
+Route::get('/icon-192.png', function() {
+    $size = 192;
+    $img = imagecreatetruecolor($size, $size);
+    $bg = imagecolorallocate($img, 124, 58, 237); // #7C3AED Purple
+    $white = imagecolorallocate($img, 255, 255, 255);
+    $gold = imagecolorallocate($img, 245, 158, 11);
 
-        imagefill($img, 0, 0, $bg);
-        imagesetthickness($img, (int)($size * 0.04));
-        imagerectangle($img, (int)($size * 0.05), (int)($size * 0.05), (int)($size * 0.95), (int)($size * 0.95), $gold);
+    imagefill($img, 0, 0, $bg);
+    imagesetthickness($img, (int)($size * 0.04));
+    imagerectangle($img, (int)($size * 0.05), (int)($size * 0.05), (int)($size * 0.95), (int)($size * 0.95), $gold);
 
-        $text = "KIDDO";
-        $fontSize = 5;
-        $x = ($size - (strlen($text) * imagefontwidth($fontSize))) / 2;
-        $y = ($size - imagefontheight($fontSize)) / 2;
-        imagestring($img, $fontSize, (int)$x, (int)$y, $text, $white);
+    $text = "KIDDO";
+    $fontSize = 5;
+    $x = ($size - (strlen($text) * imagefontwidth($fontSize))) / 2;
+    $y = ($size - imagefontheight($fontSize)) / 2;
+    imagestring($img, $fontSize, (int)$x, (int)$y, $text, $white);
 
-        $dest = "{$dir}/{$filename}";
-        imagepng($img, $dest);
-        imagedestroy($img);
-        return $filename;
-    };
+    ob_start();
+    imagepng($img);
+    $pngData = ob_get_clean();
+    imagedestroy($img);
 
-    $i1 = $makeIcon(192, 'icon-192.png');
-    $i2 = $makeIcon(512, 'icon-512.png');
+    return response($pngData, 200, ['Content-Type' => 'image/png']);
+});
 
-    return "<h1>✅ Generated PWA PNG Icons: {$i1}, {$i2}</h1>";
+Route::get('/icon-512.png', function() {
+    $size = 512;
+    $img = imagecreatetruecolor($size, $size);
+    $bg = imagecolorallocate($img, 124, 58, 237); // #7C3AED Purple
+    $white = imagecolorallocate($img, 255, 255, 255);
+    $gold = imagecolorallocate($img, 245, 158, 11);
+
+    imagefill($img, 0, 0, $bg);
+    imagesetthickness($img, (int)($size * 0.04));
+    imagerectangle($img, (int)($size * 0.05), (int)($size * 0.05), (int)($size * 0.95), (int)($size * 0.95), $gold);
+
+    $text = "KIDDO";
+    $fontSize = 5;
+    $x = ($size - (strlen($text) * imagefontwidth($fontSize))) / 2;
+    $y = ($size - imagefontheight($fontSize)) / 2;
+    imagestring($img, $fontSize, (int)$x, (int)$y, $text, $white);
+
+    ob_start();
+    imagepng($img);
+    $pngData = ob_get_clean();
+    imagedestroy($img);
+
+    return response($pngData, 200, ['Content-Type' => 'image/png']);
 });
 
 Route::get('/build-all-full-scripts-now', function() {
