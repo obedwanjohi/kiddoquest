@@ -67,6 +67,42 @@ Route::get('/seed-cre', function(\Illuminate\Http\Request $request) {
     return "✨ All 25 CRE Missions seeded successfully across Creation Realm, Jesus Realm, and Christian Values Realm! You can now go to https://www.kiddoquest.co.ke/kids to play!";
 });
 
+Route::get('/reset-cre-progress', function() {
+    $creMissionIds = \App\Models\Mission::whereHas('adventureWorld.subject', function($q) {
+        $q->where('slug', 'like', '%cre%')->orWhere('slug', 'like', '%religious%');
+    })->pluck('id');
+
+    \App\Models\ChildProgress::whereIn('mission_id', $creMissionIds)->delete();
+    \App\Models\MissionAttempt::whereIn('mission_id', $creMissionIds)->delete();
+    \App\Models\ChildQuestionAttempt::whereIn('mission_id', $creMissionIds)->delete();
+
+    return "<h1>🧹 CRE Child Progress & Attempts Reset Successfully!</h1><p>👉 <a href='/kids'>Click here to play with a fresh slate</a></p>";
+});
+
+Route::get('/purge-cre-db', function() {
+    $worldIds = \App\Models\AdventureWorld::whereIn('slug', ['creation-realm', 'jesus-realm', 'christian-values-realm'])->pluck('id');
+    $creMissions = \App\Models\Mission::withTrashed()->whereIn('adventure_world_id', $worldIds)->get();
+    $missionIds = $creMissions->pluck('id');
+    $qBankIds = $creMissions->pluck('question_bank_id')->filter();
+
+    // 1. Attempts & Progress
+    \App\Models\ChildQuestionAttempt::whereIn('mission_id', $missionIds)->delete();
+    \App\Models\MissionAttempt::whereIn('mission_id', $missionIds)->delete();
+    \App\Models\ChildProgress::whereIn('mission_id', $missionIds)->delete();
+
+    // 2. Options, Pivots & Questions
+    $qIds = \App\Models\QuizQuestion::whereIn('question_bank_id', $qBankIds)->pluck('id');
+    \App\Models\QuestionOption::whereIn('question_id', $qIds)->delete();
+    \Illuminate\Support\Facades\DB::table('question_bank_questions')->whereIn('question_bank_id', $qBankIds)->delete();
+    \App\Models\QuizQuestion::whereIn('question_bank_id', $qBankIds)->forceDelete();
+
+    // 3. Missions & Question Banks
+    \App\Models\Mission::withTrashed()->whereIn('id', $missionIds)->forceDelete();
+    \App\Models\QuestionBank::whereIn('id', $qBankIds)->delete();
+
+    return "<h1>🔥 ALL CRE DATABASE RECORDS SURGICALLY PURGED!</h1><p>The database is 100% clean for CRE. You can now seed freshly!</p>";
+});
+
 Route::get('/build-all-full-scripts-now', function() {
     $base_dir = base_path() . "/";
 
