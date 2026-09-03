@@ -15,7 +15,7 @@ class QuizQuestion extends Model
     protected $table = 'quiz_questions';
 
     protected $fillable = [
-        'quiz_id', 'question_bank_id', 'quiz_type_id', 'prompt',
+        'quiz_id', 'question_bank_id', 'quiz_type_id', 'type', 'prompt',
         'prompt_image_url', 'prompt_audio_url', 'narration_id',
         'points', 'sort_order', 'hint', 'explanation',
         'scoring_config', 'metadata',

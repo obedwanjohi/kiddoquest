@@ -574,32 +574,60 @@ function quizEngine(config) {
             this.matchedPairs = [];
             this.matchWrongPair = null;
 
-            // Split options into Left Column and Right Column
-            let leftOpts = this.currentQuestion.options.filter(o => o.is_correct === false);
-            let rightOpts = this.currentQuestion.options.filter(o => o.is_correct === true);
+            const hasMatchKeys = this.currentQuestion.options.some(o => o.match_key || o.matchKey);
 
-            // If options weren't split by is_correct, split 50/50: first 2 left, last 2 right!
-            if (leftOpts.length === 0 || rightOpts.length === 0) {
-                const half = Math.ceil(this.currentQuestion.options.length / 2);
-                leftOpts = this.currentQuestion.options.slice(0, half);
-                rightOpts = this.currentQuestion.options.slice(half);
+            if (hasMatchKeys) {
+                this.matchLeftItems = this.currentQuestion.options.map((o, i) => ({
+                    text: o.text,
+                    image: o.image,
+                    matchKey: (o.match_key || o.matchKey || o.text).toString().trim().toLowerCase(),
+                    originalIndex: i,
+                }));
+
+                // match_key convention is "<left> <right>" (e.g. "🐶 Puppy") —
+                // show only the right-side label so the left emoji isn't a giveaway
+                const rightMapped = this.currentQuestion.options.map((o, i) => {
+                    const matchKey = (o.match_key || o.matchKey || o.text).toString().trim();
+                    const leftText = (o.text || '').toString().trim();
+                    const label = (leftText && matchKey.toLowerCase().startsWith(leftText.toLowerCase() + ' '))
+                        ? matchKey.slice(leftText.length + 1).trim()
+                        : matchKey;
+
+                    return {
+                        text: label,
+                        image: null,
+                        matchKey: matchKey.toLowerCase(),
+                        originalIndex: i,
+                    };
+                });
+
+                this.matchRightItems = this.shuffleArray([...rightMapped]);
+            } else {
+                let leftOpts = this.currentQuestion.options.filter(o => o.is_correct === false);
+                let rightOpts = this.currentQuestion.options.filter(o => o.is_correct === true);
+
+                if (leftOpts.length === 0 || rightOpts.length === 0) {
+                    const half = Math.ceil(this.currentQuestion.options.length / 2);
+                    leftOpts = this.currentQuestion.options.slice(0, half);
+                    rightOpts = this.currentQuestion.options.slice(half);
+                }
+
+                this.matchLeftItems = leftOpts.map((o, i) => ({
+                    text: o.text,
+                    image: o.image,
+                    matchKey: (o.match_key || o.matchKey || o.text).toString().trim().toLowerCase(),
+                    originalIndex: i,
+                }));
+
+                const rightMapped = rightOpts.map((o, i) => ({
+                    text: o.text,
+                    image: o.image,
+                    matchKey: (o.match_key || o.matchKey || o.text).toString().trim().toLowerCase(),
+                    originalIndex: i,
+                }));
+
+                this.matchRightItems = this.shuffleArray([...rightMapped]);
             }
-
-            this.matchLeftItems = leftOpts.map((o, i) => ({
-                text: o.text,
-                image: o.image,
-                matchKey: o.match_key || o.matchKey,
-                originalIndex: i,
-            }));
-
-            const rightMapped = rightOpts.map((o, i) => ({
-                text: o.text,
-                image: o.image,
-                matchKey: o.match_key || o.matchKey,
-                originalIndex: i,
-            }));
-
-            this.matchRightItems = this.shuffleArray([...rightMapped]);
         },
 
         shuffleArray(arr) {
@@ -614,44 +642,41 @@ function quizEngine(config) {
             this.resetIdleTimer();
             if (this.answered) return;
 
-            // If already matched, ignore
             if (side === 'left' && this.matchedPairs.some(p => p.leftIndex === index)) return;
             if (side === 'right' && this.matchedPairs.some(p => p.rightIndex === index)) return;
 
-            // If clicking same side, just switch selection
-            if (this.matchSelectedSide === side) {
-                this.matchSelectedIndex = index;
-                return;
-            }
-
-            // If nothing selected yet, select this
             if (this.matchSelectedSide === null) {
                 this.matchSelectedSide = side;
                 this.matchSelectedIndex = index;
+                this.playClickSound();
                 return;
             }
 
-            // We have a selection on the other side — check match!
-            const leftIndex = side === 'left' ? index : this.matchSelectedIndex;
-            const rightIndex = side === 'right' ? index : this.matchSelectedIndex;
+            if (this.matchSelectedSide === side) {
+                this.matchSelectedIndex = index;
+                this.playClickSound();
+                return;
+            }
 
-            const leftOpt = this.matchLeftItems[leftIndex];
-            const rightItem = this.matchRightItems[rightIndex];
+            const leftIdx = side === 'left' ? index : this.matchSelectedIndex;
+            const rightIdx = side === 'right' ? index : this.matchSelectedIndex;
 
-            const leftKey = leftOpt.matchKey || leftOpt.match_key;
-            const rightKey = rightItem.matchKey || rightItem.match_key;
+            const leftItem = this.matchLeftItems[leftIdx];
+            const rightItem = this.matchRightItems[rightIdx];
 
-            if (leftKey && rightKey && leftKey === rightKey) {
+            const isCorrect = leftItem.matchKey === rightItem.matchKey;
+
+            if (isCorrect) {
                 // Correct match!
                 this.matchedPairs.push({
-                    leftIndex: leftIndex,
-                    rightIndex: rightIndex,
-                    matchKey: leftKey,
+                    leftIndex: leftIdx,
+                    rightIndex: rightIdx,
+                    matchKey: leftItem.matchKey,
                 });
 
                 if (window.KidQuizEvents) {
                     window.KidQuizEvents.emit(window.KidQuizEvents.EVENTS.ANSWER_CORRECT, {
-                        index: leftIndex, firstTry: true,
+                        index: leftIdx, firstTry: true,
                     });
                 }
 
@@ -669,13 +694,13 @@ function quizEngine(config) {
                 }
             } else {
                 // Wrong match — flash red, then clear selection
-                this.matchWrongPair = { leftIndex, rightIndex };
+                this.matchWrongPair = { leftIndex: leftIdx, rightIndex: rightIdx };
                 this.leoMessage = "Oops! Try again! 💪";
                 this.showHint = true;
 
                 if (window.KidQuizEvents) {
                     window.KidQuizEvents.emit(window.KidQuizEvents.EVENTS.ANSWER_INCORRECT, {
-                        index: leftIndex, attempts: 1,
+                        index: leftIdx, attempts: 1,
                     });
                 }
 
