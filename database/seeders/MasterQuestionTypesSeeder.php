@@ -87,9 +87,9 @@ class MasterQuestionTypesSeeder extends Seeder
                 'sort_order'       => 1,
             ]);
 
-            QuestionOption::create(['quiz_question_id' => $q1->id, 'text_value' => '🔴', 'is_correct' => true, 'sort_order' => 1]);
-            QuestionOption::create(['quiz_question_id' => $q1->id, 'text_value' => '🔵', 'is_correct' => false, 'sort_order' => 2]);
-            QuestionOption::create(['quiz_question_id' => $q1->id, 'text_value' => '🟡', 'is_correct' => false, 'sort_order' => 3]);
+            QuestionOption::create(['question_id' => $q1->id, 'text_value' => '🔴', 'is_correct' => true, 'sort_order' => 1]);
+            QuestionOption::create(['question_id' => $q1->id, 'text_value' => '🔵', 'is_correct' => false, 'sort_order' => 2]);
+            QuestionOption::create(['question_id' => $q1->id, 'text_value' => '🟡', 'is_correct' => false, 'sort_order' => 3]);
 
             // -------------------------------------------------------------
             // QUESTION 2: QT-08 — Fill the Blank / Spell (C _ T 🐱)
@@ -103,9 +103,9 @@ class MasterQuestionTypesSeeder extends Seeder
                 'sort_order'       => 2,
             ]);
 
-            QuestionOption::create(['quiz_question_id' => $q2->id, 'text_value' => 'A', 'is_correct' => true, 'sort_order' => 1]);
-            QuestionOption::create(['quiz_question_id' => $q2->id, 'text_value' => 'O', 'is_correct' => false, 'sort_order' => 2]);
-            QuestionOption::create(['quiz_question_id' => $q2->id, 'text_value' => 'E', 'is_correct' => false, 'sort_order' => 3]);
+            QuestionOption::create(['question_id' => $q2->id, 'text_value' => 'A', 'is_correct' => true, 'sort_order' => 1]);
+            QuestionOption::create(['question_id' => $q2->id, 'text_value' => 'O', 'is_correct' => false, 'sort_order' => 2]);
+            QuestionOption::create(['question_id' => $q2->id, 'text_value' => 'E', 'is_correct' => false, 'sort_order' => 3]);
 
             // -------------------------------------------------------------
             // QUESTION 3: QT-03 — Matching Pairs (Parent ➔ Baby)
@@ -119,9 +119,9 @@ class MasterQuestionTypesSeeder extends Seeder
                 'sort_order'       => 3,
             ]);
 
-            QuestionOption::create(['quiz_question_id' => $q3->id, 'text_value' => 'Dog 🐶', 'match_key' => 'Puppy', 'is_correct' => true, 'sort_order' => 1]);
-            QuestionOption::create(['quiz_question_id' => $q3->id, 'text_value' => 'Cat 🐱', 'match_key' => 'Kitten', 'is_correct' => true, 'sort_order' => 2]);
-            QuestionOption::create(['quiz_question_id' => $q3->id, 'text_value' => 'Cow 🐮', 'match_key' => 'Calf', 'is_correct' => true, 'sort_order' => 3]);
+            QuestionOption::create(['question_id' => $q3->id, 'text_value' => 'Dog 🐶', 'match_key' => 'Puppy', 'is_correct' => true, 'sort_order' => 1]);
+            QuestionOption::create(['question_id' => $q3->id, 'text_value' => 'Cat 🐱', 'match_key' => 'Kitten', 'is_correct' => true, 'sort_order' => 2]);
+            QuestionOption::create(['question_id' => $q3->id, 'text_value' => 'Cow 🐮', 'match_key' => 'Calf', 'is_correct' => true, 'sort_order' => 3]);
 
             // -------------------------------------------------------------
             // QUESTION 4: QT-04 — Drag & Drop Sort (Farm vs Wild Animals)
@@ -136,10 +136,10 @@ class MasterQuestionTypesSeeder extends Seeder
                 'sort_order'       => 4,
             ]);
 
-            QuestionOption::create(['quiz_question_id' => $q4->id, 'text_value' => 'Cow 🐮', 'match_key' => 'Farm Animals', 'is_correct' => true, 'sort_order' => 1]);
-            QuestionOption::create(['quiz_question_id' => $q4->id, 'text_value' => 'Pig 🐷', 'match_key' => 'Farm Animals', 'is_correct' => true, 'sort_order' => 2]);
-            QuestionOption::create(['quiz_question_id' => $q4->id, 'text_value' => 'Lion 🦁', 'match_key' => 'Wild Animals', 'is_correct' => true, 'sort_order' => 3]);
-            QuestionOption::create(['quiz_question_id' => $q4->id, 'text_value' => 'Giraffe 🦒', 'match_key' => 'Wild Animals', 'is_correct' => true, 'sort_order' => 4]);
+            QuestionOption::create(['question_id' => $q4->id, 'text_value' => 'Cow 🐮', 'match_key' => 'Farm Animals', 'is_correct' => true, 'sort_order' => 1]);
+            QuestionOption::create(['question_id' => $q4->id, 'text_value' => 'Pig 🐷', 'match_key' => 'Farm Animals', 'is_correct' => true, 'sort_order' => 2]);
+            QuestionOption::create(['question_id' => $q4->id, 'text_value' => 'Lion 🦁', 'match_key' => 'Wild Animals', 'is_correct' => true, 'sort_order' => 3]);
+            QuestionOption::create(['question_id' => $q4->id, 'text_value' => 'Giraffe 🦒', 'match_key' => 'Wild Animals', 'is_correct' => true, 'sort_order' => 4]);
 
             // -------------------------------------------------------------
             // QUESTION 5: QT-05 — Drag & Drop Sequence (Numbers 1 to 4)
@@ -153,10 +153,10 @@ class MasterQuestionTypesSeeder extends Seeder
                 'sort_order'       => 5,
             ]);
 
-            QuestionOption::create(['quiz_question_id' => $q5->id, 'text_value' => '1', 'is_correct' => true, 'sort_order' => 1]);
-            QuestionOption::create(['quiz_question_id' => $q5->id, 'text_value' => '2', 'is_correct' => true, 'sort_order' => 2]);
-            QuestionOption::create(['quiz_question_id' => $q5->id, 'text_value' => '3', 'is_correct' => true, 'sort_order' => 3]);
-            QuestionOption::create(['quiz_question_id' => $q5->id, 'text_value' => '4', 'is_correct' => true, 'sort_order' => 4]);
+            QuestionOption::create(['question_id' => $q5->id, 'text_value' => '1', 'is_correct' => true, 'sort_order' => 1]);
+            QuestionOption::create(['question_id' => $q5->id, 'text_value' => '2', 'is_correct' => true, 'sort_order' => 2]);
+            QuestionOption::create(['question_id' => $q5->id, 'text_value' => '3', 'is_correct' => true, 'sort_order' => 3]);
+            QuestionOption::create(['question_id' => $q5->id, 'text_value' => '4', 'is_correct' => true, 'sort_order' => 4]);
 
             // Update pool count on Question Bank
             $bank->update(['pool_count' => 5]);
