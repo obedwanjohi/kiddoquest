@@ -89,15 +89,45 @@
 
 @if($showDevotional)
     @php session(['devotional_seen_' . date('Y-m-d') => true]); @endphp
-    <div x-data="{ open: true }" x-show="open" x-cloak
+    <div x-data="{
+            open: true,
+            playing: false,
+            speakDevotional() {
+                if (!('speechSynthesis' in window)) return;
+                window.speechSynthesis.cancel();
+                if (this.playing) {
+                    this.playing = false;
+                    return;
+                }
+                this.playing = true;
+                const text = `Today's Bible Verse. {{ addslashes($todayDevotional['verse_text']) }}. From {{ addslashes($todayDevotional['verse_ref']) }}. {{ addslashes($todayDevotional['teaching']) }}. Let us pray! {{ addslashes($todayDevotional['prayer']) }}`;
+                const utter = new SpeechSynthesisUtterance(text);
+                utter.rate = 0.9;
+                utter.pitch = 1.1;
+                utter.onend = () => { this.playing = false; };
+                utter.onerror = () => { this.playing = false; };
+                window.speechSynthesis.speak(utter);
+            }
+         }"
+         x-init="setTimeout(() => speakDevotional(), 800)"
+         x-show="open" x-cloak
          class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm">
         <div class="bg-white rounded-3xl p-5 sm:p-6 max-w-sm w-full text-center border-4 border-amber-300 shadow-2xl relative overflow-hidden">
-            <div class="w-16 h-16 rounded-2xl bg-amber-100 border-2 border-amber-300 flex items-center justify-center text-4xl mx-auto mb-3 shadow-inner">
-                {{ $todayDevotional['emoji'] }}
-            </div>
-            <span class="text-[10px] font-black uppercase tracking-wider bg-purple-100 text-purple-900 px-3 py-1 rounded-full inline-block mb-2">
-                📖 Daily Word & Prayer
-            </span>
+            
+            <button @click="speakDevotional()"
+                    class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-400 to-yellow-300 border-2 border-amber-200 flex items-center justify-center text-3xl mx-auto mb-2 shadow-md active:scale-95 transition-all relative"
+                    title="Tap to listen to verse and prayer">
+                <span x-text="playing ? '🔊' : '🔈'">🔈</span>
+                <span x-show="playing" class="absolute -top-1 -right-1 flex h-4 w-4">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 text-[9px] text-white font-bold items-center justify-center">♪</span>
+                </span>
+            </button>
+
+            <button @click="speakDevotional()" class="text-[10px] font-black uppercase tracking-wider bg-purple-100 text-purple-900 px-3 py-1 rounded-full inline-block mb-3 active:scale-95 transition-all">
+                <span x-text="playing ? '🔊 Speaking Verse & Prayer...' : '🔊 Tap Speaker to Listen Out Loud'">🔊 Tap Speaker to Listen Out Loud</span>
+            </button>
+
             <h3 class="font-heading font-black text-base sm:text-lg text-slate-900 leading-snug mb-1">
                 "{{ $todayDevotional['verse_text'] }}"
             </h3>
@@ -112,7 +142,7 @@
                 </p>
             </div>
 
-            <button @click="open = false"
+            <button @click="if('speechSynthesis' in window) window.speechSynthesis.cancel(); open = false;"
                     class="w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-black text-sm shadow-md hover:from-emerald-600 hover:to-teal-700 active:scale-95 transition-all">
                 Start Learning Adventure! 🚀
             </button>
