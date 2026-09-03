@@ -411,12 +411,35 @@ class ParentDashboardController extends Controller
      */
     public function updateDevotionalSettings(Request $request): \Illuminate\Http\RedirectResponse
     {
+        // Auto-migrate missing columns on PostgreSQL if needed
+        try {
+            if (!\Illuminate\Support\Facades\Schema::hasColumn('guardians', 'enable_devotional')) {
+                \Illuminate\Support\Facades\Schema::table('guardians', function (\Illuminate\Database\Schema\Blueprint $table) {
+                    if (!\Illuminate\Support\Facades\Schema::hasColumn('guardians', 'enable_devotional')) {
+                        $table->boolean('enable_devotional')->default(true);
+                    }
+                    if (!\Illuminate\Support\Facades\Schema::hasColumn('guardians', 'enable_songs_hub')) {
+                        $table->boolean('enable_songs_hub')->default(true);
+                    }
+                });
+            }
+        } catch (\Throwable $mErr) {
+            \Illuminate\Support\Facades\Log::warning('Auto-migration for guardian devotional columns deferred', ['error' => $mErr->getMessage()]);
+        }
+
         $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
         if ($guardian && $guardian->exists) {
-            $guardian->enable_devotional = $request->has('enable_devotional');
-            $guardian->enable_songs_hub = $request->has('enable_songs_hub');
-            $guardian->save();
+            if (\Illuminate\Support\Facades\Schema::hasColumn('guardians', 'enable_devotional')) {
+                $guardian->enable_devotional = $request->has('enable_devotional');
+                $guardian->enable_songs_hub = $request->has('enable_songs_hub');
+                $guardian->save();
+            }
         }
+
+        session([
+            'enable_devotional' => $request->has('enable_devotional'),
+            'enable_songs_hub'  => $request->has('enable_songs_hub'),
+        ]);
 
         return back()->with('success', '✨ Devotional & Feature controls updated successfully!');
     }

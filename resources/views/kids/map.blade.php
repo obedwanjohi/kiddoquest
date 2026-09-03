@@ -83,8 +83,10 @@
 @section('kid-content')
 {{-- Exit Bar: Stars + Coins + Exit --}}
 @php
+    $guardian = \Illuminate\Support\Facades\Auth::guard('guardian')->user();
+    $devotionalEnabled = session('enable_devotional', $guardian->enable_devotional ?? true);
     $todayDevotional = \App\Services\DevotionalRegistry::getTodayDevotional();
-    $showDevotional = !session()->has('devotional_seen_' . date('Y-m-d'));
+    $showDevotional = $devotionalEnabled && !session()->has('devotional_seen_' . date('Y-m-d'));
 @endphp
 
 @if($showDevotional)

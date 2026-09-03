@@ -18,6 +18,8 @@ class Guardian extends Authenticatable
         'password',
         'phone',
         'is_active',
+        'enable_devotional',
+        'enable_songs_hub',
     ];
 
     protected $hidden = [
