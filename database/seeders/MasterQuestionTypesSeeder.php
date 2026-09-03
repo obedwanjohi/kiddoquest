@@ -47,19 +47,26 @@ class MasterQuestionTypesSeeder extends Seeder
                 ]
             );
 
+            $missionData = [
+                'adventure_world_id' => $world->id,
+                'question_bank_id'   => $bank->id,
+                'title'              => 'Master Question Types Lab 🧪',
+                'display_title'      => 'Master Question Types Lab 🧪',
+                'description'        => 'Test all 5 interaction templates!',
+                'status'             => 'published',
+                'sort_order'         => 1,
+                'questions_per_session' => 5,
+                'pass_threshold_percent' => 60,
+            ];
+
+            if (\Illuminate\Support\Facades\Schema::hasColumn('missions', 'lesson_id')) {
+                $lessonId = DB::table('lessons')->value('id') ?? 1;
+                $missionData['lesson_id'] = $lessonId;
+            }
+
             $mission = Mission::updateOrCreate(
                 ['slug' => 'master-qa-types-mission'],
-                [
-                    'adventure_world_id' => $world->id,
-                    'question_bank_id'   => $bank->id,
-                    'title'              => 'Master Question Types Lab 🧪',
-                    'display_title'      => 'Master Question Types Lab 🧪',
-                    'description'        => 'Test all 5 interaction templates!',
-                    'status'             => 'published',
-                    'sort_order'         => 1,
-                    'questions_per_session' => 5,
-                    'pass_threshold_percent' => 60,
-                ]
+                $missionData
             );
 
             // Helper to get QuizType IDs safely
