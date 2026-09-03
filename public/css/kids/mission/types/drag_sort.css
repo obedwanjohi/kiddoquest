@@ -6,17 +6,22 @@
     gap: 30px;
     width: 100%;
     align-items: center;
+    margin-top: 20px;
+    overflow: visible;
 }
 
 /* Tray Area */
 .sort-tray {
     background: white; 
     border-radius: 25px;
-    padding: 15px;
+    padding: 20px 15px;
+    min-height: 110px;
+    overflow: visible;
     display: flex;
     flex-direction: row;
     gap: 10px;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     width: 100%;
     max-width: 400px;
