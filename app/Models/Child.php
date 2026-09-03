@@ -311,4 +311,28 @@ class Child extends Model
 
         return $this->last_played_at->diffForHumans();
     }
+
+    /**
+     * Get total seconds played today by this child.
+     */
+    public function getTodayPlayedSecondsAttribute(): int
+    {
+        return (int) MissionAttempt::where('child_id', $this->id)
+            ->whereDate('completed_at', now()->toDateString())
+            ->sum('time_spent');
+    }
+
+    /**
+     * Get remaining daily learning time in minutes.
+     */
+    public function getRemainingTimeMinutesAttribute(): int
+    {
+        $limit = $this->daily_time_limit_minutes ?? 30;
+        if ($limit <= 0) {
+            return 999; // Unlimited if 0 or negative
+        }
+
+        $playedMinutes = (int) round($this->today_played_seconds / 60);
+        return max(0, $limit - $playedMinutes);
+    }
 }

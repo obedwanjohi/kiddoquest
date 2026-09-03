@@ -158,10 +158,23 @@
                             </div>
                         </div>
 
-                        {{-- Learning Streak 🔥 --}}
-                        <div class="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-black px-3 py-1.5 rounded-2xl flex items-center gap-1">
-                            <span class="text-base animate-pulse">🔥</span>
-                            <span>{{ $rep['streak_days'] ?? 7 }} Day Streak</span>
+                        {{-- Learning Streak & WhatsApp Share --}}
+                        <div class="flex items-center gap-2">
+                            @php
+                                $waText = rawurlencode("🌟 *KiddoQuest CBC Report for {$child->name}* 🌟\n\n⭐ Total Stars: {$child->total_stars}\n🪙 Star Coins: {$child->star_coins}\n🔥 Streak: " . ($rep['streak_days'] ?? 1) . " Days\n🎯 Missions Passed: " . ($rep['passed_missions'] ?? 0) . "\n📊 Accuracy: " . ($rep['accuracy_rate'] ?? 0) . "%\n\nKeep up the awesome CBC learning adventure! 🚀 https://www.kiddoquest.co.ke");
+                            @endphp
+
+                            <a href="https://api.whatsapp.com/send?text={{ $waText }}" target="_blank"
+                               class="bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs px-3 py-1.5 rounded-2xl flex items-center gap-1 shadow-md active:scale-95 transition-all"
+                               title="Share child progress to WhatsApp">
+                                <span>📲</span>
+                                <span class="hidden sm:inline">Share Report</span>
+                            </a>
+
+                            <div class="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-black px-3 py-1.5 rounded-2xl flex items-center gap-1">
+                                <span class="text-base animate-pulse">🔥</span>
+                                <span>{{ $rep['streak_days'] ?? 1 }}d Streak</span>
+                            </div>
                         </div>
                     </div>
 

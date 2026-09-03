@@ -12,9 +12,14 @@
 ])
 
 @php
-    if ($coins === null && session('active_child_id')) {
-        $c = \App\Models\Child::find(session('active_child_id'));
-        $coins = $c->star_coins ?? 0;
+    $activeChild = null;
+    $remainingMinutes = 999;
+    if (session('active_child_id')) {
+        $activeChild = \App\Models\Child::find(session('active_child_id'));
+        if ($activeChild) {
+            $remainingMinutes = $activeChild->remaining_time_minutes;
+            $coins = $coins ?? $activeChild->star_coins;
+        }
     }
     $coins = $coins ?? 0;
 @endphp
@@ -58,12 +63,22 @@
         @endif
     </div>
 
-    {{-- Center: Full Crisp Title (No cut-offs) --}}
-    @if($title)
-        <h1 class="font-heading font-black text-slate-800 text-xs sm:text-sm md:text-base text-center px-1 truncate max-w-[140px] sm:max-w-xs">
-            {{ $title }}
-        </h1>
-    @endif
+    {{-- Center: Title + Screen-Time Remaining Pill --}}
+    <div class="flex items-center gap-2">
+        @if($title)
+            <h1 class="font-heading font-black text-slate-800 text-xs sm:text-sm md:text-base text-center px-1 truncate max-w-[120px] sm:max-w-xs">
+                {{ $title }}
+            </h1>
+        @endif
+
+        @if($activeChild && ($activeChild->daily_time_limit_minutes ?? 0) > 0)
+            <div class="flex items-center gap-1 px-2.5 py-1 rounded-full font-black text-[10px] sm:text-xs shadow-2xs border transition-colors {{ $remainingMinutes <= 5 ? 'bg-rose-50 border-rose-300 text-rose-700 animate-pulse' : ($remainingMinutes <= 10 ? 'bg-amber-50 border-amber-300 text-amber-900' : 'bg-emerald-50 border-emerald-300 text-emerald-900') }}"
+                 title="Daily Learning Time Remaining">
+                <span class="text-xs">⏳</span>
+                <span>{{ $remainingMinutes > 0 ? $remainingMinutes . 'm Left' : 'Time Up 🎵' }}</span>
+            </div>
+        @endif
+    </div>
 
     {{-- Right: Stars + Parent Lock Settings --}}
     <div class="flex items-center gap-1.5 sm:gap-2">

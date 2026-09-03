@@ -82,6 +82,44 @@
 
 @section('kid-content')
 {{-- Exit Bar: Stars + Coins + Exit --}}
+@php
+    $todayDevotional = \App\Services\DevotionalRegistry::getTodayDevotional();
+    $showDevotional = !session()->has('devotional_seen_' . date('Y-m-d'));
+@endphp
+
+@if($showDevotional)
+    @php session(['devotional_seen_' . date('Y-m-d') => true]); @endphp
+    <div x-data="{ open: true }" x-show="open" x-cloak
+         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl p-5 sm:p-6 max-w-sm w-full text-center border-4 border-amber-300 shadow-2xl relative overflow-hidden">
+            <div class="w-16 h-16 rounded-2xl bg-amber-100 border-2 border-amber-300 flex items-center justify-center text-4xl mx-auto mb-3 shadow-inner">
+                {{ $todayDevotional['emoji'] }}
+            </div>
+            <span class="text-[10px] font-black uppercase tracking-wider bg-purple-100 text-purple-900 px-3 py-1 rounded-full inline-block mb-2">
+                📖 Daily Word & Prayer
+            </span>
+            <h3 class="font-heading font-black text-base sm:text-lg text-slate-900 leading-snug mb-1">
+                "{{ $todayDevotional['verse_text'] }}"
+            </h3>
+            <p class="text-xs font-black text-purple-700 mb-3">— {{ $todayDevotional['verse_ref'] }}</p>
+
+            <div class="bg-amber-50 border border-amber-200 rounded-2xl p-3 text-left mb-3">
+                <p class="text-xs text-amber-950 font-bold leading-relaxed mb-2">
+                    ✨ <strong>Today's Thought:</strong> {{ $todayDevotional['teaching'] }}
+                </p>
+                <p class="text-xs text-purple-900 font-bold leading-relaxed">
+                    🙏 <strong>Short Prayer:</strong> "{{ $todayDevotional['prayer'] }}"
+                </p>
+            </div>
+
+            <button @click="open = false"
+                    class="w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-black text-sm shadow-md hover:from-emerald-600 hover:to-teal-700 active:scale-95 transition-all">
+                Start Learning Adventure! 🚀
+            </button>
+        </div>
+    </div>
+@endif
+
 <x-kid.exit-bar :stars="$child->total_stars" :coins="$child->star_coins" :title="'Adventure Map'" />
 
 <div x-data="{ activeSubject: 'all' }" class="pt-20 sm:pt-24 pb-28 min-h-screen map-canvas relative overflow-hidden">

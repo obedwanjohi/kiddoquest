@@ -387,7 +387,8 @@ Route::prefix('kids')->group(function () {
         Route::post('/world/{world}/mission/{mission}/submit', [KidMissionController::class, 'submit'])->name('kids.mission.submit');
         Route::get('/celebration', fn () => view('kids.celebration'))->name('kids.celebration');
 
-        // Reward Shop & Sticker Book
+        // Reward Shop & Sticker Book & Songs Hub
+        Route::get('/songs', [\App\Http\Controllers\Kid\KidSongController::class, 'index'])->name('kids.songs');
         Route::get('/shop', [KidShopController::class, 'index'])->name('kids.shop');
         Route::post('/shop/purchase', [KidShopController::class, 'purchase'])->name('kids.shop.purchase');
         Route::post('/shop/equip', [KidShopController::class, 'equip'])->name('kids.shop.equip');

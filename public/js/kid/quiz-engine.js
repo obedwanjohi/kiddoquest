@@ -200,6 +200,8 @@ function quizEngine(config) {
                 });
             }
 
+            this.stopAllAudio();
+
             // 🔊 AUTO-PLAY question audio (narration or prompt_audio_url)
             // For listen_choose / speak_repeat, their own init methods handle audio.
             const skipAutoPlay = ['listen_choose', 'speak_repeat'].includes(this.currentQuestion.type);
@@ -210,14 +212,26 @@ function quizEngine(config) {
             this.resetIdleTimer();
         },
 
+        stopAllAudio() {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            if (this.currentAudioInstance) {
+                try {
+                    this.currentAudioInstance.pause();
+                    this.currentAudioInstance.currentTime = 0;
+                } catch(e) {}
+            }
+            if (window.KidSoundLayer && window.KidSoundLayer.stopAll) {
+                try { window.KidSoundLayer.stopAll(); } catch(e) {}
+            }
+        },
+
         // 🔊 Play question narration / prompt audio
         playQuestionAudio() {
-            // Cancel any ongoing TTS speech
-            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            this.stopAllAudio();
             
             if (this.currentQuestion.audio) {
-                const audio = new Audio(this.currentQuestion.audio);
-                audio.play().catch(e => console.log('Question audio playback deferred:', e));
+                this.currentAudioInstance = new Audio(this.currentQuestion.audio);
+                this.currentAudioInstance.play().catch(e => console.log('Question audio playback deferred:', e));
             } else if (this.currentQuestion.narration_text) {
                 this.speakText(this.currentQuestion.narration_text);
             } else if (this.currentQuestion.prompt) {

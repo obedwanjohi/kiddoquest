@@ -20,9 +20,14 @@ class KidMissionController extends Controller
     /**
      * Show the quiz game engine.
      */
-    public function show(AdventureWorld $world, Mission $mission): View
+    public function show(AdventureWorld $world, Mission $mission)
     {
         $child = $this->activeChild();
+
+        if (($child->daily_time_limit_minutes ?? 0) > 0 && $child->remaining_time_minutes <= 0) {
+            return redirect()->route('kids.songs')->with('info', '🌟 Quiz time for today is complete! Enjoy your Music & Songs Hub!');
+        }
+
         $mission->load([
             'questionBank.questions.options', 'questionBank.questions.quizType',
             'questionBank.assignedQuestions.options', 'questionBank.assignedQuestions.quizType'
