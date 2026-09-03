@@ -119,9 +119,9 @@ class MasterQuestionTypesSeeder extends Seeder
                 'sort_order'       => 3,
             ]);
 
-            QuestionOption::create(['question_id' => $q3->id, 'text_value' => 'Dog 🐶', 'match_key' => 'Puppy', 'is_correct' => true, 'sort_order' => 1]);
-            QuestionOption::create(['question_id' => $q3->id, 'text_value' => 'Cat 🐱', 'match_key' => 'Kitten', 'is_correct' => true, 'sort_order' => 2]);
-            QuestionOption::create(['question_id' => $q3->id, 'text_value' => 'Cow 🐮', 'match_key' => 'Calf', 'is_correct' => true, 'sort_order' => 3]);
+            QuestionOption::create(['question_id' => $q3->id, 'text_value' => '🐶', 'match_key' => '🐶 Puppy', 'is_correct' => true, 'sort_order' => 1]);
+            QuestionOption::create(['question_id' => $q3->id, 'text_value' => '🐱', 'match_key' => '🐱 Kitten', 'is_correct' => true, 'sort_order' => 2]);
+            QuestionOption::create(['question_id' => $q3->id, 'text_value' => '🐮', 'match_key' => '🐮 Calf', 'is_correct' => true, 'sort_order' => 3]);
 
             // -------------------------------------------------------------
             // QUESTION 4: QT-04 — Drag & Drop Sort (Farm vs Wild Animals)
@@ -132,14 +132,14 @@ class MasterQuestionTypesSeeder extends Seeder
                 'type'             => 'drag_sort',
                 'prompt'           => 'Sort the animals into Farm Animals 🐮 vs Wild Animals 🦁!',
                 'narration_text'   => 'Sort the animals into Farm Animals and Wild Animals!',
-                'scoring_config'   => ['categories' => ['Farm Animals', 'Wild Animals']],
+                'scoring_config'   => ['categories' => ['Farm Animals 🐮', 'Wild Animals 🦁']],
                 'sort_order'       => 4,
             ]);
 
-            QuestionOption::create(['question_id' => $q4->id, 'text_value' => 'Cow 🐮', 'match_key' => 'Farm Animals', 'is_correct' => true, 'sort_order' => 1]);
-            QuestionOption::create(['question_id' => $q4->id, 'text_value' => 'Pig 🐷', 'match_key' => 'Farm Animals', 'is_correct' => true, 'sort_order' => 2]);
-            QuestionOption::create(['question_id' => $q4->id, 'text_value' => 'Lion 🦁', 'match_key' => 'Wild Animals', 'is_correct' => true, 'sort_order' => 3]);
-            QuestionOption::create(['question_id' => $q4->id, 'text_value' => 'Giraffe 🦒', 'match_key' => 'Wild Animals', 'is_correct' => true, 'sort_order' => 4]);
+            QuestionOption::create(['question_id' => $q4->id, 'text_value' => '🐮', 'match_key' => 'Farm Animals 🐮', 'is_correct' => true, 'sort_order' => 1]);
+            QuestionOption::create(['question_id' => $q4->id, 'text_value' => '🐷', 'match_key' => 'Farm Animals 🐮', 'is_correct' => true, 'sort_order' => 2]);
+            QuestionOption::create(['question_id' => $q4->id, 'text_value' => '🦁', 'match_key' => 'Wild Animals 🦁', 'is_correct' => true, 'sort_order' => 3]);
+            QuestionOption::create(['question_id' => $q4->id, 'text_value' => '🦒', 'match_key' => 'Wild Animals 🦁', 'is_correct' => true, 'sort_order' => 4]);
 
             // -------------------------------------------------------------
             // QUESTION 5: QT-05 — Drag & Drop Sequence (Numbers 1 to 4)
