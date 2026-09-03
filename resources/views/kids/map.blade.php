@@ -201,56 +201,78 @@
             </div>
         </div>
 
-        {{-- 2. SUBJECT WORLD SELECTOR TABS (6 Touch-Friendly 3D Buttons) --}}
+        @php
+            $completedTodayCount = \App\Models\MissionAttempt::where('child_id', $child->id)->whereDate('completed_at', now()->toDateString())->where('passed', true)->count();
+            $isSongsUnlocked = ($completedTodayCount >= 1 || $child->remaining_time_minutes <= 0);
+        @endphp
+
+        {{-- 2. SUBJECT WORLD SELECTOR TABS (7 Touch-Friendly 3D Buttons) --}}
         <div class="mb-6">
-            <div class="grid grid-cols-6 gap-1 sm:gap-2">
+            <div class="grid grid-cols-7 gap-1 sm:gap-1.5">
                 {{-- All Worlds --}}
                 <button @click="activeSubject = 'all'"
                         :class="activeSubject === 'all' ? 'bg-indigo-600 text-white shadow-[0_4px_0_#3730A3] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
                         class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
-                    <span class="text-lg sm:text-2xl">🗺️</span>
-                    <span class="text-[9px] sm:text-xs font-black leading-tight">All</span>
+                    <span class="text-base sm:text-xl">🗺️</span>
+                    <span class="text-[8px] sm:text-[10px] font-black leading-tight">All</span>
                 </button>
 
                 {{-- Math Safari --}}
                 <button @click="activeSubject = 'math'"
                         :class="activeSubject === 'math' ? 'bg-amber-500 text-slate-950 shadow-[0_4px_0_#B45309] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
                         class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
-                    <span class="text-lg sm:text-2xl">🔢</span>
-                    <span class="text-[9px] sm:text-xs font-black leading-tight">Math</span>
+                    <span class="text-base sm:text-xl">🔢</span>
+                    <span class="text-[8px] sm:text-[10px] font-black leading-tight">Math</span>
                 </button>
 
                 {{-- Language & Phonics --}}
                 <button @click="activeSubject = 'english'"
                         :class="activeSubject === 'english' ? 'bg-sky-500 text-white shadow-[0_4px_0_#0369A1] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
                         class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
-                    <span class="text-lg sm:text-2xl">📖</span>
-                    <span class="text-[9px] sm:text-xs font-black leading-tight">Phonics</span>
+                    <span class="text-base sm:text-xl">📖</span>
+                    <span class="text-[8px] sm:text-[10px] font-black leading-tight">Phonics</span>
                 </button>
 
                 {{-- Speak & Vocabulary --}}
                 <button @click="activeSubject = 'speak'"
                         :class="activeSubject === 'speak' ? 'bg-pink-600 text-white shadow-[0_4px_0_#9D174D] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
                         class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
-                    <span class="text-lg sm:text-2xl">🎙️</span>
-                    <span class="text-[9px] sm:text-xs font-black leading-tight">Speak</span>
+                    <span class="text-base sm:text-xl">🎙️</span>
+                    <span class="text-[8px] sm:text-[10px] font-black leading-tight">Speak</span>
                 </button>
 
                 {{-- Tracing & Writing --}}
                 <button @click="activeSubject = 'tracing'"
                         :class="activeSubject === 'tracing' ? 'bg-purple-600 text-white shadow-[0_4px_0_#581C87] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
                         class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
-                    <span class="text-lg sm:text-2xl">✏️</span>
-                    <span class="text-[9px] sm:text-xs font-black leading-tight">Tracing</span>
+                    <span class="text-base sm:text-xl">✏️</span>
+                    <span class="text-[8px] sm:text-[10px] font-black leading-tight">Tracing</span>
                 </button>
 
                 {{-- CRE & Values --}}
                 <button @click="activeSubject = 'cre'"
                         :class="activeSubject === 'cre' ? 'bg-emerald-600 text-white shadow-[0_4px_0_#065F46] -translate-y-0.5' : 'bg-white text-slate-700 border border-slate-200 shadow-xs'"
                         class="py-2 px-0.5 rounded-2xl font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer">
-                    <span class="text-lg sm:text-2xl">✝️</span>
-                    <span class="text-[9px] sm:text-xs font-black leading-tight">Values</span>
+                    <span class="text-base sm:text-xl">✝️</span>
+                    <span class="text-[8px] sm:text-[10px] font-black leading-tight">Values</span>
                 </button>
+
+                {{-- Songs Hub (Locked until 1 mission passed or time expires) --}}
+                @if($isSongsUnlocked)
+                    <a href="{{ route('kids.songs') }}"
+                       class="py-2 px-0.5 rounded-2xl bg-gradient-to-tr from-pink-500 to-purple-600 text-white shadow-[0_4px_0_#831843] -translate-y-0.5 font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer"
+                       title="Unlocked! Tap to open Songs Hub 🎵">
+                        <span class="text-base sm:text-xl animate-bounce">🎵</span>
+                        <span class="text-[8px] sm:text-[10px] font-black leading-tight">Songs</span>
+                    </a>
+                @else
+                    <button @click="alert('🔒 Leo says: Complete at least 1 mission today to unlock your Music & Songs Hub! 🚀')"
+                            class="py-2 px-0.5 rounded-2xl bg-slate-100 text-slate-400 border border-slate-200 shadow-2xs font-black text-xs transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer opacity-75"
+                            title="Complete 1 mission today to unlock!">
+                        <span class="text-base sm:text-xl">🔒</span>
+                        <span class="text-[8px] sm:text-[10px] font-black leading-tight">Songs</span>
+                    </button>
+                @endif
             </div>
         </div>
 
