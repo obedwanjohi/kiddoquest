@@ -19,10 +19,9 @@ class MasterQuestionTypesSeeder extends Seeder
         DB::transaction(function () {
             // 1. Ensure Master Subject & Adventure World exist
             $subject = Subject::firstOrCreate(
-                ['code' => 'TEST-LAB'],
+                ['slug' => 'master-qa-lab'],
                 [
                     'name' => 'Master QA Lab 🧪',
-                    'slug' => 'master-qa-lab',
                     'sort_order' => 999,
                 ]
             );
