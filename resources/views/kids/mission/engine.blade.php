@@ -19,9 +19,9 @@
 @php
     // Build questions JSON for Alpine.js — REAL data from database
     $questionsJson = $mission->questions->map(function ($q) {
-        // Normalize slug: DB uses hyphens (multiple-choice), JS uses underscores (multiple_choice)
-        $rawSlug = $q->quizType ? $q->quizType->slug : 'multiple-choice';
-        $typeSlug = str_replace('-', '_', $rawSlug);
+        // Normalize slug: Prefer $q->type column if set, else quizType->slug
+        $rawType = $q->type ?: ($q->quizType ? $q->quizType->slug : 'multiple_choice');
+        $typeSlug = str_replace('-', '_', $rawType);
         
         // Fix naming mismatches between DB and frontend templates
         if ($typeSlug === 'complete_pattern') {
