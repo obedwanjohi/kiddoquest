@@ -69,8 +69,22 @@ class MasterQuestionTypesSeeder extends Seeder
                 $missionData
             );
 
-            // Helper to get QuizType IDs safely
-            $getQtId = fn($code) => QuizType::where('code', $code)->value('id') ?? 1;
+            // Helper to get QuizType IDs safely without falling back to ID 1
+            $getQtId = function($code, $slug) {
+                $id = QuizType::where('code', $code)->orWhere('slug', $slug)->value('id');
+                if (!$id) {
+                    $qt = QuizType::create([
+                        'code' => $code,
+                        'slug' => $slug,
+                        'name' => ucfirst(str_replace('-', ' ', $slug)),
+                        'interaction_mode' => 'tap',
+                        'has_options' => true,
+                        'is_scoring_type' => true,
+                    ]);
+                    $id = $qt->id;
+                }
+                return $id;
+            };
 
             // Purge old test questions for this bank to ensure a clean slate
             $bank->questions()->delete();
@@ -80,7 +94,7 @@ class MasterQuestionTypesSeeder extends Seeder
             // -------------------------------------------------------------
             $q1 = QuizQuestion::create([
                 'question_bank_id' => $bank->id,
-                'quiz_type_id'     => $getQtId('QT-10'),
+                'quiz_type_id'     => $getQtId('QT-10', 'complete-pattern'),
                 'type'             => 'pattern',
                 'prompt'           => 'Complete the color pattern! What comes next? 🔴 🔵 🔴 🔵 ❓',
                 'narration_text'   => 'Complete the color pattern! Red, Blue, Red, Blue. What comes next?',
@@ -96,7 +110,7 @@ class MasterQuestionTypesSeeder extends Seeder
             // -------------------------------------------------------------
             $q2 = QuizQuestion::create([
                 'question_bank_id' => $bank->id,
-                'quiz_type_id'     => $getQtId('QT-08'),
+                'quiz_type_id'     => $getQtId('QT-08', 'fill-blank'),
                 'type'             => 'fill_blank',
                 'prompt'           => 'Fill in the missing letter for C _ T 🐱',
                 'narration_text'   => 'Fill in the missing letter for Cat!',
@@ -112,7 +126,7 @@ class MasterQuestionTypesSeeder extends Seeder
             // -------------------------------------------------------------
             $q3 = QuizQuestion::create([
                 'question_bank_id' => $bank->id,
-                'quiz_type_id'     => $getQtId('QT-03'),
+                'quiz_type_id'     => $getQtId('QT-03', 'matching'),
                 'type'             => 'matching',
                 'prompt'           => 'Match each animal parent to its baby! 🐶 🐱 🐮',
                 'narration_text'   => 'Match each animal parent to its baby!',
@@ -128,7 +142,7 @@ class MasterQuestionTypesSeeder extends Seeder
             // -------------------------------------------------------------
             $q4 = QuizQuestion::create([
                 'question_bank_id' => $bank->id,
-                'quiz_type_id'     => $getQtId('QT-04'),
+                'quiz_type_id'     => $getQtId('QT-04', 'drag-sort'),
                 'type'             => 'drag_sort',
                 'prompt'           => 'Sort the animals into Farm Animals 🐮 vs Wild Animals 🦁!',
                 'narration_text'   => 'Sort the animals into Farm Animals and Wild Animals!',
@@ -146,7 +160,7 @@ class MasterQuestionTypesSeeder extends Seeder
             // -------------------------------------------------------------
             $q5 = QuizQuestion::create([
                 'question_bank_id' => $bank->id,
-                'quiz_type_id'     => $getQtId('QT-05'),
+                'quiz_type_id'     => $getQtId('QT-05', 'drag-sequence'),
                 'type'             => 'drag_sequence',
                 'prompt'           => 'Put the numbers in order from 1 to 4! 🔢',
                 'narration_text'   => 'Put the numbers in order from 1 to 4!',
