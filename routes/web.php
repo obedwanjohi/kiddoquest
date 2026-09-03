@@ -423,6 +423,7 @@ Route::post('/parent/verify-pin', [App\Http\Controllers\Parent\ParentDashboardCo
 Route::get('/parent/dashboard', [App\Http\Controllers\Parent\ParentDashboardController::class, 'index'])->name('parent.dashboard');
 Route::post('/parent/update-pin', [App\Http\Controllers\Parent\ParentDashboardController::class, 'updatePin'])->name('parent.update_pin');
 Route::post('/parent/update-screentime', [App\Http\Controllers\Parent\ParentDashboardController::class, 'updateScreenTime'])->name('parent.update_screentime');
+Route::post('/parent/update-devotional-settings', [App\Http\Controllers\Parent\ParentDashboardController::class, 'updateDevotionalSettings'])->name('parent.update_devotional_settings');
 Route::post('/parent/assign-mission', [App\Http\Controllers\Parent\ParentDashboardController::class, 'assignFocusMission'])->name('parent.assign_mission');
 Route::post('/parent/ask-ai', [App\Http\Controllers\Parent\ParentDashboardController::class, 'askAi'])->name('parent.ask_ai');
 // M-Pesa Subscriptions & Paywall

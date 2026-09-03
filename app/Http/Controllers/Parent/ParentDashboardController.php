@@ -407,6 +407,21 @@ class ParentDashboardController extends Controller
     }
 
     /**
+     * Update Devotional & Songs Hub Settings.
+     */
+    public function updateDevotionalSettings(Request $request): \Illuminate\Http\RedirectResponse
+    {
+        $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
+        if ($guardian && $guardian->exists) {
+            $guardian->enable_devotional = $request->has('enable_devotional');
+            $guardian->enable_songs_hub = $request->has('enable_songs_hub');
+            $guardian->save();
+        }
+
+        return back()->with('success', '✨ Devotional & Feature controls updated successfully!');
+    }
+
+    /**
      * Lock Parent Zone.
      */
     public function lockSession(): \Illuminate\Http\RedirectResponse

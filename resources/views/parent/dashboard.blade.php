@@ -589,6 +589,45 @@
                 </a>
             </div>
             
+            {{-- Daily Devotional & Prayer Feature Controls --}}
+            <div class="parent-card p-5 border-2 border-purple-500/30 bg-gradient-to-r from-slate-900 to-purple-950/60">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="text-3xl">📖</div>
+                    <div>
+                        <h3 class="font-black text-base text-white">Daily Devotional & Prayer Controls</h3>
+                        <p class="text-xs text-purple-300">Toggle morning Bible verse, voice audio, and songs hub for children</p>
+                    </div>
+                </div>
+
+                <form method="POST" action="{{ route('parent.update_devotional_settings') }}" class="space-y-3">
+                    @csrf
+
+                    {{-- Toggle 1: Daily Verse & Prayer --}}
+                    <div class="flex items-center justify-between p-3 rounded-xl bg-slate-800/80 border border-slate-700">
+                        <div>
+                            <div class="text-xs font-black text-white">Daily Bible Verse & Morning Prayer</div>
+                            <div class="text-[10px] text-slate-400">Shows verse, short teaching, and voice audio prayer on app launch</div>
+                        </div>
+                        <input type="checkbox" name="enable_devotional" value="1" {{ ($guardian->enable_devotional ?? true) ? 'checked' : '' }}
+                               class="w-5 h-5 rounded text-indigo-600 focus:ring-indigo-500 border-slate-700 bg-slate-900 cursor-pointer">
+                    </div>
+
+                    {{-- Toggle 2: Songs Hub Access --}}
+                    <div class="flex items-center justify-between p-3 rounded-xl bg-slate-800/80 border border-slate-700">
+                        <div>
+                            <div class="text-xs font-black text-white">Music & Songs Hub Access</div>
+                            <div class="text-[10px] text-slate-400">Allows kids to access CBC educational songs & praise melodies</div>
+                        </div>
+                        <input type="checkbox" name="enable_songs_hub" value="1" {{ ($guardian->enable_songs_hub ?? true) ? 'checked' : '' }}
+                               class="w-5 h-5 rounded text-indigo-600 focus:ring-indigo-500 border-slate-700 bg-slate-900 cursor-pointer">
+                    </div>
+
+                    <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-black py-2.5 rounded-xl text-xs shadow-md transition-all">
+                        Save Feature Controls
+                    </button>
+                </form>
+            </div>
+
             {{-- Screen Time Limits --}}
             @foreach($displayChildren as $child)
                 <div class="parent-card p-5">
