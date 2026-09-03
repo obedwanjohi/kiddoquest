@@ -136,6 +136,17 @@ Route::get('/purge-speak-repeat-db', function() {
     return "<h1>🧹 Speak & Repeat Safari Database Records Purged Successfully!</h1><p>Database is clean for Speak & Repeat Safari.</p>";
 });
 
+Route::get('/seed-master-qa-mission', function() {
+    $seeder = new \Database\Seeders\MasterQuestionTypesSeeder();
+    $seeder->run();
+    $world = \App\Models\AdventureWorld::where('slug', 'master-qa-lab-world')->first();
+    $mission = \App\Models\Mission::where('slug', 'master-qa-types-mission')->first();
+    
+    $playUrl = $world && $mission ? route('kids.mission.play', ['world' => $world->slug, 'mission' => $mission->id]) : '/kids/map';
+
+    return "<h1>🧪 Master QA Question Types Lab Seeded Successfully!</h1><p>👉 <a href='{$playUrl}'>Click here to play the Master Test Mission</a></p>";
+});
+
 Route::get('/convert-speak-webp', function() {
     $dir = public_path('images/speak');
     $files = ['cat.jpg', 'cow.jpg'];

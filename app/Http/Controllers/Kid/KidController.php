@@ -84,9 +84,9 @@ class KidController extends Controller
                     }
                 });
 
-                // Always unlock Tracing Worlds & Speak Repeat Safari for all levels (Playgroup, PP1, PP2)
+                // Always unlock Tracing Worlds, Speak Repeat Safari & Master QA Lab for all levels
                 $query->orWhereIn('slug', [
-                    'line-tracing-trail', 'letter-tracing-safari', 'number-tracing-kingdom', 'speak-repeat-safari'
+                    'line-tracing-trail', 'letter-tracing-safari', 'number-tracing-kingdom', 'speak-repeat-safari', 'master-qa-lab-world'
                 ]);
 
                 // Match Playgroup world slugs directly for Play Group profiles
