@@ -124,11 +124,26 @@ class KidMissionController extends Controller
                     }
                 }
 
-                // 2. Update child progress for this mission
-                $progress = ChildProgress::firstOrNew([
-                    'child_id'   => $child->id,
-                    'mission_id' => $mission->id,
-                ]);
+                // 2. Update child progress for this mission safely against PostgreSQL unique constraint
+                $hasLessonId = \Illuminate\Support\Facades\Schema::hasColumn('child_progress', 'lesson_id');
+                
+                $progress = ChildProgress::where('child_id', $child->id)
+                    ->where(function($q) use ($mission, $hasLessonId) {
+                        $q->where('mission_id', $mission->id);
+                        if ($hasLessonId) {
+                            $q->orWhere('lesson_id', $mission->id);
+                        }
+                    })
+                    ->first();
+
+                if (! $progress) {
+                    $progress = new ChildProgress();
+                    $progress->child_id = $child->id;
+                    $progress->mission_id = $mission->id;
+                    if ($hasLessonId) {
+                        $progress->lesson_id = $mission->id;
+                    }
+                }
 
                 if ($stars > ($progress->stars_earned ?? 0)) {
                     $progress->stars_earned = $stars;
@@ -145,7 +160,25 @@ class KidMissionController extends Controller
                     $progress->started_at = now();
                 }
 
-                $progress->save();
+                try {
+                    $progress->save();
+                } catch (\Throwable $pErr) {
+                    // Atomic DB fallback if unique constraint is hit
+                    DB::table('child_progress')
+                        ->where('child_id', $child->id)
+                        ->where(function($q) use ($mission, $hasLessonId) {
+                            $q->where('mission_id', $mission->id);
+                            if ($hasLessonId) {
+                                $q->orWhere('lesson_id', $mission->id);
+                            }
+                        })
+                        ->update([
+                            'status'       => $passed ? 'completed' : 'in_progress',
+                            'stars_earned' => DB::raw("GREATEST(COALESCE(stars_earned, 0), {$stars})"),
+                            'completed_at' => $passed ? now() : null,
+                            'updated_at'   => now(),
+                        ]);
+                }
 
                 // 3. Award net-new stars to child's total
                 $netNewStars = max(0, $stars - $previousBest);
