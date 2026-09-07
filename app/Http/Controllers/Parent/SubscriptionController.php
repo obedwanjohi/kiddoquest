@@ -26,20 +26,23 @@ class SubscriptionController extends Controller
      */
     public function showSubscriptionPage(): View
     {
-        $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
-        $guardianId = $guardian ? $guardian->id : 0;
-        
-        $activeSubscription = $guardian ? Subscription::where('guardian_id', $guardianId)
+        $guardian = Auth::guard('guardian')->user();
+
+        $activeSubscription = Subscription::where('guardian_id', $guardian->id)
             ->where('status', 'active')
             ->where('expires_at', '>', now())
-            ->first() : null;
+            ->first();
 
-        $recentPayments = $guardian ? Payment::where('guardian_id', $guardianId)
+        $recentPayments = Payment::where('guardian_id', $guardian->id)
             ->orderBy('created_at', 'desc')
             ->take(5)
-            ->get() : collect();
+            ->get();
 
-        return view('parent.subscription', compact('guardian', 'activeSubscription', 'recentPayments'));
+        $plans = config('plans.plans', []);
+        $currency = config('plans.currency', 'KES');
+        $simulateEnabled = ! app()->environment('production');
+
+        return view('parent.subscription', compact('guardian', 'activeSubscription', 'recentPayments', 'plans', 'currency', 'simulateEnabled'));
     }
 
     /**
@@ -49,10 +52,10 @@ class SubscriptionController extends Controller
     {
         $request->validate([
             'phone_number' => 'required|string|min:9|max:14',
-            'plan_type'    => 'required|in:monthly,termly,annual',
+            'plan_type'    => ['required', \Illuminate\Validation\Rule::in(array_keys(config('plans.plans', [])))],
         ]);
 
-        $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
+        $guardian = Auth::guard('guardian')->user();
         $phone = $request->input('phone_number');
         $planType = $request->input('plan_type');
 
@@ -66,8 +69,16 @@ class SubscriptionController extends Controller
      */
     public function simulatePayment(Request $request): JsonResponse
     {
-        $checkoutRequestId = $request->input('checkout_request_id');
-        $success = $this->mpesaService->completePayment($checkoutRequestId);
+        // Test helper only — never available in production, and only for the caller's own payment.
+        abort_if(app()->environment('production'), 404);
+
+        $checkoutRequestId = (string) $request->input('checkout_request_id');
+        $guardian = Auth::guard('guardian')->user();
+        $payment = Payment::where('checkout_request_id', $checkoutRequestId)
+            ->where('guardian_id', $guardian->id)
+            ->first();
+
+        $success = $payment ? $this->mpesaService->completePayment($checkoutRequestId) : false;
 
         return response()->json([
             'success' => $success,
@@ -80,7 +91,10 @@ class SubscriptionController extends Controller
      */
     public function checkStatus(string $checkoutRequestId): JsonResponse
     {
-        $payment = Payment::where('checkout_request_id', $checkoutRequestId)->first();
+        $guardian = Auth::guard('guardian')->user();
+        $payment = Payment::where('checkout_request_id', $checkoutRequestId)
+            ->where('guardian_id', $guardian->id)
+            ->first();
 
         if (!$payment) {
             return response()->json(['status' => 'not_found']);

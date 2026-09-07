@@ -47,6 +47,22 @@ return [
         'shortcode'       => env('MPESA_SHORTCODE', '174379'),
         'passkey'         => env('MPESA_PASSKEY'),
         'env'             => env('MPESA_ENV', 'sandbox'),
+        'tx_type'         => env('MPESA_TX_TYPE', 'CustomerPayBillOnline'),
+    ],
+
+    'supabase' => [
+        // The project ref is not a secret; the service-role key is and must only live in .env.
+        'project_ref' => env('SUPABASE_PROJECT_REF', 'hxxxmizzuddcxmufrsbr'),
+        'service_key' => env('SUPABASE_SERVICE_KEY'),
+        'bucket'      => env('SUPABASE_STORAGE_BUCKET', 'media'),
+    ],
+
+    'groq' => [
+        'key' => env('GROQ_API_KEY'),
+    ],
+
+    'gemini' => [
+        'key' => env('GEMINI_API_KEY'),
     ],
 
 ];

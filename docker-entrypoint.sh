@@ -19,8 +19,12 @@ php artisan storage:link --force || true
 # Run all database migrations automatically
 php artisan migrate --force || true
 
-# Seed default starter accounts and curriculum if database is fresh
-php artisan db:seed --force || true
+# Seeding is opt-in. It used to run on EVERY boot, which re-ran destructive content
+# seeders (missions deleted -> child progress cascaded away) and GuardianSeeder wiped
+# every parent and child. Set SEED_ON_BOOT=true for a one-off first deploy only.
+if [ "${SEED_ON_BOOT:-false}" = "true" ]; then
+    php artisan db:seed --force || true
+fi
 
 # Set full www-data permissions AFTER all artisan commands have finished
 chown -R www-data:www-data /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache

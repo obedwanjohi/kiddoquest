@@ -233,7 +233,8 @@ class KidShopController extends Controller
         }
 
         $guardian = Auth::guard('guardian')->user();
-        if ($guardian && $child->guardian_id !== $guardian->id) {
+        if (! $guardian || $child->guardian_id !== $guardian->id) {
+            session()->forget('active_child_id');
             abort(redirect()->route('kids.profiles'));
         }
 

@@ -77,6 +77,18 @@ class KidMissionController extends Controller
             $validated['answers'] = is_array($decoded) ? $decoded : [];
         }
 
+        // Server-side integrity: never trust the browser's totals or stars.
+        // total is capped at the mission's session size, score at total, stars are
+        // recomputed from the score with the engine's own thresholds, and time is capped.
+        $maxTotal = max(1, (int) ($mission->questions_per_session ?: 10));
+        $validated['total'] = min((int) $validated['total'], $maxTotal);
+        $validated['score'] = min((int) $validated['score'], $validated['total']);
+        $validated['stars'] = self::starsForScore($validated['score'], $validated['total']);
+        $validated['time_spent'] = min((int) ($validated['time_spent'] ?? 0), 7200);
+        if (is_array($validated['answers'] ?? null)) {
+            $validated['answers'] = array_slice($validated['answers'], 0, $maxTotal);
+        }
+
         try {
             DB::transaction(function () use ($validated, $child, $mission) {
                 $score      = (int) $validated['score'];
@@ -286,6 +298,20 @@ class KidMissionController extends Controller
     }
 
     /**
+     * Same thresholds as calculateStars() in public/js/kid/quiz-engine.js.
+     */
+    public static function starsForScore(int $score, int $total): int
+    {
+        if ($total <= 0) {
+            return 0;
+        }
+
+        $pct = ($score / $total) * 100;
+
+        return $pct >= 90 ? 3 : ($pct >= 60 ? 2 : ($pct >= 30 ? 1 : 0));
+    }
+
+    /**
      * Get the active child from session.
      */
     protected function activeChild(): Child
@@ -303,7 +329,8 @@ class KidMissionController extends Controller
         }
 
         $guardian = Auth::guard('guardian')->user();
-        if ($guardian && $child->guardian_id !== $guardian->id) {
+        if (! $guardian || $child->guardian_id !== $guardian->id) {
+            session()->forget('active_child_id');
             abort(redirect()->route('kids.profiles'));
         }
 

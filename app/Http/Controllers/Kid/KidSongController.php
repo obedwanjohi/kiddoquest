@@ -13,11 +13,13 @@ class KidSongController extends Controller
      */
     public function index()
     {
-        $childId = session('active_child_id');
-        $child = $childId ? Child::find($childId) : Child::first();
+        $guardian = \Illuminate\Support\Facades\Auth::guard('guardian')->user();
+        $child = ($guardian && session('active_child_id'))
+            ? $guardian->children()->find(session('active_child_id'))
+            : null;
 
-        if (!$child) {
-            $child = new Child(['name' => 'Hero', 'total_stars' => 10, 'star_coins' => 50]);
+        if (! $child) {
+            return redirect()->route('kids.profiles');
         }
 
         $songs = [

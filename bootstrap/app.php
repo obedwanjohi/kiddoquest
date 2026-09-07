@@ -17,6 +17,8 @@ $app = Application::configure(basePath: dirname(__DIR__))
             'guardian.auth' => \App\Http\Middleware\GuardianAuth::class,
             'guardian.guest' => \App\Http\Middleware\GuardianGuest::class,
             'ensure.child.session' => \App\Http\Middleware\EnsureChildSession::class,
+            'parent.unlocked' => \App\Http\Middleware\EnsureParentUnlocked::class,
+            'subscription.active' => \App\Http\Middleware\EnsureActiveSubscription::class,
         ]);
 
         // ✅ MOBILE / TUNNEL TESTING: Trust all proxies

@@ -62,15 +62,18 @@ class GuardianAuthController extends Controller
             'name'      => trim($validated['name']),
             'email'     => $email,
             'password'  => $validated['password'],
-            'phone'     => $validated['phone'] ?? null,
-            'is_active' => true,
+            'phone'      => $validated['phone'] ?? null,
+            'is_active'  => true,
+            'parent_pin' => config('plans.default_parent_pin', '1234'), // stored hashed by the model cast
         ]);
 
         Auth::guard('guardian')->login($guardian);
         $request->session()->regenerate();
 
         // Redirect directly to Add Child Profile
-        return redirect()->route('guardian.children.create')->with('success', 'Welcome to KiddoQuest CBC! Let\'s add your child\'s profile.');
+        $pin = config('plans.default_parent_pin', '1234');
+
+        return redirect()->route('guardian.children.create')->with('success', "Welcome to KiddoQuest CBC! Let's add your child's profile. Your Parent Zone PIN is {$pin} — change it in Controls.");
     }
 
     public function logout(Request $request): RedirectResponse

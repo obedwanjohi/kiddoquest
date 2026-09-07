@@ -9,46 +9,75 @@ use App\Models\Guardian;
 use App\Models\Mission;
 use App\Models\MissionAttempt;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\View\View;
 
 class ParentDashboardController extends Controller
 {
+    /** Wrong-PIN attempts allowed per guardian before a lockout. */
+    private const PIN_MAX_ATTEMPTS = 5;
+
+    /** Lockout length in seconds once the limit is hit. */
+    private const PIN_LOCKOUT_SECONDS = 60;
+
+    /**
+     * The signed-in guardian. Routes sit behind guardian.auth, so this never
+     * falls back to another family's account (it used to use Guardian::first()).
+     */
+    protected function guardian(): Guardian
+    {
+        /** @var Guardian|null $guardian */
+        $guardian = Auth::guard('guardian')->user();
+        abort_unless($guardian, 403, 'Please sign in as a parent.');
+
+        return $guardian;
+    }
+
     /**
      * Display interactive 4-digit PIN pad modal.
      */
     public function showPinGate(): View
     {
-        $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
-        if (!$guardian) {
-            $guardian = new Guardian(['name' => 'Parent', 'email' => 'parent@example.com', 'parent_pin' => '1234']);
-        }
-        return view('parent.pin-gate', compact('guardian'));
+        $guardian = $this->guardian();
+        $showDefaultPinHint = ! $guardian->hasCustomPin();
+
+        return view('parent.pin-gate', compact('guardian', 'showDefaultPinHint'));
     }
 
     /**
-     * Verify entered 4-digit PIN.
+     * Verify entered 4-digit PIN (hashed comparison, 5 tries then a 60 s lockout).
      */
-    public function verifyPin(Request $request): \Illuminate\Http\RedirectResponse
+    public function verifyPin(Request $request): RedirectResponse
     {
         $request->validate([
             'pin' => 'required|string|size:4',
         ]);
 
-        $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
-        $enteredPin = trim($request->input('pin'));
-        $storedPin = $guardian ? ($guardian->parent_pin ?? '1234') : '1234';
+        $guardian = $this->guardian();
+        $key = 'parent-pin:' . $guardian->id;
 
-        $isMatch = ($enteredPin === $storedPin) || Hash::check($enteredPin, $storedPin) || $enteredPin === '1234';
+        if (RateLimiter::tooManyAttempts($key, self::PIN_MAX_ATTEMPTS)) {
+            $seconds = RateLimiter::availableIn($key);
 
-        if ($isMatch) {
-            session(['parent_unlocked' => true, 'parent_unlocked_at' => now()]);
+            return back()->with('error', "Too many tries. Please wait {$seconds} seconds and try again.");
+        }
+
+        if ($guardian->verifyPin(trim((string) $request->input('pin')))) {
+            RateLimiter::clear($key);
+            session(['parent_unlocked' => true, 'parent_unlocked_at' => now()->toIso8601String()]);
+
             return redirect()->route('parent.dashboard')->with('success', '🔓 Welcome to Parent Zone!');
         }
 
-        return back()->with('error', 'Incorrect 4-digit PIN! Default PIN is 1234.');
+        RateLimiter::hit($key, self::PIN_LOCKOUT_SECONDS);
+        $left = max(0, self::PIN_MAX_ATTEMPTS - RateLimiter::attempts($key));
+
+        return back()->with('error', $left > 0
+            ? "Incorrect PIN. {$left} " . ($left === 1 ? 'try' : 'tries') . ' left.'
+            : 'Incorrect PIN. Please wait a minute before trying again.');
     }
 
     /**
@@ -56,49 +85,32 @@ class ParentDashboardController extends Controller
      */
     public function index(Request $request)
     {
-        if (!session('parent_unlocked')) {
+        if (! session('parent_unlocked')) {
             return redirect()->route('parent.pin_gate');
         }
 
         $timeframe = $request->query('timeframe', '7days');
         $selectedSubject = $request->query('subject', 'all');
 
-        $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
-        if (!$guardian) {
-            $guardian = new Guardian(['id' => 1, 'name' => 'Demo Parent', 'email' => 'parent@example.com', 'parent_pin' => '1234']);
-        }
-
-        $children = ($guardian && $guardian->exists) ? Child::where('guardian_id', $guardian->id)->get() : collect();
-        if ($children->isEmpty()) {
-            $children = Child::all();
-        }
-        if ($children->isEmpty()) {
-            $children = collect([
-                new Child([
-                    'id' => 1,
-                    'name' => 'Obed',
-                    'avatar' => 'panda',
-                    'total_stars' => 45,
-                    'star_coins' => 150,
-                    'daily_time_limit_minutes' => 30
-                ])
-            ]);
-        }
+        $guardian = $this->guardian();
+        $children = $guardian->children()->orderBy('created_at')->get();
+        $childIds = $children->pluck('id');
 
         $allMissions = Mission::where('status', 'published')->get();
         if ($allMissions->isEmpty()) {
             $allMissions = Mission::all();
         }
 
-        // Child Selection Dropdown Logic
+        // Child Selection Dropdown Logic — only this guardian's children are selectable
         $selectedChildId = (int) ($request->query('child_id') ?? $request->query('child'));
         $selectedChild = $children->firstWhere('id', $selectedChildId);
 
         if (! $selectedChild) {
-            $playedChildId = MissionAttempt::latest('completed_at')->value('child_id');
+            $playedChildId = MissionAttempt::whereIn('child_id', $childIds)->latest('completed_at')->value('child_id');
             $selectedChild = $children->firstWhere('id', $playedChildId) ?? $children->first();
             $selectedChildId = $selectedChild ? $selectedChild->id : null;
         }
+
         $allSubjects = \App\Models\Subject::with('adventureWorlds.missions')->get();
         $subjectMissionsMap = [];
         foreach ($allSubjects as $subj) {
@@ -111,6 +123,8 @@ class ParentDashboardController extends Controller
             $subjectMissionsMap[$subj->id] = $mIds;
         }
 
+        $reports = [];
+
         foreach ($children as $child) {
             $totalMissions = 0;
             $passedMissions = 0;
@@ -118,6 +132,7 @@ class ParentDashboardController extends Controller
             $correctQuestions = 0;
             $accuracyRate = 0;
             $missionHistory = [];
+            $attempts = collect();
 
             try {
                 $attempts = MissionAttempt::where('child_id', $child->id)
@@ -136,7 +151,7 @@ class ParentDashboardController extends Controller
                     foreach ($groupedAttempts as $missionId => $mAttempts) {
                         $mObj = $mAttempts->first()->mission;
                         $title = $mObj ? ($mObj->title ?? $mObj->display_title ?? $mObj->name) : "Mission #{$missionId}";
-                        
+
                         $attemptList = [];
                         foreach ($mAttempts->take(5) as $idx => $att) {
                             $attemptList[] = [
@@ -234,7 +249,7 @@ class ParentDashboardController extends Controller
                 ->first();
 
             if ($wrongAttempt) {
-                $qText = $wrongAttempt->question->prompt_text ?? $wrongAttempt->question->question_text ?? 'quiz question';
+                $qText = $wrongAttempt->question->prompt ?? 'quiz question';
                 $mTitle = $wrongAttempt->mission->title ?? 'quiz';
                 $realMistake = "Struggled on {$mTitle}: \"{$qText}\"";
                 $realActivity = "Practice counting 3 physical objects (like spoons or toys) with {$child->name} at home while touching each object!";
@@ -287,20 +302,24 @@ class ParentDashboardController extends Controller
                 $growthLabel = "🌟 First Mission ({$latestPct}%)";
             }
 
+            // Real learning time today / this week from completed missions (seconds -> minutes)
+            $todaySeconds = (int) $attempts->filter(fn ($a) => $a->completed_at && $a->completed_at->isToday())->sum('time_spent');
+            $weekSeconds = (int) $attempts->filter(fn ($a) => $a->completed_at && $a->completed_at->gte(now()->subDays(7)))->sum('time_spent');
+
             $reports[$child->id] = [
                 'total_missions'     => $totalMissions,
                 'passed_missions'    => $passedMissions,
                 'total_questions'    => $totalQuestions,
                 'accuracy_rate'      => $accuracyRate,
-                'learning_time_today'=> '22 mins',
-                'learning_time_week' => '2 hrs 18 mins',
+                'learning_time_today'=> (int) round($todaySeconds / 60) . ' mins',
+                'learning_time_week' => (int) round($weekSeconds / 60) . ' mins',
                 'streak_days'        => $child->streak_days ?? 1,
                 'can_do_now'         => $activeData['can_do'],
                 'learning_next'      => $activeData['learning_next'],
                 'skills_heat_map'    => $activeData['heat_map'],
                 'roadmap'            => $activeData['roadmap'],
                 'growth'             => ['growth_label' => $growthLabel, 'growth_percent' => $growthPercent],
-                'mistake_action'     => ['mistake' => $activeData['mistake'], 'activity' => $activeData['activity']],
+                'mistake_action'     => ['mistake' => $activeData['mistake'], 'activity' => $activeData['activity'], 'has_struggle' => $activeData['has_struggle']],
                 'mission_history'    => $missionHistory,
                 'assigned_mission'   => $child->assigned_mission_id ? Mission::find($child->assigned_mission_id) : null,
             ];
@@ -314,16 +333,19 @@ class ParentDashboardController extends Controller
      */
     public function askAi(Request $request): JsonResponse
     {
-        $question = trim($request->input('question', ''));
+        $question = trim((string) $request->input('question', ''));
         $childId = $request->input('child_id');
 
-        $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
-        $child = $childId 
-            ? Child::find($childId) 
-            : (($guardian && $guardian->exists) ? $guardian->children()->first() : Child::first());
+        $guardian = $this->guardian();
+        $child = $childId
+            ? $guardian->children()->find($childId)
+            : $guardian->children()->first();
 
-        if (!$child) {
-            $child = new Child(['name' => 'your child', 'total_stars' => 0, 'star_coins' => 0]);
+        if (! $child) {
+            return response()->json([
+                'success' => false,
+                'answer'  => 'Add a child profile first so the coach can personalise its advice.',
+            ]);
         }
 
         // Calculate performance summary for AI context
@@ -350,56 +372,56 @@ class ParentDashboardController extends Controller
     }
 
     /**
-     * Parent assigns a Focus Mission.
+     * Parent assigns a Focus Mission (only for their own child).
      */
-    public function assignFocusMission(Request $request): \Illuminate\Http\RedirectResponse
+    public function assignFocusMission(Request $request): RedirectResponse
     {
         $request->validate([
-            'child_id'   => 'required|exists:children,id',
+            'child_id'   => 'required|integer',
             'mission_id' => 'nullable|exists:missions,id',
         ]);
 
-        $child = Child::findOrFail($request->input('child_id'));
+        $child = $this->guardian()->children()->findOrFail($request->input('child_id'));
         $child->assigned_mission_id = $request->input('mission_id');
         $child->save();
 
         if ($child->assigned_mission_id) {
             $mission = Mission::find($child->assigned_mission_id);
+
             return back()->with('success', "📌 Assigned '{$mission->title}' as focus mission for {$child->name}!");
         }
 
-        return back()->with('success', "Focus mission assignment cleared.");
+        return back()->with('success', 'Focus mission assignment cleared.');
     }
 
     /**
-     * Update Parent PIN.
+     * Update Parent PIN (stored hashed).
      */
-    public function updatePin(Request $request): \Illuminate\Http\RedirectResponse
+    public function updatePin(Request $request): RedirectResponse
     {
         $request->validate([
             'new_pin' => 'required|string|size:4|regex:/^[0-9]{4}$/',
         ]);
 
-        $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
-        if ($guardian && $guardian->exists) {
-            $guardian->parent_pin = $request->input('new_pin');
-            $guardian->save();
-        }
+        $guardian = $this->guardian();
+        $guardian->parent_pin = $request->input('new_pin'); // hashed by the model cast
+        $guardian->pin_changed_at = now();
+        $guardian->save();
 
         return back()->with('success', '🔐 Parent PIN updated successfully!');
     }
 
     /**
-     * Update Child Daily Screen Time Limit.
+     * Update Child Daily Screen Time Limit (only for their own child).
      */
-    public function updateScreenTime(Request $request): \Illuminate\Http\RedirectResponse
+    public function updateScreenTime(Request $request): RedirectResponse
     {
         $request->validate([
-            'child_id'                 => 'required|exists:children,id',
+            'child_id'                 => 'required|integer',
             'daily_time_limit_minutes' => 'required|integer|min:0|max:300',
         ]);
 
-        $child = Child::findOrFail($request->input('child_id'));
+        $child = $this->guardian()->children()->findOrFail($request->input('child_id'));
         $child->daily_time_limit_minutes = (int) $request->input('daily_time_limit_minutes');
         $child->save();
 
@@ -408,37 +430,18 @@ class ParentDashboardController extends Controller
 
     /**
      * Update Devotional & Songs Hub Settings.
+     * (The columns are created by a proper migration now — no runtime schema changes.)
      */
-    public function updateDevotionalSettings(Request $request): \Illuminate\Http\RedirectResponse
+    public function updateDevotionalSettings(Request $request): RedirectResponse
     {
-        // Auto-migrate missing columns on PostgreSQL if needed
-        try {
-            if (!\Illuminate\Support\Facades\Schema::hasColumn('guardians', 'enable_devotional')) {
-                \Illuminate\Support\Facades\Schema::table('guardians', function (\Illuminate\Database\Schema\Blueprint $table) {
-                    if (!\Illuminate\Support\Facades\Schema::hasColumn('guardians', 'enable_devotional')) {
-                        $table->boolean('enable_devotional')->default(true);
-                    }
-                    if (!\Illuminate\Support\Facades\Schema::hasColumn('guardians', 'enable_songs_hub')) {
-                        $table->boolean('enable_songs_hub')->default(true);
-                    }
-                });
-            }
-        } catch (\Throwable $mErr) {
-            \Illuminate\Support\Facades\Log::warning('Auto-migration for guardian devotional columns deferred', ['error' => $mErr->getMessage()]);
-        }
-
-        $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
-        if ($guardian && $guardian->exists) {
-            if (\Illuminate\Support\Facades\Schema::hasColumn('guardians', 'enable_devotional')) {
-                $guardian->enable_devotional = $request->has('enable_devotional');
-                $guardian->enable_songs_hub = $request->has('enable_songs_hub');
-                $guardian->save();
-            }
-        }
+        $guardian = $this->guardian();
+        $guardian->enable_devotional = $request->boolean('enable_devotional');
+        $guardian->enable_songs_hub = $request->boolean('enable_songs_hub');
+        $guardian->save();
 
         session([
-            'enable_devotional' => $request->has('enable_devotional'),
-            'enable_songs_hub'  => $request->has('enable_songs_hub'),
+            'enable_devotional' => $guardian->enable_devotional,
+            'enable_songs_hub'  => $guardian->enable_songs_hub,
         ]);
 
         return back()->with('success', '✨ Devotional & Feature controls updated successfully!');
@@ -447,9 +450,10 @@ class ParentDashboardController extends Controller
     /**
      * Lock Parent Zone.
      */
-    public function lockSession(): \Illuminate\Http\RedirectResponse
+    public function lockSession(): RedirectResponse
     {
         session()->forget(['parent_unlocked', 'parent_unlocked_at']);
+
         return redirect()->route('kids.profiles')->with('info', 'Parent Zone locked.');
     }
 }

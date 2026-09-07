@@ -19,12 +19,9 @@ class KidController extends Controller
      */
     public function profiles(): View
     {
-        $guardian = Auth::guard('guardian')->user() ?? Guardian::first();
-        $children = $guardian ? Child::where('guardian_id', $guardian->id)->get() : Child::all();
-
-        if ($children->isEmpty()) {
-            $children = Child::all();
-        }
+        // guardian.auth guarantees a signed-in parent; only their own children are listed.
+        $guardian = Auth::guard('guardian')->user();
+        $children = $guardian->children()->orderBy('created_at')->get();
 
         return view('kids.profiles', compact('children'));
     }
@@ -36,14 +33,10 @@ class KidController extends Controller
     {
         $guardian = Auth::guard('guardian')->user();
 
-        // If a guardian session is active, verify ownership
-        if ($guardian && $child->guardian_id !== $guardian->id) {
+        // Only the signed-in parent's own children can be entered. (This route used to
+        // log in the child's guardian for anyone who knew a child id.)
+        if (! $guardian || $child->guardian_id !== $guardian->id) {
             abort(403, 'Unauthorized child profile access.');
-        }
-
-        // Auto-login the child's guardian if accessing in kid mode
-        if (!$guardian && $child->guardian) {
-            Auth::guard('guardian')->login($child->guardian);
         }
 
         session(['active_child_id' => $child->id]);
@@ -187,7 +180,8 @@ class KidController extends Controller
         }
 
         $guardian = Auth::guard('guardian')->user();
-        if ($guardian && $child->guardian_id !== $guardian->id) {
+        if (! $guardian || $child->guardian_id !== $guardian->id) {
+            session()->forget('active_child_id');
             abort(redirect()->route('kids.profiles'));
         }
 

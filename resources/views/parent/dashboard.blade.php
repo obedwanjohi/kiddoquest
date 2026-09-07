@@ -662,6 +662,12 @@
                 </div>
             @endforeach
 
+            @if(method_exists($guardian, 'hasCustomPin') && ! $guardian->hasCustomPin())
+                <div class="max-w-md mx-auto bg-amber-500/15 border border-amber-400/50 text-amber-200 rounded-2xl p-3.5 text-xs font-bold text-center">
+                    ⚠️ You're still using the starter PIN ({{ config('plans.default_parent_pin', '1234') }}). Set your own 4-digit PIN below.
+                </div>
+            @endif
+
             {{-- PIN Security --}}
             <div class="parent-card p-5 max-w-md mx-auto">
                 <div class="text-center mb-4">

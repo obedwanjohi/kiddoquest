@@ -14,9 +14,11 @@ class SupabaseStorageService
 
     public function __construct()
     {
-        $this->projectRef = config('services.supabase.project_ref', env('SUPABASE_PROJECT_REF', 'hxxxmizzuddcxmufrsbr'));
-        $this->serviceKey = config('services.supabase.service_key', env('SUPABASE_SERVICE_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh4eHhtaXp6dWRkY3htdWZyc2JyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NzkxOTg2NywiZXhwIjoyMTAzNDk1ODY3fQ.bN4sJ5kxbc5OGb4J729FXKbQKxrK6j9SBBgt7kGMJWg'));
-        $this->bucket = config('services.supabase.bucket', env('SUPABASE_STORAGE_BUCKET', 'media'));
+        // All values come from config/services.php (-> .env). The service-role key was
+        // previously hard-coded here; it must be rotated in the Supabase dashboard.
+        $this->projectRef = (string) config('services.supabase.project_ref', '');
+        $this->serviceKey = (string) config('services.supabase.service_key', '');
+        $this->bucket = (string) config('services.supabase.bucket', 'media');
         $this->baseUrl = "https://{$this->projectRef}.supabase.co/storage/v1";
     }
 
@@ -25,6 +27,12 @@ class SupabaseStorageService
      */
     public function uploadFile(string $remotePath, string $contents, string $mimeType = 'application/octet-stream'): ?string
     {
+        if ($this->serviceKey === '' || $this->projectRef === '') {
+            Log::error('Supabase Storage upload skipped: SUPABASE_PROJECT_REF / SUPABASE_SERVICE_KEY are not configured.', ['path' => $remotePath]);
+
+            return null;
+        }
+
         $url = "{$this->baseUrl}/object/{$this->bucket}/" . ltrim($remotePath, '/');
 
         try {

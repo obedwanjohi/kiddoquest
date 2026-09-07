@@ -34,14 +34,10 @@ class MpesaService
     {
         $formattedPhone = self::formatPhoneNumber($phone);
         
-        $pricing = [
-            'monthly' => ['amount' => 499, 'days' => 30],
-            'termly'  => ['amount' => 1200, 'days' => 90],
-            'annual'  => ['amount' => 3999, 'days' => 365],
-        ];
-
-        $plan = $pricing[$planType] ?? $pricing['monthly'];
-        $amount = $plan['amount'];
+        // Single source of truth for prices: config/plans.php
+        $pricing = config('plans.plans', []);
+        $plan = $pricing[$planType] ?? ($pricing['monthly'] ?? ['amount' => 0, 'days' => 30]);
+        $amount = (int) $plan['amount'];
 
         $trackingId = 'ws_CO_' . date('YmdHis') . '_' . rand(1000, 9999);
 
@@ -66,12 +62,13 @@ class MpesaService
         ]);
 
         // Safaricom Daraja Credentials
-        $consumerKey = env('MPESA_CONSUMER_KEY') ?? config('services.mpesa.consumer_key');
-        $consumerSecret = env('MPESA_CONSUMER_SECRET') ?? config('services.mpesa.consumer_secret');
-        $shortcode = env('MPESA_SHORTCODE', '174379');
-        $passkey = env('MPESA_PASSKEY');
-        $envMode = env('MPESA_ENV', 'sandbox');
-        $txType = env('MPESA_TX_TYPE', 'CustomerPayBillOnline'); // CustomerPayBillOnline or CustomerBuyGoodsOnline
+        // Read through config (env() returns null once config is cached in production).
+        $consumerKey = config('services.mpesa.consumer_key');
+        $consumerSecret = config('services.mpesa.consumer_secret');
+        $shortcode = config('services.mpesa.shortcode', '174379');
+        $passkey = config('services.mpesa.passkey');
+        $envMode = config('services.mpesa.env', 'sandbox');
+        $txType = config('services.mpesa.tx_type', 'CustomerPayBillOnline'); // CustomerPayBillOnline or CustomerBuyGoodsOnline
 
         $baseUrl = $envMode === 'live' 
             ? 'https://api.safaricom.co.ke' 
@@ -166,11 +163,7 @@ class MpesaService
 
         // Activate Subscription
         if ($payment->subscription) {
-            $days = match($payment->subscription->plan_type) {
-                'termly' => 90,
-                'annual' => 365,
-                default  => 30,
-            };
+            $days = (int) (config('plans.plans.' . $payment->subscription->plan_type . '.days') ?? 30);
 
             $payment->subscription->status = 'active';
             $payment->subscription->starts_at = now();

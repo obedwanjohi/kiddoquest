@@ -25,7 +25,7 @@
       "operatingSystem": "Web, Android, iOS",
       "offers": {
         "@type": "Offer",
-        "price": "200",
+        "price": "{{ config('plans.plans.monthly.amount', 200) }}",
         "priceCurrency": "KES"
       },
       "author": {
@@ -648,7 +648,7 @@
                         <p class="text-xs text-slate-500 font-extrabold mb-5">Month-to-month flexibility</p>
                         <div class="mb-6">
                             <span class="text-xs font-black text-slate-500">KES</span>
-                            <span class="font-heading text-5xl font-black text-slate-950">200</span>
+                            <span class="font-heading text-5xl font-black text-slate-950">{{ number_format(config('plans.plans.monthly.amount', 200)) }}</span>
                             <span class="text-xs text-slate-500 font-extrabold">/ month</span>
                         </div>
 
@@ -669,7 +669,7 @@
                 {{-- Annual Plan --}}
                 <div class="bg-gradient-to-b from-purple-700 via-purple-800 to-indigo-900 text-white border-4 border-amber-400 rounded-[2.5rem] p-7 sm:p-9 shadow-2xl flex flex-col justify-between text-center relative overflow-hidden">
                     <div class="absolute top-4 right-4 bg-amber-400 text-amber-950 font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-md">
-                        Save 25% 🔥
+                        {{ config('plans.plans.annual.badge', 'Save 25%') }} 🔥
                     </div>
 
                     <div>
@@ -677,7 +677,7 @@
                         <p class="text-xs text-purple-200 font-extrabold mb-5">Full year of uninterrupted mastery</p>
                         <div class="mb-6">
                             <span class="text-xs font-black text-purple-200">KES</span>
-                            <span class="font-heading text-5xl font-black text-amber-300">1,800</span>
+                            <span class="font-heading text-5xl font-black text-amber-300">{{ number_format(config('plans.plans.annual.amount', 1800)) }}</span>
                             <span class="text-xs text-purple-200 font-extrabold">/ year</span>
                         </div>
 

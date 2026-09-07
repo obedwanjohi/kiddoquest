@@ -27,6 +27,16 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+/*
+|--------------------------------------------------------------------------
+| Admin maintenance & seeding tools — admin sign-in required
+|--------------------------------------------------------------------------
+| These seed, purge, reset and rebuild content. They were publicly reachable;
+| anyone on the internet could wipe the database. Now only an authenticated
+| admin can call them.
+*/
+Route::middleware('admin.auth')->group(function () {
+
 Route::get('/clear-cache', function() {
     \Illuminate\Support\Facades\Artisan::call('view:clear');
     \Illuminate\Support\Facades\Artisan::call('cache:clear');
@@ -166,6 +176,8 @@ Route::get('/convert-speak-webp', function() {
     return "<h1>✅ Converted Speak Images to WebP: " . implode(', ', $converted) . "</h1>";
 });
 
+}); // end admin tools
+
 Route::get('/icon-192.png', function() {
     $size = 192;
     $img = imagecreatetruecolor($size, $size);
@@ -215,6 +227,8 @@ Route::get('/icon-512.png', function() {
 
     return response($pngData, 200, ['Content-Type' => 'image/png']);
 });
+
+Route::middleware('admin.auth')->group(function () {
 
 Route::get('/build-all-full-scripts-now', function() {
     $base_dir = base_path() . "/";
@@ -372,30 +386,38 @@ Route::get('/build-all-full-scripts-now', function() {
     return "SUCCESS: FULL UNTRUNCATED SCRIPT BOOKS BUILT FOR ALL 825 INDIVIDUAL MISSIONS!";
 });
 
+}); // end admin tools (script books)
+
 // Kid Mode Routes
 Route::prefix('kids')->group(function () {
 
-    // Profile picker ("Who's Playing?") & Dashboard
-    Route::get('/profiles', [KidController::class, 'profiles'])->name('kids.profiles');
-    Route::get('/dashboard', [KidController::class, 'profiles'])->name('kids.dashboard');
-    Route::get('/enter/{child}', [KidController::class, 'enterChild'])->name('kids.enter');
+    // Profile picker ("Who's Playing?") & Dashboard — a signed-in parent is required.
+    // (These used to be public and /enter/{child} auto-logged-in the child's guardian.)
+    Route::middleware(['guardian.auth'])->group(function () {
+        Route::get('/profiles', [KidController::class, 'profiles'])->name('kids.profiles');
+        Route::get('/dashboard', [KidController::class, 'profiles'])->name('kids.dashboard');
+        Route::get('/enter/{child}', [KidController::class, 'enterChild'])->name('kids.enter');
+    });
 
     // Adventure map (requires active child session)
     Route::middleware(['ensure.child.session'])->group(function () {
         Route::get('/map', [KidController::class, 'map'])->name('kids.map');
         Route::get('/world/{world}', [KidController::class, 'world'])->name('kids.world');
-        Route::get('/world/{world}/mission/{mission}/intro', [KidController::class, 'missionIntro'])->name('kids.mission-intro');
-        Route::get('/world/{world}/mission/{mission}/video', [KidController::class, 'video'])->name('kids.mission-video');
-        Route::get('/mission/{mission}/intro', function(\App\Models\Mission $mission) {
-            $world = $mission->adventureWorld ?? \App\Models\AdventureWorld::first();
-            return app(KidController::class)->missionIntro($world, $mission);
-        })->name('kids.mission.intro');
-        Route::get('/mission/{mission}/video', function(\App\Models\Mission $mission) {
-            $world = $mission->adventureWorld ?? \App\Models\AdventureWorld::first();
-            return app(KidController::class)->video($world, $mission);
-        })->name('kids.mission.video');
-        Route::get('/world/{world}/mission/{mission}/play', [KidMissionController::class, 'show'])->name('kids.mission.play');
-        Route::post('/world/{world}/mission/{mission}/submit', [KidMissionController::class, 'submit'])->name('kids.mission.submit');
+        // Missions — paid worlds are gated by subscription.active when SUBSCRIPTION_ENFORCE=true
+        Route::middleware(['subscription.active'])->group(function () {
+            Route::get('/world/{world}/mission/{mission}/intro', [KidController::class, 'missionIntro'])->name('kids.mission-intro');
+            Route::get('/world/{world}/mission/{mission}/video', [KidController::class, 'video'])->name('kids.mission-video');
+            Route::get('/mission/{mission}/intro', function(\App\Models\Mission $mission) {
+                $world = $mission->adventureWorld ?? \App\Models\AdventureWorld::first();
+                return app(KidController::class)->missionIntro($world, $mission);
+            })->name('kids.mission.intro');
+            Route::get('/mission/{mission}/video', function(\App\Models\Mission $mission) {
+                $world = $mission->adventureWorld ?? \App\Models\AdventureWorld::first();
+                return app(KidController::class)->video($world, $mission);
+            })->name('kids.mission.video');
+            Route::get('/world/{world}/mission/{mission}/play', [KidMissionController::class, 'show'])->name('kids.mission.play');
+            Route::post('/world/{world}/mission/{mission}/submit', [KidMissionController::class, 'submit'])->name('kids.mission.submit');
+        });
         Route::get('/celebration', fn () => view('kids.celebration'))->name('kids.celebration');
 
         // Reward Shop & Sticker Book & Songs Hub
@@ -429,22 +451,32 @@ Route::middleware(['guardian.auth'])->prefix('parent')->name('guardian.children.
 });
 
 // Parent Zone (Unified Single-App Model behind 4-digit PIN Gate)
-Route::get('/parent/pin-gate', [App\Http\Controllers\Parent\ParentDashboardController::class, 'showPinGate'])->name('parent.pin_gate');
-Route::post('/parent/verify-pin', [App\Http\Controllers\Parent\ParentDashboardController::class, 'verifyPin'])->name('parent.verify_pin');
-Route::get('/parent/dashboard', [App\Http\Controllers\Parent\ParentDashboardController::class, 'index'])->name('parent.dashboard');
-Route::post('/parent/update-pin', [App\Http\Controllers\Parent\ParentDashboardController::class, 'updatePin'])->name('parent.update_pin');
-Route::post('/parent/update-screentime', [App\Http\Controllers\Parent\ParentDashboardController::class, 'updateScreenTime'])->name('parent.update_screentime');
-Route::post('/parent/update-devotional-settings', [App\Http\Controllers\Parent\ParentDashboardController::class, 'updateDevotionalSettings'])->name('parent.update_devotional_settings');
-Route::post('/parent/assign-mission', [App\Http\Controllers\Parent\ParentDashboardController::class, 'assignFocusMission'])->name('parent.assign_mission');
-Route::post('/parent/ask-ai', [App\Http\Controllers\Parent\ParentDashboardController::class, 'askAi'])->name('parent.ask_ai');
-// M-Pesa Subscriptions & Paywall
-Route::get('/parent/subscription', [App\Http\Controllers\Parent\SubscriptionController::class, 'showSubscriptionPage'])->name('parent.subscription');
-Route::post('/parent/subscription/stk-push', [App\Http\Controllers\Parent\SubscriptionController::class, 'initiateStkPush'])->name('parent.subscription.stk_push');
-Route::post('/parent/subscription/simulate', [App\Http\Controllers\Parent\SubscriptionController::class, 'simulatePayment'])->name('parent.subscription.simulate');
-Route::get('/parent/subscription/status/{checkoutRequestId}', [App\Http\Controllers\Parent\SubscriptionController::class, 'checkStatus'])->name('parent.subscription.status');
-Route::post('/api/v1/mpesa/callback', [App\Http\Controllers\Parent\SubscriptionController::class, 'handleCallback'])->name('api.mpesa.callback');
+// Every parent route needs a signed-in guardian; everything past the gate also needs a fresh PIN unlock.
+Route::middleware(['guardian.auth'])->prefix('parent')->group(function () {
+    Route::get('/home', [App\Http\Controllers\GuardianDashboardController::class, 'index'])->name('guardian.dashboard');
 
-Route::post('/parent/lock', [App\Http\Controllers\Parent\ParentDashboardController::class, 'lockSession'])->name('parent.lock');
+    Route::get('/pin-gate', [App\Http\Controllers\Parent\ParentDashboardController::class, 'showPinGate'])->name('parent.pin_gate');
+    Route::post('/verify-pin', [App\Http\Controllers\Parent\ParentDashboardController::class, 'verifyPin'])->name('parent.verify_pin');
+    Route::post('/lock', [App\Http\Controllers\Parent\ParentDashboardController::class, 'lockSession'])->name('parent.lock');
+
+    Route::middleware(['parent.unlocked'])->group(function () {
+        Route::get('/dashboard', [App\Http\Controllers\Parent\ParentDashboardController::class, 'index'])->name('parent.dashboard');
+        Route::post('/update-pin', [App\Http\Controllers\Parent\ParentDashboardController::class, 'updatePin'])->name('parent.update_pin');
+        Route::post('/update-screentime', [App\Http\Controllers\Parent\ParentDashboardController::class, 'updateScreenTime'])->name('parent.update_screentime');
+        Route::post('/update-devotional-settings', [App\Http\Controllers\Parent\ParentDashboardController::class, 'updateDevotionalSettings'])->name('parent.update_devotional_settings');
+        Route::post('/assign-mission', [App\Http\Controllers\Parent\ParentDashboardController::class, 'assignFocusMission'])->name('parent.assign_mission');
+        Route::post('/ask-ai', [App\Http\Controllers\Parent\ParentDashboardController::class, 'askAi'])->name('parent.ask_ai');
+
+        // M-Pesa Subscriptions & Paywall
+        Route::get('/subscription', [App\Http\Controllers\Parent\SubscriptionController::class, 'showSubscriptionPage'])->name('parent.subscription');
+        Route::post('/subscription/stk-push', [App\Http\Controllers\Parent\SubscriptionController::class, 'initiateStkPush'])->name('parent.subscription.stk_push');
+        Route::post('/subscription/simulate', [App\Http\Controllers\Parent\SubscriptionController::class, 'simulatePayment'])->name('parent.subscription.simulate'); // refuses in production
+        Route::get('/subscription/status/{checkoutRequestId}', [App\Http\Controllers\Parent\SubscriptionController::class, 'checkStatus'])->name('parent.subscription.status');
+    });
+});
+
+// Safaricom Daraja callback — a public webhook, no session
+Route::post('/api/v1/mpesa/callback', [App\Http\Controllers\Parent\SubscriptionController::class, 'handleCallback'])->name('api.mpesa.callback');
 
 // Admin Login & Management Routes
 Route::get('/admin/login', [App\Http\Controllers\Admin\AdminAuthController::class, 'showLogin'])->name('admin.login');
@@ -452,6 +484,8 @@ Route::post('/admin/login', [App\Http\Controllers\Admin\AdminAuthController::cla
 Route::get('/admin/setup', [App\Http\Controllers\Admin\AdminAuthController::class, 'showRegister'])->name('admin.setup');
 Route::post('/admin/setup', [App\Http\Controllers\Admin\AdminAuthController::class, 'register'])->name('admin.setup.post');
 Route::post('/admin/logout', [App\Http\Controllers\Admin\AdminAuthController::class, 'logout'])->name('admin.logout');
+
+Route::middleware('admin.auth')->group(function () {
 
 Route::get('/debug-media', function() {
     return response()->json(\App\Models\Media::orderBy('id')->get(['id', 'name', 'file_name', 'file_path', 'type']));
@@ -502,7 +536,10 @@ Route::get('/seed-tracing', function(\Illuminate\Http\Request $request) {
     return "✨ All 3 Dedicated Tracing Worlds (Line Trail, Alphabet Safari A-Z, Number Kingdom 0-10) seeded successfully! You can now go to https://www.kiddoquest.co.ke/kids to play!";
 });
 
-Route::prefix('admin')->name('admin.')->group(function () {
+}); // end admin tools (seeders & debug)
+
+// The whole CMS requires an authenticated admin (it had no middleware at all before).
+Route::prefix('admin')->name('admin.')->middleware('admin.auth')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminDashboardController::class, 'index'])->name('dashboard');
 
     // Fast Dedicated Playgroup Math Seeder
@@ -579,7 +616,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/content-progress', [App\Http\Controllers\Admin\ContentProgressController::class, 'index'])->name('content-progress.index');
 });
 
-// DEV ONLY — Routes for tunnel QA testing
+// DEV ONLY — Routes for tunnel QA testing. Never registered in production:
+// /dev/admin signs anyone in as the first admin, the others bypass the parent gate.
+if (! app()->environment('production')) {
+
 Route::get('/dev/admin', function () {
     $admin = \App\Models\Admin::first() ?? new \App\Models\Admin(['name' => 'Super Admin', 'email' => 'admin@example.com']);
     Auth::guard('admin')->login($admin);
@@ -704,6 +744,8 @@ Route::get('/dev/subscription', function () {
     $recentPayments = \App\Models\Payment::where('guardian_id', $guardian->id)->orderBy('created_at', 'desc')->get();
     return view('parent.subscription', compact('guardian', 'activeSubscription', 'recentPayments'));
 })->name('dev.subscription');
+
+} // end dev-only routes
 
 // Storage media fallback route (guarantees uploaded media and videos serve cleanly)
 Route::get('/storage/{path}', function ($path) {

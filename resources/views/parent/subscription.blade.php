@@ -79,45 +79,24 @@
             <p class="text-xs text-emerald-200 font-semibold">World 1 is FREE • Unlock all worlds & AI features below</p>
         </div>
 
-        {{-- Pricing Cards Grid --}}
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-            
-            {{-- Monthly Plan --}}
-            <div @click="selectedPlan = 'monthly'; amount = 499" 
-                 :class="{ 'plan-card-selected': selectedPlan === 'monthly' }"
-                 class="mpesa-card p-4 text-center cursor-pointer transition-all relative overflow-hidden">
-                <div class="text-2xl mb-1">💳</div>
-                <h3 class="font-black text-sm text-white">Monthly</h3>
-                <div class="font-black text-xl text-emerald-400 my-1">KES 499</div>
-                <div class="text-[10px] text-slate-300 font-semibold">30 Days Full Access</div>
-            </div>
-
-            {{-- Termly Plan (Recommended) --}}
-            <div @click="selectedPlan = 'termly'; amount = 1200" 
-                 :class="{ 'plan-card-selected': selectedPlan === 'termly' }"
-                 class="mpesa-card p-4 text-center cursor-pointer transition-all relative overflow-hidden border-2 border-emerald-400">
-                <span class="absolute top-0 right-0 bg-amber-400 text-slate-950 font-black text-[9px] px-2 py-0.5 rounded-bl-xl uppercase">
-                    Save 20%
-                </span>
-                <div class="text-2xl mb-1">🏫</div>
-                <h3 class="font-black text-sm text-white">School Term</h3>
-                <div class="font-black text-xl text-amber-300 my-1">KES 1,200</div>
-                <div class="text-[10px] text-slate-300 font-semibold">90 Days Access</div>
-            </div>
-
-            {{-- Annual VIP Plan --}}
-            <div @click="selectedPlan = 'annual'; amount = 3999" 
-                 :class="{ 'plan-card-selected': selectedPlan === 'annual' }"
-                 class="mpesa-card p-4 text-center cursor-pointer transition-all relative overflow-hidden">
-                <span class="absolute top-0 right-0 bg-emerald-400 text-slate-950 font-black text-[9px] px-2 py-0.5 rounded-bl-xl uppercase">
-                    Best Value
-                </span>
-                <div class="text-2xl mb-1">🏆</div>
-                <h3 class="font-black text-sm text-white">Annual VIP</h3>
-                <div class="font-black text-xl text-emerald-300 my-1">KES 3,999</div>
-                <div class="text-[10px] text-slate-300 font-semibold">365 Days Access</div>
-            </div>
-
+        {{-- Pricing Cards Grid — plans come from config/plans.php --}}
+        @php $planCount = max(1, count($plans)); @endphp
+        <div class="grid grid-cols-1 sm:grid-cols-{{ min(3, $planCount) }} gap-3 mb-6">
+            @foreach($plans as $key => $plan)
+                <div @click="selectedPlan = '{{ $key }}'; amount = {{ (int) $plan['amount'] }}"
+                     :class="{ 'plan-card-selected': selectedPlan === '{{ $key }}' }"
+                     class="mpesa-card p-4 text-center cursor-pointer transition-all relative overflow-hidden {{ !empty($plan['highlight']) ? 'border-2 border-emerald-400' : '' }}">
+                    @if(!empty($plan['badge']))
+                        <span class="absolute top-0 right-0 bg-amber-400 text-slate-950 font-black text-[9px] px-2 py-0.5 rounded-bl-xl uppercase">
+                            {{ $plan['badge'] }}
+                        </span>
+                    @endif
+                    <div class="text-2xl mb-1">{{ $plan['emoji'] ?? '💳' }}</div>
+                    <h3 class="font-black text-sm text-white">{{ $plan['name'] }}</h3>
+                    <div class="font-black text-xl {{ !empty($plan['highlight']) ? 'text-amber-300' : 'text-emerald-400' }} my-1">{{ $currency }} {{ number_format((int) $plan['amount']) }}</div>
+                    <div class="text-[10px] text-slate-300 font-semibold">{{ (int) $plan['days'] }} Days Full Access</div>
+                </div>
+            @endforeach
         </div>
 
         {{-- Safaricom Phone Input Card --}}
@@ -144,7 +123,7 @@
 
             <button type="button" @click="sendStkPush()" :disabled="loading" 
                     class="w-full mpesa-btn text-white font-black py-3.5 rounded-xl text-sm transition-all flex items-center justify-center gap-2 cursor-pointer">
-                <span x-show="!loading">🟢 Pay KES <span x-text="amount"></span> via M-Pesa</span>
+                <span x-show="!loading">🟢 Pay {{ $currency }} <span x-text="amount"></span> via M-Pesa</span>
                 <span x-show="loading" style="display:none;">Sending STK Push Prompt...</span>
             </button>
         </div>
@@ -161,15 +140,17 @@
 
                 <div class="bg-emerald-950/60 border border-emerald-500/40 rounded-2xl p-3.5 mb-5 text-xs text-slate-200">
                     <div class="font-black text-emerald-400 mb-1">Prompt Details:</div>
-                    <div>Paybill: <strong>174379</strong></div>
-                    <div>Amount: <strong class="text-amber-300">KES <span x-text="amount"></span></strong></div>
+                    <div>Paybill: <strong>{{ config('services.mpesa.shortcode', '174379') }}</strong></div>
+                    <div>Amount: <strong class="text-amber-300">{{ $currency }} <span x-text="amount"></span></strong></div>
                 </div>
 
                 {{-- Dev Test Helper --}}
                 <div class="pt-2 border-t border-slate-800">
+                    @if(!empty($simulateEnabled))
                     <button type="button" @click="simulatePayment()" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-2.5 rounded-xl text-xs shadow-md transition-all mb-2">
                         ⚡ Test Instant Unlock (Dev QA)
                     </button>
+                    @endif
                     <button type="button" @click="showStkModal = false" class="text-xs text-slate-400 hover:text-white font-bold">
                         Cancel
                     </button>
@@ -185,9 +166,9 @@
 <script>
     function mpesaCheckout() {
         return {
-            selectedPlan: 'monthly',
-            amount: 499,
-            phone: '{{ $guardian->mpesa_phone ?? "0712345678" }}',
+            selectedPlan: @json(array_key_first($plans) ?? 'monthly'),
+            amount: {{ (int) (($plans[array_key_first($plans) ?? ''] ?? ['amount' => 0])['amount']) }},
+            phone: @json($guardian->phone ?? ''),
             loading: false,
             showStkModal: false,
             checkoutRequestId: null,

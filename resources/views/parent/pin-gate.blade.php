@@ -107,9 +107,11 @@
             <a href="{{ route('kids.profiles') }}" class="text-xs text-indigo-300 hover:text-white font-bold transition-all">
                 ← Back to Kids App
             </a>
-            <span class="text-[11px] text-indigo-400/60 font-semibold">
-                (Default PIN for testing: <strong class="text-indigo-200">1234</strong>)
-            </span>
+            @if(!empty($showDefaultPinHint))
+                <span class="text-[11px] text-indigo-400/60 font-semibold">
+                    New account? Your starter PIN is <strong class="text-indigo-200">{{ config('plans.default_parent_pin', '1234') }}</strong> — change it in Controls.
+                </span>
+            @endif
         </div>
 
     </div>
