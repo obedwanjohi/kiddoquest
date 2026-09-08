@@ -33,9 +33,22 @@ return [
         'password' => env('ADMIN_PASSWORD'),
     ],
 
-    // Plans. Keys are the plan_type stored on subscriptions. Prices are the ones the
-    // public landing page advertised (KES 200 / month, KES 1,800 / year); the old
-    // checkout charged 499 / 1,200 / 3,999 — adjust here if that was the intended list.
+    /*
+    | Plans. Keys are the plan_type stored on subscriptions.
+    |
+    | KES 200 a month and 1,800 a year, confirmed by the owner on 8 September
+    | 2026. The old checkout charged 499 / 1,200 / 3,999; that list is dead and
+    | must not be reintroduced.
+    |
+    | This is the only place a price is written. The landing page, the web
+    | checkout, MpesaService, the subscription middleware and the app's payment
+    | screen all read from here — the app holds no price of its own, not even a
+    | fallback, so changing a number here changes it everywhere with no release.
+    |
+    | (The `amount` columns on subscriptions and payments still carry an old
+    | 499.00 database default. It is never reached: every write sets the amount
+    | explicitly from this file.)
+    */
     'plans' => [
         'monthly' => [
             'name'      => 'Monthly Quest',

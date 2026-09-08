@@ -13,9 +13,9 @@ void main() {
       },
       'currency': 'KES',
       'plans': [
-        {'type': 'monthly', 'name': 'Monthly Quest', 'amount': 200, 'days': 30},
+        {'key': 'monthly', 'name': 'Monthly Quest', 'amount': 200, 'days': 30},
         {
-          'type': 'annual',
+          'key': 'annual',
           'name': 'Annual Champion',
           'amount': 1800,
           'days': 365,
@@ -29,7 +29,7 @@ void main() {
     });
 
     test('reads the plans the server sent, in order', () {
-      expect(state.plans.map((p) => p.type), ['monthly', 'annual']);
+      expect(state.plans.map((p) => p.key), ['monthly', 'annual']);
       expect(state.plans.first.amount, 200);
       expect(state.plans.last.badge, 'Save 25%');
       expect(state.plans.last.highlight, isTrue);

@@ -26,6 +26,7 @@ echo "=============== 1. config (public) ==============="
 CFG=$(curl -s "${hdr[@]}" "$BASE/config")
 check "config returns min_app_version" "1.0.0" "$(echo "$CFG" | jqv min_app_version)"
 check "config exposes one price list" "200" "$(echo "$CFG" | jqv plans.0.amount)"
+check "and the annual price agrees with it" "1800" "$(echo "$CFG" | jqv plans.1.amount)"
 check "config exposes PG question cap" "6" "$(echo "$CFG" | jqv session.questions_per_level.PG)"
 
 echo "=============== 2. auth ==============="
@@ -182,8 +183,8 @@ check "config carries the chest rule" "5" "$(curl -s "${hdr[@]}" "$BASE/config" 
 echo "=============== 14. paying ==============="
 SUB=$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/subscription")
 check "subscription reports no plan yet" "none" "$(echo "$SUB" | jqv entitlement.status)"
-check "plans come from the server" "monthly" "$(echo "$SUB" | jqv plans.0.type)"
-check "and carry a price" "200" "$(echo "$SUB" | jqv plans.0.amount)"
+check "plans come from the server" "monthly" "$(echo "$SUB" | jqv plans.0.key)"
+check "the confirmed monthly price" "200" "$(echo "$SUB" | jqv plans.0.amount)"
 check "currency travels" "KES" "$(echo "$SUB" | jqv currency)"
 check "an unknown plan is refused" "422" "$(curl -s -o /dev/null -w '%{http_code}' "${hdr[@]}" "${auth[@]}" -X POST "$BASE/subscription/stk-push" -d '{"phone_number":"0712345678","plan_type":"free_forever"}')"
 check "a nonsense number is refused" "422" "$(curl -s -o /dev/null -w '%{http_code}' "${hdr[@]}" "${auth[@]}" -X POST "$BASE/subscription/stk-push" -d '{"phone_number":"12","plan_type":"monthly"}')"

@@ -190,12 +190,10 @@ These were needed to make progress and are all reversible in one place.
 2. **Sequential unlock is on.** The first unfinished mission in a world pulses,
    the rest wait. The website disabled this for testing. It is a flag:
    `FEATURE_SEQUENTIAL_UNLOCK`.
-3. **Prices come from `config/plans.php`**, which currently holds the
-   landing-page list, KES 200 a month and 1,800 a year. The old checkout
-   charged 499 / 1,200 / 3,999. **This is now the last thing standing between
-   the app and taking money**: the payment screen shows whatever this file
-   says, so confirming it is a one-line change and getting it wrong charges
-   real families the wrong amount.
+3. **Prices come from `config/plans.php`**: KES 200 a month and 1,800 a year,
+   confirmed by the owner on 8 September 2026. The old 499 / 1,200 / 3,999
+   checkout list is dead. Nothing else holds a price — not the landing page,
+   not the app — so a change here needs no release.
 4. **sqflite rather than Drift**, and hand-written models rather than freezed, so
    the project compiles with no code generation step. Both are behind interfaces.
 5. **Question caps are enforced at publish time**: Play Group missions ship with

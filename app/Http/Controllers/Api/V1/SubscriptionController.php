@@ -137,7 +137,8 @@ class SubscriptionController extends ApiController
 
         foreach (config('plans.plans', []) as $type => $plan) {
             $plans[] = [
-                'type'      => $type,
+                // Named `key` to match /config, which describes the same plans.
+                'key'       => $type,
                 'name'      => $plan['name'] ?? $type,
                 'emoji'     => $plan['emoji'] ?? '💳',
                 'blurb'     => $plan['blurb'] ?? '',

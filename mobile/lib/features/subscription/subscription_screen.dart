@@ -81,7 +81,7 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
     try {
       final id = await ref.read(subscriptionRepositoryProvider).requestPayment(
             phone: phone,
-            planType: plan.type,
+            planType: plan.key,
           );
 
       if (!mounted) return;
@@ -193,7 +193,7 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
                 _PlanCard(
                   plan: plan,
                   currency: data.currency,
-                  selected: _plan?.type == plan.type,
+                  selected: _plan?.key == plan.key,
                   onSelect: () => setState(() => _plan = plan),
                 ),
                 SizedBox(height: KidSpacing.sm * density),

@@ -140,8 +140,9 @@ PIN, so an account that could fire it freely is an account that could harass a
 stranger. The route throttle above it is a loose backstop, set well clear of the
 six so the specific limit is the one a client actually sees.
 
-Prices come from `config/plans.php` and travel through `/config` and this
-endpoint. The app holds no price of its own, so changing one needs no release.
+Prices come from `config/plans.php` — KES 200 a month and 1,800 a year — and
+travel through `/config` and this endpoint, both of which name a plan with
+`key`. The app holds no price of its own, so changing one needs no release.
 
 ## Sync
 

@@ -37,7 +37,7 @@ class SubscriptionState {
 /// can be wrong, and being wrong there is worse than showing nothing.
 class PlanOffer {
   const PlanOffer({
-    required this.type,
+    required this.key,
     required this.name,
     required this.amount,
     this.emoji = '💳',
@@ -47,7 +47,9 @@ class PlanOffer {
     this.highlight = false,
   });
 
-  final String type;
+  /// The plan_type the server stores, and what an STK push asks for. Named to
+  /// match /config, which describes the same plans.
+  final String key;
   final String name;
   final int amount;
   final String emoji;
@@ -57,7 +59,7 @@ class PlanOffer {
   final bool highlight;
 
   factory PlanOffer.fromJson(Map<String, dynamic> json) => PlanOffer(
-        type: json['type'] as String? ?? '',
+        key: json['key'] as String? ?? '',
         name: json['name'] as String? ?? '',
         amount: (json['amount'] as num?)?.toInt() ?? 0,
         emoji: json['emoji'] as String? ?? '💳',
