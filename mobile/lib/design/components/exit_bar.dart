@@ -22,6 +22,7 @@ class KidExitBar extends StatelessWidget implements PreferredSizeWidget {
     this.minutesLeft,
     this.unlimitedTime = false,
     this.onCoinsPressed,
+    this.onSongs,
     this.offline = false,
     this.pendingSync = 0,
   });
@@ -35,6 +36,7 @@ class KidExitBar extends StatelessWidget implements PreferredSizeWidget {
   final int? minutesLeft;
   final bool unlimitedTime;
   final VoidCallback? onCoinsPressed;
+  final VoidCallback? onSongs;
   final bool offline;
   final int pendingSync;
 
@@ -118,6 +120,22 @@ class KidExitBar extends StatelessWidget implements PreferredSizeWidget {
               Padding(
                 padding: EdgeInsets.only(right: KidSpacing.sm * formFactor.density),
                 child: StarCounter(stars: stars!),
+              ),
+            if (onSongs != null)
+              Padding(
+                padding: EdgeInsets.only(right: KidSpacing.sm * formFactor.density),
+                child: KidFocusable(
+                  onPressed: onSongs,
+                  borderRadius: KidRadius.pill,
+                  semanticLabel: 'Songs',
+                  child: Container(
+                    width: KidTouch.min * formFactor.density,
+                    height: KidTouch.min * formFactor.density,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(color: theme.colorScheme.surface, borderRadius: KidRadius.pill),
+                    child: const Text('🎵', style: TextStyle(fontSize: 20)),
+                  ),
+                ),
               ),
             if (onParentZone != null)
               KidFocusable(

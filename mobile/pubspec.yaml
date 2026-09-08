@@ -32,6 +32,22 @@ dependencies:
   device_info_plus:
   package_info_plus:
 
+  # Sound and speech. A three-year-old cannot read the question, so the app
+  # reads it to them: a recorded narration when the pack carries one, the
+  # device voice when it does not.
+  just_audio:
+  audio_session:
+  flutter_tts:
+  speech_to_text:
+
+  # Mission intro videos
+  video_player:
+
+  # Practice reminders. These are scheduled on the device, so they arrive
+  # whether or not the family has a connection.
+  flutter_local_notifications:
+  timezone:
+
   # Utilities
   crypto:
   uuid:

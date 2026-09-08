@@ -24,7 +24,89 @@ class ParentSettingsScreen extends ConsumerStatefulWidget {
 }
 
 class _ParentSettingsScreenState extends ConsumerState<ParentSettingsScreen> {
+  static const _reminderKey = 'reminder';
+
   bool _busy = false;
+  bool _reminderOn = false;
+  int _reminderHour = 17;
+  int _reminderMinute = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _loadReminder());
+  }
+
+  Future<void> _loadReminder() async {
+    final saved = await ref.read(progressDaoProvider).setting(_reminderKey);
+
+    if (saved == null || !mounted) return;
+
+    final parts = saved.split(':');
+
+    if (parts.length == 2) {
+      setState(() {
+        _reminderOn = true;
+        _reminderHour = int.tryParse(parts[0]) ?? 17;
+        _reminderMinute = int.tryParse(parts[1]) ?? 0;
+      });
+    }
+  }
+
+  /// Turn the daily nudge on or off.
+  ///
+  /// Scheduled on this device, so it arrives whether or not the family has any
+  /// data left. Nothing about it is sent anywhere.
+  Future<void> _setReminder(bool on) async {
+    final reminders = ref.read(practiceRemindersProvider);
+    final dao = ref.read(progressDaoProvider);
+
+    if (!on) {
+      await reminders.cancel();
+      await dao.clearSetting(_reminderKey);
+      if (mounted) setState(() => _reminderOn = false);
+      return;
+    }
+
+    if (!await reminders.requestPermission()) {
+      _say('This device will not allow reminders. You can turn them on in its settings.');
+      return;
+    }
+
+    final child = ref.read(sessionProvider).children.firstOrNull;
+
+    final scheduled = await reminders.scheduleDaily(
+      hour: _reminderHour,
+      minute: _reminderMinute,
+      childName: child?.name ?? 'Your explorer',
+    );
+
+    if (!mounted) return;
+
+    if (!scheduled) {
+      _say('The reminder could not be set on this device.');
+      return;
+    }
+
+    await dao.putSetting(_reminderKey, '$_reminderHour:$_reminderMinute');
+    if (mounted) setState(() => _reminderOn = true);
+  }
+
+  Future<void> _pickReminderTime() async {
+    final picked = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay(hour: _reminderHour, minute: _reminderMinute),
+    );
+
+    if (picked == null) return;
+
+    setState(() {
+      _reminderHour = picked.hour;
+      _reminderMinute = picked.minute;
+    });
+
+    if (_reminderOn) await _setReminder(true);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +130,15 @@ class _ParentSettingsScreenState extends ConsumerState<ParentSettingsScreen> {
             ),
             SizedBox(height: KidSpacing.md * density),
           ],
+          _ReminderCard(
+            enabled: _reminderOn,
+            hour: _reminderHour,
+            minute: _reminderMinute,
+            busy: _busy,
+            onToggle: _setReminder,
+            onPickTime: _pickReminderTime,
+          ),
+          SizedBox(height: KidSpacing.md * density),
           _ContentCard(
             devotional: session.guardian?.enableDevotional ?? true,
             songs: session.guardian?.enableSongsHub ?? true,
@@ -303,6 +394,63 @@ class _PinCardState extends State<_PinCard> {
                 _pin.clear();
                 _password.clear();
               },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ReminderCard extends StatelessWidget {
+  const _ReminderCard({
+    required this.enabled,
+    required this.hour,
+    required this.minute,
+    required this.busy,
+    required this.onToggle,
+    required this.onPickTime,
+  });
+
+  final bool enabled;
+  final int hour;
+  final int minute;
+  final bool busy;
+  final ValueChanged<bool> onToggle;
+  final VoidCallback onPickTime;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final density = context.formFactor.density;
+    final time = TimeOfDay(hour: hour, minute: minute);
+
+    return Card(
+      child: Padding(
+        padding: EdgeInsets.all(KidSpacing.md * density),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Practice reminder', style: theme.textTheme.titleLarge),
+            SizedBox(height: KidSpacing.xs * density),
+            Text(
+              'A daily nudge from this device. It arrives whether or not you have '
+              'data, and nothing about it leaves the phone.',
+              style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+            ),
+            SwitchListTile(
+              contentPadding: EdgeInsets.zero,
+              value: enabled,
+              title: const Text('Remind us to practise'),
+              onChanged: busy ? null : onToggle,
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                onPressed: busy ? null : onPickTime,
+                icon: const Icon(Icons.schedule_rounded),
+                label: Text('At ${time.format(context)}'),
+              ),
             ),
           ],
         ),

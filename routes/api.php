@@ -66,6 +66,7 @@ Route::middleware(['auth:sanctum', 'api.device'])->group(function () {
         Route::get('/content/catalog', [ContentController::class, 'catalog'])->name('api.content.catalog');
         Route::get('/content/worlds', [ContentController::class, 'worlds'])->name('api.content.worlds');
     });
+    Route::get('/content/extras', [ContentController::class, 'extras'])->name('api.content.extras');
     Route::get('/content/packs/{packId}/manifest', [ContentController::class, 'manifest'])->name('api.content.manifest');
     Route::get('/content/packs/{packId}/v{version}/download', [ContentController::class, 'download'])
         ->whereNumber('version')
@@ -85,5 +86,8 @@ Route::middleware(['auth:sanctum', 'api.device'])->group(function () {
     Route::get('/parent/children/{child}/report', [ParentController::class, 'report'])
         ->whereNumber('child')
         ->name('api.parent.report');
+    Route::post('/parent/coach', [ParentController::class, 'coach'])
+        ->middleware('throttle:20,1')
+        ->name('api.parent.coach');
     Route::post('/devices/push-token', [ParentController::class, 'pushToken'])->name('api.devices.push_token');
 });

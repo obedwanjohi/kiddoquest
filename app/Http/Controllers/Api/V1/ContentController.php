@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Middleware\EnsureActiveSubscription;
 use App\Models\ContentPack;
 use App\Services\Content\CatalogService;
+use App\Services\Content\ExtrasRegistry;
 use App\Services\Content\MediaResolver;
 use App\Services\Learning\ChildSnapshotService;
 use Illuminate\Http\JsonResponse;
@@ -99,6 +100,30 @@ class ContentController extends ApiController
             'Content-Type'  => 'application/json',
             'ETag'          => '"' . $pack->sha256 . '"',
             'Cache-Control' => 'public, max-age=31536000, immutable',
+        ]);
+    }
+
+    /**
+     * The devotional and the songs hub, in one small payload.
+     *
+     * The whole devotional list travels rather than today's, because the app
+     * picks today itself: a bedtime devotional must not depend on a connection.
+     * Whether a guardian has switched either off is answered here too, so the
+     * app does not have to reason about it.
+     */
+    public function extras(Request $request): JsonResponse
+    {
+        $guardian = $this->guardian($request);
+
+        return response()->json([
+            'devotional' => [
+                'enabled' => (bool) $guardian->enable_devotional,
+                'items'   => ExtrasRegistry::devotionals(),
+            ],
+            'songs' => [
+                'enabled' => (bool) $guardian->enable_songs_hub,
+                'items'   => ExtrasRegistry::songs(),
+            ],
         ]);
     }
 

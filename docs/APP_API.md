@@ -51,6 +51,7 @@ One shape, so the app has one handler:
 | PATCH | `/children/{id}/focus-mission` | Tomorrow's focus mission |
 | GET | `/content/catalog?level=PG` | Packs for a level. ETag |
 | GET | `/content/worlds` | Worlds without pack versions, for a map before any download |
+| GET | `/content/extras` | The devotional list and the songs hub, in one small payload |
 | GET | `/content/packs/{packId}/manifest` | The media list, and the entitlement check for paid worlds |
 | GET | `/content/packs/{packId}/v{n}/download` | The pack document. Immutable, one year cache |
 | POST | `/sync` | The only hot endpoint. See below |
@@ -58,6 +59,7 @@ One shape, so the app has one handler:
 | PATCH | `/parent/pin` | Requires the account password as well |
 | PATCH | `/parent/settings` | Devotional and songs toggles |
 | GET | `/parent/children/{id}/report?range=7d` | The parent dashboard. `range` is `7d`, `30d` or `90d` |
+| POST | `/parent/coach` | `child_id`, optional `question`. Always answers, LLM key or not |
 | POST | `/devices/push-token` | FCM registration |
 
 
@@ -88,6 +90,28 @@ world cannot move a child's maths score into English.
 
 The app caches the whole response and shows it, clearly labelled, when the
 request cannot be made.
+
+## Devotional and songs
+
+```
+GET /api/v1/content/extras
+{ "devotional": { "enabled": true, "items": [ { "verse_text": "…", "verse_ref": "Psalm 118:24",
+                                               "teaching": "…", "prayer": "…", "emoji": "☀️" } ] },
+  "songs":      { "enabled": true, "items": [ { "id": 1, "title": "The Alphabet Song",
+                                                "category": "Phonics & ABCs", "emoji": "🔤",
+                                                "audio": null, "link": "https://…" } ] } }
+```
+
+The whole devotional list travels rather than today's, and the app picks today
+by the same day-of-year rule the website uses. A devotional is opened at
+bedtime and a song in a car — the two moments a family is least likely to have
+a working connection — so neither may depend on a request succeeding.
+
+A song's `audio` is a pack media key and is null until KiddoQuest licenses its
+own recordings (decision 5 in the plan). The app plays a song with `audio` and
+shows the rest as coming soon; it deliberately does not follow `link` out to
+YouTube, which cannot work offline and sends a four-year-old somewhere nobody
+is supervising.
 
 ## Sync
 

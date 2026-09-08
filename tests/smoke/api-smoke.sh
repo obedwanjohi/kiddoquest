@@ -167,6 +167,18 @@ check "the tv sees the family children" "1" "$(curl -s "${hdr[@]}" -H "Authoriza
 check "a code cannot be claimed twice" "used" "$(curl -s "${hdr[@]}" "$BASE/auth/device/poll?code=$CODE" | jqv status)"
 check "an invented code is not approved" "expired" "$(curl -s "${hdr[@]}" "$BASE/auth/device/poll?code=ZZZZZZ" | jqv status)"
 
+echo "=============== 13. devotional, songs and the coach ==============="
+EXTRAS=$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/content/extras")
+check "devotional list travels whole" "5" "$(echo "$EXTRAS" | php -r '$j=json_decode(stream_get_contents(STDIN),true); echo count($j["devotional"]["items"] ?? []);')"
+check "a devotional carries a verse and a prayer" "yes" "$(echo "$EXTRAS" | php -r '$j=json_decode(stream_get_contents(STDIN),true); $d=$j["devotional"]["items"][0] ?? []; echo (!empty($d["verse_text"]) && !empty($d["prayer"])) ? "yes" : "no";')"
+check "songs hub travels" "4" "$(echo "$EXTRAS" | php -r '$j=json_decode(stream_get_contents(STDIN),true); echo count($j["songs"]["items"] ?? []);')"
+check "the guardian toggles come with it" "true" "$(echo "$EXTRAS" | jqv devotional.enabled)"
+check "extras need a signed-in parent" "401" "$(curl -s -o /dev/null -w '%{http_code}' "${hdr[@]}" "$BASE/content/extras")"
+COACH=$(curl -s "${hdr[@]}" "${auth[@]}" -X POST "$BASE/parent/coach" -d '{"child_id":'$CHILD_ID',"question":"How can I help with counting?"}')
+check "the coach answers" "yes" "$([ -n "$(echo "$COACH" | jqv answer)" ] && echo yes || echo no)"
+check "the coach refuses another family's child" "child_not_found" "$(curl -s "${hdr[@]}" "${auth[@]}" -X POST "$BASE/parent/coach" -d '{"child_id":999999}' | jqv error.code)"
+check "config carries the chest rule" "5" "$(curl -s "${hdr[@]}" "$BASE/config" | jqv rewards.chest.every_missions)"
+
 echo
 echo "$PASS passed, $FAIL failed"
 exit $([ "$FAIL" -eq 0 ] && echo 0 || echo 1)

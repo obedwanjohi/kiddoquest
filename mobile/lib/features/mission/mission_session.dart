@@ -30,11 +30,15 @@ class MissionSessionController extends ChangeNotifier {
     required Outbox outbox,
     required SyncEngine sync,
     int exclusionWindowDays = 7,
+    int chestEveryMissions = 0,
+    int chestCoinsReward = 0,
   })  : _content = content,
         _progress = progress,
         _outbox = outbox,
         _sync = sync,
-        _exclusionWindowDays = exclusionWindowDays;
+        _exclusionWindowDays = exclusionWindowDays,
+        _chestEveryMissions = chestEveryMissions,
+        _chestCoinsReward = chestCoinsReward;
 
   final Child child;
   final int missionId;
@@ -43,6 +47,8 @@ class MissionSessionController extends ChangeNotifier {
   final Outbox _outbox;
   final SyncEngine _sync;
   final int _exclusionWindowDays;
+  final int _chestEveryMissions;
+  final int _chestCoinsReward;
 
   static const _scorer = QuestionScorer();
 
@@ -64,6 +70,11 @@ class MissionSessionController extends ChangeNotifier {
   bool finished = false;
   String? error;
   MissionScore? result;
+
+  /// Coins from a treasure chest, worked out on the device so the child sees it
+  /// the moment the mission ends. The server recomputes the same number when
+  /// the event syncs; this is a prediction of the ledger, not a second one.
+  int chestCoins = 0;
   bool showHint = false;
 
   final Map<int, Map<String, dynamic>> _answers = {};
@@ -258,12 +269,18 @@ class MissionSessionController extends ChangeNotifier {
       passThresholdPercent: mission?.passThresholdPercent ?? 60,
     );
 
+    // Read before the progress row moves: a chest is for a mission finished
+    // for the first time, and the server applies exactly the same rule.
+    final alreadyCompleted = await _progress.isCompleted(child.id, missionId);
+
     await _progress.recordProgress(
       childId: child.id,
       missionId: missionId,
       passed: result!.passed,
       stars: result!.stars,
     );
+
+    chestCoins = await _chestFor(alreadyCompleted: alreadyCompleted);
 
     await _progress.logQuestionAttempts(
       childId: child.id,
@@ -291,6 +308,24 @@ class MissionSessionController extends ChangeNotifier {
     // A finished mission is the moment worth spending a request on. If there is
     // no network it simply stays in the outbox.
     unawaited(_sync.syncNow(childId: child.id, reason: 'mission-completed'));
+  }
+
+  /// Every fifth mission finished for the first time carries a chest.
+  ///
+  /// The same arithmetic runs on the server. It is arithmetic rather than luck
+  /// precisely so that both sides agree without the device having to ask, which
+  /// is what lets a chest open on a bus with no signal.
+  Future<int> _chestFor({required bool alreadyCompleted}) async {
+    if (!result!.passed || alreadyCompleted) return 0;
+
+    final every = _chestEveryMissions;
+    final coins = _chestCoinsReward;
+
+    if (every <= 0 || coins <= 0) return 0;
+
+    final passed = await _progress.completedCount(child.id);
+
+    return (passed > 0 && passed % every == 0) ? coins : 0;
   }
 
   /// The child left early. Their time still counts; no stars are awarded.

@@ -147,6 +147,83 @@ class ProgressDao {
     }
   }
 
+  /// A small named value kept on this device only.
+  ///
+  /// Used for choices that are about the device rather than the account — when
+  /// the practice reminder should fire, for instance. A second phone in the
+  /// same family reasonably has its own answer.
+  Future<String?> setting(String key) async {
+    final db = await _db;
+    final rows = await db.query('settings', where: 'key = ?', whereArgs: [key], limit: 1);
+
+    return rows.isEmpty ? null : rows.first['value'] as String?;
+  }
+
+  Future<void> putSetting(String key, String value) async {
+    final db = await _db;
+
+    await db.insert(
+      'settings',
+      {'key': key, 'value': value},
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
+
+  Future<void> clearSetting(String key) async {
+    final db = await _db;
+    await db.delete('settings', where: 'key = ?', whereArgs: [key]);
+  }
+
+  /// Has this child already finished this mission?
+  ///
+  /// Asked before a completion is written, because a treasure chest is for a
+  /// mission finished for the first time.
+  Future<bool> isCompleted(int childId, int missionId) async {
+    final db = await _db;
+    final rows = await db.query(
+      'child_progress',
+      where: 'child_id = ? AND mission_id = ? AND status = ?',
+      whereArgs: [childId, missionId, 'completed'],
+      limit: 1,
+    );
+
+    return rows.isNotEmpty;
+  }
+
+  /// How many missions this child has finished, for the chest count and the
+  /// sticker book.
+  Future<int> completedCount(int childId) async {
+    final db = await _db;
+    final rows = await db.rawQuery(
+      'SELECT COUNT(*) AS total FROM child_progress WHERE child_id = ? AND status = ?',
+      [childId, 'completed'],
+    );
+
+    return (rows.first['total'] as num?)?.toInt() ?? 0;
+  }
+
+  /// A once-only marker, like "the devotional was shown today".
+  ///
+  /// Deliberately device-local and never synced: whether this tablet has
+  /// already shown today's verse is nobody else's business, and a child who
+  /// moves to the family phone at lunchtime may reasonably see it again.
+  Future<bool> flag(String key) async {
+    final db = await _db;
+    final rows = await db.query('settings', where: 'key = ?', whereArgs: [key], limit: 1);
+
+    return rows.isNotEmpty;
+  }
+
+  Future<void> setFlag(String key) async {
+    final db = await _db;
+
+    await db.insert(
+      'settings',
+      {'key': key, 'value': DateTime.now().toIso8601String()},
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
+
   /// Fold the server's view into the local one.
   Future<void> applySnapshot(ChildSnapshot snapshot) async {
     final db = await _db;

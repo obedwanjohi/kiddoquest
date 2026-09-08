@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 /// The browser implementation: there is no local file store, and none is
 /// needed. A pack keeps the URL of every picture and sound, and the browser's
@@ -19,3 +20,9 @@ Future<void> deletePackMediaDirectory(String packId) async {}
 bool localFileExists(String path) => false;
 
 Widget localFileImage(String path, {BoxFit fit = BoxFit.contain, double? height}) => const SizedBox.shrink();
+
+/// The browser has no local file to play. A caller checks
+/// [supportsLocalFiles] first; this exists so one that forgets still gets a
+/// controller it can dispose rather than a crash.
+VideoPlayerController localFileVideo(String path) =>
+    VideoPlayerController.networkUrl(Uri.parse(path));

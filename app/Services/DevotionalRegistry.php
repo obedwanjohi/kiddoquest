@@ -2,14 +2,16 @@
 
 namespace App\Services;
 
+/**
+ * Curated child-friendly daily Bible verses, teachings and one-sentence prayers.
+ *
+ * The website asks for todays; the app takes the whole list and picks today
+ * itself by the same rule, so a devotional still appears at bedtime with no
+ * connection.
+ */
 class DevotionalRegistry
 {
-    /**
-     * Curated list of child-friendly daily Bible verses, teachings, and 1-sentence prayers.
-     */
-    public static function getTodayDevotional(): array
-    {
-        $devotionals = [
+    private const LIST = [
             [
                 'verse_text' => 'I can do all things through Christ who strengthens me.',
                 'verse_ref'  => 'Philippians 4:13',
@@ -45,12 +47,19 @@ class DevotionalRegistry
                 'prayer'     => 'Jesus my Shepherd, thank You for protecting me and giving me everything I need. Amen!',
                 'emoji'      => '🐑',
             ],
-        ];
+    ];
 
-        // Pick daily verse based on day of year
-        $dayOfYear = (int) date('z');
-        $index = $dayOfYear % count($devotionals);
+    public static function getTodayDevotional(): array
+    {
+        $devotionals = self::all();
+        $index = ((int) date("z")) % count($devotionals);
 
         return $devotionals[$index];
+    }
+
+    /** @return array<int,array> */
+    public static function all(): array
+    {
+        return self::LIST;
     }
 }

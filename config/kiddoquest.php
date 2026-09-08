@@ -78,6 +78,20 @@ return [
             'streak_first_day'=> 5,
             'streak_continued'=> 10,
         ],
+
+        /*
+        | A treasure chest every few missions.
+        |
+        | The rule is deliberately arithmetic rather than random: the device can
+        | work out that a chest is coming and show it the instant a mission ends,
+        | and the server reaches the same answer when the event syncs. A random
+        | chest would have to be granted by the server, which means a child
+        | offline would be told about their treasure hours later.
+        */
+        'chest' => [
+            'every_missions' => (int) env('CHEST_EVERY_MISSIONS', 5),
+            'coins'          => (int) env('CHEST_COINS', 25),
+        ],
     ],
 
     /*

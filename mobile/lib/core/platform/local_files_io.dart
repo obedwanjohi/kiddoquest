@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
+import 'package:video_player/video_player.dart';
 
 /// The phone and tablet implementation: real files in the app's own directory.
 
@@ -49,3 +50,9 @@ Widget localFileImage(String path, {BoxFit fit = BoxFit.contain, double? height}
     ),
   );
 }
+
+/// A video that has already been downloaded.
+///
+/// Lives here rather than in the screen because `VideoPlayerController.file`
+/// takes a `dart:io` File, which a web build cannot even name.
+VideoPlayerController localFileVideo(String path) => VideoPlayerController.file(File(path));

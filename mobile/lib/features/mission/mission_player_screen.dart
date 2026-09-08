@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
+import '../../core/audio/audio_director.dart';
 import '../../core/models/pack.dart';
 import '../../core/platform/form_factor.dart';
 import '../../core/scoring/question_scorer.dart';
@@ -45,9 +46,18 @@ class MissionPlayerScreen extends ConsumerStatefulWidget {
 class _MissionPlayerScreenState extends ConsumerState<MissionPlayerScreen> {
   MissionSessionController? _session;
 
+  /// The question we have already read out. A child who taps a wrong answer
+  /// should not have the whole prompt started again from the top.
+  int? _narrated;
+
+  // Held rather than read on the way out: reaching for a provider through ref
+  // during dispose is reaching through a BuildContext that is already gone.
+  late final AudioDirector _audio;
+
   @override
   void initState() {
     super.initState();
+    _audio = ref.read(audioDirectorProvider);
     WidgetsBinding.instance.addPostFrameCallback((_) => _start());
   }
 
@@ -65,6 +75,8 @@ class _MissionPlayerScreenState extends ConsumerState<MissionPlayerScreen> {
       outbox: ref.read(outboxProvider),
       sync: ref.read(syncEngineProvider),
       exclusionWindowDays: config?.exclusionWindowDays ?? 7,
+      chestEveryMissions: config?.chestEveryMissions ?? 0,
+      chestCoinsReward: config?.chestCoins ?? 0,
     );
 
     session.addListener(_onSessionChanged);
@@ -84,11 +96,37 @@ class _MissionPlayerScreenState extends ConsumerState<MissionPlayerScreen> {
       ref.invalidate(screenTimeProvider);
     }
 
+    _narrate();
     setState(() {});
+  }
+
+  /// Read the current question out loud.
+  ///
+  /// The recorded narration when the pack carries one, the device voice when it
+  /// does not. A four-year-old cannot read the question, so this is not a
+  /// nicety: without it the screen is unusable to the child it is built for.
+  void _narrate() {
+    final session = _session;
+    final question = session?.current;
+
+    if (session == null || question == null || session.finished) return;
+    if (_narrated == question.id) return;
+
+    _narrated = question.id;
+
+    final key = question.narrationAudio ?? question.audio;
+
+    _audio.say(
+          media: key == null ? null : session.media[key],
+          text: question.narrationText ?? question.prompt,
+        );
   }
 
   @override
   void dispose() {
+    // Leo must stop talking the moment the screen goes, or he follows the child
+    // back to the map.
+    _audio.stop();
     _session?.removeListener(_onSessionChanged);
     _session?.dispose();
     super.dispose();
@@ -203,14 +241,14 @@ class _MissionPlayerScreenState extends ConsumerState<MissionPlayerScreen> {
   }
 }
 
-class _LeoColumn extends StatelessWidget {
+class _LeoColumn extends ConsumerWidget {
   const _LeoColumn({required this.session, required this.question});
 
   final MissionSessionController session;
   final PackQuestion question;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final formFactor = context.formFactor;
     final theme = Theme.of(context);
 
@@ -236,9 +274,16 @@ class _LeoColumn extends StatelessWidget {
         MascotSpeech(
           text: line,
           onReplay: () {
-            // The audio director arrives with narration in the next phase; the
-            // button is here now so its place in the layout is settled.
             HapticFeedback.selectionClick();
+
+            // Say whatever Leo is saying right now, which during the question is
+            // the question and afterwards is the encouragement.
+            final key = question.narrationAudio ?? question.audio;
+
+            ref.read(audioDirectorProvider).say(
+                  media: session.phase == QuestionPhase.asking && key != null ? session.media[key] : null,
+                  text: line,
+                );
           },
         ),
         if (session.showHint && question.hint != null) ...[
@@ -454,6 +499,10 @@ class _CelebrationView extends ConsumerWidget {
                 '${result.score} of ${result.total} right',
                 style: theme.textTheme.titleLarge?.copyWith(color: theme.colorScheme.onSurfaceVariant),
               ),
+              if (session.chestCoins > 0) ...[
+                SizedBox(height: KidSpacing.lg * formFactor.density),
+                _TreasureChest(coins: session.chestCoins),
+              ],
               SizedBox(height: KidSpacing.lg * formFactor.density),
               Text(
                 session.mission?.outroText ?? 'Your stars are on their way to your grown-up.',
@@ -469,6 +518,68 @@ class _CelebrationView extends ConsumerWidget {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+/// The treasure chest, on every fifth mission finished for the first time.
+///
+/// It taps open rather than opening itself: the small act of opening it is the
+/// whole reward, and a chest that has already burst before the child touches it
+/// is just a number on a screen.
+class _TreasureChest extends StatefulWidget {
+  const _TreasureChest({required this.coins});
+
+  final int coins;
+
+  @override
+  State<_TreasureChest> createState() => _TreasureChestState();
+}
+
+class _TreasureChestState extends State<_TreasureChest> {
+  bool _open = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final formFactor = context.formFactor;
+    final theme = Theme.of(context);
+
+    return KidFocusable(
+      onPressed: _open
+          ? null
+          : () {
+              HapticFeedback.mediumImpact();
+              setState(() => _open = true);
+            },
+      borderRadius: KidRadius.card,
+      semanticLabel: _open ? '${widget.coins} bonus coins' : 'Open the treasure chest',
+      child: AnimatedContainer(
+        duration: KidMotion.normal,
+        padding: EdgeInsets.all(KidSpacing.md * formFactor.density),
+        decoration: BoxDecoration(
+          color: _open ? KidColors.amberSoft : KidColors.primarySoft,
+          borderRadius: KidRadius.card,
+          border: Border.all(color: KidColors.amber, width: 3),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            AnimatedScale(
+              duration: KidMotion.normal,
+              scale: _open ? 1.2 : 1,
+              child: Text(
+                _open ? '🎉' : '🎁',
+                style: TextStyle(fontSize: 56 * formFactor.density),
+              ),
+            ),
+            SizedBox(height: KidSpacing.xs * formFactor.density),
+            Text(
+              _open ? '+${widget.coins} coins!' : 'A treasure chest! Tap to open it.',
+              style: theme.textTheme.titleLarge?.copyWith(color: KidColors.stageInk),
+            ),
+          ],
         ),
       ),
     );

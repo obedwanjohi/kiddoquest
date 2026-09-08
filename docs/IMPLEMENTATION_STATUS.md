@@ -108,6 +108,33 @@ Also fixed along the way:
   once. No credential is ever typed with a remote control. There is a browser
   page at `/tv` for a family without the phone app, and the phone entry point
   sits behind the parent PIN because approving a device is worth a token.
+- Narration. Every question is read out loud: the recorded voice where the pack
+  carries one (202 of 538 questions do today), the device voice everywhere else.
+  Adding recordings later changes nothing above the audio director.
+- Mission intro videos, skippable from the first second. A missing file, a codec
+  the device will not play, an unfinished download — every one of them lands the
+  child in the mission rather than stuck on a black screen.
+- Speak and repeat now listens where the device can hear, and says what it
+  heard. It never decides the mark: recognition mishears small children
+  constantly, and a four-year-old who said the word must not be told otherwise.
+  A device with no microphone runs the same screen as practice.
+- The daily devotional, read aloud, shown once a day rather than once a visit.
+  The whole list travels to the device and today's is picked there, so it works
+  at bedtime with no connection.
+- The songs hub. A song plays from the device or it is marked coming soon; the
+  website's YouTube embeds are deliberately not carried over, because they
+  cannot work offline and send a four-year-old somewhere nobody is supervising.
+- The sticker book, drawn from the missions a child has finished. Nothing to
+  award and nothing to sync, so it is right the instant a mission ends.
+- Treasure chests every fifth mission finished for the first time. The rule is
+  arithmetic rather than random precisely so the device and the server reach the
+  same answer without asking each other, which is what lets a chest open on a
+  bus with no signal. Replaying a finished mission mints nothing.
+- The parent coach, answering with the child's real numbers in front of it. It
+  falls back to a data-driven reply when no LLM key is configured, so it always
+  answers.
+- Practice reminders, scheduled on the device. They arrive whether or not the
+  family has data left, and nothing about them is sent anywhere.
 - A web build, so the app can be tested in Chrome with no Android device. SQLite
   runs as WebAssembly there, and the file-backed media cache is swapped for the
   browser's own caching behind one conditional import.
@@ -117,9 +144,9 @@ Also fixed along the way:
 | Suite | What it covers |
 |---|---|
 | `php artisan scoring:verify` | 39 shared fixtures against the PHP scorer |
-| `mobile/flutter test` | 106 tests: the same 39 fixtures against the Dart scorer, star thresholds, form factors, the wrong-answer-is-grey rule, the profile screen in three form factors, every renderer, screen time, the shop price list, the parent report parser, and the television sign-in flow |
+| `mobile/flutter test` | 116 tests: the same 39 fixtures against the Dart scorer, star thresholds, form factors, the wrong-answer-is-grey rule, the profile screen in three form factors, every renderer, screen time, the shop price list, the parent report parser, the television sign-in flow, the devotional and songs models, and the speech matcher |
 | `tests/Feature/Api/*` | Sync idempotency, server scoring over a forged claim, quarantine, cross-family refusal, pack publishing and versioning |
-| `tests/smoke/api-smoke.sh` | 52 checks against a running server: the whole contract end to end, including a forged three-star claim scoring what the answers earned, the parent report, and the whole television sign-in handshake |
+| `tests/smoke/api-smoke.sh` | 60 checks against a running server: the whole contract end to end, including a forged three-star claim scoring what the answers earned, the parent report, the whole television sign-in handshake, the devotional and songs payload, and the coach |
 
 Two gaps worth stating plainly rather than glossing over:
 
@@ -138,14 +165,10 @@ Two gaps worth stating plainly rather than glossing over:
 
 | Thing | Phase |
 |---|---|
-| Mission video screen | 1 |
-| Narration audio and the audio director | 1–2 |
-| Speech recognition (speak and repeat runs as practice, which the scorer counts) | 2 |
-| Stickers and treasure chests (the shop and badges are built) | 2 |
-| Songs hub and devotional | 2 |
+| Licensed song recordings, so the hub has something to play offline | 2 — decision 5 |
 | Rive mascots and illustrated worlds (emoji stand in) | 2 |
-| AI coach, M-Pesa in the app (the dashboard and reports are built) | 3 |
-| Push notifications | 3 |
+| M-Pesa in the app | 3 |
+| Server-sent push (Firebase). The device-token endpoint and the local reminders are built; FCM needs a Firebase project and `google-services.json` | 3 |
 | TV device lab: the app has never run on a real television | 4 |
 | Redis, Octane, Horizon, Sentry, the read replica | 0/5, infrastructure |
 | Postgres monthly partitions on `learning_events` | 5 |

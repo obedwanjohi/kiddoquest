@@ -4,6 +4,15 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
+    <!-- The daily practice reminder, scheduled on the device. Android 13 and
+         later ask the user for this one. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <!-- Speak and repeat, where the device has a microphone at all. Not
+         required: a television box without one runs the same screen as
+         practice. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
     <!--
         One binary for phones, tablets and Android TV.
 

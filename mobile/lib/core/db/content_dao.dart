@@ -356,6 +356,67 @@ class ContentDao {
   /// Questions and options carry media *keys*, not URLs, so that one picture
   /// shared by twenty questions is stored and downloaded once. Something has to
   /// turn a key back into an image, and this is it.
+  /// Every mission on this device, with the world it belongs to.
+  ///
+  /// The sticker book is drawn from this joined with the child's progress: a
+  /// sticker is a mission they have finished, so there is nothing to award, to
+  /// sync, or to get out of step with the missions themselves.
+  Future<List<StickerSlot>> stickerSlots() async {
+    final db = await _db;
+
+    final rows = await db.rawQuery('''
+      SELECT m.id AS mission_id,
+             COALESCE(NULLIF(m.display_title, ""), m.title) AS title,
+             w.name AS world_name,
+             w.icon AS world_icon,
+             w.theme_color AS theme_color,
+             w.slug AS world_slug,
+             w.sort_order AS world_order,
+             m.sort_order AS mission_order
+      FROM missions m
+      JOIN worlds w ON w.id = m.world_id
+      ORDER BY w.sort_order, m.sort_order
+    ''');
+
+    return rows
+        .map((row) => StickerSlot(
+              missionId: row['mission_id'] as int,
+              title: row['title'] as String? ?? 'Mission',
+              worldName: row['world_name'] as String? ?? '',
+              worldIcon: row['world_icon'] as String?,
+              worldSlug: row['world_slug'] as String?,
+              themeColor: row['theme_color'] as String?,
+            ))
+        .toList();
+  }
+
+  /// One media key, from whichever pack happens to carry it.
+  ///
+  /// Narration and songs are addressed by key alone: the caller knows it wants
+  /// `audio/leo/well-done.mp3`, not which world shipped it. Media is
+  /// content-addressed, so the same key in two packs is the same file.
+  Future<ResolvedMedia?> media(String key) async {
+    if (key.isEmpty) return null;
+
+    final db = await _db;
+    final rows = await db.query(
+      'media_files',
+      columns: ['url', 'local_path'],
+      where: 'path = ?',
+      whereArgs: [key],
+      // A downloaded copy beats one that would need the network.
+      orderBy: 'local_path IS NULL',
+      limit: 1,
+    );
+
+    if (rows.isEmpty) return null;
+
+    return ResolvedMedia(
+      url: rows.first['url'] as String? ?? '',
+      localPath: rows.first['local_path'] as String?,
+    );
+  }
+
   Future<Map<String, ResolvedMedia>> mediaFor(String packId) async {
     final db = await _db;
     final rows = await db.query(
@@ -434,4 +495,23 @@ class ContentDao {
       return const {};
     }
   }
+}
+
+/// One space in the sticker book: a mission, and the world it came from.
+class StickerSlot {
+  const StickerSlot({
+    required this.missionId,
+    required this.title,
+    required this.worldName,
+    this.worldIcon,
+    this.worldSlug,
+    this.themeColor,
+  });
+
+  final int missionId;
+  final String title;
+  final String worldName;
+  final String? worldIcon;
+  final String? worldSlug;
+  final String? themeColor;
 }

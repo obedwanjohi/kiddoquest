@@ -1,12 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../core/audio/audio_director.dart';
+import '../core/audio/speech_listener.dart';
 import '../core/auth/auth_repository.dart';
 import '../core/content/content_repository.dart';
 import '../core/db/content_dao.dart';
 import '../core/db/progress_dao.dart';
 import '../core/models/app_config.dart';
 import '../core/models/child.dart';
+import '../core/notifications/practice_reminders.dart';
+import '../core/models/extras.dart';
 import '../core/models/pack.dart';
 import '../core/models/parent_report.dart';
 import '../core/models/snapshot.dart';
@@ -14,6 +18,7 @@ import '../core/network/api_client.dart';
 import '../core/network/api_exception.dart';
 import '../core/sync/outbox.dart';
 import '../core/sync/sync_engine.dart';
+import '../features/extras/extras_repository.dart';
 import '../features/parent/parent_report_repository.dart';
 
 /// Wiring. Each object is created once and handed to whoever asks for it.
@@ -293,4 +298,31 @@ final parentReportProvider =
     }
     rethrow;
   }
+});
+
+// ── Sound, and the content that is not missions ──────────────────────────────
+
+/// Reads prompts, verses and stories out loud. One per app: two voices talking
+/// over each other is worse than none.
+final audioDirectorProvider = Provider<AudioDirector>((ref) {
+  final director = AudioDirector();
+
+  ref.onDispose(director.dispose);
+
+  return director;
+});
+
+/// The daily practice nudge, scheduled on the device.
+final practiceRemindersProvider = Provider<PracticeReminders>((ref) => PracticeReminders());
+
+/// Hears a child say a word, where the device can hear at all.
+final speechListenerProvider = Provider<SpeechListener>((ref) => SpeechListener());
+
+final extrasRepositoryProvider = Provider<ExtrasRepository>((ref) {
+  return ExtrasRepository(api: ref.watch(apiClientProvider));
+});
+
+/// The devotional list and the songs hub, server copy or cached copy.
+final extrasProvider = FutureProvider<Extras>((ref) async {
+  return ref.watch(extrasRepositoryProvider).load();
 });

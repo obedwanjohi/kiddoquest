@@ -69,6 +69,14 @@ class MissionCompletionService
             ], static fn ($value) => $value !== null));
 
             $this->logQuestionAttempts($child, $mission, $result, $answers, $completedAt);
+
+            // Whether this mission was already finished decides the chest below,
+            // so it has to be read before the progress row moves.
+            $firstCompletion = ! ChildProgress::where('child_id', $child->id)
+                ->where('mission_id', $mission->id)
+                ->where('status', 'completed')
+                ->exists();
+
             $this->upsertProgress($child, $mission, $result, $completedAt);
 
             $netNewStars = max(0, $result->stars - $previousBest);
@@ -79,7 +87,16 @@ class MissionCompletionService
             // Badges are decided here, on the server, from what actually happened.
             $badges = app(BadgeService::class)->evaluate($child->fresh(), $mission, $result);
 
-            return ['attempt_id' => $attempt->id, 'net_new_stars' => $netNewStars, 'coins' => $coins, 'badges' => $badges];
+            $chest = $this->openChest($child, $result, $firstCompletion);
+            $coins += $chest;
+
+            return [
+                'attempt_id'    => $attempt->id,
+                'net_new_stars' => $netNewStars,
+                'coins'         => $coins,
+                'badges'        => $badges,
+                'chest_coins'   => $chest,
+            ];
         });
 
         $child->refresh();
@@ -93,7 +110,47 @@ class MissionCompletionService
             'streak_days'   => (int) ($child->streak_days ?? 1),
             'attempt_id'    => $outcome['attempt_id'],
             'badges'        => $outcome['badges'] ?? [],
+            'chest_coins'   => $outcome['chest_coins'] ?? 0,
         ];
+    }
+
+    /**
+     * A treasure chest every few missions.
+     *
+     * Counted on missions the child has actually passed, so replaying an easy
+     * one cannot be farmed for chests. The rule is arithmetic on purpose: the
+     * device reaches the same answer the instant a mission ends and can show
+     * the chest immediately, offline, and this recomputes it when the event
+     * arrives. Coins are still added here and nowhere else.
+     */
+    protected function openChest(Child $child, ScoreResult $result, bool $firstCompletion): int
+    {
+        // Only a mission finished for the first time counts. Without this a child
+        // sitting on a multiple of five could replay one easy mission over and
+        // over and mint a chest every time.
+        if (! $result->passed || ! $firstCompletion) {
+            return 0;
+        }
+
+        $config = config('kiddoquest.rewards.chest', []);
+        $every = max(0, (int) ($config['every_missions'] ?? 0));
+        $coins = max(0, (int) ($config['coins'] ?? 0));
+
+        if ($every === 0 || $coins === 0) {
+            return 0;
+        }
+
+        $passed = ChildProgress::where('child_id', $child->id)
+            ->where('status', 'completed')
+            ->count();
+
+        if ($passed === 0 || $passed % $every !== 0) {
+            return 0;
+        }
+
+        $child->increment('star_coins', $coins);
+
+        return $coins;
     }
 
     /**

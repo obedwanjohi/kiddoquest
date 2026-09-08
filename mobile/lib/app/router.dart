@@ -6,15 +6,20 @@ import '../features/auth/sign_in_screen.dart';
 import '../features/auth/tv_sign_in_screen.dart';
 import '../core/platform/form_factor.dart';
 import '../features/downloads/downloads_screen.dart';
+import '../features/extras/devotional_screen.dart';
+import '../features/extras/songs_screen.dart';
 import '../features/map/adventure_map_screen.dart';
 import '../features/mission/mission_briefing_screen.dart';
 import '../features/mission/mission_player_screen.dart';
+import '../features/mission/mission_video_screen.dart';
+import '../features/parent/coach_screen.dart';
 import '../features/parent/parent_dashboard_screen.dart';
 import '../features/parent/parent_gate_screen.dart';
 import '../features/parent/parent_settings_screen.dart';
 import '../features/profiles/add_child_screen.dart';
 import '../features/profiles/whos_playing_screen.dart';
 import '../features/rewards/shop_screen.dart';
+import '../features/rewards/sticker_book_screen.dart';
 import '../features/screen_time/time_up_screen.dart';
 import 'providers.dart';
 
@@ -77,12 +82,21 @@ final routerProvider = Provider<GoRouter>((ref) {
         ),
       ),
       GoRoute(
+        path: '/mission/:id/video',
+        builder: (context, state) => MissionVideoScreen(
+          missionId: int.tryParse(state.pathParameters['id'] ?? '') ?? 0,
+        ),
+      ),
+      GoRoute(
         path: '/mission/:id/play',
         builder: (context, state) => MissionPlayerScreen(
           missionId: int.tryParse(state.pathParameters['id'] ?? '') ?? 0,
         ),
       ),
       GoRoute(path: '/shop', builder: (context, state) => const ShopScreen()),
+      GoRoute(path: '/stickers', builder: (context, state) => const StickerBookScreen()),
+      GoRoute(path: '/songs', builder: (context, state) => const SongsScreen()),
+      GoRoute(path: '/devotional', builder: (context, state) => const DevotionalScreen()),
       GoRoute(path: '/time-up', builder: (context, state) => const TimeUpScreen()),
       GoRoute(path: '/downloads', builder: (context, state) => const DownloadsScreen()),
       GoRoute(path: '/parent', builder: (context, state) => const ParentGateScreen()),
@@ -95,6 +109,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(path: '/parent/settings', builder: (context, state) => const ParentSettingsScreen()),
       GoRoute(path: '/parent/tv', builder: (context, state) => const ApproveTvScreen()),
+      GoRoute(path: '/parent/coach', builder: (context, state) => const CoachScreen()),
     ],
   );
 });

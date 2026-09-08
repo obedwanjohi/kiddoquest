@@ -17,6 +17,8 @@ class AppConfig {
     this.maxEventsPerSync = 200,
     this.features = const {},
     this.shopPrices = const {},
+    this.chestEveryMissions = 0,
+    this.chestCoins = 0,
     this.maintenanceBanner,
   });
 
@@ -38,6 +40,11 @@ class AppConfig {
   /// checks a purchase against these same numbers.
   final Map<String, int> shopPrices;
 
+  /// A treasure chest every this many missions, worth this many coins. Zero
+  /// either side switches chests off without an app release.
+  final int chestEveryMissions;
+  final int chestCoins;
+
   final String? maintenanceBanner;
 
   bool feature(String key, {bool fallback = false}) => features[key] ?? fallback;
@@ -48,6 +55,8 @@ class AppConfig {
     final subscription = (json['subscription'] as Map?)?.cast<String, dynamic>() ?? const {};
     final session = (json['session'] as Map?)?.cast<String, dynamic>() ?? const {};
     final sync = (json['sync'] as Map?)?.cast<String, dynamic>() ?? const {};
+    final rewards = (json['rewards'] as Map?)?.cast<String, dynamic>() ?? const {};
+    final chest = (rewards['chest'] as Map?)?.cast<String, dynamic>() ?? const {};
 
     return AppConfig(
       minAppVersion: json['min_app_version'] as String? ?? '1.0.0',
@@ -68,6 +77,8 @@ class AppConfig {
       features: ((json['features'] as Map?) ?? const {})
           .map((key, value) => MapEntry(key.toString(), value == true)),
       shopPrices: _shopPrices(json['shop']),
+      chestEveryMissions: (chest['every_missions'] as num?)?.toInt() ?? 0,
+      chestCoins: (chest['coins'] as num?)?.toInt() ?? 0,
       maintenanceBanner: json['maintenance_banner'] as String?,
     );
   }

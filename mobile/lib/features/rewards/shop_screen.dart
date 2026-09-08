@@ -133,6 +133,11 @@ class _ShopScreenState extends ConsumerState<ShopScreen> {
               Expanded(
                 child: Text('Leo’s Shop 🛍️', style: theme.textTheme.titleLarge),
               ),
+              IconButton(
+                onPressed: () => context.go('/stickers'),
+                icon: const Text('📔', style: TextStyle(fontSize: 22)),
+                tooltip: 'My stickers',
+              ),
               CoinCounter(coins: child.starCoins),
             ],
           ),

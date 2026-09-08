@@ -27,6 +27,36 @@ class AdventureMapScreen extends ConsumerStatefulWidget {
 class _AdventureMapScreenState extends ConsumerState<AdventureMapScreen> {
   String _subject = 'all';
   String? _downloading;
+  bool _checkedDevotional = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _maybeShowDevotional());
+  }
+
+  /// Show the devotional the first time the map opens each day.
+  ///
+  /// Once a day, not once a visit: a verse that appears every time a child
+  /// comes back to the map stops being a moment and becomes an obstacle.
+  Future<void> _maybeShowDevotional() async {
+    if (_checkedDevotional) return;
+    _checkedDevotional = true;
+
+    final extras = await ref.read(extrasProvider.future);
+
+    if (!extras.devotionalEnabled || extras.devotionals.isEmpty) return;
+
+    final today = DateTime.now();
+    final key = 'devotional_seen:${today.year}-${today.month}-${today.day}';
+    final seen = await ref.read(progressDaoProvider).flag(key);
+
+    if (seen || !mounted) return;
+
+    await ref.read(progressDaoProvider).setFlag(key);
+
+    if (mounted) context.go('/devotional');
+  }
 
   static const Map<String, ({String label, String emoji})> _subjectLabels = {
     'all': (label: 'All', emoji: '🗺️'),
@@ -91,6 +121,7 @@ class _AdventureMapScreenState extends ConsumerState<AdventureMapScreen> {
         stars: child.totalStars,
         coins: child.starCoins,
         onCoinsPressed: () => context.go('/shop'),
+        onSongs: () => context.go('/songs'),
         streakDays: child.streakDays,
         minutesLeft: (screenTime != null && !screenTime.unlimited) ? screenTime.minutesLeft : null,
         unlimitedTime: screenTime?.unlimited ?? !child.hasTimeLimit,

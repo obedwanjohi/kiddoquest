@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kiddoquest/app/providers.dart';
+import 'package:kiddoquest/core/audio/speech_listener.dart';
 import 'package:kiddoquest/core/models/pack.dart';
 import 'package:kiddoquest/core/platform/form_factor.dart';
 import 'package:kiddoquest/core/scoring/question_scorer.dart';
@@ -20,11 +23,18 @@ void main() {
   const scorer = QuestionScorer();
 
   Widget harness(Widget child, {FormFactor formFactor = FormFactor.compact}) {
-    return MaterialApp(
-      theme: KidTheme.light(formFactor),
-      home: FormFactorScope(
-        formFactor: formFactor,
-        child: Scaffold(body: SizedBox(width: 800, height: 800, child: child)),
+    // Speak-and-repeat reaches for the speech listener, so every renderer is
+    // tested inside the scope the app gives them.
+    return ProviderScope(
+      overrides: [
+        speechListenerProvider.overrideWithValue(_DeafListener()),
+      ],
+      child: MaterialApp(
+        theme: KidTheme.light(formFactor),
+        home: FormFactorScope(
+          formFactor: formFactor,
+          child: Scaffold(body: SizedBox(width: 800, height: 800, child: child)),
+        ),
       ),
     );
   }
@@ -305,4 +315,20 @@ void main() {
       expect(scorer.isCorrect(question.toScorerJson(), {'response': submitted}), isFalse);
     });
   });
+}
+
+/// A device that cannot hear: no microphone, no language pack, or a browser
+/// that said no. This is the common case on the hardware this product targets,
+/// so it is what the renderer tests run against.
+class _DeafListener extends SpeechListener {
+  @override
+  Future<bool> isAvailable() async => false;
+
+  @override
+  Future<void> listen({required void Function(String heard) onHeard, Duration listenFor = const Duration(seconds: 5)}) async {
+    onHeard('');
+  }
+
+  @override
+  Future<void> stop() async {}
 }

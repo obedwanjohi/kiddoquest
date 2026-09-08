@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Device;
+use App\Models\MissionAttempt;
 use App\Services\Learning\ParentReportService;
+use App\Services\ParentAiService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -135,6 +137,40 @@ class ParentController extends ApiController
         };
 
         return response()->json($reports->build($model, $days));
+    }
+
+    /**
+     * The coach: a parent's question about their child, answered with that
+     * child's real numbers in front of it.
+     *
+     * The same service the website uses, so an answer does not depend on which
+     * screen the question was asked from. It falls back to a data-driven reply
+     * when no LLM key is configured, which means this endpoint always answers
+     * rather than sometimes failing.
+     */
+    public function coach(Request $request, ParentAiService $ai): JsonResponse
+    {
+        $data = $request->validate([
+            'child_id' => ['required', 'integer'],
+            'question' => ['nullable', 'string', 'max:500'],
+        ]);
+
+        $child = $this->guardian($request)->children()->find($data['child_id']);
+
+        if (! $child) {
+            return $this->fail('child_not_found', 'That child does not belong to this account.', 404);
+        }
+
+        $attempts = MissionAttempt::where('child_id', $child->id)->get();
+        $sumTotal = (int) $attempts->sum('total');
+
+        $answer = $ai->generateAdvice($child, [
+            'accuracy_rate'   => $sumTotal > 0 ? (int) round(($attempts->sum('score') / $sumTotal) * 100) : 80,
+            'passed_missions' => $attempts->where('passed', true)->pluck('mission_id')->unique()->count(),
+            'total_missions'  => $attempts->pluck('mission_id')->unique()->count(),
+        ], (string) ($data['question'] ?? ''));
+
+        return response()->json(['answer' => $answer, 'child_id' => (int) $child->id]);
     }
 
     public function pushToken(Request $request): JsonResponse

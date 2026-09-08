@@ -73,6 +73,7 @@ class _MissionBriefingScreenState extends ConsumerState<MissionBriefingScreen> {
     final minutes = mission['estimated_minutes'] as int? ?? 5;
     final stars = mission['stars_reward'] as int? ?? 3;
     final questions = mission['questions_per_session'] as int? ?? 6;
+    final hasVideo = (mission['video_path'] as String?)?.isNotEmpty == true;
 
     return KidScaffold(
       onBack: () => context.go('/map'),
@@ -106,7 +107,13 @@ class _MissionBriefingScreenState extends ConsumerState<MissionBriefingScreen> {
                 tone: KidButtonTone.amber,
                 size: KidButtonSize.large,
                 autofocus: true,
-                onPressed: () => context.go('/mission/${widget.missionId}/play'),
+                // A mission with a film starts with the film; everything else
+                // goes straight to the questions.
+                onPressed: () => context.go(
+                  hasVideo
+                      ? '/mission/${widget.missionId}/video'
+                      : '/mission/${widget.missionId}/play',
+                ),
               ),
               SizedBox(height: KidSpacing.md * formFactor.density),
               TextButton(
