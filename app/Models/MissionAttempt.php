@@ -12,6 +12,11 @@ class MissionAttempt extends Model
     protected $fillable = [
         'child_id',
         'mission_id',
+        // Set when the attempt came from the app: the id of the learning event
+        // that produced it, so replaying an outbox cannot double-count stars.
+        'event_id',
+        'pack_version',
+        'source',
         'score',
         'total',
         'stars',

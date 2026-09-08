@@ -7,6 +7,9 @@ use Illuminate\Foundation\Configuration\Middleware;
 $app = Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
+        // The Flutter app talks to /api/v1: stateless, token-authenticated, no CSRF.
+        api: __DIR__.'/../routes/api.php',
+        apiPrefix: 'api/v1',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
@@ -19,6 +22,9 @@ $app = Application::configure(basePath: dirname(__DIR__))
             'ensure.child.session' => \App\Http\Middleware\EnsureChildSession::class,
             'parent.unlocked' => \App\Http\Middleware\EnsureParentUnlocked::class,
             'subscription.active' => \App\Http\Middleware\EnsureActiveSubscription::class,
+            // App API
+            'api.child' => \App\Http\Middleware\Api\ResolveChild::class,
+            'api.device' => \App\Http\Middleware\Api\TrackDevice::class,
         ]);
 
         // ✅ MOBILE / TUNNEL TESTING: Trust all proxies

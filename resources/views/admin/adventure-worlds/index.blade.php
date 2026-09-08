@@ -80,10 +80,26 @@
                                 @endif
                             </td>
                             <td style="text-align: right;">
-                                <div style="display: inline-flex; gap: 8px;">
+                                <div style="display: inline-flex; gap: 8px; align-items: center;">
+                                    @php $pack = $packs[$world->id] ?? null; @endphp
+                                    @if($pack)
+                                        <span title="Published {{ $pack->published_at?->diffForHumans() }}" style="font-size: 11px; color: #16a34a; font-weight: 700; white-space: nowrap;">
+                                            📦 v{{ $pack->version }}
+                                        </span>
+                                    @else
+                                        <span style="font-size: 11px; color: #94a3b8; white-space: nowrap;">not in the app</span>
+                                    @endif
+
+                                    <form action="{{ route('admin.adventure-worlds.publish', $world) }}" method="POST" style="margin: 0;">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm" style="background: #7C3AED; color: #fff; border: none; font-weight: bold;" title="Export this world for the phone, tablet and TV app">
+                                            {{ $pack ? 'Republish' : 'Publish to app' }}
+                                        </button>
+                                    </form>
+
                                     <a href="{{ route('admin.adventure-worlds.show', $world) }}" class="btn btn-primary btn-sm">Manage Missions</a>
                                     <a href="{{ route('admin.adventure-worlds.edit', $world) }}" class="btn btn-secondary btn-sm">Edit</a>
-                                    
+
                                     <form action="{{ route('admin.adventure-worlds.destroy', $world) }}" method="POST" onsubmit="return confirm('Delete this adventure world? This cannot be undone.');">
                                         @csrf
                                         @method('DELETE')

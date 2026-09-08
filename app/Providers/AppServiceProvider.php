@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
 
@@ -21,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->configureRateLimiters();
+
         // Morph map: maps short alias names stored in entity_type columns
         // to their fully-qualified model class names.
         // ContentAuditLog::log() stores short names like "Lesson", "Subject", etc.
@@ -53,5 +58,25 @@ class AppServiceProvider extends ServiceProvider
                 URL::forceRootUrl("{$scheme}://{$host}");
             }
         }
+    }
+
+    /**
+     * Named limiters for the app API.
+     *
+     * Sync is limited per device rather than per IP: a school or a home with one
+     * router would otherwise throttle every child behind it at once.
+     */
+    protected function configureRateLimiters(): void
+    {
+        RateLimiter::for('sync', function (Request $request) {
+            $perMinute = (int) config('kiddoquest.sync.rate_limit_per_minute', 60);
+            $key = $request->header('X-Device-Id') ?: ($request->user()?->id ?: $request->ip());
+
+            return Limit::perMinute($perMinute)->by('sync:' . $key);
+        });
+
+        RateLimiter::for('api', function (Request $request) {
+            return Limit::perMinute(120)->by($request->user()?->id ?: $request->ip());
+        });
     }
 }

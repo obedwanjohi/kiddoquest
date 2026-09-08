@@ -1,0 +1,146 @@
+{
+  "_comment": "Mission-level scoring: score, stars, pass. Star thresholds are 90/60/30 percent, matching calculateStars() in public/js/kid/quiz-engine.js.",
+  "cases": [
+    {
+      "name": "two of three: two stars, passed at 60 percent",
+      "pass_threshold_percent": 60,
+      "questions": [
+        {"id": 1, "type": "multiple_choice", "options": [{"id": 10, "is_correct": true, "sort_order": 1}, {"id": 11, "is_correct": false, "sort_order": 2}]},
+        {"id": 2, "type": "multiple_choice", "options": [{"id": 20, "is_correct": true, "sort_order": 1}, {"id": 21, "is_correct": false, "sort_order": 2}]},
+        {"id": 3, "type": "multiple_choice", "options": [{"id": 30, "is_correct": true, "sort_order": 1}, {"id": 31, "is_correct": false, "sort_order": 2}]}
+      ],
+      "answers": [
+        {"question_id": 1, "response": {"option_id": 10}},
+        {"question_id": 2, "response": {"option_id": 20}},
+        {"question_id": 3, "response": {"option_id": 31}}
+      ],
+      "expected": {"score": 2, "total": 3, "percentage": 67, "stars": 2, "passed": true}
+    },
+    {
+      "name": "everything right: three stars",
+      "pass_threshold_percent": 60,
+      "questions": [
+        {"id": 1, "type": "multiple_choice", "options": [{"id": 10, "is_correct": true, "sort_order": 1}]},
+        {"id": 2, "type": "multiple_choice", "options": [{"id": 20, "is_correct": true, "sort_order": 1}]}
+      ],
+      "answers": [
+        {"question_id": 1, "response": {"option_id": 10}},
+        {"question_id": 2, "response": {"option_id": 20}}
+      ],
+      "expected": {"score": 2, "total": 2, "percentage": 100, "stars": 3, "passed": true}
+    },
+    {
+      "name": "one of three: one star, not passed",
+      "pass_threshold_percent": 60,
+      "questions": [
+        {"id": 1, "type": "multiple_choice", "options": [{"id": 10, "is_correct": true, "sort_order": 1}, {"id": 11, "is_correct": false, "sort_order": 2}]},
+        {"id": 2, "type": "multiple_choice", "options": [{"id": 20, "is_correct": true, "sort_order": 1}, {"id": 21, "is_correct": false, "sort_order": 2}]},
+        {"id": 3, "type": "multiple_choice", "options": [{"id": 30, "is_correct": true, "sort_order": 1}, {"id": 31, "is_correct": false, "sort_order": 2}]}
+      ],
+      "answers": [
+        {"question_id": 1, "response": {"option_id": 10}},
+        {"question_id": 2, "response": {"option_id": 21}},
+        {"question_id": 3, "response": {"option_id": 31}}
+      ],
+      "expected": {"score": 1, "total": 3, "percentage": 33, "stars": 1, "passed": false}
+    },
+    {
+      "name": "nothing right: no stars",
+      "pass_threshold_percent": 60,
+      "questions": [
+        {"id": 1, "type": "multiple_choice", "options": [{"id": 10, "is_correct": true, "sort_order": 1}, {"id": 11, "is_correct": false, "sort_order": 2}]},
+        {"id": 2, "type": "multiple_choice", "options": [{"id": 20, "is_correct": true, "sort_order": 1}, {"id": 21, "is_correct": false, "sort_order": 2}]}
+      ],
+      "answers": [
+        {"question_id": 1, "response": {"option_id": 11}},
+        {"question_id": 2, "response": {"option_id": 21}}
+      ],
+      "expected": {"score": 0, "total": 2, "percentage": 0, "stars": 0, "passed": false}
+    },
+    {
+      "name": "an answer for a question that is not in the mission is ignored",
+      "pass_threshold_percent": 60,
+      "questions": [
+        {"id": 1, "type": "multiple_choice", "options": [{"id": 10, "is_correct": true, "sort_order": 1}]}
+      ],
+      "answers": [
+        {"question_id": 1, "response": {"option_id": 10}},
+        {"question_id": 99, "response": {"option_id": 990}}
+      ],
+      "expected": {"score": 1, "total": 1, "percentage": 100, "stars": 3, "passed": true}
+    },
+    {
+      "name": "the same question answered twice only counts once",
+      "pass_threshold_percent": 60,
+      "questions": [
+        {"id": 1, "type": "multiple_choice", "options": [{"id": 10, "is_correct": true, "sort_order": 1}, {"id": 11, "is_correct": false, "sort_order": 2}]},
+        {"id": 2, "type": "multiple_choice", "options": [{"id": 20, "is_correct": true, "sort_order": 1}, {"id": 21, "is_correct": false, "sort_order": 2}]}
+      ],
+      "answers": [
+        {"question_id": 1, "response": {"option_id": 11}},
+        {"question_id": 1, "response": {"option_id": 10}},
+        {"question_id": 2, "response": {"option_id": 20}}
+      ],
+      "expected": {"score": 1, "total": 2, "percentage": 50, "stars": 1, "passed": false}
+    },
+    {
+      "name": "no answers at all: nothing scored, nothing passed",
+      "pass_threshold_percent": 60,
+      "questions": [
+        {"id": 1, "type": "multiple_choice", "options": [{"id": 10, "is_correct": true, "sort_order": 1}]}
+      ],
+      "answers": [],
+      "expected": {"score": 0, "total": 0, "percentage": 0, "stars": 0, "passed": false}
+    },
+    {
+      "name": "a mixed mission across four question types",
+      "pass_threshold_percent": 60,
+      "questions": [
+        {"id": 1, "type": "count_objects", "scoring_config": {"count": 3}, "options": [{"id": 10, "text": "3", "is_correct": true, "sort_order": 1}, {"id": 11, "text": "4", "is_correct": false, "sort_order": 2}]},
+        {"id": 2, "type": "true_false", "options": [{"id": 20, "is_correct": true, "sort_order": 1}, {"id": 21, "is_correct": false, "sort_order": 2}]},
+        {"id": 3, "type": "drag_sequence", "options": [{"id": 30, "sort_order": 1}, {"id": 31, "sort_order": 2}]},
+        {"id": 4, "type": "tracing", "metadata": {"character": "B"}, "options": []}
+      ],
+      "answers": [
+        {"question_id": 1, "response": {"option_id": 10}},
+        {"question_id": 2, "response": {"option_id": 21}},
+        {"question_id": 3, "response": {"order": [30, 31]}},
+        {"question_id": 4, "response": {"mode": "traced"}}
+      ],
+      "expected": {"score": 3, "total": 4, "percentage": 75, "stars": 2, "passed": true}
+    },
+    {
+      "name": "a stricter mission: 75 percent is not a pass when the threshold is 80",
+      "pass_threshold_percent": 80,
+      "questions": [
+        {"id": 1, "type": "multiple_choice", "options": [{"id": 10, "is_correct": true, "sort_order": 1}, {"id": 11, "is_correct": false, "sort_order": 2}]},
+        {"id": 2, "type": "multiple_choice", "options": [{"id": 20, "is_correct": true, "sort_order": 1}, {"id": 21, "is_correct": false, "sort_order": 2}]},
+        {"id": 3, "type": "multiple_choice", "options": [{"id": 30, "is_correct": true, "sort_order": 1}, {"id": 31, "is_correct": false, "sort_order": 2}]},
+        {"id": 4, "type": "multiple_choice", "options": [{"id": 40, "is_correct": true, "sort_order": 1}, {"id": 41, "is_correct": false, "sort_order": 2}]}
+      ],
+      "answers": [
+        {"question_id": 1, "response": {"option_id": 10}},
+        {"question_id": 2, "response": {"option_id": 20}},
+        {"question_id": 3, "response": {"option_id": 30}},
+        {"question_id": 4, "response": {"option_id": 41}}
+      ],
+      "expected": {"score": 3, "total": 4, "percentage": 75, "stars": 2, "passed": false}
+    },
+    {
+      "name": "answers beyond the session cap are not counted",
+      "pass_threshold_percent": 60,
+      "cap": 2,
+      "questions": [
+        {"id": 1, "type": "multiple_choice", "options": [{"id": 10, "is_correct": true, "sort_order": 1}]},
+        {"id": 2, "type": "multiple_choice", "options": [{"id": 20, "is_correct": true, "sort_order": 1}]},
+        {"id": 3, "type": "multiple_choice", "options": [{"id": 30, "is_correct": true, "sort_order": 1}]}
+      ],
+      "answers": [
+        {"question_id": 1, "response": {"option_id": 10}},
+        {"question_id": 2, "response": {"option_id": 20}},
+        {"question_id": 3, "response": {"option_id": 30}}
+      ],
+      "expected": {"score": 2, "total": 2, "percentage": 100, "stars": 3, "passed": true}
+    }
+  ]
+}

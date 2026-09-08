@@ -1,0 +1,84 @@
+name: CI
+
+# Two suites that have to agree: the Laravel API and the Flutter app both score
+# missions, and both are run against fixtures/scoring/*.json. If they ever
+# disagree, a child's stars would change after a sync, so this pipeline treats
+# that as a build failure.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  api:
+    name: Laravel API
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, pdo_sqlite, sqlite3, gd, zip
+          coverage: none
+
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.composer/cache
+          key: composer-${{ hashFiles('composer.lock') }}
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Prepare the environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+          touch database/database.sqlite
+
+      - name: Migrate
+        run: php artisan migrate --force
+
+      - name: Scoring fixtures
+        run: php artisan scoring:verify
+
+      - name: Tests
+        run: php artisan test
+
+  app:
+    name: Flutter app
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mobile
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze --fatal-infos
+
+      - name: Tests
+        run: flutter test
+
+      - name: Build the debug APK
+        run: flutter build apk --debug
+
+      - name: Keep the APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: kiddoquest-debug-apk
+          path: mobile/build/app/outputs/flutter-apk/app-debug.apk
+          retention-days: 14

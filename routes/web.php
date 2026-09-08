@@ -475,8 +475,9 @@ Route::middleware(['guardian.auth'])->prefix('parent')->group(function () {
     });
 });
 
-// Safaricom Daraja callback — a public webhook, no session
-Route::post('/api/v1/mpesa/callback', [App\Http\Controllers\Parent\SubscriptionController::class, 'handleCallback'])->name('api.mpesa.callback');
+// The Safaricom Daraja callback now lives in routes/api.php at the same URL
+// (/api/v1/mpesa/callback). It had to move: as a web route it went through the
+// CSRF middleware, which rejects a POST from Safaricom that carries no token.
 
 // Admin Login & Management Routes
 Route::get('/admin/login', [App\Http\Controllers\Admin\AdminAuthController::class, 'showLogin'])->name('admin.login');
@@ -553,6 +554,9 @@ Route::prefix('admin')->name('admin.')->middleware('admin.auth')->group(function
         return redirect()->route('admin.adventure-worlds.index')->with('success', '✨ All 20 Mathematics Playgroup Missions & Media seeded successfully!');
     })->name('adventure-worlds.seed');
     Route::post('/adventure-worlds/{world}/move', [App\Http\Controllers\Admin\AdventureWorldController::class, 'move'])->name('adventure-worlds.move');
+
+    // Publish a world as a content pack the app can download.
+    Route::post('/adventure-worlds/{adventureWorld}/publish', [App\Http\Controllers\Admin\AdventureWorldController::class, 'publish'])->name('adventure-worlds.publish');
     Route::post('/worlds/{world}/move', [App\Http\Controllers\Admin\AdventureWorldController::class, 'move'])->name('worlds.move');
     Route::resource('/worlds', App\Http\Controllers\Admin\AdventureWorldController::class);
     Route::resource('/adventure-worlds', App\Http\Controllers\Admin\AdventureWorldController::class);
@@ -746,6 +750,33 @@ Route::get('/dev/subscription', function () {
 })->name('dev.subscription');
 
 } // end dev-only routes
+
+/*
+|--------------------------------------------------------------------------
+| The Flutter app, served from this origin for local testing
+|--------------------------------------------------------------------------
+| `flutter build web --base-href "/app/"` into public/app makes the app and the
+| API share an origin, so a browser test needs no cross-origin rules and pack
+| images load the same way they do on a phone.
+|
+| The app routes on the path (/app/map, /app/profiles), so a refresh has to come
+| back to index.html rather than looking for a file that was never there.
+*/
+Route::get('/app/{path?}', function (?string $path = null) {
+    $root = public_path('app');
+    $file = $path ? realpath($root . '/' . $path) : false;
+
+    // Serve a real asset when the path names one, staying inside public/app.
+    if ($file && is_file($file) && str_starts_with(str_replace('\\', '/', $file), str_replace('\\', '/', $root))) {
+        return response()->file($file);
+    }
+
+    $index = $root . '/index.html';
+
+    abort_unless(is_file($index), 404, 'The app has not been built into public/app yet.');
+
+    return response()->file($index);
+})->where('path', '.*')->name('app.spa');
 
 // Storage media fallback route (guarantees uploaded media and videos serve cleanly)
 Route::get('/storage/{path}', function ($path) {

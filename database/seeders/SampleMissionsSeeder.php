@@ -9,9 +9,20 @@ use App\Models\QuestionBank;
 use App\Models\QuizQuestion;
 use App\Models\QuestionOption;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SampleMissionsSeeder extends Seeder
 {
+    /**
+     * Case-insensitive LIKE, spelled the way the current database spells it.
+     * ilike is PostgreSQL only, and hard-coding it made this seeder abort on
+     * SQLite, which is what local development uses.
+     */
+    protected function likeOperator(): string
+    {
+        return DB::connection()->getDriverName() === "pgsql" ? "ilike" : "like";
+    }
+
     public function run(): void
     {
         $worlds = AdventureWorld::orderBy('sort_order')->get();
@@ -181,9 +192,11 @@ class SampleMissionsSeeder extends Seeder
             $firstWord = explode(' ', $cleanTitle)[0] ?? 'Safari';
             $secondWord = explode(' ', $cleanTitle)[1] ?? 'Apple';
 
-            $lesson = Lesson::where('title', 'ilike', "%{$firstWord}%{$secondWord}%")
-                ->orWhere('title', 'ilike', "%{$secondWord}%")
-                ->orWhere('slug', 'ilike', '%' . \Illuminate\Support\Str::slug($cleanTitle) . '%')
+            $like = $this->likeOperator();
+
+            $lesson = Lesson::where('title', $like, "%{$firstWord}%{$secondWord}%")
+                ->orWhere('title', $like, "%{$secondWord}%")
+                ->orWhere('slug', $like, '%' . \Illuminate\Support\Str::slug($cleanTitle) . '%')
                 ->first() ?? Lesson::first();
 
             $mission = Mission::updateOrCreate(
@@ -227,10 +240,11 @@ class SampleMissionsSeeder extends Seeder
             $mission->save();
 
             // Resolve uploaded image media
-            $appleMedia = \App\Models\Media::where('name', 'ilike', 'apple%')->first();
-            $card1Media = \App\Models\Media::where('name', 'ilike', '%card%1%')->first();
-            $card2Media = \App\Models\Media::where('name', 'ilike', '%card%2%')->first();
-            $card3Media = \App\Models\Media::where('name', 'ilike', '%card%3%')->first();
+            $mediaLike = $this->likeOperator();
+            $appleMedia = \App\Models\Media::where('name', $mediaLike, 'apple%')->first();
+            $card1Media = \App\Models\Media::where('name', $mediaLike, '%card%1%')->first();
+            $card2Media = \App\Models\Media::where('name', $mediaLike, '%card%2%')->first();
+            $card3Media = \App\Models\Media::where('name', $mediaLike, '%card%3%')->first();
 
             // Resolve Quiz Types
             $countTypeId = \App\Models\QuizType::where('code', 'QT-09')->value('id') ?? 9;

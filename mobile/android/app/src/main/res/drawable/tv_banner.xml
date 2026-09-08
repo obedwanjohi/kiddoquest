@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    The tile a television launcher shows for KiddoQuest.
+
+    A vector placeholder in the brand purple so the TV build is complete and
+    installable today. Google Play requires a 320x180 PNG for a television
+    listing, so replace this with the illustrated banner before submitting to
+    the TV track (art task, phase 4).
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#7C3AED"
+                android:endColor="#F59E0B"
+                android:angle="315"/>
+        </shape>
+    </item>
+    <item
+        android:width="96dp"
+        android:height="96dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="#FFF9F0"/>
+        </shape>
+    </item>
+</layer-list>

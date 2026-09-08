@@ -1,0 +1,28 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    # Treat anything that would crash a child mid-mission as a build failure.
+    invalid_use_of_protected_member: error
+    unused_import: warning
+  exclude:
+    - "**/*.g.dart"
+    - "build/**"
+
+linter:
+  rules:
+    # Named parameters cannot be initializing formals for private fields
+    # (`required this._api` is not legal Dart), and the constructors here take
+    # deliberately readable public names. The lint has no correct fix for that
+    # shape, so it is off rather than suppressed line by line.
+    prefer_initializing_formals: false
+
+    # Things that matter for a product children use offline on cheap hardware.
+    avoid_slow_async_io: true
+    cancel_subscriptions: true
+    close_sinks: true
+    unawaited_futures: true
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    require_trailing_commas: false
+    use_super_parameters: true

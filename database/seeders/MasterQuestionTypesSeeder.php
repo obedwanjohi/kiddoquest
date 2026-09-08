@@ -31,7 +31,8 @@ class MasterQuestionTypesSeeder extends Seeder
                 [
                     'subject_id' => $subject->id,
                     'name' => 'Master QA Lab 🧪',
-                    'display_title' => 'Master Question Types Lab 🧪',
+                    // adventure_worlds has no display_title column; only missions do.
+                    // Writing one here aborted the whole seeder.
                     'description' => 'Test mission for QT-10, QT-08, QT-03, QT-04, and QT-05 templates.',
                     'icon' => '🧪',
                     'sort_order' => 999,
@@ -173,7 +174,8 @@ class MasterQuestionTypesSeeder extends Seeder
             QuestionOption::create(['question_id' => $q5->id, 'text_value' => '4', 'is_correct' => true, 'sort_order' => 4]);
 
             // Update pool count on Question Bank
-            $bank->update(['pool_count' => 5]);
+            // pool_count is an accessor that counts the bank's questions, not a
+            // column. Writing to it aborted the seeder.
         });
     }
 }

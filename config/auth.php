@@ -52,6 +52,13 @@ return [
             'driver' => 'session',
             'provider' => 'guardians',
         ],
+
+        // Token guard used by the Flutter app (/api/v1). Guardians authenticate;
+        // a child is selected per request with the X-Child-Id header.
+        'sanctum' => [
+            'driver' => 'sanctum',
+            'provider' => 'guardians',
+        ],
     ],
 
     /*

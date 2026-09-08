@@ -15,7 +15,44 @@ class AdventureWorldController extends Controller
     public function index()
     {
         $worlds = AdventureWorld::with(['subject'])->withCount('missions')->orderBy('sort_order')->get();
-        return view('admin.adventure-worlds.index', compact('worlds'));
+
+        // What each world looks like to the app: the version currently published
+        // and when, so an editor can see at a glance what is live on devices.
+        $packs = \App\Models\ContentPack::latestVersions()->keyBy('world_id');
+
+        return view('admin.adventure-worlds.index', compact('worlds', 'packs'));
+    }
+
+    /**
+     * Publish this world as a content pack for the Flutter app.
+     *
+     * Writes a new version rather than replacing the old one, so a child who is
+     * half way through a mission keeps playing what they downloaded.
+     */
+    public function publish(AdventureWorld $adventureWorld, \App\Services\Content\ContentPackBuilder $builder)
+    {
+        try {
+            $pack = $builder->publish($adventureWorld->loadMissing('subject.level'));
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::error('Publishing a content pack failed', [
+                'world_id' => $adventureWorld->id,
+                'error' => $e->getMessage(),
+            ]);
+
+            return back()->with('error', 'Could not publish that world: ' . $e->getMessage());
+        }
+
+        $missing = count($pack->missing_media ?? []);
+
+        $message = "📦 Published {$pack->name} as {$pack->pack_id} v{$pack->version} — "
+            . "{$pack->mission_count} missions, {$pack->question_count} questions, "
+            . round($pack->bytes_core / 1048576, 1) . ' MB.';
+
+        if ($missing > 0) {
+            $message .= " {$missing} media file(s) could not be found and were left out.";
+        }
+
+        return back()->with('success', $message);
     }
 
     public function create()
