@@ -1,7 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../features/auth/approve_tv_screen.dart';
 import '../features/auth/sign_in_screen.dart';
+import '../features/auth/tv_sign_in_screen.dart';
+import '../core/platform/form_factor.dart';
 import '../features/downloads/downloads_screen.dart';
 import '../features/map/adventure_map_screen.dart';
 import '../features/mission/mission_briefing_screen.dart';
@@ -33,10 +36,16 @@ final routerProvider = Provider<GoRouter>((ref) {
 
       if (session.loading) return null;
 
-      final onAuthScreen = location == '/sign-in' || location == '/register';
+      final onAuthScreen = location == '/sign-in' ||
+          location == '/register' ||
+          location == '/tv-sign-in';
 
       if (!session.isSignedIn) {
-        return onAuthScreen ? null : '/sign-in';
+        if (onAuthScreen) return null;
+
+        // A television starts at the code screen: nobody should have to type an
+        // email address with a directional pad.
+        return TelevisionDetector.isTelevision ? '/tv-sign-in' : '/sign-in';
       }
 
       if (onAuthScreen) {
@@ -57,6 +66,7 @@ final routerProvider = Provider<GoRouter>((ref) {
     routes: [
       GoRoute(path: '/sign-in', builder: (context, state) => const SignInScreen()),
       GoRoute(path: '/register', builder: (context, state) => const SignInScreen(startOnRegister: true)),
+      GoRoute(path: '/tv-sign-in', builder: (context, state) => const TvSignInScreen()),
       GoRoute(path: '/profiles', builder: (context, state) => const WhosPlayingScreen()),
       GoRoute(path: '/add-child', builder: (context, state) => const AddChildScreen()),
       GoRoute(path: '/map', builder: (context, state) => const AdventureMapScreen()),
@@ -84,6 +94,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         ),
       ),
       GoRoute(path: '/parent/settings', builder: (context, state) => const ParentSettingsScreen()),
+      GoRoute(path: '/parent/tv', builder: (context, state) => const ApproveTvScreen()),
     ],
   );
 });

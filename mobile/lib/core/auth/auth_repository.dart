@@ -85,6 +85,36 @@ class AuthRepository {
     return _persist(response);
   }
 
+  /// Ask the server for a code to put on the television screen.
+  ///
+  /// Typing an email and a password with a remote control is miserable, so the
+  /// TV never asks for either: it shows six characters and waits for a phone
+  /// that is already signed in to vouch for it.
+  Future<DeviceCode> requestDeviceCode() async {
+    return DeviceCode.fromJson(await _api.post('/auth/device/code'));
+  }
+
+  /// Called by the television on a timer.
+  ///
+  /// Returns null while the parent has not approved yet, which is the ordinary
+  /// case and not worth an exception. A code that expired or was already
+  /// claimed throws, because the TV must stop asking and show a fresh one.
+  Future<({Guardian guardian, List<Child> children})?> claimDeviceCode(String code) async {
+    final response = await _api.get('/auth/device/poll', query: {'code': code});
+    final status = response['status'] as String? ?? 'pending';
+
+    return switch (status) {
+      'approved' => await _persist(response),
+      'pending'  => null,
+      _          => throw DeviceCodeExpired(status),
+    };
+  }
+
+  /// Called by the phone: yes, that television is mine.
+  Future<void> approveDeviceCode(String code) async {
+    await _api.post('/auth/device/approve', body: {'code': code.trim().toUpperCase()});
+  }
+
   Future<List<Child>> refreshChildren() async {
     final response = await _api.get('/auth/me');
 
@@ -216,4 +246,45 @@ class AuthRepository {
 
     return (guardian: guardian, children: children);
   }
+}
+
+/// A code the television shows, and how long it is good for.
+class DeviceCode {
+  const DeviceCode({
+    required this.code,
+    required this.expiresAt,
+    this.pollSeconds = 3,
+    this.approveUrl,
+  });
+
+  final String code;
+  final DateTime expiresAt;
+  final int pollSeconds;
+  final String? approveUrl;
+
+  bool get isExpired => DateTime.now().isAfter(expiresAt);
+
+  Duration get remaining {
+    final left = expiresAt.difference(DateTime.now());
+    return left.isNegative ? Duration.zero : left;
+  }
+
+  factory DeviceCode.fromJson(Map<String, dynamic> json) => DeviceCode(
+        code: json['code'] as String? ?? '',
+        expiresAt: DateTime.tryParse(json['expires_at'] as String? ?? '') ??
+            DateTime.now().add(const Duration(minutes: 10)),
+        pollSeconds: (json['poll_seconds'] as num?)?.toInt() ?? 3,
+        approveUrl: json['approve_url'] as String?,
+      );
+}
+
+/// The code can no longer be claimed: it ran out of time, or somebody already
+/// used it. Either way the television needs a new one.
+class DeviceCodeExpired implements Exception {
+  const DeviceCodeExpired(this.status);
+
+  final String status;
+
+  @override
+  String toString() => 'DeviceCodeExpired($status)';
 }

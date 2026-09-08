@@ -325,6 +325,14 @@ class ParentHomeScreen extends ConsumerWidget {
             expand: true,
             onPressed: () => context.go('/parent/settings'),
           ),
+          SizedBox(height: KidSpacing.sm * formFactor.density),
+          KidButton(
+            label: 'Sign in a TV',
+            icon: Icons.tv_rounded,
+            tone: KidButtonTone.neutral,
+            expand: true,
+            onPressed: () => context.go('/parent/tv'),
+          ),
           SizedBox(height: KidSpacing.lg * formFactor.density),
           KidButton(
             label: 'Downloads',

@@ -452,6 +452,17 @@ Route::middleware(['guardian.auth'])->prefix('parent')->name('guardian.children.
 
 // Parent Zone (Unified Single-App Model behind 4-digit PIN Gate)
 // Every parent route needs a signed-in guardian; everything past the gate also needs a fresh PIN unlock.
+/*
+| Approving a television from a browser, for a family who has the website open
+| but not the phone app. The TV shows a code; this page is the `approve_url` the
+| API hands it. Signing in as a guardian is required: approving a device is
+| eventually worth a thirty-day token.
+*/
+Route::middleware(['guardian.auth'])->group(function () {
+    Route::get('/tv', [App\Http\Controllers\TvApprovalController::class, 'show'])->name('tv.approve');
+    Route::post('/tv', [App\Http\Controllers\TvApprovalController::class, 'approve'])->name('tv.approve.submit');
+});
+
 Route::middleware(['guardian.auth'])->prefix('parent')->group(function () {
     Route::get('/home', [App\Http\Controllers\GuardianDashboardController::class, 'index'])->name('guardian.dashboard');
 

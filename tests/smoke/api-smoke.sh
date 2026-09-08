@@ -151,6 +151,22 @@ check "report lists both attempts" "2" "$(echo "$REPORT" | php -r '$j=json_decod
 check "report names a question that was missed" "true" "$(echo "$REPORT" | jqv support.has_struggle)"
 check "another family cannot read it" "child_not_found" "$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/parent/children/999999/report" | jqv error.code)"
 
+echo "=============== 12. television sign-in ==============="
+TVCODE=$(curl -s "${hdr[@]}" -H "X-Device-Id: tv-smoke-0001" -H "X-Platform: android-tv" -X POST "$BASE/auth/device/code")
+CODE=$(echo "$TVCODE" | jqv code)
+check "tv is given a code" "6" "${#CODE}"
+check "tv is told where to approve it" "yes" "$([ -n "$(echo "$TVCODE" | jqv approve_url)" ] && echo yes || echo no)"
+check "code is pending before anyone approves" "pending" "$(curl -s "${hdr[@]}" "$BASE/auth/device/poll?code=$CODE" | jqv status)"
+check "a stranger cannot approve it" "401" "$(curl -s -o /dev/null -w '%{http_code}' "${hdr[@]}" -X POST "$BASE/auth/device/approve" -d '{"code":'\"$CODE\"'}')"
+check "the signed-in phone approves it" "true" "$(curl -s "${hdr[@]}" "${auth[@]}" -X POST "$BASE/auth/device/approve" -d '{"code":'\"$CODE\"'}' | jqv ok)"
+TVCLAIM=$(curl -s "${hdr[@]}" -H "X-Device-Id: tv-smoke-0001" "$BASE/auth/device/poll?code=$CODE")
+check "tv claims a token" "approved" "$(echo "$TVCLAIM" | jqv status)"
+TVTOKEN=$(echo "$TVCLAIM" | jqv token.access_token)
+check "the token works" "$EMAIL" "$(curl -s "${hdr[@]}" -H "Authorization: Bearer $TVTOKEN" -H "X-Device-Id: tv-smoke-0001" "$BASE/auth/me" | jqv guardian.email)"
+check "the tv sees the family children" "1" "$(curl -s "${hdr[@]}" -H "Authorization: Bearer $TVTOKEN" -H "X-Device-Id: tv-smoke-0001" "$BASE/children" | php -r '$j=json_decode(stream_get_contents(STDIN),true); echo count($j["children"] ?? []);')"
+check "a code cannot be claimed twice" "used" "$(curl -s "${hdr[@]}" "$BASE/auth/device/poll?code=$CODE" | jqv status)"
+check "an invented code is not approved" "expired" "$(curl -s "${hdr[@]}" "$BASE/auth/device/poll?code=ZZZZZZ" | jqv status)"
+
 echo
 echo "$PASS passed, $FAIL failed"
 exit $([ "$FAIL" -eq 0 ] && echo 0 || echo 1)

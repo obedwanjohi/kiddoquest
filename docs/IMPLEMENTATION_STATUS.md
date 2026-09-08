@@ -103,6 +103,11 @@ Also fixed along the way:
   network.
 - Parent settings: the daily limit per child, the devotional and songs toggles,
   and a PIN change that also updates the offline digest.
+- Television sign-in. The TV shows a six-character code and polls; a phone that
+  is already signed in approves it, and the TV claims a thirty-day token exactly
+  once. No credential is ever typed with a remote control. There is a browser
+  page at `/tv` for a family without the phone app, and the phone entry point
+  sits behind the parent PIN because approving a device is worth a token.
 - A web build, so the app can be tested in Chrome with no Android device. SQLite
   runs as WebAssembly there, and the file-backed media cache is swapped for the
   browser's own caching behind one conditional import.
@@ -112,9 +117,9 @@ Also fixed along the way:
 | Suite | What it covers |
 |---|---|
 | `php artisan scoring:verify` | 39 shared fixtures against the PHP scorer |
-| `mobile/flutter test` | 96 tests: the same 39 fixtures against the Dart scorer, star thresholds, form factors, the wrong-answer-is-grey rule, the profile screen in three form factors, every renderer, screen time, the shop price list, and the parent report parser |
+| `mobile/flutter test` | 106 tests: the same 39 fixtures against the Dart scorer, star thresholds, form factors, the wrong-answer-is-grey rule, the profile screen in three form factors, every renderer, screen time, the shop price list, the parent report parser, and the television sign-in flow |
 | `tests/Feature/Api/*` | Sync idempotency, server scoring over a forged claim, quarantine, cross-family refusal, pack publishing and versioning |
-| `tests/smoke/api-smoke.sh` | 42 checks against a running server: the whole contract end to end, including a forged three-star claim scoring what the answers earned, and the parent report |
+| `tests/smoke/api-smoke.sh` | 52 checks against a running server: the whole contract end to end, including a forged three-star claim scoring what the answers earned, the parent report, and the whole television sign-in handshake |
 
 Two gaps worth stating plainly rather than glossing over:
 
@@ -141,6 +146,7 @@ Two gaps worth stating plainly rather than glossing over:
 | Rive mascots and illustrated worlds (emoji stand in) | 2 |
 | AI coach, M-Pesa in the app (the dashboard and reports are built) | 3 |
 | Push notifications | 3 |
+| TV device lab: the app has never run on a real television | 4 |
 | Redis, Octane, Horizon, Sentry, the read replica | 0/5, infrastructure |
 | Postgres monthly partitions on `learning_events` | 5 |
 | Load testing to 100k virtual users | 5 |
