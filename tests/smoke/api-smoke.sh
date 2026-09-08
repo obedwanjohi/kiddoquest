@@ -179,6 +179,24 @@ check "the coach answers" "yes" "$([ -n "$(echo "$COACH" | jqv answer)" ] && ech
 check "the coach refuses another family's child" "child_not_found" "$(curl -s "${hdr[@]}" "${auth[@]}" -X POST "$BASE/parent/coach" -d '{"child_id":999999}' | jqv error.code)"
 check "config carries the chest rule" "5" "$(curl -s "${hdr[@]}" "$BASE/config" | jqv rewards.chest.every_missions)"
 
+echo "=============== 14. paying ==============="
+SUB=$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/subscription")
+check "subscription reports no plan yet" "none" "$(echo "$SUB" | jqv entitlement.status)"
+check "plans come from the server" "monthly" "$(echo "$SUB" | jqv plans.0.type)"
+check "and carry a price" "200" "$(echo "$SUB" | jqv plans.0.amount)"
+check "currency travels" "KES" "$(echo "$SUB" | jqv currency)"
+check "an unknown plan is refused" "422" "$(curl -s -o /dev/null -w '%{http_code}' "${hdr[@]}" "${auth[@]}" -X POST "$BASE/subscription/stk-push" -d '{"phone_number":"0712345678","plan_type":"free_forever"}')"
+check "a nonsense number is refused" "422" "$(curl -s -o /dev/null -w '%{http_code}' "${hdr[@]}" "${auth[@]}" -X POST "$BASE/subscription/stk-push" -d '{"phone_number":"12","plan_type":"monthly"}')"
+STK=$(curl -s "${hdr[@]}" "${auth[@]}" -X POST "$BASE/subscription/stk-push" -d '{"phone_number":"254708374149","plan_type":"monthly"}')
+CHECKOUT=$(echo "$STK" | jqv checkout_request_id)
+check "an stk push is accepted" "yes" "$([ -n "$CHECKOUT" ] && echo yes || echo no)"
+check "and is pending until Safaricom says otherwise" "pending" "$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/subscription/status/$CHECKOUT" | jqv status)"
+check "the app cannot claim it was paid" "pending" "$(curl -s "${hdr[@]}" "${auth[@]}" -X POST "$BASE/subscription/status/$CHECKOUT" -d '{"status":"completed"}' > /dev/null; curl -s "${hdr[@]}" "${auth[@]}" "$BASE/subscription/status/$CHECKOUT" | jqv status)"
+check "another family's checkout is not found" "not_found" "$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/subscription/status/ws_CO_someone_else" | jqv status)"
+# Six a minute is the cap; this run has already used two.
+for i in 1 2 3 4 5; do curl -s -o /dev/null "${hdr[@]}" "${auth[@]}" -X POST "$BASE/subscription/stk-push" -d '{"phone_number":"254708374149","plan_type":"monthly"}'; done
+check "stk push is throttled, and says why" "too_many_attempts" "$(curl -s "${hdr[@]}" "${auth[@]}" -X POST "$BASE/subscription/stk-push" -d '{"phone_number":"254708374149","plan_type":"monthly"}' | jqv error.code)"
+
 echo
 echo "$PASS passed, $FAIL failed"
 exit $([ "$FAIL" -eq 0 ] && echo 0 || echo 1)

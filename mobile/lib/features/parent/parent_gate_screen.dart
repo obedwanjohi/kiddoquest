@@ -327,6 +327,14 @@ class ParentHomeScreen extends ConsumerWidget {
           ),
           SizedBox(height: KidSpacing.sm * formFactor.density),
           KidButton(
+            label: 'Subscription',
+            icon: Icons.card_membership_rounded,
+            tone: KidButtonTone.neutral,
+            expand: true,
+            onPressed: () => context.go('/parent/subscription'),
+          ),
+          SizedBox(height: KidSpacing.sm * formFactor.density),
+          KidButton(
             label: 'Ask the coach',
             icon: Icons.chat_bubble_rounded,
             tone: KidButtonTone.neutral,

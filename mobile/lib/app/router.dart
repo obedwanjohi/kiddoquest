@@ -19,6 +19,7 @@ import '../features/parent/parent_settings_screen.dart';
 import '../features/profiles/add_child_screen.dart';
 import '../features/profiles/whos_playing_screen.dart';
 import '../features/rewards/shop_screen.dart';
+import '../features/subscription/subscription_screen.dart';
 import '../features/rewards/sticker_book_screen.dart';
 import '../features/screen_time/time_up_screen.dart';
 import 'providers.dart';
@@ -109,6 +110,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(path: '/parent/settings', builder: (context, state) => const ParentSettingsScreen()),
       GoRoute(path: '/parent/tv', builder: (context, state) => const ApproveTvScreen()),
+      GoRoute(path: '/parent/subscription', builder: (context, state) => const SubscriptionScreen()),
       GoRoute(path: '/parent/coach', builder: (context, state) => const CoachScreen()),
     ],
   );

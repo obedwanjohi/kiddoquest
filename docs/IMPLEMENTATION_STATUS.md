@@ -135,6 +135,11 @@ Also fixed along the way:
   answers.
 - Practice reminders, scheduled on the device. They arrive whether or not the
   family has data left, and nothing about them is sent anywhere.
+- M-Pesa, from inside the app. Pick a plan, confirm the number, and wait while
+  Safaricom prompts that phone for its PIN. The app never sees the PIN and has
+  no way to say a payment succeeded: it polls, and the server is told by
+  Daraja's callback. Every price on the screen comes from the server — the app
+  holds no number of its own, not even a fallback.
 - A web build, so the app can be tested in Chrome with no Android device. SQLite
   runs as WebAssembly there, and the file-backed media cache is swapped for the
   browser's own caching behind one conditional import.
@@ -144,9 +149,9 @@ Also fixed along the way:
 | Suite | What it covers |
 |---|---|
 | `php artisan scoring:verify` | 39 shared fixtures against the PHP scorer |
-| `mobile/flutter test` | 116 tests: the same 39 fixtures against the Dart scorer, star thresholds, form factors, the wrong-answer-is-grey rule, the profile screen in three form factors, every renderer, screen time, the shop price list, the parent report parser, the television sign-in flow, the devotional and songs models, and the speech matcher |
+| `mobile/flutter test` | 127 tests: the same 39 fixtures against the Dart scorer, star thresholds, form factors, the wrong-answer-is-grey rule, the profile screen in three form factors, every renderer, screen time, the shop price list, the parent report parser, the television sign-in flow, the devotional and songs models, the speech matcher, and the payment states |
 | `tests/Feature/Api/*` | Sync idempotency, server scoring over a forged claim, quarantine, cross-family refusal, pack publishing and versioning |
-| `tests/smoke/api-smoke.sh` | 60 checks against a running server: the whole contract end to end, including a forged three-star claim scoring what the answers earned, the parent report, the whole television sign-in handshake, the devotional and songs payload, and the coach |
+| `tests/smoke/api-smoke.sh` | 71 checks against a running server: the whole contract end to end, including a forged three-star claim scoring what the answers earned, the parent report, the whole television sign-in handshake, the devotional and songs payload, the coach, and the whole payment path including its throttle |
 
 Two gaps worth stating plainly rather than glossing over:
 
@@ -167,7 +172,6 @@ Two gaps worth stating plainly rather than glossing over:
 |---|---|
 | Licensed song recordings, so the hub has something to play offline | 2 — decision 5 |
 | Rive mascots and illustrated worlds (emoji stand in) | 2 |
-| M-Pesa in the app | 3 |
 | Server-sent push (Firebase). The device-token endpoint and the local reminders are built; FCM needs a Firebase project and `google-services.json` | 3 |
 | TV device lab: the app has never run on a real television | 4 |
 | Redis, Octane, Horizon, Sentry, the read replica | 0/5, infrastructure |
@@ -187,7 +191,11 @@ These were needed to make progress and are all reversible in one place.
    the rest wait. The website disabled this for testing. It is a flag:
    `FEATURE_SEQUENTIAL_UNLOCK`.
 3. **Prices come from `config/plans.php`**, which currently holds the
-   landing-page list, KES 200 a month and 1,800 a year. Still to be confirmed.
+   landing-page list, KES 200 a month and 1,800 a year. The old checkout
+   charged 499 / 1,200 / 3,999. **This is now the last thing standing between
+   the app and taking money**: the payment screen shows whatever this file
+   says, so confirming it is a one-line change and getting it wrong charges
+   real families the wrong amount.
 4. **sqflite rather than Drift**, and hand-written models rather than freezed, so
    the project compiles with no code generation step. Both are behind interfaces.
 5. **Question caps are enforced at publish time**: Play Group missions ship with

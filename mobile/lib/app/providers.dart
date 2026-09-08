@@ -14,12 +14,14 @@ import '../core/models/extras.dart';
 import '../core/models/pack.dart';
 import '../core/models/parent_report.dart';
 import '../core/models/snapshot.dart';
+import '../core/models/subscription.dart';
 import '../core/network/api_client.dart';
 import '../core/network/api_exception.dart';
 import '../core/sync/outbox.dart';
 import '../core/sync/sync_engine.dart';
 import '../features/extras/extras_repository.dart';
 import '../features/parent/parent_report_repository.dart';
+import '../features/subscription/subscription_repository.dart';
 
 /// Wiring. Each object is created once and handed to whoever asks for it.
 
@@ -310,6 +312,21 @@ final audioDirectorProvider = Provider<AudioDirector>((ref) {
   ref.onDispose(director.dispose);
 
   return director;
+});
+
+// ── Paying ───────────────────────────────────────────────────────────────────
+
+final subscriptionRepositoryProvider = Provider<SubscriptionRepository>((ref) {
+  return SubscriptionRepository(api: ref.watch(apiClientProvider));
+});
+
+/// What the family has paid for, and what is on offer.
+///
+/// Not cached on the device on purpose: an entitlement that a device could
+/// remember is an entitlement a device could forge. The snapshot carries the
+/// answer that actually gates play, and it comes from the server.
+final subscriptionProvider = FutureProvider<SubscriptionState>((ref) async {
+  return ref.watch(subscriptionRepositoryProvider).load();
 });
 
 /// The daily practice nudge, scheduled on the device.

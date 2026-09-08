@@ -60,6 +60,9 @@ One shape, so the app has one handler:
 | PATCH | `/parent/settings` | Devotional and songs toggles |
 | GET | `/parent/children/{id}/report?range=7d` | The parent dashboard. `range` is `7d`, `30d` or `90d` |
 | POST | `/parent/coach` | `child_id`, optional `question`. Always answers, LLM key or not |
+| GET | `/subscription` | Entitlement, the plans on offer, recent payments |
+| POST | `/subscription/stk-push` | `phone_number`, `plan_type`. Six a minute per parent |
+| GET | `/subscription/status/{checkoutRequestId}` | Poll after an STK push |
 | POST | `/devices/push-token` | FCM registration |
 
 
@@ -112,6 +115,33 @@ own recordings (decision 5 in the plan). The app plays a song with `audio` and
 shows the rest as coming soon; it deliberately does not follow `link` out to
 YouTube, which cannot work offline and sends a four-year-old somewhere nobody
 is supervising.
+
+## Paying
+
+```
+POST /api/v1/subscription/stk-push
+{ "phone_number": "0712345678", "plan_type": "monthly" }
+→ { "checkout_request_id": "ws_CO_…", "amount": 200, "phone": "254712345678",
+    "plan_type": "monthly", "poll_seconds": 3, "message": "…" }
+
+GET /api/v1/subscription/status/ws_CO_…
+→ { "status": "pending" | "completed" | "failed", "paid": false, "receipt": null }
+```
+
+The app cannot buy itself a subscription. It asks for a prompt and then polls;
+the money is confirmed only by Daraja's callback to
+`POST /api/v1/mpesa/callback`, and nothing the device sends can set a payment to
+completed. `not_found` and `failed` are kept distinct on purpose — a parent
+whose payment we cannot find must not be told their money is gone.
+
+The STK push is capped at six a minute per parent, in the controller rather than
+only in a route throttle: the push makes somebody's phone ask for their M-Pesa
+PIN, so an account that could fire it freely is an account that could harass a
+stranger. The route throttle above it is a loose backstop, set well clear of the
+six so the specific limit is the one a client actually sees.
+
+Prices come from `config/plans.php` and travel through `/config` and this
+endpoint. The app holds no price of its own, so changing one needs no release.
 
 ## Sync
 

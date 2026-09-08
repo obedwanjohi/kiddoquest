@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\V1\ConfigController;
 use App\Http\Controllers\Api\V1\ContentController;
 use App\Http\Controllers\Api\V1\DeviceCodeController;
 use App\Http\Controllers\Api\V1\ParentController;
+use App\Http\Controllers\Api\V1\SubscriptionController;
 use App\Http\Controllers\Api\V1\SyncController;
 use Illuminate\Support\Facades\Route;
 
@@ -89,5 +90,18 @@ Route::middleware(['auth:sanctum', 'api.device'])->group(function () {
     Route::post('/parent/coach', [ParentController::class, 'coach'])
         ->middleware('throttle:20,1')
         ->name('api.parent.coach');
+    // Paying. The STK push is throttled in the controller as well: it makes a
+    // stranger's phone ask for their M-Pesa PIN, so it is not a request to hand
+    // out freely.
+    Route::get('/subscription', [SubscriptionController::class, 'show'])->name('api.subscription.show');
+    // A crude backstop only. The limit that matters is the six-a-minute rule in
+    // the controller, which knows why it is refusing and can say so; a route
+    // throttle set close to it would preempt that with "Too Many Attempts".
+    Route::post('/subscription/stk-push', [SubscriptionController::class, 'stkPush'])
+        ->middleware('throttle:30,1')
+        ->name('api.subscription.stk_push');
+    Route::get('/subscription/status/{checkoutRequestId}', [SubscriptionController::class, 'status'])
+        ->name('api.subscription.status');
+
     Route::post('/devices/push-token', [ParentController::class, 'pushToken'])->name('api.devices.push_token');
 });
