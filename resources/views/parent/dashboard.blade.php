@@ -275,7 +275,8 @@
                     $history = $rep['mission_history'] ?? [];
                 @endphp
 
-                <div class="parent-card p-5">
+                {{-- The drilldown modal below reads history[...]; it has to be handed to Alpine, or Inspect does nothing. --}}
+                <div class="parent-card p-5" x-data="{ history: @js($history) }">
                     
                     {{-- Header + Growth Pill --}}
                     <div class="flex items-center justify-between mb-5 pb-3 border-b border-slate-700/50">
@@ -395,7 +396,11 @@
                         </div>
                     </div>
 
-                    {{-- Drilldown Attempt Modal --}}
+                    {{-- Drilldown Attempt Modal. Teleported to <body>: .parent-card's backdrop-filter
+                         makes it the containing block for fixed children, which would pin the
+                         modal inside the card, off-screen, instead of over the page. --}}
+                    <template x-teleport="body">
+                    <div>
                     <template x-if="activeHistoryModal !== null">
                         <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" @click.self="activeHistoryModal = null">
                             <div class="bg-slate-900 border-2 border-indigo-500/40 rounded-3xl p-6 max-w-md w-full text-white shadow-2xl relative">
@@ -438,6 +443,8 @@
                                 </button>
                             </div>
                         </div>
+                    </template>
+                    </div>
                     </template>
 
                 </div>

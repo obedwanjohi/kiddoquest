@@ -143,14 +143,26 @@ SNAP=$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/children/$CHILD_ID/snapshot")
 check "snapshot endpoint agrees" "2" "$(echo "$SNAP" | jqv snapshot.child.total_stars)"
 check "entitlement present" "none" "$(echo "$SNAP" | jqv snapshot.entitlement.status)"
 
-echo "=============== 11. parent report ==============="
-REPORT=$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/parent/children/$CHILD_ID/report?range=7d")
-check "report covers seven days" "7" "$(echo "$REPORT" | jqv range_days)"
-check "report counts the questions answered" "4" "$(echo "$REPORT" | jqv overview.questions_answered)"
-check "report computes accuracy" "50" "$(echo "$REPORT" | jqv overview.accuracy_percent)"
-check "report lists both attempts" "2" "$(echo "$REPORT" | php -r '$j=json_decode(stream_get_contents(STDIN),true); echo count($j["history"] ?? []);')"
-check "report names a question that was missed" "true" "$(echo "$REPORT" | jqv support.has_struggle)"
-check "another family cannot read it" "child_not_found" "$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/parent/children/999999/report" | jqv error.code)"
+echo "=============== 11. map and dashboard, as the website shows them ==============="
+MAP=$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/children/$CHILD_ID/map")
+check "map lists worlds for the child" "yes" "$(echo "$MAP" | php -r '$j=json_decode(stream_get_contents(STDIN),true); echo count($j["worlds"] ?? []) > 0 ? "yes" : "no";')"
+check "every world on the map lists its missions" "yes" "$(echo "$MAP" | php -r '$j=json_decode(stream_get_contents(STDIN),true); $w=$j["worlds"] ?? []; echo ($w && count(array_filter($w, fn($x) => !isset($x["missions"]))) === 0) ? "yes" : "no";')"
+check "a played mission shows as completed on the map" "completed" "$(echo "$MAP" | php -r '$j=json_decode(stream_get_contents(STDIN),true); foreach ($j["worlds"] ?? [] as $w) foreach ($w["missions"] as $m) if ($m["status"] === "completed") { echo "completed"; exit; }')"
+check "worlds carry the pack that holds them" "yes" "$(echo "$MAP" | php -r '$j=json_decode(stream_get_contents(STDIN),true); echo !empty($j["worlds"][0]["pack"]["pack_id"]) ? "yes" : "no";')"
+check "the map child carries the buddy name" "yes" "$([ -n "$(echo "$MAP" | jqv child.avatar_name)" ] && echo yes || echo no)"
+check "another family's map is refused" "child_not_found" "$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/children/999999/map" | jqv error.code)"
+DASH=$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/parent/dashboard?child_id=$CHILD_ID")
+check "dashboard selects the child asked for" "$CHILD_ID" "$(echo "$DASH" | jqv selected_child_id)"
+check "dashboard reports accuracy the website's way" "50" "$(echo "$DASH" | jqv report.accuracy_rate)"
+check "dashboard lists the mission history" "1" "$(echo "$DASH" | php -r '$j=json_decode(stream_get_contents(STDIN),true); echo count($j["report"]["mission_history"] ?? []);')"
+check "the drilldown lists the questions actually missed" "yes" "$(echo "$DASH" | php -r '$j=json_decode(stream_get_contents(STDIN),true); echo count($j["report"]["mission_history"][0]["mistakes"] ?? []) > 0 ? "yes" : "no";')"
+check "dashboard names a struggle area" "true" "$(echo "$DASH" | jqv report.mistake_action.has_struggle)"
+check "dashboard offers missions to focus on" "yes" "$(echo "$DASH" | php -r '$j=json_decode(stream_get_contents(STDIN),true); echo count($j["missions"] ?? []) > 0 ? "yes" : "no";')"
+check "another family's child falls back to one of ours" "$CHILD_ID" "$(curl -s "${hdr[@]}" "${auth[@]}" "$BASE/parent/dashboard?child_id=999999" | jqv selected_child_id)"
+check "a signed-in device cannot change the PIN without the password" "422" "$(curl -s -o /dev/null -w '%{http_code}' "${hdr[@]}" "${auth[@]}" -X PATCH "$BASE/parent/pin" -d '{"new_pin":"4321"}')"
+ZONE=$(curl -s "${hdr[@]}" "${auth[@]}" -X POST "$BASE/parent/pin/verify" -d '{"pin":"1234"}' | jqv token.access_token)
+check "an unlocked parent zone can, as on the website" "true" "$(curl -s "${hdr[@]}" -H "Authorization: Bearer $ZONE" -X PATCH "$BASE/parent/pin" -d '{"new_pin":"4321"}' | jqv ok)"
+check "and the new PIN is the one that works" "yes" "$([ -n "$(curl -s "${hdr[@]}" "${auth[@]}" -X POST "$BASE/parent/pin/verify" -d '{"pin":"4321"}' | jqv token.access_token)" ] && echo yes || echo no)"
 
 echo "=============== 12. television sign-in ==============="
 TVCODE=$(curl -s "${hdr[@]}" -H "X-Device-Id: tv-smoke-0001" -H "X-Platform: android-tv" -X POST "$BASE/auth/device/code")

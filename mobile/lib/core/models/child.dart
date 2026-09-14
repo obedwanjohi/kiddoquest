@@ -1,3 +1,5 @@
+import 'avatars.dart';
+
 /// A child profile, as the server sees it.
 ///
 /// Written by hand rather than generated: the app has one API and a handful of
@@ -39,6 +41,17 @@ class Child {
   final DateTime? lastPlayedAt;
 
   bool get hasTimeLimit => dailyTimeLimitMinutes > 0;
+
+  /// The buddy as the website draws it: 🦁 and "Leo the Lion".
+  String get avatarEmoji => Avatars.emojiFor(avatar);
+
+  String get avatarName => Avatars.nameFor(avatar);
+
+  /// The shop hat, drawn over the buddy.
+  String? get equippedHatEmoji => Avatars.hatFor(equippedHat);
+
+  /// The website marks a child who has never played with a NEW badge.
+  bool get hasPlayed => lastPlayedAt != null;
 
   int get minutesLeftToday {
     if (!hasTimeLimit) return 0;

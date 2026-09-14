@@ -82,10 +82,10 @@ class _ApproveTvScreenState extends ConsumerState<ApproveTvScreen> {
     final density = context.formFactor.density;
 
     return KidScaffold(
-      onBack: () => context.go('/parent/home'),
+      onBack: () => context.go('/parent/dashboard'),
       appBar: AppBar(
         title: const Text('Sign in a TV'),
-        leading: BackButton(onPressed: () => context.go('/parent/home')),
+        leading: BackButton(onPressed: () => context.go('/parent/dashboard')),
       ),
       child: ListView(
         children: [
@@ -107,7 +107,7 @@ class _ApproveTvScreenState extends ConsumerState<ApproveTvScreen> {
             SizedBox(height: KidSpacing.lg * density),
             KidButton(
               label: 'Done',
-              onPressed: () => context.go('/parent/home'),
+              onPressed: () => context.go('/parent/dashboard'),
             ),
           ] else ...[
             Text(

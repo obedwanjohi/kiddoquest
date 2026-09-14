@@ -73,8 +73,8 @@ class Devotional {
   final String prayer;
   final String emoji;
 
-  /// What the app reads out loud, in the order a child hears it.
-  String get spoken => '$verseText. From $verseRef. $teaching Let us pray. $prayer';
+  /// What the app reads out loud — word for word what the website's speaker says.
+  String get spoken => "Today's Bible Verse. $verseText. From $verseRef. $teaching. Let us pray! $prayer";
 
   factory Devotional.fromJson(Map<String, dynamic> json) => Devotional(
         verseText: json['verse_text'] as String? ?? '',

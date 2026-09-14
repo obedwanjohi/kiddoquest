@@ -96,13 +96,24 @@ Also fixed along the way:
 - The shop and badges. A purchase is optimistic and offline: coins move on the
   device and the event goes to the outbox, while the server stays the ledger and
   the only thing that can award a badge.
-- Parent dashboard: minutes really played, the daily rhythm, accuracy per
-  subject, what the child can do and what is next, recent missions with the
-  questions they actually got wrong, and one thing to try away from the screen.
-  The whole report is cached and shown, labelled as such, when there is no
-  network.
-- Parent settings: the daily limit per child, the devotional and songs toggles,
-  and a PIN change that also updates the offline digest.
+- The profile picker, adventure map, add-explorer form, PIN gate and Parent
+  Companion Zone mirror the website's pages: same backgrounds, layouts, copy,
+  colours (from the website's Tailwind values) and actions, in the website's
+  fonts, now bundled. Checked side by side against the website rendered in a
+  browser.
+- The map and the parent dashboard come from the same services the website's
+  pages render from (`KidMapService`, `ParentDashboardService`). This fixed
+  missions not showing: the app used to build its map from the pack catalogue,
+  which chose different worlds for the same child and listed no missions until
+  a world was downloaded. Every mission is on the map now, and a world's pack
+  is fetched when one of its missions is first tapped.
+- Add explorer has the website's CBC grade picker (Playgroup to Grade 3) and
+  exact-birthday option; the chosen grade is what is saved.
+- The dashboard's four tabs carry every website action: WhatsApp share, the
+  attempt drilldown with real mistakes, tomorrow's focus mission, the AI coach,
+  M-Pesa, the devotional and songs toggles, the screen-time limit and the PIN.
+  A "This Device" card underneath holds what only the app needs: sync, TV
+  sign-in, downloads and the practice reminder.
 - Television sign-in. The TV shows a six-character code and polls; a phone that
   is already signed in approves it, and the TV claims a thirty-day token exactly
   once. No credential is ever typed with a remote control. There is a browser
@@ -149,9 +160,9 @@ Also fixed along the way:
 | Suite | What it covers |
 |---|---|
 | `php artisan scoring:verify` | 39 shared fixtures against the PHP scorer |
-| `mobile/flutter test` | 127 tests: the same 39 fixtures against the Dart scorer, star thresholds, form factors, the wrong-answer-is-grey rule, the profile screen in three form factors, every renderer, screen time, the shop price list, the parent report parser, the television sign-in flow, the devotional and songs models, the speech matcher, and the payment states |
+| `mobile/flutter test` | 138 tests: the same 39 fixtures against the Dart scorer, star thresholds, form factors, the wrong-answer-is-grey rule, the profile screen in three form factors, every renderer, screen time, the shop price list, the parent report parser, the television sign-in flow, the devotional and songs models, the speech matcher, and the payment states |
 | `tests/Feature/Api/*` | Sync idempotency, server scoring over a forged claim, quarantine, cross-family refusal, pack publishing and versioning |
-| `tests/smoke/api-smoke.sh` | 71 checks against a running server: the whole contract end to end, including a forged three-star claim scoring what the answers earned, the parent report, the whole television sign-in handshake, the devotional and songs payload, the coach, and the whole payment path including its throttle |
+| `tests/smoke/api-smoke.sh` | 82 checks against a running server: the whole contract end to end, including a forged three-star claim scoring what the answers earned, the parent report, the whole television sign-in handshake, the devotional and songs payload, the coach, and the whole payment path including its throttle |
 
 Two gaps worth stating plainly rather than glossing over:
 

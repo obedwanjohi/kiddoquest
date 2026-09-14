@@ -12,10 +12,8 @@ import '../features/map/adventure_map_screen.dart';
 import '../features/mission/mission_briefing_screen.dart';
 import '../features/mission/mission_player_screen.dart';
 import '../features/mission/mission_video_screen.dart';
-import '../features/parent/coach_screen.dart';
 import '../features/parent/parent_dashboard_screen.dart';
 import '../features/parent/parent_gate_screen.dart';
-import '../features/parent/parent_settings_screen.dart';
 import '../features/profiles/add_child_screen.dart';
 import '../features/profiles/whos_playing_screen.dart';
 import '../features/rewards/shop_screen.dart';
@@ -101,17 +99,22 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/time-up', builder: (context, state) => const TimeUpScreen()),
       GoRoute(path: '/downloads', builder: (context, state) => const DownloadsScreen()),
       GoRoute(path: '/parent', builder: (context, state) => const ParentGateScreen()),
-      GoRoute(path: '/parent/home', builder: (context, state) => const ParentHomeScreen()),
+      // The PIN gate opens straight onto the Parent Companion Zone, as on the
+      // website. Its report, coach, settings and controls are all tabs there.
       GoRoute(
-        path: '/parent/report',
+        path: '/parent/dashboard',
         builder: (context, state) => ParentDashboardScreen(
-          childId: int.tryParse(state.uri.queryParameters['child'] ?? ''),
+          childId: int.tryParse(state.uri.queryParameters['child_id'] ?? ''),
+          initialTab: state.uri.queryParameters['tab'],
         ),
       ),
-      GoRoute(path: '/parent/settings', builder: (context, state) => const ParentSettingsScreen()),
+      // Older addresses for pieces that now live in the dashboard's tabs.
+      GoRoute(path: '/parent/home', redirect: (context, state) => '/parent/dashboard'),
+      GoRoute(path: '/parent/report', redirect: (context, state) => '/parent/dashboard'),
+      GoRoute(path: '/parent/settings', redirect: (context, state) => '/parent/dashboard'),
+      GoRoute(path: '/parent/coach', redirect: (context, state) => '/parent/dashboard'),
       GoRoute(path: '/parent/tv', builder: (context, state) => const ApproveTvScreen()),
       GoRoute(path: '/parent/subscription', builder: (context, state) => const SubscriptionScreen()),
-      GoRoute(path: '/parent/coach', builder: (context, state) => const CoachScreen()),
     ],
   );
 });

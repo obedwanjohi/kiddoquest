@@ -55,6 +55,10 @@ abstract class ApiController extends Controller
             'name'                     => $child->name,
             'avatar'                   => $child->avatar,
             'avatar_emoji'             => $child->avatar_emoji,
+            // What the website's profile cards and map hero show under the name.
+            'avatar_name'              => $child->avatar_name,
+            'equipped_hat_emoji'       => $child->equipped_hat_emoji,
+            'has_played'               => (bool) $child->has_played,
             'level'                    => $child->recommended_level,
             'favorite_color'           => $child->favorite_color,
             'birthdate'                => optional($child->birthdate)->toDateString(),

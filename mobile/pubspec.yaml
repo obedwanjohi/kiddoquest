@@ -43,6 +43,9 @@ dependencies:
   # Mission intro videos
   video_player:
 
+  # The parent dashboard's WhatsApp share buttons, as on the website.
+  url_launcher:
+
   # Practice reminders. These are scheduled on the device, so they arrive
   # whether or not the family has a connection.
   flutter_local_notifications:
@@ -62,3 +65,30 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  # The website's two faces: Nunito for reading, Baloo 2 for headings. Bundled
+  # rather than fetched, because a child on a plane still gets the real type.
+  # Static instances, one file per weight, so FontWeight selects them directly.
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-400.ttf
+          weight: 400
+        - asset: assets/fonts/Nunito-600.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito-700.ttf
+          weight: 700
+        - asset: assets/fonts/Nunito-800.ttf
+          weight: 800
+        - asset: assets/fonts/Nunito-900.ttf
+          weight: 900
+    - family: Baloo2
+      fonts:
+        - asset: assets/fonts/Baloo2-500.ttf
+          weight: 500
+        - asset: assets/fonts/Baloo2-600.ttf
+          weight: 600
+        - asset: assets/fonts/Baloo2-700.ttf
+          weight: 700
+        - asset: assets/fonts/Baloo2-800.ttf
+          weight: 800

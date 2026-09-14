@@ -61,6 +61,7 @@ Route::middleware(['auth:sanctum', 'api.device'])->group(function () {
     Route::get('/children/{child}/snapshot', [ChildController::class, 'snapshot'])->whereNumber('child')->name('api.children.snapshot');
     Route::patch('/children/{child}/screen-time', [ChildController::class, 'screenTime'])->whereNumber('child')->name('api.children.screen_time');
     Route::patch('/children/{child}/focus-mission', [ChildController::class, 'focusMission'])->whereNumber('child')->name('api.children.focus_mission');
+    Route::get('/children/{child}/map', [ChildController::class, 'map'])->whereNumber('child')->name('api.children.map');
 
     // Content
     Route::middleware('api.child:optional')->group(function () {
@@ -84,9 +85,7 @@ Route::middleware(['auth:sanctum', 'api.device'])->group(function () {
         ->name('api.parent.pin.verify');
     Route::patch('/parent/pin', [ParentController::class, 'updatePin'])->name('api.parent.pin.update');
     Route::patch('/parent/settings', [ParentController::class, 'updateSettings'])->name('api.parent.settings');
-    Route::get('/parent/children/{child}/report', [ParentController::class, 'report'])
-        ->whereNumber('child')
-        ->name('api.parent.report');
+    Route::get('/parent/dashboard', [ParentController::class, 'dashboard'])->name('api.parent.dashboard');
     Route::post('/parent/coach', [ParentController::class, 'coach'])
         ->middleware('throttle:20,1')
         ->name('api.parent.coach');

@@ -35,8 +35,10 @@ class ApiClient {
     _dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) async {
+          // A request that brings its own credential keeps it: the parent zone
+          // sends the short-lived token the PIN gate issued for PIN changes.
           final token = await tokenProvider?.call();
-          if (token != null && token.isNotEmpty) {
+          if (token != null && token.isNotEmpty && !options.headers.containsKey('Authorization')) {
             options.headers['Authorization'] = 'Bearer $token';
           }
 
@@ -99,14 +101,14 @@ class ApiClient {
     );
   }
 
-  Future<Map<String, dynamic>> post(String path, {Object? body}) async {
-    final response = await _send(() => _dio.post(path, data: body));
+  Future<Map<String, dynamic>> post(String path, {Object? body, Map<String, String>? headers}) async {
+    final response = await _send(() => _dio.post(path, data: body, options: Options(headers: headers)));
 
     return _asMap(response);
   }
 
-  Future<Map<String, dynamic>> patch(String path, {Object? body}) async {
-    final response = await _send(() => _dio.patch(path, data: body));
+  Future<Map<String, dynamic>> patch(String path, {Object? body, Map<String, String>? headers}) async {
+    final response = await _send(() => _dio.patch(path, data: body, options: Options(headers: headers)));
 
     return _asMap(response);
   }

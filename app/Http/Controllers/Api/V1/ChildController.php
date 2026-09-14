@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Models\Child;
 use App\Models\Mission;
 use App\Services\Learning\ChildSnapshotService;
+use App\Services\Learning\KidMapService;
 use App\Services\Learning\SyncService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -96,6 +97,23 @@ class ChildController extends ApiController
         return response()->json([
             'snapshot' => $snapshots->for($model),
             'cursor'   => $sync->cursorFor($model),
+        ]);
+    }
+
+    /**
+     * The adventure map, exactly as the website draws it for this child: the
+     * same worlds, the same missions in the same order, the same progress.
+     */
+    public function map(Request $request, int $child, KidMapService $maps): JsonResponse
+    {
+        $model = $this->find($request, $child);
+
+        if (! $model) {
+            return $this->fail('child_not_found', 'That child does not belong to this account.', 404);
+        }
+
+        return response()->json($maps->payloadFor($model) + [
+            'child' => $this->childArray($model),
         ]);
     }
 

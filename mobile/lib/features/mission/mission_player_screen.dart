@@ -16,7 +16,7 @@ import '../../design/components/mascot_stage.dart';
 import '../../design/components/pack_image.dart';
 import '../../design/components/progress_bar.dart';
 import '../../design/tokens.dart';
-import '../map/map_state.dart';
+import '../map/site_map.dart';
 import '../screen_time/screen_time.dart';
 import 'mission_session.dart';
 import 'renderers/drag_sequence_renderer.dart';
@@ -92,7 +92,7 @@ class _MissionPlayerScreenState extends ConsumerState<MissionPlayerScreen> {
     if (session != null && session.finished && session.result != null) {
       // Refresh the map behind the celebration so stars and the time left are
       // already up to date when the child gets back to it.
-      ref.invalidate(mapDataProvider);
+      ref.invalidate(siteMapProvider);
       ref.invalidate(screenTimeProvider);
     }
 

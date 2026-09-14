@@ -8,7 +8,7 @@ import '../../core/platform/form_factor.dart';
 import '../../design/components/kid_button.dart';
 import '../../design/components/kid_scaffold.dart';
 import '../../design/tokens.dart';
-import '../map/map_state.dart';
+import '../map/site_map.dart';
 
 /// What is on this device, what is available, and how much room it all takes.
 ///
@@ -31,7 +31,7 @@ class _DownloadsScreenState extends ConsumerState<DownloadsScreen> {
     try {
       await ref.read(contentRepositoryProvider).download(pack);
       ref.invalidate(installedPacksProvider);
-      ref.invalidate(mapDataProvider);
+      ref.invalidate(siteMapProvider);
     } catch (error) {
       messenger.showSnackBar(SnackBar(content: Text('Download failed. $error')));
     } finally {
@@ -44,7 +44,7 @@ class _DownloadsScreenState extends ConsumerState<DownloadsScreen> {
 
     await ref.read(contentRepositoryProvider).remove(packId);
     ref.invalidate(installedPacksProvider);
-    ref.invalidate(mapDataProvider);
+    ref.invalidate(siteMapProvider);
 
     if (mounted) setState(() => _busyPack = null);
   }

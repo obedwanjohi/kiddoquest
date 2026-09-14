@@ -1,636 +1,633 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../app/providers.dart';
 import '../../core/models/child.dart';
-import '../../core/models/parent_report.dart';
-import '../../core/platform/form_factor.dart';
-import '../../design/components/kid_button.dart';
-import '../../design/components/kid_scaffold.dart';
-import '../../design/components/progress_bar.dart';
-import '../../design/tokens.dart';
+import '../../core/models/parent_dashboard.dart';
+import '../../core/network/api_exception.dart';
+import '../../core/network/api_client.dart';
+import '../../design/components/focus_ring.dart';
+import '../../design/site/site_scaffold.dart';
+import '../../design/site/tw.dart';
+import '../../design/site/tw_motion.dart';
 
-/// What the parent came for: how their child is actually doing.
+part 'dashboard_overview_tab.dart';
+part 'dashboard_progress_tab.dart';
+part 'dashboard_support_tab.dart';
+part 'dashboard_controls_tab.dart';
+
+/// The Parent Companion Zone, drawn and behaving the way the website's does.
 ///
-/// The website answered this with a page of encouragement and a hard-coded
-/// "15 minutes". This screen only says things the projections can back up, and
-/// when it is showing a cached copy it says so.
+/// Mirrors `resources/views/parent/dashboard.blade.php`: the navy page, the
+/// sticky header with Lock Zone, the student selector, and four tabs — Daily
+/// Overview, Learning Progress, Learning Support and Controls — with every
+/// action the website offers: WhatsApp share, the drilldown, assigning
+/// tomorrow's focus mission, the AI coach, the M-Pesa link, the devotional and
+/// songs toggles, the screen-time limit and the PIN.
+///
+/// The report comes from the same service the website renders from, so the
+/// two never disagree about a child.
 class ParentDashboardScreen extends ConsumerStatefulWidget {
-  const ParentDashboardScreen({super.key, this.childId});
+  const ParentDashboardScreen({super.key, this.childId, this.initialTab});
 
   final int? childId;
+
+  /// `overview`, `progress`, `support` or `controls`; Daily Overview when null.
+  final String? initialTab;
 
   @override
   ConsumerState<ParentDashboardScreen> createState() => _ParentDashboardScreenState();
 }
 
-class _ParentDashboardScreenState extends ConsumerState<ParentDashboardScreen> {
-  static const List<({String value, String label})> _ranges = [
-    (value: '7d', label: 'This week'),
-    (value: '30d', label: '30 days'),
-    (value: '90d', label: '90 days'),
-  ];
+enum _Tab { overview, progress, support, controls }
 
-  String _range = '7d';
-  int? _childId;
+class _ParentDashboardScreenState extends ConsumerState<ParentDashboardScreen> {
+  late _Tab _tab = _Tab.values.firstWhere((tab) => tab.name == widget.initialTab, orElse: () => _Tab.overview);
+  late int? _childId = widget.childId;
+  String? _flash;
+  Timer? _flashTimer;
+
+  @override
+  void dispose() {
+    _flashTimer?.cancel();
+    super.dispose();
+  }
+
+  /// The website's `session('success')` banner: shown, then gone after three
+  /// seconds.
+  void flash(String message) {
+    _flashTimer?.cancel();
+    setState(() => _flash = message);
+    _flashTimer = Timer(const Duration(seconds: 3), () {
+      if (mounted) setState(() => _flash = null);
+    });
+  }
+
+  void error(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+  }
+
+  /// Reload the report after an action, and the session so the map and the
+  /// exit bar see a new time limit or focus mission straight away.
+  Future<void> refresh() async {
+    ref.invalidate(parentDashboardProvider(_childId));
+    await ref.read(sessionProvider.notifier).bootstrap();
+  }
+
+  void _lock() {
+    ref.read(authRepositoryProvider).lockParentZone();
+    context.go('/profiles');
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Parent Zone locked.')));
+  }
 
   @override
   Widget build(BuildContext context) {
-    final session = ref.watch(sessionProvider);
-    final children = session.children;
+    final dashboard = ref.watch(parentDashboardProvider(_childId));
+    final sm = Tw.isSm(context);
 
-    if (children.isEmpty) {
-      return _frame(
-        context,
-        child: const Center(child: Text('Add a child first and their report will appear here.')),
-      );
-    }
-
-    final childId = _childId ??
-        widget.childId ??
-        session.activeChild?.id ??
-        children.first.id;
-
-    final report = ref.watch(parentReportProvider((childId, _range)));
-
-    return _frame(
-      context,
-      onRefresh: () => ref.invalidate(parentReportProvider((childId, _range))),
-      child: ListView(
+    return SiteScaffold(
+      safeTop: false,
+      onBack: _lock,
+      // .parent-bg: linear-gradient(180deg, #0F172A 0%, #1E1B4B 100%)
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Tw.slate900, Tw.indigo950],
+        ),
+      ),
+      child: Column(
         children: [
-          SizedBox(height: KidSpacing.sm * context.formFactor.density),
-          if (children.length > 1) _ChildPicker(
-            children: children,
-            selectedId: childId,
-            onSelect: (id) => setState(() => _childId = id),
-          ),
-          _RangePicker(
-            ranges: _ranges,
-            selected: _range,
-            onSelect: (value) => setState(() => _range = value),
-          ),
-          SizedBox(height: KidSpacing.md * context.formFactor.density),
-          report.when(
-            loading: () => const Padding(
-              padding: EdgeInsets.symmetric(vertical: KidSpacing.xxl),
-              child: Center(child: CircularProgressIndicator()),
+          _Header(onLock: _lock),
+          Expanded(
+            child: dashboard.when(
+              loading: () => const Center(child: CircularProgressIndicator(color: Tw.indigo400)),
+              error: (err, _) => _DarkMessage(
+                text: err is ApiException && err.isOffline
+                    ? 'The Parent Zone needs the internet the first time on this device.'
+                    : 'The dashboard could not load. $err',
+                onRetry: () => ref.invalidate(parentDashboardProvider(_childId)),
+              ),
+              data: (data) {
+                final child = data.selectedChild;
+                final report = data.report;
+
+                return SingleChildScrollView(
+                  padding: EdgeInsets.fromLTRB(sm ? 16 : 12, 16, sm ? 16 : 12, 80),
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 896),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          if (_flash != null) ...[
+                            _FlashBanner(message: _flash!),
+                            const SizedBox(height: 16),
+                          ],
+                          if (data.fromCache) ...[
+                            const _OfflineBanner(),
+                            const SizedBox(height: 16),
+                          ],
+                          _StudentSelector(
+                            children: data.children,
+                            selected: child,
+                            onSelect: (id) => setState(() => _childId = id),
+                          ),
+                          const SizedBox(height: 20),
+                          _TabBar(selected: _tab, onSelect: (tab) => setState(() => _tab = tab)),
+                          const SizedBox(height: 24),
+                          if (child == null || report == null)
+                            _DarkMessage(
+                              text: 'Add a child profile first and their report will appear here.',
+                              onRetry: () => context.go('/add-child'),
+                              retryLabel: 'Add Explorer',
+                            )
+                          else
+                            switch (_tab) {
+                              _Tab.overview => _OverviewTab(
+                                  child: child,
+                                  report: report,
+                                  onViewProgress: () => setState(() => _tab = _Tab.progress),
+                                ),
+                              _Tab.progress => _ProgressTab(child: child, report: report),
+                              _Tab.support => _SupportTab(
+                                  child: child,
+                                  report: report,
+                                  missions: data.missions,
+                                  host: this,
+                                ),
+                              _Tab.controls => _ControlsTab(
+                                  child: child,
+                                  guardian: data.guardian,
+                                  host: this,
+                                ),
+                            },
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
-            error: (error, _) => _ErrorCard(
-              message: '$error',
-              onRetry: () => ref.invalidate(parentReportProvider((childId, _range))),
-            ),
-            data: (view) => _ReportBody(view: view),
           ),
-          SizedBox(height: KidSpacing.xl * context.formFactor.density),
+        ],
+      ),
+    );
+  }
+}
+
+// ── Shell ────────────────────────────────────────────────────────────────────
+
+class _Header extends StatelessWidget {
+  const _Header({required this.onLock});
+
+  final VoidCallback onLock;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.fromLTRB(16, 12 + MediaQuery.paddingOf(context).top, 16, 12),
+      decoration: BoxDecoration(
+        color: Tw.slate900.withValues(alpha: 0.9),
+        border: Border(bottom: BorderSide(color: Tw.indigo900.withValues(alpha: 0.5))),
+      ),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 896),
+          child: Row(
+            children: [
+              const Text('👨‍👩‍👧', style: TextStyle(fontSize: 24)),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Parent Companion Zone',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Tw.text(Tw.base, color: Tw.white, weight: FontWeight.w900, height: 1.25),
+                    ),
+                    Text('KiddoQuest CBC Learning Control', style: Tw.text(11, color: Tw.indigo300, weight: FontWeight.w400)),
+                  ],
+                ),
+              ),
+              KidFocusable(
+                onPressed: onLock,
+                semanticLabel: 'Lock Zone',
+                borderRadius: BorderRadius.circular(Tw.roundedXl),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Tw.indigo600.withValues(alpha: 0.3),
+                    borderRadius: BorderRadius.circular(Tw.roundedXl),
+                    border: Border.all(color: Tw.indigo500.withValues(alpha: 0.4)),
+                  ),
+                  child: Text('🔒 Lock Zone', style: Tw.text(Tw.xs, color: Tw.indigo200)),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _FlashBanner extends StatelessWidget {
+  const _FlashBanner({required this.message});
+
+  final String message;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Tw.emerald500.withValues(alpha: 0.2),
+        borderRadius: BorderRadius.circular(Tw.rounded2xl),
+        border: Border.all(color: Tw.emerald500),
+        boxShadow: Tw.shadowMd,
+      ),
+      child: Text(message, textAlign: TextAlign.center, style: Tw.text(Tw.sm, color: Tw.emerald300)),
+    );
+  }
+}
+
+class _OfflineBanner extends StatelessWidget {
+  const _OfflineBanner();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Tw.amber500.withValues(alpha: 0.15),
+        borderRadius: BorderRadius.circular(Tw.rounded2xl),
+        border: Border.all(color: Tw.amber400.withValues(alpha: 0.5)),
+      ),
+      child: Text(
+        '📡 Offline — showing the last report this device saw. Changes need the internet.',
+        textAlign: TextAlign.center,
+        style: Tw.text(Tw.xs, color: Tw.amber200),
+      ),
+    );
+  }
+}
+
+class _StudentSelector extends StatelessWidget {
+  const _StudentSelector({required this.children, required this.selected, required this.onSelect});
+
+  final List<Child> children;
+  final Child? selected;
+  final ValueChanged<int> onSelect;
+
+  @override
+  Widget build(BuildContext context) {
+    final sm = Tw.isSm(context);
+
+    final label = Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const Text('👧👦', style: TextStyle(fontSize: 24)),
+        const SizedBox(width: 10),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('SELECTED STUDENT PROFILE:', style: Tw.label(10, color: Tw.indigo300)),
+            Text(selected?.name ?? 'Select Student', style: Tw.text(Tw.sm, color: Tw.white, weight: FontWeight.w800)),
+          ],
+        ),
+      ],
+    );
+
+    final dropdown = Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      decoration: BoxDecoration(
+        color: Tw.slate900,
+        borderRadius: BorderRadius.circular(Tw.roundedXl),
+        border: Border.all(color: Tw.indigo400.withValues(alpha: 0.6)),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<int>(
+          value: selected?.id,
+          isExpanded: true,
+          dropdownColor: Tw.slate900,
+          iconEnabledColor: Tw.white,
+          style: Tw.text(Tw.xs, color: Tw.white, weight: FontWeight.w900),
+          items: [
+            for (final child in children)
+              DropdownMenuItem(
+                value: child.id,
+                child: Text(
+                  '${child.avatarEmoji} ${child.name} (${child.totalStars} Stars ⭐)',
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+          ],
+          onChanged: (id) {
+            if (id != null) onSelect(id);
+          },
+        ),
+      ),
+    );
+
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(colors: [Tw.slate900, Tw.indigo950, Tw.slate900]),
+        borderRadius: BorderRadius.circular(Tw.rounded2xl),
+        border: Border.all(color: Tw.indigo500.withValues(alpha: 0.4)),
+        boxShadow: Tw.shadowLg,
+      ),
+      child: sm
+          ? Row(
+              children: [
+                label,
+                const Spacer(),
+                SizedBox(width: 280, child: dropdown),
+              ],
+            )
+          : Column(
+              children: [
+                label,
+                const SizedBox(height: 12),
+                dropdown,
+              ],
+            ),
+    );
+  }
+}
+
+class _TabBar extends StatelessWidget {
+  const _TabBar({required this.selected, required this.onSelect});
+
+  final _Tab selected;
+  final ValueChanged<_Tab> onSelect;
+
+  static const Map<_Tab, ({String emoji, String mobile, String wide})> labels = {
+    _Tab.overview: (emoji: '🏠', mobile: 'Overview', wide: 'Daily Overview'),
+    _Tab.progress: (emoji: '📚', mobile: 'Learning', wide: 'Learning Progress'),
+    _Tab.support: (emoji: '🎯', mobile: 'Learning', wide: 'Learning Support'),
+    _Tab.controls: (emoji: '⚙️', mobile: 'Controls', wide: 'Controls'),
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    final sm = Tw.isSm(context);
+
+    return Container(
+      padding: const EdgeInsets.all(6),
+      decoration: BoxDecoration(
+        color: Tw.slate900.withValues(alpha: 0.7),
+        borderRadius: BorderRadius.circular(Tw.rounded2xl),
+        border: Border.all(color: Tw.slate800),
+      ),
+      child: Row(
+        children: [
+          for (final entry in labels.entries) ...[
+            if (entry.key != _Tab.overview) const SizedBox(width: 6),
+            Expanded(
+              child: KidFocusable(
+                onPressed: () => onSelect(entry.key),
+                semanticLabel: entry.value.wide,
+                borderRadius: BorderRadius.circular(Tw.roundedXl),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 150),
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                    color: selected == entry.key ? Tw.indigo500 : Tw.white.withValues(alpha: 0.05),
+                    borderRadius: BorderRadius.circular(Tw.roundedXl),
+                    boxShadow: selected == entry.key
+                        ? [BoxShadow(color: Tw.indigo500.withValues(alpha: 0.4), blurRadius: 14, offset: const Offset(0, 4))]
+                        : null,
+                  ),
+                  child: _tabContent(entry.value, selected == entry.key, sm),
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );
   }
 
-  Widget _frame(BuildContext context, {required Widget child, VoidCallback? onRefresh}) {
-    return KidScaffold(
-      onBack: () => context.go('/parent/home'),
-      appBar: AppBar(
-        title: const Text('How they are doing'),
-        leading: BackButton(onPressed: () => context.go('/parent/home')),
-        actions: [
-          if (onRefresh != null)
-            IconButton(
-              tooltip: 'Refresh',
-              icon: const Icon(Icons.refresh_rounded),
-              onPressed: onRefresh,
-            ),
+  Widget _tabContent(({String emoji, String mobile, String wide}) label, bool active, bool sm) {
+    final style = Tw.text(
+      sm ? Tw.sm : Tw.xs,
+      color: active ? Tw.white : Tw.slate400,
+      weight: active ? FontWeight.w800 : FontWeight.w700,
+    );
+
+    if (sm) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(label.emoji, style: const TextStyle(fontSize: 14)),
+          const SizedBox(width: 4),
+          Flexible(child: Text(label.wide, overflow: TextOverflow.ellipsis, style: style)),
         ],
+      );
+    }
+
+    return Column(
+      children: [
+        Text(label.emoji, style: const TextStyle(fontSize: 13)),
+        const SizedBox(height: 4),
+        Text(label.mobile, maxLines: 1, overflow: TextOverflow.fade, softWrap: false, style: style),
+      ],
+    );
+  }
+}
+
+// ── Shared pieces ────────────────────────────────────────────────────────────
+
+/// `.parent-card`.
+class _ParentCard extends StatelessWidget {
+  const _ParentCard({required this.child, this.borderColor, this.borderWidth = 1, this.gradient});
+
+  final Widget child;
+  final Color? borderColor;
+  final double borderWidth;
+  final Gradient? gradient;
+
+  static const Color background = Color(0xF21E293B);
+  static const Color border = Color(0x40818CF8);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: gradient == null ? background : null,
+        gradient: gradient,
+        borderRadius: BorderRadius.circular(Tw.rounded3xl),
+        border: Border.all(color: borderColor ?? border, width: borderWidth),
       ),
       child: child,
     );
   }
 }
 
-class _ReportBody extends StatelessWidget {
-  const _ReportBody({required this.view});
+/// The "emoji, title, subtitle" header most cards open with.
+class _CardHeading extends StatelessWidget {
+  const _CardHeading({
+    required this.emoji,
+    required this.title,
+    required this.subtitle,
+    this.subtitleColor = Tw.indigo300,
+    this.divider = true,
+    this.trailing,
+  });
 
-  final ParentReportView view;
-
-  @override
-  Widget build(BuildContext context) {
-    final report = view.report;
-    final gap = SizedBox(height: KidSpacing.md * context.formFactor.density);
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        if (view.fromCache) ...[
-          _CachedNotice(generatedAt: report.generatedAt),
-          gap,
-        ],
-        _OverviewCard(report: report),
-        gap,
-        if (report.overview.daily.isNotEmpty) ...[
-          _RhythmCard(days: report.overview.daily),
-          gap,
-        ],
-        if (report.progress.subjects.isNotEmpty) ...[
-          _SubjectsCard(subjects: report.progress.subjects),
-          gap,
-        ],
-        _SupportCard(support: report.support, childName: report.childName),
-        gap,
-        if (report.progress.canDoNow.isNotEmpty) ...[
-          _CanDoCard(skills: report.progress.canDoNow, next: report.progress.learningNext),
-          gap,
-        ],
-        if (report.badges.isNotEmpty) ...[
-          _BadgesCard(report: report),
-          gap,
-        ],
-        if (report.history.isNotEmpty) _HistoryCard(history: report.history),
-        if (!report.hasActivity) _EmptyCard(childName: report.childName),
-      ],
-    );
-  }
-}
-
-// ── Cards ────────────────────────────────────────────────────────────────────
-
-class _ReportCard extends StatelessWidget {
-  const _ReportCard({required this.title, required this.child, this.subtitle});
-
+  final String emoji;
   final String title;
-  final String? subtitle;
-  final Widget child;
+  final String subtitle;
+  final Color subtitleColor;
+  final bool divider;
+  final Widget? trailing;
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final density = context.formFactor.density;
-
-    return Card(
-      child: Padding(
-        padding: EdgeInsets.all(KidSpacing.md * density),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title, style: theme.textTheme.titleLarge),
-            if (subtitle != null) ...[
-              SizedBox(height: KidSpacing.xs * density),
-              Text(
-                subtitle!,
-                style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-              ),
-            ],
-            SizedBox(height: KidSpacing.sm * density),
-            child,
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _OverviewCard extends StatelessWidget {
-  const _OverviewCard({required this.report});
-
-  final ParentReport report;
-
-  @override
-  Widget build(BuildContext context) {
-    final overview = report.overview;
-    final accuracy = overview.accuracyPercent;
-
-    return _ReportCard(
-      title: report.childName,
-      subtitle: overview.daysPlayed > 0
-          ? 'Played on ${overview.daysPlayed} of the last ${overview.daysInRange} days.'
-          : 'No learning recorded in the last ${overview.daysInRange} days.',
-      child: Wrap(
-        spacing: KidSpacing.md,
-        runSpacing: KidSpacing.md,
-        children: [
-          _Stat(label: 'Minutes today', value: '${overview.minutesToday}'),
-          _Stat(label: 'Minutes this period', value: '${overview.minutesInRange}'),
-          _Stat(label: 'Missions passed', value: '${overview.missionsPassed}'),
-          _Stat(label: 'Questions answered', value: '${overview.questionsAnswered}'),
-          _Stat(label: 'Correct', value: accuracy == null ? '—' : '$accuracy%'),
-          _Stat(label: 'Day streak', value: '${report.streak}'),
-        ],
-      ),
-    );
-  }
-}
-
-class _Stat extends StatelessWidget {
-  const _Stat({required this.label, required this.value});
-
-  final String label;
-  final String value;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return SizedBox(
-      width: 150 * context.formFactor.density,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            value,
-            style: theme.textTheme.headlineSmall?.copyWith(
-              fontFamily: KidFonts.display,
-              color: KidColors.primary,
-            ),
-          ),
-          Text(
-            label,
-            style: theme.textTheme.labelLarge?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// Which days had any learning on them. A rhythm is what a parent can act on;
-/// a total for the week is not.
-class _RhythmCard extends StatelessWidget {
-  const _RhythmCard({required this.days});
-
-  final List<ReportDay> days;
-
-  @override
-  Widget build(BuildContext context) {
-    final busiest = days.map((d) => d.minutes).fold<int>(1, (a, b) => b > a ? b : a);
-    final theme = Theme.of(context);
-
-    return _ReportCard(
-      title: 'Daily rhythm',
-      subtitle: 'Minutes played each day.',
-      child: SizedBox(
-        height: 110 * context.formFactor.density,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            for (final day in days)
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 3),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text('${day.minutes}', style: theme.textTheme.labelSmall),
-                      const SizedBox(height: 2),
-                      Container(
-                        height: (70 * (day.minutes / busiest)).clamp(4, 70).toDouble(),
-                        decoration: BoxDecoration(
-                          color: day.minutes > 0 ? KidColors.primary : KidColors.border,
-                          borderRadius: const BorderRadius.vertical(top: Radius.circular(6)),
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        _weekday(day.day),
-                        style: theme.textTheme.labelSmall
-                            ?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  static String _weekday(String isoDay) {
-    final parsed = DateTime.tryParse(isoDay);
-    if (parsed == null) return '';
-
-    const names = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    return names[(parsed.weekday - 1).clamp(0, 6)];
-  }
-}
-
-class _SubjectsCard extends StatelessWidget {
-  const _SubjectsCard({required this.subjects});
-
-  final List<ReportSubject> subjects;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final density = context.formFactor.density;
-
-    return _ReportCard(
-      title: 'Subjects',
-      subtitle: 'How often each subject is answered correctly.',
-      child: Column(
-        children: [
-          for (final subject in subjects)
-            Padding(
-              padding: EdgeInsets.only(bottom: KidSpacing.sm * density),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Expanded(child: Text(subject.name, style: theme.textTheme.titleMedium)),
-                      Text(
-                        '${subject.accuracyPercent}% of ${subject.answered}',
-                        style: theme.textTheme.labelLarge
-                            ?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 4),
-                  KidProgressBar(
-                    current: subject.accuracyPercent,
-                    total: 100,
-                    showBeads: false,
-                    accent: subject.accuracyPercent >= 70 ? KidColors.success : KidColors.amber,
-                  ),
-                ],
-              ),
-            ),
-        ],
-      ),
-    );
-  }
-}
-
-class _SupportCard extends StatelessWidget {
-  const _SupportCard({required this.support, required this.childName});
-
-  final ReportSupport support;
-  final String childName;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return _ReportCard(
-      title: support.hasStruggle ? 'Worth a little help' : 'Nothing is stuck',
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(support.headline, style: theme.textTheme.titleMedium),
-          SizedBox(height: KidSpacing.xs * context.formFactor.density),
-          Text(support.activity, style: theme.textTheme.bodyLarge),
-        ],
-      ),
-    );
-  }
-}
-
-class _CanDoCard extends StatelessWidget {
-  const _CanDoCard({required this.skills, required this.next});
-
-  final List<String> skills;
-  final List<ReportNextMission> next;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return _ReportCard(
-      title: 'What they can do now',
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Wrap(
-            spacing: KidSpacing.sm,
-            runSpacing: KidSpacing.sm,
-            children: [
-              for (final skill in skills)
-                Chip(
-                  avatar: const Icon(Icons.check_rounded, size: 16, color: KidColors.success),
-                  label: Text(skill),
-                ),
-            ],
-          ),
-          if (next.isNotEmpty) ...[
-            SizedBox(height: KidSpacing.md * context.formFactor.density),
-            Text('Learning next', style: theme.textTheme.titleMedium),
-            SizedBox(height: KidSpacing.xs * context.formFactor.density),
-            for (final mission in next)
-              Padding(
-                padding: const EdgeInsets.only(bottom: 2),
-                child: Row(
-                  children: [
-                    const Icon(Icons.arrow_forward_rounded, size: 16, color: KidColors.muted),
-                    const SizedBox(width: KidSpacing.xs),
-                    Expanded(child: Text(mission.title, style: theme.textTheme.bodyLarge)),
-                  ],
-                ),
-              ),
-          ],
-        ],
-      ),
-    );
-  }
-}
-
-class _BadgesCard extends StatelessWidget {
-  const _BadgesCard({required this.report});
-
-  final ParentReport report;
-
-  @override
-  Widget build(BuildContext context) {
-    return _ReportCard(
-      title: 'Badges earned',
-      subtitle: '${report.stars} stars and ${report.coins} coins so far.',
-      child: Wrap(
-        spacing: KidSpacing.sm,
-        runSpacing: KidSpacing.sm,
-        children: [
-          for (final badge in report.badges)
-            Tooltip(
-              message: badge.blurb ?? badge.name,
-              child: Chip(
-                avatar: Text(badge.icon ?? '🏅', style: const TextStyle(fontSize: 16)),
-                label: Text(badge.name),
-                backgroundColor: KidColors.amberSoft,
-              ),
-            ),
-        ],
-      ),
-    );
-  }
-}
-
-class _HistoryCard extends StatelessWidget {
-  const _HistoryCard({required this.history});
-
-  final List<ReportAttempt> history;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return _ReportCard(
-      title: 'Recent missions',
-      child: Column(
-        children: [
-          for (final attempt in history)
-            ExpansionTile(
-              tilePadding: EdgeInsets.zero,
-              childrenPadding: const EdgeInsets.only(bottom: KidSpacing.sm),
-              title: Text(attempt.title, style: theme.textTheme.titleMedium),
-              subtitle: Text(
-                '${attempt.score}/${attempt.total} · ${attempt.percentage}%'
-                '${attempt.minutes > 0 ? ' · ${attempt.minutes} min' : ''}'
-                '${attempt.passed ? '' : ' · not passed yet'}',
-                style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-              ),
-              trailing: StarRow(stars: attempt.stars),
-              children: [
-                if (attempt.mistakes.isEmpty)
-                  const ListTile(
-                    dense: true,
-                    contentPadding: EdgeInsets.zero,
-                    title: Text('Everything in this one was answered correctly.'),
-                  )
-                else
-                  for (final mistake in attempt.mistakes)
-                    ListTile(
-                      dense: true,
-                      contentPadding: EdgeInsets.zero,
-                      leading: const Icon(Icons.help_outline_rounded, color: KidColors.muted),
-                      title: Text(mistake),
-                    ),
-              ],
-            ),
-        ],
-      ),
-    );
-  }
-}
-
-class _EmptyCard extends StatelessWidget {
-  const _EmptyCard({required this.childName});
-
-  final String childName;
-
-  @override
-  Widget build(BuildContext context) {
-    return _ReportCard(
-      title: 'Nothing to report yet',
-      child: Text(
-        'Once $childName finishes a mission, everything they do turns up here — '
-        'time played, what they can do, and what they found hard.',
-        style: Theme.of(context).textTheme.bodyLarge,
-      ),
-    );
-  }
-}
-
-class _CachedNotice extends StatelessWidget {
-  const _CachedNotice({this.generatedAt});
-
-  final DateTime? generatedAt;
-
-  @override
-  Widget build(BuildContext context) {
-    final when = generatedAt?.toLocal();
-
     return Container(
-      padding: const EdgeInsets.all(KidSpacing.sm),
-      decoration: const BoxDecoration(
-        color: KidColors.amberSoft,
-        borderRadius: KidRadius.card,
-      ),
+      padding: EdgeInsets.only(bottom: divider ? 12 : 0),
+      decoration: divider
+          ? BoxDecoration(border: Border(bottom: BorderSide(color: Tw.slate700.withValues(alpha: 0.5))))
+          : null,
       child: Row(
         children: [
-          const Icon(Icons.cloud_off_rounded, color: KidColors.amber),
-          const SizedBox(width: KidSpacing.sm),
+          Text(emoji, style: const TextStyle(fontSize: 30)),
+          const SizedBox(width: 12),
           Expanded(
-            child: Text(
-              when == null
-                  ? 'Offline — showing the last report this device saw.'
-                  : 'Offline — this is the report from '
-                      '${when.day}/${when.month} at '
-                      '${when.hour.toString().padLeft(2, '0')}:${when.minute.toString().padLeft(2, '0')}.',
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: KidColors.stageInk),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: Tw.text(Tw.base, color: Tw.white, weight: FontWeight.w900)),
+                Text(subtitle, style: Tw.text(Tw.xs, color: subtitleColor, weight: FontWeight.w400)),
+              ],
             ),
           ),
+          ?trailing,
         ],
       ),
     );
   }
 }
 
-class _ErrorCard extends StatelessWidget {
-  const _ErrorCard({required this.message, required this.onRetry});
+/// A solid dark-zone button: the website's `bg-{colour}-600 … font-black`.
+class _SolidButton extends StatelessWidget {
+  const _SolidButton({
+    required this.label,
+    required this.color,
+    required this.onPressed,
+    this.textColor = Tw.white,
+    this.busy = false,
+    this.fontSize = Tw.xs,
+    this.verticalPadding = 10,
+    this.expand = true,
+    this.border,
+  });
 
-  final String message;
-  final VoidCallback onRetry;
+  final String label;
+  final Color color;
+  final VoidCallback? onPressed;
+  final Color textColor;
+  final bool busy;
+  final double fontSize;
+  final double verticalPadding;
+  final bool expand;
+  final Color? border;
 
   @override
   Widget build(BuildContext context) {
-    return _ReportCard(
-      title: 'Could not load the report',
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(message, style: Theme.of(context).textTheme.bodyLarge),
-          SizedBox(height: KidSpacing.sm * context.formFactor.density),
-          KidButton(label: 'Try again', size: KidButtonSize.small, onPressed: onRetry),
-        ],
+    return KidFocusable(
+      onPressed: busy ? null : onPressed,
+      semanticLabel: label,
+      borderRadius: BorderRadius.circular(Tw.roundedXl),
+      child: Container(
+        width: expand ? double.infinity : null,
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: verticalPadding),
+        alignment: expand ? Alignment.center : null,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(Tw.roundedXl),
+          border: border == null ? null : Border.all(color: border!),
+          boxShadow: Tw.shadowMd,
+        ),
+        child: busy
+            ? SizedBox(width: fontSize + 4, height: fontSize + 4, child: CircularProgressIndicator(strokeWidth: 2, color: textColor))
+            : Text(label, textAlign: TextAlign.center, style: Tw.text(fontSize, color: textColor, weight: FontWeight.w900)),
       ),
     );
   }
 }
 
-// ── Pickers ──────────────────────────────────────────────────────────────────
+class _DarkMessage extends StatelessWidget {
+  const _DarkMessage({required this.text, this.onRetry, this.retryLabel = 'Try again'});
 
-class _ChildPicker extends StatelessWidget {
-  const _ChildPicker({required this.children, required this.selectedId, required this.onSelect});
-
-  final List<Child> children;
-  final int selectedId;
-  final ValueChanged<int> onSelect;
+  final String text;
+  final VoidCallback? onRetry;
+  final String retryLabel;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: KidSpacing.sm),
-      child: Wrap(
-        spacing: KidSpacing.sm,
-        children: [
-          for (final child in children)
-            ChoiceChip(
-              selected: child.id == selectedId,
-              label: Text(child.name),
-              onSelected: (_) => onSelect(child.id),
-            ),
-        ],
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: _ParentCard(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(text, textAlign: TextAlign.center, style: Tw.text(Tw.sm, color: Tw.slate200)),
+              if (onRetry != null) ...[
+                const SizedBox(height: 16),
+                _SolidButton(label: retryLabel, color: Tw.indigo600, onPressed: onRetry, expand: false),
+              ],
+            ],
+          ),
+        ),
       ),
     );
   }
 }
 
-class _RangePicker extends StatelessWidget {
-  const _RangePicker({required this.ranges, required this.selected, required this.onSelect});
+/// Open a WhatsApp share link, as the website's `target="_blank"` links do.
+Future<void> _openShare(BuildContext context, Uri uri) async {
+  final messenger = ScaffoldMessenger.of(context);
 
-  final List<({String value, String label})> ranges;
-  final String selected;
-  final ValueChanged<String> onSelect;
+  try {
+    final opened = await launchUrl(uri, mode: LaunchMode.externalApplication);
 
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: SegmentedButton<String>(
-        segments: [
-          for (final range in ranges) ButtonSegment(value: range.value, label: Text(range.label)),
-        ],
-        selected: {selected},
-        showSelectedIcon: false,
-        onSelectionChanged: (values) => onSelect(values.first),
-      ),
-    );
+    if (!opened) {
+      messenger.showSnackBar(const SnackBar(content: Text('WhatsApp could not be opened on this device.')));
+    }
+  } catch (_) {
+    messenger.showSnackBar(const SnackBar(content: Text('WhatsApp could not be opened on this device.')));
   }
+}
+
+/// The website's own address, for the link inside a shared report.
+String _siteOrigin() {
+  final uri = Uri.tryParse(kApiBaseUrl);
+
+  if (uri == null || uri.host.isEmpty) return 'https://www.kiddoquest.co.ke';
+
+  return uri.hasPort ? '${uri.scheme}://${uri.host}:${uri.port}' : '${uri.scheme}://${uri.host}';
+}
+
+String _thousands(int value) {
+  final digits = value.toString();
+  final buffer = StringBuffer();
+
+  for (var i = 0; i < digits.length; i++) {
+    if (i > 0 && (digits.length - i) % 3 == 0) buffer.write(',');
+    buffer.write(digits[i]);
+  }
+
+  return buffer.toString();
 }

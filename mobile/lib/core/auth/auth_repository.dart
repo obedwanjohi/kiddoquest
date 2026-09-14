@@ -28,6 +28,26 @@ class AuthRepository {
   String? _cachedToken;
   Guardian? _guardian;
 
+  /// The short-lived token the PIN gate issues, held in memory only.
+  ///
+  /// It is what the website's "parent zone unlocked" session is on the API:
+  /// the one credential allowed to change the PIN without the account password.
+  /// Never written to storage, so closing the app locks the zone again.
+  String? _parentZoneToken;
+  DateTime? _parentZoneExpiresAt;
+
+  String? get parentZoneToken {
+    final expires = _parentZoneExpiresAt;
+    if (expires != null && DateTime.now().isAfter(expires)) return null;
+    return _parentZoneToken;
+  }
+
+  /// Lock the parent zone: forget the short-lived token.
+  void lockParentZone() {
+    _parentZoneToken = null;
+    _parentZoneExpiresAt = null;
+  }
+
   Guardian? get guardian => _guardian;
 
   bool get isSignedIn => _cachedToken != null && _cachedToken!.isNotEmpty;
@@ -159,6 +179,10 @@ class AuthRepository {
     final ok = response['token'] != null;
 
     if (ok) {
+      final token = (response['token'] as Map?)?.cast<String, dynamic>() ?? const {};
+      _parentZoneToken = token['access_token'] as String?;
+      _parentZoneExpiresAt = DateTime.tryParse(token['expires_at'] as String? ?? '');
+
       try {
         await _storage.write(key: _pinHashKey, value: await _localPinDigest(pin));
       } catch (_) {
@@ -214,6 +238,7 @@ class AuthRepository {
 
     _cachedToken = null;
     _guardian = null;
+    lockParentZone();
 
     await _storage.delete(key: _tokenKey);
     await _storage.delete(key: _expiryKey);

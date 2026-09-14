@@ -13,7 +13,7 @@ import '../../core/platform/form_factor.dart';
 import '../../design/components/kid_button.dart';
 import '../../design/components/kid_scaffold.dart';
 import '../../design/tokens.dart';
-import '../map/map_state.dart';
+import '../map/site_map.dart';
 
 /// Paying, from inside the app.
 ///
@@ -138,7 +138,7 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
       if (status.progress == PaymentProgress.paid) {
         // The entitlement lives on the snapshot, so refresh what depends on it.
         ref.invalidate(subscriptionProvider);
-        ref.invalidate(mapDataProvider);
+        ref.invalidate(siteMapProvider);
       }
     } on ApiException {
       // A dropped connection mid-poll is not a failed payment. Keep asking
@@ -158,10 +158,10 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
     final density = context.formFactor.density;
 
     return KidScaffold(
-      onBack: () => context.go('/parent/home'),
+      onBack: () => context.go('/parent/dashboard'),
       appBar: AppBar(
         title: const Text('Subscription'),
-        leading: BackButton(onPressed: () => context.go('/parent/home')),
+        leading: BackButton(onPressed: () => context.go('/parent/dashboard')),
       ),
       child: state.when(
         loading: () => const Center(child: CircularProgressIndicator()),
@@ -173,7 +173,7 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
           if (_result != null) {
             return _Outcome(
               status: _result!,
-              onDone: () => context.go('/parent/home'),
+              onDone: () => context.go('/parent/dashboard'),
               onTryAgain: () => setState(() => _result = null),
             );
           }

@@ -12,7 +12,7 @@ import '../core/models/child.dart';
 import '../core/notifications/practice_reminders.dart';
 import '../core/models/extras.dart';
 import '../core/models/pack.dart';
-import '../core/models/parent_report.dart';
+import '../core/models/parent_dashboard.dart';
 import '../core/models/snapshot.dart';
 import '../core/models/subscription.dart';
 import '../core/network/api_client.dart';
@@ -20,7 +20,7 @@ import '../core/network/api_exception.dart';
 import '../core/sync/outbox.dart';
 import '../core/sync/sync_engine.dart';
 import '../features/extras/extras_repository.dart';
-import '../features/parent/parent_report_repository.dart';
+import '../features/parent/parent_dashboard_repository.dart';
 import '../features/subscription/subscription_repository.dart';
 
 /// Wiring. Each object is created once and handed to whoever asks for it.
@@ -198,6 +198,7 @@ class SessionNotifier extends Notifier<SessionState> {
     required String avatar,
     String? birthdate,
     String? favoriteColor,
+    String? level,
   }) async {
     try {
       final child = await _auth.addChild(
@@ -205,6 +206,7 @@ class SessionNotifier extends Notifier<SessionState> {
         avatar: avatar,
         birthdate: birthdate,
         favoriteColor: favoriteColor,
+        level: level,
       );
 
       final children = [...state.children, child];
@@ -270,36 +272,17 @@ final routerRefreshProvider = Provider<ChangeNotifier>((ref) {
 
 // ── Parent zone ──────────────────────────────────────────────────────────────
 
-final parentReportRepositoryProvider = Provider<ParentReportRepository>((ref) {
-  return ParentReportRepository(api: ref.watch(apiClientProvider));
+final parentDashboardRepositoryProvider = Provider<ParentDashboardRepository>((ref) {
+  return ParentDashboardRepository(
+    api: ref.watch(apiClientProvider),
+    auth: ref.watch(authRepositoryProvider),
+  );
 });
 
-/// A report plus whether it is the copy we already had.
-///
-/// The screen says so out loud rather than pretending a week-old report is
-/// tonight's, which is the difference between a stale number and a lie.
-class ParentReportView {
-  const ParentReportView({required this.report, this.fromCache = false});
-
-  final ParentReport report;
-  final bool fromCache;
-}
-
-/// The parent dashboard's data, keyed by child and range ('7d', '30d', '90d').
-final parentReportProvider =
-    FutureProvider.family<ParentReportView, (int, String)>((ref, key) async {
-  final repository = ref.watch(parentReportRepositoryProvider);
-  final (childId, range) = key;
-
-  try {
-    return ParentReportView(report: await repository.refresh(childId, range));
-  } on ApiException {
-    final cached = await repository.cached(childId, range);
-    if (cached != null) {
-      return ParentReportView(report: cached, fromCache: true);
-    }
-    rethrow;
-  }
+/// The Parent Companion Zone for the chosen child (or the website's default
+/// choice when null: whoever played most recently).
+final parentDashboardProvider = FutureProvider.family<ParentDashboard, int?>((ref, childId) async {
+  return ref.watch(parentDashboardRepositoryProvider).load(childId: childId);
 });
 
 // ── Sound, and the content that is not missions ──────────────────────────────

@@ -49,6 +49,7 @@ One shape, so the app has one handler:
 | GET | `/children/{id}/snapshot` | The authoritative state, for a second device catching up |
 | PATCH | `/children/{id}/screen-time` | Daily limit in minutes, 0 means no limit |
 | PATCH | `/children/{id}/focus-mission` | Tomorrow's focus mission |
+| GET | `/children/{id}/map` | The adventure map exactly as the website draws it for this child |
 | GET | `/content/catalog?level=PG` | Packs for a level. ETag |
 | GET | `/content/worlds` | Worlds without pack versions, for a map before any download |
 | GET | `/content/extras` | The devotional list and the songs hub, in one small payload |
@@ -56,9 +57,9 @@ One shape, so the app has one handler:
 | GET | `/content/packs/{packId}/v{n}/download` | The pack document. Immutable, one year cache |
 | POST | `/sync` | The only hot endpoint. See below |
 | POST | `/parent/pin/verify` | Returns a 30-minute parent-scope token |
-| PATCH | `/parent/pin` | Requires the account password as well |
+| PATCH | `/parent/pin` | With the PIN gate's token, as the website allows; otherwise the account password |
 | PATCH | `/parent/settings` | Devotional and songs toggles |
-| GET | `/parent/children/{id}/report?range=7d` | The parent dashboard. `range` is `7d`, `30d` or `90d` |
+| GET | `/parent/dashboard?child_id=` | The Parent Companion Zone, built by the same service as the website's |
 | POST | `/parent/coach` | `child_id`, optional `question`. Always answers, LLM key or not |
 | GET | `/subscription` | Entitlement, the plans on offer, recent payments |
 | POST | `/subscription/stk-push` | `phone_number`, `plan_type`. Six a minute per parent |
@@ -66,33 +67,24 @@ One shape, so the app has one handler:
 | POST | `/devices/push-token` | FCM registration |
 
 
-## Parent report
+## Map and dashboard, shared with the website
 
-```
-GET /api/v1/parent/children/41/report?range=7d
-{ "child": { … }, "range_days": 7,
-  "overview": { "minutes_today": 10, "minutes_in_range": 51, "missions_passed": 12,
-                "questions_answered": 51, "accuracy_percent": 82, "days_played": 6,
-                "daily": [ { "day": "2026-09-03", "minutes": 10, "missions": 2, "stars": 6 } ] },
-  "progress": { "can_do_now": [ … ], "learning_next": [ … ],
-                "subjects": [ { "name": "Mathematics Activities", "code": "MATH",
-                                "answered": 14, "accuracy_percent": 79 } ] },
-  "history": [ { "mission_id": 11, "title": "…", "score": 5, "total": 8, "stars": 2,
-                 "mistakes": [ "How many school bags do you see?" ] } ],
-  "support": { "has_struggle": true, "headline": "…", "activity": "…" },
-  "badges": [ … ] }
-```
+`GET /children/{id}/map` and `GET /parent/dashboard` are not new logic. They
+call `KidMapService` and `ParentDashboardService`, which the website's own map
+and Parent Companion Zone were refactored to call, so the app and the website
+show a family the same worlds, the same missions and the same report card.
+Both pages render byte-for-byte what they rendered before the move.
 
-Read entirely from the projections, so opening it costs a handful of indexed
-queries rather than a walk through the child's events. Two numbers the website
-could not produce are real here: `minutes_*` comes from `child_daily_stats`
-rather than a hard-coded string, and every `mistakes` entry is a question the
-child actually got wrong. Subject accuracy walks Mission → AdventureWorld →
-Subject rather than matching world names against a word list, so renaming a
-world cannot move a child's maths score into English.
+The map lists every world and mission for the child, each world with the
+content pack that holds it; the app fetches a world's pack the first time a
+mission in it is tapped. The dashboard's mission history now carries the
+questions actually missed, which the website's drilldown always showed as
+empty.
 
-The app caches the whole response and shows it, clearly labelled, when the
-request cannot be made.
+A PIN change is accepted with the short-lived `parent-admin` token that
+`/parent/pin/verify` issues — the API's equivalent of the website's unlocked
+parent session — and otherwise needs the account password. The thirty-day
+sign-in token does not carry `parent-admin`.
 
 ## Devotional and songs
 

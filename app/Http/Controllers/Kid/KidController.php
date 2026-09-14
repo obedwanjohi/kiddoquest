@@ -50,57 +50,15 @@ class KidController extends Controller
     public function map(): View
     {
         $child = $this->activeChild();
-        $rawLevel = strtolower(str_replace(['_', '-'], ' ', $child->recommended_level ?? ''));
 
-        $worldsQuery = AdventureWorld::with([
-            'subject.level',
-            'missions' => function ($q) {
-                $q->where('status', 'published')->orderBy('sort_order');
-            }
-        ])->orderBy('sort_order');
+        // The rule for which worlds a child sees lives in KidMapService, which
+        // the app's map endpoint uses too, so the two can never disagree.
+        $maps = app(\App\Services\Learning\KidMapService::class);
 
-        if ($rawLevel) {
-            $worlds = $worldsQuery->where(function ($query) use ($rawLevel) {
-                $query->whereHas('subject.level', function ($q) use ($rawLevel) {
-                    if (str_contains($rawLevel, 'play') || str_contains($rawLevel, 'pg')) {
-                        $q->where('code', 'PG')
-                          ->orWhere('name', 'like', '%play%');
-                    } elseif (str_contains($rawLevel, 'pp1')) {
-                        $q->where('code', 'PP1')
-                          ->orWhere('name', 'like', '%pp1%');
-                    } elseif (str_contains($rawLevel, 'pp2')) {
-                        $q->where('code', 'PP2')
-                          ->orWhere('name', 'like', '%pp2%');
-                    } else {
-                        $q->where('code', strtoupper($rawLevel))
-                          ->orWhere('name', 'like', "%{$rawLevel}%");
-                    }
-                });
-
-                // Always unlock Tracing Worlds, Speak Repeat Safari & Master QA Lab for all levels
-                $query->orWhereIn('slug', [
-                    'line-tracing-trail', 'letter-tracing-safari', 'number-tracing-kingdom', 'speak-repeat-safari', 'master-qa-lab-world'
-                ]);
-
-                // Match Playgroup world slugs directly for Play Group profiles
-                if (str_contains($rawLevel, 'play') || str_contains($rawLevel, 'pg')) {
-                    $query->orWhereIn('slug', [
-                        'whispering-forest', 'sunny-meadow', 'cookie-trail',
-                        'safari-plains', 'castle-of-discovery',
-                        'ocean-cove', 'ocean-cove-creation', 'kindness-village', 'rainbow-mountain', 'rainbow-mountain-values',
-                        'creation-realm', 'jesus-realm', 'christian-values-realm',
-                        'speak-repeat-safari'
-                    ]);
-                }
-            })->get();
-        } else {
-            $worlds = $worldsQuery->get();
-        }
-
-        // Pre-fetch all progress for active child in 1 fast query to eliminate N+1 DB roundtrips
-        $progressRecords = $child->progress()->get();
-        $progressMap = $progressRecords->pluck('status', 'mission_id')->toArray();
-        $starsMap = $progressRecords->pluck('stars_earned', 'mission_id')->toArray();
+        $worlds = $maps->worldsFor($child);
+        $progress = $maps->progressFor($child);
+        $progressMap = $progress['status'];
+        $starsMap = $progress['stars'];
 
         return view('kids.map', compact('child', 'worlds', 'progressMap', 'starsMap'));
     }

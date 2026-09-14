@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Device;
 use App\Models\MissionAttempt;
-use App\Services\Learning\ParentReportService;
+use App\Services\Learning\ParentDashboardService;
 use App\Services\ParentAiService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -67,16 +67,27 @@ class ParentController extends ApiController
         ]);
     }
 
+    /**
+     * Change the parent PIN.
+     *
+     * Allowed the way the website allows it: from inside a parent zone that was
+     * just unlocked with the PIN. On the API that is the short-lived token
+     * verifyPin() hands out, which is the only token carrying `parent-admin`;
+     * the thirty-day sign-in token does not, so a device merely signed in still
+     * needs the account password.
+     */
     public function updatePin(Request $request): JsonResponse
     {
+        $unlocked = (bool) $request->user()?->tokenCan('parent-admin');
+
         $data = $request->validate([
             'new_pin'  => ['required', 'string', 'size:4', 'regex:/^[0-9]{4}$/'],
-            'password' => ['required', 'string'],
+            'password' => [$unlocked ? 'nullable' : 'required', 'string'],
         ]);
 
         $guardian = $this->guardian($request);
 
-        if (! Hash::check($data['password'], $guardian->password)) {
+        if (! $unlocked && ! Hash::check($data['password'], $guardian->password)) {
             return $this->fail('password_incorrect', 'Enter your account password to change the PIN.', 401);
         }
 
@@ -116,27 +127,42 @@ class ParentController extends ApiController
     }
 
     /**
-     * The report behind the parent dashboard.
+     * The parent dashboard: the same report the website's Parent Companion
+     * Zone renders, built by the same service, for the selected child.
      *
-     * Read entirely from projections, so opening it costs a handful of indexed
-     * queries rather than a walk through every event the child ever produced.
+     * Asking for a child that is not this family's falls back to the website's
+     * own choice (the child who played most recently) rather than failing, the
+     * way the website's dropdown does.
      */
-    public function report(Request $request, int $child, ParentReportService $reports): JsonResponse
+    public function dashboard(Request $request, ParentDashboardService $dashboards): JsonResponse
     {
-        $model = $this->guardian($request)->children()->find($child);
+        $guardian = $this->guardian($request);
 
-        if (! $model) {
-            return $this->fail('child_not_found', 'That child does not belong to this account.', 404);
+        $built = $dashboards->build($guardian, (int) $request->query('child_id'));
+        $selectedId = $built['selectedChildId'];
+        $report = $selectedId ? ($built['reports'][$selectedId] ?? null) : null;
+
+        if ($report !== null) {
+            $assigned = $report['assigned_mission'];
+            $report['assigned_mission'] = $assigned
+                ? ['id' => (int) $assigned->id, 'title' => $assigned->title]
+                : null;
         }
 
-        $range = (string) $request->query('range', '7d');
-        $days = match ($range) {
-            '30d' => 30,
-            '90d' => 90,
-            default => 7,
-        };
-
-        return response()->json($reports->build($model, $days));
+        return response()->json([
+            'guardian' => [
+                'enable_devotional'  => (bool) ($guardian->enable_devotional ?? true),
+                'enable_songs_hub'   => (bool) ($guardian->enable_songs_hub ?? true),
+                'has_custom_pin'     => $guardian->hasCustomPin(),
+                'default_pin'        => (string) config('plans.default_parent_pin', '1234'),
+            ],
+            'children' => $built['children']->map(fn ($child) => $this->childArray($child))->values(),
+            'selected_child_id' => $selectedId,
+            'report'   => $report,
+            'missions' => $built['allMissions']
+                ->map(fn ($mission) => ['id' => (int) $mission->id, 'title' => $mission->title])
+                ->values(),
+        ]);
     }
 
     /**

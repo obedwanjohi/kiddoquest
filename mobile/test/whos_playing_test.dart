@@ -44,18 +44,19 @@ void main() {
     ));
     await tester.pump();
 
-    expect(find.text('Who is playing?'), findsOneWidget);
+    expect(find.text("Who's Playing?"), findsOneWidget);
     expect(find.text('Zawadi'), findsOneWidget);
     expect(find.text('Baraka'), findsOneWidget);
   });
 
-  testWidgets('it offers a way to add another explorer', (tester) async {
+  testWidgets('it offers a way to add another explorer, as the website does', (tester) async {
     await tester.pumpWidget(harness(
       const SessionState(loading: false, guardian: guardian, children: children),
     ));
     await tester.pump();
 
-    expect(find.text('Add an explorer'), findsOneWidget);
+    expect(find.text('Add Explorer'), findsOneWidget);
+    expect(find.text('New Child Profile'), findsOneWidget);
   });
 
   testWidgets('a family with no children is invited to add one', (tester) async {
@@ -64,7 +65,7 @@ void main() {
     ));
     await tester.pump();
 
-    expect(find.text('No explorers yet'), findsOneWidget);
+    expect(find.text('No Adventurers Yet!'), findsOneWidget);
   });
 
   testWidgets('it shows Leo while it is still loading rather than an empty screen', (tester) async {
@@ -85,7 +86,7 @@ void main() {
     ));
     await tester.pump();
 
-    expect(find.text('Who is playing?'), findsOneWidget);
+    expect(find.text("Who's Playing?"), findsOneWidget);
     expect(find.text('Zawadi'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
@@ -101,7 +102,7 @@ void main() {
     ));
     await tester.pump();
 
-    expect(find.text('Who is playing?'), findsOneWidget);
+    expect(find.text("Who's Playing?"), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 }
